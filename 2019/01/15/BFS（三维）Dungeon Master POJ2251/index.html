@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Dungeon Master POJ2251 | 市井烟火气</title>
+  <title>BFS（三维）Dungeon Master POJ2251 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Dungeon Master POJ2251">
+  <meta name="description" content="BFS（三维）Dungeon Master POJ2251">
 <meta name="keywords" content="题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Dungeon Master POJ2251">
-<meta property="og:url" content="http://yoursite.com/2019/01/15/Dungeon Master POJ2251/index.html">
+<meta property="og:title" content="BFS（三维）Dungeon Master POJ2251">
+<meta property="og:url" content="http://yoursite.com/2019/01/15/BFS（三维）Dungeon Master POJ2251/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="Dungeon Master POJ2251">
+<meta property="og:description" content="BFS（三维）Dungeon Master POJ2251">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-15T13:33:46.629Z">
+<meta property="og:updated_time" content="2019-01-17T12:52:39.221Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dungeon Master POJ2251">
-<meta name="twitter:description" content="Dungeon Master POJ2251">
+<meta name="twitter:title" content="BFS（三维）Dungeon Master POJ2251">
+<meta name="twitter:description" content="BFS（三维）Dungeon Master POJ2251">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -157,19 +157,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Dungeon Master POJ2251" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-BFS（三维）Dungeon Master POJ2251" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Dungeon Master POJ2251
+      BFS（三维）Dungeon Master POJ2251
     </h1>
   
 
         
-        <a href="/2019/01/15/Dungeon Master POJ2251/" class="archive-article-date">
+        <a href="/2019/01/15/BFS（三维）Dungeon Master POJ2251/" class="archive-article-date">
   	<time datetime="2019-01-15T13:28:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-15</time>
 </a>
         
@@ -177,22 +177,74 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Dungeon-Master-POJ2251"><a href="#Dungeon-Master-POJ2251" class="headerlink" title="Dungeon Master POJ2251"></a>Dungeon Master POJ2251</h1><a id="more"></a>
-<p>Description</p>
+        <h2 id="BFS（三维）Dungeon-Master-POJ2251"><a href="#BFS（三维）Dungeon-Master-POJ2251" class="headerlink" title="BFS（三维）Dungeon Master POJ2251"></a>BFS（三维）Dungeon Master POJ2251</h2><a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
 <p>You are trapped in a 3D dungeon and need to find the quickest way out! The dungeon is composed of unit cubes which may or may not be filled with rock. It takes one minute to move one unit north, south, east, west, up or down. You cannot move diagonally and the maze is surrounded by solid rock on all sides.</p>
-<p>Is an escape possible? If yes, how long will it take?<br>Input</p>
-<p>The input consists of a number of dungeons. Each dungeon description starts with a line containing three integers L, R and C (all limited to 30 in size).<br>L is the number of levels making up the dungeon.<br>R and C are the number of rows and columns making up the plan of each level.<br>Then there will follow L blocks of R lines each containing C characters. Each character describes one cell of the dungeon. A cell full of rock is indicated by a ‘#’ and empty cells are represented by a ‘.’. Your starting position is indicated by ‘S’ and the exit by the letter ‘E’. There’s a single blank line after each level. Input is terminated by three zeroes for L, R and C.<br>Output</p>
-<p>Each maze generates one line of output. If it is possible to reach the exit, print a line of the form<br>Escaped in x minute(s).</p>
-<p>where x is replaced by the shortest time it takes to escape.<br>If it is not possible to escape, print the line<br>Trapped!<br>Sample Input</p>
-<p>3 4 5<br>S . . . .<br>. # # # .<br>. # # . .</p>
-<p>..</p>
-<p>. . .</p>
-<p>.E</p>
-<p>1 3 3<br>S # #</p>
-<p>E</p>
-<p>0 0 0<br>Sample Output</p>
-<p>Escaped in 11 minute(s).</p>
+</blockquote>
+<blockquote>
+<p>Is an escape possible? If yes, how long will it take?</p>
+</blockquote>
+<p>###Input</p>
+<blockquote>
+<p>The input consists of a number of dungeons. Each dungeon description starts with a line containing three integers L, R and C (all limited to 30 in size).</p>
+</blockquote>
+<blockquote>
+<p>L is the number of levels making up the dungeon.</p>
+</blockquote>
+<blockquote>
+<p>R and C are the number of rows and columns making up the plan of each level.</p>
+</blockquote>
+<blockquote>
+<p>Then there will follow L blocks of R lines each containing C characters. Each character describes one cell of the dungeon. A cell full of rock is indicated by a ‘#’ and empty cells are represented by a ‘.’. Your starting position is indicated by ‘S’ and the exit by the letter ‘E’. There’s a single blank line after each level. Input is terminated by three zeroes for L, R and C.</p>
+</blockquote>
+<p>###Output</p>
+<blockquote>
+<p>Each maze generates one line of output. If it is possible to reach the exit, print a line of the form</p>
+</blockquote>
+<blockquote>
+<p>Escaped in x minute(s).</p>
+</blockquote>
+<blockquote>
+<p>where x is replaced by the shortest time it takes to escape.</p>
+</blockquote>
+<blockquote>
+<p>If it is not possible to escape, print the line</p>
+</blockquote>
+<blockquote>
 <p>Trapped!</p>
+</blockquote>
+<p>###Sample Input</p>
+<blockquote>
+<p>3 4 5</p>
+<p>S….</p>
+<p>.###.</p>
+<p>.##..</p>
+<p>###.#</p>
+<p>#####</p>
+<p>#####</p>
+<p>##.##</p>
+<p>##...</p>
+<p>#####</p>
+<p>#####</p>
+<p>#.###</p>
+<p>####E</p>
+</blockquote>
+<blockquote>
+<p>1 3 3</p>
+<p>S##</p>
+<p>#E#</p>
+<p>###</p>
+</blockquote>
+<blockquote>
+<p>0 0 0</p>
+</blockquote>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><blockquote>
+<p>Escaped in 11 mintue(s).</p>
+<p>Trapped!</p>
+</blockquote>
+<p><u>相对于二维的BFS，仅仅是多了一维而已</u></p>
+<p><u>另外多组输入记得数组用完初始化</u></p>
+<p><u>做好访问标记vis数组，防超时</u></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;queue&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">const int maxn = 40;</span><br><span class="line">int L, R, C;</span><br><span class="line">char m[maxn][maxn][maxn];</span><br><span class="line">bool vis[maxn][maxn][maxn];</span><br><span class="line">int dx[] = &#123;1, -1, 0, 0, 0, 0&#125;;</span><br><span class="line">int dy[] = &#123;0, 0, 1, -1, 0, 0&#125;;</span><br><span class="line">int dz[] = &#123;0, 0, 0, 0, 1, -1&#125;;</span><br><span class="line"></span><br><span class="line">struct node</span><br><span class="line">&#123;</span><br><span class="line">    int x, y, z;</span><br><span class="line">    int step;</span><br><span class="line">&#125;start, over;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">void bfs(node a, node b)</span><br><span class="line">&#123;</span><br><span class="line">    queue&lt;node&gt; q;</span><br><span class="line">    q.push(a);</span><br><span class="line">    while(!q.empty())</span><br><span class="line">    &#123;</span><br><span class="line">        a = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        if(a.x == b.x &amp;&amp; a.y == b.y &amp;&amp; a.z == b.z)</span><br><span class="line">        &#123;</span><br><span class="line">            cout &lt;&lt; &quot;Escaped in &quot; &lt;&lt; a.step &lt;&lt; &quot; minute(s).&quot; &lt;&lt; &apos;\n&apos;;</span><br><span class="line">            return ;</span><br><span class="line">        &#125;</span><br><span class="line">        for(int i = 0; i &lt; 6; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            int xx = a.x + dx[i];</span><br><span class="line">            int yy = a.y + dy[i];</span><br><span class="line">            int zz = a.z + dz[i];</span><br><span class="line">            if(xx &gt; L || xx &lt;= 0 || yy &gt; R || yy &lt;= 0 || zz &gt; C || zz &lt;= 0 )</span><br><span class="line">                continue;</span><br><span class="line">            if(m[xx][yy][zz] == &apos;#&apos; || vis[xx][yy][zz] == 1)</span><br><span class="line">                continue;</span><br><span class="line">            vis[xx][yy][zz] = 1;///漏了这句超时</span><br><span class="line">            node tem;</span><br><span class="line">            tem.x = xx;</span><br><span class="line">            tem.y = yy;</span><br><span class="line">            tem.z = zz;</span><br><span class="line">            tem.step = a.step + 1;</span><br><span class="line">            q.push(tem);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; &quot;Trapped!&quot; &lt;&lt; &apos;\n&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    while(~scanf(&quot;%d%d%d&quot;, &amp;L, &amp;R, &amp;C) &amp;&amp; !(L == 0 &amp;&amp; R == 0 &amp;&amp; C == 0) )</span><br><span class="line">    &#123;</span><br><span class="line">        getchar();</span><br><span class="line">        for(int i = 1; i &lt;= L; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int j = 1; j &lt;= R; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                for(int k = 1; k &lt;= C; ++k)</span><br><span class="line">                &#123;</span><br><span class="line">                    scanf(&quot;%c&quot;, &amp;m[i][j][k]);</span><br><span class="line">                    if(m[i][j][k] == &apos;S&apos;)</span><br><span class="line">                    &#123;</span><br><span class="line">                        start.x = i;</span><br><span class="line">                        start.y = j;</span><br><span class="line">                        start.z = k;</span><br><span class="line">                        start.step = 0;</span><br><span class="line">                    &#125;</span><br><span class="line">                    if(m[i][j][k] == &apos;E&apos;)</span><br><span class="line">                    &#123;</span><br><span class="line">                        over.x = i;</span><br><span class="line">                        over.y = j;</span><br><span class="line">                        over.z = k;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                getchar();</span><br><span class="line">            &#125;</span><br><span class="line">            getchar();</span><br><span class="line">        &#125;</span><br><span class="line">        bfs(start, over);</span><br><span class="line">        ///错了不知怎么错的，加上这两句就过了...</span><br><span class="line">        memset(m, 0, sizeof(m));</span><br><span class="line">        memset(vis, 0, sizeof(vis));</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -294,7 +346,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/15/Dungeon Master POJ2251/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/15/BFS（三维）Dungeon Master POJ2251/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -447,11 +499,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">题解</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">题解</a>
               </li>
             
             <div class="clearfix"></div>
