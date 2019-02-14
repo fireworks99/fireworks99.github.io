@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>my first blog! | 市井烟火气</title>
+  <title>POJ Fence Repair | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一次用hexo + hithub搞了一篇个人博客，还是蛮激动的！！！ 在这里练习一下markdown语法">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="Description Farmer John wants to repair a small length of the fence around the pasture. He measures the fence and finds that he needs N (1 ≤ N ≤ 20,000) planks of wood, each having some integer length">
+<meta name="keywords" content="题解,贪心,vector">
 <meta property="og:type" content="article">
-<meta property="og:title" content="my first blog!">
-<meta property="og:url" content="http://yoursite.com/2019/01/14/my-first-blog/index.html">
+<meta property="og:title" content="POJ Fence Repair">
+<meta property="og:url" content="http://yoursite.com/2019/02/14/POJ-Fence-Repair/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="第一次用hexo + hithub搞了一篇个人博客，还是蛮激动的！！！ 在这里练习一下markdown语法">
+<meta property="og:description" content="Description Farmer John wants to repair a small length of the fence around the pasture. He measures the fence and finds that he needs N (1 ≤ N ≤ 20,000) planks of wood, each having some integer length">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-21T06:18:59.290Z">
+<meta property="og:updated_time" content="2019-02-14T02:25:30.328Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="my first blog!">
-<meta name="twitter:description" content="第一次用hexo + hithub搞了一篇个人博客，还是蛮激动的！！！ 在这里练习一下markdown语法">
+<meta name="twitter:title" content="POJ Fence Repair">
+<meta name="twitter:description" content="Description Farmer John wants to repair a small length of the fence around the pasture. He measures the fence and finds that he needs N (1 ≤ N ≤ 20,000) planks of wood, each having some integer length">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -163,104 +163,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-my-first-blog" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-POJ-Fence-Repair" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      my first blog!
+      POJ Fence Repair
     </h1>
   
 
         
-        <a href="/2019/01/14/my-first-blog/" class="archive-article-date">
-  	<time datetime="2019-01-14T10:10:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-14</time>
+        <a href="/2019/02/14/POJ-Fence-Repair/" class="archive-article-date">
+  	<time datetime="2019-02-14T02:09:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>第一次用hexo + hithub搞了一篇个人博客，还是蛮激动的！！！</p>
-<p>在这里练习一下markdown语法</p>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Farmer John wants to repair a small length of the fence around the pasture. He measures the fence and finds that he needs <em>N</em> (1 ≤ <em>N</em> ≤ 20,000) planks of wood, each having some integer length <em>Li</em> (1 ≤ <em>Li</em> ≤ 50,000) units. He then purchases a single long board just long enough to saw into the <em>N</em> planks (i.e., whose length is the sum of the lengths <em>Li</em>). FJ is ignoring the “kerf”, the extra length lost to sawdust when a sawcut is made; you should ignore it, too.</p>
+</blockquote>
 <a id="more"></a>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1310636770&auto=1&height=66"></iframe>
-
-<h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><blockquote>
-<p>一级引用</p>
 <blockquote>
-<p>二级引用</p>
+<p>FJ sadly realizes that he doesn’t own a saw with which to cut the wood, so he mosies over to Farmer Don’s Farm with this long board and politely asks if he may borrow a saw.</p>
+</blockquote>
 <blockquote>
-<p>三级引用</p>
+<p>Farmer Don, a closet capitalist, doesn’t lend FJ a saw but instead offers to charge Farmer John for each of the <em>N</em>-1 cuts in the plank. The charge to cut a piece of wood is exactly equal to its length. Cutting a plank of length 21 costs 21 cents.</p>
+</blockquote>
 <blockquote>
-<p>四级引用</p>
+<p>Farmer Don then lets Farmer John decide the order and locations to cut the plank. Help Farmer John determine the minimum amount of money he can spend to create the <em>N</em> planks. FJ knows that he can cut the board in various different orders which will result in different charges since the resulting intermediate planks are of different lengths.</p>
 </blockquote>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
+<p>Line 1: One integer <em>N</em>, the number of planks  </p>
+<p>Lines 2..<em>N</em>+1: Each line contains a single integer describing the length of a needed plank </p>
 </blockquote>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
+<p>Line 1: One integer: the minimum amount of money he must spend to make <em>N</em>-1 cuts </p>
 </blockquote>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><blockquote>
+<p>3</p>
+<p>8 5 8</p>
 </blockquote>
-<p><code>cout &lt;&lt; &quot;单行代码&quot; &lt;&lt; &#39;\n&#39;;</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">cout &lt;&lt; &quot;多行代码&quot; &lt;&lt; &apos;\n&apos;;</span><br><span class="line">return 0;</span><br><span class="line">```c</span><br></pre></td></tr></table></figure>
-<p>*无序列表1</p>
-<p>+无序列表2</p>
-<p>-无序列表3</p>
-<p>上面“无序列表”不是骗人的？</p>
-<p>*多行无序列表1</p>
-<p>​    *多行无序列表2</p>
-<p>​        *多行无序列表3</p>
-<p>1.有序列表1</p>
-<p>2.有序列表2</p>
-<p>3.有序列表3</p>
-<p>1.多行有序列表1</p>
-<p>2.多行有序列表2</p>
-<p>​    1.多行有序列表2-1</p>
-<p>​    2.多行有序列表2-2</p>
-<p>-[  ]语法1</p>
-<p>-[x]语法2</p>
-<p>山东师范大学（长清湖校区）7#514</p>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>gender</th>
-<th>love status</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>LHL</td>
-<td>M</td>
-<td>单身</td>
-</tr>
-<tr>
-<td>WXZ</td>
-<td>M</td>
-<td>单身</td>
-</tr>
-<tr>
-<td>ZH</td>
-<td>M</td>
-<td>热恋</td>
-</tr>
-<tr>
-<td>ZBL</td>
-<td>M</td>
-<td>勿念</td>
-</tr>
-<tr>
-<td>LLQ</td>
-<td>M</td>
-<td>单身</td>
-</tr>
-<tr>
-<td>LZH</td>
-<td>M</td>
-<td>单身</td>
-</tr>
-</tbody>
-</table>
-<p>太多了，暂且不一一尝试了……</p>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><blockquote>
+<p>34</p>
+</blockquote>
+<h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><blockquote>
+<p>一块木板切成N块，每次开销是当前木板长度，给出最终每块木板长度，求最小开销</p>
+</blockquote>
+<p>详见《挑战程序设计》（第二版）48页</p>
+<p>自己举几个简单的例子发现：将 <em>最短板</em>  与 <em>次短板</em>  视为来自同一块板，合成新板重复此过程便得到答案</p>
+<h3 id="关键处"><a href="#关键处" class="headerlink" title="关键处"></a>关键处</h3><blockquote>
+<p>为了找最短板与次短板，避免多次sort，采用vector的lower_bound式insert</p>
+</blockquote>
+<p><code>vec.insert(lower_bound(vec.begin(), vec.end(), tem), tem);</code></p>
+<h4 id="code"><a href="#code" class="headerlink" title="code"></a>code</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> tem;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;tem);</span><br><span class="line">        vec.insert(lower_bound(vec.begin(), vec.end(), tem), tem);<span class="comment">///vector据大小插入</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;<span class="comment">/// &gt;= 2个int可能超int</span></span><br><span class="line">    <span class="keyword">while</span>(vec.size() &gt; <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t = vec[<span class="number">0</span>] + vec[<span class="number">1</span>];</span><br><span class="line">        ans += t;</span><br><span class="line">        vec.erase(vec.begin());</span><br><span class="line">        vec.erase(vec.begin());</span><br><span class="line">        vec.insert(lower_bound(vec.begin(), vec.end(), t), t);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -305,7 +264,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">贪心</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vector</a>
         		</li>
       		
 		</ul>
@@ -361,7 +328,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/14/my-first-blog/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/14/POJ-Fence-Repair/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -375,18 +342,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/15/BFS（三维）Dungeon Master POJ2251/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          BFS（三维）Dungeon Master POJ2251
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/01/29/HDU-2141-Can-you-find-it/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HDU 2141 Can you find it?</div>
       <i class="icon-circle-right"></i>
     </a>
   
