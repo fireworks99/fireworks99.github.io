@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>模拟、思维 SDNUOJ 1271 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="模拟、思维 SDNUOJ 1271">
-<meta name="keywords" content="题解">
+  <meta name="description" content="Description 大家都知道小宇是一个很纯洁的小孩！有一天他做梦了，梦见好多MM排着队随他挑。这些MM来自不同的国家，但也有同一个国家的，而他想尽量认识不同国家的MM。因此小宇想知道他可以认识到不同国家的MM区间长度的最大值，并且小宇想知道共有多少个国家的MM供他选择。   题目来了：">
+<meta name="keywords" content="题解,vector">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模拟、思维 SDNUOJ 1271">
 <meta property="og:url" content="http://yoursite.com/2019/01/17/模拟、思维-SDNUOJ-1271/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="模拟、思维 SDNUOJ 1271">
+<meta property="og:description" content="Description 大家都知道小宇是一个很纯洁的小孩！有一天他做梦了，梦见好多MM排着队随他挑。这些MM来自不同的国家，但也有同一个国家的，而他想尽量认识不同国家的MM。因此小宇想知道他可以认识到不同国家的MM区间长度的最大值，并且小宇想知道共有多少个国家的MM供他选择。   题目来了：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-17T12:51:01.073Z">
+<meta property="og:updated_time" content="2019-02-15T09:40:23.633Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模拟、思维 SDNUOJ 1271">
-<meta name="twitter:description" content="模拟、思维 SDNUOJ 1271">
+<meta name="twitter:description" content="Description 大家都知道小宇是一个很纯洁的小孩！有一天他做梦了，梦见好多MM排着队随他挑。这些MM来自不同的国家，但也有同一个国家的，而他想尽量认识不同国家的MM。因此小宇想知道他可以认识到不同国家的MM区间长度的最大值，并且小宇想知道共有多少个国家的MM供他选择。   题目来了：">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -183,13 +183,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="模拟、思维-SDNUOJ-1271"><a href="#模拟、思维-SDNUOJ-1271" class="headerlink" title="模拟、思维 SDNUOJ 1271"></a>模拟、思维 SDNUOJ 1271</h2><a id="more"></a>
-<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
 <p>大家都知道小宇是一个很纯洁的小孩！有一天他做梦了，梦见好多MM排着队随他挑。这些MM来自不同的国家，但也有同一个国家的，而他想尽量认识不同国家的MM。因此小宇想知道他可以认识到不同国家的MM区间长度的最大值，并且小宇想知道共有多少个国家的MM供他选择。</p>
 </blockquote>
 <blockquote>
 <p>题目来了：</p>
 </blockquote>
+<a id="more"></a>
 <blockquote>
 <p>现在有多个MM，给出她们所在的国家的标号（标号仅由1个小写字母组成，不同的字母表示不同的国家）。她们按顺序从左到右站成一排。小宇想找到一个区域，使他能够找到最多不同国家的MM，要求输出所有MM属于多少个不同的国家和可以认识不同国家MM的最大区间长度（该区间内没有来自同一个国家的MM）。比如在整个队伍内他按从左向右顺序找到了3个a国的MM，1个b国MM，1个c国MM。那么不同国家的最大数为3（a国、b国、c国），最大可以认识不同国家MM的区间长度为3（只须认识a国的最右面的一个人以及b、c国即可得到最大区间长度3）。假设在队伍内的人他都还没有认识。</p>
 </blockquote>
@@ -209,7 +209,7 @@
 <p>3 3</p>
 </blockquote>
 <p><strong>set</strong> 自带 _除重_  与 _排序_  ，这里利用除重特点。（PS: <strong>vector</strong> 有上限，<del>嗯，有上限</del> )</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;set&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char a;</span><br><span class="line">    set&lt;char&gt; st;</span><br><span class="line">    vector&lt;char&gt; vec;</span><br><span class="line">    while(~scanf(&quot;%c&quot;, &amp;a))</span><br><span class="line">    &#123;</span><br><span class="line">        if(a == &apos;\n&apos;)</span><br><span class="line">            break;</span><br><span class="line">        st.insert(a);</span><br><span class="line">        vec.push_back(a);</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; st.size() &lt;&lt; &apos; &apos;;</span><br><span class="line">    st.clear();</span><br><span class="line">    int tem = st.size();</span><br><span class="line">    int mmax = 0;</span><br><span class="line">    for(int i = 0; i &lt; vec.size(); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        st.insert(vec[i]);</span><br><span class="line">        if(st.size() &gt; tem)</span><br><span class="line">            tem = st.size();</span><br><span class="line">        else</span><br><span class="line">        &#123;</span><br><span class="line">            if(st.size() &gt; mmax)</span><br><span class="line">                mmax = st.size();</span><br><span class="line">            st.clear();</span><br><span class="line">            st.insert(vec[i]);</span><br><span class="line">            tem = st.size();///我写这里时初次写了int tem!</span><br><span class="line">        &#125;</span><br><span class="line">        if(i == vec.size() - 1)</span><br><span class="line">            if(st.size() &gt; mmax)</span><br><span class="line">                mmax = st.size();</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; mmax &lt;&lt; &apos;\n&apos;;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span> a;</span><br><span class="line">    <span class="built_in">set</span>&lt;<span class="keyword">char</span>&gt; st;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">char</span>&gt; vec;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%c"</span>, &amp;a))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a == <span class="string">'\n'</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        st.insert(a);</span><br><span class="line">        vec.push_back(a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; st.size() &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    st.clear();</span><br><span class="line">    <span class="keyword">int</span> tem = st.size();</span><br><span class="line">    <span class="keyword">int</span> mmax = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; vec.size(); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        st.insert(vec[i]);</span><br><span class="line">        <span class="keyword">if</span>(st.size() &gt; tem)</span><br><span class="line">            tem = st.size();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(st.size() &gt; mmax)</span><br><span class="line">                mmax = st.size();</span><br><span class="line">            st.clear();</span><br><span class="line">            st.insert(vec[i]);</span><br><span class="line">            tem = st.size();<span class="comment">///我写这里时初次写了int tem!</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(i == vec.size() - <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">if</span>(st.size() &gt; mmax)</span><br><span class="line">                mmax = st.size();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; mmax &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -255,6 +255,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vector</a>
         		</li>
       		
 		</ul>
@@ -467,7 +471,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">栈（stack）</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">二分</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -483,15 +495,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">知识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">二分</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
