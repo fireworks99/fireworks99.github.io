@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HDU 1556 Color the ball | 市井烟火气</title>
+  <title>HDU 1556 Color the ball（差分） | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="用差分实现区间操作一维 给定一个长度为n的数列a，要求支持操作add(L,R,k)表示对a[L]~a[R]的每个数都加上k。并求修改后的序列a。   我们考虑用差分的做法。这里 需要一个辅助数组c，c用来记录某一个位置上的总改变量。c[i]表示的是i~n这些元素都加上c[i]这个数。我们对[L,R]区间进行加值操作，在c[L]处加一个k，在c[R+1]处就减去一个k。最后求序列的每个位置变成了多少">
 <meta name="keywords" content="题解,前缀和,差分,知识">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU 1556 Color the ball">
+<meta property="og:title" content="HDU 1556 Color the ball（差分）">
 <meta property="og:url" content="http://yoursite.com/2019/02/24/HDU-1556/index.html">
 <meta property="og:site_name" content="市井烟火气">
 <meta property="og:description" content="用差分实现区间操作一维 给定一个长度为n的数列a，要求支持操作add(L,R,k)表示对a[L]~a[R]的每个数都加上k。并求修改后的序列a。   我们考虑用差分的做法。这里 需要一个辅助数组c，c用来记录某一个位置上的总改变量。c[i]表示的是i~n这些元素都加上c[i]这个数。我们对[L,R]区间进行加值操作，在c[L]处加一个k，在c[R+1]处就减去一个k。最后求序列的每个位置变成了多少">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-24T01:40:08.778Z">
+<meta property="og:updated_time" content="2019-02-24T08:37:42.873Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU 1556 Color the ball">
+<meta name="twitter:title" content="HDU 1556 Color the ball（差分）">
 <meta name="twitter:description" content="用差分实现区间操作一维 给定一个长度为n的数列a，要求支持操作add(L,R,k)表示对a[L]~a[R]的每个数都加上k。并求修改后的序列a。   我们考虑用差分的做法。这里 需要一个辅助数组c，c用来记录某一个位置上的总改变量。c[i]表示的是i~n这些元素都加上c[i]这个数。我们对[L,R]区间进行加值操作，在c[L]处加一个k，在c[R+1]处就减去一个k。最后求序列的每个位置变成了多少">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
@@ -170,7 +170,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      HDU 1556 Color the ball
+      HDU 1556 Color the ball（差分）
     </h1>
   
 
@@ -486,10 +486,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">栈（stack）</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
@@ -514,7 +510,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
+                <a href="javascript:void(0)" class="js-tag color3">二分</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,11 +518,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">二分</a>
+                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">set</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -538,15 +538,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">multiset</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">priority_queue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">栈（stack）</a>
               </li>
             
             <div class="clearfix"></div>
@@ -602,23 +602,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </li>
           
             <li class="search-li">
-              <a href="https://alberts97.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>SJY师哥</a>
+              <a href="https://alberts97.github.io/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>咸鱼の小窝</a>
             </li>
           
             <li class="search-li">
-              <a href="https://www.skji.net/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MFZ师哥</a>
+              <a href="https://www.rainng.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>雨凝博客</a>
             </li>
           
             <li class="search-li">
-              <a href="http://barkpoem.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>MXC师哥</a>
+              <a href="http://crazyforsaken.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>Forsaken</a>
             </li>
           
             <li class="search-li">
-              <a href="https://www.rainng.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>LYX师哥</a>
+              <a href="https://soullan.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>蓝灵博客</a>
             </li>
           
             <li class="search-li">
-              <a href="http://crazyforsaken.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>RYC师哥</a>
+              <a href="https://blog.csdn.net/muyu__" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>muyu_</a>
+            </li>
+          
+            <li class="search-li">
+              <a href="https://blog.csdn.net/weixin_43918531" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>云腾致雨</a>
             </li>
           
         </ul>
