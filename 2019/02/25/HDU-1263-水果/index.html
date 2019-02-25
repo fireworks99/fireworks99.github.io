@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Codeforces C.Pearls in a Row | 市井烟火气</title>
+  <title>HDU 1263 水果 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description There are n pearls in a row. Let’s enumerate them with integers from 1 to n from the left to the right. The pearl number i has the type ai.">
-<meta name="keywords" content="题解,set">
+  <meta name="description" content="Description Joe经营着一个不大的水果店.他认为生存之道就是经营最受顾客欢迎的水果.现在他想要一份水果销售情况的明细表   题目链接 http://acm.hdu.edu.cn/showproblem.php?pid=1263">
+<meta name="keywords" content="题解,map嵌套">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces C.Pearls in a Row">
-<meta property="og:url" content="http://yoursite.com/2019/01/29/Pearls in a Row/index.html">
+<meta property="og:title" content="HDU 1263 水果">
+<meta property="og:url" content="http://yoursite.com/2019/02/25/HDU-1263-水果/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="Description There are n pearls in a row. Let’s enumerate them with integers from 1 to n from the left to the right. The pearl number i has the type ai.">
+<meta property="og:description" content="Description Joe经营着一个不大的水果店.他认为生存之道就是经营最受顾客欢迎的水果.现在他想要一份水果销售情况的明细表   题目链接 http://acm.hdu.edu.cn/showproblem.php?pid=1263">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-15T09:38:18.088Z">
+<meta property="og:updated_time" content="2019-02-25T12:31:49.472Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codeforces C.Pearls in a Row">
-<meta name="twitter:description" content="Description There are n pearls in a row. Let’s enumerate them with integers from 1 to n from the left to the right. The pearl number i has the type ai.">
+<meta name="twitter:title" content="HDU 1263 水果">
+<meta name="twitter:description" content="Description Joe经营着一个不大的水果店.他认为生存之道就是经营最受顾客欢迎的水果.现在他想要一份水果销售情况的明细表   题目链接 http://acm.hdu.edu.cn/showproblem.php?pid=1263">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -163,20 +163,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Pearls in a Row" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-HDU-1263-水果" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Codeforces C.Pearls in a Row
+      HDU 1263 水果
     </h1>
   
 
         
-        <a href="/2019/01/29/Pearls in a Row/" class="archive-article-date">
-  	<time datetime="2019-01-29T08:29:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-29</time>
+        <a href="/2019/02/25/HDU-1263-水果/" class="archive-article-date">
+  	<time datetime="2019-02-25T12:20:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
 </a>
         
       </header>
@@ -184,77 +184,23 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>There are <em>n</em> pearls in a row. Let’s enumerate them with integers from 1 to <em>n</em> from the left to the right. The pearl number <em>i</em> has the type <em>ai</em>.</p>
+<p>Joe经营着一个不大的水果店.他认为生存之道就是经营最受顾客欢迎的水果.现在他想要一份水果销售情况的明细表 </p>
 </blockquote>
+<p><strong>题目链接</strong> <a href="http://acm.hdu.edu.cn/showproblem.php?pid=1263" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1263</a></p>
 <a id="more"></a>
-<blockquote>
-<p>Let’s call a sequence of consecutive pearls a segment. Let’s call a segment good if it contains two pearls of the same type.</p>
-</blockquote>
-<blockquote>
-<p>Split the row of the pearls to the maximal number of good segments. Note that each pearl should appear in exactly one segment of the partition.</p>
-</blockquote>
-<blockquote>
-<p>As input/output can reach huge size it is recommended to use fast input/output methods: for example, prefer to use scanf/printfinstead of cin/cout in C++, prefer to use BufferedReader/PrintWriter instead of Scanner/System.out in Java.</p>
-</blockquote>
 <h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
-<p>The first line contains integer <em>n</em> (1 ≤ <em>n</em> ≤ 3·105) — the number of pearls in a row.</p>
-</blockquote>
-<blockquote>
-<p>The second line contains <em>n</em> integers <em>a**i</em> (1 ≤ <em>a**i</em> ≤ 109) – the type of the <em>i</em>-th pearl.</p>
+<p>第一行正整数N(0&lt;N&lt;=10)表示有N组测试数据.  每组测试数据的第一行是一个整数M(0&lt;M&lt;=100),表示工有M次成功的交易.其后有M行数据,每行表示一次交易,由水果名称(小写字母组成,长度不超过80),水果产地(小写字母组成,长度不超过80)和交易的水果数目(正整数,不超过100)组成.  </p>
 </blockquote>
 <h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
-<p>On the first line print integer <em>k</em> — the maximal number of segments in a partition of the row.</p>
+<p>对于每一组测试数据,请你输出一份排版格式正确(请分析样本输出)的水果销售情况明细表.这份明细表包括所有水果的产地,名称和销售数目的信息.水果先按产地分类,产地按字母顺序排列;同一产地的水果按照名称排序,名称按字母顺序排序.  两组测试数据之间有一个空行.最后一组测试数据之后没有空行.  </p>
 </blockquote>
-<blockquote>
-<p>Each of the next <em>k</em> lines should contain two integers <em>l**j</em>, <em>r**j</em> (1 ≤ <em>l**j</em> ≤ <em>r**j</em> ≤ <em>n</em>) — the number of the leftmost and the rightmost pearls in the <em>j</em>-th segment.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">5</span><br><span class="line">apple shandong 3</span><br><span class="line">pineapple guangdong 1</span><br><span class="line">sugarcane guangdong 1</span><br><span class="line">pineapple guangdong 3</span><br><span class="line">pineapple guangdong 1</span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">guangdong</span><br><span class="line">   |----pineapple(5)</span><br><span class="line">   |----sugarcane(1)</span><br><span class="line">shandong</span><br><span class="line">   |----apple(3)</span><br></pre></td></tr></table></figure>
+<h3 id="关于map"><a href="#关于map" class="headerlink" title="关于map"></a>关于map</h3><blockquote>
+<p>map中的元素是自动按Key升序排序 </p>
+<p>用insert函数插入数据，在数据的 插入上涉及到集合的唯一性这个概念，即当map中有这个关键字时，insert操作是插入数据不了的，但是用数组方式就不同了，它可以覆盖以前该关键字对 应的值 </p>
 </blockquote>
-<blockquote>
-<p>Note you should print the correct partition of the row of the pearls, so each pearl should be in exactly one segment and all segments should contain two pearls of the same type.</p>
-</blockquote>
-<blockquote>
-<p>If there are several optimal solutions print any of them. You can print the segments in any order.</p>
-</blockquote>
-<blockquote>
-<p>If there are no correct partitions of the row print the number “-1”.</p>
-</blockquote>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="input"><a href="#input" class="headerlink" title="input"></a>input</h4><blockquote>
-<p>5</p>
-<p>1 2 3 4 1</p>
-</blockquote>
-<h4 id="output"><a href="#output" class="headerlink" title="output"></a>output</h4><blockquote>
-<p>1</p>
-<p>1 5</p>
-</blockquote>
-<h4 id="input-1"><a href="#input-1" class="headerlink" title="input"></a>input</h4><blockquote>
-<p>5</p>
-<p>1 2 3 4 5</p>
-</blockquote>
-<h4 id="output-1"><a href="#output-1" class="headerlink" title="output"></a>output</h4><blockquote>
-<p>-1</p>
-</blockquote>
-<h4 id="input-2"><a href="#input-2" class="headerlink" title="input"></a>input</h4><blockquote>
-<p>7</p>
-<p>1 2 1 3 1 2 1</p>
-</blockquote>
-<h4 id="output-2"><a href="#output-2" class="headerlink" title="output"></a>output</h4><blockquote>
-<p>2</p>
-<p>1 3</p>
-<p>4 7</p>
-</blockquote>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote>
-<p>要把一个数字序列分成几个序列（每个序列均含有相同元素），尽可能多地分（也就是让每个序列只含有一组相同元素）。找不到输出 -1 ，否则输出序列个数与起止点</p>
-</blockquote>
-<p>###思路</p>
-<blockquote>
-<p>可以利用 <em>set</em> 自带除重的特点，将序列中的数字向set里放，每放一次检测一次大小，大了很正常，没变大说明出现了同样的元素，这就有了一个序列</p>
-</blockquote>
-<h3 id="坑点（末尾处理）"><a href="#坑点（末尾处理）" class="headerlink" title="坑点（末尾处理）"></a>坑点（末尾处理）</h3><blockquote>
-<p>如果原序列是 </p>
-<p>7</p>
-<p>1 2 1 3 4 3 6</p>
-<p>那么第一个符合要求的序列是 1 2 1，第二个是3 4 3 6，而不是3 4 3</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> left, right;</span><br><span class="line">&#125;ans[<span class="number">1000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">set</span>&lt;<span class="keyword">int</span>&gt; st;</span><br><span class="line">        <span class="keyword">int</span> tem = st.size();</span><br><span class="line">        <span class="keyword">int</span> tot = <span class="number">0</span>;</span><br><span class="line">        ans[tot].left = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> a;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a);</span><br><span class="line">            st.insert(a);</span><br><span class="line">            <span class="keyword">if</span>(st.size() &gt; tem)</span><br><span class="line">                tem = st.size();</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">                st.clear();</span><br><span class="line">                ans[tot].right = i;</span><br><span class="line">                tot++;</span><br><span class="line">                ans[tot].left = i + <span class="number">1</span>;</span><br><span class="line">                tem = st.size();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!flag)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"-1"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; tot &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tot - <span class="number">1</span>; ++i)</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; ans[i].left &lt;&lt; <span class="string">' '</span> &lt;&lt; ans[i].right &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">            <span class="keyword">if</span>(ans[tot - <span class="number">1</span>].right != n)</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; ans[tot - <span class="number">1</span>].left &lt;&lt; <span class="string">' '</span> &lt;&lt; n &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t,n;</span><br><span class="line">    <span class="keyword">int</span> cnt;</span><br><span class="line">    <span class="built_in">string</span> fruit,address;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt; &gt;mm;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt; &gt;::iterator itw;</span><br><span class="line">        <span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt;::iterator itn;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">        <span class="keyword">while</span>(n--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; fruit &gt;&gt; address &gt;&gt; cnt;</span><br><span class="line">            mm[address][fruit] += cnt;<span class="comment">///精华</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(itw = mm.begin(); itw != mm.end(); itw++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; itw -&gt; first &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">            <span class="keyword">for</span>(itn = itw -&gt; second.begin(); itn != itw -&gt; second.end(); itn++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"   |----"</span> &lt;&lt; itn -&gt; first &lt;&lt; <span class="string">"("</span> &lt;&lt; itn -&gt; second &lt;&lt; <span class="string">")"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(t!=<span class="number">0</span>)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -303,7 +249,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">set</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">map嵌套</a>
         		</li>
       		
 		</ul>
@@ -359,7 +305,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/29/Pearls in a Row/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/25/HDU-1263-水果/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -373,18 +319,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/01/29/C-Replace-To-Make-Regular-Bracket-Sequence/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          C. Replace To Make Regular Bracket Sequence
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/01/24/模拟（vector）The-kth-great-number-HDU4006/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">模拟 The kth great number HDU4006</div>
+    <a href="/2019/02/25/HDU-1075-What-are-you-Talking-About/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HDU 1075 What are you Talking About</div>
       <i class="icon-circle-right"></i>
     </a>
   
