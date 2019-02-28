@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>拓扑排序 UVA 10305 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####拓扑排序解决工程的先后问题  DFS在这方面较BFS有些先天优势，本身按工程的先后顺序搜索。答案由后向前存入stack BFS加一个 in[] 数组，保证某一个工程（其前面有许多工程）在可行方案中尽量靠后放。答案由前向后存入vector">
-<meta name="keywords" content="题解,BFS,DFS,拓扑排序（无环）">
+  <meta name="description" content="拓扑排序解决工程的先后问题  DFS在这方面较BFS有些先天优势，本身按工程的先后顺序搜索。答案由后向前存入stack BFS加一个 in[] 数组，保证某一个工程（其前面有许多工程）在可行方案中尽量靠后放。答案由前向后存入vector">
+<meta name="keywords" content="题解,DFS,BFS,拓扑排序（无环）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="拓扑排序 UVA 10305">
 <meta property="og:url" content="http://yoursite.com/2019/02/27/拓扑排序-UVA-10305/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="####拓扑排序解决工程的先后问题  DFS在这方面较BFS有些先天优势，本身按工程的先后顺序搜索。答案由后向前存入stack BFS加一个 in[] 数组，保证某一个工程（其前面有许多工程）在可行方案中尽量靠后放。答案由前向后存入vector">
+<meta property="og:description" content="拓扑排序解决工程的先后问题  DFS在这方面较BFS有些先天优势，本身按工程的先后顺序搜索。答案由后向前存入stack BFS加一个 in[] 数组，保证某一个工程（其前面有许多工程）在可行方案中尽量靠后放。答案由前向后存入vector">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-27T01:42:36.072Z">
+<meta property="og:updated_time" content="2019-02-28T08:30:20.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="拓扑排序 UVA 10305">
-<meta name="twitter:description" content="####拓扑排序解决工程的先后问题  DFS在这方面较BFS有些先天优势，本身按工程的先后顺序搜索。答案由后向前存入stack BFS加一个 in[] 数组，保证某一个工程（其前面有许多工程）在可行方案中尽量靠后放。答案由前向后存入vector">
+<meta name="twitter:description" content="拓扑排序解决工程的先后问题  DFS在这方面较BFS有些先天优势，本身按工程的先后顺序搜索。答案由后向前存入stack BFS加一个 in[] 数组，保证某一个工程（其前面有许多工程）在可行方案中尽量靠后放。答案由前向后存入vector">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -183,7 +183,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>####拓扑排序解决工程的先后问题</p>
+        <p><strong>拓扑排序解决工程的先后问题</strong></p>
 <blockquote>
 <p>DFS在这方面较BFS有些先天优势，本身按工程的先后顺序搜索。答案由后向前存入stack</p>
 <p>BFS加一个 in[] 数组，保证某一个工程（其前面有许多工程）在可行方案中尽量靠后放。答案由前向后存入vector</p>
@@ -254,11 +254,11 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
@@ -331,6 +331,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/02/28/拓扑排序-HDU-3342/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          拓扑排序 HDU 3342
+        
+      </div>
+    </a>
   
   
     <a href="/2019/02/26/SDNUOJ-1169火星人/" id="article-nav-older" class="article-nav-link-wrap">
@@ -466,11 +475,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数学</a>
+                <a href="javascript:void(0)" class="js-tag color3">剪枝</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -478,11 +487,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
+                <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">剪枝</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,10 +508,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">map嵌套</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -522,7 +531,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">二分</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">拓扑排序（判环）</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,14 +552,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">prev_permutation</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">

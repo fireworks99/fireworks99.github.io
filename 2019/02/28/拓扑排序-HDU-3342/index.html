@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Codeforces B. New Skateboard | 市井烟火气</title>
+  <title>拓扑排序 HDU 3342 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description Max wants to buy a new skateboard. He has calculated the amount of money that is needed to buy a new skateboard. He left a calculator on the floor and went to ask some money from his paren">
-<meta name="keywords" content="题解,数学">
+  <meta name="description" content="拓扑排序判断各工程先后顺序是否出现矛盾（a -&amp;gt; b, b -&amp;gt; c, c -&amp;gt; a）  BFS在这方面较DFS有些先天优势，统计入队结点数，看是否等于工程数 DFS的vis[]数组改为0， -1， 1三个状态，0代表未访问，-1代表访问完毕，1代表是这一阶段正在访问的 （注意 if(-1) 相当于 if(1) ）【坑了自己一阵】  注意n个工程是（0 ~ n - 1 ）还是 （">
+<meta name="keywords" content="题解,DFS,BFS,拓扑排序（判环）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces B. New Skateboard">
-<meta property="og:url" content="http://yoursite.com/2019/02/15/Codeforces-B-New-Skateboard/index.html">
+<meta property="og:title" content="拓扑排序 HDU 3342">
+<meta property="og:url" content="http://yoursite.com/2019/02/28/拓扑排序-HDU-3342/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="Description Max wants to buy a new skateboard. He has calculated the amount of money that is needed to buy a new skateboard. He left a calculator on the floor and went to ask some money from his paren">
+<meta property="og:description" content="拓扑排序判断各工程先后顺序是否出现矛盾（a -&amp;gt; b, b -&amp;gt; c, c -&amp;gt; a）  BFS在这方面较DFS有些先天优势，统计入队结点数，看是否等于工程数 DFS的vis[]数组改为0， -1， 1三个状态，0代表未访问，-1代表访问完毕，1代表是这一阶段正在访问的 （注意 if(-1) 相当于 if(1) ）【坑了自己一阵】  注意n个工程是（0 ~ n - 1 ）还是 （">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-15T11:19:43.269Z">
+<meta property="og:updated_time" content="2019-02-28T08:29:10.815Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codeforces B. New Skateboard">
-<meta name="twitter:description" content="Description Max wants to buy a new skateboard. He has calculated the amount of money that is needed to buy a new skateboard. He left a calculator on the floor and went to ask some money from his paren">
+<meta name="twitter:title" content="拓扑排序 HDU 3342">
+<meta name="twitter:description" content="拓扑排序判断各工程先后顺序是否出现矛盾（a -&amp;gt; b, b -&amp;gt; c, c -&amp;gt; a）  BFS在这方面较DFS有些先天优势，统计入队结点数，看是否等于工程数 DFS的vis[]数组改为0， -1， 1三个状态，0代表未访问，-1代表访问完毕，1代表是这一阶段正在访问的 （注意 if(-1) 相当于 if(1) ）【坑了自己一阵】  注意n个工程是（0 ~ n - 1 ）还是 （">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -163,75 +163,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Codeforces-B-New-Skateboard" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-拓扑排序-HDU-3342" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Codeforces B. New Skateboard
+      拓扑排序 HDU 3342
     </h1>
   
 
         
-        <a href="/2019/02/15/Codeforces-B-New-Skateboard/" class="archive-article-date">
-  	<time datetime="2019-02-15T11:11:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-15</time>
+        <a href="/2019/02/28/拓扑排序-HDU-3342/" class="archive-article-date">
+  	<time datetime="2019-02-28T08:18:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>Max wants to buy a new skateboard. He has calculated the amount of money that is needed to buy a new skateboard. He left a calculator on the floor and went to ask some money from his parents. Meanwhile his little brother Yusuf came and started to press the keys randomly. Unfortunately Max has forgotten the number which he had calculated. The only thing he knows is that the number is divisible by 4.</p>
+        <p><strong>拓扑排序判断各工程先后顺序是否出现矛盾（a -&gt; b, b -&gt; c, c -&gt; a）</strong></p>
+<blockquote>
+<p>BFS在这方面较DFS有些先天优势，统计入队结点数，看是否等于工程数</p>
+<p>DFS的vis[]数组改为0， -1， 1三个状态，0代表未访问，-1代表访问完毕，1代表是这一阶段正在访问的 （注意 if(-1) 相当于 if(1) ）【坑了自己一阵】</p>
 </blockquote>
+<p><strong>注意n个工程是（0 ~ n - 1 ）还是 （1 ~ n）</strong></p>
 <a id="more"></a>
-<blockquote>
-<p>You are given a string <em>s</em> consisting of digits (the number on the display of the calculator after Yusuf randomly pressed the keys). Your task is to find the number of substrings which are divisible by 4. A substring can start with a zero.</p>
-</blockquote>
-<blockquote>
-<p>A substring of a string is a nonempty sequence of consecutive characters.</p>
-</blockquote>
-<blockquote>
-<p>For example if string <em>s</em> is 124 then we have four substrings that are divisible by 4: 12, 4, 24 and 124. For the string 04 the answer is three: 0, 4, 04.</p>
-</blockquote>
-<blockquote>
-<p>As input/output can reach huge size it is recommended to use fast input/output methods: for example, prefer to use gets/scanf/printf instead of getline/cin/cout in C++, prefer to use BufferedReader/PrintWriter instead of Scanner/System.out in Java.</p>
+<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>ACM-DIY is a large QQ group where many excellent acmers get together. It is so harmonious that just like a big family. Every day,many “holy cows” like HH, hh, AC, ZT, lcc, BF, Qinz and so on chat on-line to exchange their ideas. When someone has questions, many warm-hearted cows like Lost will come to help. Then the one being helped will call Lost “master”, and Lost will have a nice “prentice”. By and by, there are many pairs of “master and prentice”. But then problem occurs: there are too many masters and too many prentices, how can we know whether it is legal or not?  We all know a master can have many prentices and a prentice may have a lot of masters too, it’s legal. Nevertheless，some cows are not so honest, they hold illegal relationship. Take HH and 3xian for instant, HH is 3xian’s master and, at the same time, 3xian is HH’s master,which is quite illegal! To avoid this,please help us to judge whether their relationship is legal or not.   Please note that the “master and prentice” relation is transitive. It means that if A is B’s master ans B is C’s master, then A is C’s master. </p>
 </blockquote>
 <h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
-<p>The only line contains string <em>s</em> (1 ≤ |<em>s</em>| ≤ 3·105). The string <em>s</em> contains only digits from 0 to 9. </p>
+<p>The input consists of several test cases. For each case, the first line contains two integers, N (members to be tested) and M (relationships to be tested)(2 &lt;= N, M &lt;= 100). Then M lines follow, each contains a pair of (x, y) which means x is y’s master and y is x’s prentice. The input is terminated by N = 0.  TO MAKE IT SIMPLE, we give every one a number (0, 1, 2,…, N-1). We use their numbers instead of their names. </p>
 </blockquote>
 <h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
-<p>Print integer <em>a</em> — the number of substrings of the string <em>s</em> that are divisible by 4.</p>
+<p>For each test case, print in one line the judgement of the messy relationship.  If it is legal, output “YES”, otherwise “NO”. </p>
 </blockquote>
-<blockquote>
-<p>Note that the answer can be huge, so you should use 64-bit integer type to store it. In C++ you can use the long long integer type and in Java you can use long integer type.</p>
-</blockquote>
-<h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="input"><a href="#input" class="headerlink" title="input"></a>input</h4><blockquote>
-<p>124</p>
-</blockquote>
-<h4 id="output"><a href="#output" class="headerlink" title="output"></a>output</h4><blockquote>
-<p>4</p>
-</blockquote>
-<h4 id="input-1"><a href="#input-1" class="headerlink" title="input"></a>input</h4><blockquote>
-<p>04</p>
-</blockquote>
-<h4 id="output-1"><a href="#output-1" class="headerlink" title="output"></a>output</h4><blockquote>
-<p>3</p>
-</blockquote>
-<h4 id="input-2"><a href="#input-2" class="headerlink" title="input"></a>input</h4><blockquote>
-<p>5810438174</p>
-</blockquote>
-<h4 id="output-2"><a href="#output-2" class="headerlink" title="output"></a>output</h4><blockquote>
-<p>9</p>
-</blockquote>
-<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote>
-<p>给出一个字符串 ,问有多少个可以被4整除的子串 </p>
-</blockquote>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h3><p><strong>若一个整数的末尾两位数能被4整除，则这个数能被4整除。</strong></p>
-<p>（<strong>若一个整数的末尾三位数能被8整除，则这个数能被8整除。 </strong>）</p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; s)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>((s[i] - <span class="string">'0'</span>) % <span class="number">4</span> == <span class="number">0</span>)</span><br><span class="line">                ans ++;</span><br><span class="line">            <span class="keyword">if</span>((i != s.length() - <span class="number">1</span>) &amp;&amp; ((((s[i]- <span class="string">'0'</span>) * <span class="number">10</span>) + s[i + <span class="number">1</span>]) % <span class="number">4</span> == <span class="number">0</span>))</span><br><span class="line">                ans += i + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">3 2</span><br><span class="line">0 1</span><br><span class="line">1 2</span><br><span class="line">2 2</span><br><span class="line">0 1</span><br><span class="line">1 0</span><br><span class="line">0 0</span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">YES</span><br><span class="line">NO</span><br></pre></td></tr></table></figure>
+<h3 id="Code-DFS"><a href="#Code-DFS" class="headerlink" title="Code(DFS)"></a>Code(DFS)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> vis[<span class="number">105</span>];</span><br><span class="line"><span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; ans;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v[<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    vis[x] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v[x].size(); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>( vis[ v[x][i] ] == <span class="number">1</span> )<span class="comment">///递归时搜到自己</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span>( vis[ v[x][i] ] == <span class="number">0</span> &amp;&amp; !dfs(v[x][i]) )</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    vis[x] = <span class="number">-1</span>;</span><br><span class="line"><span class="comment">//    ans.push(x);</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &amp;&amp; (n || m))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="number">1</span>;</span><br><span class="line">        <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));<span class="comment">///多组输入要加上</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            v[i].clear();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> a, b;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">            v[a].push_back(b);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)<span class="comment">///不相连的多个图</span></span><br><span class="line">            <span class="keyword">if</span>(vis[i] == <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(!dfs(i))</span><br><span class="line">                &#123;</span><br><span class="line">                    flag = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//        while(ans.size())</span></span><br><span class="line"><span class="comment">//        &#123;</span></span><br><span class="line"><span class="comment">//            printf("%d%c", ans.top(), ans.size() == 1 ? '\n' : ' ');</span></span><br><span class="line"><span class="comment">//            ans.pop();</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        <span class="keyword">if</span>(flag)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Code-BFS"><a href="#Code-BFS" class="headerlink" title="Code(BFS)"></a>Code(BFS)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> in[<span class="number">105</span>];</span><br><span class="line"><span class="comment">//vector&lt;int&gt; ans;</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v[<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">bfs</span><span class="params">(<span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(q.size())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> tem = q.front();</span><br><span class="line"><span class="comment">//        ans.push_back(tem);</span></span><br><span class="line">        sum++;</span><br><span class="line">        q.pop();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; v[tem].size(); ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            in[ v[tem][i] ]--;</span><br><span class="line">            <span class="keyword">if</span>(!in[ v[tem][i] ])</span><br><span class="line">                q.push(v[tem][i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum == n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &amp;&amp; (n || m))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">        <span class="built_in">memset</span>(in, <span class="number">0</span>, <span class="keyword">sizeof</span>(in));</span><br><span class="line"><span class="comment">//        ans.clear();</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            v[i].clear();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> a, b;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b;</span><br><span class="line">            v[a].push_back(b);</span><br><span class="line">            in[b]++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)<span class="comment">///0 ~ n - 1</span></span><br><span class="line">            <span class="keyword">if</span>(!in[i])</span><br><span class="line">                q.push(i);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ( bfs(q) ? <span class="string">"YES"</span> : <span class="string">"NO"</span> ) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -280,7 +251,15 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">拓扑排序（判环）</a>
         		</li>
       		
 		</ul>
@@ -336,7 +315,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/15/Codeforces-B-New-Skateboard/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/28/拓扑排序-HDU-3342/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -350,18 +329,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/23/HDU-1018/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          HDU 1018 Big Number
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/02/14/POJ-Fence-Repair/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">POJ Fence Repair</div>
+    <a href="/2019/02/27/拓扑排序-UVA-10305/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">拓扑排序 UVA 10305</div>
       <i class="icon-circle-right"></i>
     </a>
   
