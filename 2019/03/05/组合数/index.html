@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>归并排序图解版 | 市井烟火气</title>
+  <title>组合数 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="归并排序过程探索">
-<meta name="keywords" content="知识,归并排序">
+  <meta name="description" content="求解组合数 C（n，m） 暂时有三种方法： 1.存在数组里递归求解 2.较为生猛地求解（连乘连除） 3.改良版（乘一次除一次）">
+<meta name="keywords" content="知识,组合数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="归并排序图解版">
-<meta property="og:url" content="http://yoursite.com/2019/03/02/归并排序图解版/index.html">
+<meta property="og:title" content="组合数">
+<meta property="og:url" content="http://yoursite.com/2019/03/05/组合数/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="归并排序过程探索">
+<meta property="og:description" content="求解组合数 C（n，m） 暂时有三种方法： 1.存在数组里递归求解 2.较为生猛地求解（连乘连除） 3.改良版（乘一次除一次）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://i.loli.net/2019/03/02/5c7a63cb8f244.png">
-<meta property="og:updated_time" content="2019-03-02T11:11:44.397Z">
+<meta property="og:updated_time" content="2019-03-05T13:04:38.793Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="归并排序图解版">
-<meta name="twitter:description" content="归并排序过程探索">
-<meta name="twitter:image" content="https://i.loli.net/2019/03/02/5c7a63cb8f244.png">
+<meta name="twitter:title" content="组合数">
+<meta name="twitter:description" content="求解组合数 C（n，m） 暂时有三种方法： 1.存在数组里递归求解 2.较为生猛地求解（连乘连除） 3.改良版（乘一次除一次）">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -165,31 +163,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-归并排序图解版" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-组合数" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      归并排序图解版
+      组合数
     </h1>
   
 
         
-        <a href="/2019/03/02/归并排序图解版/" class="archive-article-date">
-  	<time datetime="2019-03-02T11:04:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-02</time>
+        <a href="/2019/03/05/组合数/" class="archive-article-date">
+  	<time datetime="2019-03-05T12:52:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="归并排序过程探索"><a href="#归并排序过程探索" class="headerlink" title="归并排序过程探索"></a>归并排序过程探索</h3><a id="more"></a>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1296550461&auto=1&height=66"></iframe>
+        <h3 id="求解组合数-C（n，m）"><a href="#求解组合数-C（n，m）" class="headerlink" title="求解组合数 C（n，m）"></a>求解组合数 C（n，m）</h3><blockquote>
+<p>暂时有三种方法：</p>
+<p>1.存在数组里递归求解</p>
+<p>2.较为生猛地求解（连乘连除）</p>
+<p>3.改良版（乘一次除一次）</p>
+</blockquote>
+<a id="more"></a>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1316351312&auto=1&height=66"></iframe>
 
-<p><img src="https://i.loli.net/2019/03/02/5c7a63cb8f244.png" alt="图片解析"></p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">100</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> fr[N];</span><br><span class="line"><span class="keyword">int</span> bk[N];</span><br><span class="line"></span><br><span class="line"><span class="comment">///合并两个排好序的序列</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">my_merge</span><span class="params">(<span class="keyword">int</span> * s, <span class="keyword">int</span> start, <span class="keyword">int</span> mid, <span class="keyword">int</span> over)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"合并开始"</span> &lt;&lt; <span class="string">'\n'</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">int</span> fr_len = mid - start + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> bk_len = over - mid;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"前部分长度 "</span> &lt;&lt; fr_len &lt;&lt; <span class="string">" 后部分长度 "</span> &lt;&lt; bk_len &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; fr_len; ++i)</span><br><span class="line">        fr[i] = s[start + i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bk_len; ++i)</span><br><span class="line">        bk[i] = s[mid + <span class="number">1</span> + i];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"前部分元素"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; fr_len; ++i)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; fr[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"后部分元素"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; bk_len; ++i)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; bk[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">///两个序列中的数相互比较，将较小的数先插入新的序列中</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, k = start;</span><br><span class="line">    <span class="keyword">while</span>(i &lt; fr_len &amp;&amp; j &lt; bk_len)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="string">' '</span> &lt;&lt; fr[i] &lt;&lt; <span class="string">' '</span> &lt;&lt; j &lt;&lt; <span class="string">' '</span> &lt;&lt; bk[j] &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        <span class="keyword">if</span>(fr[i] &lt; bk[j])</span><br><span class="line">            s[k++] = fr[i++];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            s[k++] = bk[j++];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">///剩余元素合并</span></span><br><span class="line">    <span class="keyword">while</span>(i &lt; fr_len)</span><br><span class="line">        s[k++] = fr[i++];</span><br><span class="line">    <span class="keyword">while</span>(j &lt; bk_len)</span><br><span class="line">        s[k++] = bk[j++];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"此次排序结果 ： "</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> t = <span class="number">0</span>; t &lt; k; ++t)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s[t] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"本次合并结束"</span> &lt;&lt; <span class="string">'\n'</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> * s, <span class="keyword">int</span> start, <span class="keyword">int</span> over)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(start &lt; over)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (start + over) / <span class="number">2</span>;</span><br><span class="line">        merge_sort(s, start, mid);</span><br><span class="line">        merge_sort(s, mid + <span class="number">1</span>, over);</span><br><span class="line">        my_merge(s, start, mid, over);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> s[] = &#123;<span class="number">9</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="keyword">sizeof</span>(s) / <span class="keyword">sizeof</span>(<span class="keyword">int</span>);</span><br><span class="line">    <span class="keyword">int</span> ans[len];</span><br><span class="line">    merge_sort(s, <span class="number">0</span>, len - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; ++i)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s[i] &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Code-存于数组"><a href="#Code-存于数组" class="headerlink" title="Code(存于数组)"></a>Code(存于数组)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> c[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">combine_init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="keyword">sizeof</span>(c));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i&lt;= <span class="number">105</span>; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        c[i][<span class="number">0</span>] = c[i][i] = <span class="number">1</span>;</span><br><span class="line">        c[i][<span class="number">1</span>] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; ++j)</span><br><span class="line">            <span class="keyword">if</span>(c[i][j] == <span class="number">0</span>)</span><br><span class="line">                c[i][j] = (c[i - <span class="number">1</span>][j] + c[i - <span class="number">1</span>][j - <span class="number">1</span>]);<span class="comment">/// % mod</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Code（连乘连除）"><a href="#Code（连乘连除）" class="headerlink" title="Code（连乘连除）"></a>Code（连乘连除）</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">violent_combine</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n,<span class="keyword">long</span> <span class="keyword">long</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(m &lt; n - m)</span><br><span class="line">        m = n - m;<span class="comment">///取个较大值</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i = m + <span class="number">1</span>; i &lt;= n; ++i)<span class="comment">/// fac(n) / fac(m)</span></span><br><span class="line">        ans *= i;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">1</span>; i &lt;= n - m; ++i)<span class="comment">/// fac(n - m)</span></span><br><span class="line">        ans /= i;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Code-乘除共进"><a href="#Code-乘除共进" class="headerlink" title="Code(乘除共进)"></a>Code(乘除共进)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">combine</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b &gt; a - b)</span><br><span class="line">        b = a - b;<span class="comment">///取个较小值</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= b; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        ans *= (a + <span class="number">1</span> - i);<span class="comment">/// fac(a) / fac(a - b)</span></span><br><span class="line">        ans /= i;          <span class="comment">/// fac(b)</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -238,7 +243,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">归并排序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">组合数</a>
         		</li>
       		
 		</ul>
@@ -294,7 +299,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/02/归并排序图解版/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/05/组合数/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -308,18 +313,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/02/归并排序-解-POJ-2299-Quick-Sort/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          归并排序 解 POJ 2299 Quick-Sort
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/02/归并排序/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">归并排序</div>
+    <a href="/2019/03/05/SDNUOJ-1089-拓扑排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SDNUOJ 1089 拓扑排序</div>
       <i class="icon-circle-right"></i>
     </a>
   
