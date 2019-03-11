@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>SDNUOJ 1169火星人 | 市井烟火气</title>
+  <title>异或寻异 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description 人类终于登上了火星的土地并且见到了神秘的火星人。人类和火星人都无法理解对方的语言，但是我们的科学家发明了一种用数字交流的方法。这种交流方法是这样的，首先，火星人把一个非常大的数字告诉人类科学家，科学家破解这个数字的含义后，再把一个很小的数字加到这个大数上面，把结果告诉火星人，作为人类的回答。">
-<meta name="keywords" content="题解,next_permutation,prev_permutation">
+  <meta name="description" content="关于异或 a为任意数字： 0 ^ a = a a ^ a = 0">
+<meta name="keywords" content="知识,异或">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SDNUOJ 1169火星人">
-<meta property="og:url" content="http://yoursite.com/2019/02/26/SDNUOJ-1169火星人/index.html">
+<meta property="og:title" content="异或寻异">
+<meta property="og:url" content="http://yoursite.com/2019/03/11/异或寻异/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="Description 人类终于登上了火星的土地并且见到了神秘的火星人。人类和火星人都无法理解对方的语言，但是我们的科学家发明了一种用数字交流的方法。这种交流方法是这样的，首先，火星人把一个非常大的数字告诉人类科学家，科学家破解这个数字的含义后，再把一个很小的数字加到这个大数上面，把结果告诉火星人，作为人类的回答。">
+<meta property="og:description" content="关于异或 a为任意数字： 0 ^ a = a a ^ a = 0">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-26T13:08:34.270Z">
+<meta property="og:updated_time" content="2019-03-11T12:18:04.722Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SDNUOJ 1169火星人">
-<meta name="twitter:description" content="Description 人类终于登上了火星的土地并且见到了神秘的火星人。人类和火星人都无法理解对方的语言，但是我们的科学家发明了一种用数字交流的方法。这种交流方法是这样的，首先，火星人把一个非常大的数字告诉人类科学家，科学家破解这个数字的含义后，再把一个很小的数字加到这个大数上面，把结果告诉火星人，作为人类的回答。">
+<meta name="twitter:title" content="异或寻异">
+<meta name="twitter:description" content="关于异或 a为任意数字： 0 ^ a = a a ^ a = 0">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -163,54 +163,89 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-SDNUOJ-1169火星人" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-异或寻异" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      SDNUOJ 1169火星人
+      异或寻异
     </h1>
   
 
         
-        <a href="/2019/02/26/SDNUOJ-1169火星人/" class="archive-article-date">
-  	<time datetime="2019-02-26T13:00:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
+        <a href="/2019/03/11/异或寻异/" class="archive-article-date">
+  	<time datetime="2019-03-11T07:50:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>人类终于登上了火星的土地并且见到了神秘的火星人。人类和火星人都无法理解对方的语言，但是我们的科学家发明了一种用数字交流的方法。这种交流方法是这样的，首先，火星人把一个非常大的数字告诉人类科学家，科学家破解这个数字的含义后，再把一个很小的数字加到这个大数上面，把结果告诉火星人，作为人类的回答。</p>
+        <h3 id="关于异或"><a href="#关于异或" class="headerlink" title="关于异或"></a>关于异或</h3><blockquote>
+<p>a为任意数字：</p>
+<p>0 ^ a = a</p>
+<p>a ^ a = 0</p>
 </blockquote>
 <a id="more"></a>
-<p><strong>题目链接</strong> <a href="http://www.acmicpc.sdnu.edu.cn/problem/show/1169" target="_blank" rel="noopener">http://www.acmicpc.sdnu.edu.cn/problem/show/1169</a></p>
-<blockquote>
-<p>火星人用一种非常简单的方式来表示数字——掰手指。火星人只有一只手，但这只手上有成千上万的手指，这些手指排成一列，分别编号为1，2，3……。火星人的任意两根手指都能随意交换位置，他们就是通过这方法计数的。</p>
+<h3 id="给出n个数字，-有一个数字只出现奇数次，其余出现偶数次，找出这个数字"><a href="#给出n个数字，-有一个数字只出现奇数次，其余出现偶数次，找出这个数字" class="headerlink" title="给出n个数字， 有一个数字只出现奇数次，其余出现偶数次，找出这个数字"></a>给出n个数字， 有一个数字只出现奇数次，其余出现偶数次，找出这个数字</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">            ans ^= a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="给出n个数字，有两个数字只出现奇数次，其余出现偶数次，找出这两个数字"><a href="#给出n个数字，有两个数字只出现奇数次，其余出现偶数次，找出这两个数字" class="headerlink" title="给出n个数字，有两个数字只出现奇数次，其余出现偶数次，找出这两个数字"></a>给出n个数字，有两个数字只出现奇数次，其余出现偶数次，找出这两个数字</h3><p><strong>更多解析</strong> <a href="https://www.jianshu.com/p/cb400b455772" target="_blank" rel="noopener">https://www.jianshu.com/p/cb400b455772</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_pos</span><span class="params">(<span class="keyword">int</span> tem)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pos = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(!(tem &amp; <span class="number">1</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        tem &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        pos++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">            ans ^= a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> res = ans;</span><br><span class="line">        <span class="keyword">int</span> pos = find_pos(ans);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>((a[i] &gt;&gt; pos) &amp; <span class="number">1</span>)</span><br><span class="line">                ans ^= a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        res ^= ans;<span class="comment">///ÎÞÐòÊä³ö</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">' '</span> &lt;&lt; res &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="给出n个数字，有三个数字只出现一次，其余出现两次，找出这三个数字"><a href="#给出n个数字，有三个数字只出现一次，其余出现两次，找出这三个数字" class="headerlink" title="给出n个数字，有三个数字只出现一次，其余出现两次，找出这三个数字"></a>给出n个数字，有三个数字只出现一次，其余出现两次，找出这三个数字</h3><blockquote>
+<p>设f(n)为n最低位1所在位。</p>
+<p>全部异或一次，得 x = a ^ b ^ c.(倘若保证 x != 0问题就像上面一样简单了)</p>
+<p>x 不是 a、b、c 中的任一个</p>
+<p>（反证：假设x = a, 由 a = a ^ b ^ c 得 b ^ c = 0, 得 b = c, 与题目矛盾）</p>
+<p>所以 x ^ a, x ^ b, x ^ c 都不为0，所以f(x ^ a), f(x ^ b), f(x ^ c)都不为0，</p>
+<p>那么 y = f(x ^ a) ^ f(x ^ b) ^ f(x ^ c) 也不为0 </p>
+<p>所以 y 的二进制至少有一位是1，假设其最低位1在M位上</p>
+<table>
+<thead>
+<tr>
+<th>f(x ^ a)</th>
+<th>f(x ^ b)</th>
+<th>f(x ^ c)</th>
+<th>y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>有以下两种情况：</p>
+<p>1.<strong>f(x ^ a),f(x ^ b),f(x ^ c)三个式子中只有一个，其第M位是1</strong></p>
+<p>2.三个式子第M位皆为1（倘若仅两个式子第M位为1，y的第M位是0）</p>
+<p>第二种情况是错误的，反驳如下：</p>
+<p>假设2成立，那么 (x ^ a) ^ (x ^ b) ^ (x ^ c) 其第M位 = 1^1^1 = 1,然而</p>
+<p>(x ^ a) ^ (x ^ b) ^ (x ^ c) = x ^ x ^ x ^ (a ^ b ^ c) = x ^ x ^ x ^ x第M位为0</p>
 </blockquote>
-<blockquote>
-<p>一个火星人用一个人类的手演示了如何用手指计数。如果把五根手指——拇指、食指、中指、无名指和小指分别编号为1，2，3，4和5，当它们按正常顺序排列时，形成了5位数12345，当你交换无名指和小指的位置时，会形成5位数12354，当你把五个手指的顺序完全颠倒时，会形成54321，在所有能够形成的120个5位数中，12345最小，它表示1；12354第二小，它表示2；54321最大，它表示120。下表展示了只有3根手指时能够形成的6个3位数和它们代表的数字：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">三进制数</span><br><span class="line"></span><br><span class="line"> 123</span><br><span class="line"> 132</span><br><span class="line"> 213</span><br><span class="line"> 231</span><br><span class="line"> 312</span><br><span class="line"> 321</span><br><span class="line">代表的数字</span><br><span class="line"></span><br><span class="line"> 1</span><br><span class="line"> 2</span><br><span class="line"> 3</span><br><span class="line"> 4</span><br><span class="line"> 5</span><br><span class="line"> 6</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>现在你有幸成为了第一个和火星人交流的地球人。一个火星人会让你看他的手指，科学家会告诉你要加上去的很小的数。你的任务是，把火星人用手指表示的数与科学家告诉你的数相加，并根据相加的结果改变火星人手指的排列顺序。输入数据保证这个结果不会超出火星人手指能表示的范围。</p>
-</blockquote>
-<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
-<p>输入包括三行，第一行有一个正整数N，表示火星人手指的数目（1 &lt;= N &lt;= 10000）。第二行是一个正整数M，表示要加上去的小整数（1 &lt;= M &lt;= 100）。下一行是1到N这N个整数的一个排列，用空格隔开，表示火星人手指的排列顺序 </p>
-</blockquote>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
-<p>输出只有一行，这一行含有N个整数，表示改变后的火星人手指的排列顺序。每两个相邻的数中间用一个空格分开，不能有多余的空格。 </p>
-</blockquote>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">3</span><br><span class="line">1 2 3 4 5</span><br></pre></td></tr></table></figure>
-<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1 2 3 4 5</span><br></pre></td></tr></table></figure>
-<h3 id="关于next-permutation与prev-permutation"><a href="#关于next-permutation与prev-permutation" class="headerlink" title="关于next_permutation与prev_permutation"></a>关于next_permutation与prev_permutation</h3><blockquote>
-<p>next_permutation(start,end)//当前排列的下一个排列 </p>
-<p>prev_permutation(start,end)//当前排列的上一个排列 </p>
-</blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">    <span class="keyword">int</span> tem;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; tem;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10005</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">while</span>(next_permutation(a, a + N))</span><br><span class="line">    &#123;</span><br><span class="line">        tem--;</span><br><span class="line">        <span class="keyword">if</span>(!tem)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d%c"</span>, a[i], i == N - <span class="number">1</span> ? <span class="string">'\n'</span>: <span class="string">' '</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>根据结论 <em>x ^ a, x ^ b, x ^ c三个式子只有一个，其第M位为0</em> 找到一个数字，再按前面的方法找另两个</strong></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">///a为任意数字:</span></span><br><span class="line"><span class="comment">/// 0 ^ a = a</span></span><br><span class="line"><span class="comment">/// a ^ a = 0</span></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_pos</span><span class="params">(<span class="keyword">int</span> tem)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(tem == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> pos = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(!(tem &amp; <span class="number">1</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        tem &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        pos++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> pos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line"><span class="comment">//    freopen("00in.txt", "r", stdin);</span></span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> first = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> second, third;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">            x ^= a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">///找 f(x ^ a) ^ f(x ^ b) ^ f(x ^ c)</span></span><br><span class="line">        <span class="keyword">int</span> y = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> t = x ^ a[i];</span><br><span class="line">            <span class="keyword">int</span> tem = find_pos(x ^ a[i]);</span><br><span class="line">            y ^= tem;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> M = find_pos(y);</span><br><span class="line">        <span class="comment">///利用结论找到第一个特别的数字</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>((   find_pos(x ^ a[i])&gt;&gt;(M - <span class="number">1</span>)   )  &amp;  <span class="number">1</span>)</span><br><span class="line">                first ^= a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">///问题简化</span></span><br><span class="line">        <span class="keyword">int</span> ans = x ^ first;</span><br><span class="line">        <span class="keyword">int</span> t = ans;</span><br><span class="line">        <span class="comment">///first丢到后面去</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(a[i] == first)</span><br><span class="line">            &#123;</span><br><span class="line">                swap(a[i], a[n - <span class="number">1</span>]);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">///找剩余两个数字</span></span><br><span class="line">        <span class="keyword">int</span> pos = find_pos(ans);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>((a[i] &gt;&gt; (pos - <span class="number">1</span>)) &amp; <span class="number">1</span>)</span><br><span class="line">                ans ^= a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        second = ans;</span><br><span class="line">        third = t ^ ans;<span class="comment">///此输出无序</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; first &lt;&lt; <span class="string">' '</span> &lt;&lt; second &lt;&lt; <span class="string">' '</span> &lt;&lt; third &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写第三个的时候，真的是，差点就要放弃了，投入了挺多时间，发现有个地方绕进去了，然后各种改，一点一点输出中间值，那种看不到希望的感觉…可怕…好在又找到一篇新的博客（就是上面推荐的那篇），找到漏洞，改过来才好了……</p>
 
       
 
@@ -255,15 +290,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">知识</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">next_permutation</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">prev_permutation</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">异或</a>
         		</li>
       		
 		</ul>
@@ -319,7 +350,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/26/SDNUOJ-1169火星人/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/11/异或寻异/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -333,18 +364,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/27/拓扑排序-UVA-10305/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          拓扑排序 UVA 10305
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/02/26/HDU-1716排列2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HDU 1716排列2</div>
+    <a href="/2019/03/09/SDUT-Balloons/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SDUT Balloons</div>
       <i class="icon-circle-right"></i>
     </a>
   
