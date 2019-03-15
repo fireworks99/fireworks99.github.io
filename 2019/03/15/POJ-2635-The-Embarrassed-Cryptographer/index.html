@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | 市井烟火气</title>
+  <title>POJ 2635 The Embarrassed Cryptographer | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="清纯，而又略带些烟火气">
-<meta property="og:type" content="website">
-<meta property="og:title" content="市井烟火气">
-<meta property="og:url" content="http://yoursite.com/archives/2019/page/4/index.html">
+  <meta name="description" content="Description The young and very promising cryptographer Odd Even has implemented the security module of a large system with thousands of users, which is now in use in his company. The cryptographic key">
+<meta name="keywords" content="题解,同余定理,大数求余">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POJ 2635 The Embarrassed Cryptographer">
+<meta property="og:url" content="http://yoursite.com/2019/03/15/POJ-2635-The-Embarrassed-Cryptographer/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="清纯，而又略带些烟火气">
+<meta property="og:description" content="Description The young and very promising cryptographer Odd Even has implemented the security module of a large system with thousands of users, which is now in use in his company. The cryptographic key">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-15T11:02:26.652Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="市井烟火气">
-<meta name="twitter:description" content="清纯，而又略带些烟火气">
+<meta name="twitter:title" content="POJ 2635 The Embarrassed Cryptographer">
+<meta name="twitter:description" content="Description The young and very promising cryptographer Odd Even has implemented the security module of a large system with thousands of users, which is now in use in his company. The cryptographic key">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -161,36 +163,82 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-POJ-2635-The-Embarrassed-Cryptographer" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      POJ 2635 The Embarrassed Cryptographer
+    </h1>
+  
+
+        
+        <a href="/2019/03/15/POJ-2635-The-Embarrassed-Cryptographer/" class="archive-article-date">
+  	<time datetime="2019-03-15T10:47:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-15</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>The young and very promising cryptographer Odd Even has implemented the security module of a large system with thousands of users, which is now in use in his company. The cryptographic keys are created from the product of two primes, and are believed to be secure because there is no known method for factoring such a product effectively.  </p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>What Odd Even did not think of, was that both factors in a key should be large, not just their product. It is now possible that some of the users of the system have weak keys. In a desperate attempt not to be fired, Odd Even secretly goes through all the users keys, to check if they are strong enough. He uses his very poweful Atari, and is especially careful when checking his boss’ key. </p>
+</blockquote>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
+<p>The input consists of no more than 20 test cases. Each test case is a line with the integers 4 &lt;= K &lt;= 10100 and 2 &lt;= L &lt;= 106. K is the key itself, a product of two primes. L is the wanted minimum size of the factors in the key. The input set is terminated by a case where K = 0 and L = 0. </p>
+</blockquote>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
+<p>For each number K, if one of its factors are strictly less than the required L, your program should output “BAD p”, where p is the smallest factor in K. Otherwise, it should output “GOOD”. Cases should be separated by a line-break </p>
+</blockquote>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">143</span> <span class="number">10</span></span><br><span class="line"><span class="number">143</span> <span class="number">20</span></span><br><span class="line"><span class="number">667</span> <span class="number">20</span></span><br><span class="line"><span class="number">667</span> <span class="number">30</span></span><br><span class="line"><span class="number">2573</span> <span class="number">30</span></span><br><span class="line"><span class="number">2573</span> <span class="number">40</span></span><br><span class="line"><span class="number">4</span> <span class="number">2</span></span><br><span class="line"><span class="number">6</span> <span class="number">3</span></span><br><span class="line"><span class="number">6</span> <span class="number">3</span></span><br><span class="line"><span class="number">15</span> <span class="number">3</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999536689</span> 	<span class="number">2</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999536689</span> 	<span class="number">3</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999536689</span> 	<span class="number">999981</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999536689</span> 	<span class="number">999982</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999536689</span> 	<span class="number">999983</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999536689</span> 	<span class="number">999984</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999536689</span> 	<span class="number">999985</span></span><br><span class="line"><span class="number">9936798836621706335903766366605021199756127575438907144689843371764114998372849970522970722679648297</span> 	<span class="number">1000000</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999924165887</span> 	<span class="number">1000000</span></span><br><span class="line"><span class="number">9999999999999999997709341477512928270733515750111494296807693217401592660013176273247584305454312971</span> 	<span class="number">1000000</span></span><br><span class="line"><span class="number">9999999999988881245087379264540384030358544520360773252628174690915590034078934845096473005364364269</span> 	<span class="number">1000000</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999997947710886296926452585995644787</span> 	<span class="number">1000000</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999998743929569</span> 	<span class="number">1000000</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999999996406876316697599258447653751</span> 	<span class="number">1000000</span></span><br><span class="line"><span class="number">9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999995271511</span> 	<span class="number">1000000</span></span><br><span class="line"><span class="number">9999664515006205757944572422495695942633452678405393581216966782816097132509526872495414067984894021</span> 	<span class="number">1000000</span></span><br><span class="line"><span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">GOOD</span><br><span class="line">BAD <span class="number">11</span></span><br><span class="line">GOOD</span><br><span class="line">BAD <span class="number">23</span></span><br><span class="line">GOOD</span><br><span class="line">BAD <span class="number">31</span></span><br><span class="line">GOOD</span><br><span class="line">BAD <span class="number">2</span></span><br><span class="line">BAD <span class="number">2</span></span><br><span class="line">GOOD</span><br><span class="line">GOOD</span><br><span class="line">GOOD</span><br><span class="line">GOOD</span><br><span class="line">GOOD</span><br><span class="line">GOOD</span><br><span class="line">BAD <span class="number">999983</span></span><br><span class="line">BAD <span class="number">999983</span></span><br><span class="line">BAD <span class="number">587</span></span><br><span class="line">BAD <span class="number">100043</span></span><br><span class="line">GOOD</span><br><span class="line">GOOD</span><br><span class="line">GOOD</span><br><span class="line">GOOD</span><br><span class="line">GOOD</span><br><span class="line">BAD <span class="number">16603</span></span><br><span class="line">BAD <span class="number">9103</span></span><br></pre></td></tr></table></figure>
+<p><strong>题解</strong> <a href="https://blog.csdn.net/lyy289065406/article/details/6648530" target="_blank" rel="noopener">https://blog.csdn.net/lyy289065406/article/details/6648530</a></p>
+<h3 id="My-Code"><a href="#My-Code" class="headerlink" title="My Code"></a>My Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1000005</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> vis[N + <span class="number">5</span>];</span><br><span class="line"><span class="comment">///我RE了一下午四处改动，最后竟是因为vis[N]这里小了！！！</span></span><br><span class="line"><span class="comment">///因为会访问vis[N],数组开到N，自然最后到 N - 1</span></span><br><span class="line"><span class="keyword">int</span> p[N + <span class="number">5</span>];</span><br><span class="line"><span class="keyword">int</span> tot;</span><br><span class="line"><span class="keyword">int</span> k[<span class="number">105</span>];<span class="comment">///千进制下的K</span></span><br><span class="line"><span class="keyword">int</span> L;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_prime</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//    clock_t start, over;</span></span><br><span class="line"><span class="comment">//    start = clock();</span></span><br><span class="line">    tot = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">1</span>, <span class="keyword">sizeof</span>(vis));<span class="comment">///初始化全为素数</span></span><br><span class="line">    vis[<span class="number">0</span>] = vis[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= N; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(vis[i])</span><br><span class="line">            p[++tot] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= tot &amp;&amp; p[j] * i &lt;= N; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            vis[ p[j] * i ] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(i % p[j] == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//    over = clock();</span></span><br><span class="line"><span class="comment">//    cout &lt;&lt; (double)(over - start) / CLOCKS_PER_SEC &lt;&lt; "(s)" &lt;&lt; '\n';</span></span><br><span class="line"><span class="comment">//    cout &lt;&lt; "tot : " &lt;&lt; tot &lt;&lt; '\n';</span></span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">///大数（高精度）取模</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">mod</span><span class="params">(<span class="keyword">int</span> * k, <span class="keyword">int</span> len, <span class="keyword">int</span> p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i)<span class="comment">///逆序存放的</span></span><br><span class="line">        ans = (ans * <span class="number">1000</span> + k[i]) % p;<span class="comment">///同余模定理</span></span><br><span class="line">    <span class="keyword">if</span>(!ans)<span class="comment">///被整除</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    get_prime();</span><br><span class="line">    <span class="keyword">char</span> sk[<span class="number">105</span>];</span><br><span class="line"><span class="comment">//    freopen("00in.txt", "r", stdin);</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; sk &gt;&gt; L &amp;&amp; L)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(k, <span class="number">0</span>, <span class="keyword">sizeof</span>(k));</span><br><span class="line">        <span class="keyword">int</span> sklen = <span class="built_in">strlen</span>(sk);</span><br><span class="line">        <span class="comment">///十进制转千进制（局部“顺序”， 全局“逆序”）</span></span><br><span class="line">        <span class="comment">///如K=1234567=[  1][234][567] ，则Kt=[567][234][1  ]</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sklen; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> num = (sklen + <span class="number">2</span> - i) / <span class="number">3</span> - <span class="number">1</span>;</span><br><span class="line">            k[num] = k[num] * <span class="number">10</span> + (sk[i] - <span class="string">'0'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> klen = (sklen + <span class="number">2</span>) / <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> idx = <span class="number">1</span>;<span class="comment">///从第1个素数开始找</span></span><br><span class="line">        <span class="keyword">while</span>(p[idx] &lt; L)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(mod(k, klen, p[idx]))</span><br><span class="line">            &#123;</span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">"BAD "</span> &lt;&lt; p[idx] &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            idx++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"GOOD"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://i.postimg.cc/L640yQ3C/IMG-20190122-131012.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://i.postimg.cc/B6wmL4Rd/IMG-20190122-130126.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/25/HDU-1263-水果/" class="archive-article-date">
-  	<time datetime="2019-02-25T12:20:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/25/HDU-1263-水果/">HDU 1263 水果</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,426 +248,115 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">map嵌套</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">同余定理</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">大数求余</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/15/POJ-2635-The-Embarrassed-Cryptographer/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/25/HDU-1075-What-are-you-Talking-About/" class="archive-article-date">
-  	<time datetime="2019-02-25T11:21:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/14/同余（模）定理/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">同余（模）定理</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/25/HDU-1075-What-are-you-Talking-About/">HDU 1075 What are you Talking About</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">map</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">string</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/25/超链接测试/" class="archive-article-date">
-  	<time datetime="2019-02-25T08:56:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/25/超链接测试/">超链接测试</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/25/HDU-1969-Pie/" class="archive-article-date">
-  	<time datetime="2019-02-25T08:39:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/25/HDU-1969-Pie/">HDU 1969 Pie</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">二分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/25/HDU-1010-Tempter-of-the-Bone/" class="archive-article-date">
-  	<time datetime="2019-02-25T01:30:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/25/HDU-1010-Tempter-of-the-Bone/">HDU 1010 Tempter of the Bone</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剪枝</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/24/乘法逆元/" class="archive-article-date">
-  	<time datetime="2019-02-24T07:47:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/24/乘法逆元/">乘法逆元</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">知识</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">费马小定理</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">扩展欧几里得</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/24/HDU-1559/" class="archive-article-date">
-  	<time datetime="2019-02-24T02:15:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/24/HDU-1559/">HDU 1559 最大子矩阵</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前缀和</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/24/HDU-1556/" class="archive-article-date">
-  	<time datetime="2019-02-24T01:24:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/24/HDU-1556/">HDU 1556 Color the ball（差分）</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前缀和</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">差分</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/24/吉姆拉尔森计算公式/" class="archive-article-date">
-  	<time datetime="2019-02-24T00:38:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/24/吉姆拉尔森计算公式/">吉姆拉尔森计算公式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/23/HDU-1495-非常可乐/" class="archive-article-date">
-  	<time datetime="2019-02-23T13:01:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/23/HDU-1495-非常可乐/">HDU 1495 非常可乐</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2019/page/5/">5</a><a class="page-number" href="/archives/2019/page/6/">6</a><a class="extend next" rel="next" href="/archives/2019/page/5/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -645,8 +382,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
