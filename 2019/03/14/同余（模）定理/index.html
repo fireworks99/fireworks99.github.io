@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>HDU 1559 最大子矩阵 | 市井烟火气</title>
+  <title>同余（模）定理 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description 给你一个m×n的整数矩阵，在上面找一个x×y的子矩阵，使子矩阵中所有元素的和最大。">
-<meta name="keywords" content="题解,动态规划,前缀和">
+  <meta name="description" content="同余定义（德国/高斯）： 两个整数 a、b，如果他们同时除以一个自然数p，所得的余数相同，则称a,b对于模p同余，记作a≡b（mod p）。读作：a同余于b模m。">
+<meta name="keywords" content="知识,同余定理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU 1559 最大子矩阵">
-<meta property="og:url" content="http://yoursite.com/2019/02/24/HDU-1559/index.html">
+<meta property="og:title" content="同余（模）定理">
+<meta property="og:url" content="http://yoursite.com/2019/03/14/同余（模）定理/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="Description 给你一个m×n的整数矩阵，在上面找一个x×y的子矩阵，使子矩阵中所有元素的和最大。">
+<meta property="og:description" content="同余定义（德国/高斯）： 两个整数 a、b，如果他们同时除以一个自然数p，所得的余数相同，则称a,b对于模p同余，记作a≡b（mod p）。读作：a同余于b模m。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-24T02:25:31.157Z">
+<meta property="og:updated_time" content="2019-03-15T01:28:13.334Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU 1559 最大子矩阵">
-<meta name="twitter:description" content="Description 给你一个m×n的整数矩阵，在上面找一个x×y的子矩阵，使子矩阵中所有元素的和最大。">
+<meta name="twitter:title" content="同余（模）定理">
+<meta name="twitter:description" content="同余定义（德国/高斯）： 两个整数 a、b，如果他们同时除以一个自然数p，所得的余数相同，则称a,b对于模p同余，记作a≡b（mod p）。读作：a同余于b模m。">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -163,51 +163,57 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-HDU-1559" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-同余（模）定理" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      HDU 1559 最大子矩阵
+      同余（模）定理
     </h1>
   
 
         
-        <a href="/2019/02/24/HDU-1559/" class="archive-article-date">
-  	<time datetime="2019-02-24T02:15:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-24</time>
+        <a href="/2019/03/14/同余（模）定理/" class="archive-article-date">
+  	<time datetime="2019-03-14T12:53:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给你一个m×n的整数矩阵，在上面找一个x×y的子矩阵，使子矩阵中所有元素的和最大。 </p>
+        <h2 id="同余定义（德国-高斯）："><a href="#同余定义（德国-高斯）：" class="headerlink" title="同余定义（德国/高斯）："></a>同余定义（德国/高斯）：</h2><blockquote>
+<p>两个整数 a、b，如果他们同时除以一个自然数p，所得的余数相同，则称a,b对于模p同余，记作a≡b（mod p）。读作：a同余于b模m。 </p>
 </blockquote>
 <a id="more"></a>
-<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
-<p>输入数据的第一行为一个正整数T，表示有T组测试数据。每一组测试数据的第一行为四个正整数m,n,x,y（0&lt;m,n&lt;1000 AND 0&lt;x&lt;=m AND 0&lt;y&lt;=n），表示给定的矩形有m行n列。接下来这个矩阵，有m行，每行有n个不大于1000的正整数。 </p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><blockquote>
+<ol>
+<li>(a + b) % p = (a % p + b % p) % p</li>
+<li>(a - b) % p =  ( (a % p - b % p) + p ) % p</li>
+<li>(a * b) % p = (a % p) * (b % p) % p</li>
+<li>若 a ≡ b(mod p)，则 (a - b) mod p ≡ 0</li>
+<li>若 a ≡ b(mod p)，则 (a ^ n) mod p ≡  (b ^ n) mod p</li>
+</ol>
 </blockquote>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
-<p>对于每组数据，输出一个整数，表示子矩阵的最大和。 </p>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><blockquote>
+<p>求 2001 ^ 2003 % 13</p>
 </blockquote>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><blockquote>
-<p>1</p>
-<p>4 5 2 2</p>
-<p>3 361 649 676 588</p>
-<p>992 762 156 993 169</p>
-<p>662 34 638 89 543</p>
-<p>525 165 254 809 280</p>
+<h3 id="解"><a href="#解" class="headerlink" title="解"></a>解</h3><blockquote>
+<p>2001 % 13 = 12，即2001 同余于 12 （模13）</p>
+<p>根据性质5，原问题等于求 12 ^ 2003 % 13</p>
+<p>找出 12 的几次幂 同余于 1 （模13），发现 12 ^ 2 ≡ 1 (mod 13)</p>
+<p>(12 ^ 2003) % 13 = [ (12 ^ 2) ^ 1001   *   (12 ^ 1)] % 13 </p>
+<p>根据性质5， 上式 = [ (1 ^ 1001)  *  (12 ^ 1) ] % 13 = 12 </p>
 </blockquote>
-<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><blockquote>
-<p>2474</p>
+<p><strong>也就口算笔算可以，用程序写出来实用性弱，远不如快速幂万能（在适合的情况下比快速幂快）</strong></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">same_remainer</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    a = a % c;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; <span class="built_in">sqrt</span>(b); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">int</span>(<span class="built_in">pow</span>(a, i)) % c == <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            t = i;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; t != <span class="number">0</span>; ++i)</span><br><span class="line">        <span class="keyword">if</span>((b - i) % t == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            b = i;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>)<span class="built_in">pow</span>(a, b) % c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="大数求余"><a href="#大数求余" class="headerlink" title="大数求余"></a>大数求余</h3><blockquote>
+<p>1234 = ( (1 * 10 + 2) * 10 + 3 )  * 10 + 4</p>
+<p>利用性质1、3可解</p>
+<p>1234 % n = ((((1 * 10 ) % n + 2 % n) % n * 10 % n + 3 % n) % n * 10 % n + 4 % n)  % n</p>
 </blockquote>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
-<p>int a[i][j]存读入的数值，int sum[i][j]计算二维前缀和（从左上角顶点到点（i, j）所形成矩阵的和)，动态规划求最值。</p>
-</blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1005</span>][<span class="number">1005</span>];</span><br><span class="line"><span class="keyword">int</span> sum[<span class="number">1005</span>][<span class="number">1005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> m, n, x, y;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n &gt;&gt; x &gt;&gt; y;</span><br><span class="line"></span><br><span class="line">        <span class="comment">///数据存储</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a[i][j];</span><br><span class="line"></span><br><span class="line">        <span class="comment">///二维前缀和计算</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j)</span><br><span class="line">            sum[i][j] = a[i][j] + sum[i - <span class="number">1</span>][j] + sum[i][j - <span class="number">1</span>] - sum[i - <span class="number">1</span>][j - <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">        <span class="comment">///动态规划</span></span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;<span class="comment">/// 初始化为 &lt;= 0的任何数都行</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = x; i &lt;= m; ++i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = y; j &lt;= n; ++j)</span><br><span class="line">            ans = max(ans, sum[i][j] - sum[i - x][j] - sum[i][j - y] + sum[i - x][j - y]);</span><br><span class="line"></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        <span class="built_in">memset</span>(a, <span class="number">0</span>, <span class="keyword">sizeof</span>(a));</span><br><span class="line">        <span class="built_in">memset</span>(sum, <span class="number">0</span>, <span class="keyword">sizeof</span>(sum));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Code-大数求余"><a href="#Code-大数求余" class="headerlink" title="Code(大数求余)"></a>Code(大数求余)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">string</span> a;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sz = a.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; sz; ++i)</span><br><span class="line">            ans = ((ans * <span class="number">10</span>) % n + (a[i] - <span class="string">'0'</span>) % n) % n;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -252,15 +258,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">知识</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">前缀和</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">同余定理</a>
         		</li>
       		
 		</ul>
@@ -316,7 +318,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/24/HDU-1559/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/14/同余（模）定理/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -330,18 +332,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/02/24/乘法逆元/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          乘法逆元
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/02/24/HDU-1556/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HDU 1556 Color the ball（差分）</div>
+    <a href="/2019/03/14/翻转问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">翻转问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
