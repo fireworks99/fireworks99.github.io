@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JAVA 大数 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="HDU 1002(大数相加)http://acm.hdu.edu.cn/showproblem.php?pid=1002 条件判断： JAVA中while(n-- &amp;gt; 0)异于c++的while(n--) Prepare to Input 123Scanner in = new Scanner(System.in);//in可换为cin或scan//......in.close();//in">
+  <meta name="description" content="条件判断： JAVA中while(n-- &amp;gt; 0)异于c++的while(n--) Prepare to Input 123Scanner in = new Scanner(System.in);//in可换为cin或scan//......in.close();//in可换cin或scan">
 <meta name="keywords" content="题解,JAVA大数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JAVA 大数">
 <meta property="og:url" content="http://yoursite.com/2019/03/15/JAVA-大数/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="HDU 1002(大数相加)http://acm.hdu.edu.cn/showproblem.php?pid=1002 条件判断： JAVA中while(n-- &amp;gt; 0)异于c++的while(n--) Prepare to Input 123Scanner in = new Scanner(System.in);//in可换为cin或scan//......in.close();//in">
+<meta property="og:description" content="条件判断： JAVA中while(n-- &amp;gt; 0)异于c++的while(n--) Prepare to Input 123Scanner in = new Scanner(System.in);//in可换为cin或scan//......in.close();//in可换cin或scan">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-16T13:40:53.476Z">
+<meta property="og:updated_time" content="2019-03-17T10:20:35.164Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA 大数">
-<meta name="twitter:description" content="HDU 1002(大数相加)http://acm.hdu.edu.cn/showproblem.php?pid=1002 条件判断： JAVA中while(n-- &amp;gt; 0)异于c++的while(n--) Prepare to Input 123Scanner in = new Scanner(System.in);//in可换为cin或scan//......in.close();//in">
+<meta name="twitter:description" content="条件判断： JAVA中while(n-- &amp;gt; 0)异于c++的while(n--) Prepare to Input 123Scanner in = new Scanner(System.in);//in可换为cin或scan//......in.close();//in可换cin或scan">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -183,13 +183,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="HDU-1002-大数相加"><a href="#HDU-1002-大数相加" class="headerlink" title="HDU 1002(大数相加)"></a>HDU 1002(大数相加)</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1002" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1002</a></p>
-<p><strong>条件判断：</strong> JAVA中<code>while(n-- &gt; 0)</code>异于c++的<code>while(n--)</code></p>
+        <p><strong>条件判断：</strong> JAVA中<code>while(n-- &gt; 0)</code>异于c++的<code>while(n--)</code></p>
 <p><strong>Prepare to Input</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);<span class="comment">//in可换为cin或scan</span></span><br><span class="line"><span class="comment">//......</span></span><br><span class="line">in.close();<span class="comment">//in可换cin或scan</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="Input-、Initialize-and-Output"><a href="#Input-、Initialize-and-Output" class="headerlink" title="Input 、Initialize and Output"></a>Input 、Initialize and Output</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.math.BigDecimal;</span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> a = in.nextInt();</span><br><span class="line">		<span class="keyword">double</span> b = in.nextDouble();</span><br><span class="line">		BigInteger c = in.nextBigInteger();</span><br><span class="line">		BigDecimal d = in.nextBigDecimal();</span><br><span class="line">		in.nextLine();<span class="comment">//getchar();</span></span><br><span class="line">		String e = in.nextLine();<span class="comment">//异于上面其他类型</span></span><br><span class="line">		<span class="keyword">int</span> f = <span class="number">6</span>;</span><br><span class="line">		<span class="keyword">double</span> g = <span class="number">3.1415926</span>;</span><br><span class="line">		BigInteger h = <span class="keyword">new</span> BigInteger(<span class="string">"666"</span>);<span class="comment">//不带引号毁精度</span></span><br><span class="line">		BigDecimal i = <span class="keyword">new</span> BigDecimal(<span class="string">"3.1415926"</span>);</span><br><span class="line">		String j = <span class="string">"LX"</span>;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">		System.out.println(b);</span><br><span class="line">		System.out.println(c);</span><br><span class="line">		System.out.println(d);</span><br><span class="line">		System.out.println(e);</span><br><span class="line">		System.out.println(f);</span><br><span class="line">		System.out.println(g);</span><br><span class="line">		System.out.println(h);</span><br><span class="line">		System.out.println(i);</span><br><span class="line">		System.out.println(j);</span><br><span class="line">		System.out.printf(<span class="string">"%d\n"</span>,a);</span><br><span class="line">		in.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BigInteger a = BigInteger.valueOf(<span class="number">200</span>);<span class="comment">//无引号</span></span><br><span class="line">BigInteger b = BigInteger.TEN;</span><br><span class="line">a = a.add(b);</span><br><span class="line">a = a.subtract(b);</span><br><span class="line">a = a.multiply(b);</span><br><span class="line">a = a.divide(b);</span><br><span class="line">a = a.mod(b);</span><br></pre></td></tr></table></figure>
+<p><strong>HDU 1002(大数加法)</strong></p>
+<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1002" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1002</a></p>
 <h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="keyword">import</span> java.io.BufferedInputStream;</span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner cin = <span class="keyword">new</span> Scanner(<span class="keyword">new</span> BufferedInputStream(System.in));</span><br><span class="line">		<span class="keyword">int</span> n = cin.nextInt();</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span>(n-- &gt; <span class="number">0</span>) </span><br><span class="line">		&#123;</span><br><span class="line">			BigInteger a = cin.nextBigInteger();</span><br><span class="line">			BigInteger b = cin.nextBigInteger();</span><br><span class="line">			System.out.println(<span class="string">"Case "</span> + i + <span class="string">":"</span>);</span><br><span class="line">			System.out.println(a + <span class="string">" + "</span> + b + <span class="string">" = "</span> + a.add(b));</span><br><span class="line">			<span class="keyword">if</span>(n &gt; <span class="number">0</span>)</span><br><span class="line">				System.out.println();</span><br><span class="line">			i++;</span><br><span class="line">		&#125;</span><br><span class="line">		cin.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="HDU-1042-（N-）"><a href="#HDU-1042-（N-）" class="headerlink" title="HDU 1042 （N!）"></a>HDU 1042 （N!）</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1042" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1042</a></p>
 <h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.BufferedInputStream;</span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(<span class="keyword">new</span> BufferedInputStream(System.in));</span><br><span class="line">		<span class="keyword">while</span>(in.hasNextInt()) &#123;</span><br><span class="line">			<span class="keyword">int</span> n = in.nextInt();</span><br><span class="line">			BigInteger ans = <span class="keyword">new</span> BigInteger(<span class="string">"1"</span>);</span><br><span class="line">			BigInteger num = <span class="keyword">new</span> BigInteger(<span class="string">"1"</span>);</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">				ans = ans.multiply(num);</span><br><span class="line">				num = num.add(<span class="keyword">new</span> BigInteger(<span class="string">"1"</span>));</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println(ans);</span><br><span class="line">		&#125;</span><br><span class="line">		in.close();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -459,11 +460,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">栈（stack）</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+                <a href="javascript:void(0)" class="js-tag color4">栈（stack）</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -487,11 +488,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,10 +532,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">二分</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">最小生成树</a>
               </li>
              
@@ -544,6 +541,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Prim(普里姆)</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">二分</a>
               </li>
              
               <li class="article-tag-list-item">
