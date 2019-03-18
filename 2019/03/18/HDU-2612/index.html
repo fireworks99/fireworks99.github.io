@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/1 | 市井烟火气</title>
+  <title>HDU 2612 Find a way | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="清纯，而又略带些烟火气">
-<meta property="og:type" content="website">
-<meta property="og:title" content="市井烟火气">
-<meta property="og:url" content="http://yoursite.com/archives/2019/01/index.html">
+  <meta name="description" content="Description Pass a year learning in Hangzhou, yifenfei arrival  hometown Ningbo at finally. Leave Ningbo one year, yifenfei have many people to  meet. Especially a good friend Merceki. Yifenfei’s home">
+<meta name="keywords" content="题解,BFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDU 2612 Find a way">
+<meta property="og:url" content="http://yoursite.com/2019/03/18/HDU-2612/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="清纯，而又略带些烟火气">
+<meta property="og:description" content="Description Pass a year learning in Hangzhou, yifenfei arrival  hometown Ningbo at finally. Leave Ningbo one year, yifenfei have many people to  meet. Especially a good friend Merceki. Yifenfei’s home">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-18T13:29:20.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="市井烟火气">
-<meta name="twitter:description" content="清纯，而又略带些烟火气">
+<meta name="twitter:title" content="HDU 2612 Find a way">
+<meta name="twitter:description" content="Description Pass a year learning in Hangzhou, yifenfei arrival  hometown Ningbo at finally. Leave Ningbo one year, yifenfei have many people to  meet. Especially a good friend Merceki. Yifenfei’s home">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -161,330 +163,98 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-HDU-2612" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HDU 2612 Find a way
+    </h1>
+  
+
+        
+        <a href="/2019/03/18/HDU-2612/" class="archive-article-date">
+  	<time datetime="2019-03-18T13:19:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Pass a year learning in Hangzhou, yifenfei arrival  hometown Ningbo at finally. Leave Ningbo one year, yifenfei have many people to  meet. Especially a good friend Merceki. Yifenfei’s home is at the  countryside, but Merceki’s home is in the center of city. So yifenfei made  arrangements with Merceki to meet at a KFC. There are many KFC in Ningbo, they  want to choose one that let the total time to it be most smallest.  Now give  you a Ningbo map, Both yifenfei and Merceki can move up, down ,left, right to  the adjacent road by cost 11 minutes. </p>
+</blockquote>
+<a id="more"></a>
+<p><strong>题目链接</strong> <a href="http://acm.hdu.edu.cn/showproblem.php?pid=2612" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=2612</a></p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
+<p>The input contains multiple test cases. Each test  case include, first two integers n, m. (2&lt;=n,m&lt;=200).  Next n lines,  each line included m character.</p>
+<p>‘Y’ express yifenfei initial position.</p>
+<p>‘M’     express Merceki initial position.</p>
+<p>‘#’ forbid road; </p>
+<p>‘.’ Road.</p>
+<p>‘@’  KCF </p>
+</blockquote>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
+<p>For each test case output the minimum total time that  both yifenfei and Merceki to arrival one of KFC.You may sure there is always  have a KFC that can let them meet.</p>
+</blockquote>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> <span class="number">4</span></span><br><span class="line">Y.#@</span><br><span class="line">....</span><br><span class="line">.#..</span><br><span class="line">@..M</span><br><span class="line"><span class="number">4</span> <span class="number">4</span></span><br><span class="line">Y.#@</span><br><span class="line">....</span><br><span class="line">.#..</span><br><span class="line">@#.M</span><br><span class="line"><span class="number">5</span> <span class="number">5</span></span><br><span class="line">Y..@.</span><br><span class="line">.#...</span><br><span class="line">.#...</span><br><span class="line">@..M.</span><br><span class="line">#...#</span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><blockquote>
+<p>66</p>
+<p>88</p>
+<p>66</p>
+</blockquote>
+<h3 id="大意"><a href="#大意" class="headerlink" title="大意"></a>大意</h3><blockquote>
+<p>Y和M两个人要在任意一个KFC见面，求两人路径和中最短的一个</p>
+</blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
+<p>两次BFS求出两人到所有KFC的路径长，再找出和最短的那个</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">///BFS需要以结构体形式将数据临时存起来以备后来去遍历</span></span><br><span class="line"><span class="comment">///DFS没有要存储的临时数据</span></span><br><span class="line"><span class="comment">///由于DFS要用到递归，我感觉比BFS思想更复杂些</span></span><br><span class="line"><span class="keyword">int</span> n, m, ydex, ydey, mdex, mdey;</span><br><span class="line"><span class="built_in">string</span> s[<span class="number">205</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">205</span>][<span class="number">205</span>];</span><br><span class="line"><span class="keyword">int</span> dx[] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> dy[] = &#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x, y, step;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> tot;<span class="comment">///kfc的a[]辅助，计总个数</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">kfc</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x, y, y_step, m_step, tot_step;</span><br><span class="line">&#125; a[<span class="number">40005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">kfc_init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">205</span>; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        a[i].y_step = inf;</span><br><span class="line">        a[i].m_step = inf;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">///BFS擅长于最小（短）值，DFS擅长于连接体（相连）问题</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">bool</span> flag)</span><span class="comment">///写之前一定想好bfs还是dfs</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;<span class="comment">///若是DFS(有递归属性)，不要在函数里定义啥</span></span><br><span class="line">    vis[x][y] = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">queue</span>&lt;node&gt; q;</span><br><span class="line">    node now;</span><br><span class="line">    now.x = x;</span><br><span class="line">    now.y = y;</span><br><span class="line">    now.step = <span class="number">0</span>;</span><br><span class="line">    q.push(now);</span><br><span class="line">    <span class="keyword">while</span>(q.size())</span><br><span class="line">    &#123;</span><br><span class="line">        now = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="keyword">if</span>(s[now.x][now.y] == <span class="string">'@'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            cnt++;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tot; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(a[i].x == now.x &amp;&amp; a[i].y == now.y)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(flag == <span class="number">0</span>)</span><br><span class="line">                        a[i].y_step = now.step;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                        a[i].m_step = now.step;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(cnt == tot)</span><br><span class="line">                <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> xx = now.x + dx[i];</span><br><span class="line">            <span class="keyword">int</span> yy = now.y + dy[i];</span><br><span class="line">            <span class="keyword">if</span>(xx &gt;= <span class="number">0</span> &amp;&amp; xx &lt; n &amp;&amp; yy &gt;= <span class="number">0</span> &amp;&amp; yy &lt; m &amp;&amp; !vis[xx][yy] &amp;&amp; s[xx][yy] != <span class="string">'#'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                vis[xx][yy] = <span class="number">1</span>;</span><br><span class="line">                node nxt;</span><br><span class="line">                nxt.x = xx;</span><br><span class="line">                nxt.y = yy;</span><br><span class="line">                nxt.step = now.step + <span class="number">1</span>;</span><br><span class="line">                q.push(nxt);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//    freopen("00in.txt", "r", stdin);</span></span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m))</span><br><span class="line">    &#123;</span><br><span class="line">        kfc_init();</span><br><span class="line">        tot = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; s[i];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(s[i][j] == <span class="string">'Y'</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    ydex = i;</span><br><span class="line">                    ydey = j;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(s[i][j] == <span class="string">'M'</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    mdex = i;</span><br><span class="line">                    mdey = j;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(s[i][j] == <span class="string">'@'</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    a[tot].x = i;</span><br><span class="line">                    a[tot].y = j;</span><br><span class="line">                    tot++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        bfs(ydex, ydey, <span class="number">0</span>);</span><br><span class="line">        <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">        bfs(mdex, mdey, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> ans = inf;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; tot; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            a[i].tot_step = a[i].y_step + a[i].m_step;</span><br><span class="line">            <span class="keyword">if</span>(ans &gt; a[i].tot_step)</span><br><span class="line">                ans = a[i].tot_step;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans * <span class="number">11</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>突然发现DFS比BFS更难以梳理清楚、难实现，因为涉及递归……</p>
+<p>相较于DFS，BFS就显得友好多了……</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://i.postimg.cc/L640yQ3C/IMG-20190122-131012.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://i.postimg.cc/B6wmL4Rd/IMG-20190122-130126.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/29/HDU-2141-Can-you-find-it/" class="archive-article-date">
-  	<time datetime="2019-01-29T10:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/29/HDU-2141-Can-you-find-it/">HDU 2141 Can you find it?</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">二分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/29/C-Replace-To-Make-Regular-Bracket-Sequence/" class="archive-article-date">
-  	<time datetime="2019-01-29T10:20:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/29/C-Replace-To-Make-Regular-Bracket-Sequence/">C. Replace To Make Regular Bracket Sequence</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">栈（stack）</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/29/Pearls in a Row/" class="archive-article-date">
-  	<time datetime="2019-01-29T08:29:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/29/Pearls in a Row/">Codeforces C.Pearls in a Row</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">set</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/24/模拟（vector）The-kth-great-number-HDU4006/" class="archive-article-date">
-  	<time datetime="2019-01-24T00:16:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/24/模拟（vector）The-kth-great-number-HDU4006/">模拟 The kth great number HDU4006</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vector</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">priority_queue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">multiset</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/17/stable-sort稳定排序/" class="archive-article-date">
-  	<time datetime="2019-01-17T13:44:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/17/stable-sort稳定排序/">stable_sort稳定排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/17/模拟、思维-SDNUOJ-1271/" class="archive-article-date">
-  	<time datetime="2019-01-17T12:14:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/17/模拟、思维-SDNUOJ-1271/">模拟、思维 SDNUOJ 1271</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vector</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/16/照片测试/" class="archive-article-date">
-  	<time datetime="2019-01-16T04:28:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/16/照片测试/">照片测试</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/15/BFS（三维）Dungeon Master POJ2251/" class="archive-article-date">
-  	<time datetime="2019-01-15T13:28:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/15/BFS（三维）Dungeon Master POJ2251/">BFS（三维）Dungeon Master POJ2251</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -500,84 +270,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/18/HDU-2612/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/14/my-first-blog/" class="archive-article-date">
-  	<time datetime="2019-01-14T10:10:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/18/BFS路径输出/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BFS路径输出</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/14/my-first-blog/">my first blog!</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/14/hello-world/" class="archive-article-date">
-  	<time datetime="2019-01-14T09:13:30.189Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/14/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -602,8 +394,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
