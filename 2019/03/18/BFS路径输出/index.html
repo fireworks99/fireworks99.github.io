@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/1 | 市井烟火气</title>
+  <title>BFS路径输出 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="清纯，而又略带些烟火气">
-<meta property="og:type" content="website">
-<meta property="og:title" content="市井烟火气">
-<meta property="og:url" content="http://yoursite.com/archives/2019/01/index.html">
+  <meta name="description" content="记录路径 pre存当前点的前一个点的位置标号（序号），类似的还有最长递增子序列的路径记录，还有链式前向星，都是一个方法。">
+<meta name="keywords" content="题解,BFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="BFS路径输出">
+<meta property="og:url" content="http://yoursite.com/2019/03/18/BFS路径输出/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="清纯，而又略带些烟火气">
+<meta property="og:description" content="记录路径 pre存当前点的前一个点的位置标号（序号），类似的还有最长递增子序列的路径记录，还有链式前向星，都是一个方法。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-18T10:43:11.055Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="市井烟火气">
-<meta name="twitter:description" content="清纯，而又略带些烟火气">
+<meta name="twitter:title" content="BFS路径输出">
+<meta name="twitter:description" content="记录路径 pre存当前点的前一个点的位置标号（序号），类似的还有最长递增子序列的路径记录，还有链式前向星，都是一个方法。">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -161,330 +163,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-BFS路径输出" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      BFS路径输出
+    </h1>
+  
+
+        
+        <a href="/2019/03/18/BFS路径输出/" class="archive-article-date">
+  	<time datetime="2019-03-18T10:36:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-18</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="记录路径"><a href="#记录路径" class="headerlink" title="记录路径"></a>记录路径</h3><blockquote>
+<p>pre存当前点的前一个点的位置标号（序号），类似的还有最长递增子序列的路径记录，还有链式前向星，都是一个方法。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="POJ-3984-迷宫问题"><a href="#POJ-3984-迷宫问题" class="headerlink" title="POJ 3984 迷宫问题"></a>POJ 3984 迷宫问题</h3><p><strong>题目链接</strong><a href="http://poj.org/problem?id=3984" target="_blank" rel="noopener">http://poj.org/problem?id=3984</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> m[<span class="number">10</span>][<span class="number">10</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">10</span>][<span class="number">10</span>];<span class="comment">///寻找路径 问题：来过便不再来</span></span><br><span class="line"><span class="keyword">int</span> dx[] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> dy[] = &#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x, y, pre;<span class="comment">///a[i].pre存它前一个点在a[]中标号（序号）</span></span><br><span class="line">&#125;a[<span class="number">30</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(node t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;node&gt; vec;</span><br><span class="line">    <span class="keyword">while</span>(t.pre != <span class="number">-1</span>)<span class="comment">///逆序存放</span></span><br><span class="line">    &#123;</span><br><span class="line">        vec.push_back(t);</span><br><span class="line">        t = a[t.pre];</span><br><span class="line">    &#125;</span><br><span class="line">    vec.push_back(a[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">int</span> sz = vec.size();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = sz - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"(%d, %d)\n"</span>, vec[i].x - <span class="number">1</span>, vec[i].y - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> now = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> nxt = <span class="number">1</span>;</span><br><span class="line">    a[now].x = <span class="number">1</span>;</span><br><span class="line">    a[now].y = <span class="number">1</span>;</span><br><span class="line">    a[now].pre = <span class="number">-1</span>;</span><br><span class="line">    vis[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(now &lt; nxt)<span class="comment">///等效于while(!q.empty())</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[now].x == <span class="number">5</span> &amp;&amp; a[now].y == <span class="number">5</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            print(a[now]);</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> xx = a[now].x + dx[i];</span><br><span class="line">            <span class="keyword">int</span> yy = a[now].y + dy[i];</span><br><span class="line">            <span class="keyword">if</span>(xx &gt;= <span class="number">1</span> &amp;&amp; xx &lt;= <span class="number">5</span> &amp;&amp; yy &gt;= <span class="number">1</span> &amp;&amp; yy &lt;= <span class="number">5</span> &amp;&amp; m[xx][yy] == <span class="number">0</span> &amp;&amp; !vis[xx][yy])</span><br><span class="line">            &#123;</span><br><span class="line">                vis[xx][yy] = <span class="number">1</span>;</span><br><span class="line">                a[nxt].x = xx;</span><br><span class="line">                a[nxt].y = yy;</span><br><span class="line">                a[nxt].pre = now;</span><br><span class="line">                nxt++;<span class="comment">///搜到终点，周围点条件不满足此if,nxt停增</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        now++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; ++i)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">5</span>; ++j)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;m[i][j]);</span><br><span class="line">    bfs();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="SDNUOJ-1220-Look-for-homework"><a href="#SDNUOJ-1220-Look-for-homework" class="headerlink" title="SDNUOJ 1220 Look for homework"></a>SDNUOJ 1220 Look for homework</h3><p><strong>题目链接</strong> <a href="http://www.acmicpc.sdnu.edu.cn/problem/show/1220" target="_blank" rel="noopener">http://www.acmicpc.sdnu.edu.cn/problem/show/1220</a></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="built_in">string</span> s[<span class="number">15</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">15</span>][<span class="number">15</span>];</span><br><span class="line"><span class="comment">///“目标方向”逆时针转90°即可，想图（ignore this sentence）</span></span><br><span class="line"><span class="comment">/// D L R U</span></span><br><span class="line"><span class="keyword">int</span> dx[] = &#123;<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> dy[] = &#123;<span class="number">0</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> x, y, pre, step;</span><br><span class="line">    <span class="keyword">char</span> ch;</span><br><span class="line">&#125; a[<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(node t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;node&gt; vec;</span><br><span class="line">    <span class="keyword">while</span>(t.pre != <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        vec.push_back(t);</span><br><span class="line">        t = a[t.pre];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> sz = vec.size();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = sz - <span class="number">1</span>; i &gt;= <span class="number">0</span>; --i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; vec[i].ch;</span><br><span class="line"><span class="comment">//        cout &lt;&lt; vec[i].x &lt;&lt; ' ' &lt;&lt; vec[i].y &lt;&lt; '\n';</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> now = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> nxt = <span class="number">1</span>;</span><br><span class="line">    a[now].x = <span class="number">0</span>;</span><br><span class="line">    a[now].y = <span class="number">0</span>;</span><br><span class="line">    a[now].pre = <span class="number">-1</span>;</span><br><span class="line">    a[now].step = <span class="number">0</span>;</span><br><span class="line">    vis[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(now &lt; nxt)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[now].x == n - <span class="number">1</span> &amp;&amp; a[now].y == m - <span class="number">1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; a[now].step &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">            print(a[now]);</span><br><span class="line">            <span class="keyword">return</span> ;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> xx = a[now].x + dx[i];</span><br><span class="line">            <span class="keyword">int</span> yy = a[now].y + dy[i];</span><br><span class="line">            <span class="keyword">if</span>(xx &gt;= <span class="number">0</span> &amp;&amp; xx &lt; n &amp;&amp; yy &gt;= <span class="number">0</span> &amp;&amp; yy &lt; m &amp;&amp; !vis[xx][yy] &amp;&amp; s[xx][yy] == <span class="string">'0'</span>)<span class="comment">///注意这里是字符0</span></span><br><span class="line">            &#123;</span><br><span class="line">                vis[xx][yy] = <span class="number">1</span>;<span class="comment">///又忘了访问后标记</span></span><br><span class="line">                a[nxt].x = xx;</span><br><span class="line">                a[nxt].y = yy;</span><br><span class="line">                a[nxt].step = a[now].step + <span class="number">1</span>;</span><br><span class="line">                a[nxt].pre = now;</span><br><span class="line">                <span class="keyword">switch</span>(i)</span><br><span class="line">                &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                    a[nxt].ch = <span class="string">'D'</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                    a[nxt].ch = <span class="string">'L'</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                    a[nxt].ch = <span class="string">'R'</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    a[nxt].ch = <span class="string">'U'</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                nxt++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        now++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//    freopen("00in.txt", "r", stdin);</span></span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; s[i];</span><br><span class="line">        bfs();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://i.postimg.cc/L640yQ3C/IMG-20190122-131012.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://i.postimg.cc/B6wmL4Rd/IMG-20190122-130126.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/29/HDU-2141-Can-you-find-it/" class="archive-article-date">
-  	<time datetime="2019-01-29T10:36:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/29/HDU-2141-Can-you-find-it/">HDU 2141 Can you find it?</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">二分</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/29/C-Replace-To-Make-Regular-Bracket-Sequence/" class="archive-article-date">
-  	<time datetime="2019-01-29T10:20:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/29/C-Replace-To-Make-Regular-Bracket-Sequence/">C. Replace To Make Regular Bracket Sequence</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">栈（stack）</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/29/Pearls in a Row/" class="archive-article-date">
-  	<time datetime="2019-01-29T08:29:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/29/Pearls in a Row/">Codeforces C.Pearls in a Row</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">set</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/24/模拟（vector）The-kth-great-number-HDU4006/" class="archive-article-date">
-  	<time datetime="2019-01-24T00:16:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/24/模拟（vector）The-kth-great-number-HDU4006/">模拟 The kth great number HDU4006</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vector</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">priority_queue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">multiset</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/17/stable-sort稳定排序/" class="archive-article-date">
-  	<time datetime="2019-01-17T13:44:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/17/stable-sort稳定排序/">stable_sort稳定排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">知识</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/17/模拟、思维-SDNUOJ-1271/" class="archive-article-date">
-  	<time datetime="2019-01-17T12:14:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/17/模拟、思维-SDNUOJ-1271/">模拟、思维 SDNUOJ 1271</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">题解</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vector</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/16/照片测试/" class="archive-article-date">
-  	<time datetime="2019-01-16T04:28:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/16/照片测试/">照片测试</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/15/BFS（三维）Dungeon Master POJ2251/" class="archive-article-date">
-  	<time datetime="2019-01-15T13:28:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/15/BFS（三维）Dungeon Master POJ2251/">BFS（三维）Dungeon Master POJ2251</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -500,84 +245,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/18/BFS路径输出/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/14/my-first-blog/" class="archive-article-date">
-  	<time datetime="2019-01-14T10:10:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/18/uva-11624/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">uva 11624 Fire!</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/14/my-first-blog/">my first blog!</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/14/hello-world/" class="archive-article-date">
-  	<time datetime="2019-01-14T09:13:30.189Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/14/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -602,8 +369,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
