@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>SDUT Balloons | 市井烟火气</title>
+  <title>SDUT Balloons 和 HDU 1241 Oil Deposits | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Description Both Saya and Kudo like balloons. One day, they heard that in the central park, there will be thousands of people fly balloons to pattern a big image.  They were very interested about this">
+  <meta name="description" content="题目共同解法 都是求某一类连接成块共有多少块，那么对每一块dfs，运行多少次dfs便有多少块  Description Both Saya and Kudo like balloons. One day, they heard that in the central park, there will be thousands of people fly balloons to pattern a">
 <meta name="keywords" content="题解,DFS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SDUT Balloons">
+<meta property="og:title" content="SDUT Balloons 和 HDU 1241 Oil Deposits">
 <meta property="og:url" content="http://yoursite.com/2019/03/09/SDUT-Balloons/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="Description Both Saya and Kudo like balloons. One day, they heard that in the central park, there will be thousands of people fly balloons to pattern a big image.  They were very interested about this">
+<meta property="og:description" content="题目共同解法 都是求某一类连接成块共有多少块，那么对每一块dfs，运行多少次dfs便有多少块  Description Both Saya and Kudo like balloons. One day, they heard that in the central park, there will be thousands of people fly balloons to pattern a">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-09T13:34:48.905Z">
+<meta property="og:updated_time" content="2019-03-18T11:16:04.131Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SDUT Balloons">
-<meta name="twitter:description" content="Description Both Saya and Kudo like balloons. One day, they heard that in the central park, there will be thousands of people fly balloons to pattern a big image.  They were very interested about this">
+<meta name="twitter:title" content="SDUT Balloons 和 HDU 1241 Oil Deposits">
+<meta name="twitter:description" content="题目共同解法 都是求某一类连接成块共有多少块，那么对每一块dfs，运行多少次dfs便有多少块  Description Both Saya and Kudo like balloons. One day, they heard that in the central park, there will be thousands of people fly balloons to pattern a">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -170,7 +170,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      SDUT Balloons
+      SDUT Balloons 和 HDU 1241 Oil Deposits
     </h1>
   
 
@@ -183,7 +183,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+        <h3 id="题目共同解法"><a href="#题目共同解法" class="headerlink" title="题目共同解法"></a>题目共同解法</h3><blockquote>
+<p>都是求某一类连接成块共有多少块，那么对每一块dfs，运行多少次dfs便有多少块</p>
+</blockquote>
+<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
 <p>Both Saya and Kudo like balloons. One day, they heard that in the central park, there will be thousands of people fly balloons to pattern a big image.  They were very interested about this event, and also curious about the image. Since there are too many balloons, it is very hard for them to compute anything they need. Can you help them?  You can assume that the image is an <em>N\</em>N<em> matrix, while each element can be either balloons or blank.  Suppose element </em>A<em> and element </em>B* are both balloons. They are connected if: </p>
 </blockquote>
 <a id="more"></a>
@@ -206,6 +209,24 @@
 <p>2.输出格式：“Case” 、 空行</p>
 </blockquote>
 <h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">110</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a, b, n;</span><br><span class="line"><span class="built_in">string</span> s[N];</span><br><span class="line"><span class="keyword">bool</span> visa[N][N];</span><br><span class="line"><span class="keyword">bool</span> visb[N][N];</span><br><span class="line"><span class="keyword">int</span> dx[] = &#123;<span class="number">-1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> dy[] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfsa</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    visa[x][y] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> xx = x + dx[i];</span><br><span class="line">        <span class="keyword">int</span> yy = y + dy[i];</span><br><span class="line">        <span class="keyword">if</span>(xx &gt;= <span class="number">0</span> &amp;&amp; xx &lt; n &amp;&amp; yy &gt;= <span class="number">0</span> &amp;&amp; yy &lt; n &amp;&amp; !visa[xx][yy] &amp;&amp; s[xx][yy] == <span class="string">'1'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            visa[xx][yy] = <span class="number">1</span>;</span><br><span class="line">            dfsa(xx, yy);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfsb</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    visb[x][y] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> xx = x + dx[i];</span><br><span class="line">        <span class="keyword">int</span> yy = y + dy[i];</span><br><span class="line">        <span class="keyword">if</span>(xx &gt;= <span class="number">0</span> &amp;&amp; xx &lt; n &amp;&amp; yy &gt;= <span class="number">0</span> &amp;&amp; yy &lt; n &amp;&amp; !visb[xx][yy] &amp;&amp; s[xx][yy] == <span class="string">'1'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            visb[xx][yy] = <span class="number">1</span>;</span><br><span class="line">            dfsb(xx, yy);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &amp;&amp; n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">memset</span>(visa, <span class="number">0</span>, <span class="keyword">sizeof</span>(visa));</span><br><span class="line">        <span class="built_in">memset</span>(visb, <span class="number">0</span>, <span class="keyword">sizeof</span>(visb));</span><br><span class="line">        a = <span class="number">0</span>, b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; s[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">                <span class="keyword">if</span>(s[i][j] == <span class="string">'1'</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(!visa[i][j])</span><br><span class="line">                    &#123;</span><br><span class="line">                        dfsa(i, j);</span><br><span class="line">                        a++;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span>(!visb[i][j])</span><br><span class="line">                    &#123;</span><br><span class="line">                        dfsb(i, j);</span><br><span class="line">                        b++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Case "</span> &lt;&lt; cnt &lt;&lt; <span class="string">": "</span> &lt;&lt; a &lt;&lt; <span class="string">' '</span> &lt;&lt; b &lt;&lt; <span class="string">'\n'</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        cnt++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Description-1"><a href="#Description-1" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>The GeoSurvComp geologic survey company is responsible  for detecting underground oil deposits. GeoSurvComp works with one large  rectangular region of land at a time, and creates a grid that divides the land  into numerous square plots. It then analyzes each plot separately, using sensing  equipment to determine whether or not the plot contains oil. A plot containing  oil is called a pocket. If two pockets are adjacent, then they are part of the  same oil deposit. Oil deposits can be quite large and may contain numerous  pockets. Your job is to determine how many different oil deposits are contained  in a grid.  </p>
+</blockquote>
+<p><strong>题目链接</strong> <a href="http://acm.hdu.edu.cn/showproblem.php?pid=1241" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1241</a></p>
+<h3 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h3><blockquote>
+<p>The input file contains one or more grids. Each grid  begins with a line containing m and n, the number of rows and columns in the  grid, separated by a single space. If m = 0 it signals the end of the input;  otherwise 1 &lt;= m &lt;= 100 and 1 &lt;= n &lt;= 100. Following this are m  lines of n characters each (not counting the end-of-line characters). Each  character corresponds to one plot, and is either `*’, representing the absence  of oil, or `@’, representing an oil pocket. </p>
+</blockquote>
+<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h3><blockquote>
+<p>For each grid, output the number of distinct oil  deposits. Two different pockets are part of the same oil deposit if they are  adjacent horizontally, vertically, or diagonally. An oil deposit will not  contain more than 100 pockets. </p>
+</blockquote>
+<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input"></a>Sample Input</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">1</span></span><br><span class="line">*</span><br><span class="line"><span class="number">3</span> <span class="number">5</span></span><br><span class="line">*@*@*</span><br><span class="line">**@**</span><br><span class="line">*@*@*</span><br><span class="line"><span class="number">1</span> <span class="number">8</span></span><br><span class="line">@@****@*</span><br><span class="line"><span class="number">5</span> <span class="number">5</span> </span><br><span class="line">****@</span><br><span class="line">*@@*@</span><br><span class="line">*@**@</span><br><span class="line">@@@*@</span><br><span class="line">@@**@</span><br><span class="line"><span class="number">0</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output"></a>Sample Output</h3><blockquote>
+<p>0</p>
+<p>1</p>
+<p>2</p>
+<p>2</p>
+</blockquote>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">105</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="built_in">string</span> s[N];</span><br><span class="line"><span class="keyword">int</span> dx[] = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> dy[] = &#123;<span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    s[x][y] = <span class="string">'*'</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> xx = x + dx[i];</span><br><span class="line">        <span class="keyword">int</span> yy = y + dy[i];</span><br><span class="line">        <span class="keyword">if</span>(xx &gt;= <span class="number">0</span> &amp;&amp; xx &lt; n &amp;&amp; yy &gt;= <span class="number">0</span> &amp;&amp; yy &lt; m &amp;&amp; s[xx][yy] == <span class="string">'@'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            s[xx][yy] = <span class="string">'*'</span>;</span><br><span class="line">            dfs(xx, yy);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span> &amp;&amp; m == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; s[i];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; ++j)</span><br><span class="line">                <span class="keyword">if</span>(s[i][j] == <span class="string">'@'</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    dfs(i, j);</span><br><span class="line">                    ans++;</span><br><span class="line">                &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -471,19 +492,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">栈（stack）</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">map</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">string</a>
+                <a href="javascript:void(0)" class="js-tag color4">栈（stack）</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,7 +508,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color4">map</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">string</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,6 +521,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">map嵌套</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -559,6 +580,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">A*（启发式搜索）</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">线段树</a>
               </li>
              
@@ -575,11 +600,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">A*（启发式搜索）</a>
+                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">贪心</a>
+                <a href="javascript:void(0)" class="js-tag color5">spfa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">无向图（负环）</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,14 +628,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">spfa</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">无向图（负环）</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -619,6 +640,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">异或</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">尺取法</a>
               </li>
              
@@ -627,19 +652,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异或</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">拓扑排序（无环）</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">multiset</a>
+                <a href="javascript:void(0)" class="js-tag color5">树状数组</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">树状数组</a>
+                <a href="javascript:void(0)" class="js-tag color4">multiset</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -655,11 +676,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">链式前向星</a>
+                <a href="javascript:void(0)" class="js-tag color5">翻转问题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">翻转问题</a>
+                <a href="javascript:void(0)" class="js-tag color1">链式前向星</a>
               </li>
             
             <div class="clearfix"></div>
