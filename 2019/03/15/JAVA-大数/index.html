@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="市井烟火气">
 <meta property="og:description" content="条件判断： JAVA中while(n-- &amp;gt; 0)异于c++的while(n--) Prepare to Input 123Scanner in = new Scanner(System.in);//in可换为cin或scan//......in.close();//in可换cin或scan">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-17T10:20:35.164Z">
+<meta property="og:updated_time" content="2019-03-21T14:00:07.971Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA 大数">
 <meta name="twitter:description" content="条件判断： JAVA中while(n-- &amp;gt; 0)异于c++的while(n--) Prepare to Input 123Scanner in = new Scanner(System.in);//in可换为cin或scan//......in.close();//in可换cin或scan">
@@ -187,7 +187,7 @@
 <p><strong>Prepare to Input</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Scanner in = <span class="keyword">new</span> Scanner(System.in);<span class="comment">//in可换为cin或scan</span></span><br><span class="line"><span class="comment">//......</span></span><br><span class="line">in.close();<span class="comment">//in可换cin或scan</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h3 id="Input-、Initialize-and-Output"><a href="#Input-、Initialize-and-Output" class="headerlink" title="Input 、Initialize and Output"></a>Input 、Initialize and Output</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.math.BigDecimal;</span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">int</span> a = in.nextInt();</span><br><span class="line">		<span class="keyword">double</span> b = in.nextDouble();</span><br><span class="line">		BigInteger c = in.nextBigInteger();</span><br><span class="line">		BigDecimal d = in.nextBigDecimal();</span><br><span class="line">		in.nextLine();<span class="comment">//getchar();</span></span><br><span class="line">		String e = in.nextLine();<span class="comment">//异于上面其他类型</span></span><br><span class="line">		<span class="keyword">int</span> f = <span class="number">6</span>;</span><br><span class="line">		<span class="keyword">double</span> g = <span class="number">3.1415926</span>;</span><br><span class="line">		BigInteger h = <span class="keyword">new</span> BigInteger(<span class="string">"666"</span>);<span class="comment">//不带引号毁精度</span></span><br><span class="line">		BigDecimal i = <span class="keyword">new</span> BigDecimal(<span class="string">"3.1415926"</span>);</span><br><span class="line">		String j = <span class="string">"LX"</span>;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">		System.out.println(b);</span><br><span class="line">		System.out.println(c);</span><br><span class="line">		System.out.println(d);</span><br><span class="line">		System.out.println(e);</span><br><span class="line">		System.out.println(f);</span><br><span class="line">		System.out.println(g);</span><br><span class="line">		System.out.println(h);</span><br><span class="line">		System.out.println(i);</span><br><span class="line">		System.out.println(j);</span><br><span class="line">		System.out.printf(<span class="string">"%d\n"</span>,a);</span><br><span class="line">		in.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Input-、Initialize-and-Output"><a href="#Input-、Initialize-and-Output" class="headerlink" title="Input 、Initialize and Output"></a>Input 、Initialize and Output</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.math.BigDecimal;</span><br><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="comment">//以下输入后面的括号是用于进制转换的，输入某进制数将其转十进制</span></span><br><span class="line">        <span class="comment">//JAVA强大处之一</span></span><br><span class="line">		<span class="keyword">int</span> a = in.nextInt();</span><br><span class="line">		<span class="keyword">double</span> b = in.nextDouble();</span><br><span class="line">		BigInteger c = in.nextBigInteger();</span><br><span class="line">		BigDecimal d = in.nextBigDecimal();</span><br><span class="line">		in.nextLine();<span class="comment">//getchar();</span></span><br><span class="line">        String k = in.next();		<span class="comment">//cin &gt;&gt; k;</span></span><br><span class="line">		String e = in.nextLine();	<span class="comment">//getline(cin, e);</span></span><br><span class="line">		<span class="keyword">int</span> f = <span class="number">6</span>;</span><br><span class="line">		<span class="keyword">double</span> g = <span class="number">3.1415926</span>;</span><br><span class="line">		BigInteger h = <span class="keyword">new</span> BigInteger(<span class="string">"666"</span>);<span class="comment">//不带引号毁精度</span></span><br><span class="line">		BigDecimal i = <span class="keyword">new</span> BigDecimal(<span class="string">"3.1415926"</span>);</span><br><span class="line">		String j = <span class="string">"LX"</span>;</span><br><span class="line">		System.out.println(a);</span><br><span class="line">		System.out.println(b);</span><br><span class="line">		System.out.println(c);</span><br><span class="line">		System.out.println(d);</span><br><span class="line">		System.out.println(e);</span><br><span class="line">		System.out.println(f);</span><br><span class="line">		System.out.println(g);</span><br><span class="line">		System.out.println(h);</span><br><span class="line">		System.out.println(i);</span><br><span class="line">		System.out.println(j);</span><br><span class="line">		System.out.printf(<span class="string">"%d\n"</span>,a);</span><br><span class="line">		in.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">BigInteger a = BigInteger.valueOf(<span class="number">200</span>);<span class="comment">//无引号</span></span><br><span class="line">BigInteger b = BigInteger.TEN;</span><br><span class="line">a = a.add(b);</span><br><span class="line">a = a.subtract(b);</span><br><span class="line">a = a.multiply(b);</span><br><span class="line">a = a.divide(b);</span><br><span class="line">a = a.mod(b);</span><br></pre></td></tr></table></figure>
 <p><strong>HDU 1002(大数加法)</strong></p>
 <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1002" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1002</a></p>
@@ -208,6 +208,17 @@
 <li>如果指定的数大于参数返回 1。</li>
 </ul>
 <p>还有记得<code>ans = n.pow(m.intValue());</code></p>
+<h3 id="SDNU-1488"><a href="#SDNU-1488" class="headerlink" title="SDNU 1488"></a>SDNU 1488</h3><blockquote>
+<p>输入两个八进制数a、b，也以八进制形式输出（a - b）的值。</p>
+</blockquote>
+<h4 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.math.BigInteger;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">		Scanner in = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">		<span class="keyword">while</span>(in.hasNextInt()) &#123;</span><br><span class="line">			<span class="keyword">int</span> t = in.nextInt();</span><br><span class="line">			<span class="keyword">while</span>(t-- &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="comment">//将数字以8进制读入并转为十进制</span></span><br><span class="line">				BigInteger c = in.nextBigInteger(<span class="number">8</span>);</span><br><span class="line">				BigInteger d = in.nextBigInteger(<span class="number">8</span>);</span><br><span class="line">				BigInteger ans;</span><br><span class="line">				<span class="keyword">if</span>(c.subtract(d) == BigInteger.valueOf(<span class="number">1</span>) || c == d);</span><br><span class="line">					&#123;</span><br><span class="line">					 ans = c.subtract(d);<span class="comment">//十进制减法</span></span><br><span class="line">					 String a = ans.toString(<span class="number">8</span>);<span class="comment">//十进制数ans转为8进制字符串</span></span><br><span class="line">					System.out.println(a);</span><br><span class="line">					&#125;</span><br><span class="line">				<span class="keyword">if</span>(c.subtract(d) == BigInteger.valueOf(-<span class="number">1</span>))</span><br><span class="line">				&#123;</span><br><span class="line">					ans = d.subtract(c);</span><br><span class="line">					String a = ans.toString(<span class="number">8</span>);</span><br><span class="line">					System.out.println(<span class="string">"-"</span> + a);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		in.close();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><blockquote>
+<p>String a = ans.toString(num); //将十进制数ans转为num进制字符串</p>
+</blockquote>
+<h3 id="已知数字的进制转换"><a href="#已知数字的进制转换" class="headerlink" title="已知数字的进制转换"></a>已知数字的进制转换</h3><blockquote>
+<p>十进制转其他进制</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">36</span>;</span><br><span class="line">String a = Integer.toBinaryString(i);<span class="comment">//二</span></span><br><span class="line">String b = Integer.toHexString(i);<span class="comment">//十六</span></span><br><span class="line">String c = Integer.toOctalString(i);<span class="comment">//八</span></span><br><span class="line">String d = Integer.toString(i,<span class="number">35</span>);<span class="comment">// &lt;= 35进制</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -469,15 +480,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">栈（stack）</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -489,15 +500,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">map</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">string</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -521,14 +532,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">set</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vector</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">最短路</a>
               </li>
              
@@ -538,6 +541,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Bellman-Ford</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">set</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vector</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,10 +568,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">JAVA大数</a>
               </li>
              
@@ -569,7 +576,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">离散化</a>
+                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,23 +588,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">离散化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">贪心</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">拓扑排序（判环）</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">priority_queue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">spfa</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">无向图（负环）</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -609,23 +604,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">spfa</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">无向图（负环）</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">拓扑排序（判环）</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">priority_queue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">费马小定理</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">扩展欧几里得</a>
+                <a href="javascript:void(0)" class="js-tag color4">尺取法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异或</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">尺取法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,15 +640,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">multiset</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">树状数组</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">组合数</a>
+                <a href="javascript:void(0)" class="js-tag color4">multiset</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -657,11 +656,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">组合数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">翻转问题</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">链式前向星</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">费马小定理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">扩展欧几里得</a>
               </li>
             
             <div class="clearfix"></div>
