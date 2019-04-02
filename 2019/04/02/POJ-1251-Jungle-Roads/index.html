@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 素数筛 | 市井烟火气</title>
+  <title>POJ 1251 Jungle Roads | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="清纯，而又略带些烟火气">
-<meta property="og:type" content="website">
-<meta property="og:title" content="市井烟火气">
-<meta property="og:url" content="http://yoursite.com/tags/素数筛/index.html">
+  <meta name="description" content="Description 左侧图显示当前所有使用中的道路，以及现在每月的维护费用。当然，村庄之间必需有一些公路能够相通，即使路线并不像以前一样短。怎样才使每月的花费最小，并且所维持的道路，将连接所有村庄。">
+<meta name="keywords" content="题解,最小生成树,Kruskal(克鲁斯卡尔),Prim(普里姆)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POJ 1251 Jungle Roads">
+<meta property="og:url" content="http://yoursite.com/2019/04/02/POJ-1251-Jungle-Roads/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="清纯，而又略带些烟火气">
+<meta property="og:description" content="Description 左侧图显示当前所有使用中的道路，以及现在每月的维护费用。当然，村庄之间必需有一些公路能够相通，即使路线并不像以前一样短。怎样才使每月的花费最小，并且所维持的道路，将连接所有村庄。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-02T14:18:41.599Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="市井烟火气">
-<meta name="twitter:description" content="清纯，而又略带些烟火气">
+<meta name="twitter:title" content="POJ 1251 Jungle Roads">
+<meta name="twitter:description" content="Description 左侧图显示当前所有使用中的道路，以及现在每月的维护费用。当然，村庄之间必需有一些公路能够相通，即使路线并不像以前一样短。怎样才使每月的花费最小，并且所维持的道路，将连接所有村庄。">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -161,36 +163,104 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-POJ-1251-Jungle-Roads" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/22/POJ-3126-Prime-Path/" class="archive-article-date">
-  	<time datetime="2019-03-22T13:31:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/POJ-3126-Prime-Path/">POJ 3126 Prime Path</a>
+    <h1 class="article-title" itemprop="name">
+      POJ 1251 Jungle Roads
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/04/02/POJ-1251-Jungle-Roads/" class="archive-article-date">
+  	<time datetime="2019-04-02T12:38:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>左侧图显示当前所有使用中的道路，以及现在每月的维护费用。当然，村庄之间必需有一些公路能够相通，即使路线并不像以前一样短。怎样才使每月的花费最小，并且所维持的道路，将连接所有村庄。 </p>
+</blockquote>
+<a id="more"></a>
+<p><strong>Link</strong> <a href="http://poj.org/problem?id=1251" target="_blank" rel="noopener">http://poj.org/problem?id=1251</a></p>
+<h3 id="Kruskal"><a href="#Kruskal" class="headerlink" title="Kruskal"></a>Kruskal</h3><blockquote>
+<p>并查集 + sort(edge, edge + cnt, cmp) = Kruskal</p>
+<p>结构体存边：遍历每条边，unite每条边的两点</p>
+</blockquote>
+<h3 id="Code-of-Kruskal"><a href="#Code-of-Kruskal" class="headerlink" title="Code of Kruskal"></a>Code of Kruskal</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;<span class="comment">///n个点</span></span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="keyword">int</span> pre[N];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> there, here, w;</span><br><span class="line">&#125; a[<span class="number">1005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(edge a, edge b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.w &lt; b.w;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cnt = <span class="number">0</span>;</span><br><span class="line">    ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= n; ++i)</span><br><span class="line">        pre[i] = i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">found</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x != pre[x])</span><br><span class="line">        pre[x] = found(pre[x]);</span><br><span class="line">    <span class="keyword">return</span> pre[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">unite</span><span class="params">(edge t)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = found(t.there);</span><br><span class="line">    <span class="keyword">int</span> y = found(t.here);</span><br><span class="line">    <span class="keyword">if</span>(x != y)</span><br><span class="line">    &#123;</span><br><span class="line">        pre[y] = x;</span><br><span class="line">        <span class="keyword">return</span> t.w;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">///    cout &lt;&lt; int('A') &lt;&lt; '\n';    65</span></span><br><span class="line"><span class="comment">///    cout &lt;&lt; 'A' - 64 &lt;&lt; '\n';    1</span></span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) &amp;&amp; n)</span><br><span class="line">    &#123;</span><br><span class="line"><span class="comment">//        getchar();</span></span><br><span class="line">        init();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">char</span> now, nxt;</span><br><span class="line">            <span class="keyword">int</span> num, w;</span><br><span class="line"><span class="comment">//            scanf("%c%d", &amp;now, &amp;num);</span></span><br><span class="line"><span class="comment">//            getchar();</span></span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; now &gt;&gt; num;</span><br><span class="line">            <span class="keyword">while</span>(num--)</span><br><span class="line">            &#123;</span><br><span class="line"><span class="comment">//                scanf("%c%d", &amp;nxt, &amp;w);</span></span><br><span class="line"><span class="comment">//                getchar();</span></span><br><span class="line">                <span class="built_in">cin</span> &gt;&gt; nxt &gt;&gt; w;</span><br><span class="line">                a[cnt].there = now - <span class="number">65</span>;</span><br><span class="line">                a[cnt].here = nxt - <span class="number">65</span>;</span><br><span class="line">                a[cnt++].w = w;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        sort(a, a + cnt, cmp);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cnt; ++i)<span class="comment">///遍历所有边</span></span><br><span class="line">            ans += unite(a[i]);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>不过对于这个题，用scanf输入字符总会RE，非法内存访问？cin一次过</p>
+</blockquote>
+<h3 id="Prim"><a href="#Prim" class="headerlink" title="Prim"></a>Prim</h3><blockquote>
+<p>查找部分类似Dijkstra</p>
+<p>邻接矩阵存边：遍历每个点，依次连接</p>
+<p>注意图是双向的！</p>
+</blockquote>
+<blockquote>
+<p>邻接矩阵存边: 注定遍历“点”（某些算法所必需）</p>
+<p>结构体存边: 注定遍历“边”（高效）</p>
+</blockquote>
+<h3 id="Code-of-Prim"><a href="#Code-of-Prim" class="headerlink" title="Code of Prim"></a>Code of Prim</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n;<span class="comment">///点的个数</span></span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">30</span>];</span><br><span class="line"><span class="keyword">int</span> mp[<span class="number">30</span>][<span class="number">30</span>], low[<span class="number">30</span>];<span class="comment">///low[i]表示已成图所有点到点i的最小权值</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">prim</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> pos = <span class="number">1</span>;<span class="comment">///起点</span></span><br><span class="line">    vis[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)<span class="comment">///更新当前检测点到其他所有点的最小距离</span></span><br><span class="line">        low[i] = mp[pos][i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> cnt = n;</span><br><span class="line">    <span class="keyword">while</span>(--cnt)<span class="comment">///n个点，循环n-1次,一次不能多</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mmin = INF;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)<span class="comment">///类dijkstra查找</span></span><br><span class="line">            <span class="keyword">if</span>(vis[i] == <span class="number">0</span> &amp;&amp; low[i] &lt; mmin)<span class="comment">///未连接入图且</span></span><br></pre></td></tr></table></figure>
+<pre><code>{
+    mmin = low[i];
+    pos = i;
+}
+</code></pre><p>///     if(mmin == INF)有些题不能连成树</p>
+<pre><code>    vis[pos] = 1;///连入图并更新已成图所有点到其他所有点的最小距离
+    ans += mmin;
+    for(int i = 1; i &lt;= n; ++i)
+    {
+        if(vis[i] == 0 &amp;&amp; low[i] &gt; mp[pos][i])
+            low[i] = mp[pos][i];
+    }
+}
+cout &lt;&lt; ans &lt;&lt; &apos;\n&apos;;
+</code></pre><p>}</p>
+<p>int main()<br>{<br>    while(~scanf(“%d”, &amp;n) &amp;&amp; n)<br>    {<br>        memset(mp, INF, sizeof(mp));<br>        for(int i = 1; i &lt; n; ++i)<br>        {<br>            char now, nxt;<br>            int num, w;<br>            cin &gt;&gt; now &gt;&gt; num;<br>            while(num–)<br>            {<br>                cin &gt;&gt; nxt &gt;&gt; w;<br>                mp[now - 64][nxt - 64] = w;///点为1~n<br>                mp[nxt - 64][now - 64] = w;///点为1~n<br>            }<br>        }<br>        prim();<br>    }<br>    return 0;<br>}<br>~~~</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖!<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://i.postimg.cc/L640yQ3C/IMG-20190122-131012.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://i.postimg.cc/B6wmL4Rd/IMG-20190122-130126.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -200,29 +270,120 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">最小生成树</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">素数筛</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Kruskal(克鲁斯卡尔)</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Prim(普里姆)</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/02/POJ-1251-Jungle-Roads/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2019/04/01/带权并查集/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">带权并查集</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -247,9 +408,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
