@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>组合数 | 市井烟火气</title>
+  <title>组合数与第二类斯特林数 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="求解组合数 C（n，m） 暂时有三种方法： 1.存在数组里递归求解 2.较为生猛地求解（连乘连除） 3.改良版（乘一次除一次）">
 <meta name="keywords" content="知识,组合数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="组合数">
+<meta property="og:title" content="组合数与第二类斯特林数">
 <meta property="og:url" content="http://yoursite.com/2019/03/05/组合数/index.html">
 <meta property="og:site_name" content="市井烟火气">
 <meta property="og:description" content="求解组合数 C（n，m） 暂时有三种方法： 1.存在数组里递归求解 2.较为生猛地求解（连乘连除） 3.改良版（乘一次除一次）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-05T13:04:38.793Z">
+<meta property="og:updated_time" content="2019-04-22T14:18:38.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="组合数">
+<meta name="twitter:title" content="组合数与第二类斯特林数">
 <meta name="twitter:description" content="求解组合数 C（n，m） 暂时有三种方法： 1.存在数组里递归求解 2.较为生猛地求解（连乘连除） 3.改良版（乘一次除一次）">
   
     <link rel="alternative" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
@@ -174,7 +174,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      组合数
+      组合数与第二类斯特林数
     </h1>
   
 
@@ -199,6 +199,10 @@
 <h3 id="Code-存于数组"><a href="#Code-存于数组" class="headerlink" title="Code(存于数组)"></a>Code(存于数组)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> c[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">combine_init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="keyword">sizeof</span>(c));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i&lt;= <span class="number">105</span>; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        c[i][<span class="number">0</span>] = c[i][i] = <span class="number">1</span>;</span><br><span class="line">        c[i][<span class="number">1</span>] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; i; ++j)</span><br><span class="line">            <span class="keyword">if</span>(c[i][j] == <span class="number">0</span>)</span><br><span class="line">                c[i][j] = (c[i - <span class="number">1</span>][j] + c[i - <span class="number">1</span>][j - <span class="number">1</span>]);<span class="comment">/// % mod</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Code（连乘连除）"><a href="#Code（连乘连除）" class="headerlink" title="Code（连乘连除）"></a>Code（连乘连除）</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">violent_combine</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> n,<span class="keyword">long</span> <span class="keyword">long</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(m &lt; n - m)</span><br><span class="line">        m = n - m;<span class="comment">///取个较大值</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i = m + <span class="number">1</span>; i &lt;= n; ++i)<span class="comment">/// fac(n) / fac(m)</span></span><br><span class="line">        ans *= i;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> i = <span class="number">1</span>; i &lt;= n - m; ++i)<span class="comment">/// fac(n - m)</span></span><br><span class="line">        ans /= i;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Code-乘除共进"><a href="#Code-乘除共进" class="headerlink" title="Code(乘除共进)"></a>Code(乘除共进)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">combine</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b &gt; a - b)</span><br><span class="line">        b = a - b;<span class="comment">///取个较小值</span></span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= b; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        ans *= (a + <span class="number">1</span> - i);<span class="comment">/// fac(a) / fac(a - b)</span></span><br><span class="line">        ans /= i;          <span class="comment">/// fac(b)</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="update-第二类斯特林数"><a href="#update-第二类斯特林数" class="headerlink" title="update 第二类斯特林数"></a>update 第二类斯特林数</h3><blockquote>
+<p>c[n][m]把n个元素分到m个非空且不可区分的集合中去 </p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="keyword">sizeof</span>(c));</span><br><span class="line">    c[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i&lt;= <span class="number">105</span>; ++i)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= i; ++j)</span><br><span class="line">            <span class="keyword">if</span>(c[i][j] == <span class="number">0</span>)</span><br><span class="line">                c[i][j] = (c[i - <span class="number">1</span>][j] * j + c[i - <span class="number">1</span>][j - <span class="number">1</span>]) % mod;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -367,7 +371,7 @@
 <script src="https://jjeejj.github.io/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "组合数",
+  id: "组合数与第二类斯特林数",
   owner: 'fireworks99',
   repo: 'fireworks99.github.io',
   oauth: {
@@ -472,11 +476,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">知识</a>
+                <a href="javascript:void(0)" class="js-tag color3">题解</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">题解</a>
+                <a href="javascript:void(0)" class="js-tag color3">知识</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,15 +516,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">map</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">string</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">线段树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -596,11 +600,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JAVA大数</a>
+                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">KMP</a>
+                <a href="javascript:void(0)" class="js-tag color2">JAVA大数</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,11 +664,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
+                <a href="javascript:void(0)" class="js-tag color3">异或</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">异或</a>
+                <a href="javascript:void(0)" class="js-tag color5">归并排序</a>
               </li>
              
               <li class="article-tag-list-item">
