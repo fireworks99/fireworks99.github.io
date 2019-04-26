@@ -54,25 +54,25 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
-    <article id="post-POJ-2236-Wireless-Network" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-POJ-2528-Mayor-s-posters" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/30/POJ-2236-Wireless-Network/">POJ 2236 Wireless Network</a>
+      <a class="article-title" href="/2019/03/02/POJ-2528-Mayor-s-posters/">POJ 2528 Mayor&#39;s posters</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/03/30/POJ-2236-Wireless-Network/" class="article-date">
-  <time datetime="2019-03-30T00:35:24.000Z" itemprop="datePublished">2019-03-30</time>
+    <a href="/2019/03/02/POJ-2528-Mayor-s-posters/" class="article-date">
+  <time datetime="2019-03-02T00:06:31.000Z" itemprop="datePublished">2019-03-02</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/并查集/">并查集</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/离散化/">离散化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线段树/">线段树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
 
   </div>
   
@@ -82,12 +82,11 @@
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
         <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n台坏掉的电脑（1~N），一个限制距离d</p>
-<p>n个坐标（1~N），两种操作（O x 表示修复第x台电脑）（S x y表示询问：第x与第y台电脑能否直接或间接相连）</p>
+<p>The citizens of Bytetown, AB, could not stand that the candidates in the mayoral election campaign have been placing their electoral posters at all places at their whim. The city council has finally decided to build an electoral wall for placing the posters and introduce the following rules:  </p>
 </blockquote>
         
           <p class="article-more-link">
-            <a href="/2019/03/30/POJ-2236-Wireless-Network/#more">阅读全文</a>
+            <a href="/2019/03/02/POJ-2528-Mayor-s-posters/#more">阅读全文</a>
           </p>
         
       
@@ -99,25 +98,25 @@
 </article>
 
   
-    <article id="post-POJ-1797-Heavy-Transportation" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-离散化-线段树-HDU-5124" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/29/POJ-1797-Heavy-Transportation/">POJ 1797 Heavy Transportation</a>
+      <a class="article-title" href="/2019/03/01/离散化-线段树-HDU-5124/">离散化 线段树 HDU 5124</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/03/29/POJ-1797-Heavy-Transportation/" class="article-date">
-  <time datetime="2019-03-29T11:18:22.000Z" itemprop="datePublished">2019-03-29</time>
+    <a href="/2019/03/01/离散化-线段树-HDU-5124/" class="article-date">
+  <time datetime="2019-03-01T04:26:19.000Z" itemprop="datePublished">2019-03-01</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dijkstra/">Dijkstra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spfa/">spfa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最短路/">最短路</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/离散化/">离散化</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线段树/">线段树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
 
   </div>
   
@@ -126,13 +125,13 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n个点，m个关于边的叙述（边的权值代表路的最大承载量）</p>
-<p>求从1到n，路上的最大承载量</p>
+        <h3 id="关于离散化"><a href="#关于离散化" class="headerlink" title="关于离散化"></a>关于离散化</h3><blockquote>
+<p>离散化是什么：一些数字，他们的范围很大（0-1e9），但是个数不算多（1-1e5），并且这些数本身的数字大小不重要，重要的是这些数字之间的相对大小（比如说某个数字是这些数字中的第几小，而与这个数字本身大小没有关系，要的是相对大小）（6 8 9 4 离散化后即为 2 3 4 1）（要理解相对大小的意思）（6在这4个数字中排第二小，那么就把6离散化成2，与数字6本身没有关系， 8,9,4亦是如此）</p>
 </blockquote>
+<p><del>我个人觉得“离散化”根据其功能明明应该命名为“聚敛化”</del></p>
         
           <p class="article-more-link">
-            <a href="/2019/03/29/POJ-1797-Heavy-Transportation/#more">阅读全文</a>
+            <a href="/2019/03/01/离散化-线段树-HDU-5124/#more">阅读全文</a>
           </p>
         
       
@@ -144,25 +143,25 @@
 </article>
 
   
-    <article id="post-POJ-3268-Silver-Cow-Party" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-线段树-HDU-1556" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/28/POJ-3268-Silver-Cow-Party/">POJ 3268 Silver Cow Party</a>
+      <a class="article-title" href="/2019/02/28/线段树-HDU-1556/">线段树 HDU 1556 Color the ball</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/03/28/POJ-3268-Silver-Cow-Party/" class="article-date">
-  <time datetime="2019-03-28T11:54:01.000Z" itemprop="datePublished">2019-03-28</time>
+    <a href="/2019/02/28/线段树-HDU-1556/" class="article-date">
+  <time datetime="2019-02-28T12:25:36.000Z" itemprop="datePublished">2019-02-28</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spfa/">spfa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最短路/">最短路</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/线段树/">线段树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
 
   </div>
   
@@ -171,12 +170,12 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>有n个农场（1~N），给出M条单向路描述。每个农场派出一头牛去某个农场（X）参加聚会，聚会结束后要返回，当然它们来回都选择最短路（因为路是单向的，来回可能路径不同），问这n头牛中，来回所走路程最长的那头，它走的总路程是多少?</p>
+        <h3 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h3><blockquote>
+<p>擅长处理区间，可以快速的查找某一个节点在若干条线段中出现的次数，时间复杂度为O(logN)。而未优化的空间复杂度为2N，实际应用时一般还要开4N的数组以免越界，因此有时需要离散化让空间压缩。 </p>
 </blockquote>
         
           <p class="article-more-link">
-            <a href="/2019/03/28/POJ-3268-Silver-Cow-Party/#more">阅读全文</a>
+            <a href="/2019/02/28/线段树-HDU-1556/#more">阅读全文</a>
           </p>
         
       
@@ -188,25 +187,25 @@
 </article>
 
   
-    <article id="post-POJ-2253-Frogger" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-拓扑排序-HDU-3342" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/28/POJ-2253-Frogger/">POJ 2253 Frogger</a>
+      <a class="article-title" href="/2019/02/28/拓扑排序-HDU-3342/">拓扑排序 HDU 3342</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/03/28/POJ-2253-Frogger/" class="article-date">
-  <time datetime="2019-03-28T10:44:45.000Z" itemprop="datePublished">2019-03-28</time>
+    <a href="/2019/02/28/拓扑排序-HDU-3342/" class="article-date">
+  <time datetime="2019-02-28T08:18:04.000Z" itemprop="datePublished">2019-02-28</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dijkstra/">Dijkstra</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Floyd/">Floyd</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spfa/">spfa</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最短路/">最短路</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFS/">BFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/拓扑排序（判环）/">拓扑排序（判环）</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
 
   </div>
   
@@ -215,12 +214,15 @@
     
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>Freddy Frog is sitting on a stone in the middle of a lake. Suddenly he notices Fiona Frog who is sitting on another stone. He plans to visit her, but since the water is dirty and full of tourists’ sunscreen, he wants to avoid swimming and instead reach her by jumping.  </p>
+        <p><strong>拓扑排序判断各工程先后顺序是否出现矛盾（a -&gt; b, b -&gt; c, c -&gt; a）</strong></p>
+<blockquote>
+<p>BFS在这方面较DFS有些先天优势，统计入队结点数，看是否等于工程数</p>
+<p>DFS的vis[]数组改为0， -1， 1三个状态，0代表未访问，-1代表访问完毕，1代表是这一阶段正在访问的 （注意 if(-1) 相当于 if(1) ）【坑了自己一阵】</p>
 </blockquote>
+<p><strong>注意n个工程是（0 ~ n - 1 ）还是 （1 ~ n）</strong></p>
         
           <p class="article-more-link">
-            <a href="/2019/03/28/POJ-2253-Frogger/#more">阅读全文</a>
+            <a href="/2019/02/28/拓扑排序-HDU-3342/#more">阅读全文</a>
           </p>
         
       
@@ -232,25 +234,71 @@
 </article>
 
   
-    <article id="post-HDU-1425-sort" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-拓扑排序-UVA-10305" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/25/HDU-1425-sort/">HDU 1425 sort</a>
+      <a class="article-title" href="/2019/02/27/拓扑排序-UVA-10305/">拓扑排序 UVA 10305</a>
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/03/25/HDU-1425-sort/" class="article-date">
-  <time datetime="2019-03-25T12:24:32.000Z" itemprop="datePublished">2019-03-25</time>
+    <a href="/2019/02/27/拓扑排序-UVA-10305/" class="article-date">
+  <time datetime="2019-02-27T01:25:17.000Z" itemprop="datePublished">2019-02-27</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/哈希/">哈希</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/输入挂/">输入挂</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFS/">BFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/拓扑排序（无环）/">拓扑排序（无环）</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p><strong>拓扑排序解决工程的先后问题</strong></p>
+<blockquote>
+<p>DFS在这方面较BFS有些先天优势，本身按工程的先后顺序搜索。答案由后向前存入stack</p>
+<p>BFS加一个 in[] 数组，保证某一个工程（其前面有许多工程）在可行方案中尽量靠后放。答案由前向后存入vector</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/27/拓扑排序-UVA-10305/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-SDNUOJ-1169火星人" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/26/SDNUOJ-1169火星人/">SDNUOJ 1169火星人</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/26/SDNUOJ-1169火星人/" class="article-date">
+  <time datetime="2019-02-26T13:00:25.000Z" itemprop="datePublished">2019-02-26</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/next-permutation/">next_permutation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prev-permutation/">prev_permutation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
 
   </div>
   
@@ -260,11 +308,188 @@
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
         <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给你n个整数，请按从大到小的顺序输出其中前m大的数。 </p>
+<p>人类终于登上了火星的土地并且见到了神秘的火星人。人类和火星人都无法理解对方的语言，但是我们的科学家发明了一种用数字交流的方法。这种交流方法是这样的，首先，火星人把一个非常大的数字告诉人类科学家，科学家破解这个数字的含义后，再把一个很小的数字加到这个大数上面，把结果告诉火星人，作为人类的回答。</p>
 </blockquote>
         
           <p class="article-more-link">
-            <a href="/2019/03/25/HDU-1425-sort/#more">阅读全文</a>
+            <a href="/2019/02/26/SDNUOJ-1169火星人/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-HDU-1716排列2" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/26/HDU-1716排列2/">HDU 1716排列2</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/26/HDU-1716排列2/" class="article-date">
+  <time datetime="2019-02-26T11:12:43.000Z" itemprop="datePublished">2019-02-26</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/set/">set</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vector/">vector</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>现有四张卡片，用这四张卡片能排列出很多不同的4位数，要求按从小到大的顺序输出这些4位数。  </p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/26/HDU-1716排列2/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-HDU-1231-最大连续子序列" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/25/HDU-1231-最大连续子序列/">HDU 1231 最大连续子序列</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/25/HDU-1231-最大连续子序列/" class="article-date">
+  <time datetime="2019-02-25T13:46:40.000Z" itemprop="datePublished">2019-02-25</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …,  Nj }，其中 1 &lt;= i &lt;= j &lt;= K。最大连续子序列是所有连续子序列中元素和最大的一个，  例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和  为20。  在今年的数据结构考卷中，要求编写程序得到最大和，现在增加一个要求，即还需要输出该  子序列的第一个和最后一个元素。  </p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/25/HDU-1231-最大连续子序列/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-HDU-1263-水果" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/25/HDU-1263-水果/">HDU 1263 水果</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/25/HDU-1263-水果/" class="article-date">
+  <time datetime="2019-02-25T12:20:08.000Z" itemprop="datePublished">2019-02-25</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/map嵌套/">map嵌套</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Joe经营着一个不大的水果店.他认为生存之道就是经营最受顾客欢迎的水果.现在他想要一份水果销售情况的明细表 </p>
+</blockquote>
+<p><strong>题目链接</strong> <a href="http://acm.hdu.edu.cn/showproblem.php?pid=1263" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1263</a></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/25/HDU-1263-水果/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
+    <article id="post-HDU-1075-What-are-you-Talking-About" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/25/HDU-1075-What-are-you-Talking-About/">HDU 1075 What are you Talking About</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/25/HDU-1075-What-are-you-Talking-About/" class="article-date">
+  <time datetime="2019-02-25T11:21:36.000Z" itemprop="datePublished">2019-02-25</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/map/">map</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/string/">string</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Ignatius is so lucky that he met a Martian yesterday. But he didn’t know the language the Martians use. The Martian gives him a history book of Mars and a dictionary when it leaves. Now Ignatius want to translate the history book into English. Can you help him?  </p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/25/HDU-1075-What-are-you-Talking-About/#more">阅读全文</a>
           </p>
         
       
@@ -280,7 +505,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/7/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/9/">Next &raquo;</a>
   </nav>
 
 
@@ -289,14 +514,14 @@
   
     <div class="widget-box">
   <div class="avatar-box">
-    <img class="avatar" src="/images/default-avatar.jpeg" title="图片来自网络">
+    <img class="avatar" src="https://i.loli.net/2019/01/16/5c3ef071d474e.png" title="头像">
     <h3 class="avatar-name">
       
-        一路烟霞
+        市井烟火气
       
     </h3>
     <p class="avatar-slogan">
-      特别耐撕的小前端，资深的打酱油攻城狮。
+      求知若渴~虚心若愚
     </p>
   </div>
 </div>
