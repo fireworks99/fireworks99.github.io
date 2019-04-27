@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>python 字符串-列表-元组-字典 | 市井烟火气</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="python字符串 字符串是 Python 中最常用的数据类型。我们可以使用引号( ‘ 或 “ )来创建字符串。 Python 不支持单字符类型，单字符在 Python 中也是作为一个字符串使用">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 字符串-列表-元组-字典">
+<meta property="og:url" content="http://yoursite.com/2019/04/27/python-字符串-列表-元组-字典/index.html">
+<meta property="og:site_name" content="市井烟火气">
+<meta property="og:description" content="python字符串 字符串是 Python 中最常用的数据类型。我们可以使用引号( ‘ 或 “ )来创建字符串。 Python 不支持单字符类型，单字符在 Python 中也是作为一个字符串使用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-04-27T03:02:18.290Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 字符串-列表-元组-字典">
+<meta name="twitter:description" content="python字符串 字符串是 Python 中最常用的数据类型。我们可以使用引号( ‘ 或 “ )来创建字符串。 Python 不支持单字符类型，单字符在 Python 中也是作为一个字符串使用">
+  
+    <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://i.loli.net/2019/01/17/5c40047c7cf9e.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/tags/随笔/" title="">随笔</a>
+      
+        <a class="nav-item" href="/tags/题解/" title="">题解</a>
+      
+        <a class="nav-item" href="/tags/知识/" title="">知识</a>
+      
+        <a class="nav-item" href="/aboutme" title="">关于</a>
+      
+        <a class="nav-item" href="/friends" title="">友链</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-python-字符串-列表-元组-字典" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      python 字符串-列表-元组-字典
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/04/27/python-字符串-列表-元组-字典/" class="article-date">
+  <time datetime="2019-04-27T02:07:55.000Z" itemprop="datePublished">2019-04-27</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="python字符串"><a href="#python字符串" class="headerlink" title="python字符串"></a>python字符串</h3><blockquote>
+<p>字符串是 Python 中最常用的数据类型。我们可以使用引号( ‘ 或 “ )来创建字符串。</p>
+<p>Python 不支持单字符类型，单字符在 Python 中也是作为一个字符串使用 </p>
+</blockquote>
+<a id="more"></a>
+<h3 id="Code-of-string"><a href="#Code-of-string" class="headerlink" title="Code of string"></a>Code of string</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">var1 = <span class="string">'Apple'</span></span><br><span class="line">print(var1)</span><br><span class="line">print(var1[<span class="number">0</span>])                <span class="comment"># 下标索引访问</span></span><br><span class="line">print(var1[<span class="number">2</span> : <span class="number">4</span>])            <span class="comment"># 左闭右开式截取</span></span><br><span class="line">print(var1[ : <span class="number">3</span>] + <span class="string">"pear"</span>)    <span class="comment"># 截取加拼接</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># \转义字符</span></span><br><span class="line">print(<span class="string">'\\'</span>)</span><br><span class="line">print(<span class="string">'\a'</span>)                   <span class="comment"># 响铃警告</span></span><br><span class="line">print(<span class="string">'\"'</span>)</span><br><span class="line">print( <span class="string">'check'</span> +  <span class="string">'\n'</span>)       <span class="comment"># 换行（print自带一个）</span></span><br><span class="line"></span><br><span class="line">a = <span class="string">'Perfect'</span></span><br><span class="line">b = <span class="string">'Nice'</span></span><br><span class="line">print(a + b)                    <span class="comment"># 连接</span></span><br><span class="line">print(a * <span class="number">4</span>)                    <span class="comment"># 重复输出</span></span><br><span class="line"><span class="comment"># if 语句没有括号，有冒号</span></span><br><span class="line"><span class="keyword">if</span> <span class="string">'P'</span> <span class="keyword">in</span> a:                    <span class="comment"># in 成员运算符</span></span><br><span class="line">    print(<span class="string">"There is a P in a"</span>)</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    print(<span class="string">"There is not a P in a"</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="string">'P'</span> <span class="keyword">not</span> <span class="keyword">in</span> b:               <span class="comment"># not in</span></span><br><span class="line">    print( <span class="string">'p is not in b'</span>)</span><br><span class="line"><span class="keyword">else</span> :</span><br><span class="line">    print(<span class="string">'P is in b'</span>)</span><br><span class="line">print(<span class="string">r'\n'</span> )                  <span class="comment"># 原始字符串（中间不加空格）</span></span><br><span class="line">print(R<span class="string">'\n'</span> )</span><br><span class="line"></span><br><span class="line"><span class="comment"># %格式化输出</span></span><br><span class="line">print(<span class="string">"My name is %s, and I'm %d years old."</span> % ( <span class="string">'ZBL'</span>, <span class="number">19</span> ))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 三引号允许一个字符串跨多行，字符串中可以包含换行符、制表符以及其他特殊字符</span></span><br><span class="line">c = <span class="string">"""字符串可以</span></span><br><span class="line"><span class="string">跨多行多行字符串可以使用制表符</span></span><br><span class="line"><span class="string">TAB ( \t )。</span></span><br><span class="line"><span class="string">也可以使用换行符 [ \n ]</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">print(c)</span><br><span class="line"><span class="comment"># python的字符串内建函数(略)</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="Python列表list"><a href="#Python列表list" class="headerlink" title="Python列表list"></a>Python列表list</h3><blockquote>
+<p>序列是Python中最基本的数据结构。序列中的每个元素都分配一个数字 - 它的位置，或索引，第一个索引是0，第二个索引是1，依此类推。</p>
+<p>Python有6个序列的内置类型，但最常见的是<strong>列表</strong>和<strong>元组</strong>。</p>
+<p>序列都可以进行的操作包括索引，切片，加，乘，检查成员。</p>
+<p>列表是最常用的Python数据类型，它可以作为一个方括号内的逗号分隔值出现 </p>
+</blockquote>
+<h3 id="Code-of-List"><a href="#Code-of-List" class="headerlink" title="Code of List"></a>Code of List</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    d = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line">    print(d[<span class="number">2</span>:<span class="number">4</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列表的数据项不需要具有相同的类型</span></span><br><span class="line">list1 = [ <span class="string">'Fireworks'</span>, <span class="string">'4444'</span>, <span class="string">'!@#$%'</span>, <span class="string">'123asd'</span> ]</span><br><span class="line">list2 = [ <span class="string">'ABC123'</span>, <span class="string">'LX521'</span>, <span class="string">'!=!'</span>, <span class="string">'qaq'</span> ]</span><br><span class="line">print(len(list1))             <span class="comment"># 长度函数</span></span><br><span class="line">print(max(list1))             <span class="comment"># 最值（even for the string）</span></span><br><span class="line">print(min(list1))</span><br><span class="line">print(list1[<span class="number">3</span>])</span><br><span class="line">print(list2[<span class="number">1</span> : <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">list1[<span class="number">3</span>] = <span class="string">'MYL'</span>              <span class="comment"># 直接更新数据</span></span><br><span class="line">print(list1[<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">print(list1)                  <span class="comment"># 输出整个列表</span></span><br><span class="line"><span class="keyword">del</span> list1[<span class="number">1</span>]                  <span class="comment"># 删除列表元素</span></span><br><span class="line">print(list1)</span><br><span class="line">print(list1 + list2)</span><br><span class="line">print(list2 * <span class="number">2</span>)</span><br><span class="line">print(<span class="string">'Fireworks'</span> <span class="keyword">in</span> list1)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]: print(x, end = <span class="string">' '</span>)</span><br><span class="line"></span><br><span class="line">L = [ <span class="string">'LOVE'</span>, <span class="string">'Patience'</span>, <span class="string">'Duty'</span> ]</span><br><span class="line">print(L[<span class="number">2</span>])</span><br><span class="line">print(L[<span class="number">-2</span>])                <span class="comment"># Patience</span></span><br><span class="line">print(L[<span class="number">1</span> :])</span><br><span class="line"></span><br><span class="line">print(list1 + L)           <span class="comment"># 日常拼接</span></span><br><span class="line">e = [list1, L]</span><br><span class="line">print(e)                   <span class="comment"># 嵌套</span></span><br><span class="line"></span><br><span class="line">f = ( <span class="string">"12345"</span>, <span class="string">"SDNU"</span>, <span class="string">'qwq'</span>, <span class="string">'!*&amp;^%$#'</span> )</span><br><span class="line">print(f)</span><br><span class="line">print(list(f))            <span class="comment"># 元组转列表</span></span><br><span class="line"><span class="comment"># python 包含以下方法（略）</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">list.append(obj)</span></span><br><span class="line"><span class="string">list.count(obj)</span></span><br><span class="line"><span class="string">list.extend(seq)</span></span><br><span class="line"><span class="string">list.index(obj)</span></span><br><span class="line"><span class="string">list.insert(index, obj)</span></span><br><span class="line"><span class="string">list.pop([index=-1])</span></span><br><span class="line"><span class="string">list.remove(obj)</span></span><br><span class="line"><span class="string">list.reverse()</span></span><br><span class="line"><span class="string">list.sort( key=None, reverse=False)</span></span><br><span class="line"><span class="string">list.clear()</span></span><br><span class="line"><span class="string">list.copy()</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="Python元组tuple"><a href="#Python元组tuple" class="headerlink" title="Python元组tuple"></a>Python元组tuple</h3><blockquote>
+<p>Python 的元组与列表类似，不同之处在于元组的元素不能修改。</p>
+<p>元组使用小括号，列表使用方括号。</p>
+</blockquote>
+<h3 id="Code-of-tuple"><a href="#Code-of-tuple" class="headerlink" title="Code of tuple"></a>Code of tuple</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">tup1 = ( <span class="string">'Beautiful'</span>, <span class="string">'handsome'</span>, <span class="string">'1999'</span>, <span class="string">'2000'</span>)</span><br><span class="line">tup2 = <span class="string">'bug'</span>, <span class="string">'hug'</span>, <span class="string">'embrace'</span>,    <span class="comment"># without '()' is OK</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 元组中只包含一个元素时，需要在元素后面添加逗号，否则括号会被当作运算符使用</span></span><br><span class="line">tup3 = (<span class="number">50</span>)</span><br><span class="line">print( type(tup3) )                <span class="comment"># &lt;class 'int'&gt;</span></span><br><span class="line">tup4 = (<span class="number">50</span>, )</span><br><span class="line">print( type(tup4) )                <span class="comment"># &lt;class 'tuple'&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 下标访问、截取、不可修改但可以 + 连接 * 重复输出 in、 not in</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 元组中的元素值是不允许删除的，但我们可以使用del语句来删除整个元组</span></span><br><span class="line">print(tup1)</span><br><span class="line"><span class="keyword">del</span> tup1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 内置函数</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">len(tuple)</span></span><br><span class="line"><span class="string">max(tuple)</span></span><br><span class="line"><span class="string">min(tuple)</span></span><br><span class="line"><span class="string">tuple(seq) 列表转元组</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="Python字典Dict"><a href="#Python字典Dict" class="headerlink" title="Python字典Dict"></a>Python字典Dict</h3><blockquote>
+<p>字典是另一种可变容器模型，且可存储任意类型对象。</p>
+<p>字典的每个键值(key=&gt;value)对用冒号(<strong>:</strong>)分割，每个对之间用逗号(<strong>,</strong>)分割，整个字典包括在花括号<strong>{}</strong>中 </p>
+<p>键必须是唯一的，但值则不必。</p>
+<p>值可以取任何数据类型，但键必须是不可变的，如字符串，数字或元组。</p>
+</blockquote>
+<h3 id="Code-of-Dict"><a href="#Code-of-Dict" class="headerlink" title="Code of Dict"></a>Code of Dict</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 像c++里的map</span></span><br><span class="line">d1 = &#123; <span class="string">'ZBL'</span> : <span class="number">100</span>, <span class="string">'ZRX'</span> : <span class="number">101</span> &#125;</span><br><span class="line">d2 = &#123; <span class="string">'abc'</span> : <span class="number">44</span>, <span class="number">1000</span> : <span class="number">10</span> &#125;</span><br><span class="line">print(d1[<span class="string">'ZBL'</span>])                    <span class="comment"># 访问</span></span><br><span class="line">print(d2[<span class="number">1000</span>])</span><br><span class="line"></span><br><span class="line">d1[<span class="number">20</span>] = <span class="number">9600690</span>                   <span class="comment"># 添加</span></span><br><span class="line">d2[<span class="string">'QWQ'</span>] = <span class="string">'邱达不溜秋'</span></span><br><span class="line">d1[<span class="string">'ZBL'</span>] = <span class="number">59</span>                     <span class="comment"># 修改(更新)</span></span><br><span class="line">print(d1)</span><br><span class="line">print(d2)</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> d1[<span class="string">'ZRX'</span>]                      <span class="comment"># delete one element</span></span><br><span class="line">print(d1)</span><br><span class="line">d1.clear()                         <span class="comment"># clear</span></span><br><span class="line"><span class="keyword">del</span> d1                             <span class="comment"># delete the whole dict</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 键必须不可变，所以可以用数字，字符串或元组充当，而用列表就不行</span></span><br><span class="line">tup5 = (<span class="string">'1024'</span>, <span class="number">1111</span>, <span class="string">'people'</span>)</span><br><span class="line">list5 = [ <span class="string">'LX'</span>, <span class="number">2048</span>, <span class="string">'nine days'</span> ]</span><br><span class="line">d5 = &#123; tup5 : list5 &#125;              <span class="comment"># 元组作'键'，列表作'值'</span></span><br><span class="line">print( d5[tup5] )</span><br><span class="line"></span><br><span class="line"><span class="comment"># 内置函数 len(dict) str(dict) type(variable)</span></span><br></pre></td></tr></table></figure></div>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/04/25/Python-numpy库/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Python numpy库</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "python 字符串-列表-元组-字典",
+  owner: 'fireworks99',
+  repo: 'fireworks99.github.io',
+  oauth: {
+    client_id: '17cec8ce4020217ca317',
+    client_secret: 'f0cf66a4a81caab7ab9b0a55ac6d8ee725a335b2',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="https://i.loli.net/2019/01/16/5c3ef071d474e.png" title="头像">
+    <h3 class="avatar-name">
+      
+        市井烟火气
+      
+    </h3>
+    <p class="avatar-slogan">
+      求知若渴~虚心若愚
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/A-（启发式搜索）/">A*（启发式搜索）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/">BFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bellman-Ford/">Bellman-Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bellman-Ford/">Bellman_Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dijkstra/">Dijkstra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Floyd/">Floyd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GCD与LCM/">GCD与LCM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA大数/">JAVA大数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/">KMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kruskal-克鲁斯卡尔/">Kruskal(克鲁斯卡尔)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prim-普里姆/">Prim(普里姆)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map嵌套/">map嵌套</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multiset/">multiset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next-permutation/">next_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prev-permutation/">prev_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/priority-queue/">priority_queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/set/">set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spfa/">spfa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vector/">vector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分/">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前缀和/">前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/剪枝/">剪枝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同余定理/">同余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哈希/">哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/埃氏筛/">埃氏筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数求余/">大数求余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/尺取法/">尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/差分/">差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/并查集/">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异或/">异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并排序/">归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扩展欧几里得/">扩展欧几里得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拓扑排序（判环）/">拓扑排序（判环）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拓扑排序（无环）/">拓扑排序（无环）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无向图（负环）/">无向图（负环）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最长回文子串/">最长回文子串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/栈（stack）/">栈（stack）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树状数组/">树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/离散化/">离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/素数筛/">素数筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线性筛/">线性筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线段树/">线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数/">组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻转问题/">翻转问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心/">贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/费马小定理/">费马小定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/输入挂/">输入挂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链式前向星/">链式前向星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/A-（启发式搜索）/" style="font-size: 10px;">A*（启发式搜索）</a> <a href="/tags/BFS/" style="font-size: 17.27px;">BFS</a> <a href="/tags/Bellman-Ford/" style="font-size: 11.82px;">Bellman-Ford</a> <a href="/tags/Bellman-Ford/" style="font-size: 10.91px;">Bellman_Ford</a> <a href="/tags/DFS/" style="font-size: 12.73px;">DFS</a> <a href="/tags/Dijkstra/" style="font-size: 13.64px;">Dijkstra</a> <a href="/tags/Floyd/" style="font-size: 14.55px;">Floyd</a> <a href="/tags/GCD与LCM/" style="font-size: 10px;">GCD与LCM</a> <a href="/tags/JAVA大数/" style="font-size: 10px;">JAVA大数</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/Kruskal-克鲁斯卡尔/" style="font-size: 11.82px;">Kruskal(克鲁斯卡尔)</a> <a href="/tags/Prim-普里姆/" style="font-size: 11.82px;">Prim(普里姆)</a> <a href="/tags/Python/" style="font-size: 11.82px;">Python</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/map嵌套/" style="font-size: 10px;">map嵌套</a> <a href="/tags/multiset/" style="font-size: 10px;">multiset</a> <a href="/tags/next-permutation/" style="font-size: 10px;">next_permutation</a> <a href="/tags/prev-permutation/" style="font-size: 10px;">prev_permutation</a> <a href="/tags/priority-queue/" style="font-size: 11.82px;">priority_queue</a> <a href="/tags/set/" style="font-size: 10.91px;">set</a> <a href="/tags/spfa/" style="font-size: 16.36px;">spfa</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/vector/" style="font-size: 13.64px;">vector</a> <a href="/tags/二分/" style="font-size: 10.91px;">二分</a> <a href="/tags/前缀和/" style="font-size: 10.91px;">前缀和</a> <a href="/tags/剪枝/" style="font-size: 10px;">剪枝</a> <a href="/tags/动态规划/" style="font-size: 15.45px;">动态规划</a> <a href="/tags/同余定理/" style="font-size: 10.91px;">同余定理</a> <a href="/tags/哈希/" style="font-size: 10px;">哈希</a> <a href="/tags/埃氏筛/" style="font-size: 10px;">埃氏筛</a> <a href="/tags/大数求余/" style="font-size: 10.91px;">大数求余</a> <a href="/tags/尺取法/" style="font-size: 10px;">尺取法</a> <a href="/tags/差分/" style="font-size: 10px;">差分</a> <a href="/tags/并查集/" style="font-size: 14.55px;">并查集</a> <a href="/tags/异或/" style="font-size: 10px;">异或</a> <a href="/tags/归并排序/" style="font-size: 11.82px;">归并排序</a> <a href="/tags/扩展欧几里得/" style="font-size: 10px;">扩展欧几里得</a> <a href="/tags/拓扑排序（判环）/" style="font-size: 11.82px;">拓扑排序（判环）</a> <a href="/tags/拓扑排序（无环）/" style="font-size: 10px;">拓扑排序（无环）</a> <a href="/tags/数学/" style="font-size: 10.91px;">数学</a> <a href="/tags/无向图（负环）/" style="font-size: 10px;">无向图（负环）</a> <a href="/tags/最小生成树/" style="font-size: 11.82px;">最小生成树</a> <a href="/tags/最短路/" style="font-size: 18.18px;">最短路</a> <a href="/tags/最长回文子串/" style="font-size: 10px;">最长回文子串</a> <a href="/tags/栈（stack）/" style="font-size: 10px;">栈（stack）</a> <a href="/tags/树状数组/" style="font-size: 12.73px;">树状数组</a> <a href="/tags/知识/" style="font-size: 19.09px;">知识</a> <a href="/tags/离散化/" style="font-size: 10.91px;">离散化</a> <a href="/tags/素数筛/" style="font-size: 10px;">素数筛</a> <a href="/tags/线性筛/" style="font-size: 10px;">线性筛</a> <a href="/tags/线段树/" style="font-size: 16.36px;">线段树</a> <a href="/tags/组合数/" style="font-size: 10px;">组合数</a> <a href="/tags/翻转问题/" style="font-size: 10px;">翻转问题</a> <a href="/tags/贪心/" style="font-size: 10.91px;">贪心</a> <a href="/tags/费马小定理/" style="font-size: 10px;">费马小定理</a> <a href="/tags/输入挂/" style="font-size: 10.91px;">输入挂</a> <a href="/tags/链式前向星/" style="font-size: 10px;">链式前向星</a> <a href="/tags/随笔/" style="font-size: 15.45px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/27/python-字符串-列表-元组-字典/">python 字符串-列表-元组-字典</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/25/Python-numpy库/">Python numpy库</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/24/POJ-3259-Wormholes/">POJ 3259 Wormholes</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/23/A经验总结/">经验总结</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/22/KMP/">KMP</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 市井烟火气 &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/随笔/" class="mobile-nav-link">随笔</a>
+  
+    <a href="/tags/题解/" class="mobile-nav-link">题解</a>
+  
+    <a href="/tags/知识/" class="mobile-nav-link">知识</a>
+  
+    <a href="/aboutme" class="mobile-nav-link">关于</a>
+  
+    <a href="/friends" class="mobile-nav-link">友链</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
