@@ -5,23 +5,23 @@
   
 
   
-  <title>HDU 1231 最大连续子序列 | 市井烟火气</title>
+  <title>HDU 2289 Cup | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="Description 给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …,  Nj }，其中 1 &amp;lt;= i &amp;lt;= j &amp;lt;= K。最大连续子序列是所有连续子序列中元素和最大的一个，  例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和  为20。  在今年的">
-<meta name="keywords" content="题解,动态规划">
+  <meta name="description" content="Description 一个杯子，已知上下两底面半径和杯子高度、水的体积，求水在杯中的高度">
+<meta name="keywords" content="题解,二分">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU 1231 最大连续子序列">
-<meta property="og:url" content="http://yoursite.com/2019/02/25/HDU-1231-最大连续子序列/index.html">
+<meta property="og:title" content="HDU 2289 Cup">
+<meta property="og:url" content="http://yoursite.com/2019/05/06/HDU-2289-Cup/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="Description 给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …,  Nj }，其中 1 &amp;lt;= i &amp;lt;= j &amp;lt;= K。最大连续子序列是所有连续子序列中元素和最大的一个，  例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和  为20。  在今年的">
+<meta property="og:description" content="Description 一个杯子，已知上下两底面半径和杯子高度、水的体积，求水在杯中的高度">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-25T13:53:22.927Z">
+<meta property="og:updated_time" content="2019-05-06T14:08:14.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU 1231 最大连续子序列">
-<meta name="twitter:description" content="Description 给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …,  Nj }，其中 1 &amp;lt;= i &amp;lt;= j &amp;lt;= K。最大连续子序列是所有连续子序列中元素和最大的一个，  例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和  为20。  在今年的">
+<meta name="twitter:title" content="HDU 2289 Cup">
+<meta name="twitter:description" content="Description 一个杯子，已知上下两底面半径和杯子高度、水的体积，求水在杯中的高度">
   
     <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -62,25 +62,25 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-HDU-1231-最大连续子序列" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-HDU-2289-Cup" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      HDU 1231 最大连续子序列
+      HDU 2289 Cup
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/02/25/HDU-1231-最大连续子序列/" class="article-date">
-  <time datetime="2019-02-25T13:46:40.000Z" itemprop="datePublished">2019-02-25</time>
+    <a href="/2019/05/06/HDU-2289-Cup/" class="article-date">
+  <time datetime="2019-05-06T13:58:19.000Z" itemprop="datePublished">2019-05-06</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二分/">二分</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
 
   </div>
   
@@ -94,22 +94,19 @@
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
         <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给定K个整数的序列{ N1, N2, …, NK }，其任意连续子序列可表示为{ Ni, Ni+1, …,  Nj }，其中 1 &lt;= i &lt;= j &lt;= K。最大连续子序列是所有连续子序列中元素和最大的一个，  例如给定序列{ -2, 11, -4, 13, -5, -2 }，其最大连续子序列为{ 11, -4, 13 }，最大和  为20。  在今年的数据结构考卷中，要求编写程序得到最大和，现在增加一个要求，即还需要输出该  子序列的第一个和最后一个元素。  </p>
+<p>一个杯子，已知上下两底面半径和杯子高度、水的体积，求水在杯中的高度</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
-<p>测试输入包含若干测试用例，每个测试用例占2行，第1行给出正整数K( &lt; 10000 )，第2行给出K个整数，中间用空格分隔。当K为0时，输入结束，该用例不被处理。  </p>
+<p><strong><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2289" style="color:violet;" target="_blank" rel="noopener">题目链接</a></strong></p>
+<blockquote>
+<p>二分：</p>
+<p>越看越玄乎了…</p>
+<p>那些个能直接解出来的模拟题、数学题，直接解出来的答案是错误的，或是精度丧失了的，而二分查找（枚举）赋值代数是：natural，纯真自然的、一尘不染的，可AC的…</p>
 </blockquote>
-<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
-<p>对每个测试用例，在1行里输出最大和、最大连续子序列的第一个和最后一个元  素，中间用空格分隔。如果最大连续子序列不唯一，则输出序号i和j最小的那个（如输入样例的第2、3组）。若所有K个元素都是负数，则定义其最大和为0，输出整个序列的首尾元素。  </p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> eps = <span class="number">1e-9</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> PI = <span class="built_in">acos</span>(<span class="number">-1.0</span>);</span><br><span class="line"><span class="keyword">double</span> r, R, H, V;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">cal</span><span class="params">(<span class="keyword">double</span> ans)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> tr = ans / H * (R - r) + r;</span><br><span class="line">    <span class="keyword">return</span> (tr * tr + r * r + r * tr) * PI * ans / <span class="number">3</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lf%lf%lf%lf"</span>, &amp;r, &amp;R, &amp;H, &amp;V);</span><br><span class="line"><span class="comment">//        if(R - r &lt; eps)</span></span><br><span class="line"><span class="comment">//            printf("%.6f\n", V / (r * r * PI));</span></span><br><span class="line"><span class="comment">//        else</span></span><br><span class="line"><span class="comment">//        &#123;</span></span><br><span class="line"><span class="comment">//            double left = V / (R * R * PI);</span></span><br><span class="line"><span class="comment">//            double right = V / (r * r * PI);</span></span><br><span class="line">            <span class="keyword">double</span> left = <span class="number">0</span>, right = <span class="number">100</span>, tv, mid;</span><br><span class="line">            <span class="keyword">while</span>(right - left &gt; eps)</span><br><span class="line">            &#123;</span><br><span class="line">                mid = (left + right) / <span class="number">2</span>;</span><br><span class="line">                tv = cal(mid);</span><br><span class="line">                <span class="keyword">if</span>(<span class="built_in">fabs</span>(tv - V) &lt; eps)</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(tv &lt; V)</span><br><span class="line">                    left = mid;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    right = mid;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%.6f\n"</span>, mid);</span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>有时候人为好心地去缩小界线——反而好心办坏儿事…</p>
 </blockquote>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line">-2 11 -4 13 -5 -2</span><br><span class="line">10</span><br><span class="line">-10 1 2 3 4 -5 -23 3 7 -21</span><br><span class="line">6</span><br><span class="line">5 -8 3 2 5 0</span><br><span class="line">1</span><br><span class="line">10</span><br><span class="line">3</span><br><span class="line">-1 -5 -2</span><br><span class="line">3</span><br><span class="line">-1 0 -2</span><br><span class="line">0</span><br></pre></td></tr></table></figure></div>
-<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PLAIN"><figure class="iseeu highlight /plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">20 11 13</span><br><span class="line">10 1 4</span><br><span class="line">10 3 5</span><br><span class="line">10 10 10</span><br><span class="line">0 -1 -2</span><br><span class="line">0 0 0</span><br></pre></td></tr></table></figure></div>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
-<p>dp[i]表示以i结尾的最大连续子序列的和 (也可以直接以数学思维做)</p>
-</blockquote>
-<h3 id="Code-动态规划"><a href="#Code-动态规划" class="headerlink" title="Code(动态规划)"></a>Code(动态规划)</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; n &amp;&amp; n)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> a[<span class="number">10005</span>];</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> dp[<span class="number">10005</span>];</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;a[i]);</span><br><span class="line">            <span class="keyword">if</span>(a[i] &gt;= <span class="number">0</span>)</span><br><span class="line">                flag = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(!flag)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">'0'</span> &lt;&lt; <span class="string">' '</span> &lt;&lt; a[<span class="number">0</span>] &lt;&lt; <span class="string">' '</span> &lt;&lt; a[n - <span class="number">1</span>] &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mmax = <span class="number">-1</span>;<span class="comment">///为了不漏0</span></span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> over = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">///dp的时候注意第一个的初始化</span></span><br><span class="line">        dp[<span class="number">0</span>] = a[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">if</span>(dp[<span class="number">0</span>] &gt; mmax)</span><br><span class="line">        &#123;</span><br><span class="line">            mmax = dp[<span class="number">0</span>];</span><br><span class="line">            over = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i] = max(dp[i - <span class="number">1</span>] + a[i], a[i]);</span><br><span class="line">            <span class="keyword">if</span>(dp[i] &gt; mmax)</span><br><span class="line">            &#123;</span><br><span class="line">                mmax = dp[i];</span><br><span class="line">                over = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">///找最靠前的start</span></span><br><span class="line">        <span class="keyword">int</span> tem = mmax;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = over; i &gt;= <span class="number">0</span>; --i)</span><br><span class="line">        &#123;</span><br><span class="line">            tem -= a[i];</span><br><span class="line">            <span class="keyword">if</span>(tem == <span class="number">0</span>)</span><br><span class="line">                start = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; mmax &lt;&lt; <span class="string">" "</span> &lt;&lt; a[start] &lt;&lt; <span class="string">" "</span> &lt;&lt; a[over] &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>数学思维</strong>  <a href="https://blog.csdn.net/chikchen/article/details/84501429" target="_blank" rel="noopener">https://blog.csdn.net/chikchen/article/details/84501429</a></p>
 
       
     </div>
@@ -124,20 +121,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/02/26/HDU-1716排列2/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            HDU 1716排列2
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/02/25/HDU-1263-水果/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">HDU 1263 水果</div>
+      <a href="/2019/05/06/CodeForces-371C-Hamburgers/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">CodeForces 371C Hamburgers</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
@@ -150,7 +138,7 @@
 <script src="https://jjeejj.github.io/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "HDU 1231 最大连续子序列",
+  id: "HDU 2289 Cup",
   owner: 'fireworks99',
   repo: 'fireworks99.github.io',
   oauth: {
