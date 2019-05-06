@@ -62,6 +62,50 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-SDNUOJ-1169火星人" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/26/SDNUOJ-1169火星人/">SDNUOJ 1169火星人</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/26/SDNUOJ-1169火星人/" class="article-date">
+  <time datetime="2019-02-26T13:00:25.000Z" itemprop="datePublished">2019-02-26</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/next-permutation/">next_permutation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prev-permutation/">prev_permutation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>人类终于登上了火星的土地并且见到了神秘的火星人。人类和火星人都无法理解对方的语言，但是我们的科学家发明了一种用数字交流的方法。这种交流方法是这样的，首先，火星人把一个非常大的数字告诉人类科学家，科学家破解这个数字的含义后，再把一个很小的数字加到这个大数上面，把结果告诉火星人，作为人类的回答。</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/26/SDNUOJ-1169火星人/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    
+  </div>
+  
+  
+</article>
+
+  
     <article id="post-HDU-1716排列2" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
@@ -463,60 +507,6 @@
 </article>
 
   
-    <article id="post-HDU-1556" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/24/HDU-1556/">HDU 1556 Color the ball（差分）</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/24/HDU-1556/" class="article-date">
-  <time datetime="2019-02-24T01:24:21.000Z" itemprop="datePublished">2019-02-24</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前缀和/">前缀和</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/差分/">差分</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/知识/">知识</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-  </div>
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h3 id="用差分实现区间操作"><a href="#用差分实现区间操作" class="headerlink" title="用差分实现区间操作"></a>用差分实现区间操作</h3><h3 id="一维"><a href="#一维" class="headerlink" title="一维"></a>一维</h3><blockquote>
-<p>给定一个长度为n的数列a，要求支持操作add(L,R,k)表示对a[L]~a[R]的每个数都加上k。并求修改后的序列a。 </p>
-</blockquote>
-<blockquote>
-<p>设原数组为a[i]a[i], 设数组d[i]=a[i]−a[i−1](a[0]=0)，则 a[i]=∑ij=1d[j] </p>
-</blockquote>
-<blockquote>
-<p>更新操作update(s, t, d)把区间A[s]…A[t]都增加d，我们引入一个数组delta[i]，表示</p>
-<p>A[i]…A[n]的共同增量，n是数组的大小。那么update操作可以转化为：</p>
-<p>1）令delta[s] = delta[s] + d，表示将A[s]…A[n]同时增加d，但这样A[t+1]…A[n]就多加了d</p>
-<p>2）再令delta[t+1] = delta[t+1] - d，表示将A[t+1]…A[n]同时减d</p>
-</blockquote>
-<p><strong>我们考虑用差分的做法。这里 需要一个辅助数组c，c用来记录某一个位置上的总改变量。c[i]表示的是i~n这些元素都加上c[i]这个数。我们对[L,R]区间进行加值操作，在c[L]处加一个k，在c[R+1]处就减去一个k。最后求序列的每个位置变成了多少，只需要求一下c数组的前缀和，然后和原数组按位相加就好。</strong></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/02/24/HDU-1556/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    
-  </div>
-  
-  
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -561,7 +551,7 @@
   <div class="widget-box">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/A-（启发式搜索）/" style="font-size: 10px;">A*（启发式搜索）</a> <a href="/tags/BFS/" style="font-size: 17.5px;">BFS</a> <a href="/tags/Bellman-Ford/" style="font-size: 13.33px;">Bellman-Ford</a> <a href="/tags/DFS/" style="font-size: 12.5px;">DFS</a> <a href="/tags/Dijkstra/" style="font-size: 13.33px;">Dijkstra</a> <a href="/tags/Floyd/" style="font-size: 14.17px;">Floyd</a> <a href="/tags/GCD与LCM/" style="font-size: 10px;">GCD与LCM</a> <a href="/tags/JAVA大数/" style="font-size: 10px;">JAVA大数</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/Kruskal-克鲁斯卡尔/" style="font-size: 11.67px;">Kruskal(克鲁斯卡尔)</a> <a href="/tags/Prim-普里姆/" style="font-size: 11.67px;">Prim(普里姆)</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/map嵌套/" style="font-size: 10px;">map嵌套</a> <a href="/tags/multiset/" style="font-size: 10px;">multiset</a> <a href="/tags/next-permutation/" style="font-size: 10px;">next_permutation</a> <a href="/tags/prev-permutation/" style="font-size: 10px;">prev_permutation</a> <a href="/tags/priority-queue/" style="font-size: 11.67px;">priority_queue</a> <a href="/tags/set/" style="font-size: 10.83px;">set</a> <a href="/tags/spfa/" style="font-size: 16.67px;">spfa</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/vector/" style="font-size: 13.33px;">vector</a> <a href="/tags/二分/" style="font-size: 11.67px;">二分</a> <a href="/tags/前缀和/" style="font-size: 10.83px;">前缀和</a> <a href="/tags/剪枝/" style="font-size: 10px;">剪枝</a> <a href="/tags/动态规划/" style="font-size: 15.83px;">动态规划</a> <a href="/tags/同余定理/" style="font-size: 10.83px;">同余定理</a> <a href="/tags/哈希/" style="font-size: 10px;">哈希</a> <a href="/tags/埃氏筛/" style="font-size: 10px;">埃氏筛</a> <a href="/tags/大数求余/" style="font-size: 10.83px;">大数求余</a> <a href="/tags/尺取法/" style="font-size: 10px;">尺取法</a> <a href="/tags/差分/" style="font-size: 10px;">差分</a> <a href="/tags/并查集/" style="font-size: 14.17px;">并查集</a> <a href="/tags/异或/" style="font-size: 10px;">异或</a> <a href="/tags/归并排序/" style="font-size: 11.67px;">归并排序</a> <a href="/tags/扩展欧几里得/" style="font-size: 10px;">扩展欧几里得</a> <a href="/tags/拓扑排序（判环）/" style="font-size: 11.67px;">拓扑排序（判环）</a> <a href="/tags/拓扑排序（无环）/" style="font-size: 10px;">拓扑排序（无环）</a> <a href="/tags/数学/" style="font-size: 10.83px;">数学</a> <a href="/tags/无向图（负环）/" style="font-size: 10px;">无向图（负环）</a> <a href="/tags/最小生成树/" style="font-size: 11.67px;">最小生成树</a> <a href="/tags/最短路/" style="font-size: 18.33px;">最短路</a> <a href="/tags/最长回文子串/" style="font-size: 10px;">最长回文子串</a> <a href="/tags/栈（stack）/" style="font-size: 10px;">栈（stack）</a> <a href="/tags/树状数组/" style="font-size: 12.5px;">树状数组</a> <a href="/tags/知识/" style="font-size: 19.17px;">知识</a> <a href="/tags/离散化/" style="font-size: 10.83px;">离散化</a> <a href="/tags/素数筛/" style="font-size: 10px;">素数筛</a> <a href="/tags/线性筛/" style="font-size: 10px;">线性筛</a> <a href="/tags/线段树/" style="font-size: 15.83px;">线段树</a> <a href="/tags/组合数/" style="font-size: 10px;">组合数</a> <a href="/tags/翻转问题/" style="font-size: 10px;">翻转问题</a> <a href="/tags/贪心/" style="font-size: 10.83px;">贪心</a> <a href="/tags/费马小定理/" style="font-size: 10px;">费马小定理</a> <a href="/tags/输入挂/" style="font-size: 10.83px;">输入挂</a> <a href="/tags/链式前向星/" style="font-size: 10px;">链式前向星</a> <a href="/tags/随笔/" style="font-size: 15px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+      <a href="/tags/A-（启发式搜索）/" style="font-size: 10px;">A*（启发式搜索）</a> <a href="/tags/BFS/" style="font-size: 17.5px;">BFS</a> <a href="/tags/Bellman-Ford/" style="font-size: 13.33px;">Bellman-Ford</a> <a href="/tags/DFS/" style="font-size: 12.5px;">DFS</a> <a href="/tags/Dijkstra/" style="font-size: 13.33px;">Dijkstra</a> <a href="/tags/Floyd/" style="font-size: 14.17px;">Floyd</a> <a href="/tags/GCD与LCM/" style="font-size: 10px;">GCD与LCM</a> <a href="/tags/JAVA大数/" style="font-size: 10px;">JAVA大数</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/Kruskal-克鲁斯卡尔/" style="font-size: 11.67px;">Kruskal(克鲁斯卡尔)</a> <a href="/tags/Prim-普里姆/" style="font-size: 11.67px;">Prim(普里姆)</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/map嵌套/" style="font-size: 10px;">map嵌套</a> <a href="/tags/multiset/" style="font-size: 10px;">multiset</a> <a href="/tags/next-permutation/" style="font-size: 10px;">next_permutation</a> <a href="/tags/prev-permutation/" style="font-size: 10px;">prev_permutation</a> <a href="/tags/priority-queue/" style="font-size: 11.67px;">priority_queue</a> <a href="/tags/set/" style="font-size: 10.83px;">set</a> <a href="/tags/spfa/" style="font-size: 16.67px;">spfa</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/vector/" style="font-size: 13.33px;">vector</a> <a href="/tags/二分/" style="font-size: 12.5px;">二分</a> <a href="/tags/前缀和/" style="font-size: 10.83px;">前缀和</a> <a href="/tags/剪枝/" style="font-size: 10px;">剪枝</a> <a href="/tags/动态规划/" style="font-size: 15.83px;">动态规划</a> <a href="/tags/同余定理/" style="font-size: 10.83px;">同余定理</a> <a href="/tags/哈希/" style="font-size: 10px;">哈希</a> <a href="/tags/埃氏筛/" style="font-size: 10px;">埃氏筛</a> <a href="/tags/大数求余/" style="font-size: 10.83px;">大数求余</a> <a href="/tags/尺取法/" style="font-size: 10px;">尺取法</a> <a href="/tags/差分/" style="font-size: 10px;">差分</a> <a href="/tags/并查集/" style="font-size: 14.17px;">并查集</a> <a href="/tags/异或/" style="font-size: 10px;">异或</a> <a href="/tags/归并排序/" style="font-size: 11.67px;">归并排序</a> <a href="/tags/扩展欧几里得/" style="font-size: 10px;">扩展欧几里得</a> <a href="/tags/拓扑排序（判环）/" style="font-size: 11.67px;">拓扑排序（判环）</a> <a href="/tags/拓扑排序（无环）/" style="font-size: 10px;">拓扑排序（无环）</a> <a href="/tags/数学/" style="font-size: 10.83px;">数学</a> <a href="/tags/无向图（负环）/" style="font-size: 10px;">无向图（负环）</a> <a href="/tags/最小生成树/" style="font-size: 11.67px;">最小生成树</a> <a href="/tags/最短路/" style="font-size: 18.33px;">最短路</a> <a href="/tags/最长回文子串/" style="font-size: 10px;">最长回文子串</a> <a href="/tags/栈（stack）/" style="font-size: 10px;">栈（stack）</a> <a href="/tags/树状数组/" style="font-size: 12.5px;">树状数组</a> <a href="/tags/知识/" style="font-size: 19.17px;">知识</a> <a href="/tags/离散化/" style="font-size: 10.83px;">离散化</a> <a href="/tags/素数筛/" style="font-size: 10px;">素数筛</a> <a href="/tags/线性筛/" style="font-size: 10px;">线性筛</a> <a href="/tags/线段树/" style="font-size: 15.83px;">线段树</a> <a href="/tags/组合数/" style="font-size: 10px;">组合数</a> <a href="/tags/翻转问题/" style="font-size: 10px;">翻转问题</a> <a href="/tags/贪心/" style="font-size: 10.83px;">贪心</a> <a href="/tags/费马小定理/" style="font-size: 10px;">费马小定理</a> <a href="/tags/输入挂/" style="font-size: 10.83px;">输入挂</a> <a href="/tags/链式前向星/" style="font-size: 10px;">链式前向星</a> <a href="/tags/随笔/" style="font-size: 15px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
     </div>
   </div>
 
@@ -582,6 +572,10 @@
       <ul>
         
           <li>
+            <a href="/2019/05/06/CodeForces-371C-Hamburgers/">CodeForces 371C Hamburgers</a>
+          </li>
+        
+          <li>
             <a href="/2019/05/05/POJ-3273-Monthly-Expense/">POJ 3273 Monthly Expense</a>
           </li>
         
@@ -595,10 +589,6 @@
         
           <li>
             <a href="/2019/04/27/python-字符串-列表-元组-字典/">python 字符串-列表-元组-字典</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/25/Python-numpy库/">Python numpy库</a>
           </li>
         
       </ul>
