@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>POJ 2785 4 Values whose Sum is 0 | 市井烟火气</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="Description n行数据，每行4个，每列选出一个数加起来和为0，这样的情况共几种？">
+<meta name="keywords" content="题解,二分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POJ 2785 4 Values whose Sum is 0">
+<meta property="og:url" content="http://yoursite.com/2019/05/07/POJ-2785-4-Values-whose-Sum-is-0/index.html">
+<meta property="og:site_name" content="市井烟火气">
+<meta property="og:description" content="Description n行数据，每行4个，每列选出一个数加起来和为0，这样的情况共几种？">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-07T10:42:42.439Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="POJ 2785 4 Values whose Sum is 0">
+<meta name="twitter:description" content="Description n行数据，每行4个，每列选出一个数加起来和为0，这样的情况共几种？">
+  
+    <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://i.loli.net/2019/01/17/5c40047c7cf9e.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/tags/随笔/" title="">随笔</a>
+      
+        <a class="nav-item" href="/tags/题解/" title="">题解</a>
+      
+        <a class="nav-item" href="/tags/知识/" title="">知识</a>
+      
+        <a class="nav-item" href="/aboutme" title="">关于</a>
+      
+        <a class="nav-item" href="/friends" title="">友链</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-POJ-2785-4-Values-whose-Sum-is-0" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      POJ 2785 4 Values whose Sum is 0
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/05/07/POJ-2785-4-Values-whose-Sum-is-0/" class="article-date">
+  <time datetime="2019-05-07T10:32:53.000Z" itemprop="datePublished">2019-05-07</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二分/">二分</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n行数据，每行4个，每列选出一个数加起来和为0，这样的情况共几种？</p>
+</blockquote>
+<a id="more"></a>
+<p><strong><a href="http://poj.org/problem?id=2785" style="color:violet;" target="_blank" rel="noopener">题目链接</a></strong>  </p>
+<h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h3><p><strong>四个数分成两组，计算和，二分搜索</strong></p>
+<blockquote>
+<p>此题坑在于：跟前一组数据匹配的后一组数据可能不止一组！！！</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">4010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[N], b[N], c[N], d[N], e[N * N], f[N * N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>, &amp;a[i], &amp;b[i], &amp;c[i], &amp;d[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                e[i * n + j] = a[i] + b[j];</span><br><span class="line">                f[i * n + j] = c[i] + d[j];<span class="comment">///第二个j写成了i...</span></span><br><span class="line">                <span class="keyword">int</span> tem = i * n + j;</span><br><span class="line">            &#125;</span><br><span class="line">        sort(e, e + n * n);</span><br><span class="line">        sort(f, f + n * n);</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n * n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> pos = lower_bound(f, f + n * n, -e[i]) - f;</span><br><span class="line">            <span class="keyword">while</span>(pos != n * n &amp;&amp; f[pos] == -e[i])<span class="comment">//坑！</span></span><br><span class="line">            &#123;</span><br><span class="line">                ans++;</span><br><span class="line">                pos++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="lower-bound-and-upperbound"><a href="#lower-bound-and-upperbound" class="headerlink" title="lower_bound and upperbound"></a>lower_bound and upperbound</h3><blockquote>
+<p>lower_bound      &gt;=     找不到返回末元素的末地址（并不是末元素的首地址，一切都安排好了） </p>
+<p>upper_bound      &gt;</p>
+</blockquote>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/05/06/HDU-2289-Cup/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">HDU 2289 Cup</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "POJ 2785 4 Values whose Sum is 0",
+  owner: 'fireworks99',
+  repo: 'fireworks99.github.io',
+  oauth: {
+    client_id: '17cec8ce4020217ca317',
+    client_secret: 'f0cf66a4a81caab7ab9b0a55ac6d8ee725a335b2',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="https://i.loli.net/2019/01/16/5c3ef071d474e.png" title="头像">
+    <h3 class="avatar-name">
+      
+        市井烟火气
+      
+    </h3>
+    <p class="avatar-slogan">
+      人间烟火气~最抚凡人心
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/A-（启发式搜索）/">A*（启发式搜索）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/">BFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bellman-Ford/">Bellman-Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dijkstra/">Dijkstra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Floyd/">Floyd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GCD与LCM/">GCD与LCM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA大数/">JAVA大数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/">KMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kruskal-克鲁斯卡尔/">Kruskal(克鲁斯卡尔)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prim-普里姆/">Prim(普里姆)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map嵌套/">map嵌套</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multiset/">multiset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next-permutation/">next_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prev-permutation/">prev_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/priority-queue/">priority_queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/set/">set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spfa/">spfa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vector/">vector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分/">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前缀和/">前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/剪枝/">剪枝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同余定理/">同余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哈希/">哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/埃氏筛/">埃氏筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数求余/">大数求余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/尺取法/">尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/差分/">差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/并查集/">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异或/">异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并排序/">归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扩展欧几里得/">扩展欧几里得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拓扑排序（判环）/">拓扑排序（判环）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拓扑排序（无环）/">拓扑排序（无环）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无向图（负环）/">无向图（负环）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最长回文子串/">最长回文子串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/栈（stack）/">栈（stack）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树状数组/">树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/离散化/">离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/素数筛/">素数筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线性筛/">线性筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线段树/">线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数/">组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻转问题/">翻转问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心/">贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/费马小定理/">费马小定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/输入挂/">输入挂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链式前向星/">链式前向星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/A-（启发式搜索）/" style="font-size: 10px;">A*（启发式搜索）</a> <a href="/tags/BFS/" style="font-size: 17.5px;">BFS</a> <a href="/tags/Bellman-Ford/" style="font-size: 13.33px;">Bellman-Ford</a> <a href="/tags/DFS/" style="font-size: 12.5px;">DFS</a> <a href="/tags/Dijkstra/" style="font-size: 13.33px;">Dijkstra</a> <a href="/tags/Floyd/" style="font-size: 14.17px;">Floyd</a> <a href="/tags/GCD与LCM/" style="font-size: 10px;">GCD与LCM</a> <a href="/tags/JAVA大数/" style="font-size: 10px;">JAVA大数</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/Kruskal-克鲁斯卡尔/" style="font-size: 11.67px;">Kruskal(克鲁斯卡尔)</a> <a href="/tags/Prim-普里姆/" style="font-size: 11.67px;">Prim(普里姆)</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/map嵌套/" style="font-size: 10px;">map嵌套</a> <a href="/tags/multiset/" style="font-size: 10px;">multiset</a> <a href="/tags/next-permutation/" style="font-size: 10px;">next_permutation</a> <a href="/tags/prev-permutation/" style="font-size: 10px;">prev_permutation</a> <a href="/tags/priority-queue/" style="font-size: 11.67px;">priority_queue</a> <a href="/tags/set/" style="font-size: 10.83px;">set</a> <a href="/tags/spfa/" style="font-size: 16.67px;">spfa</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/vector/" style="font-size: 13.33px;">vector</a> <a href="/tags/二分/" style="font-size: 14.17px;">二分</a> <a href="/tags/前缀和/" style="font-size: 10.83px;">前缀和</a> <a href="/tags/剪枝/" style="font-size: 10px;">剪枝</a> <a href="/tags/动态规划/" style="font-size: 15.83px;">动态规划</a> <a href="/tags/同余定理/" style="font-size: 10.83px;">同余定理</a> <a href="/tags/哈希/" style="font-size: 10px;">哈希</a> <a href="/tags/埃氏筛/" style="font-size: 10px;">埃氏筛</a> <a href="/tags/大数求余/" style="font-size: 10.83px;">大数求余</a> <a href="/tags/尺取法/" style="font-size: 10px;">尺取法</a> <a href="/tags/差分/" style="font-size: 10px;">差分</a> <a href="/tags/并查集/" style="font-size: 14.17px;">并查集</a> <a href="/tags/异或/" style="font-size: 10px;">异或</a> <a href="/tags/归并排序/" style="font-size: 11.67px;">归并排序</a> <a href="/tags/扩展欧几里得/" style="font-size: 10px;">扩展欧几里得</a> <a href="/tags/拓扑排序（判环）/" style="font-size: 11.67px;">拓扑排序（判环）</a> <a href="/tags/拓扑排序（无环）/" style="font-size: 10px;">拓扑排序（无环）</a> <a href="/tags/数学/" style="font-size: 10.83px;">数学</a> <a href="/tags/无向图（负环）/" style="font-size: 10px;">无向图（负环）</a> <a href="/tags/最小生成树/" style="font-size: 11.67px;">最小生成树</a> <a href="/tags/最短路/" style="font-size: 18.33px;">最短路</a> <a href="/tags/最长回文子串/" style="font-size: 10px;">最长回文子串</a> <a href="/tags/栈（stack）/" style="font-size: 10px;">栈（stack）</a> <a href="/tags/树状数组/" style="font-size: 12.5px;">树状数组</a> <a href="/tags/知识/" style="font-size: 19.17px;">知识</a> <a href="/tags/离散化/" style="font-size: 10.83px;">离散化</a> <a href="/tags/素数筛/" style="font-size: 10px;">素数筛</a> <a href="/tags/线性筛/" style="font-size: 10px;">线性筛</a> <a href="/tags/线段树/" style="font-size: 15.83px;">线段树</a> <a href="/tags/组合数/" style="font-size: 10px;">组合数</a> <a href="/tags/翻转问题/" style="font-size: 10px;">翻转问题</a> <a href="/tags/贪心/" style="font-size: 10.83px;">贪心</a> <a href="/tags/费马小定理/" style="font-size: 10px;">费马小定理</a> <a href="/tags/输入挂/" style="font-size: 10.83px;">输入挂</a> <a href="/tags/链式前向星/" style="font-size: 10px;">链式前向星</a> <a href="/tags/随笔/" style="font-size: 15px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/07/POJ-2785-4-Values-whose-Sum-is-0/">POJ 2785 4 Values whose Sum is 0</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/06/HDU-2289-Cup/">HDU 2289 Cup</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/06/CodeForces-371C-Hamburgers/">CodeForces 371C Hamburgers</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/05/POJ-3273-Monthly-Expense/">POJ 3273 Monthly Expense</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/05/背包九讲之五/">背包九讲之五</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 市井烟火气 &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/随笔/" class="mobile-nav-link">随笔</a>
+  
+    <a href="/tags/题解/" class="mobile-nav-link">题解</a>
+  
+    <a href="/tags/知识/" class="mobile-nav-link">知识</a>
+  
+    <a href="/aboutme" class="mobile-nav-link">关于</a>
+  
+    <a href="/friends" class="mobile-nav-link">友链</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
