@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>浪潮杯第十届山东省大学生ACM程序设计竞赛 | 市井烟火气</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="ZOJ题目总链接（4113~4125）   A.Calander 给出一个新的日期计算方法，一周五天（周一至周五），一月6个周（30天），一年有这样的十二个月，给出一个日期及其星期，另给出一个日期，求出星期">
+<meta name="keywords" content="题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浪潮杯第十届山东省大学生ACM程序设计竞赛">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/浪潮杯第十届山东省大学生ACM程序设计竞赛/index.html">
+<meta property="og:site_name" content="市井烟火气">
+<meta property="og:description" content="ZOJ题目总链接（4113~4125）   A.Calander 给出一个新的日期计算方法，一周五天（周一至周五），一月6个周（30天），一年有这样的十二个月，给出一个日期及其星期，另给出一个日期，求出星期">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-05-15T01:19:09.111Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浪潮杯第十届山东省大学生ACM程序设计竞赛">
+<meta name="twitter:description" content="ZOJ题目总链接（4113~4125）   A.Calander 给出一个新的日期计算方法，一周五天（周一至周五），一月6个周（30天），一年有这样的十二个月，给出一个日期及其星期，另给出一个日期，求出星期">
+  
+    <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://i.loli.net/2019/01/17/5c40047c7cf9e.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/tags/随笔" title="">随笔</a>
+      
+        <a class="nav-item" href="/tags/题解" title="">题解</a>
+      
+        <a class="nav-item" href="/tags/知识" title="">知识</a>
+      
+        <a class="nav-item" href="/aboutme" title="">关于</a>
+      
+        <a class="nav-item" href="/friends" title="">友链</a>
+      
+        <a class="nav-item" href="/daily/index.html" title="">日常</a>
+      
+        <a class="nav-item" href="/experience/index.html" title="">逆流</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-浪潮杯第十届山东省大学生ACM程序设计竞赛" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      浪潮杯第十届山东省大学生ACM程序设计竞赛
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/05/15/浪潮杯第十届山东省大学生ACM程序设计竞赛/" class="article-date">
+  <time datetime="2019-05-15T00:04:18.000Z" itemprop="datePublished">2019-05-15</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p><strong><a href="http://acm.zju.edu.cn/onlinejudge/showProblems.do?contestId=1&pageNumber=32" style="color:violet;" target="_blank" rel="noopener">ZOJ题目总链接（4113~4125）</a></strong>  </p>
+<h1 id="A-Calander"><a href="#A-Calander" class="headerlink" title="A.Calander"></a>A.Calander</h1><blockquote>
+<p>给出一个新的日期计算方法，一周五天（周一至周五），一月6个周（30天），一年有这样的十二个月，给出一个日期及其星期，另给出一个日期，求出星期</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>一看日期计算 –&gt; 形成思维定式：不就是求两个日期差 % 5吗！</p>
+<p>后来各种错：</p>
+<ol>
+<li>% 5 之后对应数字为0~4，要搞清楚其对应周几</li>
+<li>封榜后发现与年份无关，一年是那固定的360天，% 5 == 0</li>
+<li>赛后再想想与月份都无关，一个月是那固定的30天， % 5 == 0</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>所以，题目给出一个新事物（或是旧事物的变式），一定要先<strong>找其运行规律，总结特点</strong>，抓住特点去做，不要因着急而盲目去做。一个人在敲这个题时，另外两人不仅要思考这方法是否正确、细节是否都注意到了、特判做到了，还要想想是否有更简单的方法，因为更简单的方法一定是更优的，是更能体现参赛者水平的，是出题人想看到的。</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; mp;</span><br><span class="line">    mp[<span class="number">1</span>] = <span class="string">"Monday"</span>;</span><br><span class="line">    mp[<span class="number">2</span>] = <span class="string">"Tuesday"</span>;</span><br><span class="line">    mp[<span class="number">3</span>] = <span class="string">"Wednesday"</span>;</span><br><span class="line">    mp[<span class="number">4</span>] = <span class="string">"Thursday"</span>;</span><br><span class="line">    mp[<span class="number">5</span>] = <span class="string">"Friday"</span>;</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> ay, am, ad, by, bm, bd, idx;</span><br><span class="line">        <span class="built_in">string</span> s;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;ay, &amp;am, &amp;ad);</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">        <span class="keyword">switch</span>(s[<span class="number">1</span>])</span><br><span class="line">        &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'o'</span>:</span><br><span class="line">            idx = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'u'</span>:</span><br><span class="line">            idx = <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'e'</span>:</span><br><span class="line">            idx = <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'h'</span>:</span><br><span class="line">            idx = <span class="number">4</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">'r'</span>:</span><br><span class="line">            idx = <span class="number">5</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;by, &amp;bm, &amp;bd);</span><br><span class="line">        <span class="keyword">int</span> tem = <span class="number">30</span> - ad + bd;</span><br><span class="line">        tem %= <span class="number">5</span>;</span><br><span class="line">        <span class="keyword">if</span>((idx + tem) % <span class="number">5</span> == <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"Friday"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; mp[(idx + tem) % <span class="number">5</span>] &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="B-Flipping-Game"><a href="#B-Flipping-Game" class="headerlink" title="B.Flipping Game"></a>B.Flipping Game</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="C-Wandering-Robot"><a href="#C-Wandering-Robot" class="headerlink" title="C.Wandering Robot"></a>C.Wandering Robot</h1><blockquote>
+<p>一个机器人按照一个长度为n的指令串重复走k次，求其离原点的最远“折线距离”</p>
+</blockquote>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>第一次我想出一个思路：</p>
+<p>执行一次指令串后离原点的距离 * (k - 1) + 最后一次的最优解：WA</p>
+<p>研究了一会儿，队友发现：最后一次的最优解可能并不是前（k-1）次位移方向上的！</p>
+<p>过了53分钟修改上交：WA</p>
+<p>耽误时间长了去看了D题，没敲对，C题int改longlong交了一遍？WA</p>
+<p>队友提出利用坐标，发现这种思路跟之前的一样，不过实现起来思路更清晰：WA</p>
+<p>队友提出遗漏：答案也可能只是第一次的最优解（比如只执行两次指令时）：AC</p>
+<ol>
+<li><p>在纸上多画图、多模拟，不至于看不出来第一个错误！</p>
+</li>
+<li><p>多思考队友的思路、提出的建议，不要第一时间想着反驳</p>
+<p>（当这题的第一个思路（或主思路）是自己想出来的时候，心里有种不愿别人提出异议的感觉？一种不容别人提出更完善策略的感觉？你的思路跟我的一样，只不过实现方式不一样，我的理应就是对的，即使错了，那你的思路跟我一样必然也是错的）可是你不想想，同一思路换种实现方法可能更清晰呢！</p>
+</li>
+<li><p>多质疑自己，将错误的险隘思路拓宽</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> len;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> x, y;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">cal</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i] == <span class="string">'U'</span>)</span><br><span class="line">            y++;</span><br><span class="line">        <span class="keyword">if</span>(s[i] == <span class="string">'D'</span>)</span><br><span class="line">            y--;</span><br><span class="line">        <span class="keyword">if</span>(s[i] == <span class="string">'L'</span>)</span><br><span class="line">            x--;</span><br><span class="line">        <span class="keyword">if</span>(s[i] == <span class="string">'R'</span>)</span><br><span class="line">            x++;</span><br><span class="line">        <span class="keyword">if</span>(ans &lt; <span class="built_in">abs</span>(x) + <span class="built_in">abs</span>(y))</span><br><span class="line">            ans = <span class="built_in">abs</span>(x) + <span class="built_in">abs</span>(y);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> n, k;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;k);</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">        len = s.length();</span><br><span class="line">        x = <span class="number">0</span>, y = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> first = cal();</span><br><span class="line">        x *= (k - <span class="number">1</span>);</span><br><span class="line">        y *= (k - <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> tem = cal();</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; max(first, tem) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="D-Game-on-a-Graph"><a href="#D-Game-on-a-Graph" class="headerlink" title="D.Game on a Graph"></a>D.Game on a Graph</h1><blockquote>
+<p>k个分属两阵营的人在一地图上玩游戏，n个点，m条边，每人轮流拿一条边，最后谁拿走便后图不连通了，那个人所在阵营就lose，对面win</p>
+</blockquote>
+<h2 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>信誓旦旦地跟队友说是水题（不过确实是），这题k可以不给出（s.length()自己算），后面m组输入完全用不到。</p>
+<p>k个人玩，n个点，只需n-1条边</p>
+<p>m条现有边，可以拿走(m - (n - 1)) == m - n + 1条</p>
+<p>则下一个人(m - n + 2)所属阵营lose</p>
+<p>不过我急于交题去看C，疏忽了，没有%，罚时了</p>
+</blockquote>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> k, a, b;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;k);</span><br><span class="line">        <span class="built_in">string</span> s;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; s;</span><br><span class="line">        <span class="keyword">int</span> n, m;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; ++i)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);</span><br><span class="line">        <span class="keyword">int</span> tem = (m - n + <span class="number">2</span>) % k;</span><br><span class="line">        <span class="keyword">if</span>(tem == <span class="number">0</span>)</span><br><span class="line">            tem = k;</span><br><span class="line">        <span class="keyword">if</span>(s[tem - <span class="number">1</span>] == <span class="string">'1'</span>)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">'2'</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">'1'</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="E"><a href="#E" class="headerlink" title="E."></a>E.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="F-Stones-in-the-Bucket"><a href="#F-Stones-in-the-Bucket" class="headerlink" title="F.Stones in the Bucket"></a>F.Stones in the Bucket</h1><blockquote>
+<p>水题（没有坑）</p>
+</blockquote>
+<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">            sum += a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        ans += sum % n;</span><br><span class="line">        <span class="keyword">int</span> tem = sum / n;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            <span class="keyword">if</span>(a[i] &lt; tem)</span><br><span class="line">                ans += (tem - a[i]);</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="G"><a href="#G" class="headerlink" title="G."></a>G.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="H"><a href="#H" class="headerlink" title="H."></a>H.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="I"><a href="#I" class="headerlink" title="I."></a>I.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="J"><a href="#J" class="headerlink" title="J."></a>J.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="k"><a href="#k" class="headerlink" title="k."></a>k.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="L"><a href="#L" class="headerlink" title="L."></a>L.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="M-Sekiro"><a href="#M-Sekiro" class="headerlink" title="M.Sekiro"></a>M.Sekiro</h1><blockquote>
+<p>水题，坑：n == 0               n == 1 &amp;&amp; k == 1e9</p>
+</blockquote>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> n, k;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;k);</span><br><span class="line">        <span class="keyword">while</span>(k--)</span><br><span class="line">        &#123;</span><br><span class="line">            n = (n + <span class="number">1</span>) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(n == <span class="number">1</span> || n == <span class="number">0</span>)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/05/13/Hexo-博客跳过渲染，创建自定义网页/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Hexo 博客跳过渲染，创建自定义网页</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "浪潮杯第十届山东省大学生ACM程序设计竞赛",
+  owner: 'fireworks99',
+  repo: 'fireworks99.github.io',
+  oauth: {
+    client_id: '17cec8ce4020217ca317',
+    client_secret: 'f0cf66a4a81caab7ab9b0a55ac6d8ee725a335b2',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="https://i.loli.net/2019/01/16/5c3ef071d474e.png" title="头像">
+    <h3 class="avatar-name">
+      
+        市井烟火气
+      
+    </h3>
+    <p class="avatar-slogan">
+      人间烟火气~最抚凡人心
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/A-（启发式搜索）/">A*（启发式搜索）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BFS/">BFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Bellman-Ford/">Bellman-Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DFS/">DFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dijkstra/">Dijkstra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Floyd/">Floyd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/GCD与LCM/">GCD与LCM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JAVA大数/">JAVA大数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/">KMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Kruskal-克鲁斯卡尔/">Kruskal(克鲁斯卡尔)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Prim-普里姆/">Prim(普里姆)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map/">map</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/map嵌套/">map嵌套</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/multiset/">multiset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/next-permutation/">next_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prev-permutation/">prev_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/priority-queue/">priority_queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/set/">set</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/spfa/">spfa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/string/">string</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vector/">vector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分/">二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前缀和/">前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/剪枝/">剪枝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同余定理/">同余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哈希/">哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/埃氏筛/">埃氏筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/大数求余/">大数求余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/尺取法/">尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/差分/">差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/并查集/">并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异或/">异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并排序/">归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/扩展欧几里得/">扩展欧几里得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拓扑排序（判环）/">拓扑排序（判环）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拓扑排序（无环）/">拓扑排序（无环）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/无向图（负环）/">无向图（负环）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最长回文子串/">最长回文子串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/栈（stack）/">栈（stack）</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/树状数组/">树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/离散化/">离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/素数筛/">素数筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线性筛/">线性筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/线段树/">线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数/">组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/翻转问题/">翻转问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心/">贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/费马小定理/">费马小定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/输入挂/">输入挂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/链式前向星/">链式前向星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/A-（启发式搜索）/" style="font-size: 10px;">A*（启发式搜索）</a> <a href="/tags/BFS/" style="font-size: 17.5px;">BFS</a> <a href="/tags/Bellman-Ford/" style="font-size: 13.33px;">Bellman-Ford</a> <a href="/tags/DFS/" style="font-size: 12.5px;">DFS</a> <a href="/tags/Dijkstra/" style="font-size: 13.33px;">Dijkstra</a> <a href="/tags/Floyd/" style="font-size: 14.17px;">Floyd</a> <a href="/tags/GCD与LCM/" style="font-size: 10px;">GCD与LCM</a> <a href="/tags/JAVA大数/" style="font-size: 10px;">JAVA大数</a> <a href="/tags/KMP/" style="font-size: 10px;">KMP</a> <a href="/tags/Kruskal-克鲁斯卡尔/" style="font-size: 11.67px;">Kruskal(克鲁斯卡尔)</a> <a href="/tags/Prim-普里姆/" style="font-size: 11.67px;">Prim(普里姆)</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/map嵌套/" style="font-size: 10px;">map嵌套</a> <a href="/tags/multiset/" style="font-size: 10px;">multiset</a> <a href="/tags/next-permutation/" style="font-size: 10px;">next_permutation</a> <a href="/tags/prev-permutation/" style="font-size: 10px;">prev_permutation</a> <a href="/tags/priority-queue/" style="font-size: 11.67px;">priority_queue</a> <a href="/tags/set/" style="font-size: 10.83px;">set</a> <a href="/tags/spfa/" style="font-size: 16.67px;">spfa</a> <a href="/tags/string/" style="font-size: 10px;">string</a> <a href="/tags/vector/" style="font-size: 13.33px;">vector</a> <a href="/tags/二分/" style="font-size: 15px;">二分</a> <a href="/tags/前缀和/" style="font-size: 10.83px;">前缀和</a> <a href="/tags/剪枝/" style="font-size: 10px;">剪枝</a> <a href="/tags/动态规划/" style="font-size: 15.83px;">动态规划</a> <a href="/tags/同余定理/" style="font-size: 10.83px;">同余定理</a> <a href="/tags/哈希/" style="font-size: 10px;">哈希</a> <a href="/tags/埃氏筛/" style="font-size: 10px;">埃氏筛</a> <a href="/tags/大数求余/" style="font-size: 10.83px;">大数求余</a> <a href="/tags/尺取法/" style="font-size: 10px;">尺取法</a> <a href="/tags/差分/" style="font-size: 10px;">差分</a> <a href="/tags/并查集/" style="font-size: 14.17px;">并查集</a> <a href="/tags/异或/" style="font-size: 10px;">异或</a> <a href="/tags/归并排序/" style="font-size: 11.67px;">归并排序</a> <a href="/tags/扩展欧几里得/" style="font-size: 10px;">扩展欧几里得</a> <a href="/tags/拓扑排序（判环）/" style="font-size: 11.67px;">拓扑排序（判环）</a> <a href="/tags/拓扑排序（无环）/" style="font-size: 10px;">拓扑排序（无环）</a> <a href="/tags/数学/" style="font-size: 10.83px;">数学</a> <a href="/tags/无向图（负环）/" style="font-size: 10px;">无向图（负环）</a> <a href="/tags/最小生成树/" style="font-size: 11.67px;">最小生成树</a> <a href="/tags/最短路/" style="font-size: 18.33px;">最短路</a> <a href="/tags/最长回文子串/" style="font-size: 10px;">最长回文子串</a> <a href="/tags/栈（stack）/" style="font-size: 10px;">栈（stack）</a> <a href="/tags/树状数组/" style="font-size: 12.5px;">树状数组</a> <a href="/tags/知识/" style="font-size: 19.17px;">知识</a> <a href="/tags/离散化/" style="font-size: 10.83px;">离散化</a> <a href="/tags/素数筛/" style="font-size: 10px;">素数筛</a> <a href="/tags/线性筛/" style="font-size: 10px;">线性筛</a> <a href="/tags/线段树/" style="font-size: 15.83px;">线段树</a> <a href="/tags/组合数/" style="font-size: 10px;">组合数</a> <a href="/tags/翻转问题/" style="font-size: 10px;">翻转问题</a> <a href="/tags/贪心/" style="font-size: 10.83px;">贪心</a> <a href="/tags/费马小定理/" style="font-size: 10px;">费马小定理</a> <a href="/tags/输入挂/" style="font-size: 10.83px;">输入挂</a> <a href="/tags/链式前向星/" style="font-size: 10px;">链式前向星</a> <a href="/tags/随笔/" style="font-size: 15.83px;">随笔</a> <a href="/tags/题解/" style="font-size: 20px;">题解</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/05/15/浪潮杯第十届山东省大学生ACM程序设计竞赛/">浪潮杯第十届山东省大学生ACM程序设计竞赛</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/13/Hexo-博客跳过渲染，创建自定义网页/">Hexo 博客跳过渲染，创建自定义网页</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/08/日期模拟/">日期模拟</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/08/POJ-2018-Best-Cow-Fences/">POJ 2018 Best Cow Fences</a>
+          </li>
+        
+          <li>
+            <a href="/2019/05/07/POJ-2785-4-Values-whose-Sum-is-0/">POJ 2785 4 Values whose Sum is 0</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 市井烟火气 &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/随笔" class="mobile-nav-link">随笔</a>
+  
+    <a href="/tags/题解" class="mobile-nav-link">题解</a>
+  
+    <a href="/tags/知识" class="mobile-nav-link">知识</a>
+  
+    <a href="/aboutme" class="mobile-nav-link">关于</a>
+  
+    <a href="/friends" class="mobile-nav-link">友链</a>
+  
+    <a href="/daily/index.html" class="mobile-nav-link">日常</a>
+  
+    <a href="/experience/index.html" class="mobile-nav-link">逆流</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
