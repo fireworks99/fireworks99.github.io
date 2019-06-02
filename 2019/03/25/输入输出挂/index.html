@@ -19,7 +19,7 @@
 <meta property="og:description" content="关于输入挂 输入速度：getchar  &amp;gt;  scanf  &amp;gt;  cin 特点：快糙猛？">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/03/25/5c98b20809e7d.png">
-<meta property="og:updated_time" content="2019-05-22T00:41:42.816Z">
+<meta property="og:updated_time" content="2019-06-02T13:37:34.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="输入输出挂">
 <meta name="twitter:description" content="关于输入挂 输入速度：getchar  &amp;gt;  scanf  &amp;gt;  cin 特点：快糙猛？">
@@ -120,6 +120,10 @@
 <p>cin —— 1412ms</p>
 </blockquote>
 <h3 id="关于double的读入挂（一般用不到）"><a href="#关于double的读入挂（一般用不到）" class="headerlink" title="关于double的读入挂（一般用不到）"></a>关于double的读入挂（一般用不到）</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Scan</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ch, pos = <span class="number">1</span>, num = <span class="number">0</span>;<span class="comment">///num为字符串总长度，pos为小数点排第几位</span></span><br><span class="line">    <span class="keyword">double</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="number">0</span>, found = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( (ch = getchar()) == <span class="string">'-'</span> )</span><br><span class="line">        flag = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(ch &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span>)</span><br><span class="line">        res = ch - <span class="string">'0'</span>;</span><br><span class="line">    num++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>((ch = getchar()) &gt;= <span class="string">'0'</span> &amp;&amp; ch &lt;= <span class="string">'9'</span> || ch == <span class="string">'.'</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            num++;</span><br><span class="line">            <span class="keyword">if</span>(ch == <span class="string">'.'</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                found = <span class="number">1</span>;</span><br><span class="line">                pos++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                res = res * <span class="number">10</span> + ch - <span class="string">'0'</span>;</span><br><span class="line">                <span class="keyword">if</span>(!found)</span><br><span class="line">                    pos++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    res *= <span class="built_in">pow</span>(<span class="number">0.1</span>, num - pos);</span><br><span class="line">    <span class="keyword">return</span> flag ? -res  : res ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> ans;</span><br><span class="line">    <span class="keyword">while</span>(ans = Scan())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; fixed &lt;&lt; <span class="built_in">std</span>::setprecision(<span class="number">10</span>) &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">getchar();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    a[i] = Scan();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>中间的<code>getchar()</code>不加上可能输出测试时表面上看没影响，但就是会WA！</p>
+</blockquote>
 
       
     </div>
@@ -222,23 +226,23 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
+            <a href="/2019/06/02/POJ-3320-Jessica-s-Reading-Problem/">POJ 3320 Jessica&#39;s Reading Problem</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/02/POJ-3061-Subsequence/">POJ 3061 Subsequence</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/02/判断矩形相交/">判断矩形相交</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/02/POJ-3723-Conscription/">POJ 3723 Conscription</a>
           </li>
         
           <li>
             <a href="/2019/06/02/白书-初出茅庐-初级篇/">白书-初出茅庐-初级篇</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/31/扩展欧几里得/">扩展欧几里得</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/31/SDNUOJ-1539-恰当选择DP对象/">SDNUOJ 1539 恰当选择DP对象</a>
-          </li>
-        
-          <li>
-            <a href="/2019/05/30/Codeforces-B-Arpa-s-weak-amphitheater-and-Mehrdad-s/">Codeforces B.Arpa&#39;s weak amphitheater and Mehrdad&#39;s ...</a>
           </li>
         
       </ul>
