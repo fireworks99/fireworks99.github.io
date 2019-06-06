@@ -10,18 +10,18 @@
   
   
   
-  <meta name="description" content="Dijkstra算法 主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。  主要思想是每次找到离源点最近的一个顶点，然后以该顶点为中心，然后得到源点到其他顶点的最短路径。贪心算法。  该算法要求图中不存在负权边！！！(无负权边自然无负权环)">
+  <meta name="description" content="Dijkstra算法 主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。  主要思想是每次找到离”已成图“最近的一个顶点，然后将该顶点连入图，然后更新“已成图”到其他顶点的最短路径。贪心算法。  该算法要求图中不存在负权边！！！(无负权边自然无负权环)">
 <meta name="keywords" content="题解,最短路のDijkstra,最短路のBellman-Ford,最短路のFloyd">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDU 1874 畅通工程续">
 <meta property="og:url" content="http://yoursite.com/2019/03/09/HDU-1874-畅通工程续/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="Dijkstra算法 主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。  主要思想是每次找到离源点最近的一个顶点，然后以该顶点为中心，然后得到源点到其他顶点的最短路径。贪心算法。  该算法要求图中不存在负权边！！！(无负权边自然无负权环)">
+<meta property="og:description" content="Dijkstra算法 主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。  主要思想是每次找到离”已成图“最近的一个顶点，然后将该顶点连入图，然后更新“已成图”到其他顶点的最短路径。贪心算法。  该算法要求图中不存在负权边！！！(无负权边自然无负权环)">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T10:12:46.304Z">
+<meta property="og:updated_time" content="2019-06-05T13:38:03.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDU 1874 畅通工程续">
-<meta name="twitter:description" content="Dijkstra算法 主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。  主要思想是每次找到离源点最近的一个顶点，然后以该顶点为中心，然后得到源点到其他顶点的最短路径。贪心算法。  该算法要求图中不存在负权边！！！(无负权边自然无负权环)">
+<meta name="twitter:description" content="Dijkstra算法 主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。  主要思想是每次找到离”已成图“最近的一个顶点，然后将该顶点连入图，然后更新“已成图”到其他顶点的最短路径。贪心算法。  该算法要求图中不存在负权边！！！(无负权边自然无负权环)">
   
     <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -101,7 +101,7 @@
       
         <h3 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h3><blockquote>
 <p>主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。 </p>
-<p>主要思想是每次找到离源点最近的一个顶点，然后以该顶点为中心，然后得到源点到其他顶点的最短路径。贪心算法。 </p>
+<p>主要思想是每次找到离”已成图“最近的一个顶点，然后将该顶点连入图，然后更新“已成图”到其他顶点的最短路径。贪心算法。 </p>
 <p>该算法要求图中不存在负权边！！！(无负权边自然无负权环)</p>
 </blockquote>
 <a id="more"></a>
@@ -235,6 +235,10 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
+            <a href="/2019/06/06/POJ-3255-Roadblocks-and-3463-Sightseeing/">POJ 3255 Roadblocks and 3463 Sightseeing（次短路）</a>
+          </li>
+        
+          <li>
             <a href="/2019/06/05/POJ-3276-Face-the-Right-Way/">POJ 3276 Face the Right Way</a>
           </li>
         
@@ -248,10 +252,6 @@ gitment.render('gitmentContainer')
         
           <li>
             <a href="/2019/06/02/POJ-3320-Jessica-s-Reading-Problem/">POJ 3320 Jessica&#39;s Reading Problem</a>
-          </li>
-        
-          <li>
-            <a href="/2019/06/02/POJ-3061-Subsequence/">POJ 3061 Subsequence</a>
           </li>
         
       </ul>
