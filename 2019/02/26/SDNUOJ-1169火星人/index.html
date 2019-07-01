@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="市井烟火气">
 <meta property="og:description" content="Description 人类终于登上了火星的土地并且见到了神秘的火星人。人类和火星人都无法理解对方的语言，但是我们的科学家发明了一种用数字交流的方法。这种交流方法是这样的，首先，火星人把一个非常大的数字告诉人类科学家，科学家破解这个数字的含义后，再把一个很小的数字加到这个大数上面，把结果告诉火星人，作为人类的回答。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-22T00:32:42.871Z">
+<meta property="og:updated_time" content="2019-06-16T07:43:58.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SDNUOJ 1169火星人">
 <meta name="twitter:description" content="Description 人类终于登上了火星的土地并且见到了神秘的火星人。人类和火星人都无法理解对方的语言，但是我们的科学家发明了一种用数字交流的方法。这种交流方法是这样的，首先，火星人把一个非常大的数字告诉人类科学家，科学家破解这个数字的含义后，再把一个很小的数字加到这个大数上面，把结果告诉火星人，作为人类的回答。">
@@ -61,6 +61,8 @@
         <a class="nav-item" href="https://fireworks12.github.io/" title="">杂件</a>
       
         <a class="nav-item" href="/daily/index.html" title="">日常</a>
+      
+        <a class="nav-item" href="/fireworks/index.html" title="">烟花</a>
       
         <a class="nav-item" href="/experience/index.html" title="">逆流</a>
       
@@ -126,6 +128,7 @@
 <p>next_permutation(start,end)//当前排列的下一个排列 </p>
 <p>prev_permutation(start,end)//当前排列的上一个排列 </p>
 </blockquote>
+<p>#字典序！（记住这三个字，保持敏感）</p>
 <h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> N;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; N;</span><br><span class="line">    <span class="keyword">int</span> tem;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; tem;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">10005</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">while</span>(next_permutation(a, a + N))</span><br><span class="line">    &#123;</span><br><span class="line">        tem--;</span><br><span class="line">        <span class="keyword">if</span>(!tem)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; ++i)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%d%c"</span>, a[i], i == N - <span class="number">1</span> ? <span class="string">'\n'</span>: <span class="string">' '</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -296,6 +299,8 @@ gitment.render('gitmentContainer')
     <a href="https://fireworks12.github.io/" class="mobile-nav-link">杂件</a>
   
     <a href="/daily/index.html" class="mobile-nav-link">日常</a>
+  
+    <a href="/fireworks/index.html" class="mobile-nav-link">烟花</a>
   
     <a href="/experience/index.html" class="mobile-nav-link">逆流</a>
   
