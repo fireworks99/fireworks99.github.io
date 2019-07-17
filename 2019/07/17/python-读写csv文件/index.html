@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>python 读写csv文件 | 市井烟火气</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="Python读取csv文件统计数据写入新的csv文件">
+<meta name="keywords" content="其他语言のPython">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 读写csv文件">
+<meta property="og:url" content="http://yoursite.com/2019/07/17/python-读写csv文件/index.html">
+<meta property="og:site_name" content="市井烟火气">
+<meta property="og:description" content="Python读取csv文件统计数据写入新的csv文件">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://i.loli.net/2019/07/17/5d2f0a3b34d9b72701.jpg">
+<meta property="og:image" content="https://i.loli.net/2019/07/17/5d2f0972eda8030079.jpg">
+<meta property="og:updated_time" content="2019-07-17T11:50:18.027Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 读写csv文件">
+<meta name="twitter:description" content="Python读取csv文件统计数据写入新的csv文件">
+<meta name="twitter:image" content="https://i.loli.net/2019/07/17/5d2f0a3b34d9b72701.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://i.loli.net/2019/01/17/5c40047c7cf9e.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+
+  <link rel="stylesheet" type="text/css" href="C:/blog/themes/antiquity/live2D/waifu.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/tags/随笔" title="">随笔</a>
+      
+        <a class="nav-item" href="/tags/题解" title="">题解</a>
+      
+        <a class="nav-item" href="/tags/知识" title="">知识</a>
+      
+        <a class="nav-item" href="/aboutme" title="">关于</a>
+      
+        <a class="nav-item" href="/friends" title="">友链</a>
+      
+        <a class="nav-item" href="https://fireworks12.github.io/" title="">杂件</a>
+      
+        <a class="nav-item" href="/daily/index.html" title="">日常</a>
+      
+        <a class="nav-item" href="/fireworks/index.html" title="">烟花</a>
+      
+        <a class="nav-item" href="/experience/index.html" title="">逆流</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-python-读写csv文件" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      python 读写csv文件
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/17/python-读写csv文件/" class="article-date">
+  <time datetime="2019-07-17T11:41:22.000Z" itemprop="datePublished">2019-07-17</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其他语言のPython/">其他语言のPython</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="Python读取csv文件统计数据写入新的csv文件"><a href="#Python读取csv文件统计数据写入新的csv文件" class="headerlink" title="Python读取csv文件统计数据写入新的csv文件"></a>Python读取csv文件统计数据写入新的csv文件</h3><a id="more"></a>
+<blockquote>
+<p>原始资料文件</p>
+</blockquote>
+<p><img src="https://i.loli.net/2019/07/17/5d2f0a3b34d9b72701.jpg" alt="原始资料csv文件"></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><div class="highlight-box" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" contenteditable="true" data-rel="PYTHON"><figure class="iseeu highlight /python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">pycharm里，写完了暂时没有用到的东西会显示为灰色</span></span><br><span class="line"><span class="string">就像eclipse似的，写出来暂时没用到的东西会有标注</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"></span><br><span class="line">data_path = <span class="string">'./train.csv'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_main</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    pclass_dict = &#123;&#125;</span><br><span class="line">    gender_dict = &#123;&#125;</span><br><span class="line">    age_dict = &#123;&#125;</span><br><span class="line">    sibsp_dict = &#123;&#125;</span><br><span class="line">    parch_dict = &#123;&#125;</span><br><span class="line">    fare_dict = &#123;&#125;</span><br><span class="line">    embarked_dict = &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> open(data_path, <span class="string">'r'</span>, newline=<span class="string">''</span>) <span class="keyword">as</span> csvfile:</span><br><span class="line">        rows = csv.reader(csvfile)</span><br><span class="line">        <span class="keyword">for</span> i, row <span class="keyword">in</span> enumerate(rows):</span><br><span class="line">            <span class="keyword">if</span> i == <span class="number">0</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> i % <span class="number">50</span> == <span class="number">0</span>:</span><br><span class="line">                print(<span class="string">'正在处理第&#123;&#125;行数据...'</span>.format(i))</span><br><span class="line"></span><br><span class="line">            survived = row[<span class="number">1</span>]</span><br><span class="line">            pclass = row[<span class="number">2</span>]</span><br><span class="line">            gender = row[<span class="number">3</span>]</span><br><span class="line">            age = row[<span class="number">4</span>]</span><br><span class="line">            sibsp = row[<span class="number">5</span>]</span><br><span class="line">            parch = row[<span class="number">6</span>]</span><br><span class="line">            fare = row[<span class="number">7</span>]</span><br><span class="line">            embarked = row[<span class="number">8</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            pclass = pclass.replace(<span class="string">' '</span>, <span class="string">''</span>)</span><br><span class="line">            gender = gender.replace(<span class="string">' '</span>, <span class="string">''</span>)</span><br><span class="line">            age = age.replace(<span class="string">' '</span>, <span class="string">''</span>)</span><br><span class="line">            sibsp = sibsp.replace(<span class="string">' '</span>, <span class="string">''</span>)</span><br><span class="line">            parch = parch.replace(<span class="string">' '</span>, <span class="string">''</span>)</span><br><span class="line">            fare = fare.replace(<span class="string">' '</span>, <span class="string">''</span>)</span><br><span class="line">            embarked = embarked.replace(<span class="string">' '</span>, <span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> gender <span class="keyword">not</span> <span class="keyword">in</span> gender_dict:</span><br><span class="line">                gender_dict[gender] = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> survived == <span class="string">'0'</span>:                     <span class="comment"># 字符0</span></span><br><span class="line">                gender_dict[gender][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> survived == <span class="string">'1'</span>:</span><br><span class="line">                gender_dict[gender][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> pclass <span class="keyword">not</span> <span class="keyword">in</span> pclass_dict:</span><br><span class="line">                pclass_dict[pclass] = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> survived == <span class="string">'0'</span>:</span><br><span class="line">                pclass_dict[pclass][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> survived == <span class="string">'1'</span>:</span><br><span class="line">                pclass_dict[pclass][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> age <span class="keyword">not</span> <span class="keyword">in</span> age_dict:</span><br><span class="line">                age_dict[age] = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> survived == <span class="string">'0'</span>:</span><br><span class="line">                age_dict[age][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> survived == <span class="string">'1'</span>:</span><br><span class="line">                age_dict[age][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> sibsp <span class="keyword">not</span> <span class="keyword">in</span> sibsp_dict:</span><br><span class="line">                sibsp_dict[sibsp] = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> survived == <span class="string">'0'</span>:</span><br><span class="line">                sibsp_dict[sibsp][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> survived == <span class="string">'1'</span>:</span><br><span class="line">                sibsp_dict[sibsp][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> parch <span class="keyword">not</span> <span class="keyword">in</span> parch_dict:</span><br><span class="line">                parch_dict[parch] = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> survived == <span class="string">'0'</span>:</span><br><span class="line">                parch_dict[parch][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> survived == <span class="string">'1'</span>:</span><br><span class="line">                parch_dict[parch][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> fare <span class="keyword">not</span> <span class="keyword">in</span> fare_dict:</span><br><span class="line">                fare_dict[fare] = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> survived == <span class="string">'0'</span>:</span><br><span class="line">                fare_dict[fare][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> survived == <span class="string">'1'</span>:</span><br><span class="line">                fare_dict[fare][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> embarked <span class="keyword">not</span> <span class="keyword">in</span> embarked_dict:</span><br><span class="line">                embarked_dict[embarked] = [<span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">            <span class="keyword">if</span> survived == <span class="string">'0'</span>:</span><br><span class="line">                embarked_dict[embarked][<span class="number">0</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">elif</span> survived == <span class="string">'1'</span>:</span><br><span class="line">                embarked_dict[embarked][<span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    print(<span class="string">'Finished!'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'result.csv'</span>, <span class="string">'w'</span>, newline=<span class="string">''</span>, encoding=<span class="string">'utf-16'</span>) <span class="keyword">as</span> csvfile:</span><br><span class="line">        csvwriter = csv.writer(csvfile, delimiter=<span class="string">','</span>)</span><br><span class="line">        csvwriter.writerow([<span class="string">'gender'</span>, <span class="string">'dead'</span>, <span class="string">'survived'</span>])</span><br><span class="line">        <span class="comment"># csvwriter.writerow(['male', gender_dict['male'][0], gender_dict['female'][1]])</span></span><br><span class="line">        <span class="comment"># csvwriter.writerow(['female', gender_dict['female'][0], gender_dict['female'][1]])</span></span><br><span class="line">        <span class="keyword">for</span> k, v <span class="keyword">in</span> list(gender_dict.items()):</span><br><span class="line">            csvwriter.writerow([k, v[<span class="number">0</span>], v[<span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line">        csvwriter.writerow([ <span class="string">'pclass'</span>, <span class="string">'dead'</span>, <span class="string">'survived'</span>])</span><br><span class="line">        <span class="keyword">for</span> k, v <span class="keyword">in</span> list(pclass_dict.items()):</span><br><span class="line">            csvwriter.writerow([k, v[<span class="number">0</span>], v[<span class="number">1</span>]])               <span class="comment"># 小括号里有中括号</span></span><br><span class="line"></span><br><span class="line">        csvwriter.writerow([ <span class="string">'age'</span>, <span class="string">'dead'</span>, <span class="string">'survived'</span> ])</span><br><span class="line">        <span class="keyword">for</span> k, v <span class="keyword">in</span> list(age_dict.items()):</span><br><span class="line">            csvwriter.writerow([k, v[<span class="number">0</span>], v[<span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line">        csvwriter.writerow([<span class="string">'sibsp'</span>, <span class="string">'dead'</span>, <span class="string">'survived'</span>])</span><br><span class="line">        <span class="keyword">for</span> k, v <span class="keyword">in</span> list(sibsp_dict.items()):</span><br><span class="line">            csvwriter.writerow([k, v[<span class="number">0</span>], v[<span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line">        csvwriter.writerow([ <span class="string">'parch'</span>, <span class="string">'dead'</span>, <span class="string">'survived'</span>])</span><br><span class="line">        <span class="keyword">for</span> k, v <span class="keyword">in</span> list(parch_dict.items()):</span><br><span class="line">            csvwriter.writerow([k, v[<span class="number">0</span>], v[<span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line">        csvwriter.writerow([ <span class="string">'fare'</span>, <span class="string">'dead'</span>, <span class="string">'survived'</span> ])</span><br><span class="line">        <span class="keyword">for</span> k, v <span class="keyword">in</span> list(fare_dict.items()):</span><br><span class="line">            csvwriter.writerow([k, v[<span class="number">0</span>], v[<span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line">        csvwriter.writerow([ <span class="string">'embarked'</span>, <span class="string">'dead'</span>, <span class="string">'survived'</span> ])</span><br><span class="line">        <span class="keyword">for</span> k, v <span class="keyword">in</span> list(embarked_dict.items()):</span><br><span class="line">            csvwriter.writerow([k, v[<span class="number">0</span>], v[<span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">        run_main()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">			这段代码有问题</span></span><br><span class="line"><span class="string">            gender_dict['male'] = [0, 0]</span></span><br><span class="line"><span class="string">            gender_dict['female'] = [0, 0]</span></span><br><span class="line"><span class="string">            if gender == 'male':</span></span><br><span class="line"><span class="string">                if survived == '0':</span></span><br><span class="line"><span class="string">                    gender_dict['male'][0] += 1          # dead mem</span></span><br><span class="line"><span class="string">                elif survived == '1':</span></span><br><span class="line"><span class="string">                    gender_dict['male'][1] += 1          # lived men</span></span><br><span class="line"><span class="string">                else:</span></span><br><span class="line"><span class="string">                    pass</span></span><br><span class="line"><span class="string">            elif gender == 'female':</span></span><br><span class="line"><span class="string">                if survived == '0':</span></span><br><span class="line"><span class="string">                    gender_dict['female'][0] += 1        # dead women</span></span><br><span class="line"><span class="string">                elif survived == '1':</span></span><br><span class="line"><span class="string">                    gender_dict['female'][1] += 1        # lived women</span></span><br><span class="line"><span class="string">                else:</span></span><br><span class="line"><span class="string">                    pass</span></span><br><span class="line"><span class="string">            else:</span></span><br><span class="line"><span class="string">                pass</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>生成的初始文件经“导入”处理后的文件</p>
+</blockquote>
+<p><img src="https://i.loli.net/2019/07/17/5d2f0972eda8030079.jpg" alt="生成的初始csv文件经导入后的csv文件"></p>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/07/13/POJ-1915-Knight-Moves-双向BFS/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">POJ 1915 Knight Moves 双向BFS</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "python 读写csv文件",
+  owner: 'fireworks99',
+  repo: 'fireworks99.github.io',
+  oauth: {
+    client_id: '17cec8ce4020217ca317',
+    client_secret: 'f0cf66a4a81caab7ab9b0a55ac6d8ee725a335b2',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="https://i.loli.net/2019/01/16/5c3ef071d474e.png" title="头像">
+    <h3 class="avatar-name">
+      
+        市井烟火气
+      
+    </h3>
+    <p class="avatar-slogan">
+      人间烟火气~最抚凡人心
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP-------------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPのST算法/">DPのST算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの背包DP/">DPの背包DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化/">优化-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化の二分/">优化の二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言/">其他语言-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のHTML/">其他语言のHTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のJAVA/">其他语言のJAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のPython/">其他语言のPython</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のnext-permutation/">函数のnext_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のprev-permutation/">函数のprev_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哈希/">哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-判环/">图论の拓扑排序(判环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-无环/">图论の拓扑排序(无环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法/">基本算法-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の贪心/">基本算法の贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串/">字符串--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のKMP/">字符串のKMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串の最长回文子串/">字符串の最长回文子串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并排序/">归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の前缀和/">技巧の前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の尺取法/">技巧の尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の差分/">技巧の差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の异或/">技巧の异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の弹性碰撞/">技巧の弹性碰撞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の折半枚举/">技巧の折半枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の翻转问题/">技巧の翻转问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の输入挂/">技巧の输入挂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型のstring/">数据类型のstring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmap/">数据结构のmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmultiset/">数据结构のmultiset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のpriority-queue/">数据结构のpriority_queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のset/">数据结构のset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のvector/">数据结构のvector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の并查集/">数据结构の并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の栈-stack/">数据结构の栈(stack)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の树状数组/">数据结构の树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の线段树/">数据结构の线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の链式前向星/">数据结构の链式前向星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论/">数论-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论のGCD与LCM/">数论のGCD与LCM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の同余定理/">数论の同余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の埃氏筛/">数论の埃氏筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の大数求余/">数论の大数求余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の快速幂/">数论の快速幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の扩展欧几里得/">数论の扩展欧几里得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の欧拉降幂/">数论の欧拉降幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の素数筛/">数论の素数筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の线性筛/">数论の线性筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の费马小定理/">数论の费马小定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最大流/">最大流--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最大流のDinic/">最大流のDinic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最大流のEK算法/">最大流のEK算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のKruskal/">最小生成树のKruskal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のPrim/">最小生成树のPrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路---------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のBellman-Ford/">最短路のBellman-Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のDijkstra/">最短路のDijkstra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のFloyd/">最短路のFloyd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のspfa/">最短路のspfa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索/">简单搜索-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のA/">简单搜索のA*</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のBFS/">简单搜索のBFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索の剪枝/">简单搜索の剪枝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学/">组合数学-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の组合数/">组合数学の组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何/">计算几何-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何の离散化/">计算几何の离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/17/python-读写csv文件/">python 读写csv文件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/13/POJ-1915-Knight-Moves-双向BFS/">POJ 1915 Knight Moves 双向BFS</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/10/POJ-3264-Balamced-Lineup/">POJ 3264 Balamced Lineup</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/09/POJ-3187-Backward-Digit-Sums/">POJ 3187 Backward Digit Sums</a>
+          </li>
+        
+          <li>
+            <a href="/2019/06/08/阿里巴巴协助征战SARS-困难/">阿里巴巴协助征战SARS(困难)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 市井烟火气 &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+
+
+<div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+</div>
+        
+<script src="C:/blog/themes/antiquity/live2D/waifu-tips.js"></script>
+<script src="C:/blog/themes/antiquity/live2D/live2d.js"></script>
+<script type="text/javascript">initModel("C:/blog/themes/antiquity/live2D/")</script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/随笔" class="mobile-nav-link">随笔</a>
+  
+    <a href="/tags/题解" class="mobile-nav-link">题解</a>
+  
+    <a href="/tags/知识" class="mobile-nav-link">知识</a>
+  
+    <a href="/aboutme" class="mobile-nav-link">关于</a>
+  
+    <a href="/friends" class="mobile-nav-link">友链</a>
+  
+    <a href="https://fireworks12.github.io/" class="mobile-nav-link">杂件</a>
+  
+    <a href="/daily/index.html" class="mobile-nav-link">日常</a>
+  
+    <a href="/fireworks/index.html" class="mobile-nav-link">烟花</a>
+  
+    <a href="/experience/index.html" class="mobile-nav-link">逆流</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
