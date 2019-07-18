@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>博弈 | 市井烟火气</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="巴什博弈（Bash Game） 一堆n个物品，两人轮流取出（1~m）个，最终取完者胜出">
+<meta name="keywords" content="技巧の博弈">
+<meta property="og:type" content="article">
+<meta property="og:title" content="博弈">
+<meta property="og:url" content="http://yoursite.com/2019/07/18/博弈/index.html">
+<meta property="og:site_name" content="市井烟火气">
+<meta property="og:description" content="巴什博弈（Bash Game） 一堆n个物品，两人轮流取出（1~m）个，最终取完者胜出">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-18T01:46:21.347Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="博弈">
+<meta name="twitter:description" content="巴什博弈（Bash Game） 一堆n个物品，两人轮流取出（1~m）个，最终取完者胜出">
+  
+    <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://i.loli.net/2019/01/17/5c40047c7cf9e.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+
+  <link rel="stylesheet" type="text/css" href="C:/blog/themes/antiquity/live2D/waifu.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/tags/随笔" title="">随笔</a>
+      
+        <a class="nav-item" href="/tags/题解" title="">题解</a>
+      
+        <a class="nav-item" href="/tags/知识" title="">知识</a>
+      
+        <a class="nav-item" href="/aboutme" title="">关于</a>
+      
+        <a class="nav-item" href="/friends" title="">友链</a>
+      
+        <a class="nav-item" href="https://fireworks12.github.io/" title="">杂件</a>
+      
+        <a class="nav-item" href="/daily/index.html" title="">日常</a>
+      
+        <a class="nav-item" href="/fireworks/index.html" title="">烟花</a>
+      
+        <a class="nav-item" href="/experience/index.html" title="">逆流</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-博弈" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      博弈
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/18/博弈/" class="article-date">
+  <time datetime="2019-07-18T00:07:51.000Z" itemprop="datePublished">2019-07-18</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧の博弈/">技巧の博弈</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="巴什博弈（Bash-Game）"><a href="#巴什博弈（Bash-Game）" class="headerlink" title="巴什博弈（Bash Game）"></a>巴什博弈（Bash Game）</h1><blockquote>
+<p>一堆n个物品，两人轮流取出（1~m）个，最终取完者胜出</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><blockquote>
+<p>若n = m + 1,先手必败<strong>——结论①</strong></p>
+<p>-&gt;若n = k * (m + 1)，第二个人有可以使物品最终变为(m + 1)的办法，先手必败<strong>——结论②</strong></p>
+<p>-&gt;若n = k * (m + 1) + r,先手拿走r个，由结论②得后手必败、先手必胜<strong>——结论③</strong></p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Bash_Game</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n % (m + <span class="number">1</span>) != <span class="number">0</span>)</span><br><span class="line">    	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>若有n堆，每堆a[i]个物品，两人来取，如何判断？</p>
+<p>先考虑取的最大数目无上限即可以把一堆全部取完的情形：</p>
+<ol>
+<li><p>一堆，无论数目多少，先手必胜</p>
+</li>
+<li><p>两堆，从最简单的情况开始考虑</p>
+<blockquote>
+<p>1 、1时，后手必胜</p>
+<p>1、n时，先手取走(n - 1)，变成上述情况，先手必胜</p>
+<p>a 、b时(a &gt;= 2 &amp;&amp; b &gt;= 2)</p>
+<blockquote>
+<p>若先手取走其中一堆会输</p>
+<p>若先手取完变成1、n也会输（<strong>最终谁取完后局面为1、n谁就输了</strong>）</p>
+<p>所以要保证先手取完还是c、b或a、d</p>
+</blockquote>
+</blockquote>
+</li>
+<li><p>N堆，也是：最终谁取完后局面变为1、n谁就输了</p>
+</li>
+</ol>
+</blockquote>
+<h1 id="尼姆博弈（Nimm-Game）"><a href="#尼姆博弈（Nimm-Game）" class="headerlink" title="尼姆博弈（Nimm Game）"></a>尼姆博弈（Nimm Game）</h1><blockquote>
+<p>如上述n堆物品，每堆a[i]个,两人轮流取（从其中一堆中取，数目不限），是否有先手必胜策略？</p>
+</blockquote>
+<h2 id="分析-1"><a href="#分析-1" class="headerlink" title="分析"></a>分析</h2><blockquote>
+<p>如果把n堆抽象为n个非负整数,再将n个整数转化为二进制,然后对n个二进制数按位相加(<strong>不进位</strong>),若每一位相加都为偶数, 称这个状态为偶状态,否则称它为奇状态. （可以看到偶状态限制条件严苛）</p>
+<p>可以证明:任何一个偶状态在其中一个数变小后一定成为奇状态,而一个奇状态一定可以通过改变一个数变成偶状态. </p>
+<p>证明：</p>
+<blockquote>
+<ol>
+<li>前一点很显然,因为一个数变小至少有一位发生改变,这一位就改变了原来的偶状态. </li>
+<li>对于后一点,对于一个从高位到低位某一位和为奇的奇状态,必定有一个数的二进制表示在此位为1,对于后面的较低位和为奇的情况,只要把这个数对应位取反即可得到一个偶状态 </li>
+</ol>
+</blockquote>
+<p>对于n堆物品,只要判断它出是奇状态就可以断定先手有必赢策略 </p>
+</blockquote>
+<blockquote>
+<p>位运算（异或）代替求二进制判断奇状态：</p>
+<p> 如果有奇数个二进制数在第K位为1，那么在这一位上的和为奇（已可以表明这就是一个奇状态）</p>
+<p>在位运算方面体现为：所有数字异或后得到的ans在第K位为1</p>
+<p>这一条件可以放大为ans != 0，意味着ans至少有一位1，我们说那就是第K位。</p>
+</blockquote>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">Nimm_Game</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    	flag ^= a[i];</span><br><span class="line">    <span class="keyword">if</span>(flag)</span><br><span class="line">    	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>但是有时会遇到n很大，a[i]为连续整数的特殊情况，这时有特殊算法</p>
+</blockquote>
+<blockquote>
+<p>文章出处: <a href="https://www.cnblogs.com/ECJTUACM-873284962/p/6398385.html" target="_blank" rel="noopener">https://www.cnblogs.com/ECJTUACM-873284962/p/6398385.html</a></p>
+</blockquote>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/07/18/POJ-2718-Smallest-Difference/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            POJ 2718 Smallest Difference
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/07/17/python-读写csv文件/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">python 读写csv文件</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "博弈",
+  owner: 'fireworks99',
+  repo: 'fireworks99.github.io',
+  oauth: {
+    client_id: '17cec8ce4020217ca317',
+    client_secret: 'f0cf66a4a81caab7ab9b0a55ac6d8ee725a335b2',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="https://i.loli.net/2019/01/16/5c3ef071d474e.png" title="头像">
+    <h3 class="avatar-name">
+      
+        市井烟火气
+      
+    </h3>
+    <p class="avatar-slogan">
+      人间烟火气~最抚凡人心
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP-------------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPのST算法/">DPのST算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの背包DP/">DPの背包DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化/">优化-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化の二分/">优化の二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言/">其他语言-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のHTML/">其他语言のHTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のJAVA/">其他语言のJAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のPython/">其他语言のPython</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のnext-permutation/">函数のnext_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のprev-permutation/">函数のprev_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/哈希/">哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-判环/">图论の拓扑排序(判环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-无环/">图论の拓扑排序(无环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法/">基本算法-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の贪心/">基本算法の贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串/">字符串--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のKMP/">字符串のKMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串の最长回文子串/">字符串の最长回文子串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并排序/">归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の前缀和/">技巧の前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の博弈/">技巧の博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の尺取法/">技巧の尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の差分/">技巧の差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の异或/">技巧の异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の弹性碰撞/">技巧の弹性碰撞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の折半枚举/">技巧の折半枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の翻转问题/">技巧の翻转问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の输入挂/">技巧の输入挂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型のstring/">数据类型のstring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmap/">数据结构のmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmultiset/">数据结构のmultiset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のpriority-queue/">数据结构のpriority_queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のset/">数据结构のset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のvector/">数据结构のvector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の并查集/">数据结构の并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の栈-stack/">数据结构の栈(stack)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の树状数组/">数据结构の树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の线段树/">数据结构の线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の链式前向星/">数据结构の链式前向星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论/">数论-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论のGCD与LCM/">数论のGCD与LCM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の同余定理/">数论の同余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の埃氏筛/">数论の埃氏筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の大数求余/">数论の大数求余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の快速幂/">数论の快速幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の扩展欧几里得/">数论の扩展欧几里得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の欧拉降幂/">数论の欧拉降幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の素数筛/">数论の素数筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の线性筛/">数论の线性筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の费马小定理/">数论の费马小定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最大流/">最大流--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最大流のDinic/">最大流のDinic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最大流のEK算法/">最大流のEK算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のKruskal/">最小生成树のKruskal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のPrim/">最小生成树のPrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路---------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のBellman-Ford/">最短路のBellman-Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のDijkstra/">最短路のDijkstra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のFloyd/">最短路のFloyd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のspfa/">最短路のspfa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索/">简单搜索-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のA/">简单搜索のA*</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のBFS/">简单搜索のBFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索の剪枝/">简单搜索の剪枝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学/">组合数学-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の组合数/">组合数学の组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何/">计算几何-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何の离散化/">计算几何の离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/18/POJ-2718-Smallest-Difference/">POJ 2718 Smallest Difference</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/18/博弈/">博弈</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/17/python-读写csv文件/">python 读写csv文件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/13/POJ-1915-Knight-Moves-双向BFS/">POJ 1915 Knight Moves 双向BFS</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/10/POJ-3264-Balamced-Lineup/">POJ 3264 Balamced Lineup</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 市井烟火气 &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+
+
+<div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+</div>
+        
+<script src="C:/blog/themes/antiquity/live2D/waifu-tips.js"></script>
+<script src="C:/blog/themes/antiquity/live2D/live2d.js"></script>
+<script type="text/javascript">initModel("C:/blog/themes/antiquity/live2D/")</script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/随笔" class="mobile-nav-link">随笔</a>
+  
+    <a href="/tags/题解" class="mobile-nav-link">题解</a>
+  
+    <a href="/tags/知识" class="mobile-nav-link">知识</a>
+  
+    <a href="/aboutme" class="mobile-nav-link">关于</a>
+  
+    <a href="/friends" class="mobile-nav-link">友链</a>
+  
+    <a href="https://fireworks12.github.io/" class="mobile-nav-link">杂件</a>
+  
+    <a href="/daily/index.html" class="mobile-nav-link">日常</a>
+  
+    <a href="/fireworks/index.html" class="mobile-nav-link">烟花</a>
+  
+    <a href="/experience/index.html" class="mobile-nav-link">逆流</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
