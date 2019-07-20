@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="市井烟火气">
 <meta property="og:description" content="巴什博弈（Bash Game） 一堆n个物品，两人轮流取出（1~m）个，最终取完者胜出">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-18T12:32:30.901Z">
+<meta property="og:updated_time" content="2019-07-20T02:34:10.437Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="博弈">
 <meta name="twitter:description" content="巴什博弈（Bash Game） 一堆n个物品，两人轮流取出（1~m）个，最终取完者胜出">
@@ -156,6 +156,37 @@
 <blockquote>
 <p>但是有时会遇到n很大，a[i]为连续整数的特殊情况，这时有特殊算法</p>
 </blockquote>
+<h3 id="Strange-code"><a href="#Strange-code" class="headerlink" title="Strange code"></a>Strange code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//读入n，表示有从物品数分别1到n的n堆物品，假设n个数存在数组f[]中</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">xor_n</span><span class="params">(<span class="keyword">int</span> n)</span><span class="comment">//从1到n的异或和</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="keyword">int</span> t = n &amp; <span class="number">3</span>;</span><br><span class="line">     <span class="keyword">if</span> (t &amp; <span class="number">1</span>) </span><br><span class="line">     	<span class="keyword">return</span> t / <span class="number">2</span> ^ <span class="number">1</span>;</span><br><span class="line">     <span class="keyword">return</span> t / <span class="number">2</span> ^ n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Nimm_Game</span><span class="params">(<span class="keyword">int</span> n)</span><span class="comment">//有必胜策略返回1</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    	flag ^= xor_n(f[i]);</span><br><span class="line">    <span class="keyword">if</span>(flag) </span><br><span class="line">    	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="另一种解释"><a href="#另一种解释" class="headerlink" title="另一种解释"></a>另一种解释</h3><blockquote>
+<p>用(A,B,C)来表示某一特定局势，同时规定A&lt;=B&lt;=C。奇异局势表示先手必败。</p>
+<ol>
+<li>显然(0,0,0)是奇异局势。</li>
+<li>(0,n,n)是奇异局势，当先手拿走s个石子时，我们对应拿走s个石子，最终转化为(0,0,0)</li>
+<li>(1,2,3)也是奇异局势，无论先手如何取，我们都可以转化为(0,n,n)的局势。</li>
+</ol>
+<p>对于一个奇异局势(A,B,C),我们可以发现，A(XOR)B(XOR)C = 0。 </p>
+<p>下面是一条需要的前置技能： </p>
+<p>设有数字a,b，a(XOR)b(XOR)(a(XOR)b) = (a(XOR)a)(XOR)(b(XOR)b) = 0 </p>
+<p>对于一个非奇异局势(A,B,C),我们只需要将C转化为(A(XOR)B)即可，而将C转化为(A(XOR)B)的操作为，拿走K = C-(A(XOR)B)个即可。</p>
+<p>3可扩展到N</p>
+<p>原文出处 ： <a href="https://blog.csdn.net/pengwill97/article/details/76796070" target="_blank" rel="noopener">https://blog.csdn.net/pengwill97/article/details/76796070</a></p>
+</blockquote>
+<h2 id="威佐夫博弈（Wythoff-Game）"><a href="#威佐夫博弈（Wythoff-Game）" class="headerlink" title="威佐夫博弈（Wythoff Game）"></a>威佐夫博弈（Wythoff Game）</h2><blockquote>
+<p>有两堆各若干个物品，两个人轮流从某一堆或同时从两堆中取同样多的物品，规定每次至少取一个，多者不限，最后取光者得胜。 </p>
+</blockquote>
+<blockquote>
+<p>如果甲面对（0，0），那么甲已经输了，这种局势我们称为奇异局势。前几个奇异局势是：</p>
+<p>（0，0）、（1，2）、（3，5）、（4，7）、（6，10）.</p>
+<p>可以看出,a0=b0=0,ak是未在前面出现过的最小自然数,而 bk=ak+k. </p>
+</blockquote>
+<blockquote>
+<p>面对奇异局势，先手必败</p>
+<p>面对非奇异局势，必然存在使其变为奇异局势的方案，使后手必败，从而先手获胜</p>
+</blockquote>
+<blockquote>
+<p>取石子游戏 ： <a href="http://poj.org/problem?id=1067" target="_blank" rel="noopener">http://poj.org/problem?id=1067</a></p>
+</blockquote>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a, b, k, tem;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; a &gt;&gt; b)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a &gt; b)</span><br><span class="line">            a ^= b, b ^= a, a ^= b;</span><br><span class="line">        k = b - a;</span><br><span class="line">        tem = (<span class="keyword">int</span>)((<span class="built_in">sqrt</span>(<span class="number">5.0</span>) + <span class="number">1</span>) / <span class="number">2</span> * k);</span><br><span class="line">        <span class="keyword">if</span>(tem == a)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">'0'</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">'1'</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        </span><br><span class="line">     <span class="comment">/* double tem = (sqrt(5.0) - 1.0) / 2.0;</span></span><br><span class="line"><span class="comment">        k = a * tem;</span></span><br><span class="line"><span class="comment">        if(a != k * (int)(tem + 1))</span></span><br><span class="line"><span class="comment">            ++k;</span></span><br><span class="line"><span class="comment">        if(a + k == b)</span></span><br><span class="line"><span class="comment">            cout &lt;&lt; '0' &lt;&lt; '\n';</span></span><br><span class="line"><span class="comment">        else</span></span><br><span class="line"><span class="comment">            cout &lt;&lt; '1' &lt;&lt; '\n'; */</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>文章出处: <a href="https://www.cnblogs.com/ECJTUACM-873284962/p/6398385.html" target="_blank" rel="noopener">https://www.cnblogs.com/ECJTUACM-873284962/p/6398385.html</a></p>
 </blockquote>
@@ -261,6 +292,10 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
+            <a href="/2019/07/20/HDU-1850-Being-a-Good-Boy-in-Spring/">HDU 1850 Being a Good Boy in Spring</a>
+          </li>
+        
+          <li>
             <a href="/2019/07/19/HDU-1800-Flying-to-the-Mars/">HDU 1800 Flying to the Mars</a>
           </li>
         
@@ -274,10 +309,6 @@ gitment.render('gitmentContainer')
         
           <li>
             <a href="/2019/07/19/HDU-1496-Equations/">HDU 1496 Equations</a>
-          </li>
-        
-          <li>
-            <a href="/2019/07/19/哈希/">哈希</a>
           </li>
         
       </ul>
