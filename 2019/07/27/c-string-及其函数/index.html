@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>c++ string 及其函数 | 市井烟火气</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="s.substr() substr有2种用法： 假设：string s = “0123456789”; string sub1 = s.substr(5); //只有一个数字5表示从下标为5开始一直到结尾：sub1 = “56789” string sub2 = s.substr(5, 3); //从下标为5开始截取长度为3位：sub2 = “567” 转自： https://blog.csdn.">
+<meta name="keywords" content="数据类型のstring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="c++ string 及其函数">
+<meta property="og:url" content="http://yoursite.com/2019/07/27/c-string-及其函数/index.html">
+<meta property="og:site_name" content="市井烟火气">
+<meta property="og:description" content="s.substr() substr有2种用法： 假设：string s = “0123456789”; string sub1 = s.substr(5); //只有一个数字5表示从下标为5开始一直到结尾：sub1 = “56789” string sub2 = s.substr(5, 3); //从下标为5开始截取长度为3位：sub2 = “567” 转自： https://blog.csdn.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-27T07:27:54.159Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="c++ string 及其函数">
+<meta name="twitter:description" content="s.substr() substr有2种用法： 假设：string s = “0123456789”; string sub1 = s.substr(5); //只有一个数字5表示从下标为5开始一直到结尾：sub1 = “56789” string sub2 = s.substr(5, 3); //从下标为5开始截取长度为3位：sub2 = “567” 转自： https://blog.csdn.">
+  
+    <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://i.loli.net/2019/01/17/5c40047c7cf9e.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+
+  <link rel="stylesheet" type="text/css" href="C:/blog/themes/antiquity/live2D/waifu.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/tags/随笔" title="">随笔</a>
+      
+        <a class="nav-item" href="/tags/题解" title="">题解</a>
+      
+        <a class="nav-item" href="/tags/知识" title="">知识</a>
+      
+        <a class="nav-item" href="/aboutme" title="">关于</a>
+      
+        <a class="nav-item" href="/friends" title="">友链</a>
+      
+        <a class="nav-item" href="https://fireworks12.github.io/" title="">杂件</a>
+      
+        <a class="nav-item" href="/daily/index.html" title="">日常</a>
+      
+        <a class="nav-item" href="/fireworks/index.html" title="">烟花</a>
+      
+        <a class="nav-item" href="/experience/index.html" title="">逆流</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-c-string-及其函数" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      c++ string 及其函数
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/07/27/c-string-及其函数/" class="article-date">
+  <time datetime="2019-07-27T07:19:24.000Z" itemprop="datePublished">2019-07-27</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据类型のstring/">数据类型のstring</a></li></ul>
+
+  </div>
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="s-substr"><a href="#s-substr" class="headerlink" title="s.substr()"></a>s.substr()</h2><blockquote>
+<p>substr有2种用法：</p>
+<p>假设：string s = “0123456789”;</p>
+<p>string sub1 = s.substr(5); //只有一个数字5表示从下标为5开始一直到结尾：sub1 = “56789”</p>
+<p>string sub2 = s.substr(5, 3); //从下标为5开始截取长度为3位：sub2 = “567”</p>
+<p>转自： <a href="https://blog.csdn.net/liuchuo/article/details/54599840" target="_blank" rel="noopener">https://blog.csdn.net/liuchuo/article/details/54599840</a></p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br></pre></td><td class="code"><pre><span class="line">自我感觉重要的几点：</span><br><span class="line"><span class="number">1.</span>getline(<span class="built_in">cin</span>, s)的赋值</span><br><span class="line"><span class="number">2.</span>字符串数组的使用</span><br><span class="line"><span class="number">5.</span>大小、判空</span><br><span class="line"><span class="number">6.</span>末尾添加</span><br><span class="line"><span class="number">11.</span><span class="built_in">string</span>查找</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> len = <span class="number">4</span>;</span><br><span class="line"><span class="keyword">char</span> ch = <span class="string">'Y'</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">///1.赋值</span></span><br><span class="line">    <span class="comment">///cin遇空格、tab、回车结束</span></span><br><span class="line"><span class="comment">//    string s1;</span></span><br><span class="line"><span class="comment">//    cin &gt;&gt; s1;</span></span><br><span class="line"><span class="comment">//    cout &lt;&lt; s1 &lt;&lt; '\n';</span></span><br><span class="line">    <span class="comment">///吃“回车”，相当于getchar(),避免影响后续输入</span></span><br><span class="line"><span class="comment">//    cin.get();</span></span><br><span class="line">    <span class="comment">///一行字符串的输入</span></span><br><span class="line"><span class="comment">//    string s2;</span></span><br><span class="line"><span class="comment">//    getline(cin, s2);</span></span><br><span class="line"><span class="comment">//    cout &lt;&lt; s2 &lt;&lt; '\n';</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">///2.字符串数组（竟然可以访问每个string里的每个字符！！！）</span></span><br><span class="line">    <span class="built_in">string</span> a[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        getline(<span class="built_in">cin</span>, a[i]);</span><br><span class="line">        <span class="keyword">if</span>(i != <span class="number">4</span>)</span><br><span class="line">            <span class="built_in">cin</span>.get();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; a[i] &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">///访问一个string里的字符</span></span><br><span class="line">	<span class="built_in">string</span> s[<span class="number">5</span>];</span><br><span class="line">    s[<span class="number">0</span>] = <span class="string">"ABCDE"</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; s[<span class="number">0</span>][i] &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">///3.初始化</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"1.初始化练习"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"（1）.直接等于号赋值"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">string</span> s3 = <span class="string">"嘤嘤嘤"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s3 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="comment">///复制粘贴</span></span><br><span class="line">    <span class="built_in">string</span> s8;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"（2）.字符串copy赋值"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    s8 = s3;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s8 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="comment">///用指向已知字符串的字符指针 初始化 字符串</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"（3）.指向已知字符串的字符指针 初始化"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">char</span> * s = <span class="string">"好傻好没用的做法"</span>;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">s4</span><span class="params">(s)</span></span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s4 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"（4）.assign分配赋值——字符指针版"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    s8.assign(s);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s8 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="comment">///一个汉字占两个字节从1开始</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"（5）.assign分配前10个字符（字节）赋值——字符指针版"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    s8.assign(s, <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s8 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="comment">///另类复制粘贴</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"（6）.assign分配赋值——字符串版——相当于等于号copy"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    s8.assign(s4);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s8 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="comment">///用n个字符 初始化 一个字符串</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"（8）.用len个ch字符初始化"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">s5</span><span class="params">(<span class="number">6</span>, ch)</span></span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s5 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="comment">///用len个ch字符赋值</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"（9）.运用assign，用len个ch字符赋值"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">string</span> s9;</span><br><span class="line">    s9.assign(len, ch);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s9 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="comment">///另类赋值</span></span><br><span class="line">    <span class="built_in">string</span> s10 = <span class="string">"ABCDEFG"</span>;</span><br><span class="line">    <span class="built_in">string</span> s11;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"（10）.用assign三维截取赋值"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    s11.assign(s10, <span class="number">0</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s11 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="comment">///迭代器赋值</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"（11）.用迭代器赋值"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    s11.assign(s10.begin(), s10.end());</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s11 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">///4.字符操作</span></span><br><span class="line">    <span class="comment">///访问指定位置的字符（感觉很耗时!!!）</span></span><br><span class="line"><span class="comment">//    string s6 = "qaq";</span></span><br><span class="line"><span class="comment">//    char b = s6[1];///输出a（字符串从0开始）</span></span><br><span class="line"><span class="comment">//    cout &lt;&lt; b &lt;&lt; '\n';</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="number">5.</span>特性描述</span><br><span class="line">    <span class="built_in">string</span> s7 = <span class="string">"abcdefg"</span>;</span><br><span class="line">  当前容量 <span class="number">15</span> ？？？</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s7.capacity() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  <span class="built_in">string</span> 对象可存放的最大字符串长度（<span class="number">2147483647</span> = <span class="number">2</span> ^ <span class="number">31</span> - <span class="number">1</span>）</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s7.max_size() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  字符串大小</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s7.length() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  判空</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s7.empty() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  重定大小，不足去补</span><br><span class="line">    s7.resize(<span class="number">10</span>, <span class="string">'A'</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s7 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    s7.resize(<span class="number">5</span>, <span class="string">'B'</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s7 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="number">6.</span><span class="built_in">string</span>连接</span><br><span class="line">  算数相加</span><br><span class="line">    <span class="built_in">string</span> s12 = <span class="string">"HIJKLMN "</span>;</span><br><span class="line">    <span class="built_in">string</span> s13 = <span class="string">"OPQ "</span>;</span><br><span class="line">    s12 += s13;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s12 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  指向字符串的字符指针截取部分 添于末尾</span><br><span class="line">    s13.append(s, <span class="number">10</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s13 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    s13.append(s);</span><br><span class="line">  迭代器添加</span><br><span class="line">    <span class="built_in">string</span> s14 = <span class="string">"s14 "</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s14 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    s14.append(s7.begin(), s7.end());</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s14 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  尾部添字符</span><br><span class="line">    <span class="built_in">string</span> s15 = <span class="string">"s15 "</span>;</span><br><span class="line">    s15.push_back(<span class="string">'A'</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s15 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="number">7.</span>比较大小</span><br><span class="line">    <span class="built_in">string</span> s16 = <span class="string">"abcdefg"</span>;</span><br><span class="line">    <span class="built_in">string</span> s17 = <span class="string">"bcdefg"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (s16 == s17) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (s16 != s17) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (s16 &gt; s17) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (s16 &gt;= s17) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (s16 &lt; s17) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; (s16 &lt;= s17) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  大于返回<span class="number">1</span>，小于返回<span class="number">-1</span>，等于返回<span class="number">0</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s16.compare(s17) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s17.compare(s16) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  拿出从s16（从<span class="number">0</span>开始）的第<span class="number">1</span>个字符开始连续<span class="number">6</span>个字符与s17比较</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s16.compare(<span class="number">1</span>, <span class="number">6</span>, s17) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  类似的</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s16.compare(<span class="number">3</span>, <span class="number">5</span>, s17, <span class="number">2</span>, <span class="number">5</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="number">8.</span><span class="built_in">string</span>子串</span><br><span class="line">    <span class="built_in">string</span> s18 = <span class="string">"OPQRST"</span>;</span><br><span class="line">    <span class="built_in">string</span> s19 = s18.substr(<span class="number">3</span>, <span class="number">3</span>);<span class="comment">///从下表3开始的连续3个字符</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s19 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="number">9.</span><span class="built_in">string</span>交换</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"s18: "</span> &lt;&lt; s18 &lt;&lt; <span class="string">'\n'</span> &lt;&lt; <span class="string">"s19: "</span> &lt;&lt; s19 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    s18.swap(s19);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"s18: "</span> &lt;&lt; s18 &lt;&lt; <span class="string">'\n'</span> &lt;&lt; <span class="string">"s19: "</span> &lt;&lt; s19 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="number">10.</span>字符串的流处理,头文件&lt;sstream&gt;</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">str24</span><span class="params">(<span class="string">"hello,this is a test"</span>)</span></span>;</span><br><span class="line">    <span class="function"><span class="built_in">istringstream</span> <span class="title">is</span><span class="params">(str24)</span></span>;</span><br><span class="line">    <span class="built_in">string</span> s20, s21, s22, s23;</span><br><span class="line">    is &gt;&gt; s20 &gt;&gt; s21 &gt;&gt; s22 &gt;&gt; s23;</span><br><span class="line">  s20=<span class="string">"hello,this"</span>,s21=<span class="string">"is"</span>,s22=<span class="string">"a"</span>,s23=<span class="string">"test"</span></span><br><span class="line">    <span class="built_in">ostringstream</span> os;</span><br><span class="line">    os &lt;&lt; s20 &lt;&lt; s21 &lt;&lt; s22 &lt;&lt;s23;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt; os.str() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="number">11.</span><span class="built_in">string</span>的查找，查找成功时返回所在位置，</span><br><span class="line">  失败时返回<span class="built_in">string</span>::npos的值，即是<span class="number">-1</span></span><br><span class="line"></span><br><span class="line">  括号内容为三维时，第三维是选取字符串的前几个字符</span><br><span class="line"></span><br><span class="line">    <span class="built_in">string</span> s25 = <span class="string">"ABCDEFGGGGGGHHHHHHIJKLMNOPQRSTUVWXYZ"</span>;</span><br><span class="line">  从<span class="number">0</span>开始找‘G’</span><br><span class="line">    <span class="keyword">int</span> pos = s25.find(<span class="string">'G'</span>, <span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; pos &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  从<span class="number">0</span>开始找“GG”</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s25.find(<span class="string">"GG"</span>, <span class="number">0</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  从<span class="number">0</span>开始找“HHHHH”前<span class="number">4</span>个字符所在位置</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s25.find(<span class="string">"HHHHH"</span>, <span class="number">0</span>, <span class="number">4</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  反向查找（不要以为反向查找时，最后一个字符位置是<span class="number">0</span>，往前一个是<span class="number">1</span>，再<span class="number">2.</span>..）</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"反向查找,岂不是find_last_of？"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s25.rfind(<span class="string">'G'</span>, <span class="built_in">string</span>::npos) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s25.rfind(<span class="string">"GG"</span>, <span class="built_in">string</span>::npos) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s25.rfind(<span class="string">"HHHHH"</span>, <span class="built_in">string</span>::npos, <span class="number">4</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line">  查找第一次出现的位置（字符串下表从<span class="number">0</span>开始）</span><br><span class="line">    <span class="built_in">string</span> s26 = <span class="string">"ABBCCCDDDDEEEEEFFFFFFGGGGGGG"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"find_first_of检测"</span> &lt;&lt; <span class="string">'\n'</span>;<span class="comment">///相对于find它本身不是全匹配</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_first_of(<span class="string">'C'</span>, <span class="number">0</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_first_of(<span class="string">"DD"</span>, <span class="number">0</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_first_of(<span class="string">"DDGG"</span>, <span class="number">0</span>, <span class="number">2</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"find_first_not_of检测"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_first_not_of(<span class="string">'A'</span>, <span class="number">0</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_first_not_of(<span class="string">'C'</span>, <span class="number">0</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_first_not_of(<span class="string">"DD"</span>, <span class="number">0</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_first_not_of(<span class="string">"DDGG"</span>, <span class="number">0</span>, <span class="number">2</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"find_last_of检测"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_last_of(<span class="string">'C'</span>, <span class="built_in">string</span>::npos) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_last_of(<span class="string">"DD"</span>, <span class="built_in">string</span>::npos) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_last_of(<span class="string">"DDGG"</span>, <span class="built_in">string</span>::npos, <span class="number">2</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"find_last_not_of检测"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_last_not_of(<span class="string">'C'</span>, <span class="built_in">string</span>::npos) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_last_not_of(<span class="string">"DD"</span>, <span class="built_in">string</span>::npos) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s26.find_last_not_of(<span class="string">"DDGG"</span>, <span class="built_in">string</span>::npos, <span class="number">2</span>) &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"可以进行类似于upper_bound(0, num) - lower_bound(0, num)的操作"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="number">12.</span><span class="built_in">string</span>的替换</span><br><span class="line">  第一维：替换起始位置</span><br><span class="line">  第二维：从起始位置起连续几个字符被换掉</span><br><span class="line">  第三维：要换的新字符串</span><br><span class="line">  (有且仅有四维）第四维：截取新字符串前几个字符</span><br><span class="line">  (有且仅有五维）第四、五维：从位置几开始截取几个字符</span><br><span class="line">    <span class="built_in">string</span> s27 = <span class="string">"CCCCTTTTMMMMDDDD传统美德"</span>;</span><br><span class="line">    <span class="built_in">string</span> s28;</span><br><span class="line">    s28 = s27.replace(<span class="number">0</span>, <span class="number">4</span>, <span class="string">"AAAA"</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s28 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">string</span> s29;</span><br><span class="line">    s29 = s27.replace(<span class="number">0</span>, <span class="number">4</span>, <span class="string">"BBBB"</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s29 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">string</span> s30;</span><br><span class="line">    s30 = s27.replace(<span class="number">0</span>, <span class="number">4</span>, <span class="string">"DDDDEEEEFFFF"</span>, <span class="number">4</span>, <span class="number">4</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s30 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  前两维同上，第三维是后面字符个数</span><br><span class="line">    <span class="built_in">string</span> s31;</span><br><span class="line">    s31 = s27.replace(<span class="number">0</span>, <span class="number">4</span>, <span class="number">8</span>, <span class="string">'Z'</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s31 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  据说以上操作中，位置可以换为迭代器</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="number">13.</span><span class="built_in">string</span>的插入（位置可以换为迭代器）</span><br><span class="line">  维度意义同上</span><br><span class="line">    <span class="built_in">string</span> s32 = <span class="string">"tql wsl 天气冷 我睡了 "</span>;</span><br><span class="line">    <span class="built_in">string</span> s33 = s32.insert(<span class="number">0</span>, <span class="string">"yyy 牙痒痒 "</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s33 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">string</span> s34 = s32.insert(<span class="number">0</span>, <span class="number">4</span>, <span class="string">'L'</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s34 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">string</span> s35 = s32.insert(<span class="number">0</span>, <span class="string">"ZBL"</span>, <span class="number">2</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s35 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">string</span> s36 = s32.insert(<span class="number">0</span>, <span class="string">"ZZZBBBLLL"</span>, <span class="number">3</span>, <span class="number">3</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s36 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  <span class="number">14.</span><span class="built_in">string</span>的删除</span><br><span class="line">    <span class="built_in">string</span> s37 = <span class="string">"Oh,my God!"</span>;</span><br><span class="line">    <span class="built_in">string</span> s38 = s37;</span><br><span class="line">    <span class="built_in">string</span> s39 = s37;</span><br><span class="line">    <span class="built_in">string</span> s40 = s37;</span><br><span class="line">  只删除第二个</span><br><span class="line">    s38.erase(s38.begin() + <span class="number">2</span>);</span><br><span class="line">  从第二个开始删，保留最后一个</span><br><span class="line">    s39.erase(s39.begin() + <span class="number">2</span>, s39.end() - <span class="number">1</span>);</span><br><span class="line">  删除（包括）第三个字符以后的所有字符</span><br><span class="line">    s40.erase(<span class="number">3</span>);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s38 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s39 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; s40 &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">  有s.clear()函数</span><br><span class="line"></span><br><span class="line">  <span class="number">15.</span>补充：加法连接字符串</span><br><span class="line">    <span class="built_in">string</span> s41 = <span class="string">"ABC"</span>;</span><br><span class="line">    <span class="built_in">string</span> s42 = <span class="string">"DEF"</span>;</span><br><span class="line">  不能直接连接两个字符串，如：s43 = <span class="string">"abc"</span> + <span class="string">"def"</span>;</span><br><span class="line">    <span class="built_in">string</span> s43 = s41 + <span class="string">"GHI"</span>;</span><br><span class="line">  s44的运算自左至右，s41 + <span class="string">"GHI"</span>组成一个s（字符串变量），再加“JK<span class="string">L"</span></span><br><span class="line"><span class="string">    string s44 = s41 + "</span>GHI<span class="string">" + "</span>JK<span class="string">L";</span></span><br><span class="line"><span class="string">    string s45 = s41 + s42;</span></span><br><span class="line"><span class="string">    s41 += "</span>Hello world!<span class="string">";</span></span><br><span class="line"><span class="string">    cout &lt;&lt; s43 &lt;&lt; '\n' &lt;&lt; s44 &lt;&lt; '\n' &lt;&lt; s45 &lt;&lt; '\n' &lt;&lt; s41 &lt;&lt; '\n';</span></span><br><span class="line"><span class="string">    return 0;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+      <a href="/2019/07/29/POJ-1144-NEtwork-无向图-割点/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            POJ 1144 Network(无向图+割点)
+          
+        </div>
+      </a>
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2019/07/27/POJ-1236-Network-of-Schools-强连通-缩点/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">POJ 1236 Network of Schools(强连通+缩点)</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://jjeejj.github.io/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "c++ string 及其函数",
+  owner: 'fireworks99',
+  repo: 'fireworks99.github.io',
+  oauth: {
+    client_id: '17cec8ce4020217ca317',
+    client_secret: 'f0cf66a4a81caab7ab9b0a55ac6d8ee725a335b2',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+  
+</article>
+</section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="https://i.loli.net/2019/01/16/5c3ef071d474e.png" title="头像">
+    <h3 class="avatar-name">
+      
+        市井烟火气
+      
+    </h3>
+    <p class="avatar-slogan">
+      人间烟火气~最抚凡人心
+    </p>
+  </div>
+</div>
+
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP-------------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPのST算法/">DPのST算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの背包DP/">DPの背包DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化/">优化----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化の二分/">优化の二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言/">其他语言-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のHTML/">其他语言のHTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のJAVA/">其他语言のJAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のPython/">其他语言のPython</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のnext-permutation/">函数のnext_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のprev-permutation/">函数のprev_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-判环/">图论の拓扑排序(判环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-无环/">图论の拓扑排序(无环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法/">基本算法-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の贪心/">基本算法の贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串/">字符串--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のAC自动机/">字符串のAC自动机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のKMP/">字符串のKMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串の最长回文子串/">字符串の最长回文子串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の前缀和/">技巧の前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の博弈/">技巧の博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の哈希/">技巧の哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の尺取法/">技巧の尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の差分/">技巧の差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の异或/">技巧の异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の弹性碰撞/">技巧の弹性碰撞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の归并排序/">技巧の归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の折半枚举/">技巧の折半枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の翻转问题/">技巧の翻转问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の莫队算法/">技巧の莫队算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の输入挂/">技巧の输入挂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数学/">数学</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型のstring/">数据类型のstring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmap/">数据结构のmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmultiset/">数据结构のmultiset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のpriority-queue/">数据结构のpriority_queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のset/">数据结构のset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のvector/">数据结构のvector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の字典树/">数据结构の字典树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の并查集/">数据结构の并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の栈-stack/">数据结构の栈(stack)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の树状数组/">数据结构の树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の线段树/">数据结构の线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の链式前向星/">数据结构の链式前向星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论/">数论-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论のGCD与LCM/">数论のGCD与LCM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の同余定理/">数论の同余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の埃氏筛/">数论の埃氏筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の大数求余/">数论の大数求余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の快速幂/">数论の快速幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の扩展欧几里得/">数论の扩展欧几里得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の欧拉降幂/">数论の欧拉降幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の素数筛/">数论の素数筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の线性筛/">数论の线性筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の费马小定理/">数论の费马小定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の高斯消元法/">数论の高斯消元法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最大流/">最大流--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最大流のDinic/">最大流のDinic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最大流のEK算法/">最大流のEK算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のKruskal/">最小生成树のKruskal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のPrim/">最小生成树のPrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路---------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のBellman-Ford/">最短路のBellman-Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のDijkstra/">最短路のDijkstra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のFloyd/">最短路のFloyd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のspfa/">最短路のspfa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索/">简单搜索-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のA/">简单搜索のA*</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のBFS/">简单搜索のBFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索の剪枝/">简单搜索の剪枝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学/">组合数学-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の组合数/">组合数学の组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何/">计算几何-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何の离散化/">计算几何の离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图/">连通图----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の割点/">连通图の割点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の缩点/">连通图の缩点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/07/29/POJ-1144-NEtwork-无向图-割点/">POJ 1144 Network(无向图+割点)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/27/c-string-及其函数/">c++ string 及其函数</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/27/POJ-1236-Network-of-Schools-强连通-缩点/">POJ 1236 Network of Schools(强连通+缩点)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/26/SDNUOJ-1118-单词统计-JAVA-s-indexOf/">SDNUOJ 1118 单词统计 JAVA(s.indexOf())</a>
+          </li>
+        
+          <li>
+            <a href="/2019/07/26/洛谷-P3389-高斯消元法-模板/">洛谷 P3389 高斯消元法(模板)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2019 市井烟火气 &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+
+
+<div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+</div>
+        
+<script src="C:/blog/themes/antiquity/live2D/waifu-tips.js"></script>
+<script src="C:/blog/themes/antiquity/live2D/live2d.js"></script>
+<script type="text/javascript">initModel("C:/blog/themes/antiquity/live2D/")</script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/随笔" class="mobile-nav-link">随笔</a>
+  
+    <a href="/tags/题解" class="mobile-nav-link">题解</a>
+  
+    <a href="/tags/知识" class="mobile-nav-link">知识</a>
+  
+    <a href="/aboutme" class="mobile-nav-link">关于</a>
+  
+    <a href="/friends" class="mobile-nav-link">友链</a>
+  
+    <a href="https://fireworks12.github.io/" class="mobile-nav-link">杂件</a>
+  
+    <a href="/daily/index.html" class="mobile-nav-link">日常</a>
+  
+    <a href="/fireworks/index.html" class="mobile-nav-link">烟花</a>
+  
+    <a href="/experience/index.html" class="mobile-nav-link">逆流</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
