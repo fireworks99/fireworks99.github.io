@@ -5,7 +5,7 @@
   
 
   
-  <title>HDU 4289 Control(最大流) | 市井烟火气</title>
+  <title>HDU 4289 Control(最小割) | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
@@ -13,14 +13,14 @@
   <meta name="description" content="Introduction 道家学派的创始人老子认为一切事物都包含有和无、难和易、长和短、高和下、前和后等对立面，对立的双方能够相互转化">
 <meta name="keywords" content="网络流の最大流最小割">
 <meta property="og:type" content="article">
-<meta property="og:title" content="HDU 4289 Control(最大流)">
+<meta property="og:title" content="HDU 4289 Control(最小割)">
 <meta property="og:url" content="http://yoursite.com/2019/08/09/HDU-4289-Control-最大流/index.html">
 <meta property="og:site_name" content="市井烟火气">
 <meta property="og:description" content="Introduction 道家学派的创始人老子认为一切事物都包含有和无、难和易、长和短、高和下、前和后等对立面，对立的双方能够相互转化">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-09T02:50:07.524Z">
+<meta property="og:updated_time" content="2019-08-09T06:30:31.211Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="HDU 4289 Control(最大流)">
+<meta name="twitter:title" content="HDU 4289 Control(最小割)">
 <meta name="twitter:description" content="Introduction 道家学派的创始人老子认为一切事物都包含有和无、难和易、长和短、高和下、前和后等对立面，对立的双方能够相互转化">
   
     <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
@@ -78,7 +78,7 @@
       
   
     <h1 class="article-title" itemprop="name">
-      HDU 4289 Control(最大流)
+      HDU 4289 Control(最小割)
     </h1>
   
 
@@ -117,11 +117,15 @@
 <p>我们知道，一条S到T的可行流的<strong>最大</strong>值，<strong>是</strong>这条路上容量<strong>最小</strong>边的容量</p>
 <p>所以，最大即最小，最小即最大。</p>
 <p>将原题中费用转为容量。求出最大流，便封锁了S到T的所有路。而这最大流，是各可行流中最小容量的和，即最小费用。</p>
+<p>以上理解也可以作为(最大流 == 最小割)的理解,所以这题其实是在求最小割?(滑稽)</p>
 <p>感性认识：</p>
 <ol>
 <li>假设最开始可行流就一条，那么最大流便是这条可行流上容量最小的边的容量，套到题目上，便是花费最少的监控所花费的金钱(即最小花费)</li>
 <li>两条可行流、n条可行流也是这种情况</li>
 </ol>
+</blockquote>
+<h2 id="Update"><a href="#Update" class="headerlink" title="Update"></a>Update</h2><blockquote>
+<p>这道题就是求最小割！使S到T不连通！瞎分析一顿，看别人说最大流就使劲往上套，试图说服自己……只不过最小割与最大流相等而已……仿佛给自己解释了一遍为什么最大流等于最小割</p>
 </blockquote>
 <h2 id="something"><a href="#something" class="headerlink" title="something"></a>something</h2><blockquote>
 <p>算法竞赛要求参赛者熟练掌握各算法、数据结构，那是基础，而这种建模思想却是在其上更为珍贵的、更为有趣的东西</p>
@@ -144,6 +148,15 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
+      <a href="/2019/08/09/UVA-10480-Sabotage-最小割/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            UVA 10480 Sabotage(最小割)
+          
+        </div>
+      </a>
+    
   </div>
   <div class="article-nav-block">
     
@@ -161,7 +174,7 @@
 <script src="https://jjeejj.github.io/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "HDU 4289 Control(最大流)",
+  id: "HDU 4289 Control(最小割)",
   owner: 'fireworks99',
   repo: 'fireworks99.github.io',
   oauth: {
@@ -223,7 +236,11 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
-            <a href="/2019/08/09/HDU-4289-Control-最大流/">HDU 4289 Control(最大流)</a>
+            <a href="/2019/08/09/UVA-10480-Sabotage-最小割/">UVA 10480 Sabotage(最小割)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/08/09/HDU-4289-Control-最大流/">HDU 4289 Control(最小割)</a>
           </li>
         
           <li>
@@ -236,10 +253,6 @@ gitment.render('gitmentContainer')
         
           <li>
             <a href="/2019/08/08/HDU-4292-Food-最大流再优化/">HDU 4292 Food(最大流再优化?)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/08/HDU-4280-ISland-Transport-最大流DInic优化/">HDU 4280 ISland Transport(最大流Dinic优化)</a>
           </li>
         
       </ul>
