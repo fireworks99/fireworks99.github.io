@@ -5,23 +5,23 @@
   
 
   
-  <title>POJ 3273 Monthly Expense | 市井烟火气</title>
+  <title>POJ 1328 Radar Installation(贪心) | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="Description n天预算花费分为m组（可少于m），所有组中最大值最小是多少？">
-<meta name="keywords" content="题解,优化の二分">
+  <meta name="description" content="Description x轴上方有N个岛屿，现在要在x轴上安装尽可能少的雷达(覆盖半径为d)来覆盖所有岛屿，求最少雷达数目">
+<meta name="keywords" content="基本算法の贪心">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ 3273 Monthly Expense">
-<meta property="og:url" content="http://yoursite.com/2019/05/05/POJ-3273-Monthly-Expense/index.html">
+<meta property="og:title" content="POJ 1328 Radar Installation(贪心)">
+<meta property="og:url" content="http://yoursite.com/2019/09/02/POJ-1328-Radar-Installation-贪心/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="Description n天预算花费分为m组（可少于m），所有组中最大值最小是多少？">
+<meta property="og:description" content="Description x轴上方有N个岛屿，现在要在x轴上安装尽可能少的雷达(覆盖半径为d)来覆盖所有岛屿，求最少雷达数目">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-21T14:13:33.173Z">
+<meta property="og:updated_time" content="2019-09-02T13:09:18.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POJ 3273 Monthly Expense">
-<meta name="twitter:description" content="Description n天预算花费分为m组（可少于m），所有组中最大值最小是多少？">
+<meta name="twitter:title" content="POJ 1328 Radar Installation(贪心)">
+<meta name="twitter:description" content="Description x轴上方有N个岛屿，现在要在x轴上安装尽可能少的雷达(覆盖半径为d)来覆盖所有岛屿，求最少雷达数目">
   
     <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -70,25 +70,25 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-POJ-3273-Monthly-Expense" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-POJ-1328-Radar-Installation-贪心" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      POJ 3273 Monthly Expense
+      POJ 1328 Radar Installation(贪心)
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/05/05/POJ-3273-Monthly-Expense/" class="article-date">
-  <time datetime="2019-05-05T14:05:13.000Z" itemprop="datePublished">2019-05-05</time>
+    <a href="/2019/09/02/POJ-1328-Radar-Installation-贪心/" class="article-date">
+  <time datetime="2019-09-02T12:39:58.000Z" itemprop="datePublished">2019-09-02</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/优化の二分/">优化の二分</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基本算法の贪心/">基本算法の贪心</a></li></ul>
 
   </div>
 
@@ -103,27 +103,18 @@
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
         <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n天预算花费分为m组（可少于m），所有组中最大值最小是多少？</p>
+<p>x轴上方有N个岛屿，现在要在x轴上安装尽可能少的雷达(覆盖半径为d)来覆盖所有岛屿，求最少雷达数目</p>
 </blockquote>
 <a id="more"></a>
-<p><strong><a href="http://poj.org/problem?id=3273" style="color:violet;" target="_blank" rel="noopener">题目链接</a></strong>  </p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
-<p>二分查找，最小化最大值</p>
-<p>二分三要素：</p>
-<ol>
-<li><p>下界：(n天预算分为n组)，此时答案为n天预算中的最大值</p>
-</li>
-<li><p>上界：(n天预算分为1组)，此时答案为n天预算之和</p>
-</li>
-<li><p>bool judge(int mid)函数：</p>
-<p>“连续”是前提，贪心性分组</p>
-<p>分完之后，</p>
-<p>if 组数 &lt;= m return 1 可再优化（最小化最大值）：上界更新为mid</p>
-<p>else return 0 下界更新为 mid + 1</p>
-</li>
-</ol>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h2><blockquote>
+<p>思维定势，先想到确定最优雷达位置覆盖第一个岛屿，再检测该雷达是否能覆盖其余岛屿，能则测试下一个岛屿，不能则放下一个雷达，后来实现起来麻烦且难做对。</p>
+<p>逆向思维：根据岛屿位置推出雷达可放范围</p>
+<p>得到一个个区间，问题转化为用最少的点占领所有的区间(保证每个区间上都有个被选中的点)，画图得出贪心选择方案</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, b[<span class="number">100005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> ans)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>, num = <span class="number">1</span>;<span class="comment">///每组的和与组数</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(sum + b[i] &lt;= ans)</span><br><span class="line">            sum += b[i];</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            sum = b[i];</span><br><span class="line">            num++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(num &lt;= m)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>, r = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;b[i]);</span><br><span class="line">            r += b[i];</span><br><span class="line">            <span class="keyword">if</span>(l &lt; b[i])<span class="comment">///所有值里最大的</span></span><br><span class="line">                l = b[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> mid;</span><br><span class="line">        <span class="comment">///最小化最大值</span></span><br><span class="line">        <span class="keyword">while</span>(l &lt; r)</span><br><span class="line">        &#123;</span><br><span class="line">            mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(judge(mid))<span class="comment">///中值可以，上界降低</span></span><br><span class="line">                r = mid;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                l = mid + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; l &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="什么时候需运用逆向思维"><a href="#什么时候需运用逆向思维" class="headerlink" title="什么时候需运用逆向思维"></a>什么时候需运用逆向思维</h2><blockquote>
+<p>问题涉及<strong>两个</strong>相互依赖的事物，按照定势思维想不清楚，则站在另一个对立的角度想想，大胆猜测。问题在于很多时候我们并不能意识到自己的思维定势</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x, y;</span><br><span class="line">&#125;a[<span class="number">1005</span>];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">interval</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> l, r;</span><br><span class="line">&#125;b[<span class="number">1005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(interval a, interval b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.l &lt; b.l;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, cnt = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">double</span> d;</span><br><span class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%lf"</span>, &amp;n, &amp;d))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span> &amp;&amp; d == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">bool</span> flag = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>, &amp;a[i].x, &amp;a[i].y);</span><br><span class="line">            <span class="keyword">if</span>(a[i].y &gt; d)</span><br><span class="line">                flag = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(!flag)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"Case "</span> &lt;&lt; cnt++ &lt;&lt; <span class="string">": "</span>;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"-1"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; ++i)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">double</span> tem = <span class="built_in">sqrt</span>(d * d - a[i].y * a[i].y);</span><br><span class="line">                b[i].l = a[i].x - tem;</span><br><span class="line">                b[i].r = a[i].x + tem;</span><br><span class="line">            &#125;</span><br><span class="line">            sort(b, b + n, cmp);</span><br><span class="line">            <span class="keyword">double</span> right = b[<span class="number">0</span>].r;</span><br><span class="line">            <span class="keyword">int</span> pos = <span class="number">1</span>, ans = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(pos &lt; n)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">while</span>(b[pos].l &lt;= right)</span><br><span class="line">                &#123;</span><br><span class="line">                    right = min(right, b[pos].r);</span><br><span class="line">                    pos++;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(pos &lt; n)</span><br><span class="line">                &#123;</span><br><span class="line">                    ans++;</span><br><span class="line">                    right = b[pos].r;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"Case "</span> &lt;&lt; cnt++ &lt;&lt; <span class="string">": "</span>;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -140,20 +131,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/05/06/CodeForces-371C-Hamburgers/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            CodeForces 371C Hamburgers
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/05/05/背包九讲之五/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">背包九讲之五</div>
+      <a href="/2019/09/02/POJ-2376-Cleaning-Shifts-贪心/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">POJ 2376 Cleaning Shifts(贪心)</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
@@ -166,7 +148,7 @@
 <script src="https://www.wenjunjiang.win/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "POJ 3273 Monthly Expense",
+  id: "POJ 1328 Radar Installation(贪心)",
   owner: '',
   repo: '',
   oauth: {
