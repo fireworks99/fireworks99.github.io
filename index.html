@@ -70,6 +70,99 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-POJ-2385-Apple-Catching-动态规划" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/09/POJ-2385-Apple-Catching-动态规划/">POJ 2385 Apple Catching(动态规划)</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/09/09/POJ-2385-Apple-Catching-动态规划/" class="article-date">
+  <time datetime="2019-09-09T11:50:08.000Z" itemprop="datePublished">2019-09-09</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li></ul>
+
+  </div>
+
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>有两棵苹果树,编号为1,2。每一秒,这两棵苹果树中的其中一棵会掉一个苹果。</p>
+<p>每一秒,你可以选择在当前苹果树下接苹果,或者迅速移动到另外一棵苹果树下接苹果(移动时间可以忽略不计)。</p>
+<p>但由于却乏锻炼,你最多移动W次.问在T秒内,你最多能收集多少个苹果.</p>
+<p>假设你开始站在1号苹果树下.</p>
+</blockquote>
+<h2 id="DP步骤"><a href="#DP步骤" class="headerlink" title="DP步骤"></a>DP步骤</h2><blockquote>
+<ol>
+<li>状态设定</li>
+<li>初始化</li>
+<li>状态转移</li>
+<li>DP优化(可无)</li>
+</ol>
+</blockquote>
+<h2 id="一-状态设定"><a href="#一-状态设定" class="headerlink" title="一.状态设定"></a>一.状态设定</h2><blockquote>
+<ol>
+<li>根据<strong>DP要素</strong>决定<strong>DP维数</strong></li>
+<li>根据<strong>数据范围</strong>合理选择<strong>DP对象</strong></li>
+<li>根据难易程度选择<strong>DP顺序</strong></li>
+</ol>
+</blockquote>
+<h3 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h3><blockquote>
+<p>1DP要素：时间T、移动次数W(根据输入Input也能看出来)</p>
+<p>2DP对象：数据都比较小，就是对T、W进行动态规划</p>
+<p>3DP顺序：</p>
+<p>先T后W：dp[t][w]前t秒移动w次的最优结果</p>
+<p>先W后T：dp[w][t]移动w次…t秒…怪怪的…</p>
+<p>其实存在时间元素时，这一元素一般放在第一维</p>
+</blockquote>
+<h2 id="二-初始化"><a href="#二-初始化" class="headerlink" title="二.初始化"></a>二.初始化</h2><blockquote>
+<p>我们dp从1开始时看0状态是不是0，是则初始化为0，否则初始化为相应值，本题初始状态默认为0</p>
+</blockquote>
+<h2 id="三-状态转移"><a href="#三-状态转移" class="headerlink" title="三.状态转移"></a>三.状态转移</h2><blockquote>
+<p>dp[i][j]表示前i秒移动j次能接到的最多的苹果数</p>
+<p>我们发现在设计的DP里“移动”是一个必定发生的事件，移动 对应 状态改变。那么移动之前怎么由之前的状态向之后的状态过渡呢？</p>
+<p>前一个状态(第i - 1秒)也有两种决策：j(第i - 1秒移动，最多数目)，j - 1(第i - 1秒不动，最多数目)，分别对应dp[i - 1][j]和dp[i - 1][j - 1]，那么移动前的dp[i][j]取两者max。</p>
+<p>另外根据移动次数判断在哪棵树下，根据输入判断此刻在这棵树下是否能接到苹果，能则dp[i][j]++</p>
+</blockquote>
+<p>##DP与递归</p>
+<blockquote>
+<p>dp前i秒移动w次，我们并不需要知道那w次是在哪几秒里的，但是不耽误DP，这就是它(DP)的神秘之处——理论AC就能AC，不需要知道过程</p>
+<p>这与递归函数的设计是极为相似的：</p>
+<ol>
+<li>在设计之初便想好了它的功能与元素对应关系(各形参、DP各维的意义)，先理论AC再手动实现</li>
+<li>像是一个封装好的东西，明明就是你自己封装的，你也知道它怎么用，就是不甚清楚它的运行过程、各处细节，但偏偏就是能用</li>
+</ol>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1005</span>];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">1005</span>][<span class="number">40</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t, w;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;t, &amp;w);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; ++i)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= w; ++j)<span class="comment">///可取0可取w</span></span><br><span class="line">        &#123;</span><br><span class="line">            dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - <span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">if</span>( ((j &amp; <span class="number">1</span>) &amp;&amp; (a[i] == <span class="number">2</span>)) || (j % <span class="number">2</span> == <span class="number">0</span> &amp;&amp; a[i] == <span class="number">1</span>) )</span><br><span class="line">                dp[i][j]++;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dp[t][w] &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="四-DP优化"><a href="#四-DP优化" class="headerlink" title="四.DP优化"></a>四.DP优化</h2><blockquote>
+<p>转移方程<code>dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - 1]);</code>i完全是由i - 1转移来的，那么正序遍历可省略第一维</p>
+</blockquote>
+<p>###Code（improved）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1005</span>];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">40</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t, w;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;t, &amp;w);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; ++i)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a[i]);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= t; ++i)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= w; ++j)<span class="comment">///可取0可取w</span></span><br><span class="line">        &#123;</span><br><span class="line">            dp[j] = max(dp[j], dp[j - <span class="number">1</span>]);</span><br><span class="line">            <span class="keyword">if</span>( ((j &amp; <span class="number">1</span>) &amp;&amp; (a[i] == <span class="number">2</span>)) || (j % <span class="number">2</span> == <span class="number">0</span> &amp;&amp; a[i] == <span class="number">1</span>) )</span><br><span class="line">                dp[j]++;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; dp[w] &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+  </div>
+
+  
+
+</article>
+
+  
     <article id="post-POJ-2229-Sunsets-动态规划" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
@@ -499,53 +592,6 @@
 </article>
 
   
-    <article id="post-POJ-1456-Supermarket-贪心-并查集" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/16/POJ-1456-Supermarket-贪心-并查集/">POJ 1456 Supermarket(贪心+并查集)</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/08/16/POJ-1456-Supermarket-贪心-并查集/" class="article-date">
-  <time datetime="2019-08-16T12:07:44.000Z" itemprop="datePublished">2019-08-16</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/基本算法の贪心/">基本算法の贪心</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构の并查集/">数据结构の并查集</a></li></ul>
-
-  </div>
-
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>超市里有N个商品. 第i个商品必须在保质期(第di天)之前卖掉, 若卖掉可让超市获得pi的利润.  每天只能卖一个商品. 现在你要让超市获得最大的利润</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/08/16/POJ-1456-Supermarket-贪心-并查集/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    
-  </div>
-
-  
-
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -626,6 +672,10 @@
       <ul>
         
           <li>
+            <a href="/2019/09/09/POJ-2385-Apple-Catching-动态规划/">POJ 2385 Apple Catching(动态规划)</a>
+          </li>
+        
+          <li>
             <a href="/2019/09/06/POJ-2229-Sunsets-动态规划/">POJ 2229 Sunsets (动态规划)</a>
           </li>
         
@@ -639,10 +689,6 @@
         
           <li>
             <a href="/2019/09/02/POJ-2376-Cleaning-Shifts-贪心/">POJ 2376 Cleaning Shifts(贪心)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/08/30/POJ-3169-Layout-最短路解差分约束/">POJ 3169 Layout(最短路解差分约束)</a>
           </li>
         
       </ul>
