@@ -5,23 +5,23 @@
   
 
   
-  <title>SDNU 1032 1194 1422 四维DP | 市井烟火气</title>
+  <title>HDU 4135 Co-prime 容斥原理 | 市井烟火气</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   
   
-  <meta name="description" content="Description 两枚棋子从(1, 1)走到(m,n)，只能向下或向右走，不能走同一格 求路径上权值和的最大值。         (1, 1)与(m, n)处权值为0">
-<meta name="keywords" content="DPの线性DP">
+  <meta name="description" content="Description 给出区间[L, R]，给出数字N，求在该区间里与N互质的数字的个数">
+<meta name="keywords" content="组合数学の容斥">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SDNU 1032 1194 1422 四维DP">
-<meta property="og:url" content="http://yoursite.com/2019/08/27/SDNU-1032-1194-1422-四维DP/index.html">
+<meta property="og:title" content="HDU 4135 Co-prime 容斥原理">
+<meta property="og:url" content="http://yoursite.com/2019/10/20/HDU-4135-Co-prime-容斥原理/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="Description 两枚棋子从(1, 1)走到(m,n)，只能向下或向右走，不能走同一格 求路径上权值和的最大值。         (1, 1)与(m, n)处权值为0">
+<meta property="og:description" content="Description 给出区间[L, R]，给出数字N，求在该区间里与N互质的数字的个数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-27T11:40:38.910Z">
+<meta property="og:updated_time" content="2019-10-20T09:14:48.064Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SDNU 1032 1194 1422 四维DP">
-<meta name="twitter:description" content="Description 两枚棋子从(1, 1)走到(m,n)，只能向下或向右走，不能走同一格 求路径上权值和的最大值。         (1, 1)与(m, n)处权值为0">
+<meta name="twitter:title" content="HDU 4135 Co-prime 容斥原理">
+<meta name="twitter:description" content="Description 给出区间[L, R]，给出数字N，求在该区间里与N互质的数字的个数">
   
     <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -70,25 +70,25 @@
   </div>
 </header>
       <div id="middlecontent" title class="global-width sidebar-right">
-        <section id="main"><article id="post-SDNU-1032-1194-1422-四维DP" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-HDU-4135-Co-prime-容斥原理" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
       
   
     <h1 class="article-title" itemprop="name">
-      SDNU 1032 1194 1422 四维DP
+      HDU 4135 Co-prime 容斥原理
     </h1>
   
 
     </header>
   
   <div class="article-meta">
-    <a href="/2019/08/27/SDNU-1032-1194-1422-四维DP/" class="article-date">
-  <time datetime="2019-08-27T11:22:55.000Z" itemprop="datePublished">2019-08-27</time>
+    <a href="/2019/10/20/HDU-4135-Co-prime-容斥原理/" class="article-date">
+  <time datetime="2019-10-20T09:04:28.000Z" itemprop="datePublished">2019-10-20</time>
 </a>
     
     
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/组合数学の容斥/">组合数学の容斥</a></li></ul>
 
   </div>
 
@@ -103,16 +103,20 @@
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
         <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>两枚棋子从(1, 1)走到(m,n)，只能向下或向右走，不能走同一格</p>
-<p>求路径上权值和的最大值。         (1, 1)与(m, n)处权值为0</p>
+<p>给出区间[L, R]，给出数字N，求在该区间里与N互质的数字的个数</p>
 </blockquote>
 <a id="more"></a>
 <h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h2><blockquote>
-<p>两个二维DP同时进行 -&gt; 四维DP</p>
-<p>单独处理走到同一格的情况</p>
+<p>在区间[L, R]里与N互质的数字的个数</p>
+<p>== 在区间[1, R]里与N互质的数字的个数</p>
+<p>减去( - ) 在区间[1, L]里与N互质的数字的个数</p>
+<p>所以可以自定义一个函数求出[1, up]里与N互质的数的个数</p>
+<p>但是数字太多，依次找互质的数字不好找，但找不互质的容易</p>
+<p>区间[1, up]里N的质因子的倍数与N不互质</p>
+<p>找到一个质因子可找到一大堆它的倍数(与N不互质的数字)</p>
+<p>像找2、3、5…的倍数时有重复(6,10,15)，这便用到容斥!</p>
 </blockquote>
-<!--more-->
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> mp[<span class="number">51</span>][<span class="number">51</span>];</span><br><span class="line"><span class="keyword">int</span> dp[<span class="number">51</span>][<span class="number">51</span>][<span class="number">51</span>][<span class="number">51</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; ++j)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;mp[i][j]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= m; ++j)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; ++k)</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> l = <span class="number">1</span>; l &lt;= m; ++l)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">int</span> a = max(dp[i - <span class="number">1</span>][j][k - <span class="number">1</span>][l], dp[i - <span class="number">1</span>][j][k][l - <span class="number">1</span>]);</span><br><span class="line">                    <span class="keyword">int</span> b = max(dp[i][j - <span class="number">1</span>][k - <span class="number">1</span>][l], dp[i][j - <span class="number">1</span>][k][l - <span class="number">1</span>]);</span><br><span class="line">                    dp[i][j][k][l] = mp[i][j] + mp[k][l] + max(a, b);</span><br><span class="line">                    <span class="keyword">if</span>(i == k &amp;&amp; j == l)</span><br><span class="line">                        dp[i][j][k][l] -= mp[i][j];</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; max(dp[n - <span class="number">1</span>][m][n][m - <span class="number">1</span>], dp[n][m - <span class="number">1</span>][n - <span class="number">1</span>][m]) + mp[n][m] &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"></span><br><span class="line">ll factor[<span class="number">100005</span>], cnt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_factors</span><span class="params">(ll n)</span><span class="comment">///①得到全集②进行容斥</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(n % i == <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            factor[cnt++] = i;</span><br><span class="line">            <span class="keyword">while</span>(n % i == <span class="number">0</span>)</span><br><span class="line">                n /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(n != <span class="number">1</span>)</span><br><span class="line">        factor[cnt++] = n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">Rongchi_queue</span><span class="params">(ll up)</span><span class="comment">///计算 1 ~ up 内有几个 与n不互质(n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll t = <span class="number">0</span>, q[<span class="number">100005</span>], res = <span class="number">0</span>;</span><br><span class="line">    q[t++] = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">0</span>; i &lt; cnt; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        ll up = t;</span><br><span class="line">        <span class="keyword">for</span>(ll j = <span class="number">0</span>; j &lt; up; ++j)</span><br><span class="line">            q[t++] = q[j] * factor[i] * <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>; i &lt; t; ++i)</span><br><span class="line">        res += up / q[i];</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">Rongchi_binary</span><span class="params">(ll up)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>; i &lt; (<span class="number">1</span> &lt;&lt; cnt); ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        ll tem = <span class="number">1</span>, tot = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(ll j = <span class="number">0</span>; j &lt; cnt; ++j)</span><br><span class="line">            <span class="keyword">if</span>(i &amp; (<span class="number">1</span> &lt;&lt; j))</span><br><span class="line">            &#123;</span><br><span class="line">                tot++;</span><br><span class="line">                tem *= factor[j];</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span>(tot &amp; <span class="number">1</span>)</span><br><span class="line">            res += up / tem;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            res -= up / tem;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll sum = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">DFS</span><span class="params">(ll num, ll used, ll up, ll mu, ll sth)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(used == up)</span><br><span class="line">    &#123;</span><br><span class="line">        sum += sth / mu;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(num == cnt)</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    DFS(num + <span class="number">1</span>, used, up, mu, sth);</span><br><span class="line">    DFS(num + <span class="number">1</span>, used + <span class="number">1</span>, up, mu * factor[num], sth);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">Rongchi_DFS</span><span class="params">(ll up)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(ll i = <span class="number">1</span>; i &lt;= cnt; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        sum = <span class="number">0</span>;</span><br><span class="line">        DFS(<span class="number">0</span>, <span class="number">0</span>, i, <span class="number">1</span>, up);</span><br><span class="line">        <span class="keyword">if</span>(i &amp; <span class="number">1</span>)</span><br><span class="line">            res += sum;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            res -= sum;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t, tot = <span class="number">1</span>;</span><br><span class="line">    ll left, right, n;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;t);</span><br><span class="line">    <span class="keyword">while</span>(t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld"</span>, &amp;left, &amp;right, &amp;n);</span><br><span class="line">        get_factors(n);</span><br><span class="line"><span class="comment">//        ll ans = Rongchi_queue(right) - Rongchi_queue(left - 1);</span></span><br><span class="line"><span class="comment">//        ll ans = Rongchi_binary(right) - Rongchi_binary(left - 1);</span></span><br><span class="line">        ll ans = Rongchi_DFS(right) - Rongchi_DFS(left - <span class="number">1</span>);</span><br><span class="line">        ans = right - (left - <span class="number">1</span>) - ans;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">"Case #"</span> &lt;&lt; tot++ &lt;&lt; <span class="string">": "</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -129,20 +133,11 @@
 <nav id="article-nav">
   <div class="article-nav-block">
     
-      <a href="/2019/08/29/POJ-3254-Corn-Fields-状态压缩DP/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption"></strong>
-        <div class="article-nav-title">
-          
-            POJ 3254 Corn Fields(状态压缩DP)
-          
-        </div>
-      </a>
-    
   </div>
   <div class="article-nav-block">
     
-      <a href="/2019/08/22/Hexo-github博客-不含livere的主题安装livere/" id="article-nav-older" class="article-nav-link-wrap">
-        <div class="article-nav-title">(Hexo+github博客)不含livere的主题安装livere</div>
+      <a href="/2019/10/20/SDNUOJ-新生-AC题数统计/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">SDNUOJ 新生 AC题数统计</div>
         <strong class="article-nav-caption"></strong>
       </a>
     
@@ -155,7 +150,7 @@
 <script src="https://www.wenjunjiang.win/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-  id: "SDNU 1032 1194 1422 四维DP",
+  id: "HDU 4135 Co-prime 容斥原理",
   owner: '',
   repo: '',
   oauth: {

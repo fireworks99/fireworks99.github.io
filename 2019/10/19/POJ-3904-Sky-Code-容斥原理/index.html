@@ -18,7 +18,7 @@
 <meta property="og:site_name" content="市井烟火气">
 <meta property="og:description" content="Description 给出数字N，给出N个数字，从中找出四个数字，它们的公因数只有“1”，问能找到多少组？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-20T07:32:33.526Z">
+<meta property="og:updated_time" content="2019-10-20T08:07:27.812Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POJ 3904 Sky Code 容斥原理">
 <meta name="twitter:description" content="Description 给出数字N，给出N个数字，从中找出四个数字，它们的公因数只有“1”，问能找到多少组？">
@@ -110,8 +110,8 @@
 <p>测试四个数字的公因数是否只有“1”并不好实现，要检测多次。</p>
 <p>试着从 (是 = 总 - 非) 方面想</p>
 <p>对每个数字进行①质因数分解(准公因子)</p>
-<p>同时记录下②不同质因子之间相乘所构成的准公因子</p>
-<p>统计所有③准公因子出现的次数（假设为num[i]）</p>
+<p>同时记录下②不同质因子之间相乘所构成的重公因子</p>
+<p>统计所有③准公因子与重公因子出现的次数（假设为num[i]）</p>
 <p>计算④组合数C(num[i], 4) 即为以num[i]为公因子的四个数的组合数目</p>
 <p>但是在这里面，计算2、3、6会有重复，于是便有了<strong>容斥</strong></p>
 </blockquote>
@@ -272,6 +272,10 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
+            <a href="/2019/10/20/HDU-4135-Co-prime-容斥原理/">HDU 4135 Co-prime 容斥原理</a>
+          </li>
+        
+          <li>
             <a href="/2019/10/20/SDNUOJ-新生-AC题数统计/">SDNUOJ 新生 AC题数统计</a>
           </li>
         
@@ -285,10 +289,6 @@ gitment.render('gitmentContainer')
         
           <li>
             <a href="/2019/09/09/POJ-2385-Apple-Catching-动态规划/">POJ 2385 Apple Catching(动态规划)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/09/06/POJ-2229-Sunsets-动态规划/">POJ 2229 Sunsets (动态规划)</a>
           </li>
         
       </ul>
