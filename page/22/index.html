@@ -70,6 +70,63 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-HDU-1556" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/24/HDU-1556/">HDU 1556 Color the ball（差分）</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/24/HDU-1556/" class="article-date">
+  <time datetime="2019-02-24T01:24:21.000Z" itemprop="datePublished">2019-02-24</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧の前缀和/">技巧の前缀和</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧の差分/">技巧の差分</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/知识/">知识</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="用差分实现区间操作"><a href="#用差分实现区间操作" class="headerlink" title="用差分实现区间操作"></a>用差分实现区间操作</h3><h3 id="一维"><a href="#一维" class="headerlink" title="一维"></a>一维</h3><blockquote>
+<p>给定一个长度为n的数列a，要求支持操作add(L,R,k)表示对a[L]~a[R]的每个数都加上k。并求修改后的序列a。 </p>
+</blockquote>
+<blockquote>
+<p>设原数组为a[i]a[i], 设数组d[i]=a[i]−a[i−1](a[0]=0)，则 a[i]=∑ij=1d[j] </p>
+</blockquote>
+<blockquote>
+<p>更新操作update(s, t, d)把区间A[s]…A[t]都增加d，我们引入一个数组delta[i]，表示</p>
+<p>A[i]…A[n]的共同增量，n是数组的大小。那么update操作可以转化为：</p>
+<p>1）令delta[s] = delta[s] + d，表示将A[s]…A[n]同时增加d，但这样A[t+1]…A[n]就多加了d</p>
+<p>2）再令delta[t+1] = delta[t+1] - d，表示将A[t+1]…A[n]同时减d</p>
+</blockquote>
+<p><strong>我们考虑用差分的做法。这里 需要一个辅助数组c，c用来记录某一个位置上的总改变量。c[i]表示的是i~n这些元素都加上c[i]这个数。我们对[L,R]区间进行加值操作，在c[L]处加一个k，在c[R+1]处就减去一个k。最后求序列的每个位置变成了多少，只需要求一下c数组的前缀和，然后和原数组按位相加就好。</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/24/HDU-1556/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    
+  </div>
+
+  
+
+</article>
+
+  
     <article id="post-吉姆拉尔森计算公式" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
@@ -495,53 +552,6 @@
 </article>
 
   
-    <article id="post-模拟（vector）The-kth-great-number-HDU4006" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/01/24/模拟（vector）The-kth-great-number-HDU4006/">模拟 The kth great number HDU4006</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/01/24/模拟（vector）The-kth-great-number-HDU4006/" class="article-date">
-  <time datetime="2019-01-24T00:16:44.000Z" itemprop="datePublished">2019-01-24</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构のmultiset/">数据结构のmultiset</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构のpriority-queue/">数据结构のpriority_queue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构のvector/">数据结构のvector</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-  </div>
-
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>Xiao Ming and Xiao Bao are playing a simple Numbers game. In a round Xiao Ming can choose to write down a number, or ask Xiao Bao what the kth great number is. Because the number written by Xiao Ming is too much, Xiao Bao is feeling giddy. Now, try to help Xiao Bao. </p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/01/24/模拟（vector）The-kth-great-number-HDU4006/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    
-  </div>
-
-  
-
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -622,6 +632,10 @@
       <ul>
         
           <li>
+            <a href="/2020/03/08/LightOJ-1074-Extended-Traffic-The-shortest-path/">LightOJ 1074 Extended Traffic(The shortest path)</a>
+          </li>
+        
+          <li>
             <a href="/2020/03/07/POJ-1062-昂贵的聘礼-The-shortest-path/">POJ 1062 昂贵的聘礼(The shortest path)</a>
           </li>
         
@@ -635,10 +649,6 @@
         
           <li>
             <a href="/2020/01/18/POJ-3159-Candies-最短路解差分约束/">POJ 3159 Candies(最短路解差分约束)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/12/SDNUOJ-1045-石子合并-区间DP/">石子合并(区间DP)</a>
           </li>
         
       </ul>
