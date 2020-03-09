@@ -70,6 +70,103 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-线段树-HDU-1556" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/28/线段树-HDU-1556/">线段树 HDU 1556 Color the ball</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/28/线段树-HDU-1556/" class="article-date">
+  <time datetime="2019-02-28T12:25:36.000Z" itemprop="datePublished">2019-02-28</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据结构の线段树/">数据结构の线段树</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h3><blockquote>
+<p>擅长处理区间，可以快速的查找某一个节点在若干条线段中出现的次数，时间复杂度为O(logN)。而未优化的空间复杂度为2N，实际应用时一般还要开4N的数组以免越界，因此有时需要离散化让空间压缩。 </p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/28/线段树-HDU-1556/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    
+  </div>
+
+  
+
+</article>
+
+  
+    <article id="post-拓扑排序-HDU-3342" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/28/拓扑排序-HDU-3342/">拓扑排序 HDU 3342</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/28/拓扑排序-HDU-3342/" class="article-date">
+  <time datetime="2019-02-28T08:18:04.000Z" itemprop="datePublished">2019-02-28</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图论の拓扑排序-判环/">图论の拓扑排序(判环)</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简单搜索のBFS/">简单搜索のBFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p><strong>拓扑排序判断各工程先后顺序是否出现矛盾（a -&gt; b, b -&gt; c, c -&gt; a）</strong></p>
+<blockquote>
+<p>BFS在这方面较DFS有些先天优势，统计入队结点数，看是否等于工程数</p>
+<p>DFS的vis[]数组改为0， -1， 1三个状态，0代表未访问，-1代表访问完毕，1代表是这一阶段正在访问的 （注意 if(-1) 相当于 if(1) ）【坑了自己一阵】</p>
+</blockquote>
+<p><strong>注意n个工程是（0 ~ n - 1 ）还是 （1 ~ n）</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/28/拓扑排序-HDU-3342/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    
+  </div>
+
+  
+
+</article>
+
+  
     <article id="post-拓扑排序-UVA-10305" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
@@ -452,106 +549,11 @@
 </article>
 
   
-    <article id="post-HDU-1010-Tempter-of-the-Bone" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/25/HDU-1010-Tempter-of-the-Bone/">HDU 1010 Tempter of the Bone</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/25/HDU-1010-Tempter-of-the-Bone/" class="article-date">
-  <time datetime="2019-02-25T01:30:40.000Z" itemprop="datePublished">2019-02-25</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简单搜索の剪枝/">简单搜索の剪枝</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-  </div>
-
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h3 id="奇偶剪枝"><a href="#奇偶剪枝" class="headerlink" title="奇偶剪枝"></a>奇偶剪枝</h3><blockquote>
-<p>若 t-[abs(ex-sx)+abs(ey-sy)] 结果为非偶数(奇数)，则无法在<strong>t步恰好</strong>到达.</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/02/25/HDU-1010-Tempter-of-the-Bone/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    
-  </div>
-
-  
-
-</article>
-
-  
-    <article id="post-乘法逆元" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/24/乘法逆元/">乘法逆元</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/24/乘法逆元/" class="article-date">
-  <time datetime="2019-02-24T07:47:02.000Z" itemprop="datePublished">2019-02-24</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数论の扩展欧几里得/">数论の扩展欧几里得</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数论の费马小定理/">数论の费马小定理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/知识/">知识</a></li></ul>
-
-  </div>
-
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h2 id="什么是逆元？"><a href="#什么是逆元？" class="headerlink" title="什么是逆元？"></a>什么是逆元？</h2><blockquote>
-<p>设x是a的倒数，那么 x * a = 1（即x = 1 / a).</p>
-<p>设x是a的逆元，那么 x * a % p = 1.</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/02/24/乘法逆元/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    
-  </div>
-
-  
-
-</article>
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/20/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><a class="extend next" rel="next" href="/page/22/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/20/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/22/">Next &raquo;</a>
   </nav>
 
 
@@ -627,6 +629,14 @@
       <ul>
         
           <li>
+            <a href="/2020/03/09/HDU-4370-0-or-1-The-shortest-path/">HDU 4370 0 or 1(The shortest path)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/09/HDU-3416-Marriage-IV-shorted-path-and-maxflow/">HDU 3416 Marriage IV(the shortest path and maxflow)</a>
+          </li>
+        
+          <li>
             <a href="/2020/03/08/HDU-4725-The-shortest-Path-in-Nya-Graph/">HDU 4725 The shortest Path in Nya Graph</a>
           </li>
         
@@ -636,14 +646,6 @@
         
           <li>
             <a href="/2020/03/07/POJ-1062-昂贵的聘礼-The-shortest-path/">POJ 1062 昂贵的聘礼(The shortest path)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/21/Codeforces-contest-853-A-Planning-优先队列贪心/">Codeforces contest 853 A Planning(优先队列贪心)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/01/19/POJ-2502-Subway-最短路-自行建图/">POJ 2502 Subway(最短路,自行建图)</a>
           </li>
         
       </ul>
