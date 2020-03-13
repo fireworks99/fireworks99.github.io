@@ -10,18 +10,18 @@
   
   
   
-  <meta name="description" content="Description n个小伙伴进行猜拳有戏，除了裁判以外，其他人只会出单一的一种，给出m中猜拳的结果，要求找出裁判序号，并且输出在第几次猜拳可以确定。">
+  <meta name="description" content="Description n个小伙伴进行猜拳游戏，除了裁判以外，其他人只会出单一的一种，给出m中猜拳的结果，要求找出裁判序号，并且输出在第几次猜拳可以确定。">
 <meta name="keywords" content="数据结构の并查集">
 <meta property="og:type" content="article">
 <meta property="og:title" content="POJ 2912 Rochambeau(union-find-set)">
 <meta property="og:url" content="http://yoursite.com/2020/03/12/POJ-2912-Rochambeau-union-find-set/index.html">
 <meta property="og:site_name" content="市井烟火气">
-<meta property="og:description" content="Description n个小伙伴进行猜拳有戏，除了裁判以外，其他人只会出单一的一种，给出m中猜拳的结果，要求找出裁判序号，并且输出在第几次猜拳可以确定。">
+<meta property="og:description" content="Description n个小伙伴进行猜拳游戏，除了裁判以外，其他人只会出单一的一种，给出m中猜拳的结果，要求找出裁判序号，并且输出在第几次猜拳可以确定。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-12T13:43:21.473Z">
+<meta property="og:updated_time" content="2020-03-12T23:55:37.303Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POJ 2912 Rochambeau(union-find-set)">
-<meta name="twitter:description" content="Description n个小伙伴进行猜拳有戏，除了裁判以外，其他人只会出单一的一种，给出m中猜拳的结果，要求找出裁判序号，并且输出在第几次猜拳可以确定。">
+<meta name="twitter:description" content="Description n个小伙伴进行猜拳游戏，除了裁判以外，其他人只会出单一的一种，给出m中猜拳的结果，要求找出裁判序号，并且输出在第几次猜拳可以确定。">
   
     <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
   
@@ -103,14 +103,14 @@
     <div class="article-content article-content-cloud" itemprop="articleBody">
       
         <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n个小伙伴进行猜拳有戏，除了裁判以外，其他人只会出单一的一种，给出m中猜拳的结果，要求找出裁判序号，并且输出在第几次猜拳可以确定。</p>
+<p>n个小伙伴进行猜拳游戏，除了裁判以外，其他人只会出单一的一种，给出m中猜拳的结果，要求找出裁判序号，并且输出在第几次猜拳可以确定。</p>
 </blockquote>
 <a id="more"></a>
 <h3 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h3><blockquote>
 <p>种类并查集、排除法做题</p>
 <p>除了裁判的小伙伴分为3组：0、1、2</p>
 <p>从1到n枚举，假设当前 i 是裁判，若合并除裁判外的其他人而无矛盾的话，i 是准裁判。记一下裁判的个数。</p>
-<p>另外要确定最少几行可以得出”谁是裁判”结论，我们记录每次排除一个人时记下是哪一行出现了矛盾，得到n - 1个位置。因为排除了所有的非裁判才知道裁判是谁，所以那n - 1个位置中到最靠后一个位置才能排除n - 1个非裁判，也就得知谁是裁判了。</p>
+<p>另外要确定最少几行可以得出”谁是裁判”结论，我们记录每次排除一个人时记下是哪一行出现了矛盾，得到n - 1个位置。因为排除了所有的非裁判才知道裁判是谁，所以那n - 1个位置中到最靠后一个位置才能排除n - 1个非裁判，才能得知谁是裁判。</p>
 </blockquote>
 <h3 id="Something"><a href="#Something" class="headerlink" title="Something"></a>Something</h3><blockquote>
 <p>先来一个小总结：</p>
@@ -149,6 +149,15 @@
     
 <nav id="article-nav">
   <div class="article-nav-block">
+    
+      <a href="/2020/03/13/ZOJ-3261-Connections-in-Galaxy-War-union-find-set/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption"></strong>
+        <div class="article-nav-title">
+          
+            ZOJ 3261 Connections in Galaxy War(union-find-set)
+          
+        </div>
+      </a>
     
   </div>
   <div class="article-nav-block">
@@ -272,6 +281,10 @@ gitment.render('gitmentContainer')
       <ul>
         
           <li>
+            <a href="/2020/03/13/ZOJ-3261-Connections-in-Galaxy-War-union-find-set/">ZOJ 3261 Connections in Galaxy War(union-find-set)</a>
+          </li>
+        
+          <li>
             <a href="/2020/03/12/POJ-2912-Rochambeau-union-find-set/">POJ 2912 Rochambeau(union-find-set)</a>
           </li>
         
@@ -285,10 +298,6 @@ gitment.render('gitmentContainer')
         
           <li>
             <a href="/2020/03/11/POJ-1733-Parity-game-valset/">POJ 1733 Parity game(valset)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/10/POJ-1417-True-Liars-union-find-sets/">POJ 1417 True Liars(union-find sets)</a>
           </li>
         
       </ul>
