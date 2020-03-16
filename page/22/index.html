@@ -70,6 +70,105 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-拓扑排序-HDU-3342" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/28/拓扑排序-HDU-3342/">拓扑排序 HDU 3342</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/28/拓扑排序-HDU-3342/" class="article-date">
+  <time datetime="2019-02-28T08:18:04.000Z" itemprop="datePublished">2019-02-28</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图论の拓扑排序-判环/">图论の拓扑排序(判环)</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简单搜索のBFS/">简单搜索のBFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p><strong>拓扑排序判断各工程先后顺序是否出现矛盾（a -&gt; b, b -&gt; c, c -&gt; a）</strong></p>
+<blockquote>
+<p>BFS在这方面较DFS有些先天优势，统计入队结点数，看是否等于工程数</p>
+<p>DFS的vis[]数组改为0， -1， 1三个状态，0代表未访问，-1代表访问完毕，1代表是这一阶段正在访问的 （注意 if(-1) 相当于 if(1) ）【坑了自己一阵】</p>
+</blockquote>
+<p><strong>注意n个工程是（0 ~ n - 1 ）还是 （1 ~ n）</strong></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/28/拓扑排序-HDU-3342/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    
+  </div>
+
+  
+
+</article>
+
+  
+    <article id="post-拓扑排序-UVA-10305" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/27/拓扑排序-UVA-10305/">拓扑排序 UVA 10305</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/02/27/拓扑排序-UVA-10305/" class="article-date">
+  <time datetime="2019-02-27T01:25:17.000Z" itemprop="datePublished">2019-02-27</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/图论の拓扑排序-无环/">图论の拓扑排序(无环)</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简单搜索のBFS/">简单搜索のBFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
+
+  </div>
+
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <p><strong>拓扑排序解决工程的先后问题</strong></p>
+<blockquote>
+<p>DFS在这方面较BFS有些先天优势，本身按工程的先后顺序搜索。答案由后向前存入stack</p>
+<p>BFS加一个 in[] 数组，保证某一个工程（其前面有许多工程）在可行方案中尽量靠后放。答案由前向后存入vector</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/02/27/拓扑排序-UVA-10305/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    
+  </div>
+
+  
+
+</article>
+
+  
     <article id="post-SDNUOJ-1169火星人" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
@@ -450,106 +549,11 @@
 </article>
 
   
-    <article id="post-乘法逆元" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/24/乘法逆元/">乘法逆元</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/24/乘法逆元/" class="article-date">
-  <time datetime="2019-02-24T07:47:02.000Z" itemprop="datePublished">2019-02-24</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数论の扩展欧几里得/">数论の扩展欧几里得</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数论の费马小定理/">数论の费马小定理</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/知识/">知识</a></li></ul>
-
-  </div>
-
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h2 id="什么是逆元？"><a href="#什么是逆元？" class="headerlink" title="什么是逆元？"></a>什么是逆元？</h2><blockquote>
-<p>设x是a的倒数，那么 x * a = 1（即x = 1 / a).</p>
-<p>设x是a的逆元，那么 x * a % p = 1.</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/02/24/乘法逆元/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    
-  </div>
-
-  
-
-</article>
-
-  
-    <article id="post-HDU-1559" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/24/HDU-1559/">HDU 1559 最大子矩阵</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/02/24/HDU-1559/" class="article-date">
-  <time datetime="2019-02-24T02:15:44.000Z" itemprop="datePublished">2019-02-24</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧の前缀和/">技巧の前缀和</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-  </div>
-
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给你一个m×n的整数矩阵，在上面找一个x×y的子矩阵，使子矩阵中所有元素的和最大。 </p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/02/24/HDU-1559/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    
-  </div>
-
-  
-
-</article>
-
-  
 
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/21/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><a class="extend next" rel="next" href="/page/23/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/21/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><a class="extend next" rel="next" href="/page/23/">Next &raquo;</a>
   </nav>
 
 
@@ -625,6 +629,14 @@
       <ul>
         
           <li>
+            <a href="/2020/03/16/POJ-3026-Brog-Maze-BFS-Prim/">POJ 3026 Brog Maze(BFS+Prim)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/15/POJ-1679-The-Unique-MST-Prim/">POJ 1679 The Unique MST(Prim)</a>
+          </li>
+        
+          <li>
             <a href="/2020/03/13/ZOJ-3261-Connections-in-Galaxy-War-union-find-set/">ZOJ 3261 Connections in Galaxy War(union-find-set)</a>
           </li>
         
@@ -634,14 +646,6 @@
         
           <li>
             <a href="/2020/03/12/POJ-2492-A-Bug-s-Life-easy-union-find-set/">POJ 2492 A Bug&#39;s Life(easy union-find-set)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/11/POJ-1984-Navigation-Nightmare-valset/">POJ 1984 Navigation Nightmare(valset)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/11/POJ-1733-Parity-game-valset/">POJ 1733 Parity game(valset)</a>
           </li>
         
       </ul>
