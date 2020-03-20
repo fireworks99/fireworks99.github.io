@@ -70,6 +70,98 @@
       <div id="middlecontent" title class="global-width sidebar-right">
         <section id="main">
   
+    <article id="post-判断矩形相交" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/02/判断矩形相交/">判断矩形相交</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/06/02/判断矩形相交/" class="article-date">
+  <time datetime="2019-06-02T11:14:54.000Z" itemprop="datePublished">2019-06-02</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数论の杂项/">数论の杂项</a></li></ul>
+
+  </div>
+
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x1,<span class="keyword">int</span> y1,<span class="keyword">int</span> x2,<span class="keyword">int</span> y2,<span class="keyword">int</span> x3, <span class="keyword">int</span> y3,<span class="keyword">int</span> x4, <span class="keyword">int</span> y4)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x2 &lt; x3 || x4 &lt; x1 || y4 &lt; y1 || y2 &lt; y3)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> (min(y4, y2)- max(y1,y3)) * (min(x4,x2) - max(x1, x3));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/06/02/判断矩形相交/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    
+  </div>
+
+  
+
+</article>
+
+  
+    <article id="post-POJ-3723-Conscription" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/02/POJ-3723-Conscription/">POJ 3723 Conscription</a>
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2019/06/02/POJ-3723-Conscription/" class="article-date">
+  <time datetime="2019-06-02T06:44:47.000Z" itemprop="datePublished">2019-06-02</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最小生成树のKruskal/">最小生成树のKruskal</a></li></ul>
+
+  </div>
+
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><blockquote>
+<p>对n个女生m个男生征兵，这些女生中部分与男生间有关系d，征一人入伍需10000，若一女生已被征，去征召跟她有关系d的男生只需花费10000-d，相反亦然。问征全部人最小花费</p>
+</blockquote>
+        
+          <p class="article-more-link">
+            <a href="/2019/06/02/POJ-3723-Conscription/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    
+  </div>
+
+  
+
+</article>
+
+  
     <article id="post-白书-初出茅庐-初级篇" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
   
     <header class="article-header">
@@ -453,102 +545,6 @@
 </article>
 
   
-    <article id="post-SDNUOJ-1330-Max-Sum" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/19/SDNUOJ-1330-Max-Sum/">SDNU 1330 Max Sum</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/05/19/SDNUOJ-1330-Max-Sum/" class="article-date">
-  <time datetime="2019-05-19T03:24:06.000Z" itemprop="datePublished">2019-05-19</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-  </div>
-
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h1 id="最大上升子序列（模板）"><a href="#最大上升子序列（模板）" class="headerlink" title="最大上升子序列（模板）"></a>最大上升子序列（模板）</h1><h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>给定长度为n的正整数序列a1,a2,…,an。</p>
-<p>令sum=ab1+ab2+…+abm，并且满足：ab1&lt;ab2&lt;…&lt;abm；b1&lt;b2&lt;…&lt;bm;1&lt;=m&lt;=n。</p>
-<p>求最大的sum。</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/05/19/SDNUOJ-1330-Max-Sum/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    
-  </div>
-
-  
-
-</article>
-
-  
-    <article id="post-那晚，竟然发生这种可怕的事" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
-  
-    <header class="article-header">
-      
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/16/那晚，竟然发生这种可怕的事/">那晚，竟然发生这种可怕的事</a>
-    </h1>
-  
-
-    </header>
-  
-  <div class="article-meta">
-    <a href="/2019/05/16/那晚，竟然发生这种可怕的事/" class="article-date">
-  <time datetime="2019-05-16T13:09:23.000Z" itemprop="datePublished">2019-05-16</time>
-</a>
-    
-    
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/题解/">题解</a></li></ul>
-
-  </div>
-
-  
-
-  <div class="article-inner">
-    
-    <div class="article-content article-content-cloud" itemprop="articleBody">
-      
-        <h1 id="2019-5-16晚刷水题"><a href="#2019-5-16晚刷水题" class="headerlink" title="2019.5.16晚刷水题"></a>2019.5.16晚刷水题</h1><blockquote>
-<p>本来自在地刷着水题，结果竟然发生这种事！！！？？？</p>
-</blockquote>
-        
-          <p class="article-more-link">
-            <a href="/2019/05/16/那晚，竟然发生这种可怕的事/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    
-  </div>
-
-  
-
-</article>
-
-  
 
 
   <nav id="page-nav">
@@ -629,6 +625,14 @@
       <ul>
         
           <li>
+            <a href="/2020/03/20/HDU-4553-Date-arrange-Segment-Tree/">HDU 4553 Date arrange(Segment Tree)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/03/19/HDU-4614-Vases-and-Flowers-Segment-Tree-and-Binary-Search/">HDU 4614 Vases and Flowers(Segment Tree and Binary Search)</a>
+          </li>
+        
+          <li>
             <a href="/2020/03/17/HDU-3974-Assign-the-task-DFS-Segment-Tree/">HDU 3974 Assign the task(DFS + Segment Tree)</a>
           </li>
         
@@ -638,14 +642,6 @@
         
           <li>
             <a href="/2020/03/17/HDU-4027-Can-you-answer-these-queries-Segment-tree/">HDU 4027 Can you answer these queries(Segment tree)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/16/ZOJ-1610-Count-the-colors-Segment-tree/">ZOJ 1610 Count the colors(Segment tree)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/03/16/POJ-3026-Brog-Maze-BFS-Prim/">POJ 3026 Brog Maze(BFS+Prim)</a>
           </li>
         
       </ul>
