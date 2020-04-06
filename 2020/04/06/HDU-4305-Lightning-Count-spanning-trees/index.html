@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>HDU 4305 Lightning(Count spanning trees) | 市井烟火气</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="Description 求生成树有几种形状？  Analyze 跟普通生成树计数不同的是，例如一个三角形的图的生成树有三种形状，倘若把这个三角形压成一条线，那生成树就只有一种形状了。 解决办法是：若某两点看似可以连接时，判断一下，若两点连线中间还有点，则这两点不能连线。  Attention 关于取模，含有负数时((x % mod) + mod) % mod，不含有负数时x % mod,倘若有除法">
+<meta name="keywords" content="最小生成树の计数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDU 4305 Lightning(Count spanning trees)">
+<meta property="og:url" content="http://yoursite.com/2020/04/06/HDU-4305-Lightning-Count-spanning-trees/index.html">
+<meta property="og:site_name" content="市井烟火气">
+<meta property="og:description" content="Description 求生成树有几种形状？  Analyze 跟普通生成树计数不同的是，例如一个三角形的图的生成树有三种形状，倘若把这个三角形压成一条线，那生成树就只有一种形状了。 解决办法是：若某两点看似可以连接时，判断一下，若两点连线中间还有点，则这两点不能连线。  Attention 关于取模，含有负数时((x % mod) + mod) % mod，不含有负数时x % mod,倘若有除法">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-04-06T05:04:26.935Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HDU 4305 Lightning(Count spanning trees)">
+<meta name="twitter:description" content="Description 求生成树有几种形状？  Analyze 跟普通生成树计数不同的是，例如一个三角形的图的生成树有三种形状，倘若把这个三角形压成一条线，那生成树就只有一种形状了。 解决办法是：若某两点看似可以连接时，判断一下，若两点连线中间还有点，则这两点不能连线。  Attention 关于取模，含有负数时((x % mod) + mod) % mod，不含有负数时x % mod,倘若有除法">
+  
+    <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://i.loli.net/2019/01/17/5c40047c7cf9e.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+
+  <link rel="stylesheet" type="text/css" href="C:/blog/themes/antiquity/live2D/waifu.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/tags/随笔" title="">随笔</a>
+      
+        <a class="nav-item" href="/tags/题解" title="">题解</a>
+      
+        <a class="nav-item" href="/tags/知识" title="">知识</a>
+      
+        <a class="nav-item" href="/aboutme" title="">关于</a>
+      
+        <a class="nav-item" href="https://fireworks12.github.io/" title="">杂件</a>
+      
+        <a class="nav-item" href="/daily/index.html" title="">日常</a>
+      
+        <a class="nav-item" href="/fireworks/index.html" title="">烟花</a>
+      
+        <a class="nav-item" href="/experience/index.html" title="">逆流</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-HDU-4305-Lightning-Count-spanning-trees" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      HDU 4305 Lightning(Count spanning trees)
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/04/06/HDU-4305-Lightning-Count-spanning-trees/" class="article-date">
+  <time datetime="2020-04-06T04:52:38.000Z" itemprop="datePublished">2020-04-06</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/最小生成树の计数/">最小生成树の计数</a></li></ul>
+
+  </div>
+
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>求生成树有几种形状？</p>
+</blockquote>
+<h3 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h3><blockquote>
+<p>跟普通生成树计数不同的是，例如一个三角形的图的生成树有三种形状，倘若把这个三角形压成一条线，那生成树就只有一种形状了。</p>
+<p>解决办法是：若某两点看似可以连接时，判断一下，若两点连线中间还有点，则这两点不能连线。</p>
+</blockquote>
+<h3 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h3><blockquote>
+<p>关于取模，含有负数时<code>((x % mod) + mod) % mod</code>，不含有负数时<code>x % mod</code>,倘若有除法取模要用逆元，据说少量逆元可以类似递推出来？</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    inv[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>;i &lt; M;i++)</span><br><span class="line">        inv[i] = (M - M / i) * inv[M % i] % M;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>时间卡的紧：</p>
+<p>本来用double的数据迫不得已改用了int</p>
+<p>多个判断条件并列时，耗时少的判断放前面</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(A &amp;&amp; B &amp;&amp; C)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//do something;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>比如上述代码，A可能只是个普通bool型变量，B可能是一个长长的表达式，C可能是一个循环才能算得出值的bool变量</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> mod int(1e4 + 7)</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">305</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, b[N][N], R, x[N], y[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getDis</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>( (x[u] - x[v])*(x[u] - x[v]) + (y[u] - y[v])*(y[u] - y[v]) );</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">sameLine</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">bool</span> line = (x[a] - x[b])*(y[b] - y[c]) == (y[a] - y[b])*(x[b]-x[c]);</span><br><span class="line">    <span class="keyword">bool</span> middle = (x[c] &gt; x[a] &amp;&amp; x[c] &lt; x[b]) || (x[c] &gt; x[b] &amp;&amp; x[c] &lt; x[a]) ;</span><br><span class="line">    <span class="keyword">return</span> line &amp;&amp; middle;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Gauss</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j)</span><br><span class="line">            b[i][j] %= mod;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= n; ++j)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">while</span>(b[j][i])<span class="comment">///turn first not 0 element in row[j] into 0</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> t = b[i][i] / b[j][i];</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k = i; k &lt;= n; ++k)</span><br><span class="line">                    b[i][k] = (b[i][k] - b[j][k] * t) % mod;</span><br><span class="line">                swap(b[i], b[j]);</span><br><span class="line">                res = -res;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(b[i][i] == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        res = (res * b[i][i]) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (res + mod) % mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> _;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;_);</span><br><span class="line">    <span class="keyword">while</span>(_--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;n, &amp;R);</span><br><span class="line">        <span class="built_in">memset</span>(b, <span class="number">0</span>,<span class="keyword">sizeof</span>(b));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">"%d %d"</span>, &amp;x[i], &amp;y[i]);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt;= n; ++j)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(!(getDis(i, j) &lt;= R))</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">bool</span> flag = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; ++k)</span><br><span class="line">                    <span class="keyword">if</span>(k != i &amp;&amp; k != j &amp;&amp; sameLine(i, j, k))</span><br><span class="line">                    &#123;</span><br><span class="line">                        flag = <span class="number">0</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                <span class="keyword">if</span>(flag)</span><br><span class="line">                    b[i][i]++, b[j][j]++, b[i][j] = b[j][i] = <span class="number">-1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; Gauss() &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2020/04/06/SPOJ-Highways-and-Find-the-Determinant-lll-Count-the-spanning-trees/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">SPOJ Highways and Find the Determinant lll(Count the spanning trees)</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "HDU 4305 Lightning(Count spanning trees)",
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+
+</article>
+
+
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 --></section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="https://i.postimg.cc/zDky8DS4/13667772179.png" title="头像">
+    <h3 class="avatar-name">
+      
+        市井烟火气
+      
+    </h3>
+    <p class="avatar-slogan">
+      人间烟火气~最抚凡人心
+    </p>
+  </div>
+</div>
+
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://alberts97.github.io/" title="" target="_blank">咸鱼の小窝</a>
+      
+        <a style="display: block;" href="https://yuntengzhiyu.github.io/" title="" target="_blank">云腾致雨</a>
+      
+        <a style="display: block;" href="https://www.rainng.com/" title="" target="_blank">雨凝博客</a>
+      
+        <a style="display: block;" href="https://soullan.com/" title="" target="_blank">蓝灵博客</a>
+      
+        <a style="display: block;" href="https://sdnuqp.cn/" title="" target="_blank">浮生若梦</a>
+      
+        <a style="display: block;" href="http://crazyforsaken.com/" title="" target="_blank">Forsaken</a>
+      
+        <a style="display: block;" href="https://solodance.top/" title="" target="_blank">solo_dance</a>
+      
+        <a style="display: block;" href="https://www.hs-lotus.top/" title="" target="_blank">Yokoshimaの</a>
+      
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP-------------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPのST算法/">DPのST算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの区间DP/">DPの区间DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの状压DP/">DPの状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの背包DP/">DPの背包DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图/">二分图--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图のKM算法/">二分图のKM算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图の匈牙利算法/">二分图の匈牙利算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化/">优化----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化の二分/">优化の二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言/">其他语言-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のHTML/">其他语言のHTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のJAVA/">其他语言のJAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のPython/">其他语言のPython</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のnext-permutation/">函数のnext_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のprev-permutation/">函数のprev_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-判环/">图论の拓扑排序(判环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-无环/">图论の拓扑排序(无环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の欧拉路/">图论の欧拉路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法/">基本算法-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の贪心/">基本算法の贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の递推/">基本算法の递推</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串/">字符串--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のAC自动机/">字符串のAC自动机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のKMP/">字符串のKMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串の最长回文子串/">字符串の最长回文子串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の前缀和/">技巧の前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の博弈/">技巧の博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の哈希/">技巧の哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の尺取法/">技巧の尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の差分/">技巧の差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の异或/">技巧の异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の弹性碰撞/">技巧の弹性碰撞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の归并排序/">技巧の归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の折半枚举/">技巧の折半枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の暴力打表/">技巧の暴力打表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の翻转问题/">技巧の翻转问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の莫队算法/">技巧の莫队算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の输入挂/">技巧の输入挂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型のstring/">数据类型のstring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のDancing-Links/">数据结构のDancing-Links</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmap/">数据结构のmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmultiset/">数据结构のmultiset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のpriority-queue/">数据结构のpriority_queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のset/">数据结构のset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のvector/">数据结构のvector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の主席树/">数据结构の主席树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の单调栈/">数据结构の单调栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の字典树/">数据结构の字典树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の并查集/">数据结构の并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の最小生成树/">数据结构の最小生成树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の栈-stack/">数据结构の栈(stack)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の树状数组/">数据结构の树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の线段树/">数据结构の线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の链式前向星/">数据结构の链式前向星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论/">数论-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论のGCD与LCM/">数论のGCD与LCM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の同余定理/">数论の同余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の大数求余/">数论の大数求余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の快速幂/">数论の快速幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の扩展欧几里得/">数论の扩展欧几里得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の杂项/">数论の杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の欧拉降幂/">数论の欧拉降幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の素数筛/">数论の素数筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の费马小定理/">数论の费马小定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の高斯消元法/">数论の高斯消元法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のKruskal/">最小生成树のKruskal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のPrim/">最小生成树のPrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树の树形图/">最小生成树の树形图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树の计数/">最小生成树の计数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路---------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のBellman-Ford/">最短路のBellman-Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のDijkstra/">最短路のDijkstra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のFloyd/">最短路のFloyd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のspfa/">最短路のspfa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索/">简单搜索-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のA/">简单搜索のA*</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のBFS/">简单搜索のBFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索の剪枝/">简单搜索の剪枝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学/">组合数学-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の容斥/">组合数学の容斥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の组合数/">组合数学の组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流/">网络流--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流の最大流最小割/">网络流の最大流最小割</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流の最小费用流/">网络流の最小费用流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何/">计算几何-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何の离散化/">计算几何の离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图/">连通图----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の2-sat/">连通图の2-sat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图のLCA/">连通图のLCA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の割点/">连通图の割点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の桥/">连通图の桥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の缩点/">连通图の缩点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/04/06/HDU-4305-Lightning-Count-spanning-trees/">HDU 4305 Lightning(Count spanning trees)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/06/SPOJ-Highways-and-Find-the-Determinant-lll-Count-the-spanning-trees/">SPOJ Highways and Find the Determinant lll(Count the spanning trees)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/UVA-10766-Organising-the-Organisation-Count-spanning-tree/">UVA 10766 Organising the Organisation(Count spanning tree)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/05/HDU-4009-Transfer-water-Minimun-tree-shape-graph/">HDU 4009 Transfer water(Minimun tree-shape graph)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/04/04/HDU-2121-Ice-cream-s-world-II-Minimum-tree-shape-graph/">HDU 2121 Ice-cream&#39;s world II(Minimum tree-shape graph)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2020 Baole Zhao &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+
+
+<div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+</div>
+        
+<script src="C:/blog/themes/antiquity/live2D/waifu-tips.js"></script>
+<script src="C:/blog/themes/antiquity/live2D/live2d.js"></script>
+<script type="text/javascript">initModel("C:/blog/themes/antiquity/live2D/")</script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/随笔" class="mobile-nav-link">随笔</a>
+  
+    <a href="/tags/题解" class="mobile-nav-link">题解</a>
+  
+    <a href="/tags/知识" class="mobile-nav-link">知识</a>
+  
+    <a href="/aboutme" class="mobile-nav-link">关于</a>
+  
+    <a href="https://fireworks12.github.io/" class="mobile-nav-link">杂件</a>
+  
+    <a href="/daily/index.html" class="mobile-nav-link">日常</a>
+  
+    <a href="/fireworks/index.html" class="mobile-nav-link">烟花</a>
+  
+    <a href="/experience/index.html" class="mobile-nav-link">逆流</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
