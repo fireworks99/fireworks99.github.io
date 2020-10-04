@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Wireshark capture Ethernet message | 市井烟火气</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  
+  
+  <meta name="description" content="Description 用Wireshark捕捉以太网报文并分析其结构">
+<meta name="keywords" content="计算机网络の杂项">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Wireshark capture Ethernet message">
+<meta property="og:url" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/index.html">
+<meta property="og:site_name" content="市井烟火气">
+<meta property="og:description" content="Description 用Wireshark捕捉以太网报文并分析其结构">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/message_packing.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/wireshark_capture.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/Analyze1.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/wireshark3.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/ASKII.jpg">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/Ethernet_MAC1.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/EthernetMAC2.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/Analyze_Ethernet.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/IP.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/Analyze_IP.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/UDP.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/TCP.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/Analyze_TCP.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/HTTP_request.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/Response.png">
+<meta property="og:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/Analyze_HTTP.png">
+<meta property="og:updated_time" content="2020-10-04T03:00:34.828Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Wireshark capture Ethernet message">
+<meta name="twitter:description" content="Description 用Wireshark捕捉以太网报文并分析其结构">
+<meta name="twitter:image" content="http://yoursite.com/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message/message_packing.png">
+  
+    <link rel="alternate" href="/atom.xml" title="市井烟火气" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="https://i.loli.net/2019/01/17/5c40047c7cf9e.jpg">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+
+  <link rel="stylesheet" type="text/css" href="C:/blog/themes/antiquity/live2D/waifu.css">
+</head>
+</html>
+<body>
+  <div id="fullpage" class="mobile-nav-right">
+    
+      <div id="wrapper" title="图片来自网络">
+    
+    
+      <header id="header">
+  <div id="nav-toggle" class="nav-toggle"></div>
+  <div class="head-box global-width">
+    <nav class="nav-box nav-right">
+      
+        <a class="nav-item" href="/" title="">首页</a>
+      
+        <a class="nav-item" href="/tags/随笔" title="">随笔</a>
+      
+        <a class="nav-item" href="/tags/题解" title="">题解</a>
+      
+        <a class="nav-item" href="/tags/知识" title="">知识</a>
+      
+        <a class="nav-item" href="/aboutme" title="">关于</a>
+      
+        <a class="nav-item" href="https://fireworks12.github.io/" title="">杂件</a>
+      
+    </nav>
+  </div>
+</header>
+      <div id="middlecontent" title class="global-width sidebar-right">
+        <section id="main"><article id="post-WireShark-capture-Ethernet-message" class="article global-container article-type-post" itemscope="" itemprop="blogPost">
+  
+    <header class="article-header">
+      
+  
+    <h1 class="article-title" itemprop="name">
+      Wireshark capture Ethernet message
+    </h1>
+  
+
+    </header>
+  
+  <div class="article-meta">
+    <a href="/2020/10/03/WireShark-capture-Ethernet-message/" class="article-date">
+  <time datetime="2020-10-03T11:38:33.000Z" itemprop="datePublished">2020-10-03</time>
+</a>
+    
+    
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机网络の杂项/">计算机网络の杂项</a></li></ul>
+
+  </div>
+
+  
+    <span id="busuanzi_container_page_pv">
+      本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+
+  <div class="article-inner">
+    
+    <div class="article-content article-content-cloud" itemprop="articleBody">
+      
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>用Wireshark捕捉以太网报文并分析其结构</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="报文的封装"><a href="#报文的封装" class="headerlink" title="报文的封装"></a>报文的封装</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\message_packing.png" alt="图1 报文封装过程"></p>
+<h3 id="我打开超星网站，提交了登录请求，用Wireshark进行捕捉。"><a href="#我打开超星网站，提交了登录请求，用Wireshark进行捕捉。" class="headerlink" title="我打开超星网站，提交了登录请求，用Wireshark进行捕捉。"></a>我打开超星网站，提交了登录请求，用Wireshark进行捕捉。</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\wireshark_capture.png" alt="请求 Package List面板"></p>
+<blockquote>
+<p> 捕捉到了这个请求及其响应</p>
+<p>我们看请求</p>
+</blockquote>
+<p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\Analyze1.png" alt="请求 Package Details面板"></p>
+<ul>
+<li>第1行(物理层)：这是捕获的38个帧，共373个字节，因每个字节含8个二进制位，故总共<code>373 * 8 = 2984</code>个bit位。</li>
+<li>第2行(链路层)：以太网V2标准，6字节源地址，6字节目的地址。(以太网MAC帧中目的地址在前，源地址在后)。</li>
+<li>第3行(网络层)：IPV4，6字节源地址，6字节物理地址。</li>
+<li>第4行(运输层)：TCP，2字节(16位)源端口号，2字节(16位)目的端口号，4字节(32位)序号，4字节(32位)确认序号。</li>
+<li>第6行(应用层)：HTTP</li>
+</ul>
+<p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\wireshark3.png" alt="请求 Package Byte面板"></p>
+<ul>
+<li>行前的数字代表本行第一个字节在总数据流中算第几个字节(从0开始算)</li>
+<li>每两位16进制代表一个字节，可验证总字节数：(0710H)=(368D)，最后一个字节是372，因为是从0开始计数，所以总共373个字节。</li>
+<li>右边是对左边每个字节的ASKII码翻译，比如<code>4c -&gt; 76 -&gt; L</code></li>
+</ul>
+<p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\ASKII.jpg" alt="ASKII"></p>
+<h3 id="以太网V2的MAC帧格式"><a href="#以太网V2的MAC帧格式" class="headerlink" title="以太网V2的MAC帧格式"></a>以太网V2的MAC帧格式</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\Ethernet_MAC1.png" alt="图2 以太网MAC帧的格式"></p>
+<p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\EthernetMAC2.png" alt="图3 以太网MAC帧的格式(2)"></p>
+<h3 id="分析以太网MAC帧的结构"><a href="#分析以太网MAC帧的结构" class="headerlink" title="分析以太网MAC帧的结构"></a>分析以太网MAC帧的结构</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\Analyze_Ethernet.png" alt="Ethernet MAC frame"></p>
+<blockquote>
+<p>选中Package Details面板链路层对应的第2行，下面Package Byte面板跟着选中了前14个字节，这14个字节对应以太网MAC帧的前14个字节(由图2、图3可知)：前六个字节是目的地址，接下来六个字节是源地址，接下来两个字节是类型字段(用来标志上一层使用的是什么协议，以便把收到的MAC帧的数据交给上一层的这个协议。0x8000代表上层使用的是IP数据报)</p>
+<p>这14个字节后面紧跟的就是IP数据报了</p>
+</blockquote>
+<h3 id="网络层-IP报头"><a href="#网络层-IP报头" class="headerlink" title="网络层 IP报头"></a>网络层 IP报头</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\IP.png" alt="图4 网络层IP报头"></p>
+<h3 id="分析IP数据报的结构"><a href="#分析IP数据报的结构" class="headerlink" title="分析IP数据报的结构"></a>分析IP数据报的结构</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\Analyze_IP.png" alt="IP structure"></p>
+<blockquote>
+<p>选中Package Details面板网络层对应的第3行，下面Package Byte面板跟着选中了20个字节，这20个字节对应的IP数据报前20个字节(由图4可知)：最后8个字节中，前四个对应源IP地址，后四个对应目的IP地址。</p>
+</blockquote>
+<h3 id="传输层-UDP报头"><a href="#传输层-UDP报头" class="headerlink" title="传输层 UDP报头"></a>传输层 UDP报头</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\UDP.png" alt="图5 传输层UDP报头"></p>
+<h3 id="传输层-TCP报头"><a href="#传输层-TCP报头" class="headerlink" title="传输层 TCP报头"></a>传输层 TCP报头</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\TCP.png" alt="图6 传输层TCP报头"></p>
+<h3 id="分析TCP段结构"><a href="#分析TCP段结构" class="headerlink" title="分析TCP段结构"></a>分析TCP段结构</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\Analyze_TCP.png" alt="TCP structure"></p>
+<blockquote>
+<p>选中Package Details面板网络层对应的第4行，下面Package Byte面板跟着选中了20个字节，这20个字节对应的TCP段前20个字节(由图6可知)：前4个字节中，前两个对应源端口号，后两个对应目的端口号。</p>
+</blockquote>
+<h3 id="HTTP-Request"><a href="#HTTP-Request" class="headerlink" title="HTTP Request"></a>HTTP Request</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\HTTP_request.png" alt="图7 HTTP请求"></p>
+<h3 id="HTTP-Response"><a href="#HTTP-Response" class="headerlink" title="HTTP Response"></a>HTTP Response</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\Response.png" alt="图8 HTTP 响应"></p>
+<h3 id="分析HTTP-Request结构"><a href="#分析HTTP-Request结构" class="headerlink" title="分析HTTP Request结构"></a>分析HTTP Request结构</h3><p><img src="/2020/10/03/WireShark-capture-Ethernet-message/WireShark-capture-Ethernet-message\Analyze_HTTP.png" alt="HTTP"></p>
+<blockquote>
+<p>选中Package Details面板网络层对应的第5行，下面Package Byte面板出现了另外的1981个字节！！！据图7分析，前1662个字节对应着 请求行、请求头部、空白行。后319个字节对应着请求数据，而这后319个字节就是以太网MAC帧的后319个字节。</p>
+</blockquote>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><blockquote>
+<p>Package Byte面板分左右两部分，左边是物理层比特流对应的16进制数据，右边是对它的ASKII翻译，ASKII码前32(0~31)个字符是控制字符，无法打印，在这里用 . 表示了(16进制表示 &lt; 20)。第128个字符编号127对应DEL，虽不是控制字符但也无法打印，所以16进制表示 &gt;= 7f 的符号也无法打印，用 . 来表示。</p>
+<p>所以理论上我们得到左边的比特流，完全可以<strong>手动算出</strong>右边的信息。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+      <footer class="article-footer">
+        完
+      </footer>
+    
+  </div>
+
+  
+    
+<nav id="article-nav">
+  <div class="article-nav-block">
+    
+  </div>
+  <div class="article-nav-block">
+    
+      <a href="/2020/09/27/Web-vue-nodejs-with-nginx/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Web vue-nodejs with nginx</div>
+        <strong class="article-nav-caption"></strong>
+      </a>
+    
+  </div>
+</nav>
+
+    
+<div id="gitmentContainer"></div>
+<link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+<script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "Wireshark capture Ethernet message",
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '',
+    client_secret: '',
+  },
+})
+gitment.render('gitmentContainer')
+</script>
+
+  
+
+</article>
+
+
+<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 --></section>
+        <aside id="sidebar">
+  
+    <div class="widget-box">
+  <div class="avatar-box">
+    <img class="avatar" src="https://i.postimg.cc/zDky8DS4/13667772179.png" title="头像">
+    <h3 class="avatar-name">
+      
+        市井烟火气
+      
+    </h3>
+    <p class="avatar-slogan">
+      人间烟火气~最抚凡人心
+    </p>
+  </div>
+</div>
+
+
+  
+      <div class="widget-box">
+    <h3 class="widget-title">友链</h3>
+    <div class="widget">
+      
+        <a style="display: block;" href="https://alberts97.github.io/" title="" target="_blank">咸鱼の小窝</a>
+      
+        <a style="display: block;" href="https://yuntengzhiyu.github.io/" title="" target="_blank">云腾致雨</a>
+      
+        <a style="display: block;" href="https://www.rainng.com/" title="" target="_blank">雨凝博客</a>
+      
+        <a style="display: block;" href="https://soullan.com/" title="" target="_blank">蓝灵博客</a>
+      
+        <a style="display: block;" href="https://sdnuqp.cn/" title="" target="_blank">浮生若梦</a>
+      
+        <a style="display: block;" href="http://crazyforsaken.com/" title="" target="_blank">Forsaken</a>
+      
+        <a style="display: block;" href="https://solodance.top/" title="" target="_blank">solo_dance</a>
+      
+        <a style="display: block;" href="https://www.hs-lotus.top/" title="" target="_blank">Yokoshimaの</a>
+      
+    </div>
+  </div>
+
+  
+    
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP-------------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPのST算法/">DPのST算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの区间DP/">DPの区间DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの状压DP/">DPの状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの背包DP/">DPの背包DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScriptのPromise/">JavaScriptのPromise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのmysql/">NodeJSのmysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのstatic/">NodeJSのstatic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのupload/">NodeJSのupload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue------------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのaxios/">Vueのaxios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのcomponents/">Vueのcomponents</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのrouter/">Vueのrouter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのv-sth/">Vueのv-sth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web杂项/">Web杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图/">二分图--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图のKM算法/">二分图のKM算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图の匈牙利算法/">二分图の匈牙利算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化/">优化----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化の二分/">优化の二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言/">其他语言-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のHTML/">其他语言のHTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のJAVA/">其他语言のJAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のPython/">其他语言のPython</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のnext-permutation/">函数のnext_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のprev-permutation/">函数のprev_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-判环/">图论の拓扑排序(判环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-无环/">图论の拓扑排序(无环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の欧拉路/">图论の欧拉路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法/">基本算法-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の贪心/">基本算法の贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の递推/">基本算法の递推</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串/">字符串--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のAC自动机/">字符串のAC自动机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のKMP/">字符串のKMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串の最长回文子串/">字符串の最长回文子串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の前缀和/">技巧の前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の博弈/">技巧の博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の哈希/">技巧の哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の尺取法/">技巧の尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の差分/">技巧の差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の异或/">技巧の异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の弹性碰撞/">技巧の弹性碰撞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の归并排序/">技巧の归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の折半枚举/">技巧の折半枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の暴力打表/">技巧の暴力打表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の翻转问题/">技巧の翻转问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の莫队算法/">技巧の莫队算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の输入挂/">技巧の输入挂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型のstring/">数据类型のstring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のDancing-Links/">数据结构のDancing-Links</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmap/">数据结构のmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmultiset/">数据结构のmultiset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のpriority-queue/">数据结构のpriority_queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のset/">数据结构のset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のvector/">数据结构のvector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の主席树/">数据结构の主席树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の单调栈/">数据结构の单调栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の字典树/">数据结构の字典树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の并查集/">数据结构の并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の最小生成树/">数据结构の最小生成树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の栈-stack/">数据结构の栈(stack)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の树状数组/">数据结构の树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の线段树/">数据结构の线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の链式前向星/">数据结构の链式前向星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论/">数论-----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论のGCD与LCM/">数论のGCD与LCM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の同余定理/">数论の同余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の大数求余/">数论の大数求余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の快速幂/">数论の快速幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の扩展欧几里得/">数论の扩展欧几里得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の杂项/">数论の杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の欧拉降幂/">数论の欧拉降幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の素数筛/">数论の素数筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の费马小定理/">数论の费马小定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の高斯消元法/">数论の高斯消元法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のKruskal/">最小生成树のKruskal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のPrim/">最小生成树のPrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树の树形图/">最小生成树の树形图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树の计数/">最小生成树の计数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路---------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のBellman-Ford/">最短路のBellman-Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のDijkstra/">最短路のDijkstra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のFloyd/">最短路のFloyd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のspfa/">最短路のspfa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索/">简单搜索-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のA/">简单搜索のA*</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のBFS/">简单搜索のBFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索の剪枝/">简单搜索の剪枝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学/">组合数学-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の容斥/">组合数学の容斥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の组合数/">组合数学の组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流/">网络流--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流の最大流最小割/">网络流の最大流最小割</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流の最小费用流/">网络流の最小费用流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何/">计算几何-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何の离散化/">计算几何の离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络の杂项/">计算机网络の杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图/">连通图----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の2-sat/">连通图の2-sat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图のLCA/">连通图のLCA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の割点/">连通图の割点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の桥/">连通图の桥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の缩点/">连通图の缩点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-box">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/03/WireShark-capture-Ethernet-message/">Wireshark capture Ethernet message</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/27/Web-vue-nodejs-with-nginx/">Web vue-nodejs with nginx</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/23/Web-formidable-upload-text-and-files/">formidable upload text and files</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/22/Web-Upload-files-to-Server/">Upload files to Server</a>
+          </li>
+        
+          <li>
+            <a href="/2020/09/22/Web-FE-request-data-img-from-BE/">FE request data(img) from BE</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+      </div>
+      <footer id="footer">
+  <div class="foot-box global-width">
+    &copy; 2020 Baole Zhao &nbsp;&nbsp;
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    &nbsp;|&nbsp;主题 <a href="https://github.com/yiluyanxia/hexo-theme-antiquity">antiquity</a>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span id="busuanzi_container_site_pv">不蒜子告之   阁下是第<span id="busuanzi_value_site_pv"></span>个访客</span>
+  </div>
+</footer>
+
+
+<div class="waifu">
+        <div class="waifu-tips"></div>
+        <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+        <div class="waifu-tool">
+            <span class="fui-home"></span>
+            <span class="fui-chat"></span>
+            <span class="fui-eye"></span>
+            <span class="fui-user"></span>
+            <span class="fui-photo"></span>
+            <span class="fui-info-circle"></span>
+            <span class="fui-cross"></span>
+        </div>
+</div>
+        
+<script src="C:/blog/themes/antiquity/live2D/waifu-tips.js"></script>
+<script src="C:/blog/themes/antiquity/live2D/live2d.js"></script>
+<script type="text/javascript">initModel("C:/blog/themes/antiquity/live2D/")</script>
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+    </div>
+    <nav id="mobile-nav" class="mobile-nav-box">
+  <div class="mobile-nav-img mobile-nav-top"></div>
+  
+    <a href="/" class="mobile-nav-link">首页</a>
+  
+    <a href="/tags/随笔" class="mobile-nav-link">随笔</a>
+  
+    <a href="/tags/题解" class="mobile-nav-link">题解</a>
+  
+    <a href="/tags/知识" class="mobile-nav-link">知识</a>
+  
+    <a href="/aboutme" class="mobile-nav-link">关于</a>
+  
+    <a href="https://fireworks12.github.io/" class="mobile-nav-link">杂件</a>
+  
+  <div class="mobile-nav-img  mobile-nav-bottom"></div>
+</nav>    
+  </div>
+</body>
+</html>
