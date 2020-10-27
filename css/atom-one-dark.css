@@ -95,3 +95,87 @@ hue-6-2: #e6c07b
 .hljs-link {
   text-decoration: underline;
 }
+
+pre {
+	position: relative;
+}
+
+code.has-numbering {
+    margin-left: 40px;
+}
+
+.pre-numbering {
+	margin: 0;
+	padding: 0;
+	background: rgb(40, 44, 52);
+  position: absolute;
+  top: 0;
+  width: 32px;
+  height: 100%;
+  text-align: right;
+  font-family: monospace;
+  font-size: 1.5em;
+  border-right: 8px solid rgb(40, 44, 52);
+}
+
+.pre-numbering li {
+	list-style: none;
+	color: white;
+	width: 100%;
+	right: 0;
+}
+
+.p_code {
+	display: inline-block;
+	line-height: 1.2em;
+	font-size: 1.2em;
+	color: #000;
+	font-family: Georgia, serif;
+	background: #fff;
+	border: 3px solid rgba(0, 0, 0, 0.4);
+	border-radius: 0.3em;
+  word-break: break-word;
+}
+
+.blockquote_p {
+	background: #fff;
+	font-family: STKaiti;
+	font-size: 1.3em;
+  font-weight: bold;
+
+  /*      Amazing!     */
+  word-break: break-word;
+}
+
+.blockquote_p .p_code {
+  font-weight: normal;
+}
+
+table {
+	  margin: 0 auto;
+    border-collapse: collapse;
+}
+
+thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td, th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: left;
+}
