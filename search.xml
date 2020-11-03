@@ -4634,9 +4634,9 @@
       
         <tags>
             
-            <tag> 简单搜索のDFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のDFS </tag>
             
         </tags>
       
@@ -5066,11 +5066,11 @@
       
         <tags>
             
-            <tag> 简单搜索のDFS </tag>
-            
             <tag> 题解 </tag>
             
             <tag> 简单搜索のBFS </tag>
+            
+            <tag> 简单搜索のDFS </tag>
             
             <tag> 图论の拓扑排序(判环) </tag>
             
@@ -5091,11 +5091,11 @@
       
         <tags>
             
-            <tag> 简单搜索のDFS </tag>
-            
             <tag> 题解 </tag>
             
             <tag> 简单搜索のBFS </tag>
+            
+            <tag> 简单搜索のDFS </tag>
             
             <tag> 图论の拓扑排序(无环) </tag>
             
@@ -5265,9 +5265,9 @@
       
         <tags>
             
-            <tag> 简单搜索のDFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のDFS </tag>
             
             <tag> 简单搜索の剪枝 </tag>
             
