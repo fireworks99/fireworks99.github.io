@@ -54,7 +54,7 @@
 		<div id="top-bar">
 			
 			<div id="avatar-box">
-				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+				<img class="avatar" src="/images/avatar.png" alt="avatar">
 			</div>
 
 			<div id="top-bar-text">
@@ -72,20 +72,20 @@
 			<div id="menu-inner">
 				
 				
-				<div id="menu-item">
+				<div class="menu-item">
 					<a href="/">Home</a>
 				</div>
 				
-				<div id="menu-item">
+				<div class="menu-item">
 					<a href="/about">About</a>
 				</div>
 				
-				<div id="menu-item">
+				<div class="menu-item">
 					<a href="/archives">Archives</a>
 				</div>
 				
 
-				<div id="menu-item">
+				<div class="menu-item">
 					
   <span class="local-search local-search-google local-search-plugin">
       <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
@@ -106,7 +106,66 @@
 	<article id="details-post">
 		<div id="details-post-item">
 			<h1>overflow meet flex</h1>
-			
+			<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>如果将某个盒子设为伸缩盒(display: flex;)，要注意子元素及其后代元素是否有white-space样式修饰，它会影响flex，使其失效，甚至使子元素溢出父元素。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="Test-Code"><a href="#Test-Code" class="headerlink" title="Test Code"></a>Test Code</h3><pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;test&lt;/title&gt;
+  &lt;style&gt;
+    #father {
+      width: 200px;
+      height: 200px;
+      background: #bfa;
+      display: flex;
+    }
+    #son {
+      flex: 3;
+      height: 90%;
+      background: orange;
+    }
+    #daughter {
+      flex: 7;
+      height: 90%;
+      background: pink;
+    }
+    pre {
+      background: green;
+      /*overflow: auto;*/
+    }
+    .test {
+      /*white-space: pre;*/
+      /*white-space: nowrap;*/
+      white-space: normal;
+      /*white-space: pre-wrap;*/
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;div id=&quot;father&quot;&gt;
+    &lt;div id=&quot;daughter&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;son&quot;&gt;
+&lt;!--      &lt;pre&gt;--&gt;
+&lt;!--        overflow--&gt;
+&lt;!--      &lt;/pre&gt;--&gt;
+      &lt;div class=&quot;test&quot;&gt;
+        responsibility
+        overflow overflow overflow
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><p><img src="/2020/10/14/Web-overflow-meet-flex/initial.png" alt="正常时"></p>
+<p><img src="/2020/10/14/Web-overflow-meet-flex/flex_disabled.png" alt="flex失效"></p>
+<p><img src="/2020/10/14/Web-overflow-meet-flex/even_overflow.png" alt="甚至子元素溢出父元素"></p>
+
 		</div>
 
 		<!-- 来必力City版安装代码 -->
@@ -137,7 +196,7 @@
 </div>
 
 <!-- <div id="paginator"> -->
-	<!--  -->
+<!-- 	 -->
 <!-- </div> -->
 
 

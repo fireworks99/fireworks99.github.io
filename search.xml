@@ -4,13 +4,57 @@
   
     
     <entry>
+      <title>Browser&#39;s render engine and block</title>
+      <link href="2020/11/03/Browser-s-render-engine-and-block/"/>
+      <url>2020/11/03/Browser-s-render-engine-and-block/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一、浏览器渲染引擎"><a href="#一、浏览器渲染引擎" class="headerlink" title="一、浏览器渲染引擎"></a>一、浏览器渲染引擎</h2><h3 id="主要模块"><a href="#主要模块" class="headerlink" title="主要模块"></a>主要模块</h3><ul><li><p>一个渲染引擎主要包括：HTML解析器，CSS解析器，javascript引擎，布局layout模块，绘图模块</p><ul><li>HTML解析器：解释HTML文档的解析器，主要作用是将HTML文本解释成DOM树。</li><li>CSS解析器：它的作用是为DOM中的各个元素对象计算出样式信息，为布局提供基础设施</li><li>Javascript引擎：使用Javascript代码可以修改网页的内容，也能修改css的信息，javascript引擎能够解释javascript代码，并通过DOM接口和CSS树接口来修改网页内容和样式信息，从而改变渲染的结果。</li><li>布局（layout）：在DOM创建之后，Webkit需要将其中的元素对象同样式信息结合起来，计算他们的大小位置等布局信息，形成一个能表达这所有信息的内部表示模型</li><li>绘图模块（paint）：使用图形库将布局计算后的各个网页的节点绘制成图像结果</li></ul><a id="more"></a><blockquote><p>备注：文档对象模型（Document Object Model，简称DOM）</p></blockquote></li></ul><h3 id="渲染过程"><a href="#渲染过程" class="headerlink" title="渲染过程"></a>渲染过程</h3><ul><li>浏览器渲染页面的整个过程：浏览器会从上到下解析文档。<ol><li>遇见 HTML 标记，调用HTML解析器解析为对应的 token （一个token就是一个标签文本的序列化）并构建 DOM 树（就是一块内存，保存着tokens，建立它们之间的关系）。</li><li>遇见 style/link 标记 调用解析器 处理 CSS 标记并构建 CSS样式树。</li><li>遇见 script 标记 调用 javascript解析器 处理script标记，绑定事件、修改DOM树/CSS树 等</li><li>将 DOM树 与 CSS树 合并成一个渲染树。</li><li>根据渲染树来渲染，以计算每个节点的几何信息（这一过程需要依赖图形库）。</li><li>将各个节点绘制到屏幕上。</li></ol></li></ul><blockquote><p>以上这些模块依赖很多其他的基础模块，包括要使用到网络 存储 2D/3D图像 音频视频解码器 和 图片解码器。<br>所以渲染引擎中还会包括如何使用这些依赖模块的部分。</p></blockquote><h2 id="二、阻塞渲染"><a href="#二、阻塞渲染" class="headerlink" title="二、阻塞渲染"></a>二、阻塞渲染</h2><h4 id="1-关于css阻塞："><a href="#1-关于css阻塞：" class="headerlink" title="1.关于css阻塞："></a>1.关于css阻塞：</h4><p>声明：只有link引入的外部css才能够产生阻塞。<br>1.style标签中的样式：<br>    (1). 由html解析器进行解析；<br>    (2). 不阻塞浏览器渲染（可能会产生“闪屏现象”）；<br>    (3). 不阻塞DOM解析；</p><p>2.link引入的外部css样式（推荐使用的方式）：<br>    (1). 由CSS解析器进行解析。<br>    (2). 阻塞浏览器渲染(可以利用这种阻塞避免“闪屏现象”)。<br>    (3). 阻塞其后面的js语句的执行：</p><ul><li>原因 : 如果后面 JS 的内容是获取元素的样式 , 例如宽高等CSS控制的属性，如果不等样式解析完毕，后面的  JS 就获得了错误的信息。</li><li>但现代浏览器越发注重用户体验，对于WebKit内核的浏览器而言，仅当脚本尝试访问样式的属性，或可能受未加载的样式表影响时才会阻塞JS脚本</li></ul><p>​    (4). 不阻塞DOM的解析：</p><ul><li>原因 : DOM解析和CSS解析是两个并行的进程。浏览器解析Dom生成Dom Tree，解析CSS生成CSS Tree，最终组成 Render Tree，再渲染页面。</li></ul><p>3.优化核心理念：尽可能快的提高外部css加载速度<br>    (1).使用CDN节点进行外部资源加速。<br>    (2).对css进行压缩(利用打包工具，比如webpack,gulp等)。<br>    (3).减少http请求数，将多个css文件合并。<br>    (4).优化样式表的代码</p><h4 id="2-关于js阻塞："><a href="#2-关于js阻塞：" class="headerlink" title="2.关于js阻塞："></a>2.关于js阻塞：</h4><p>1.阻塞DOM解析:<br>        原因：浏览器不知道后续脚本的内容，如果先去解析了下面的DOM，而随后的js删除了后面所有的DOM，<br>        那么浏览器就做了无用功，浏览器无法预估脚本里面具体做了什么操作，例如像document.write<br>        这种操作，索性全部停住，等脚本执行完了，浏览器再继续向下解析DOM。<br>2.阻塞页面渲染:<br>        原因：js中也可以给DOM设置样式，浏览器同样等该脚本执行完毕，再继续干活，避免做无用功。<br>3.阻塞后续js的执行:<br>    原因：维护依赖关系，例如：必须先引入jQuery再引入bootstrap</p><h4 id="3-备注"><a href="#3-备注" class="headerlink" title="3.备注"></a>3.备注</h4><p>【备注1】：css的解析和js的执行是互斥的（互相排斥），css解析的时候js停止执行，js执行的时候css停止解析。</p><p>【备注2】：无论css阻塞，还是js阻塞，都不会阻塞浏览器加载外部资源（图片、视频、样式、脚本等）<br>            原因：浏览器始终处于一种：“先把请求发出去”的工作模式，只要是涉及到网络请求的内容，<br>            无论是：图片、样式、脚本，都会先发送请求去获取资源，至于资源到本地之后什么时候用，<br>            由浏览器自己协调。这种做法效率很高。</p><p>【备注3】：WebKit 和 Firefox 都进行了【预解析】这项优化。在执行js脚本时，浏览器的其他线程会解析文档的其余部分，<br>          找出并加载需要通过网络加载的其他资源。通过这种方式，资源可以在并行连接上加载，<br>          从而提高总体速度。请注意，预解析器不会修改 DOM 树</p><blockquote><p>在上述的过程中，网页在加载和渲染过程中会触发“DOMContentloaded”和“onload”事件<br>分别是在DOM树构建（解析）完成之后，以及DOM树构建完并且网页所依赖的资源都加载完之后</p></blockquote><ul><li>上面介绍的是一个完整的渲染过程，但现代网页很多都是动态的，这意味着在渲染完成之后，由于网页的动画或者用户的交互，浏览器其实一直在不停地重复执行渲染过程，（重绘重排）。以上的数字表示的是基本顺序，这不是严格一致的，这个过程可能重复也可能交叉。</li></ul><p><img src="/2020/11/03/Browser-s-render-engine-and-block/block.png" alt="block"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> FE Performance </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Browser&#39;s function and components</title>
+      <link href="2020/11/03/Browser-s-function-and-components/"/>
+      <url>2020/11/03/Browser-s-function-and-components/</url>
+      
+        <content type="html"><![CDATA[<h2 id="一-浏览器应该有的功能"><a href="#一-浏览器应该有的功能" class="headerlink" title="一.浏览器应该有的功能"></a>一.浏览器应该有的功能</h2><h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><p>​    浏览器通过网络模块来下载各式各样的资源，例如html文本；javascript代码；样式表；图片；音视频文件等。<br>​    网络部分本质上十分重要，因为它耗时长，而且需要安全访问互联网上的资源。</p><a id="more"></a><h3 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h3><p>​    从网络下载，或者本地获取到的资源需要有高效的机制来管理它们。<br>​    例如如何避免重复下载，资源如何缓存等</p><h3 id="网页浏览"><a href="#网页浏览" class="headerlink" title="网页浏览"></a>网页浏览</h3><p>​    这是浏览器的核心也是最基本的功能，最重要的功能。<br>​    如何将资源转变为可视化的结果。<br>​<br>多页面管理<br>插件与管理<br>账户和同步<br>安全机制<br>开发者工具<br>…<br>…</p><p>浏览器的主要功能总结起来就是一句话:将用户输入的url转变成可视化的图像。<br>        1.从url到DOM树<br>        2.从DOM树到可视化图像<br>        这两个过程之间的关系并没有那么明确,我们可以统称这两个过程为页面的<strong>渲染</strong></p><h2 id="二-浏览器的内核-渲染引擎"><a href="#二-浏览器的内核-渲染引擎" class="headerlink" title="二.浏览器的内核(渲染引擎)"></a>二.浏览器的内核(渲染引擎)</h2><p>在浏览器中有一个最重要的模块，它主要的作用是将页面转变为可视化的图像结果。<br>这个模块就是浏览器内核，通常它也被称为渲染引擎。</p><p>IE———-&gt;Trident</p><p>Safari——&gt;WebKit<br>    WebKit本身主要是由两个引擎构成的，<br>        一个正是渲染引擎“WebCore”，<br>        另一个则是javascript解释引擎“JSCore”，<br>        它们均是从KDE的渲染引擎KHTML及javascript解释引擎KJS衍生而来。</p><p>Chrome——&gt;WebKit的分支引擎—–&gt;Blink<br>     在13年发布的Chrome 28.0.1469.0版本开始，Chrome放弃Chromium引擎转<br>     而使用最新的Blink引擎（基于WebKit2——苹果公司于2010年推出的新的WebKit引擎），<br>     Blink对比上一代的引擎精简了代码、改善了DOM框架，也提升了安全性。</p><p>Opera<br>    旧版Opera 4至6版本 :Elektra排版引擎<br>    Opera7.0    :Presto渲染引擎<br>    Opera在2013年2月宣布放弃Presto:<br>                采用Chromium引擎;<br>                又转为Blink引擎;</p><p>Firefox——&gt;Gecko</p><h2 id="三-进程与线程"><a href="#三-进程与线程" class="headerlink" title="三.进程与线程"></a>三.进程与线程</h2><blockquote><p>进程: 程序的一次执行, 它占有一片独有的内存空间.是操作系统执行的基本单元。<br>    一个进程中至少有一个运行的线程: 主线程,  进程启动后自动创建<br>    一个进程中也可以同时运行多个线程, 我们会说程序是多线程运行的<br>    一个进程内的数据可以供其中的多个线程直接共享，多个进程之间的数据是不能直接共享的</p><p>线程：是进程内的一个独立执行单元,是CPU调度的最小单元。程序运行的基本单元<br>    线程池(thread pool): 保存多个线程对象的容器, 实现线程对象的反复利用</p><p>JS引擎是单线程运行的！（回忆事件轮询机制）</p></blockquote><h2 id="四-现代浏览器：多进程、多线程模型"><a href="#四-现代浏览器：多进程、多线程模型" class="headerlink" title="四.现代浏览器：多进程、多线程模型"></a>四.现代浏览器：多进程、多线程模型</h2><h3 id="1-不堪回首的过去"><a href="#1-不堪回首的过去" class="headerlink" title="1.不堪回首的过去:"></a>1.不堪回首的过去:</h3><blockquote><p>当你通过浏览器打开很多页面的时候,如果其中一个页面不响应了或者崩溃了,<br>那么随之而来的将会是更不幸的事情,你打开的所有页面都会得不到响应,<br>最让人不能忍受的是,其中的一些页面可能还包含了未保存或者未发送的信息。</p></blockquote><h3 id="2-浏览器产商如何解决"><a href="#2-浏览器产商如何解决" class="headerlink" title="2.浏览器产商如何解决"></a>2.浏览器产商如何解决</h3><p>​    采用多进程模型,该模型可以带来的好处<br>​    ①.避免因单个页面的不响应或者崩溃影响整个浏览器的稳定性<br>​    ②.当第三方插件崩溃时,也不会影响整个浏览器的稳定性<br>​    ③.安全<br>​    </p><h3 id="3-浏览器到底有些什么进程"><a href="#3-浏览器到底有些什么进程" class="headerlink" title="3.浏览器到底有些什么进程"></a>3.浏览器到底有些什么进程</h3><p>​    ①.Browser进程:<br>​        浏览器的主进程,负责浏览器界面的显示,和各个页面的管理,<br>​        浏览器中所有其他类型进程的祖先,负责其他进程的的创建和销毁<br>​        它有且只有一个!!!!!<br>​    ②.Renderer进程:<br>​        网页渲染进程,负责页面的渲染,可以有多个<br>​        当然渲染进程的数量不一定等于你开打网页的个数<br>​    ③.各种插件进程<br>​    ④.GPU进程<br>​    移动设备的浏览器可能不太一样:<br>​        Android不支持插件,所以就没有插件进程<br>​        GPU演化成了Browser进程的一个线程<br>​        Renderer进程演化成了操作系统的一个服务进程,它仍然是独立的</p><h3 id="4-每个进程内部又有很多线程"><a href="#4-每个进程内部又有很多线程" class="headerlink" title="4.每个进程内部又有很多线程"></a>4.每个进程内部又有很多线程</h3><p>​    多线程的目的主要是保持用户界面的高度响应<br>​    例如:为了不让Browser进程的UI线程被其他耗时的操作(数据库读写,本地文件读写)所阻塞,<br>​            那么我们就把这些操作放到分线程中去处理<br>​        在Renderer进程中,为了不让其他操作阻止渲染线程的高速执行,我们通常会将渲染过程【管线化】,<br>​            利用计算机的多核优势,让渲染的不同阶段在不同的线程中执行</p><p>​    </p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> FE Performance </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>overflow meet flex</title>
-      <link href="2020/10/14/overflow-meet-flex/"/>
-      <url>2020/10/14/overflow-meet-flex/</url>
+      <link href="2020/10/14/Web-overflow-meet-flex/"/>
+      <url>2020/10/14/Web-overflow-meet-flex/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote><p>如果将某个盒子设为伸缩盒(display: flex;)，要注意子元素及其后代元素是否有white-space样式修饰，它会影响flex，使其失效，甚至使子元素溢出父元素。</p></blockquote><a id="more"></a><h3 id="Test-Code"><a href="#Test-Code" class="headerlink" title="Test Code"></a>Test Code</h3><pre><code class="html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;  &lt;meta charset=&quot;UTF-8&quot;&gt;  &lt;title&gt;test&lt;/title&gt;  &lt;style&gt;    #father {      width: 200px;      height: 200px;      background: #bfa;      display: flex;    }    #son {      flex: 3;      height: 90%;      background: orange;    }    #daughter {      flex: 7;      height: 90%;      background: pink;    }    pre {      background: green;      /*overflow: auto;*/    }    .test {      /*white-space: pre;*/      /*white-space: nowrap;*/      white-space: normal;      /*white-space: pre-wrap;*/    }  &lt;/style&gt;&lt;/head&gt;&lt;body&gt;  &lt;div id=&quot;father&quot;&gt;    &lt;div id=&quot;daughter&quot;&gt;&lt;/div&gt;    &lt;div id=&quot;son&quot;&gt;&lt;!--      &lt;pre&gt;--&gt;&lt;!--        overflow--&gt;&lt;!--      &lt;/pre&gt;--&gt;      &lt;div class=&quot;test&quot;&gt;        responsibility        overflow overflow overflow      &lt;/div&gt;    &lt;/div&gt;  &lt;/div&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><h3 id="Result"><a href="#Result" class="headerlink" title="Result"></a>Result</h3><p><img src="/2020/10/14/Web-overflow-meet-flex/initial.png" alt="正常时"></p><p><img src="/2020/10/14/Web-overflow-meet-flex/flex_disabled.png" alt="flex失效"></p><p><img src="/2020/10/14/Web-overflow-meet-flex/even_overflow.png" alt="甚至子元素溢出父元素"></p>]]></content>
       
       
+      
+        <tags>
+            
+            <tag> Web杂项 </tag>
+            
+        </tags>
       
     </entry>
     
