@@ -112,6 +112,68 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/10/POJ-1417-True-Liars-union-find-sets/" class="item-title">POJ 1417 True Liars(union-find sets)</a>
+      
+      <time datetime="2020-03-10T10:19:34.000Z">
+        2020-03-10
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+分析得知，yes表示X与Y同类，no表示X与Y异类
+可用种类并查集。背包的事，以后有缘再见。
+
+Something about 种类并查集
+
+A kind of 带权并查集
+把所有种类都并到一个集合里，根据每个点与根节点的关系来判断种类，而非将不同种类并到不同的集合里
+
+
+带权并查集
+权值的更新类似向量的表示
+
+
+Code#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 610;
+
+int n, p, q;
+int fa[N], val[N];
+
+bool used[N];
+int a[N][2];
+vector&lt;int&gt;b[N][2];
+int dp[N][N / 2];
+int pre[N][N / 2];
+
+void init()
+{
+    for(int i = 0; i &lt; -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个回答，P1个好人(只说实话)， P2个坏人(只说谎话)</p>
+<p>X(回答者) Y(被提及的人) A(yes表示X说Y是好人，no表示X说Y是坏人)</p>
+<p>问凭现有条件能否确定P1个好人分别是谁</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/10/POJ-1417-True-Liars-union-find-sets/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/10/Codefroces-C-Adding-Powers/" class="item-title">Codefroces C.Adding Powers</a>
       
       <time datetime="2020-03-10T00:59:30.000Z">
@@ -545,51 +607,6 @@ Code#include &lt;queue&gt;
 
         <span>
           <a class="article-read" href="/2020/01/18/POJ-3159-Candies-最短路解差分约束/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/01/12/SDNUOJ-1045-石子合并-区间DP/" class="item-title">石子合并(区间DP)</a>
-      
-      <time datetime="2020-01-12T08:06:31.000Z">
-        2020-01-12
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-一大堆石子由两小堆石子堆成，此次操作的得分为两小堆石子质量之和，而倘若这两小堆石子又各是由两小小堆石子堆成，那么此次操作的得分是：两堆石子之和 + 堆成第一堆的得分 + 堆成第二堆的得分
-状态转移方程：
-dp[i][j] = dp[i][k] + dp[k + 1][j] + (sum[j] - sum[i - 1]) 
-
-Code of SDNUOJ 1045#include &lt;set&gt;
-#include &lt;map&gt;
-#include &lt;stack&gt;
-#include &lt;queue&gt;
-#include &lt;ctime&gt;
-#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;bitset&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;sstream&gt;
-#include &lt;cstdlib&gt;
-#incl -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>有n堆石子排成一行，每次选择相邻的两堆石子，将其合并为一堆，记录该次合并的得分为两堆石子个数之和。已知每堆石子的石子个数，求当所有石子合并为一堆时，最小的总得分。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/01/12/SDNUOJ-1045-石子合并-区间DP/"> Read more -->
           </a></span>
         </div>
 

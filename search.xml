@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Recursive least square</title>
+      <link href="2020/11/17/Recursive-least-square/"/>
+      <url>2020/11/17/Recursive-least-square/</url>
+      
+        <content type="html"><![CDATA[<p>给定一组样本点：</p><table><thead><tr><th style="text-align:center">$$x_1$$</th><th style="text-align:center">$$x_2$$</th><th style="text-align:center">…</th><th style="text-align:center">$$x_k$$</th></tr></thead><tbody><tr><td style="text-align:center">$$y_1$$</td><td style="text-align:center">$$y_2$$</td><td style="text-align:center">…</td><td style="text-align:center">$$y_k$$</td></tr></tbody></table><p>求拟合函数 $$G(x)$$ 使得 $$\sum_{i=1}^k (G(x_i)-y_i)^2$$ 取最小值。</p><a id="more"></a><p>设 $$\phi_0, \phi_1, … \phi_n$$ 是n+1个线性无关的连续函数，$$G_n$$ 是由  $$\phi_i(i=0,1…n)$$ 的所有线性组合构成的集合，记 $$G_n = span { \phi_0, \phi_1,…,\phi_n }$$ ，$$G(x)\in G_n$$ 。</p><p>将 $$G(x)$$ 写成矩阵的形式：</p><p>$$\begin{bmatrix}<br>G(x_1)\ G(x_2) \ \vdots\ G(x_k)<br>\end{bmatrix}$$ $$=$$ $$\begin{bmatrix} \phi_0(x_1) &amp; \phi_1(x_1) &amp; \cdots &amp; \phi_n(x_1) \ \phi_0(x_2) &amp; \phi_1(x_2) &amp; \cdots &amp; \phi_n(x_2) \<br>\vdots &amp; \vdots &amp; \vdots &amp; \vdots \<br>\phi_0(x_k) &amp; \phi_1(x_k) &amp; \cdots &amp; \phi_n(x_k) \<br>\end{bmatrix}$$ $$\begin{bmatrix}<br>a_0\ a_1 \ \vdots\ a_n<br>\end{bmatrix}$$ </p><p>所求的 $$G(x)$$ 满足如下条件 ：</p><p>$$\sum_{i=0}^k(\sum_{j=0}^na_j\phi_j(x_i)-y_i)\phi_h(x_i)=0,h=0,1,…,n.$$ </p><p>以矩阵形式表示如下：</p><p>$$\Phi_k^T(\Phi_kA_k-Y_k)=0$$ ($$A_k$$表示有 $$k$$ 组样本点时对应的 $$n+1$$ 个参数)</p><p>其中，$$\Phi_k=\begin{bmatrix} \phi_0(x_1) &amp; \phi_1(x_1) &amp; \cdots &amp; \phi_n(x_1) \ \phi_0(x_2) &amp; \phi_1(x_2) &amp; \cdots &amp; \phi_n(x_2) \<br>\vdots &amp; \vdots &amp; \vdots &amp; \vdots \<br>\phi_0(x_k) &amp; \phi_1(x_k) &amp; \cdots &amp; \phi_n(x_k) \<br>\end{bmatrix}$$， $$A_k=\begin{bmatrix}<br>a_0\ a_1 \ \vdots\ a_n<br>\end{bmatrix}$$，$$Y_k=\begin{bmatrix}<br>y_1\ y_2 \ \vdots\ y_k<br>\end{bmatrix}$$，</p><p>$$A_k=(\Phi_k^T\Phi_k)^{-1}\Phi_k^TY_k$$ </p><p>目标：$$A_{k+1}= H(A_k)$$ </p><p>对 $$A_k=(\Phi_k^T\Phi_k)^{-1}\Phi_k^TY_k$$ 进行推导变换：</p><p>令 $$P_k=\Phi_k^T\Phi_k$$ ，$$Q_k=\Phi_k^TY_k$$ ，则 $$A_k=P_k^{-1}Q_k$$ .</p><p>$$P_k=\Phi_k^T\Phi_k=\begin{bmatrix} \phi_0(x_1) &amp; \phi_0(x_2) &amp; \cdots &amp; \phi_0(x_k) \ \phi_1(x_1) &amp; \phi_1(x_2) &amp; \cdots &amp; \phi_1(x_k) \<br>\vdots &amp; \vdots &amp; \vdots &amp; \vdots \<br>\phi_n(x_1) &amp; \phi_n(x_2) &amp; \cdots &amp; \phi_n(x_k) \<br>\end{bmatrix}\begin{bmatrix} \phi_0(x_1) &amp; \phi_1(x_1) &amp; \cdots &amp; \phi_n(x_1) \ \phi_0(x_2) &amp; \phi_1(x_2) &amp; \cdots &amp; \phi_n(x_2) \<br>\vdots &amp; \vdots &amp; \vdots &amp; \vdots \<br>\phi_0(x_k) &amp; \phi_1(x_k) &amp; \cdots &amp; \phi_n(x_k) \<br>\end{bmatrix}$$ </p><p>令 $$\overrightarrow{\phi_i}^T=\begin{bmatrix}<br>\phi_0(x_i)\ \phi_1(x_i) \ \vdots\ \phi_n(x_i)<br>\end{bmatrix},i=1,…k$$. </p><p>$$P_k=\Phi_k^T\Phi_k=\begin{bmatrix}<br>\overrightarrow{\phi_1}^T &amp; \overrightarrow{\phi_2}^T &amp;\cdots &amp; \overrightarrow{\phi_k}^T \<br>\end{bmatrix}\begin{bmatrix}<br>\overrightarrow{\phi_1} \<br>\overrightarrow{\phi_2} \ \vdots\<br>\overrightarrow{\phi_k}<br>\end{bmatrix}=\sum_{i=1}^k\overrightarrow{\phi_i}^T\overrightarrow{\phi_i}=\sum_{i=1}^{k-1}\overrightarrow{\phi_i}^T\overrightarrow{\phi_i}+\overrightarrow{\phi_k}^T\overrightarrow{\phi_k}=P_{k-1}+\overrightarrow{\phi_k}^T\overrightarrow{\phi_k}$$ </p><p>$$Q_k=\Phi_k^TY_k=\begin{bmatrix}<br>\overrightarrow{\phi_1}^T &amp; \overrightarrow{\phi_2}^T &amp;\cdots &amp; \overrightarrow{\phi_k}^T \<br>\end{bmatrix}\begin{bmatrix}<br>y_1\ y_2 \ \vdots\ y_k<br>\end{bmatrix}=\sum_{i=1}^k\overrightarrow{\phi_i}^Ty_i=\sum_{i=1}^{k-1}\overrightarrow{\phi_i}^Ty_i+\overrightarrow{\phi_k}^Ty_k=Q_{k-1}+\overrightarrow{\phi_k}^Ty_k$$ </p><p>$$A_{k-1}=P_{k-1}^{-1}Q_{k-1}$$         =&gt;        $$Q_{k-1}=P_{k-1}A_{k-1}$$ </p><p>$$A_k=P_k^{-1}Q_k$$ </p><p>$$=P_k^{-1}(Q_{k-1}+\overrightarrow{\phi_k}^Ty_k)$$ </p><p>$$=P_k^{-1}(P_{k-1}A_{k-1}+\overrightarrow{\phi_k}^Ty_k)$$ </p><p>$$=P_k^{-1}[(P_k-\overrightarrow{\phi_k}^T\overrightarrow{\phi_k})A_{k-1}+\overrightarrow{\phi_k}^Ty_k]$$ </p><p>$$=A_{k-1}-P_k^{-1}\overrightarrow{\phi_k}^T\overrightarrow{\phi_k}A_{k-1}+P_k^{-1}\overrightarrow{\phi_k}^Ty_k$$ </p><pre><code class="matlab">function Ak = nafit1( A, x, xk, yk, m)Pni=inv(P(x,m));phik2phik=phi(xk,m);phi2y=phiy(xk, yk, m);Ak=A&#39;-Pni*phik2phik*A&#39;+Pni*phi2y;Ak=fliplr(Ak&#39;);endfunction phi2y = phiy(xk, yk, m)phi2y = zeros(m+1, 1);for i=0:m    phi2y(i+1)=xk^i*yk;endendfunction phik2phik = phi(xk, m)phik2phik = zeros(m+1, m+1);for i=0:m    for j=0:m        phik2phik(i+1,j+1)=xk^(i+j);    endendendfunction Pres = P(x, m)len = length(x);Pres = zeros(m+1, m+1);for k=1:len    Pres = Pres + phi(x(k), m);endend</code></pre><blockquote><p>代码的使用方法</p></blockquote><p><img src="/2020/11/17/Recursive-least-square/method.png" alt="code"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 数论の杂项 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Browser&#39;s render engine and block</title>
       <link href="2020/11/03/Browser-s-render-engine-and-block/"/>
       <url>2020/11/03/Browser-s-render-engine-and-block/</url>
@@ -271,9 +290,9 @@
             
             <tag> Vueのaxios </tag>
             
-            <tag> Vueのv-sth </tag>
-            
             <tag> NodeJSのmysql </tag>
+            
+            <tag> Vueのv-sth </tag>
             
         </tags>
       
@@ -4334,9 +4353,9 @@
             
             <tag> 题解 </tag>
             
-            <tag> 技巧の输入挂 </tag>
-            
             <tag> 技巧の哈希 </tag>
+            
+            <tag> 技巧の输入挂 </tag>
             
         </tags>
       
