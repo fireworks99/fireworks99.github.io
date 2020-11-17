@@ -1933,7 +1933,7 @@
       <link href="2019/08/10/Python%E7%88%AC%E5%8F%96SDNUOJ%E4%B8%A4%E7%94%A8%E6%88%B7Solved-problems%E6%9F%A5%E6%89%BE%E9%81%97%E6%BC%8F%E7%9A%84%E6%B0%B4%E9%A2%98/"/>
       <url>2019/08/10/Python%E7%88%AC%E5%8F%96SDNUOJ%E4%B8%A4%E7%94%A8%E6%88%B7Solved-problems%E6%9F%A5%E6%89%BE%E9%81%97%E6%BC%8F%E7%9A%84%E6%B0%B4%E9%A2%98/</url>
       
-        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote><p>输入用户名，爬取SDNUOJ指定用户Information页面Solved Problems题号，通过对比，输出对方已解决而自己尚未解决的题目的题号</p><p>可执行文件下载链接：<a href="https://github.com/fireworks99/Tools/raw/master/OJ_compare_sloved.exe" target="_blank" rel="noopener">https://github.com/fireworks99/Tools/raw/master/OJ_compare_sloved.exe</a></p></blockquote><a id="more"></a><h2 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h2><blockquote><p>感谢LTR师哥( <a href="https://blog.csdn.net/ltrbless" target="_blank" rel="noopener">https://blog.csdn.net/ltrbless</a> )耐心指导，拿出自己珍贵的大把的时间悉心为我讲解细节，在我求“鱼“之时授我以”当下之鱼“及”来日之渔“</p><p>题目做腻了的时候看了看爬虫入门的东西，偶然想起某天MF(YMF <a href="https://solodance.top/" target="_blank" rel="noopener">https://solodance.top/</a> )与旁人闲聊时提到这个（爬取两用户Information比较得出自己遗漏的水题）有趣的东西，想着自己也试试。在此说明原Idea来自于他。</p></blockquote><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="python">import urllib.requestfrom bs4 import BeautifulSoupfro = &#39;http://www.acmicpc.sdnu.edu.cn/user/info/&#39;print(&quot;Please input your Username:&quot;)my_url = input()my_url = fro + my_urlprint(&quot;Please input his or her Username:&quot;)its_url = input()its_url = fro + its_url# print(my_url)# print(its_url)my_res = &quot;&quot;its_res = &quot;&quot;# 获得html文档try:    my_res = urllib.request.urlopen(my_url)    its_res = urllib.request.urlopen(its_url)except Exception as e:    print(e)if my_res is &quot;&quot;:    print(&quot;Your Username is wrong&quot;)elif its_res is &quot;&quot;:    print(&quot;His or her Username is wrong&quot;)else:    # print(my_res.getcode())    # print(its_res.getcode())    # 创建BeautifulSoup对象    my_bs = BeautifulSoup(my_res, features=&#39;html.parser&#39;, from_encoding=&#39;utf-8&#39;)    its_bs = BeautifulSoup(its_res, features=&#39;html.parser&#39;, from_encoding=&#39;utf-8&#39;)    # 找到所有 标签为&quot;div&quot;,class_ 属性为&quot;row&quot;的内容,返回一个列表    my_list = my_bs.find_all(&quot;div&quot;, class_=&quot;row&quot;)    its_list = its_bs.find_all(&quot;div&quot;, class_=&quot;row&quot;)    # print(my_list[4]) # 共七个元素，我们发现第五个是我们想要的,它本身是一个标签(Tag)    # print(type(my_list))    # print(type(my_list[4]))    # 将该标签通过str强转为字符串作为文本，再次构建一个BeautifulSoup对象    # my_soup = BeautifulSoup(unicode(my_list[4]), features=&#39;html.parser&#39;) # py2 -&gt; unicode / py3 -&gt; str    my_soup = BeautifulSoup(str(my_list[4]), features=&#39;html.parser&#39;)    its_soup = BeautifulSoup(str(its_list[4]), features=&#39;html.parser&#39;)    # 在此范围内查找所有的&#39;a&#39;标签，即链接    my_soup = my_soup.find_all(&#39;a&#39;)    its_soup = its_soup.find_all(&#39;a&#39;)    # print(my_soup.find_all(&#39;a&#39;))    # 用  .string  取出其中的NavigableString（可操纵字符串）对象，即已通过题目的题号,生成列表    my_sloved = []    for i in my_soup:        my_sloved.append(i.string)    its_sloved = []    for i in its_soup:        its_sloved.append(i.string)    for i in its_sloved:        if i not in my_sloved:            print(i)        else:            continue    print(&quot;No more!&quot;)</code></pre><h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><blockquote><ol><li><p>确定所爬 url：<a href="http://www.acmicpc.sdnu.edu.cn/user/info/" target="_blank" rel="noopener">http://www.acmicpc.sdnu.edu.cn/user/info/</a></p></li><li><p>审查元素</p><p><img src="https://i.postimg.cc/43qMCN6t/ZW10-FD6-ZDFF18-TD-9-H.png" alt="example"></p></li><li><p>鼠标指着某段代码会出现相应模块，我们当前指向即为所需部分(Solved Problems)</p></li><li><p>发现其Tag(标签)为”div”,class_属性为”row”</p><p>find_all所有这样的内容，返回一个my_list列表</p></li><li><p>其中第5个元素，即my_list[4]是我们想要的Solved模块，将其转为字符串文本，创建为一个新的BeautifulSoup对象</p></li><li><p>对新对象find_all(‘a’)，标签a为“链接类”标签</p><p><code>&lt;a href=&quot;/status/list?name=2018zhaobaole&amp;amp;pid=1025&amp;amp;type=10&quot;&gt;1025&lt;/a&gt;</code></p></li><li><p>后面的1025属于NavigableString(可操纵字符串)对象，可以通过<code>.string</code>直接访问</p></li><li><p>不懂的语法、函数去官方文档(BeautifulSoup4.2.0文档)找</p><p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html" target="_blank" rel="noopener">https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html</a></p></li><li><p>更多内容详见code</p></li></ol></blockquote><h2 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h2><blockquote><p>使用上述代码时需要保证该Python Project中有beautifulsoup4解释器</p><p>pycharm如何安装beautifulsoup4：<a href="https://blog.csdn.net/huatian5/article/details/74502687" target="_blank" rel="noopener">https://blog.csdn.net/huatian5/article/details/74502687</a></p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote><p>输入用户名，爬取SDNUOJ指定用户Information页面Solved Problems题号，通过对比，输出对方已解决而自己尚未解决的题目的题号</p><p>可执行文件下载链接：<a href="https://github.com/fireworks99/Tools/raw/master/OJ_compare_sloved.exe" target="_blank" rel="noopener">https://github.com/fireworks99/Tools/raw/master/OJ_compare_sloved.exe</a></p></blockquote><a id="more"></a><h2 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h2><blockquote><p>感谢LTR师哥( <a href="https://blog.csdn.net/ltrbless" target="_blank" rel="noopener">https://blog.csdn.net/ltrbless</a> )耐心指导，拿出自己珍贵的大把的时间悉心为我讲解细节，在我求“鱼”之时授我以“当下之鱼”及“来日之渔”</p><p>题目做腻了的时候看了看爬虫入门的东西，偶然想起某天MF(YMF <a href="https://solodance.top/" target="_blank" rel="noopener">https://solodance.top/</a> )与旁人闲聊时提到这个（爬取两用户Information比较得出自己遗漏的水题）有趣的东西，想着自己也试试。在此说明原Idea来自于他。</p></blockquote><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="python">import urllib.requestfrom bs4 import BeautifulSoupfro = &#39;http://www.acmicpc.sdnu.edu.cn/user/info/&#39;print(&quot;Please input your Username:&quot;)my_url = input()my_url = fro + my_urlprint(&quot;Please input his or her Username:&quot;)its_url = input()its_url = fro + its_url# print(my_url)# print(its_url)my_res = &quot;&quot;its_res = &quot;&quot;# 获得html文档try:    my_res = urllib.request.urlopen(my_url)    its_res = urllib.request.urlopen(its_url)except Exception as e:    print(e)if my_res is &quot;&quot;:    print(&quot;Your Username is wrong&quot;)elif its_res is &quot;&quot;:    print(&quot;His or her Username is wrong&quot;)else:    # print(my_res.getcode())    # print(its_res.getcode())    # 创建BeautifulSoup对象    my_bs = BeautifulSoup(my_res, features=&#39;html.parser&#39;, from_encoding=&#39;utf-8&#39;)    its_bs = BeautifulSoup(its_res, features=&#39;html.parser&#39;, from_encoding=&#39;utf-8&#39;)    # 找到所有 标签为&quot;div&quot;,class_ 属性为&quot;row&quot;的内容,返回一个列表    my_list = my_bs.find_all(&quot;div&quot;, class_=&quot;row&quot;)    its_list = its_bs.find_all(&quot;div&quot;, class_=&quot;row&quot;)    # print(my_list[4]) # 共七个元素，我们发现第五个是我们想要的,它本身是一个标签(Tag)    # print(type(my_list))    # print(type(my_list[4]))    # 将该标签通过str强转为字符串作为文本，再次构建一个BeautifulSoup对象    # my_soup = BeautifulSoup(unicode(my_list[4]), features=&#39;html.parser&#39;) # py2 -&gt; unicode / py3 -&gt; str    my_soup = BeautifulSoup(str(my_list[4]), features=&#39;html.parser&#39;)    its_soup = BeautifulSoup(str(its_list[4]), features=&#39;html.parser&#39;)    # 在此范围内查找所有的&#39;a&#39;标签，即链接    my_soup = my_soup.find_all(&#39;a&#39;)    its_soup = its_soup.find_all(&#39;a&#39;)    # print(my_soup.find_all(&#39;a&#39;))    # 用  .string  取出其中的NavigableString（可操纵字符串）对象，即已通过题目的题号,生成列表    my_sloved = []    for i in my_soup:        my_sloved.append(i.string)    its_sloved = []    for i in its_soup:        its_sloved.append(i.string)    for i in its_sloved:        if i not in my_sloved:            print(i)        else:            continue    print(&quot;No more!&quot;)</code></pre><h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><blockquote><ol><li><p>确定所爬 url：<a href="http://www.acmicpc.sdnu.edu.cn/user/info/" target="_blank" rel="noopener">http://www.acmicpc.sdnu.edu.cn/user/info/</a></p></li><li><p>审查元素</p><p><img src="https://i.postimg.cc/43qMCN6t/ZW10-FD6-ZDFF18-TD-9-H.png" alt="example"></p></li><li><p>鼠标指着某段代码会出现相应模块，我们当前指向即为所需部分(Solved Problems)</p></li><li><p>发现其Tag(标签)为”div”,class_属性为”row”</p><p>find_all所有这样的内容，返回一个my_list列表</p></li><li><p>其中第5个元素，即my_list[4]是我们想要的Solved模块，将其转为字符串文本，创建为一个新的BeautifulSoup对象</p></li><li><p>对新对象find_all(‘a’)，标签a为“链接类”标签</p><p><code>&lt;a href=&quot;/status/list?name=2018zhaobaole&amp;amp;pid=1025&amp;amp;type=10&quot;&gt;1025&lt;/a&gt;</code></p></li><li><p>后面的1025属于NavigableString(可操纵字符串)对象，可以通过<code>.string</code>直接访问</p></li><li><p>不懂的语法、函数去官方文档(BeautifulSoup4.2.0文档)找</p><p><a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html" target="_blank" rel="noopener">https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html</a></p></li><li><p>更多内容详见code</p></li></ol></blockquote><h2 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h2><blockquote><p>使用上述代码时需要保证该Python Project中有beautifulsoup4解释器</p><p>pycharm如何安装beautifulsoup4：<a href="https://blog.csdn.net/huatian5/article/details/74502687" target="_blank" rel="noopener">https://blog.csdn.net/huatian5/article/details/74502687</a></p></blockquote>]]></content>
       
       
       
@@ -4634,9 +4634,9 @@
       
         <tags>
             
-            <tag> 题解 </tag>
-            
             <tag> 简单搜索のDFS </tag>
+            
+            <tag> 题解 </tag>
             
         </tags>
       
@@ -5066,11 +5066,11 @@
       
         <tags>
             
+            <tag> 简单搜索のDFS </tag>
+            
             <tag> 题解 </tag>
             
             <tag> 简单搜索のBFS </tag>
-            
-            <tag> 简单搜索のDFS </tag>
             
             <tag> 图论の拓扑排序(判环) </tag>
             
@@ -5091,11 +5091,11 @@
       
         <tags>
             
+            <tag> 简单搜索のDFS </tag>
+            
             <tag> 题解 </tag>
             
             <tag> 简单搜索のBFS </tag>
-            
-            <tag> 简单搜索のDFS </tag>
             
             <tag> 图论の拓扑排序(无环) </tag>
             
@@ -5265,9 +5265,9 @@
       
         <tags>
             
-            <tag> 题解 </tag>
-            
             <tag> 简单搜索のDFS </tag>
+            
+            <tag> 题解 </tag>
             
             <tag> 简单搜索の剪枝 </tag>
             
