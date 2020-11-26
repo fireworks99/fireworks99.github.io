@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -121,7 +121,7 @@
 <p><code>a[num].rmax</code>：包含区间右端点的最大连续子区间长度</p>
 <p><code>a[num].ans</code>：本区间最大连续子区间长度（仅用于剪枝：==0 return）</p>
 <p>举例：</p>
-<pre><code class="c++">query(int num, int t)
+<pre><code class="lang-c++">query(int num, int t)
 int mid = (a[num].L + a[num].R) &gt;&gt; 1;
 if(t &lt;= mid)
 {
@@ -136,7 +136,7 @@ if(t &lt;= mid)
 else
 </code></pre>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;

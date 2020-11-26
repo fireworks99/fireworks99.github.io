@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -113,11 +113,7 @@
 <a id="more"></a>
 <blockquote>
 <p>FJ sadly realizes that he doesn’t own a saw with which to cut the wood, so he mosies over to Farmer Don’s Farm with this long board and politely asks if he may borrow a saw.</p>
-</blockquote>
-<blockquote>
 <p>Farmer Don, a closet capitalist, doesn’t lend FJ a saw but instead offers to charge Farmer John for each of the <em>N</em>-1 cuts in the plank. The charge to cut a piece of wood is exactly equal to its length. Cutting a plank of length 21 costs 21 cents.</p>
-</blockquote>
-<blockquote>
 <p>Farmer Don then lets Farmer John decide the order and locations to cut the plank. Help Farmer John determine the minimum amount of money he can spend to create the <em>N</em> planks. FJ knows that he can cut the board in various different orders which will result in different charges since the resulting intermediate planks are of different lengths.</p>
 </blockquote>
 <h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
@@ -143,7 +139,7 @@
 <p>为了找最短板与次短板，避免多次sort，采用vector的lower_bound式insert</p>
 </blockquote>
 <p><code>vec.insert(lower_bound(vec.begin(), vec.end(), tem), tem);</code></p>
-<h4 id="code"><a href="#code" class="headerlink" title="code"></a>code</h4><pre><code class="c++">#include &lt;iostream&gt;
+<h4 id="code"><a href="#code" class="headerlink" title="code"></a>code</h4><pre><code class="lang-c++">#include &lt;iostream&gt;
 #include &lt;cstdio&gt;
 #include &lt;algorithm&gt;
 #include &lt;vector&gt;

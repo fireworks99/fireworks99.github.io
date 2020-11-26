@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -114,11 +114,9 @@
 <p><a href="http://poj.org/problem?id=3660" style="color:deeppink;" target="_blank" rel="noopener">传送门</a></p>
 <h3 id="Floyd-传递闭包"><a href="#Floyd-传递闭包" class="headerlink" title="Floyd 传递闭包"></a>Floyd 传递闭包</h3><blockquote>
 <p>传递闭包的含义指通过传递性推导出尽量多的元素之间的关系</p>
-</blockquote>
-<blockquote>
 <p>用flod算法将所有的关系进行传递，只要u能胜v，那么我们就将d[u][v]设为1，最后如果两者之间有d[u][v]=0且d[v][u]=0则u、v两点不知排名</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;set&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;set&gt;
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
@@ -161,7 +159,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="Wrong-answer-并查集-拓扑排序"><a href="#Wrong-answer-并查集-拓扑排序" class="headerlink" title="Wrong answer(并查集+拓扑排序)"></a>Wrong answer(并查集+拓扑排序)</h3><pre><code class="c++">#include &lt;map&gt;
+<h3 id="Wrong-answer-并查集-拓扑排序"><a href="#Wrong-answer-并查集-拓扑排序" class="headerlink" title="Wrong answer(并查集+拓扑排序)"></a>Wrong answer(并查集+拓扑排序)</h3><pre><code class="lang-c++">#include &lt;map&gt;
 #include &lt;queue&gt;
 #include &lt;cstdio&gt;
 #include &lt;vector&gt;

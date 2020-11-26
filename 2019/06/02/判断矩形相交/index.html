@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -107,7 +107,7 @@
 	<article id="details-post">
 		<div id="details-post-item">
 			<h1>判断矩形相交</h1>
-			<pre><code class="c++">int check(int x1,int y1,int x2,int y2,int x3, int y3,int x4, int y4)
+			<pre><code class="lang-c++">int check(int x1,int y1,int x2,int y2,int x3, int y3,int x4, int y4)
 {
     if(x2 &lt; x3 || x4 &lt; x1 || y4 &lt; y1 || y2 &lt; y3)
         return 0;
@@ -121,7 +121,7 @@
 <p>要是先输入<strong>右上角</strong>坐标，再输入<strong>左下角</strong>坐标呢？</p>
 <p>要是输入<strong>左上角</strong>坐标跟<strong>右下角</strong>坐标呢？</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">double x1, y1, x2, y2, x3, y3, x4, y4, lux, luy, rdx, rdy;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">double x1, y1, x2, y2, x3, y3, x4, y4, lux, luy, rdx, rdy;
     scanf(&quot;%lf%lf%lf%lf%lf%lf%lf%lf&quot;, &amp;x1, &amp;y1, &amp;x2, &amp;y2, &amp;x3, &amp;y3, &amp;x4, &amp;y4);
     lux = max(min(x1,x2),min(x3,x4));
     luy = max(min(y1,y2),min(y3,y4));

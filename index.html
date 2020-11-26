@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -119,32 +119,40 @@
       </time>
       
       <!-- <div class="article-digest"> -->
-        <!-- 设 $$\phi_0, \phi_1, … \phi_n$$ 是n+1个线性无关的连续函数，$$G_n$$ 是由  $$\phi_i(i=0,1…n)$$ 的所有线性组合构成的集合，记 $$G_n = span { \phi_0, \phi_1,…,\phi_n }$$ ，$$G(x)\in G_n$$ 。
-将 $$G(x)$$ 写成矩阵的形式：
-$$\begin{bmatrix}G(x_1)\ G(x_2) \ \vdots\ G(x_k)\end{bmatrix}$$ $$=$$ $$\begin{bmatrix} \phi_0(x_1) &amp; \phi_1(x_1) &amp; \cdots &amp; \phi_n(x_1) \ \phi_0(x_2) &amp; \phi_1(x_2) &amp; \cdots &amp; \phi_n(x_2) \\vdots &amp; \vdots &amp; \vdots &amp; \vdots \\phi_0(x_k) &amp; \phi_1(x_k) &amp; \cdots &amp; \phi_n(x_k) \\en -->
+        <!-- 设 \phi_0, \phi_1, ... \phi_n 是n+1个线性无关的连续函数，G_n 是由  \phi_i(i=0,1...n) 的所有线性组合构成的集合，记 G_n = span \{ \phi_0, \phi_1,...,\phi_n \} ，G(x)\in G_n 。
+将 G(x) 写成矩阵的形式：
+\begin{bmatrix}
+G(x_1)\\ G(x_2) \\ \vdots\\ G(x_k)
+\end{bmatrix}$$ $$=$$ $$\begin{bmatrix} \phi_0(x_1) & \phi_1(x_1) & \cdots & \phi_n(x_1) \\ \phi_0(x_2) & \phi_1(x_2) & \cdots & \phi_n(x_2) \\
+\vdots & \vdots & \vdots & \vdots \\
+\phi_0(x_k) & \phi_1(x_k) & \cdots & \phi_n(x_k) \\
+\end{bmatrix}$$ $$\begin{bmatrix}
+a_0\\ a_1 \\ \vdots\\ a -->
         <!-- </div> -->
 
         
         <p>给定一组样本点：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:center">$$x_1$$</th>
-<th style="text-align:center">$$x_2$$</th>
+<th style="text-align:center"><script type="math/tex">x_1</script></th>
+<th style="text-align:center"><script type="math/tex">x_2</script></th>
 <th style="text-align:center">…</th>
-<th style="text-align:center">$$x_k$$</th>
+<th style="text-align:center"><script type="math/tex">x_k</script></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">$$y_1$$</td>
-<td style="text-align:center">$$y_2$$</td>
+<td style="text-align:center"><script type="math/tex">y_1</script></td>
+<td style="text-align:center"><script type="math/tex">y_2</script></td>
 <td style="text-align:center">…</td>
-<td style="text-align:center">$$y_k$$</td>
+<td style="text-align:center"><script type="math/tex">y_k</script></td>
 </tr>
 </tbody>
 </table>
-<p>求拟合函数 $$G(x)$$ 使得 $$\sum_{i=1}^k (G(x_i)-y_i)^2$$ 取最小值。</p>
+</div>
+<p>求拟合函数 <script type="math/tex">G(x)</script> 使得 <script type="math/tex">\sum_{i=1}^k (G(x_i)-y_i)^2</script> 取最小值。</p>
         
         
 
@@ -221,8 +229,8 @@ $$\begin{bmatrix}G(x_1)\ G(x_2) \ \vdots\ G(x_k)\end{bmatrix}$$ $$=$$ $$\begin{b
 网页浏览​    这是浏览器的核心也是最基本的功能，最重要的功能。​    如何将资源转变为可视化的结果。​多页面管理插件与管理账户和同步安全机制开发者工具……
 浏览器的主要功能总结起来就是一句话:将用户输入的url转变成可视化的图像。        1.从url到DOM树        2.从DOM树到可视化图像        这两个过程之间的关系并没有那么明确,我们可以统称这两个过程为页面的渲染
 二.浏览器的内核(渲染引擎)在浏览器中有一个最重要的模块，它主要的作用是将页面转变为可视化的图像结果。这个模块就是浏览器内核，通常它也被称为渲染引擎。
-IE———-&gt;Trident
-Safari——&gt;WebKit    WebKit本身主要是由两个引擎构成的，        一个正是渲染引擎“WebCore”，        另一个则是javascript解释引擎“JSCore”，        它们均是从KDE的渲染引擎KHTML及javascript -->
+IE—————&gt;Trident
+Safari———&gt;WebKit    WebKit本身主要是由两个引擎构成的，        一个正是渲染引擎“WebCore”，        另一个则是javascript解释引擎“JSCore”，        它们均是从KDE的渲染引擎KHTML及javascri -->
         <!-- </div> -->
 
         
@@ -608,6 +616,35 @@ export function request(config) {
 <!-- <div id="paginator"> -->
 <!--   <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/2/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

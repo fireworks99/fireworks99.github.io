@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -110,7 +110,7 @@
 			<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
 <p>给出一个数字N，给出1到N这个N个数字的初值</p>
 <p>M个操作：</p>
-<ol start="0">
+<ol>
 <li>更新x、y之间所有数字为他们的算术平方根</li>
 <li>查询x、y之间所有数字的和</li>
 </ol>
@@ -125,7 +125,7 @@
 <p>觉得这种题目的更新没办法lazy，区间更新只能换成暴力单点更新。</p>
 <p>此题的剪枝在于“算术平方根”，所给范围内的数字求8次以内次数的算术平方根就会变成1，现在拿一组变量纪录每个区间的最大值，若区间最大值是1，那么就没必要向下更新了。</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cmath&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cmath&gt;
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;

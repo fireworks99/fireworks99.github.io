@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -113,11 +113,11 @@
 <h3 id="网页浏览"><a href="#网页浏览" class="headerlink" title="网页浏览"></a>网页浏览</h3><p>​    这是浏览器的核心也是最基本的功能，最重要的功能。<br>​    如何将资源转变为可视化的结果。<br>​<br>多页面管理<br>插件与管理<br>账户和同步<br>安全机制<br>开发者工具<br>…<br>…</p>
 <p>浏览器的主要功能总结起来就是一句话:将用户输入的url转变成可视化的图像。<br>        1.从url到DOM树<br>        2.从DOM树到可视化图像<br>        这两个过程之间的关系并没有那么明确,我们可以统称这两个过程为页面的<strong>渲染</strong></p>
 <h2 id="二-浏览器的内核-渲染引擎"><a href="#二-浏览器的内核-渲染引擎" class="headerlink" title="二.浏览器的内核(渲染引擎)"></a>二.浏览器的内核(渲染引擎)</h2><p>在浏览器中有一个最重要的模块，它主要的作用是将页面转变为可视化的图像结果。<br>这个模块就是浏览器内核，通常它也被称为渲染引擎。</p>
-<p>IE———-&gt;Trident</p>
-<p>Safari——&gt;WebKit<br>    WebKit本身主要是由两个引擎构成的，<br>        一个正是渲染引擎“WebCore”，<br>        另一个则是javascript解释引擎“JSCore”，<br>        它们均是从KDE的渲染引擎KHTML及javascript解释引擎KJS衍生而来。</p>
-<p>Chrome——&gt;WebKit的分支引擎—–&gt;Blink<br>     在13年发布的Chrome 28.0.1469.0版本开始，Chrome放弃Chromium引擎转<br>     而使用最新的Blink引擎（基于WebKit2——苹果公司于2010年推出的新的WebKit引擎），<br>     Blink对比上一代的引擎精简了代码、改善了DOM框架，也提升了安全性。</p>
+<p>IE—————&gt;Trident</p>
+<p>Safari———&gt;WebKit<br>    WebKit本身主要是由两个引擎构成的，<br>        一个正是渲染引擎“WebCore”，<br>        另一个则是javascript解释引擎“JSCore”，<br>        它们均是从KDE的渲染引擎KHTML及javascript解释引擎KJS衍生而来。</p>
+<p>Chrome———&gt;WebKit的分支引擎——-&gt;Blink<br>     在13年发布的Chrome 28.0.1469.0版本开始，Chrome放弃Chromium引擎转<br>     而使用最新的Blink引擎（基于WebKit2——苹果公司于2010年推出的新的WebKit引擎），<br>     Blink对比上一代的引擎精简了代码、改善了DOM框架，也提升了安全性。</p>
 <p>Opera<br>    旧版Opera 4至6版本 :Elektra排版引擎<br>    Opera7.0    :Presto渲染引擎<br>    Opera在2013年2月宣布放弃Presto:<br>                采用Chromium引擎;<br>                又转为Blink引擎;</p>
-<p>Firefox——&gt;Gecko</p>
+<p>Firefox———&gt;Gecko</p>
 <h2 id="三-进程与线程"><a href="#三-进程与线程" class="headerlink" title="三.进程与线程"></a>三.进程与线程</h2><blockquote>
 <p>进程: 程序的一次执行, 它占有一片独有的内存空间.是操作系统执行的基本单元。<br>    一个进程中至少有一个运行的线程: 主线程,  进程启动后自动创建<br>    一个进程中也可以同时运行多个线程, 我们会说程序是多线程运行的<br>    一个进程内的数据可以供其中的多个线程直接共享，多个进程之间的数据是不能直接共享的</p>
 <p>线程：是进程内的一个独立执行单元,是CPU调度的最小单元。程序运行的基本单元<br>    线程池(thread pool): 保存多个线程对象的容器, 实现线程对象的反复利用</p>

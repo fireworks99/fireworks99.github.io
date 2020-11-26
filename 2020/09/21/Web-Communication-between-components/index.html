@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -116,41 +116,41 @@
 <p>携带单个信息点，以路由形式<code>/home/userid</code>显示在url中</p>
 </blockquote>
 <p><strong>路由部分</strong></p>
-<pre><code class="javascript">{
+<pre><code class="lang-javascript">{
     // 动态路由 实现 携带信息(单个信息，以路由形式 且显示在url中) 跳转组件
     path: &#39;/home/:id&#39;,
     component: Home
 },
 </code></pre>
 <p><strong>信源JS</strong></p>
-<pre><code class="javascript">const r = this.$router;
+<pre><code class="lang-javascript">const r = this.$router;
 const id = this.username;
 
 r.push(&#39;/home/&#39; + id)
 </code></pre>
 <p><strong>信宿JS</strong></p>
-<pre><code class="javascript">data() {
+<pre><code class="lang-javascript">data() {
   return {
       id: this.$route.params.id
   }
 },
 </code></pre>
 <p><strong>信宿html</strong></p>
-<pre><code class="html">&lt;h1&gt;Welcome, {{$route.params.id}}!&lt;/h1&gt;
+<pre><code class="lang-html">&lt;h1&gt;Welcome, {{$route.params.id}}!&lt;/h1&gt;
 </code></pre>
 <blockquote>
 <p>2.query</p>
 <p>携带一组信息，以query形式<code>/home?id=useri</code>显示在url中</p>
 </blockquote>
 <p><strong>路由部分</strong></p>
-<pre><code class="javascript">{
+<pre><code class="lang-javascript">{
     // 传递query对象 实现 携带信息(可大量信息，以query形式 显示在url中) 跳转组件
     path: &#39;/home&#39;,
     component: Home
 },
 </code></pre>
 <p><strong>信源JS</strong></p>
-<pre><code class="javascript">const r = this.$router;
+<pre><code class="lang-javascript">const r = this.$router;
 const id = this.username;
 
 r.push({
@@ -161,16 +161,16 @@ r.push({
 })
 </code></pre>
 <p><strong>信宿JS</strong></p>
-<pre><code class="javascript">data() {
+<pre><code class="lang-javascript">data() {
   return {
       id: this.$route.query.id
   }
 },
 </code></pre>
 <p><strong>信宿html</strong></p>
-<pre><code class="html">&lt;h1&gt;Welcome, {{$route.query.id}}&lt;/h1&gt;
+<pre><code class="lang-html">&lt;h1&gt;Welcome, {{$route.query.id}}&lt;/h1&gt;
 </code></pre>
-<h3 id="父子组件互相访问data中的数据"><a href="#父子组件互相访问data中的数据" class="headerlink" title="父子组件互相访问data中的数据"></a>父子组件互相访问data中的数据</h3><pre><code class="javascript">//子-&gt;父
+<h3 id="父子组件互相访问data中的数据"><a href="#父子组件互相访问data中的数据" class="headerlink" title="父子组件互相访问data中的数据"></a>父子组件互相访问data中的数据</h3><pre><code class="lang-javascript">//子-&gt;父
 this.$parent
 this.$parent.id
 this.$root
@@ -184,7 +184,7 @@ this.$refs
 this.$refs.nav_bar
 this.$refs.nav_bar.id
 </code></pre>
-<pre><code class="html">&lt;nav-bar ref=&quot;nav_bar&quot;&gt;&lt;/nav-bar&gt;
+<pre><code class="lang-html">&lt;nav-bar ref=&quot;nav_bar&quot;&gt;&lt;/nav-bar&gt;
 </code></pre>
 <blockquote>
 <p>一个父组件有许多子组件，所以<code>this.$children</code>可遍历</p>
@@ -195,9 +195,9 @@ this.$refs.nav_bar.id
 <p>子 -&gt; 父 发送事件</p>
 <p>注意此处有 “-“与 “驼峰” <code>item-click</code>与<code>itemClick</code></p>
 </blockquote>
-<pre><code class="html">&lt;cpn :cmovies=&quot;movies&quot; :cmessage=&quot;message&quot;&gt;&lt;/cpn&gt;
+<pre><code class="lang-html">&lt;cpn :cmovies=&quot;movies&quot; :cmessage=&quot;message&quot;&gt;&lt;/cpn&gt;
 </code></pre>
-<pre><code class="javascript">props: {
+<pre><code class="lang-javascript">props: {
       //(1)类型限制
       // cmovies: Array,
       // cmessage: String
@@ -219,7 +219,7 @@ this.$refs.nav_bar.id
       }
     }
 </code></pre>
-<pre><code class="javascript">// 子组件
+<pre><code class="lang-javascript">// 子组件
 methods: {
       btnClick(item) {
         console.log(item.name);
@@ -229,7 +229,7 @@ methods: {
       }
     }
 </code></pre>
-<pre><code class="html">// 父组件 监听btnClick事件
+<pre><code class="lang-html">// 父组件 监听btnClick事件
 &lt;button v-for=&quot;item in categories&quot;
             @click=&quot;btnClick(item)&quot;&gt;
       {{item.name}}

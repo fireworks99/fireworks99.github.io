@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -362,8 +362,6 @@ module.exports = function (username, password, callback) {
 刚开始想的时候，不明白怎么换，想着什么情况下既要换行又要换列，是那种情况的话该怎么换？越想越复杂。看了题解：
 若可以，只换行可行，只换列也可行
 二分图最大匹配等于n则可以
-
-
 DFS(int x)时 link[i] = x；是标记列i被分配给x，是列被标记了！
 
 Code#include &lt;cstdio&gt;
@@ -383,7 +381,7 @@ bool DFS(int x)
         {
             vis[i] = 1;
             if(link[i] == -1 || DFS(link[i]))
- -->
+   -->
         <!-- </div> -->
 
         
@@ -529,6 +527,7 @@ bool succeed(int x)
 
 
 
+
 1
 1
 1
@@ -559,12 +558,6 @@ bool succeed(int x)
 
 
 
-1
-2
-3
-4
-
-
 
 
 1
@@ -573,6 +566,8 @@ bool succeed(int x)
 4
 
 
+
+
 1
 2
 3
@@ -583,14 +578,19 @@ bool succeed(int x)
 2
 3
 4
+
+
+1
+2
+3
+4
+
 
 
 
 
 建边add(1, 1)add(1, 2)add(1, 3)add(1,4)add(2,1)……
 在求最大匹配时，假设第一个表中的2匹配了第二个表中的3，那么相当于在第二行第三列建一座炮台，由于本行都是2，且2已经被分配，所以本行不会再被分配炮台；同理，本列都是3，且3已经被分配，所以本列不会再被分配炮台。如此限制了同行或同列不会出现两座炮台。
-
-
 现在有墙，标号便可增加了，比如样例
 
 4
@@ -602,6 +602,7 @@ XX..
 
 
 
+
 1
 X
 2
@@ -632,6 +633,8 @@ X
 
 
 
+
+
 1
 X
 5
@@ -656,11 +659,12 @@ X
 4
 5
 6
+
 
 
 
 Code#include &lt;cstdio&gt;
-#include & -->
+#inc -->
         <!-- </div> -->
 
         
@@ -690,8 +694,6 @@ Code#include &lt;cstdio&gt;
         <!-- Analyze
 为了保证最大匹配数，先对王子进行最大匹配(二分图匹配の匈牙利算法DFS)。
 在最大匹配前提下，再找各王子除了匹配到的公主外还可以匹配哪些公主
-
-
 遍历王子，对于没匹配公主的每个王子：
 设置一个虚点(公主)与之匹配，并让所有王子指向这一虚点
 
@@ -703,8 +705,6 @@ Code#include &lt;cstdio&gt;
 
 
 针对参与匹配的所有公主(最大匹配中的+虚点中的)，建立反向边
-
-
 强连通分量缩点，处在同一个强连通分量中的王子与公主，可以彼此匹配
 A遍历王子，love[A][B]==1用来排除B是王子(保证B是公主)
 
@@ -716,7 +716,8 @@ Code#include &lt;stack&gt;
 #include &lt;algorithm&gt;
 using namespace std;
 const int N = 2005;
-const int M = 2 * N *  -->
+const int M = 2 * N * N;
+c -->
         <!-- </div> -->
 
         
@@ -784,6 +785,35 @@ const int M = 2 * N *  -->
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/"> </a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/3/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

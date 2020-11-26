@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -136,17 +136,15 @@
 <p>i like earth!</p>
 </blockquote>
 <h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
-<p>map\&lt;string, string&gt;存字典，map\&lt;string, bool&gt;标记是否字典里能查到</p>
+<p>map\<string, string="">存字典，map\<string, bool="">标记是否字典里能查到</string,></string,></p>
 <p>输出时，遍历截取（substr）每个单词（以小写字母为标准）</p>
 </blockquote>
 <h3 id="关于string的substr"><a href="#关于string的substr" class="headerlink" title="关于string的substr"></a>关于string的substr</h3><blockquote>
 <p>假设：string s = “0123456789”;</p>
-</blockquote>
-<blockquote>
 <p><strong>string sub1 = s.substr(5); //只有一个数字5表示从下标为5开始一直到结尾：sub1 = “56789”</strong></p>
 <p><strong>string sub2 = s.substr(5, 3); //从下标为5开始截取长度为3位：sub2 = “567”</strong> </p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;map&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;map&gt;
 #include &lt;cmath&gt;
 #include &lt;string&gt;
 #include &lt;iostream&gt;

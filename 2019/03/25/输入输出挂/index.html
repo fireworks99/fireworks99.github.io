@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -115,7 +115,7 @@
 <h2 id="探索输入挂"><a href="#探索输入挂" class="headerlink" title="探索输入挂"></a>探索输入挂</h2><h4 id="预备工作"><a href="#预备工作" class="headerlink" title="预备工作"></a>预备工作</h4><blockquote>
 <p>随机产生一百万个整型数，写入指定文件里</p>
 </blockquote>
-<pre><code class="c++">#include &lt;ctime&gt;
+<pre><code class="lang-c++">#include &lt;ctime&gt;
 #include &lt;cmath&gt;
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
@@ -140,7 +140,7 @@ int main()
 <h4 id="开始探索"><a href="#开始探索" class="headerlink" title="开始探索"></a>开始探索</h4><blockquote>
 <p>分别用输入挂（getchar）、scanf、cin读入一百万个整型数字，看运行时间</p>
 </blockquote>
-<pre><code class="c++">#include &lt;ctime&gt;
+<pre><code class="lang-c++">#include &lt;ctime&gt;
 #include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 using namespace std;
@@ -211,7 +211,7 @@ int main()
 <p>scanf —— 136ms</p>
 <p>cin —— 1412ms</p>
 </blockquote>
-<h3 id="关于double的读入挂（一般用不到）"><a href="#关于double的读入挂（一般用不到）" class="headerlink" title="关于double的读入挂（一般用不到）"></a>关于double的读入挂（一般用不到）</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="关于double的读入挂（一般用不到）"><a href="#关于double的读入挂（一般用不到）" class="headerlink" title="关于double的读入挂（一般用不到）"></a>关于double的读入挂（一般用不到）</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iomanip&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
@@ -258,7 +258,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><pre><code class="c++">scanf(&quot;%d&quot;, &amp;n);
+<h1 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h1><pre><code class="lang-c++">scanf(&quot;%d&quot;, &amp;n);
 getchar();
 for(int i = 0; i &lt; n; ++i)
     a[i] = Scan();

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -344,10 +344,8 @@ const int M = 11000 -->
         <!-- Analyze
 相对于普通的最小生成树，多了一个条件：最小，也就是说生成树的边有了权值。如果想办法去掉权值，问题就转为了普通生成树计数了。就像三维扫描线求体积那题，遍历Z轴，如同去掉了一个维度，将问题转化为了普通的扫描线求面积。这一题能不能通过遍历边的长度而将问题转化呢？可以的。
 在Kruskal算法中：假设图中有a[1]条长度为b[1]的边，有a[2]条长度为b[2]的边…a[k]条长度为b[k]的边。这a[k]条长度相同的边的排列顺序可以是任意的，这意味着顺序不影响结果(即长度为b[k]的边被遍历过后形成的连通块是相同的，即缩点后的图是相同的)，也就是说在长度为b[k]的边的集合里，有num[k]个子集，选任意一个子集得到的结果都是相同的。这样一来，最终答案就是num[1] * num[2] *...*num[last]。
-
-
 如何求num[k] ?
-将长度小于b[k]的边都处理完(并查集unite)后形成一个个集合，这一个个集合相当于新图中的一个个“点”。这a[k]条长度为b[k]的边会使这些“点”形成一个个新的连通块，将每一个连通块看做一个图，Gauss计算生成树个数，每个连通 -->
+将长度小于b[k]的边都处理完(并查集unite)后形成一个个集合，这一个个集合相当于新图中的一个个“点”。这a[k]条长度为b[k]的边会使这些“点”形成一个个新的连通块，将每一个连通块看做一个图，Gauss计算生成树个数，每个连通块的 -->
         <!-- </div> -->
 
         
@@ -484,8 +482,6 @@ ll Gauss()
 
 可证的事实：如果图G是一棵树，那么它的Kirchhoff矩阵的每一个n - 1阶主子式的行列式都是1。
 推理：如果图G包含X棵树，那么它的Kirchhoff矩阵的每一个n - 1阶主子式的行列式都包含X个1，即X
-
-
 另外解行列式采用高斯消元(转为上三角行列式)，与线性代数课上所学的方法有点差异，课上的方法直接了当，前面的行不变，处理后面的行，使得下三角逐渐变为全0(从左至右，从上到下)，但会出现小数。为了避免出现小数，采用如下方法：将“首 需处理 行”与“目标行”运算，使首非零元变0，然后交换两行。由于“首 需处理 行”首非零元总是 &gt;= “目标行”首非零元，因此不会出现小数。
 
 
@@ -498,7 +494,7 @@ using namespace std;
 const int N = 55;
 
 int n, m, K;
-ll a[N][N],  -->
+ll a[N][N], b[ -->
         <!-- </div> -->
 
         
@@ -613,6 +609,35 @@ using namespace std -->
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/2/"> </a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/4/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

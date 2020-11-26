@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -109,31 +109,26 @@
 			<h1>模拟、思维 SDNUOJ 1271</h1>
 			<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
 <p>大家都知道小宇是一个很纯洁的小孩！有一天他做梦了，梦见好多MM排着队随他挑。这些MM来自不同的国家，但也有同一个国家的，而他想尽量认识不同国家的MM。因此小宇想知道他可以认识到不同国家的MM区间长度的最大值，并且小宇想知道共有多少个国家的MM供他选择。</p>
-</blockquote>
-<blockquote>
 <p>题目来了：</p>
 </blockquote>
 <a id="more"></a>
 <blockquote>
 <p>现在有多个MM，给出她们所在的国家的标号（标号仅由1个小写字母组成，不同的字母表示不同的国家）。她们按顺序从左到右站成一排。小宇想找到一个区域，使他能够找到最多不同国家的MM，要求输出所有MM属于多少个不同的国家和可以认识不同国家MM的最大区间长度（该区间内没有来自同一个国家的MM）。比如在整个队伍内他按从左向右顺序找到了3个a国的MM，1个b国MM，1个c国MM。那么不同国家的最大数为3（a国、b国、c国），最大可以认识不同国家MM的区间长度为3（只须认识a国的最右面的一个人以及b、c国即可得到最大区间长度3）。假设在队伍内的人他都还没有认识。</p>
 </blockquote>
-<p>###Input</p>
-<blockquote>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
 <p>输入一行为一串由小写字母组成的MM队列，表示MM来自的不同国家。 </p>
 </blockquote>
-<p>###Output</p>
-<blockquote>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
 <p>输出数据为一行，包含两个整数，第一个整数所有供小宇选择的MM来自多少个国家。第二个整数代表小宇能找到不同国家MM的最大区间长度。 </p>
 </blockquote>
-<p>###Sample Input</p>
-<blockquote>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><blockquote>
 <p>aaabc</p>
 </blockquote>
 <h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><blockquote>
 <p>3 3</p>
 </blockquote>
-<p><strong>set</strong> 自带 _除重_  与 _排序_  ，这里利用除重特点。（PS: <strong>vector</strong> 有上限，<del>嗯，有上限</del> )</p>
-<pre><code class="c++">#include &lt;iostream&gt;
+<p><strong>set</strong> 自带 <em>除重</em>  与 <em>排序</em>  ，这里利用除重特点。（PS: <strong>vector</strong> 有上限，<del>嗯，有上限</del> )</p>
+<pre><code class="lang-c++">#include &lt;iostream&gt;
 #include &lt;set&gt;
 #include &lt;vector&gt;
 #include &lt;algorithm&gt;

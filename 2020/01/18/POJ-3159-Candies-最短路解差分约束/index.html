@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -121,11 +121,9 @@
 <p>spfa是对Bellman-Ford的优化，Bellman-Ford是在暴力求解最短路。</p>
 <p>假设：图只是一棵树，1起点，n终点，从终点向起点添边，则复杂度达到最大n*m,n-1次对m条边的松弛，每次对m条边松弛只有一次是有用的！</p>
 <p>而spfa是以松弛过的点为基去松弛，保证了大部分松弛都是有效的，至少是可能的</p>
-</blockquote>
-<blockquote>
 <p>而spfa的实现，按理说用队列还是栈没区别，但事实是：用栈比用队列快？？？而且前提是没有负环？？？</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;queue&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;queue&gt;
 #include &lt;stack&gt;
 #include &lt;cstdio&gt;
 #include &lt;vector&gt;

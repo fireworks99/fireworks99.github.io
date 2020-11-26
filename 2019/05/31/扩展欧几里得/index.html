@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -111,7 +111,7 @@
 <p>扩展欧几里德算法是用来在已知a, b求解一组x，y，使它们满足贝祖等式： ax+by = gcd(a, b) =d（解一定存在，根据数论中的相关定理）。扩展欧几里德常用在求解模线性方程及方程组中。 </p>
 </blockquote>
 <a id="more"></a>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="c++">int extgcd(int a, int b,int &amp; x, int &amp; y)
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">int extgcd(int a, int b,int &amp; x, int &amp; y)
 {
     int d = a;
     if(b != 0)
@@ -135,8 +135,6 @@
 <p>与ax1 + by1 = gcd(a, b) 联立，我们很容易得：</p>
 <blockquote>
 <p>x1 = y2,          y1 = x2 - ( a  /  b ) y2 ;</p>
-</blockquote>
-<blockquote>
 <p>y2为后来的第四维值，要把它赋给x1（原来第三维值）</p>
 <p>才有了<code>extgcd( , , y, )</code></p>
 <p>而<code>extgcd( , , , x)</code>这里把后来的第三维值（x2）赋给了原来的第四维值（y1）</p>

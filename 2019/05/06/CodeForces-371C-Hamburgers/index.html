@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -114,15 +114,11 @@
 <p><strong><a href="http://codeforces.com/problemset/problem/371/C" style="color:violet;" target="_blank" rel="noopener">题目链接</a></strong></p>
 <h3 id="二分"><a href="#二分" class="headerlink" title="二分"></a>二分</h3><blockquote>
 <p>二分实质：对于暴力枚举的优化</p>
-</blockquote>
-<blockquote>
 <p>为什么会想到用二分？</p>
 <ol>
 <li>若想枚举出所有情况：太多且易遗漏</li>
 <li>已知答案必在某个固定区间里（此时遍历耗时则用二分优化）</li>
 </ol>
-</blockquote>
-<blockquote>
 <p>明确目的：</p>
 <p>求</p>
 <ol>
@@ -131,8 +127,6 @@
 <li>最大化最小值？</li>
 <li>最小化最大值？</li>
 </ol>
-</blockquote>
-<blockquote>
 <p>三要素：</p>
 <ol>
 <li>下界：为了方便，可适当向下调整（求最大值时下界必须<strong>实际</strong>）</li>
@@ -140,7 +134,7 @@
 <li>bool judge（ll ans）：检查资金是否足够</li>
 </ol>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 using namespace std;
@@ -200,7 +194,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="改进：调整上下界"><a href="#改进：调整上下界" class="headerlink" title="改进：调整上下界"></a>改进：调整上下界</h3><pre><code class="c++">long long one = B * pb + S * ps + C * pc;
+<h3 id="改进：调整上下界"><a href="#改进：调整上下界" class="headerlink" title="改进：调整上下界"></a>改进：调整上下界</h3><pre><code class="lang-c++">long long one = B * pb + S * ps + C * pc;
     long long l =  money / one;
     long long r =  money / one;
     if(B == 0)

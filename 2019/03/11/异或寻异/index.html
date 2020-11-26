@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -113,7 +113,7 @@
 <p>a ^ a = 0</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="给出n个数字，-有一个数字只出现奇数次，其余出现偶数次，找出这个数字"><a href="#给出n个数字，-有一个数字只出现奇数次，其余出现偶数次，找出这个数字" class="headerlink" title="给出n个数字， 有一个数字只出现奇数次，其余出现偶数次，找出这个数字"></a>给出n个数字， 有一个数字只出现奇数次，其余出现偶数次，找出这个数字</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="给出n个数字，-有一个数字只出现奇数次，其余出现偶数次，找出这个数字"><a href="#给出n个数字，-有一个数字只出现奇数次，其余出现偶数次，找出这个数字" class="headerlink" title="给出n个数字， 有一个数字只出现奇数次，其余出现偶数次，找出这个数字"></a>给出n个数字， 有一个数字只出现奇数次，其余出现偶数次，找出这个数字</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 #include &lt;cstring&gt;
 #include &lt;cmath&gt;
@@ -141,7 +141,7 @@ int main()
 }
 </code></pre>
 <h3 id="给出n个数字，有两个数字只出现奇数次，其余出现偶数次，找出这两个数字"><a href="#给出n个数字，有两个数字只出现奇数次，其余出现偶数次，找出这两个数字" class="headerlink" title="给出n个数字，有两个数字只出现奇数次，其余出现偶数次，找出这两个数字"></a>给出n个数字，有两个数字只出现奇数次，其余出现偶数次，找出这两个数字</h3><p><strong>更多解析</strong> <a href="https://www.jianshu.com/p/cb400b455772" target="_blank" rel="noopener">https://www.jianshu.com/p/cb400b455772</a></p>
-<pre><code class="c++">#include &lt;cstdio&gt;
+<pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 using namespace std;
@@ -191,6 +191,7 @@ int main()
 <p>所以 x ^ a, x ^ b, x ^ c 都不为0，所以f(x ^ a), f(x ^ b), f(x ^ c)都不为0，</p>
 <p>那么 y = f(x ^ a) ^ f(x ^ b) ^ f(x ^ c) 也不为0 </p>
 <p>所以 y 的二进制至少有一位是1，假设其最低位1在M位上</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -227,6 +228,7 @@ int main()
 </tr>
 </tbody>
 </table>
+</div>
 <p>有以下两种情况：</p>
 <p>1.<strong>f(x ^ a),f(x ^ b),f(x ^ c)三个式子中只有一个，其第M位是1</strong></p>
 <p>2.三个式子第M位皆为1（倘若仅两个式子第M位为1，y的第M位是0）</p>
@@ -235,7 +237,7 @@ int main()
 <p>(x ^ a) ^ (x ^ b) ^ (x ^ c) = x ^ x ^ x ^ (a ^ b ^ c) = x ^ x ^ x ^ x第M位为0</p>
 </blockquote>
 <p><strong>根据结论 <em>x ^ a, x ^ b, x ^ c三个式子只有一个，其第M位为0</em> 找到一个数字，再按前面的方法找另两个</strong></p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;vector&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;

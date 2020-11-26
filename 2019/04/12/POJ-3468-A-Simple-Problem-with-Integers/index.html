@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -122,7 +122,7 @@
 <p>②(end + 1) <em> query(d, end) - query(di, end) - {[(b - 1) + 1] </em> query(d, b - 1) - query(di, b - 1)}</p>
 </blockquote>
 <p><strong><a href="https://blog.csdn.net/non_cease/article/details/7435052" style="color:violet;" target="_blank" rel="noopener">分析参考</a></strong></p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
@@ -207,7 +207,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="线段树（分清存和or存最值）"><a href="#线段树（分清存和or存最值）" class="headerlink" title="线段树（分清存和or存最值）"></a>线段树（分清存和or存最值）</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="线段树（分清存和or存最值）"><a href="#线段树（分清存和or存最值）" class="headerlink" title="线段树（分清存和or存最值）"></a>线段树（分清存和or存最值）</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
@@ -316,7 +316,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h4 id="线段树update函数优雅写法"><a href="#线段树update函数优雅写法" class="headerlink" title="线段树update函数优雅写法"></a>线段树update函数优雅写法</h4><pre><code class="c++">void update(int num, int l, int r, int tot)
+<h4 id="线段树update函数优雅写法"><a href="#线段树update函数优雅写法" class="headerlink" title="线段树update函数优雅写法"></a>线段树update函数优雅写法</h4><pre><code class="lang-c++">void update(int num, int l, int r, int tot)
 {
     if(a[num]. L == l &amp;&amp; a[num].R == r)
     {
@@ -344,7 +344,7 @@ int main()
     a[num].val = a[num &lt;&lt; 1].val + a[num &lt;&lt; 1 | 1].val;
 }
 </code></pre>
-<h4 id="线段树update函数流氓写法"><a href="#线段树update函数流氓写法" class="headerlink" title="线段树update函数流氓写法"></a>线段树update函数流氓写法</h4><pre><code class="c++">void update(int num, int l, int r, int tot)
+<h4 id="线段树update函数流氓写法"><a href="#线段树update函数流氓写法" class="headerlink" title="线段树update函数流氓写法"></a>线段树update函数流氓写法</h4><pre><code class="lang-c++">void update(int num, int l, int r, int tot)
 {
     if(a[num].L &gt; r || a[num].R &lt; l)
         return ;

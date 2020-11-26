@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -111,14 +111,14 @@
 <p>Learn about git(VCS)</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="1-建Git仓库"><a href="#1-建Git仓库" class="headerlink" title="1.建Git仓库"></a>1.建Git仓库</h1><h2 id="1-把已有的项目纳入Git管理"><a href="#1-把已有的项目纳入Git管理" class="headerlink" title="1.把已有的项目纳入Git管理"></a>1.把已有的项目纳入Git管理</h2><pre><code class="shell">$ cd 项目代码所在文件夹
+<h1 id="1-建Git仓库"><a href="#1-建Git仓库" class="headerlink" title="1.建Git仓库"></a>1.建Git仓库</h1><h2 id="1-把已有的项目纳入Git管理"><a href="#1-把已有的项目纳入Git管理" class="headerlink" title="1.把已有的项目纳入Git管理"></a>1.把已有的项目纳入Git管理</h2><pre><code class="lang-shell">$ cd 项目代码所在文件夹
 $ git init
 </code></pre>
-<h2 id="2-新建的项目直接用Git管理"><a href="#2-新建的项目直接用Git管理" class="headerlink" title="2.新建的项目直接用Git管理"></a>2.新建的项目直接用Git管理</h2><pre><code class="shell">$ cd 某个文件夹
+<h2 id="2-新建的项目直接用Git管理"><a href="#2-新建的项目直接用Git管理" class="headerlink" title="2.新建的项目直接用Git管理"></a>2.新建的项目直接用Git管理</h2><pre><code class="lang-shell">$ cd 某个文件夹
 $ git init your_project #会在当前路径下创建和项目名称同名的文件夹
 $ cd your_project
 </code></pre>
-<h3 id="第1种方案的结果"><a href="#第1种方案的结果" class="headerlink" title="第1种方案的结果"></a>第1种方案的结果</h3><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit
+<h3 id="第1种方案的结果"><a href="#第1种方案的结果" class="headerlink" title="第1种方案的结果"></a>第1种方案的结果</h3><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit
 $ cd Project_code_is_there/
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there
@@ -128,20 +128,20 @@ Initialized empty Git repository in E:/FrontEnd/LearnGit/Project_code_is_there/.
 <blockquote>
 <p>初始化后有一个隐藏文件 <code>.git</code></p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ ls -al
 total 4
 drwxr-xr-x 1 sj 197121 0 10月  6 21:11 ./
 drwxr-xr-x 1 sj 197121 0 10月  6 21:08 ../
 drwxr-xr-x 1 sj 197121 0 10月  6 21:11 .git/
 </code></pre>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git config --global --list
 user.name=fireworks99
 user.email=2639237361@qq.com
 core.autocrlf=false
 </code></pre>
-<h3 id="local-config与global-config不同时，local-config优先级更高。"><a href="#local-config与global-config不同时，local-config优先级更高。" class="headerlink" title="local config与global config不同时，local config优先级更高。"></a>local config与global config不同时，local config优先级更高。</h3><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<h3 id="local-config与global-config不同时，local-config优先级更高。"><a href="#local-config与global-config不同时，local-config优先级更高。" class="headerlink" title="local config与global config不同时，local config优先级更高。"></a>local config与global config不同时，local config优先级更高。</h3><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git config --global --list
 user.name=fireworks99
 user.email=2639237361@qq.com
@@ -239,7 +239,7 @@ Date:   Tue Oct 6 21:33:58 2020 +0800
 <blockquote>
 <p>git工作方式：在工作目录中修改的东西，最好通过git add先提交到暂存区，如果差不多了再通过git commit进行统一的提交。</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ cp ../virtual/index.html index.html
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
@@ -561,7 +561,7 @@ Date:   Tue Oct 6 21:33:58 2020 +0800
 
     Add readme
 </code></pre>
-<h1 id="3-Git-文件重命名"><a href="#3-Git-文件重命名" class="headerlink" title="3.Git 文件重命名"></a>3.Git 文件重命名</h1><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<h1 id="3-Git-文件重命名"><a href="#3-Git-文件重命名" class="headerlink" title="3.Git 文件重命名"></a>3.Git 文件重命名</h1><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ mv readme.md readme
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
@@ -723,7 +723,7 @@ Date:   Tue Oct 6 21:33:58 2020 +0800
 <p>有时候，进行了错误的提交，但是还没有push到远程分支，想要撤销本次提交，可以使用git reset –-soft/hard命令。<br>1、二者区别：</p>
 <p>git reset –-soft：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可；<br>git reset -–hard：彻底回退到某个版本，本地的源码也会变为上一个版本的内容，撤销的commit中所包含的更改被冲掉；</p>
 </blockquote>
-<h1 id="4-git-log的使用"><a href="#4-git-log的使用" class="headerlink" title="4.git log的使用"></a>4.git log的使用</h1><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<h1 id="4-git-log的使用"><a href="#4-git-log的使用" class="headerlink" title="4.git log的使用"></a>4.git log的使用</h1><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git log --oneline
 d7cfccc (HEAD -&gt; master) Move readme.md to readme
 ddd14f3 Add js
@@ -874,9 +874,8 @@ $ git log --oneline --all -n4 --graph
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (temp)
 $ gitk
 # 图形界面查看版本历史
-
 </code></pre>
-<h1 id="5-探索-git目录"><a href="#5-探索-git目录" class="headerlink" title="5.探索.git目录"></a>5.探索.git目录</h1><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<h1 id="5-探索-git目录"><a href="#5-探索-git目录" class="headerlink" title="5.探索.git目录"></a>5.探索.git目录</h1><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ ls -al
 total 12
 drwxr-xr-x 1 sj 197121    0 10月  7 16:44 ./
@@ -1061,13 +1060,10 @@ $ git cat-file -p 1378caffa8c4f214e537299288bc08d3a1defaa3
 040000 tree 978a2b1ba7c0f07f9758f234b0b7959fe31a2e93    js
 100644 blob e69de29bb2d1d6434b8b29ae775ad8c2e48c5391    readme
 040000 tree deca7330feed3ffb6a545bc41ca1b36a9660b3b6    styles
-
-
-
 </code></pre>
 <h1 id="6-commit-tree-blob之间的关系"><a href="#6-commit-tree-blob之间的关系" class="headerlink" title="6.commit/tree/blob之间的关系"></a>6.commit/tree/blob之间的关系</h1><p><img src="/2020/10/09/Git/2.png" alt="relationship"></p>
 <h1 id="7-小练习：数一数tree的个数"><a href="#7-小练习：数一数tree的个数" class="headerlink" title="7.小练习：数一数tree的个数"></a>7.小练习：数一数tree的个数</h1><p><img src="/2020/10/09/Git/3.png" alt="numbers of tree"></p>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit
 $ pwd
 /e/FrontEnd/LearnGit
 
@@ -1198,27 +1194,24 @@ author fireworks99 &lt;2639237361@qq.com&gt; 1602068156 +0800
 committer fireworks99 &lt;2639237361@qq.com&gt; 1602068156 +0800
 
 Add readme
-
-
 </code></pre>
 <h1 id="8-分离头指针"><a href="#8-分离头指针" class="headerlink" title="8.分离头指针"></a>8.分离头指针</h1><blockquote>
 <p>分离头指针：(头指针HEAD未指向一个有名分支，或者说指向一个临时无名分支)</p>
 <p>就像java一样，一个引用指向一个new出来的对象，这个对象只被这一个引用所指，当这个引用指向其他对象时，这个对象就被java的垃圾回收机制回收了。</p>
 <p>所以当头指针指回有名分支时，要考虑要不要给刚才的无名分支起名字，起名字后就不会被回收了。</p>
 </blockquote>
-<pre><code class="shell">$git checkout master
+<pre><code class="lang-shell">$git checkout master
 Warning: you are Leaving 1 commit behind, not connected to anyof your branches:
     3d473ld Backgroud to green
 If you want to keep it by creating a new branch, this may be a good time to do so with:
     git branch &lt;new-branch-name&gt; 3d4731d
 Switched to branch &#39;master&#39;
-
 </code></pre>
 <blockquote>
 <p>头指针指向某个分支（中的某次提交——commit），所以本质上 HEAD-&gt;commit</p>
 </blockquote>
 <h1 id="9-删除分支"><a href="#9-删除分支" class="headerlink" title="9.删除分支"></a>9.删除分支</h1><p><code>$ git branch -d branchName</code>若不行且风险可控<code>$ git branch -D branchName</code></p>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/watch_git_objects (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/watch_git_objects (master)
 $ git branch -av
 * master c92b8bb Add readme
 
@@ -1249,13 +1242,11 @@ Switched to branch &#39;master&#39;
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/watch_git_objects (master)
 $ git branch -d temporary
 Deleted branch temporary (was c92b8bb).
-
-
 </code></pre>
 <h1 id="10-修改commit的message"><a href="#10-修改commit的message" class="headerlink" title="10.修改commit的message"></a>10.修改commit的message</h1><blockquote>
 <p>1.修改最新commit的message</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/watch_git_objects (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/watch_git_objects (master)
 $ git log -1
 commit c92b8bb5b4c6a713eeda0150d13c7e3c192830f9 (HEAD -&gt; master)
 Author: fireworks99 &lt;2639237361@qq.com&gt;
@@ -1277,13 +1268,11 @@ Author: fireworks99 &lt;2639237361@qq.com&gt;
 Date:   Wed Oct 7 18:55:56 2020 +0800
 
     Add file readme
-
-
 </code></pre>
 <blockquote>
 <p>2.修改之前commit的message</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git branch -av
 * master d7cfccc Move readme.md to readme
   temp   b9229fb Add modefied
@@ -1342,8 +1331,6 @@ $ git log -n3 --graph
 | Date:   Tue Oct 6 22:06:44 2020 +0800
 |
 |     Add style.css and modified index.html
-
-
 </code></pre>
 <p><img src="/2020/10/09/Git/4.png" alt="modify message"></p>
 <p><img src="/2020/10/09/Git/5.png" alt="modify message"></p>
@@ -1351,7 +1338,7 @@ $ git log -n3 --graph
 <blockquote>
 <p>上述为交互页面</p>
 </blockquote>
-<h1 id="11-合并连续多个commit为一个"><a href="#11-合并连续多个commit为一个" class="headerlink" title="11.合并连续多个commit为一个"></a>11.合并连续多个commit为一个</h1><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<h1 id="11-合并连续多个commit为一个"><a href="#11-合并连续多个commit为一个" class="headerlink" title="11.合并连续多个commit为一个"></a>11.合并连续多个commit为一个</h1><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git branch -av
 * master 9ee801d Move readme.md to readme
   temp   b9229fb Add modefied
@@ -1426,9 +1413,6 @@ $ git log --graph
   Date:   Tue Oct 6 21:33:58 2020 +0800
 
       Add readme
-
-
-
 </code></pre>
 <p><img src="/2020/10/09/Git/7.png" alt="merge"></p>
 <blockquote>
@@ -1436,7 +1420,7 @@ $ git log --graph
 </blockquote>
 <p><img src="/2020/10/09/Git/8.png" alt="merge"></p>
 <p><img src="/2020/10/09/Git/9.png" alt="merge"></p>
-<h1 id="12-合并不连续多个commit"><a href="#12-合并不连续多个commit" class="headerlink" title="12.合并不连续多个commit"></a>12.合并不连续多个commit</h1><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<h1 id="12-合并不连续多个commit"><a href="#12-合并不连续多个commit" class="headerlink" title="12.合并不连续多个commit"></a>12.合并不连续多个commit</h1><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git log --graph
 * commit c1cf8ef864de629cc9b77353dbe683b575563155 (HEAD -&gt; master)
 | Author: fire &lt;zhaobaole520@gmail.com&gt;
@@ -1527,16 +1511,13 @@ $ git log --graph
       Add readme
 
       Move readme.md to readme
-
-
-
 </code></pre>
 <p><img src="/2020/10/09/Git/10.png" alt="merge"></p>
 <p><img src="/2020/10/09/Git/11.png" alt="merge"></p>
 <h1 id="13-比较暂存区和HEAD两者所含文件的差异"><a href="#13-比较暂存区和HEAD两者所含文件的差异" class="headerlink" title="13.比较暂存区和HEAD两者所含文件的差异"></a>13.比较暂存区和HEAD两者所含文件的差异</h1><blockquote>
 <p>命令：<code>$ git diff --cached</code>比较 <strong>暂存区</strong>与<strong>HEAD所含文件</strong>的差异</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git status
 On branch master
 nothing to commit, working tree clean
@@ -1619,12 +1600,11 @@ $ git diff --cached
 
 # 现在已经无差异
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
-
 </code></pre>
 <h1 id="14-比较工作区与暂存区两者所含文件的差异"><a href="#14-比较工作区与暂存区两者所含文件的差异" class="headerlink" title="14.比较工作区与暂存区两者所含文件的差异"></a>14.比较工作区与暂存区两者所含文件的差异</h1><blockquote>
 <p>命令<code>git diff</code>后可跟<code>-- filename1 filename2 ...</code>查看具体文件的差异</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ ls -al
 total 12
 drwxr-xr-x 1 sj 197121    0 10月  8 08:58 ./
@@ -1669,9 +1649,8 @@ index 5c6165b..6769d56 100644
 +}
 
 # index.html修改后添加到暂存区了，所以两者在index.html上无差异，在css文件上有差异
-
 </code></pre>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git diff -- readme
 
 # 两者在readme文件上无差异
@@ -1720,8 +1699,6 @@ index 5c6165b..6769d56 100644
 -}
 \ No newline at end of file
 +}
-
-
 </code></pre>
 <h1 id="15-Git的工作方式-理解二"><a href="#15-Git的工作方式-理解二" class="headerlink" title="15.Git的工作方式(理解二)"></a>15.Git的工作方式(理解二)</h1><p><img src="/2020/10/09/Git/Git.png" alt="Git"></p>
 <blockquote>
@@ -1740,17 +1717,16 @@ index 5c6165b..6769d56 100644
 <li>当对工作区修改（或新增）的文件执行 <strong>git add</strong> 命令时，暂存区的目录树被更新，同时工作区修改（或新增）的文件内容被写入到对象库中的一个新的对象中，而该对象的ID被记录在暂存区的文件索引中。</li>
 <li>当执行提交操作（git commit）时，暂存区的目录树写到版本库（对象库）中，master 分支会做相应的更新。即 master 指向的目录树就是提交时暂存区的目录树。</li>
 <li>当执行 <strong>git reset HEAD</strong> 命令时，暂存区的目录树会被重写，被 master 分支指向的目录树所替换，但是工作区不受影响。</li>
-<li>当执行 <strong>git rm –cached \&lt;file></strong> 命令时，会直接从暂存区删除文件，工作区则不做出改变。</li>
-<li>当执行 <strong>git checkout .</strong> 或者 <strong>git checkout – \&lt;file></strong> 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。</li>
-<li>当执行 <strong>git checkout HEAD .</strong> 或者 <strong>git checkout HEAD \&lt;file></strong> 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动。</li>
+<li>当执行 <strong>git rm —cached \<file\></file\></strong> 命令时，会直接从暂存区删除文件，工作区则不做出改变。</li>
+<li>当执行 <strong>git checkout .</strong> 或者 <strong>git checkout — \<file\></file\></strong> 命令时，会用暂存区全部或指定的文件替换工作区的文件。这个操作很危险，会清除工作区中未添加到暂存区的改动。</li>
+<li>当执行 <strong>git checkout HEAD .</strong> 或者 <strong>git checkout HEAD \<file\></file\></strong> 命令时，会用 HEAD 指向的 master 分支中的全部或者部分文件替换暂存区和以及工作区中的文件。这个命令也是极具危险性的，因为不但会清除工作区中未提交的改动，也会清除暂存区中未提交的改动。</li>
 </ul>
 <h1 id="17-Git-clone项目"><a href="#17-Git-clone项目" class="headerlink" title="17.Git clone项目"></a>17.Git clone项目</h1><blockquote>
 <p>git clone 时，可以用不同的协议，包括 ssh, git, https 等，其中最常用的是 ssh，因为速度较快，还可以配置公钥免输入密码。各种写法如下：</p>
 </blockquote>
-<pre><code class="shell">$ git clone git@github.com:fsliurujie/test.git         --SSH协议
+<pre><code class="lang-shell">$ git clone git@github.com:fsliurujie/test.git         --SSH协议
 $ git clone git://github.com/fsliurujie/test.git          --GIT协议
 $ git clone https://github.com/fsliurujie/test.git      --HTTPS协议
-
 </code></pre>
 <h1 id="18-Git-基本操作"><a href="#18-Git-基本操作" class="headerlink" title="18.Git 基本操作"></a>18.Git 基本操作</h1><blockquote>
 <p>Git 的工作就是创建和保存你项目的快照及与之后的快照进行对比。</p>
@@ -1769,6 +1745,7 @@ $ git clone https://github.com/fsliurujie/test.git      --HTTPS协议
 </li>
 </ul>
 <h3 id="创建仓库命令"><a href="#创建仓库命令" class="headerlink" title="创建仓库命令"></a>创建仓库命令</h3><p>下表列出了 git 创建仓库的命令：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1787,8 +1764,10 @@ $ git clone https://github.com/fsliurujie/test.git      --HTTPS协议
 </tr>
 </tbody>
 </table>
+</div>
 <h3 id="提交与修改"><a href="#提交与修改" class="headerlink" title="提交与修改"></a>提交与修改</h3><p>Git 的工作就是创建和保存你的项目的快照及与之后的快照进行对比。</p>
 <p>下表列出了有关创建与提交你的项目的快照的命令：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -1827,7 +1806,9 @@ $ git clone https://github.com/fsliurujie/test.git      --HTTPS协议
 </tr>
 </tbody>
 </table>
-<h3 id="提交日志"><a href="#提交日志" class="headerlink" title="提交日志"></a>提交日志</h3><table>
+</div>
+<h3 id="提交日志"><a href="#提交日志" class="headerlink" title="提交日志"></a>提交日志</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th style="text-align:left">命令</th>
@@ -1845,7 +1826,9 @@ $ git clone https://github.com/fsliurujie/test.git      --HTTPS协议
 </tr>
 </tbody>
 </table>
-<h3 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h3><table>
+</div>
+<h3 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th style="text-align:left">命令</th>
@@ -1871,52 +1854,46 @@ $ git clone https://github.com/fsliurujie/test.git      --HTTPS协议
 </tr>
 </tbody>
 </table>
+</div>
 <h1 id="19-Git-分支管理"><a href="#19-Git-分支管理" class="headerlink" title="19.Git 分支管理"></a>19.Git 分支管理</h1><p>几乎每一种版本控制系统都以某种形式支持分支。使用分支意味着你可以从开发主线上分离开来，然后在不影响主线的同时继续工作。</p>
 <p>有人把 Git 的分支模型称为<strong>必杀技特性</strong>，而正是因为它，将 <strong>Git</strong> 从版本控制系统家族里区分出来。</p>
 <p>创建分支命令：</p>
-<pre><code class="shell">git branch (branchname)
-
+<pre><code class="lang-shell">git branch (branchname)
 </code></pre>
 <p>切换分支命令:</p>
-<pre><code class="shell">git checkout (branchname)
-
+<pre><code class="lang-shell">git checkout (branchname)
 </code></pre>
 <blockquote>
 <p>当你切换分支的时候，Git 会用<strong>该分支的最后提交的快照</strong>替换你的<strong>工作目录</strong>的内容！ 所以多个分支不需要多个目录。</p>
 </blockquote>
 <p>合并分支命令:</p>
-<pre><code class="shell">git merge 
-
+<pre><code class="lang-shell">git merge
 </code></pre>
 <p>你可以多次合并到统一分支， 也可以选择在合并之后直接删除被并入的分支。</p>
 <p>删除分支命令：</p>
-<pre><code class="shell">git branch -d branchName
-
+<pre><code class="lang-shell">git branch -d branchName
 </code></pre>
 <h1 id="20-Git-查看提交历史"><a href="#20-Git-查看提交历史" class="headerlink" title="20.Git 查看提交历史"></a>20.Git 查看提交历史</h1><p>Git 提交历史一般常用两个命令：</p>
 <ul>
 <li><strong>git log</strong> - 查看历史提交记录。</li>
-<li><strong>git blame \&lt;file></strong> - 以列表形式查看指定文件的历史修改记录。</li>
+<li><strong>git blame \<file\></file\></strong> - 以列表形式查看指定文件的历史修改记录。</li>
 </ul>
 <h3 id="git-blame"><a href="#git-blame" class="headerlink" title="git blame"></a>git blame</h3><p>如果要查看指定文件的修改记录可以使用 git blame 命令，格式如下：</p>
-<pre><code class="shell">$ git blame &lt;file&gt;
-
+<pre><code class="lang-shell">$ git blame &lt;file&gt;
 </code></pre>
 <p>git blame 命令是以列表形式显示修改记录，如下实例：</p>
-<pre><code class="shell">$ git blame README 
+<pre><code class="lang-shell">$ git blame README 
 ^d2097aa (tianqixin 2020-08-25 14:59:25 +0800 1) # Runoob Git 测试
-db9315b0 (runoob    2020-08-25 16:00:23 +0800 2) # 菜鸟教程 
-
+db9315b0 (runoob    2020-08-25 16:00:23 +0800 2) # 菜鸟教程
 </code></pre>
 <h1 id="21-Git-标签"><a href="#21-Git-标签" class="headerlink" title="21.Git 标签"></a>21.Git 标签</h1><p>如果你达到一个重要的阶段，并希望永远记住那个特别的提交快照，你可以使用 git tag 给它打上标签。</p>
 <p>比如说，我们想为我们的 runoob 项目发布一个”1.0”版本。 我们可以用 git tag -a v1.0 命令给最新一次提交打上（HEAD）”v1.0”的标签。</p>
 <p>-a 选项意为”创建一个带注解的标签”。 不用 -a 选项也可以执行的，但它不会记录这标签是啥时候打的，谁打的，也不会让你添加个标签的注解。 我推荐一直创建带注解的标签。</p>
-<pre><code class="shell">$ git tag -a v1.0 
-
+<pre><code class="lang-shell">$ git tag -a v1.0
 </code></pre>
 <p>当你执行 git tag -a 命令时，Git 会打开你的编辑器，让你写一句标签注解，就像你给提交写注解一样。</p>
-<p>现在，注意当我们执行 git log –decorate 时，我们可以看到我们的标签了：</p>
-<pre><code class="shell">*   d5e9fc2 (HEAD -&gt; master) Merge branch &#39;change_site&#39;
+<p>现在，注意当我们执行 git log —decorate 时，我们可以看到我们的标签了：</p>
+<pre><code class="lang-shell">*   d5e9fc2 (HEAD -&gt; master) Merge branch &#39;change_site&#39;
 |\  
 | * 7774248 (change_site) changed the runoob.php
 * | c68142b 修改代码
@@ -1924,11 +1901,10 @@ db9315b0 (runoob    2020-08-25 16:00:23 +0800 2) # 菜鸟教程
 * c1501a2 removed test.txt、add runoob.php
 * 3e92c19 add test.txt
 * 3b58100 第一次版本提交
-
 </code></pre>
 <p>如果我们忘了给某个提交打标签，又将它发布了，我们可以给它追加标签。</p>
 <p>例如，假设我们发布了提交 85fc7e7(上面实例最后一行)，但是那时候忘了给它打标签。 我们现在也可以：</p>
-<pre><code class="shell">$ git tag -a v0.9 85fc7e7
+<pre><code class="lang-shell">$ git tag -a v0.9 85fc7e7
 $ git log --oneline --decorate --graph
 *   d5e9fc2 (HEAD -&gt; master) Merge branch &#39;change_site&#39;
 |\  
@@ -1938,21 +1914,17 @@ $ git log --oneline --decorate --graph
 * c1501a2 removed test.txt、add runoob.php
 * 3e92c19 add test.txt
 * 3b58100 (tag: v0.9) 第一次版本提交
-
 </code></pre>
 <p>如果我们要查看所有标签可以使用以下命令：</p>
-<pre><code class="shell">$ git tag
+<pre><code class="lang-shell">$ git tag
 v0.9
 v1.0
-
 </code></pre>
 <p>指定标签信息命令：</p>
-<pre><code class="shell">git tag -a &lt;tagname&gt; -m &quot;runoob.com标签&quot;
-
+<pre><code class="lang-shell">git tag -a &lt;tagname&gt; -m &quot;runoob.com标签&quot;
 </code></pre>
 <p>PGP签名标签命令：</p>
-<pre><code class="shell">git tag -s &lt;tagname&gt; -m &quot;runoob.com标签&quot;
-
+<pre><code class="lang-shell">git tag -s &lt;tagname&gt; -m &quot;runoob.com标签&quot;
 </code></pre>
 <p>发布一个版本时，我们通常先在版本库中打一个标签（tag），这样就唯一确定了打标签时刻的版本。将来无论什么时候，取某个标签的版本，就是把那个打标签的时刻的历史版本取出来。</p>
 <p>所以，标签也是版本库的一个快照。</p>
@@ -1969,38 +1941,31 @@ v1.0
 <p>同大多数 VCS 一样，Git 也可以对某一时间点上的版本打上标签。人们在发布某个软件版本（比如 v1.0 等等）的时候，经常这么做。</p>
 <h1 id="22-git-reset-修改暂存区"><a href="#22-git-reset-修改暂存区" class="headerlink" title="22.git reset(修改暂存区)"></a>22.git reset(修改暂存区)</h1><p>git reset 命令用于回退版本，可以指定退回某一次提交的版本。</p>
 <p>git reset 命令语法格式如下：</p>
-<pre><code class="shell">git reset [--soft | --mixed | --hard] [HEAD]
-
+<pre><code class="lang-shell">git reset [--soft | --mixed | --hard] [HEAD]
 </code></pre>
-<p><strong>–mixed</strong> 为默认，可以不用带该参数，用于重置暂存区的文件与上一次的提交(commit)保持一致，工作区文件内容保持不变。</p>
-<pre><code class="shell">git reset  [HEAD] [-- file1 file2 ...]
-
+<p><strong>—mixed</strong> 为默认，可以不用带该参数，用于重置暂存区的文件与上一次的提交(commit)保持一致，工作区文件内容保持不变。</p>
+<pre><code class="lang-shell">git reset  [HEAD] [-- file1 file2 ...]
 </code></pre>
 <p>实例：</p>
-<pre><code class="shell">$ git reset HEAD^            # 回退所有内容到上一个版本  
+<pre><code class="lang-shell">$ git reset HEAD^            # 回退所有内容到上一个版本  
 $ git reset HEAD^ hello.php  # 回退 hello.php 文件的版本到上一个版本  
 $ git  reset  052e           # 回退到指定版本
-
 </code></pre>
-<p><strong>–soft</strong> 参数用于回退到某个版本：</p>
-<pre><code class="shell">git reset --soft HEAD
-
+<p><strong>—soft</strong> 参数用于回退到某个版本：</p>
+<pre><code class="lang-shell">git reset --soft HEAD
 </code></pre>
 <p>实例：</p>
-<pre><code class="shell"> $ git reset --soft HEAD~3 # 回退上上上一个版本
-
+<pre><code class="lang-shell"> $ git reset --soft HEAD~3 # 回退上上上一个版本
 </code></pre>
-<p><strong>–hard</strong> 参数撤销工作区中所有未提交的修改内容，将暂存区与工作区都回到上一次版本，并删除之前的所有信息提交：</p>
-<pre><code class="shell">git reset --hard HEAD
-
+<p><strong>—hard</strong> 参数撤销工作区中所有未提交的修改内容，将暂存区与工作区都回到上一次版本，并删除之前的所有信息提交：</p>
+<pre><code class="lang-shell">git reset --hard HEAD
 </code></pre>
 <p>实例：</p>
-<pre><code class="shell">$ git reset –hard HEAD~3  # 回退上上上一个版本
+<pre><code class="lang-shell">$ git reset –hard HEAD~3  # 回退上上上一个版本
 
 $ git reset –hard bae128  # 回退到某个版本回退点之前的所有信息。(删除之前的所有commit)
 
-$ git reset --hard origin/master    # 将本地的状态回退到和远程的一样 
-
+$ git reset --hard origin/master    # 将本地的状态回退到和远程的一样
 </code></pre>
 <p><strong>注意：</strong>谨慎使用 –hard 参数，它会删除回退点之前的所有信息。</p>
 <p><strong>HEAD 说明：</strong></p>
@@ -2025,7 +1990,7 @@ $ git reset --hard origin/master    # 将本地的状态回退到和远程的一
 <li>HEAD^3 上上上一个版本</li>
 <li>以此类推…</li>
 </ul>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ vi readme
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
@@ -2082,14 +2047,13 @@ sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git diff --cached
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
-
 </code></pre>
 <blockquote>
 <p>简而言之，执行 <code>git reset HEAD</code> 以取消</p>
 <p><strong>之前 git add 添加，但不希望包含在下一提交快照中</strong></p>
 <p>的缓存。</p>
 </blockquote>
-<h1 id="23-git-checkout-修改工作区"><a href="#23-git-checkout-修改工作区" class="headerlink" title="23.git checkout(修改工作区)"></a>23.git checkout(修改工作区)</h1><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<h1 id="23-git-checkout-修改工作区"><a href="#23-git-checkout-修改工作区" class="headerlink" title="23.git checkout(修改工作区)"></a>23.git checkout(修改工作区)</h1><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git status
 On branch master
 Changes not staged for commit:
@@ -2157,14 +2121,11 @@ $ git checkout -- index.html
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git diff index.html
-
-
-
 </code></pre>
 <blockquote>
 <p>修改文件是在<strong>工作区</strong>修改，<strong>暂存区</strong>就是一个临时的存储空间，存储修改过的较为满意的文件，待此次改动整体完成后提交到<strong>版本库</strong>。</p>
 </blockquote>
-<h1 id="24-认识工作区与暂存区"><a href="#24-认识工作区与暂存区" class="headerlink" title="24.认识工作区与暂存区"></a>24.认识工作区与暂存区</h1><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<h1 id="24-认识工作区与暂存区"><a href="#24-认识工作区与暂存区" class="headerlink" title="24.认识工作区与暂存区"></a>24.认识工作区与暂存区</h1><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git status
 On branch master
 Changes to be committed:
@@ -2178,14 +2139,12 @@ Changes not staged for commit:
 
         modified:   readme
         modified:   styles/style.css
-
-
 </code></pre>
 <p><img src="/2020/10/09/Git/12.png" alt="recognize"></p>
 <h1 id="25-查看不同commit的差异"><a href="#25-查看不同commit的差异" class="headerlink" title="25.查看不同commit的差异"></a>25.查看不同commit的差异</h1><blockquote>
 <p><code>git diff commit1 commit2 [-- file1 file2 ...]</code></p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git branch -av
 * master 1720a74 Add the first git commmand with config
   temp   b9229fb Add modefied
@@ -2266,11 +2225,9 @@ index d9cd4db..9dfbc09 100644
 -&lt;/html&gt;
 +&lt;/html&gt;
 \ No newline at end of file
-
-
 </code></pre>
 <h1 id="26-删除文件"><a href="#26-删除文件" class="headerlink" title="26.删除文件"></a>26.删除文件</h1><p><code>$ git rm filename</code></p>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ ls -al
 total 12
 drwxr-xr-x 1 sj 197121    0 10月  8 15:22 ./
@@ -2338,18 +2295,15 @@ Changes to be committed:
   (use &quot;git reset HEAD &lt;file&gt;...&quot; to unstage)
 
         deleted:    readme
-
-
 </code></pre>
 <h1 id="27-暂存“修改”"><a href="#27-暂存“修改”" class="headerlink" title="27.暂存“修改”"></a>27.暂存“修改”</h1><blockquote>
 <p>stash 藏匿</p>
 <p>将“修改”放在一个类似堆栈的地方，使工作区保持干净，去做更急的修改，完后再取出继续。</p>
 </blockquote>
-<pre><code class="shell">$ git stash apply      # 复制 栈顶首元素 到工作区
+<pre><code class="lang-shell">$ git stash apply      # 复制 栈顶首元素 到工作区
 $ git stash pop        # 弹出 栈顶首元素 到工作区
-
 </code></pre>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git status
 On branch master
 nothing to commit, working tree clean
@@ -2425,10 +2379,8 @@ sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git stash list
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
-
-
 </code></pre>
-<h1 id="28-文件-gitignore"><a href="#28-文件-gitignore" class="headerlink" title="28.文件.gitignore"></a>28.文件.gitignore</h1><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<h1 id="28-文件-gitignore"><a href="#28-文件-gitignore" class="headerlink" title="28.文件.gitignore"></a>28.文件.gitignore</h1><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ ls -al
 total 12
 drwxr-xr-x 1 sj 197121    0 10月  8 16:16 ./
@@ -2547,7 +2499,6 @@ Untracked files:
 nothing added to commit but untracked files present (use &quot;git add&quot; to track)
 
 # 忽略了doc文件
-
 </code></pre>
 <blockquote>
 <p>总结：<code>.gitignore</code>文件写<code>doc</code>时，会忽略doc文件与doc文件夹，但若是写<code>doc/</code>，只忽略doc文件夹。</p>
@@ -2560,7 +2511,7 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
 <blockquote>
 <p>哑协议与智能协议：<br>直观区别：哑协议传输进度不可见；智能协议传输进度可见。<br>传输速度：智能协议(压缩了)比哑协议传输速度快。</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/protocol
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/protocol
 $ pwd
 /e/FrontEnd/LearnGit/protocol
 
@@ -2583,9 +2534,8 @@ Receiving objects: 100% (30/30), 26.02 KiB | 1.45 MiB/s, done.
 Resolving deltas: 100% (6/6), done.
 
 # 智能协议传输进度可见
-
 </code></pre>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git remote -v
 zhineng E:/FrontEnd/LearnGit/protocol/zhineng.git (fetch)
 zhineng E:/FrontEnd/LearnGit/protocol/zhineng.git (push)
@@ -2621,10 +2571,8 @@ $ git branch -av
 * master 1720a74 Add the first git commmand with config
   temp   b9229fb Add modefied
   zbl    1720a74 Add the first git commmand with config
-
-
 </code></pre>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/protocol/zhineng.git (BARE:master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/protocol/zhineng.git (BARE:master)
 $ git branch -av
 * master 1720a74 Add the first git commmand with config
   temp   b9229fb Add modefied
@@ -2649,11 +2597,8 @@ $ git branch -av
 * master 1720a74 Add the first git commmand with config
   temp   b9229fb Add modefied
   zbl    1720a74 Add the first git commmand with config
-
-
-
 </code></pre>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git push zhineng
 fatal: The current branch master has no upstream branch.
 To push the current branch and set the remote as upstream, use
@@ -2672,10 +2617,8 @@ Total 0 (delta 0), reused 0 (delta 0)
 To file:///e/FrontEnd/LearnGit/protocol/zhineng.git
  * [new branch]      zbl -&gt; zbl
 Branch &#39;zbl&#39; set up to track remote branch &#39;zbl&#39; from &#39;zhineng&#39;.
-
-
 </code></pre>
-<h1 id="30-一点发现"><a href="#30-一点发现" class="headerlink" title="30.一点发现"></a>30.一点发现</h1><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<h1 id="30-一点发现"><a href="#30-一点发现" class="headerlink" title="30.一点发现"></a>30.一点发现</h1><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ cd ~/.ssh
 
 sj@fireworks99 MINGW64 ~/.ssh
@@ -2690,18 +2633,16 @@ drwxr-xr-x 1 sj 197121    0 10月  8 17:58 ../
 sj@fireworks99 MINGW64 ~/.ssh
 $ pwd
 /c/Users/sj/.ssh
-
-
 </code></pre>
 <blockquote>
 <p>所以说 <code>~</code>代表当前用户根目录，即<code>/c/Users/sj</code></p>
 </blockquote>
 <h1 id="31-本地仓库同步到github"><a href="#31-本地仓库同步到github" class="headerlink" title="31.本地仓库同步到github"></a>31.本地仓库同步到github</h1><blockquote>
 <p>git remote add [仓库标识名] [仓库地址]</p>
-<p>git push [仓库标识名] [–all / branchName]</p>
-<p>git fetch [仓库标识名] [–all / branchName]</p>
+<p>git push [仓库标识名] [—all / branchName]</p>
+<p>git fetch [仓库标识名] [—all / branchName]</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ git remote -v
 zhineng file:///e/FrontEnd/LearnGit/protocol/zhineng.git (fetch)
 zhineng file:///e/FrontEnd/LearnGit/protocol/zhineng.git (push)
@@ -2791,10 +2732,8 @@ To github.com:fireworks99/Project_code_is_there.git
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ gitk --all
-
-
 </code></pre>
-<h1 id="32-多个git客户端工作在同一分支上"><a href="#32-多个git客户端工作在同一分支上" class="headerlink" title="32.多个git客户端工作在同一分支上"></a>32.多个git客户端工作在同一分支上</h1><h3 id="1-不同人修改了不同文件-fast-forward"><a href="#1-不同人修改了不同文件-fast-forward" class="headerlink" title="(1)不同人修改了不同文件(fast-forward)"></a>(1)不同人修改了不同文件(fast-forward)</h3><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
+<h1 id="32-多个git客户端工作在同一分支上"><a href="#32-多个git客户端工作在同一分支上" class="headerlink" title="32.多个git客户端工作在同一分支上"></a>32.多个git客户端工作在同一分支上</h1><h3 id="1-不同人修改了不同文件-fast-forward"><a href="#1-不同人修改了不同文件-fast-forward" class="headerlink" title="(1)不同人修改了不同文件(fast-forward)"></a>(1)不同人修改了不同文件(fast-forward)</h3><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (master)
 $ cd ..
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit
@@ -3021,8 +2960,6 @@ $ git commit -m&#39;Modified index.html&#39;
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
 $ gitk --all
-
-
 </code></pre>
 <p><img src="/2020/10/09/Git/14.png" alt="now gitk"></p>
 <blockquote>
@@ -3031,7 +2968,7 @@ $ gitk --all
 <p>远端的 fast-forward 的commit (Modified readme的那次commit) </p>
 <p>一致</p>
 </blockquote>
-<pre><code class="shell"># 此时fireworks99执行push是没问题的，但倘若在此之前fire有新的push了：
+<pre><code class="lang-shell"># 此时fireworks99执行push是没问题的，但倘若在此之前fire有新的push了：
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
 $ vi readme
@@ -3057,12 +2994,11 @@ To github.com:fireworks99/Project_code_is_there.git
    fc5c038..228e8d3  features/add_git_commands -&gt; features/add_git_commands
 
 # 最后一行我们看到 fast-forward 的commit的hash 由 fc5c038 变为 228e8d3
-
 </code></pre>
 <blockquote>
 <p>再看fireworks99视角：</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
 $ git branch -av
 * features/add_git_commands                318cfc4 [ahead 1] Modified index.html
   master                                   9065e0f [ahead 2] Merge remote-tracking branch &#39;github/main&#39;
@@ -3081,8 +3017,6 @@ $ git branch -av
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
 $ gitk --all
-
-
 </code></pre>
 <p><img src="/2020/10/09/Git/15.png" alt="now gitk"></p>
 <blockquote>
@@ -3091,7 +3025,7 @@ $ gitk --all
 <p>远端的 fast-forward 的commit (Modified readme agein 的那次commit) </p>
 <p>不一致</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
 $ git push github
 To github.com:fireworks99/Project_code_is_there.git
  ! [rejected]        features/add_git_commands -&gt; features/add_git_commands (fetch first)
@@ -3103,9 +3037,8 @@ hint: (e.g., &#39;git pull ...&#39;) before pushing again.
 hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.
 
 # git push 报错
-
 </code></pre>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
 $ git fetch github
 remote: Enumerating objects: 5, done.
 remote: Counting objects: 100% (5/5), done.
@@ -3162,9 +3095,8 @@ To github.com:fireworks99/Project_code_is_there.git
 # 远端的 fast-forward 的commit (Modified readme again)
 # 一致
 # 再次push就没问题了
-
 </code></pre>
-<h3 id="2-不同人修改了同文件不同区域-merge"><a href="#2-不同人修改了同文件不同区域-merge" class="headerlink" title="(2)不同人修改了同文件不同区域(merge)"></a>(2)不同人修改了同文件不同区域(merge)</h3><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
+<h3 id="2-不同人修改了同文件不同区域-merge"><a href="#2-不同人修改了同文件不同区域-merge" class="headerlink" title="(2)不同人修改了同文件不同区域(merge)"></a>(2)不同人修改了同文件不同区域(merge)</h3><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
 $ git branch -av
 * features/add_git_commands                228e8d3 Modified readme agein
   master                                   9065e0f Merge remote-tracking branch &#39;github/main&#39;
@@ -3199,23 +3131,19 @@ $ git branch -av
   remotes/origin/master                    9065e0f Merge remote-tracking branch &#39;github/main&#39;
   remotes/origin/temp                      b9229fb Add modefied
   remotes/origin/zbl                       1720a74 Add the first git commmand with config
-
-
 </code></pre>
 <blockquote>
 <p>开始两人都修改了index.html</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
 $ vi index.html
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
 $ git commit -am&#39;Add non fast-forward command&#39;
 [features/add_git_commands c01bad1] Add non fast-forward command
  1 file changed, 1 insertion(+)
-
-
 </code></pre>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
 $ vi index.html
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
@@ -3232,14 +3160,11 @@ sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_
 $ git commit -am&#39;Add commit command&#39;
 [features/add_git_commands 3d073bf] Add commit command
  1 file changed, 1 insertion(+)
-
-
-
 </code></pre>
 <blockquote>
 <p>fire先push了</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
 $ git push github
 Enumerating objects: 5, done.
 Counting objects: 100% (5/5), done.
@@ -3250,13 +3175,11 @@ Total 3 (delta 2), reused 0 (delta 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To github.com:fireworks99/Project_code_is_there.git
    56e46e0..3d073bf  features/add_git_commands -&gt; features/add_git_commands
-
-
 </code></pre>
 <blockquote>
 <p>fireworks99去push时遭拒</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
 $ git push
 To github.com:fireworks99/Project_code_is_there.git
  ! [rejected]        features/add_git_commands -&gt; features/add_git_commands (fetch first)
@@ -3266,15 +3189,13 @@ hint: not have locally. This is usually caused by another repository pushing
 hint: to the same ref. You may want to first integrate the remote changes
 hint: (e.g., &#39;git pull ...&#39;) before pushing again.
 hint: See the &#39;Note about fast-forwards&#39; in &#39;git push --help&#39; for details.
-
-
 </code></pre>
 <blockquote>
 <p>fireworks99两个选择</p>
 <p>(1)git pull</p>
 <p>(2)git fetch + merge</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
 $ git fetch
 remote: Enumerating objects: 5, done.
 remote: Counting objects: 100% (5/5), done.
@@ -3296,21 +3217,17 @@ $ git branch -av
   remotes/origin/zbl                       1720a74 Add the first git commmand with config
 
 # c01bad1 [ahead 1, behind 1] 是说当前的工作分支比远端多一个commit同时又少一个commit
-
-
 </code></pre>
 <blockquote>
 <p>$ git merge origin/features/add_git_commands 即可</p>
 </blockquote>
-<h3 id="3-不同人修改了同文件同一区域-conflict"><a href="#3-不同人修改了同文件同一区域-conflict" class="headerlink" title="(3)不同人修改了同文件同一区域(conflict)"></a>(3)不同人修改了同文件同一区域(conflict)</h3><pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
+<h3 id="3-不同人修改了同文件同一区域-conflict"><a href="#3-不同人修改了同文件同一区域-conflict" class="headerlink" title="(3)不同人修改了同文件同一区域(conflict)"></a>(3)不同人修改了同文件同一区域(conflict)</h3><pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
 $ git merge origin/features/add_git_commands
 Auto-merging index.html
 CONFLICT (content): Merge conflict in index.html
 Automatic merge failed; fix conflicts and then commit the result.
-
-
 </code></pre>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands|MERGING)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands|MERGING)
 $ vi index.html
 
 sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands|MERGING)
@@ -3357,8 +3274,6 @@ Total 6 (delta 4), reused 0 (delta 0)
 remote: Resolving deltas: 100% (4/4), completed with 2 local objects.
 To github.com:fireworks99/Project_code_is_there.git
    3d073bf..1aa6467  features/add_git_commands -&gt; features/add_git_commands
-
-
 </code></pre>
 <p><img src="/2020/10/09/Git/16.png" alt="index.html"></p>
 <p><img src="/2020/10/09/Git/17.png" alt="index.html"></p>
@@ -3366,7 +3281,7 @@ To github.com:fireworks99/Project_code_is_there.git
 <blockquote>
 <p>总结：手动修改冲突处即可。（与同事商量确认保留还是增删）</p>
 </blockquote>
-<h3 id="4-一人改文件名一人改内容-git-pull"><a href="#4-一人改文件名一人改内容-git-pull" class="headerlink" title="(4)一人改文件名一人改内容(git pull)"></a>(4)一人改文件名一人改内容(git pull)</h3><pre><code class="shell">git pull命令的作用是，取回远程主机某个分支的更新，再与本地的指定分支合并。它的完整格式稍稍有点复杂。
+<h3 id="4-一人改文件名一人改内容-git-pull"><a href="#4-一人改文件名一人改内容-git-pull" class="headerlink" title="(4)一人改文件名一人改内容(git pull)"></a>(4)一人改文件名一人改内容(git pull)</h3><pre><code class="lang-shell">git pull命令的作用是，取回远程主机某个分支的更新，再与本地的指定分支合并。它的完整格式稍稍有点复杂。
 
 $ git pull &lt;远程主机名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;
 
@@ -3398,12 +3313,11 @@ $ git pull origin
 # 上面命令表示，本地的当前分支自动与对应的origin主机”追踪分支”(remote-tracking branch)进行合并。
 
 # 如果当前分支只有一个追踪分支，连远程主机名都可以省略。
-
 </code></pre>
 <blockquote>
 <p>fireworks99 修改文件名</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
 $ git pull
 remote: Enumerating objects: 10, done.
 remote: Counting objects: 100% (10/10), done.
@@ -3448,14 +3362,11 @@ Total 2 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To github.com:fireworks99/Project_code_is_there.git
    1aa6467..55718cb  features/add_git_commands -&gt; features/add_git_commands
-
-
-
 </code></pre>
 <blockquote>
 <p>fire修改文件内容</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
 $ git pull
 Already up to date.
 
@@ -3521,14 +3432,11 @@ Total 5 (delta 3), reused 0 (delta 0)
 remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
 To github.com:fireworks99/Project_code_is_there.git
    55718cb..a8d3780  features/add_git_commands -&gt; features/add_git_commands
-
-
-
 </code></pre>
 <h3 id="5-两人将同一个文件改为不同的文件名"><a href="#5-两人将同一个文件改为不同的文件名" class="headerlink" title="(5)两人将同一个文件改为不同的文件名"></a>(5)两人将同一个文件改为不同的文件名</h3><blockquote>
 <p>fireworks99 将 index.htm改为index1.htm，并更早提交。</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there (features/add_git_commands)
 $ git pull
 remote: Enumerating objects: 8, done.
 remote: Counting objects: 100% (8/8), done.
@@ -3562,14 +3470,11 @@ Total 2 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To github.com:fireworks99/Project_code_is_there.git
    a8d3780..7fc9418  features/add_git_commands -&gt; features/add_git_commands
-
-
-
 </code></pre>
 <blockquote>
 <p>fire将index.htm修改为index2.htm，后提交。</p>
 </blockquote>
-<pre><code class="shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
+<pre><code class="lang-shell">sj@fireworks99 MINGW64 /e/FrontEnd/LearnGit/Project_code_is_there_02 (features/add_git_commands)
 $ git pull
 Already up to date.
 
@@ -3766,9 +3671,6 @@ Total 3 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), completed with 1 local object.
 To github.com:fireworks99/Project_code_is_there.git
    7fc9418..0abb8e7  features/add_git_commands -&gt; features/add_git_commands
-
-
-
 </code></pre>
 <p><img src="/2020/10/09/Git/19.png" alt="gitk"></p>
 <h3 id="6-禁止向集成分支执行变更历史的操作"><a href="#6-禁止向集成分支执行变更历史的操作" class="headerlink" title="(6)禁止向集成分支执行变更历史的操作"></a>(6)禁止向集成分支执行变更历史的操作</h3><blockquote>

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -107,12 +107,12 @@
 	<article id="details-post">
 		<div id="details-post-item">
 			<h1>Python a + b</h1>
-			<h3 id="1-简单a-b"><a href="#1-简单a-b" class="headerlink" title="1.简单a+b"></a>1.简单a+b</h3><pre><code class="python">a, b = input().split()
+			<h3 id="1-简单a-b"><a href="#1-简单a-b" class="headerlink" title="1.简单a+b"></a>1.简单a+b</h3><pre><code class="lang-python">a, b = input().split()
 a, b = int(a), int(b)
 print(a + b)
 </code></pre>
 <a id="more"></a>
-<h3 id="2-读到文末-EOF-a-b"><a href="#2-读到文末-EOF-a-b" class="headerlink" title="2.读到文末(EOF)a+b"></a>2.读到文末(EOF)a+b</h3><pre><code class="python">while True:
+<h3 id="2-读到文末-EOF-a-b"><a href="#2-读到文末-EOF-a-b" class="headerlink" title="2.读到文末(EOF)a+b"></a>2.读到文末(EOF)a+b</h3><pre><code class="lang-python">while True:
     try:
         a, b = input().split()
         a, b = int(a), int(b)
@@ -120,21 +120,21 @@ print(a + b)
     except EOFError:
         break
 </code></pre>
-<h3 id="3-T组数据a-b"><a href="#3-T组数据a-b" class="headerlink" title="3.T组数据a+b"></a>3.T组数据a+b</h3><pre><code class="python">t = input() #different?
+<h3 id="3-T组数据a-b"><a href="#3-T组数据a-b" class="headerlink" title="3.T组数据a+b"></a>3.T组数据a+b</h3><pre><code class="lang-python">t = input() #different?
 t = int(t)
 for case in range(t):
     a, b = input().split()
     a, b = int(a), int(b)
     print(a + b)
 </code></pre>
-<h3 id="4-特殊数据停止a-b"><a href="#4-特殊数据停止a-b" class="headerlink" title="4.特殊数据停止a+b"></a>4.特殊数据停止a+b</h3><pre><code class="python">while True:
+<h3 id="4-特殊数据停止a-b"><a href="#4-特殊数据停止a-b" class="headerlink" title="4.特殊数据停止a+b"></a>4.特殊数据停止a+b</h3><pre><code class="lang-python">while True:
     a, b = input().split()
     a, b = int(a), int(b)
     if a == 0 and b == 0:  #There is a &#39;:&#39; 
         break
     print (a + b)
 </code></pre>
-<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><pre><code class="python">import keyword # 导入相应的模块
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><pre><code class="lang-python">import keyword # 导入相应的模块
 
 # 空行也是程序代码的一部分
 print(keyword.kwlist)  # keyword 模块，可以输出当前版本的所有关键字

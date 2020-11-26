@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -282,8 +282,6 @@ int n, -->
 以 B 为起点跑一遍spfa， 得到 dis_b[]
 对于边(u, v, w)，若满足dis_a[u] + dis_b[v] + w == dis_a[B]
 则这条边是最短路的可选边(可以作为最短路上的一条边)
-
-
 找出所有的可选边，设其容量为1，A到B的最大流即完全不同的最短路方案数
 结论：图论相关的题目，求有几种方案：将确定边设容量为1，求最大流即可
 
@@ -296,7 +294,7 @@ Code#include &lt;queue&gt;
 #include &lt;algorithm&gt;
 using namespace std;
 #define Begin cout &lt;&lt; &quot;Check Begin---------------\n&quot;;
-#define END cout & -->
+#define END cout &lt -->
         <!-- </div> -->
 
         
@@ -335,8 +333,6 @@ using namespace std;
 
 上图例子中，优化前18条单向边，优化后12条
 添加层节点消耗了空间，换取了时间
-
-
 另外，Dijkstra堆优化真好用，用过即AC(好过stack实现的spfa)
 还有，Dijkstra堆优化存图时用vector+pair
 
@@ -352,7 +348,7 @@ using namespace std;
 const int N = 100105;
 const int inf = 0x3f3f3f3f;
 
-typedef pair&lt;int, i -->
+typedef pair&lt;int, int -->
         <!-- </div> -->
 
         
@@ -434,8 +430,6 @@ P(该交易人所有物品的价值)    ——每个交易人只有一个物品
 L(该交易人等级)
 X(优惠方案数)
 紧跟X行， 每行 T(交易人编号) V(该交易人物品价格)
-
-
 花最少的钱取到1号手里的物品：那个她
 
 Analyze
@@ -447,7 +441,7 @@ Attention
 
 Code#include &lt;cstdio&gt;
 #include &lt;vector&gt;
- -->
+#i -->
         <!-- </div> -->
 
         
@@ -582,8 +576,6 @@ double dis(P a, P b)
 spfa是对Bellman-Ford的优化，Bellman-Ford是在暴力求解最短路。
 假设：图只是一棵树，1起点，n终点，从终点向起点添边，则复杂度达到最大n*m,n-1次对m条边的松弛，每次对m条边松弛只有一次是有用的！
 而spfa是以松弛过的点为基去松弛，保证了大部分松弛都是有效的，至少是可能的
-
-
 而spfa的实现，按理说用队列还是栈没区别，但事实是：用栈比用队列快？？？而且前提是没有负环？？？
 
 Code#include &lt;queue&gt;
@@ -593,7 +585,7 @@ Code#include &lt;queue&gt;
 #include &lt;string&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
-#include & -->
+#include &lt -->
         <!-- </div> -->
 
         
@@ -662,6 +654,35 @@ Code#include &lt;queue&gt;
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/5/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/7/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

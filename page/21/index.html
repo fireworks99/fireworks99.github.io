@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -146,8 +146,6 @@
         
         <h3 id="Gitment评论"><a href="#Gitment评论" class="headerlink" title="Gitment评论"></a>Gitment评论</h3><blockquote>
 <p>前提：登录github账号</p>
-</blockquote>
-<blockquote>
 <p><strong><a href="https://jingyan.baidu.com/article/4ae03de3d6f9c53eff9e6bdd.html" style="color:violet;" target="_blank" rel="noopener">如何注册Github账号</a></strong></p>
 </blockquote>
         
@@ -273,8 +271,6 @@ void init()
         <!-- 传送门
 Floyd 传递闭包
 传递闭包的含义指通过传递性推导出尽量多的元素之间的关系
-
-
 用flod算法将所有的关系进行传递，只要u能胜v，那么我们就将d[u][v]设为1，最后如果两者之间有d[u][v]=0且d[v][u]=0则u、v两点不知排名
 
 Code#include &lt;set&gt;
@@ -292,7 +288,8 @@ void floyd()
     for(int k = 1; k &lt;= n; ++k)///++i写太习惯了
         for(int i = 1; i &lt;= n; ++i)
             for(int j = 1; j &lt;= n; ++j)
-                if(beat[i][k] &amp;&amp; beat[k][j]) -->
+                if(beat[i][k] &amp;&amp; beat[k][j])
+  -->
         <!-- </div> -->
 
         
@@ -440,6 +437,7 @@ int found(int x)
         <!-- 1.基本算法
 
 
+
 算法名称
 使用频率
 了解程度
@@ -484,7 +482,9 @@ int found(int x)
 
 
 
+
 2.搜索
+
 
 
 算法名称
@@ -525,7 +525,9 @@ int found(int x)
 
 
 
+
 3.动态规划
+
 
 
 算法名称
@@ -572,7 +574,9 @@ int found(int x)
 
 
 
+
 动态规划之背包问题
+
 
 
 背包分类
@@ -601,7 +605,9 @@ int found(int x)
 
 
 
+
 动态规划之优化方法
+
 
 
 方法
@@ -648,7 +654,9 @@ int found(int x)
 
 
 
+
 4.组合数学
+
 
 
 算法名称
@@ -671,16 +679,12 @@ int found(int x)
 
 
 
-常用公式与定理
-
-
-
-
- -->
+常 -->
         <!-- </div> -->
 
         
-        <h1 id="ACM技能树"><a href="#ACM技能树" class="headerlink" title="ACM技能树"></a>ACM技能树</h1><table>
+        <h1 id="ACM技能树"><a href="#ACM技能树" class="headerlink" title="ACM技能树"></a>ACM技能树</h1><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>算法分类</th>
@@ -745,6 +749,7 @@ int found(int x)
 </tr>
 </tbody>
 </table>
+</div>
         
         
 
@@ -930,6 +935,35 @@ int n, m;///n个点 -->
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/20/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/22/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

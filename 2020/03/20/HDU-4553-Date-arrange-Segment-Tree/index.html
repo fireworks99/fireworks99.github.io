@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -120,8 +120,6 @@
 <p>那么线段树也是一样的</p>
 <p><code>val：ans、lmax、rmax</code>最长连续空间时间段的长度</p>
 <p>此时ans起辅助作用，主角是lmax与rmax，只要down地足够深，要查找的区间总是某些个lmax与rmax的和。</p>
-</blockquote>
-<blockquote>
 <p>此题维护两棵线段树：DS树与NS树</p>
 <p>①DS x:</p>
 <p>若DS树有长度足够的区间，去DS树上找结束位置(-x即起始位置)</p>
@@ -135,11 +133,9 @@
 <p>若都没有足够空间，输出相应字符串</p>
 <p>③STUDY x y:</p>
 <p>将<strong>DS树和NS树</strong>对应区间恢复为1（即val值恢复为区间长度）</p>
-</blockquote>
-<blockquote>
 <p>另外代码中的query函数，三分去找够大的空闲区间的第x时刻</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
@@ -302,7 +298,7 @@ int main()
 <li>build函数里val的初始化要小心，考虑up的影响，可能与实际情况不一样！</li>
 </ol>
 </blockquote>
-<pre><code class="c++">if(A == B)
+<pre><code class="lang-c++">if(A == B)
     D = E;
 if(A == C)
     D = F;
@@ -310,7 +306,7 @@ if(A == C)
 <blockquote>
 <p>不可以写成：</p>
 </blockquote>
-<pre><code class="c++">D = (A == B ? E : F)
+<pre><code class="lang-c++">D = (A == B ? E : F)
 </code></pre>
 <blockquote>
 <p>因为上面是两个if，并非if-else</p>

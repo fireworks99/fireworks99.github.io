@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -113,14 +113,10 @@
 <a id="more"></a>
 <blockquote>
 <p>Being interested in the trade development and such a lovely girl, Prince Remmarguts really became enamored. He needs you - the prime minister’s help! </p>
-</blockquote>
-<blockquote>
 <p>DETAILS: UDF’s capital consists of N stations. The hall is numbered S, while the station numbered T denotes prince’ current place. M muddy directed sideways connect some of the stations. Remmarguts’ path to welcome the princess might include the same station twice or more than twice, even it is the station with number S or T. Different paths with same length will be considered disparate. </p>
 </blockquote>
 <h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
 <p>The first line contains two integer numbers N and M (1 &lt;= N &lt;= 1000, 0 &lt;= M &lt;= 100000). Stations are numbered from 1 to N. Each of the following M lines contains three integer numbers A, B and T (1 &lt;= A, B &lt;= N, 1 &lt;= T &lt;= 100). It shows that there is a directed sideway from A-th station to B-th station with time T. </p>
-</blockquote>
-<blockquote>
 <p>The last line consists of three integer numbers S, T and K (1 &lt;= S, T &lt;= N, 1 &lt;= K &lt;= 1000).</p>
 </blockquote>
 <h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
@@ -146,7 +142,7 @@
 <p>  A<em>算法的估价函数可表示为：      f’(n) = g’(n) + h’(n)    这里，f’(n)是估价函数，g’(n)是起点到终点的最短路径值，h’(n)是n到目标的最短路经的启发值。由 于这个f’(n)其实是无法预先知道的，所以我们用前面的估价函数f(n)做近似。g(n)代替g’(n)，但 g(n)&gt;=g’(n) 才可（大多数情况下都是满足的，可以不用考虑），h(n)代替h’(n)，但h(n)&lt;=h’(n)才可（这一点特别的重 要）。可以证明应用这样的估价函数是可以找到最短路径的，也就是可采纳的。我们说应用这种估价函数的 最好优先算法就是A</em>算法。 </p>
 </blockquote>
 <p><strong>原文出处</strong> <a href="http://blog.sina.com.cn/s/blog_691ce2b701017fe3.html" target="_blank" rel="noopener">http://blog.sina.com.cn/s/blog_691ce2b701017fe3.html</a></p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;queue&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;queue&gt;
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;

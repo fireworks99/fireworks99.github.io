@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -226,8 +226,6 @@ void get_factors(int n)
 初始化dp[i] = a[i]
 遍历 i 之前的元素 j ，若 a[j]  &lt;=  a[i] 表示 i 前面可连上 j (此时 i 地状态可更新为更优值dp[i] = max(dp[i], dp[j] + a[i]))
 
-
-
 此类算法可解决的问题？
 
 有序的多个元素(可以是数字、区间)
@@ -235,7 +233,7 @@ void get_factors(int n)
 
 
 Code#include &lt;cstdio&gt;
-#include &lt; -->
+#include &lt;io -->
         <!-- </div> -->
 
         
@@ -330,8 +328,6 @@ dp[i][j] = dp[i - 1][j] + dp[i][ j - w[i] ] （01背包中 + dp[i - 1][j - w[i] 
 将前(i - 1)个物品安排到 j 容量的背包方案数（不放第i个物品了）
 将前 i 个物品安排到(j - w[i])容量的背包方案数（第i个物品再放一个进去）
 
-
-
 然后按照顺序可以省去第一维
 
 Code#include &lt;cstdio&gt;
@@ -347,7 +343,7 @@ int main()
 {
     int n, tot = 0;
     scanf(&quot;%d&quot;, &amp;n);
-    for(int i = 0; (1 &lt;&lt; i -->
+    for(int i = 0; (1 &lt;&lt; i)  -->
         <!-- </div> -->
 
         
@@ -650,6 +646,35 @@ int slack[MAXN];        /// 记录每个汉 -->
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/8/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/10/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

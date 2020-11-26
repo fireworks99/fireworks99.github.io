@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -116,7 +116,7 @@
 <a id="more"></a>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1316351312&auto=1&height=66"></iframe>
 
-<h3 id="Code-存于数组"><a href="#Code-存于数组" class="headerlink" title="Code(存于数组)"></a>Code(存于数组)</h3><pre><code class="c++">long long c[105][105];
+<h3 id="Code-存于数组"><a href="#Code-存于数组" class="headerlink" title="Code(存于数组)"></a>Code(存于数组)</h3><pre><code class="lang-c++">long long c[105][105];
 void combine_init()
 {
     memset(c, 0, sizeof(c));
@@ -131,7 +131,7 @@ void combine_init()
     }
 }
 </code></pre>
-<h3 id="Code（连乘连除）"><a href="#Code（连乘连除）" class="headerlink" title="Code（连乘连除）"></a>Code（连乘连除）</h3><pre><code class="c++">long long violent_combine(long long n,long long m)
+<h3 id="Code（连乘连除）"><a href="#Code（连乘连除）" class="headerlink" title="Code（连乘连除）"></a>Code（连乘连除）</h3><pre><code class="lang-c++">long long violent_combine(long long n,long long m)
 {
     if(m &lt; n - m)
         m = n - m;///取个较大值
@@ -143,7 +143,7 @@ void combine_init()
     return ans;
 }
 </code></pre>
-<h3 id="Code-乘除共进"><a href="#Code-乘除共进" class="headerlink" title="Code(乘除共进)"></a>Code(乘除共进)</h3><pre><code class="c++">long long combine(long long a, long long b)
+<h3 id="Code-乘除共进"><a href="#Code-乘除共进" class="headerlink" title="Code(乘除共进)"></a>Code(乘除共进)</h3><pre><code class="lang-c++">long long combine(long long a, long long b)
 {
     if(b &gt; a - b)
         b = a - b;///取个较小值
@@ -159,7 +159,7 @@ void combine_init()
 <h3 id="update-第二类斯特林数"><a href="#update-第二类斯特林数" class="headerlink" title="update 第二类斯特林数"></a>update 第二类斯特林数</h3><blockquote>
 <p>c[n][m]把n个元素分到m个非空且不可区分的集合中去 </p>
 </blockquote>
-<pre><code class="c++">memset(c, 0, sizeof(c));
+<pre><code class="lang-c++">memset(c, 0, sizeof(c));
     c[1][1] = 1;
     for(int i = 2; i&lt;= 105; ++i)
         for(int j = 1; j &lt;= i; ++j)

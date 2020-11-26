@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -113,7 +113,7 @@
 <a id="more"></a>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=31273716&auto=1&height=66"></iframe>
 
-<h3 id="埃氏筛"><a href="#埃氏筛" class="headerlink" title="埃氏筛"></a>埃氏筛</h3><pre><code class="c++">void get_prime(long long n)
+<h3 id="埃氏筛"><a href="#埃氏筛" class="headerlink" title="埃氏筛"></a>埃氏筛</h3><pre><code class="lang-c++">void get_prime(long long n)
 {
     tot = 0;
     memset(is, 1, sizeof(is));///bool类型数组全部初始化为1（默认全为质数）
@@ -132,7 +132,7 @@
 }
 </code></pre>
 <h3 id="线性筛"><a href="#线性筛" class="headerlink" title="线性筛"></a>线性筛</h3><p><strong>每个合数仅被它的最小质因子筛过，且为一次</strong></p>
-<pre><code class="c++">void prime(int n)
+<pre><code class="lang-c++">void prime(int n)
 {
     tot = 0;
     memset(vis, 1, sizeof(vis));
@@ -153,8 +153,6 @@
 <p><strong>关于</strong><code>if(i % p[j] == 0)</code></p>
 <blockquote>
 <p>其功能：保证每个数只被它最小的因子筛掉</p>
-</blockquote>
-<blockquote>
 <p>其机理:</p>
 <p>证明（反证）：</p>
 <p>假设 i = k * a（k 为常数、a为较小、较靠前的质数）</p>

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -115,12 +115,10 @@
 <blockquote>
 <p>可证的事实：如果图G是一棵树，那么它的Kirchhoff矩阵的每一个n - 1阶主子式的行列式都是1。</p>
 <p>推理：如果图G包含X棵树，那么它的Kirchhoff矩阵的每一个n - 1阶主子式的行列式都包含X个1，即X</p>
-</blockquote>
-<blockquote>
 <p>另外解行列式采用高斯消元(转为上三角行列式)，与线性代数课上所学的方法有点差异，课上的方法直接了当，前面的行不变，处理后面的行，使得下三角逐渐变为全0(从左至右，从上到下)，但会出现小数。为了避免出现小数，采用如下方法：将“首 需处理 行”与“目标行”运算，使首非零元变0，然后交换两行。由于“首 需处理 行”首非零元总是 &gt;= “目标行”首非零元，因此不会出现小数。</p>
 </blockquote>
 <p><img src="https://i.postimg.cc/15FpgNbX/S-0-CY3-S9-RC1-QSG-29-CL3.png" alt="process"></p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;

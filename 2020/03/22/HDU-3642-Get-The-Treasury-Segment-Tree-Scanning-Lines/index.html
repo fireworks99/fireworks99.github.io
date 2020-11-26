@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -116,7 +116,7 @@
 <p>然后三维，降维做题，遍历Z轴，一层一层地求解</p>
 <p>还有一点要注意，<code>ans += len3[1] * (e[i + 1].h - e[i].h);</code>不行了，相邻的两个面，e[i + 1]与e[i]只是y轴上相邻，Z轴上可能天上地下，所以用一个变量last记录<strong>本层</strong>前一个y</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;

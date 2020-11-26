@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -109,11 +109,7 @@
 			<h1>HDU 1556 Color the ball（差分）</h1>
 			<h3 id="用差分实现区间操作"><a href="#用差分实现区间操作" class="headerlink" title="用差分实现区间操作"></a>用差分实现区间操作</h3><h3 id="一维"><a href="#一维" class="headerlink" title="一维"></a>一维</h3><blockquote>
 <p>给定一个长度为n的数列a，要求支持操作add(L,R,k)表示对a[L]~a[R]的每个数都加上k。并求修改后的序列a。 </p>
-</blockquote>
-<blockquote>
 <p>设原数组为a[i]a[i], 设数组d[i]=a[i]−a[i−1](a[0]=0)，则 a[i]=∑ij=1d[j] </p>
-</blockquote>
-<blockquote>
 <p>更新操作update(s, t, d)把区间A[s]…A[t]都增加d，我们引入一个数组delta[i]，表示</p>
 <p>A[i]…A[n]的共同增量，n是数组的大小。那么update操作可以转化为：</p>
 <p>1）令delta[s] = delta[s] + d，表示将A[s]…A[n]同时增加d，但这样A[t+1]…A[n]就多加了d</p>
@@ -149,7 +145,7 @@
 <p>1 1 1</p>
 <p>3 2 1</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 using namespace std;

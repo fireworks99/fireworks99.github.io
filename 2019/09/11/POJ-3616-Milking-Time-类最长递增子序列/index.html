@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -122,15 +122,13 @@
 <li>初始化dp[i] = a[i]</li>
 <li>遍历 i 之前的元素 j ，若 a[j]  &lt;=  a[i] 表示 i 前面可连上 j (此时 i 地状态可更新为更优值<code>dp[i] = max(dp[i], dp[j] + a[i])</code>)</li>
 </ol>
-</blockquote>
-<blockquote>
 <p>此类算法可解决的问题？</p>
 <ol>
 <li>有序的多个元素(可以是数字、区间)</li>
 <li>某些元素之间满足某种关系就具有某种“可连接性”，且“连接”可能引起最优值的更新</li>
 </ol>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 using namespace std;

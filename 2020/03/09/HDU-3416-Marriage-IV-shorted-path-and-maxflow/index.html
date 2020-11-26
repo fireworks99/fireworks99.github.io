@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -117,12 +117,10 @@
 <p>以 B 为起点跑一遍spfa， 得到 dis_b[]</p>
 <p>对于边(u, v, w)，若满足<code>dis_a[u] + dis_b[v] + w == dis_a[B]</code></p>
 <p>则这条边是最短路的可选边(可以作为最短路上的一条边)</p>
-</blockquote>
-<blockquote>
 <p>找出所有的可选边，设其容量为1，A到B的最大流即完全不同的最短路方案数</p>
 <p>结论：<strong>图论相关的题目，求有几种方案：将确定边设容量为1，求最大流即可</strong></p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;queue&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;queue&gt;
 #include &lt;stack&gt;
 #include &lt;vector&gt;
 #include &lt;cstdio&gt;

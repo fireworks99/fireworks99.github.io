@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -118,7 +118,7 @@
 <h3 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h3><blockquote>
 <p>关于取模，含有负数时<code>((x % mod) + mod) % mod</code>，不含有负数时<code>x % mod</code>,倘若有除法取模要用逆元，据说少量逆元可以类似递推出来？</p>
 </blockquote>
-<pre><code class="c++">void init()
+<pre><code class="lang-c++">void init()
 {
     inv[1]=1;
     for(int i = 2;i &lt; M;i++)
@@ -130,7 +130,7 @@
 <p>本来用double的数据迫不得已改用了int</p>
 <p>多个判断条件并列时，耗时少的判断放前面</p>
 </blockquote>
-<pre><code class="c++">if(A &amp;&amp; B &amp;&amp; C)
+<pre><code class="lang-c++">if(A &amp;&amp; B &amp;&amp; C)
 {
     //do something;
 }
@@ -138,7 +138,7 @@
 <blockquote>
 <p>比如上述代码，A可能只是个普通bool型变量，B可能是一个长长的表达式，C可能是一个循环才能算得出值的bool变量</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cmath&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cmath&gt;
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;

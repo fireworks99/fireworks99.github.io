@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -113,15 +113,13 @@
 <a id="more"></a>
 <h3 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h3><blockquote>
 <p>相对于求矩形面积并集，此题所求的特点在于<code>cnt[o] &gt;= 2</code> 才有 <code>len[o] = X[R + 1] - X[L];</code>。另外这要求每段的cnt及时更新，而之前那种方法不down，数据没有被正确表示，而现在就需要用上lazy数组down下去了。</p>
-</blockquote>
-<blockquote>
 <p>另外加一个query函数释放所有的lazy以更新数据</p>
 <p>对于之前写过的线段树们，下面节点的状态没被更新不影响上面节点状态的正确性，而这一题下面节点不被lazy更新会导致上面节点呈现着错误的状态，所以每次从线段树取值时都需要释放所有lazy更新这棵树。</p>
 <p>现在这种方案：需要用到线段树维护的值时，释放全部lazy</p>
 <p>相比较于：不用lazy，每次update都更新到底</p>
 <p>还是省时间的</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
@@ -247,7 +245,7 @@ int main()
 <h3 id="方案2-就是不down"><a href="#方案2-就是不down" class="headerlink" title="方案2:就是不down"></a>方案2:就是不down</h3><blockquote>
 <p>区分len1(区间被覆盖次数&gt;=1)与len2(区间覆盖次数&gt;=2)</p>
 </blockquote>
-<h4 id="up函数"><a href="#up函数" class="headerlink" title="up函数"></a>up函数</h4><pre><code class="c++">void up(int o, int L, int R)
+<h4 id="up函数"><a href="#up函数" class="headerlink" title="up函数"></a>up函数</h4><pre><code class="lang-c++">void up(int o, int L, int R)
 {
     if(cnt[o])
         len1[o] = X[R + 1] - X[L];
@@ -273,7 +271,7 @@ int main()
 <p>由于更新len2需要用到len1，所以先更新len1</p>
 <p><code>len1[o] &gt;= len2[o]</code>一个区间被覆盖一次以上的长度不少于它被覆盖两次以上的长度，所以当cnt[o] &lt; 2时，如果cnt[o] == 1那就先用len1更新len2，否则再用len2更新len2.</p>
 </blockquote>
-<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;

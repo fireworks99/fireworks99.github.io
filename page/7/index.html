@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -168,11 +168,7 @@ Code of SDNUOJ 1045#include &lt;set&gt;
 1.黑边没有限制数目，又是求最大边权和，所以选择所有黑边
 2.(无向图可用并查集缩点)缩点后，对于白边，求最大生成树
 3.若有多余白边(在K的限制下)，贪心选取权值大的
-
-
-细节：①int node = n;每次连入一个点node–，若最后node&gt;1不能生成树输出-1.②每次用一条白边k–，若最后k&lt;0白边不够用输出-1.③求生成树过程中未用到的白边单独存一数组中，若最后k&gt;0则sort后贪心选.
-
-
+细节：①int node = n;每次连入一个点node—，若最后node&gt;1不能生成树输出-1.②每次用一条白边k—，若最后k0则sort后贪心选.
 有点东西：这题里，无向图求缩点，和 求生成树，都用了并查集
 
 Code#include &lt;cmath&gt;
@@ -186,7 +182,11 @@ using namespace std;
 #define ll long long
 
 const int maxn = 50005;
-cons -->
+const int maxm = 500005;
+
+struct edge
+{
+    ll u, v,  -->
         <!-- </div> -->
 
         
@@ -679,6 +679,35 @@ vector&lt; -->
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/6/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/8/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -119,15 +119,13 @@
 <li>若确定了翻转方案，交换翻转顺序对结果无影响</li>
 <li>对同一区间：要么不反转，要么只翻转一次。多次翻转是多余的。</li>
 </ol>
-</blockquote>
-<blockquote>
 <p>首先对最左边的牛进行判断，如果这头牛已经朝前方了，那么以这头牛为开始的区间就不需要在进行反转。</p>
 <p>如果这头牛朝后面，那么对应的以该牛为开始的区间就反转。不停重复以上步骤即可。</p>
 <p>但是如果反转牛时对每一头牛都进行反转操作的话时间复杂度就成了O(n^3)，肯定超时，所以必须在反转操作上进行优化。</p>
 <p>f[i]:=区间[i,i+k-1]进行了反转的话为1,否则的话为0</p>
 <p>这样在考虑第i头牛时候，如果sum(f[i-k+1]+…+f[i-1)为奇数的话，则与开始方向相反，否则相同。这样就将反转操作的复杂度将为常数，整个算法复杂度将为O(n^2)</p>
 </blockquote>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="c++">#include &lt;string&gt;
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include &lt;string&gt;
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;

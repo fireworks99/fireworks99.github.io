@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -111,7 +111,7 @@
 <p>通过form表单提交文件到服务器</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><pre><code class="html">&lt;form action=&quot;http://localhost:3000/uploadImg&quot;
+<h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><pre><code class="lang-html">&lt;form action=&quot;http://localhost:3000/uploadImg&quot;
               method=&quot;post&quot;
               enctype=&quot;multipart/form-data&quot;
               class=&quot;ava_form&quot;&gt;
@@ -121,9 +121,9 @@
     &lt;input name=&quot;upload&quot; type=&quot;submit&quot; value=&quot;提交&quot;  class=&quot;ava_change_submit&quot; /&gt;
 &lt;/form&gt;
 </code></pre>
-<h3 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h3><pre><code class="shell">npm i multiparty
+<h3 id="NodeJS"><a href="#NodeJS" class="headerlink" title="NodeJS"></a>NodeJS</h3><pre><code class="lang-shell">npm i multiparty
 </code></pre>
-<pre><code class="javascript">const multiparty = require(&#39;multiparty&#39;)
+<pre><code class="lang-javascript">const multiparty = require(&#39;multiparty&#39;)
 router.post(&#39;/uploadImg&#39;, function (req, res) {
   const form = new multiparty.Form({
     uploadDir: &#39;./public/img_upload&#39;

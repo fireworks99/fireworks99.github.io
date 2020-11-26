@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -148,7 +148,7 @@
 <p>但翻转任意一个格子，与他相邻的格子都会被翻转</p>
 <p>求解最小翻转方案</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
@@ -234,16 +234,16 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="部分代码解释"><a href="#部分代码解释" class="headerlink" title="部分代码解释"></a>部分代码解释</h3><pre><code class="c++">///（按照字典序）枚举第一行所有的翻转方案
+<h3 id="部分代码解释"><a href="#部分代码解释" class="headerlink" title="部分代码解释"></a>部分代码解释</h3><pre><code class="lang-c++">///（按照字典序）枚举第一行所有的翻转方案
 for(int num = 0; num &lt; (1 &lt;&lt; m); ++num)
 </code></pre>
 <p>这就相当于一个集合有m个元素，则有 （2 ^ m）个子集。</p>
 <p>对应着，第一行有m个元素，有（2 ^ m）种翻转方案</p>
-<pre><code class="c++">for(int i = 1; i &lt;= m; ++i)
+<pre><code class="lang-c++">for(int i = 1; i &lt;= m; ++i)
             b[1][i] = num &gt;&gt; (m - i) &amp; 1;
 </code></pre>
 <p>这是按照字典序枚举了第一行的所有翻转方案，效果如下</p>
-<pre><code class="c++">0 0 0 0
+<pre><code class="lang-c++">0 0 0 0
 0 0 0 1
 0 0 1 0
 0 0 1 1

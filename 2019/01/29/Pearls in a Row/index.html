@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -113,32 +113,18 @@
 <a id="more"></a>
 <blockquote>
 <p>Let’s call a sequence of consecutive pearls a segment. Let’s call a segment good if it contains two pearls of the same type.</p>
-</blockquote>
-<blockquote>
 <p>Split the row of the pearls to the maximal number of good segments. Note that each pearl should appear in exactly one segment of the partition.</p>
-</blockquote>
-<blockquote>
 <p>As input/output can reach huge size it is recommended to use fast input/output methods: for example, prefer to use scanf/printfinstead of cin/cout in C++, prefer to use BufferedReader/PrintWriter instead of Scanner/System.out in Java.</p>
 </blockquote>
 <h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
 <p>The first line contains integer <em>n</em> (1 ≤ <em>n</em> ≤ 3·105) — the number of pearls in a row.</p>
-</blockquote>
-<blockquote>
 <p>The second line contains <em>n</em> integers <em>a**i</em> (1 ≤ <em>a**i</em> ≤ 109) – the type of the <em>i</em>-th pearl.</p>
 </blockquote>
 <h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
 <p>On the first line print integer <em>k</em> — the maximal number of segments in a partition of the row.</p>
-</blockquote>
-<blockquote>
 <p>Each of the next <em>k</em> lines should contain two integers <em>l**j</em>, <em>r**j</em> (1 ≤ <em>l**j</em> ≤ <em>r**j</em> ≤ <em>n</em>) — the number of the leftmost and the rightmost pearls in the <em>j</em>-th segment.</p>
-</blockquote>
-<blockquote>
 <p>Note you should print the correct partition of the row of the pearls, so each pearl should be in exactly one segment and all segments should contain two pearls of the same type.</p>
-</blockquote>
-<blockquote>
 <p>If there are several optimal solutions print any of them. You can print the segments in any order.</p>
-</blockquote>
-<blockquote>
 <p>If there are no correct partitions of the row print the number “-1”.</p>
 </blockquote>
 <h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="input"><a href="#input" class="headerlink" title="input"></a>input</h4><blockquote>
@@ -168,8 +154,7 @@
 <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote>
 <p>要把一个数字序列分成几个序列（每个序列均含有相同元素），尽可能多地分（也就是让每个序列只含有一组相同元素）。找不到输出 -1 ，否则输出序列个数与起止点</p>
 </blockquote>
-<p>###思路</p>
-<blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
 <p>可以利用 <em>set</em> 自带除重的特点，将序列中的数字向set里放，每放一次检测一次大小，大了很正常，没变大说明出现了同样的元素，这就有了一个序列</p>
 </blockquote>
 <h3 id="坑点（末尾处理）"><a href="#坑点（末尾处理）" class="headerlink" title="坑点（末尾处理）"></a>坑点（末尾处理）</h3><blockquote>
@@ -178,7 +163,7 @@
 <p>1 2 1 3 4 3 6</p>
 <p>那么第一个符合要求的序列是 1 2 1，第二个是3 4 3 6，而不是3 4 3</p>
 </blockquote>
-<pre><code class="c++">#include &lt;set&gt;
+<pre><code class="lang-c++">#include &lt;set&gt;
 #include &lt;cstdio&gt;
 #include &lt;string&gt;
 #include &lt;iostream&gt;

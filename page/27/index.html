@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -141,9 +141,9 @@ https://fireworks99.github.io/
 
 
 <p><a href="www.baidu.com">baidu</a></p>
-<pre><code class="c++">        **&lt;a href=&quot;https://fireworks99.github.io/2019/04/10/Gitment-%E8%AF%84%E8%AE%BA/&quot; style=&quot;color:violet;&quot;&gt;如何参与Gitment评论&lt;/a&gt;**
+<pre><code class="lang-c++">        **&lt;a href=&quot;https://fireworks99.github.io/2019/04/10/Gitment-%E8%AF%84%E8%AE%BA/&quot; style=&quot;color:violet;&quot;&gt;如何参与Gitment评论&lt;/a&gt;**
 </code></pre>
-<pre><code class="css">**&lt;a href=&quot;网址&quot; style=&quot;color:violet;&quot;&gt;题目链接&lt;/a&gt;**
+<pre><code class="lang-css">**&lt;a href=&quot;网址&quot; style=&quot;color:violet;&quot;&gt;题目链接&lt;/a&gt;**
 </code></pre>
 <p><a href="https://www.csdn.net/" title="CSDN" target="_blank" rel="noopener">csdn</a></p>
 <p><a href="https://fireworks99.github.io/" target="_blank" rel="noopener">https://fireworks99.github.io/</a></p>
@@ -169,10 +169,10 @@ https://fireworks99.github.io/
       <!-- <div class="article-digest"> -->
         <!-- 题目链接
 Input
-One line with a positive integer: the number of test cases. Then for each test case: —One line with two integers N and F with 1 &lt;= N, F &lt;= 10 000: the number of pies and the number of friends.  —One line with N integers ri with 1 &lt;= ri &lt;= 10 000: the radii of the pies.  
+One line with a positive integer: the number of test cases. Then for each test case: —-One line with two integers N and F with 1 &lt;= N, F &lt;= 10 000: the number of pies and the number of friends.  —-One line with N integers ri with 1 &lt;= ri &lt;= 10 000: the radii of the pies.  
 
 Output
-For each test case, output one line with the largest possible volume V such that me and my friends can all get a pie piece of size V. The answer should be given as a floating point number with an a -->
+For each test case, output one line with the largest possible volume V such that me and my friends can all get a pie piece of size V. The answer should be given as a floating point number with an -->
         <!-- </div> -->
 
         
@@ -242,15 +242,13 @@ The input consists of multiple test cases. The first line of each test case cont
 给出质数 p ，有一个与 p 互质的数 a （即 gcd(a, p) == 1 )，那么有a ^ (p - 1) % p == 1恒成立
 
 根据这一点得 a 的逆元 x = a ^ (p - 2)
-所以求一个数的逆元，要明确它本身和一个与它  _互质_  的  _质数_  ,根据快速幂求得
+所以求一个数的逆元，要明确它本身和一个与它  互质  的  质数  ,根据快速幂求得
 ②扩展欧几里得
 已知整数a、b，扩展欧几里得算法可以在求得a、b的最大公约数的同时，能找到整数x、y（其中一个很可能是负数），使它们满足等式：。 
 
 为什么可以用扩展欧几里得求解逆元？
 因为a  x % p = 1 就是a  x - p * y = 1.
-
-
-把y写成+的形式就是ax+py=1，为方便理解下面我们把p写成 -->
+把y写成+的形式就是ax+py=1，为方便理解下面我们把p写成b就是ax+ -->
         <!-- </div> -->
 
         
@@ -343,11 +341,7 @@ Input
         
         <h3 id="用差分实现区间操作"><a href="#用差分实现区间操作" class="headerlink" title="用差分实现区间操作"></a>用差分实现区间操作</h3><h3 id="一维"><a href="#一维" class="headerlink" title="一维"></a>一维</h3><blockquote>
 <p>给定一个长度为n的数列a，要求支持操作add(L,R,k)表示对a[L]~a[R]的每个数都加上k。并求修改后的序列a。 </p>
-</blockquote>
-<blockquote>
 <p>设原数组为a[i]a[i], 设数组d[i]=a[i]−a[i−1](a[0]=0)，则 a[i]=∑ij=1d[j] </p>
-</blockquote>
-<blockquote>
 <p>更新操作update(s, t, d)把区间A[s]…A[t]都增加d，我们引入一个数组delta[i]，表示</p>
 <p>A[i]…A[n]的共同增量，n是数组的大小。那么update操作可以转化为：</p>
 <p>1）令delta[s] = delta[s] + d，表示将A[s]…A[n]同时增加d，但这样A[t+1]…A[n]就多加了d</p>
@@ -615,6 +609,35 @@ Sample Output
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/26/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/28/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -109,8 +109,6 @@
 			<h1>ZOJ 3946 Highway Project</h1>
 			<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
 <p>n个点（0~n）m条边，两个权值</p>
-</blockquote>
-<blockquote>
 <p>多开一个cs[N]数组，存到某点所选择的那条边（题目给出）的花费权值</p>
 </blockquote>
 <a id="more"></a>
@@ -118,7 +116,7 @@
 <blockquote>
 <p>这题改了一晚上最后发现：dis[N]数组按n的大小(i = 0; i &lt;= n; ++i)标INF就WA，整个memset就AC, 为啥啊？！</p>
 </blockquote>
-<h3 id="Code-of-spfa"><a href="#Code-of-spfa" class="headerlink" title="Code of spfa"></a>Code of spfa</h3><pre><code class="c++">#include &lt;queue&gt;
+<h3 id="Code-of-spfa"><a href="#Code-of-spfa" class="headerlink" title="Code of spfa"></a>Code of spfa</h3><pre><code class="lang-c++">#include &lt;queue&gt;
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
@@ -238,7 +236,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="Dijkstra（TLE）"><a href="#Dijkstra（TLE）" class="headerlink" title="Dijkstra（TLE）"></a>Dijkstra（TLE）</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Dijkstra（TLE）"><a href="#Dijkstra（TLE）" class="headerlink" title="Dijkstra（TLE）"></a>Dijkstra（TLE）</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;

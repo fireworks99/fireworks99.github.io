@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -118,14 +118,10 @@
 <p>1.黑边没有限制数目，又是求最大边权和，所以选择所有黑边</p>
 <p>2.(无向图可用并查集缩点)缩点后，对于白边，求最大生成树</p>
 <p>3.若有多余白边(在K的限制下)，贪心选取权值大的</p>
-</blockquote>
-<blockquote>
-<p>细节：①int node = n;每次连入一个点node–，若最后node&gt;1不能生成树输出-1.②每次用一条白边k–，若最后k&lt;0白边不够用输出-1.③求生成树过程中未用到的白边单独存一数组中，若最后k&gt;0则sort后贪心选.</p>
-</blockquote>
-<blockquote>
+<p>细节：①int node = n;每次连入一个点node—，若最后node&gt;1不能生成树输出-1.②每次用一条白边k—，若最后k<0白边不够用输出-1.③求生成树过程中未用到的白边单独存一数组中，若最后k>0则sort后贪心选.</0白边不够用输出-1.③求生成树过程中未用到的白边单独存一数组中，若最后k></p>
 <p>有点东西：这题里，无向图求缩点，和 求生成树，都用了并查集</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cmath&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cmath&gt;
 #include &lt;cstdio&gt;
 #include &lt;string&gt;
 #include &lt;vector&gt;
@@ -253,7 +249,7 @@ int main()
 </blockquote>
 <p>得方案数: <img src="https://i.postimg.cc/RVJpCjd9/WDVAP5-RS-TG-9-U4-NP-F.png" alt="figure3"></p>
 </blockquote>
-<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include&lt;bits/stdc++.h&gt;
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include&lt;bits/stdc++.h&gt;
 using namespace std;
 const int mod = int(1e9 + 7);
 #define ll long long
@@ -311,7 +307,7 @@ int main()
 <p>①预处理 前2802的阶乘</p>
 <p>②RMQ离线处理询问（不过这个RMQ的处理方法，是通解吗？）</p>
 </blockquote>
-<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;string&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;

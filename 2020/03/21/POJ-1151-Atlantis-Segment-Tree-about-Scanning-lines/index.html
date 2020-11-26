@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -118,7 +118,7 @@
 <p>当然需要离散化，将浮点数类型的x值对应成每条垂线的标号，这样之后可以用线段树维护当前扫描线的长度，计算具体长度时逆离散化。</p>
 <p>扫描线长度 * 两条相邻两条水平线的高度差 = 矩形面积</p>
 </blockquote>
-<h3 id="Up"><a href="#Up" class="headerlink" title="Up"></a>Up</h3><pre><code class="c++">void up(int o, int L, int R)
+<h3 id="Up"><a href="#Up" class="headerlink" title="Up"></a>Up</h3><pre><code class="lang-c++">void up(int o, int L, int R)
 {
     if(cnt[o])
         len[o] = X[R + 1] - X[L];
@@ -131,7 +131,7 @@
 <blockquote>
 <p>这里按理说有if与else就行了，只是当L == R时不能按照else处理(叶子节点没有子节点了)，所以单独写一下。它等于0是因为这个不可分割的一段没有被覆盖，所以不取它。并不是因为什么“点没有长度”，这里线段树每个点也对应一段区间(不可再分割了)。</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;

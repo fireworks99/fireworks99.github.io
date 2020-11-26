@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -113,14 +113,8 @@
 <a id="more"></a>
 <blockquote>
 <p>The following definition of a regular bracket sequence is well-known, so you can be familiar with it.</p>
-</blockquote>
-<blockquote>
 <p>Let’s define a regular bracket sequence (RBS). Empty string is RBS. Let <em>s</em>1 and <em>s</em>2 be a RBS then the strings &lt;<em>s</em>1&gt;<em>s</em>2, {<em>s</em>1}<em>s</em>2, [<em>s</em>1]<em>s</em>2, (<em>s</em>1)<em>s</em>2 are also RBS.</p>
-</blockquote>
-<blockquote>
 <p>For example the string “[[(){}]&lt;&gt;]” is RBS, but the strings “[)()” and “][()()” are not.</p>
-</blockquote>
-<blockquote>
 <p>Determine the least number of replaces to make the string <em>s</em> RBS.</p>
 </blockquote>
 <h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
@@ -128,8 +122,6 @@
 </blockquote>
 <h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
 <p>If it’s impossible to get RBS from <em>s</em> print Impossible.</p>
-</blockquote>
-<blockquote>
 <p>Otherwise print the least number of replaces needed to get RBS from <em>s</em>.</p>
 </blockquote>
 <h3 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h3><h4 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h4><blockquote>
@@ -153,7 +145,7 @@
 <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote>
 <p>四种括号，离左括号（右括号）最近的右括号（左括号）恰是配对的就算完美了，若不是求最少改动几次，不能就输出Impossible</p>
 </blockquote>
-<pre><code class="c++">#include &lt;stack&gt;
+<pre><code class="lang-c++">#include &lt;stack&gt;
 #include &lt;cstdio&gt;
 #include &lt;string&gt;
 #include &lt;iostream&gt;

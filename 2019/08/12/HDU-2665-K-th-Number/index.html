@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -122,7 +122,7 @@
 <li><a href="https://www.cnblogs.com/zyf0163/p/4749042.html" target="_blank" rel="noopener">https://www.cnblogs.com/zyf0163/p/4749042.html</a></li>
 </ol>
 </blockquote>
-<h2 id="Code-of-HDU-2665-K-th-Number"><a href="#Code-of-HDU-2665-K-th-Number" class="headerlink" title="Code of HDU 2665 K-th Number"></a>Code of HDU 2665 K-th Number</h2><pre><code class="c++">#include &lt;cstdio&gt;
+<h2 id="Code-of-HDU-2665-K-th-Number"><a href="#Code-of-HDU-2665-K-th-Number" class="headerlink" title="Code of HDU 2665 K-th Number"></a>Code of HDU 2665 K-th Number</h2><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
@@ -229,14 +229,10 @@ int main()
 <li>以(前值)旧值更新(后值)新值</li>
 <li>后值减(前值-1)代表中间区间的值</li>
 </ol>
-</blockquote>
-<blockquote>
 <p>code中建树函数build用到了<strong>引用</strong>(也有非引用版)</p>
 <p>引用：给变量一个新名字，喊着他的新名字让他去做事等效于喊他原来的名字让他去做事</p>
 <p>为什么不能一直喊他原名字呢？当他处于不同的空间需要有不同的名字以区分</p>
 <p>引用常常用在递归中，往往是深层递归中他得到一个值，使得前一层的他有了同样的值</p>
-</blockquote>
-<blockquote>
 <p>主席树每棵节点保存的是一颗线段树，(时空两方面)维护的区间相同，结构相同，保存的信息不同，因此具有了加减性(前缀和性质)</p>
 </blockquote>
 <h3 id="别名：可持久化线段树"><a href="#别名：可持久化线段树" class="headerlink" title="别名：可持久化线段树"></a>别名：可持久化线段树</h3><blockquote>

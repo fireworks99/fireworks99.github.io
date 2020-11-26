@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -110,12 +110,12 @@
 			<h1 id="容量网络"><a href="#容量网络" class="headerlink" title="容量网络"></a>容量网络</h1><blockquote>
 <p>设G(V,E),是一个<strong>有向</strong>网络;</p>
 <p>在V中指定了一个顶点,称为源点(记为Vs),以及另一个顶点,称为汇点(记为Vt);</p>
-<p>对于每一条弧&lt;u,v&gt;属于E,对应有一个权值c(u,v)&gt;0,称为弧的容量.</p>
+<p>对于每一条弧<u,v>属于E,对应有一个权值c(u,v)&gt;0,称为弧的容量.</u,v></p>
 <p>通常把这样的有向网络G称为容量网络. </p>
 </blockquote>
 <a id="more"></a>
 <h1 id="弧的流量"><a href="#弧的流量" class="headerlink" title="弧的流量"></a>弧的流量</h1><blockquote>
-<p>通过容量网络G中每条弧&lt;u,v&gt;,上的实际流量(简称流量),记为f(u,v); </p>
+<p>通过容量网络G中每条弧<u,v>,上的实际流量(简称流量),记为f(u,v); </u,v></p>
 </blockquote>
 <h1 id="网络流"><a href="#网络流" class="headerlink" title="网络流"></a>网络流</h1><blockquote>
 <p>所有弧上流量的集合f={f(u,v)},称为该容量网络的一个网络流 </p>
@@ -149,11 +149,9 @@
 </blockquote>
 <h1 id="为什么要加反向边？"><a href="#为什么要加反向边？" class="headerlink" title="为什么要加反向边？"></a>为什么要加反向边？</h1><blockquote>
 <p>在做增广路时可能会阻塞后面的增广路…或者说做增广路本来是有个顺序才能找完最大流的…..但我们是任意找的…为了修正…就每次将流量加在了反向弧上…让后面的流能够进行自我调整…剩余网络的更新(就在原图上更新就可以了) </p>
-</blockquote>
-<blockquote>
 <p>据说是Ford-Fulkerson算法的改进，EK = SAP(Shortest Augmenting Path 最短增广路)</p>
 </blockquote>
-<h2 id="Code-模板-易MLE、TLE-O-n-m-m"><a href="#Code-模板-易MLE、TLE-O-n-m-m" class="headerlink" title="Code(模板)易MLE、TLE O(n  m  m)"></a>Code(模板)易MLE、TLE O(n <em> m </em> m)</h2><pre><code class="c++">#include &lt;queue&gt;
+<h2 id="Code-模板-易MLE、TLE-O-n-m-m"><a href="#Code-模板-易MLE、TLE-O-n-m-m" class="headerlink" title="Code(模板)易MLE、TLE O(n  m  m)"></a>Code(模板)易MLE、TLE O(n <em> m </em> m)</h2><pre><code class="lang-c++">#include &lt;queue&gt;
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;

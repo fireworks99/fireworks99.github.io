@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -123,11 +123,11 @@
 <li>添加以下代码</li>
 </ol>
 </blockquote>
-<pre><code class="yaml">Livere:
+<pre><code class="lang-yaml">Livere:
   livere_uid: &#39;这里填上面那个data-uid&#39;
 </code></pre>
 <blockquote>
-<ol start="2">
+<ol>
 <li>将原来的评论系统false+注释</li>
 </ol>
 </blockquote>
@@ -140,7 +140,7 @@
 <p>在主题文件下的layout文件里有个post.ejs文件，打开添加一行代码</p>
 </blockquote>
 <p><code>&lt;%- partial(&#39;_partial/livere&#39;, {post: page, index: true}) %&gt;</code></p>
-<h2 id="七-博客更新部署，查看效果"><a href="#七-博客更新部署，查看效果" class="headerlink" title="七.博客更新部署，查看效果"></a>七.博客更新部署，查看效果</h2><pre><code class="js">hexo clean
+<h2 id="七-博客更新部署，查看效果"><a href="#七-博客更新部署，查看效果" class="headerlink" title="七.博客更新部署，查看效果"></a>七.博客更新部署，查看效果</h2><pre><code class="lang-js">hexo clean
 hexo g
 hexo s
 hexo d

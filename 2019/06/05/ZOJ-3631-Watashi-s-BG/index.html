@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -121,7 +121,7 @@
 <p>2 ^ 40 ≈ 1e12,但折半后 2 ^ 20 ≈ 1e6,可枚举了</p>
 <p>对前半部分枚举出所有方案，排序去除多余元素（重量大反而价值小，不针对此题），对后半部分的方案在枚举时二分搜索前半部分的方案，更新最佳答案</p>
 </blockquote>
-<h2 id="Code（Template）"><a href="#Code（Template）" class="headerlink" title="Code（Template）"></a>Code（Template）</h2><pre><code class="c++">#include &lt;cstdio&gt;
+<h2 id="Code（Template）"><a href="#Code（Template）" class="headerlink" title="Code（Template）"></a>Code（Template）</h2><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 using namespace std;
@@ -176,7 +176,7 @@ int main()
     }
 }
 </code></pre>
-<h2 id="枚举方案测试"><a href="#枚举方案测试" class="headerlink" title="枚举方案测试"></a>枚举方案测试</h2><pre><code class="c++">for(int i = 0; i &lt; (1 &lt;&lt; n); ++i)
+<h2 id="枚举方案测试"><a href="#枚举方案测试" class="headerlink" title="枚举方案测试"></a>枚举方案测试</h2><pre><code class="lang-c++">for(int i = 0; i &lt; (1 &lt;&lt; n); ++i)
     {
         for(int j = 0; j &lt; n; ++j)
             if(i &gt;&gt; j &amp; 1)

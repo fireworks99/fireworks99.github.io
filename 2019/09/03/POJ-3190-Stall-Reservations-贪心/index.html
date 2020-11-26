@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -118,7 +118,7 @@
 <p>第一个占用一条数轴，放入某个容器里。从第二个开始遍历，找出容器里(容器里都是安排好的区间)右界最小的区间，若其小于当前区间的左界，则当前区间可与该区间共用同一数轴，将那个区间拿出来，把这个区间放进去</p>
 <p>每次都要找出容器中右界最小的区间，那么该容器可用优先队列充当</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;queue&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;queue&gt;
 #include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;

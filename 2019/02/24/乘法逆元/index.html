@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -124,21 +124,17 @@
 <p>给出质数 p ，有一个与 p 互质的数 a （即 gcd(a, p) == 1 )，那么有a ^ (p - 1) % p == 1恒成立</p>
 </blockquote>
 <p><strong>根据这一点得 a 的逆元 x = a ^ (p - 2)</strong></p>
-<p><strong>所以求一个数的逆元，要明确它本身和一个与它  _互质_  的  _质数_  ,根据快速幂求得</strong></p>
+<p><strong>所以求一个数的逆元，要明确它本身和一个与它  <em>互质</em>  的  <em>质数</em>  ,根据快速幂求得</strong></p>
 <h3 id="②扩展欧几里得"><a href="#②扩展欧几里得" class="headerlink" title="②扩展欧几里得"></a>②扩展欧几里得</h3><blockquote>
 <p>已知整数a、b，扩展欧几里得算法可以在求得a、b的最大公约数的同时，能找到整数x、y（其中一个很可能是负数），使它们满足等式：<img src="https://upload.wikimedia.org/math/6/8/f/68f75cdc71ebee2a9f11970a0357cda8.png" alt="ax + by = \gcd(a, b)">。 </p>
 </blockquote>
 <h4 id="为什么可以用扩展欧几里得求解逆元？"><a href="#为什么可以用扩展欧几里得求解逆元？" class="headerlink" title="为什么可以用扩展欧几里得求解逆元？"></a>为什么可以用扩展欧几里得求解逆元？</h4><blockquote>
 <p>因为a <em> x % p = 1 就是a </em> x - p * y = 1.</p>
-</blockquote>
-<blockquote>
 <p>把y写成+的形式就是ax+py=1，为方便理解下面我们把p写成b就是ax+by=1。</p>
-</blockquote>
-<blockquote>
 <p>就表示x是a的模b乘法逆元，y是b的模a乘法逆元。然后就可以用扩展欧几里得求了。</p>
 </blockquote>
 <p><strong>所以求一个数 a 的模 p 逆元 ，不管p质数与否，只需明确a与p</strong></p>
-<h5 id="Code（exgcd扩展欧几里得）"><a href="#Code（exgcd扩展欧几里得）" class="headerlink" title="Code（exgcd扩展欧几里得）"></a>Code（exgcd扩展欧几里得）</h5><pre><code class="c++">#include &lt;cstdio&gt;
+<h5 id="Code（exgcd扩展欧几里得）"><a href="#Code（exgcd扩展欧几里得）" class="headerlink" title="Code（exgcd扩展欧几里得）"></a>Code（exgcd扩展欧几里得）</h5><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 using namespace std;
@@ -192,7 +188,7 @@ int main()
 <p>7922</p>
 <p>6060</p>
 </blockquote>
-<h3 id="Code-费马小定理"><a href="#Code-费马小定理" class="headerlink" title="Code(费马小定理)"></a>Code(费马小定理)</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code-费马小定理"><a href="#Code-费马小定理" class="headerlink" title="Code(费马小定理)"></a>Code(费马小定理)</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 using namespace std;
@@ -225,7 +221,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="Code（扩展欧几里得）"><a href="#Code（扩展欧几里得）" class="headerlink" title="Code（扩展欧几里得）"></a>Code（扩展欧几里得）</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code（扩展欧几里得）"><a href="#Code（扩展欧几里得）" class="headerlink" title="Code（扩展欧几里得）"></a>Code（扩展欧几里得）</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
 using namespace std;

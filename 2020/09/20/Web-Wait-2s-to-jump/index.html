@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -111,7 +111,7 @@
 <p>用户注册完成后，屏幕上打印“注册成功”的信息，等待两秒后跳转到登录页面</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="只用一个setTimeout"><a href="#只用一个setTimeout" class="headerlink" title="只用一个setTimeout"></a>只用一个setTimeout</h3><pre><code class="javascript">this.usernameV = &#39;注册成功,2s后跳转&#39;;
+<h3 id="只用一个setTimeout"><a href="#只用一个setTimeout" class="headerlink" title="只用一个setTimeout"></a>只用一个setTimeout</h3><pre><code class="lang-javascript">this.usernameV = &#39;注册成功,2s后跳转&#39;;
 setTimeout(function() {
     this.$router.push(&#39;/login&#39;)
 }, 2000)
@@ -119,12 +119,12 @@ setTimeout(function() {
 <blockquote>
 <p>此时this已经是undefined了</p>
 </blockquote>
-<h3 id="试着用“同步”sleep"><a href="#试着用“同步”sleep" class="headerlink" title="试着用“同步”sleep"></a>试着用“同步”sleep</h3><pre><code class="javascript">function syncSleep(time) {
+<h3 id="试着用“同步”sleep"><a href="#试着用“同步”sleep" class="headerlink" title="试着用“同步”sleep"></a>试着用“同步”sleep</h3><pre><code class="lang-javascript">function syncSleep(time) {
     const start = new Date().getTime();
     while (new Date().getTime() - start &lt; time) {}
   }
 </code></pre>
-<pre><code class="javascript">this.usernameV = &#39;注册成功,2s后跳转&#39;;
+<pre><code class="lang-javascript">this.usernameV = &#39;注册成功,2s后跳转&#39;;
 
 syncSleep(2000)
 // 这里竟然也是先等2s，然后执行赋值与push(这两个操作还不知道谁先)
@@ -134,7 +134,7 @@ this.$router.push(&#39;/login&#39;)
 <blockquote>
 <p>这里竟然先等2s再执行另外两个操作!!!</p>
 </blockquote>
-<h3 id="还是第一种方法，集中解决this问题"><a href="#还是第一种方法，集中解决this问题" class="headerlink" title="还是第一种方法，集中解决this问题"></a>还是第一种方法，集中解决this问题</h3><pre><code class="javascript">this.usernameV = &#39;注册成功,2s后跳转&#39;;
+<h3 id="还是第一种方法，集中解决this问题"><a href="#还是第一种方法，集中解决this问题" class="headerlink" title="还是第一种方法，集中解决this问题"></a>还是第一种方法，集中解决this问题</h3><pre><code class="lang-javascript">this.usernameV = &#39;注册成功,2s后跳转&#39;;
 
 // 这步操作关键，在异步操作外部定义一个指向this.$router的引用
 const r = this.$router;

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -114,7 +114,7 @@
 <blockquote>
 <p>题目链接：<a href="http://uoj.ac/problem/117" target="_blank" rel="noopener">http://uoj.ac/problem/117</a></p>
 </blockquote>
-<h3 id="Code-代码赏析"><a href="#Code-代码赏析" class="headerlink" title="Code 代码赏析"></a>Code 代码赏析</h3><pre><code class="c++">#include &lt;set&gt;
+<h3 id="Code-代码赏析"><a href="#Code-代码赏析" class="headerlink" title="Code 代码赏析"></a>Code 代码赏析</h3><pre><code class="lang-c++">#include &lt;set&gt;
 #include &lt;map&gt;
 #include &lt;stack&gt;
 #include &lt;queue&gt;
@@ -237,33 +237,17 @@ int main()
 <p>原因①：vis[e] 、vis[e ^ 1]这种方法规定边从偶数(0/2/4/etc)开始存</p>
 <p>原因②：链式前向星遍历时以-1结束，此处不愿memset(-1)，便是以0结束，所以e == 0被占用作为循环结束标志，0不可用只能从2开始计数</p>
 </li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="2">
 <li><p>添边的同时统计入度与出度：</p>
 <p>对于存在欧拉回路的无向图：入度(==出度)不存在奇数</p>
 <p>对于存在欧拉回路的有向图：每个点的入度必须等于出度</p>
 </li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="3">
 <li><p>添边的同时记录出现过的最大的结点标号(num_max)？</p>
 <p>题目给出数字n，代表有n个点，但不一定所有点都会被提及，所以num_max可以作为DFS入口。另外，测试每个点入度与出度是否合理的时候，num_max可以做遍历上限，省去不必要的遍历</p>
 </li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="4">
 <li><p>DFS套圈法(cnt计数判连通)：</p>
 <p>这里用了引用(&amp;)，通过改变head数组的值实现“边的删除”以保证O(E)的复杂度</p>
 <p>用题解中的一句话来说：对于访问过的边不能直接打标记跳过(如果一直给自环那么dfs循环边就是n方)，但还是要标记的</p>
 </li>
-</ol>
-</blockquote>
-<blockquote>
-<ol start="5">
 <li><p>输出答案：</p>
 <p>对于有向图，输出边的编号减一，因为我们的边是从2开始存的，题目从1开始</p>
 <p>对于无向图，若边的标号为偶数，便是题目所给的u到v的走法，若为奇数，则是我们添的从v到u的辅助边走法。因为题目给的一条边我们对应填了两条，所以要 / 2</p>

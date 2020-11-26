@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -111,7 +111,7 @@
 <p>注册信息错误，返回错误信息(BackEnd -&gt; FrontEnd)</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="BackEnd-nodejs-express"><a href="#BackEnd-nodejs-express" class="headerlink" title="BackEnd(nodejs express)"></a>BackEnd(nodejs express)</h3><pre><code class="javascript">router.get(&#39;/register_process&#39;, function (req, res) {
+<h3 id="BackEnd-nodejs-express"><a href="#BackEnd-nodejs-express" class="headerlink" title="BackEnd(nodejs express)"></a>BackEnd(nodejs express)</h3><pre><code class="lang-javascript">router.get(&#39;/register_process&#39;, function (req, res) {
   register(req.query.username, req.query.password, function (err) {
     if(err) res.send(err)
   })
@@ -123,7 +123,7 @@
 <h3 id="FrontEnd"><a href="#FrontEnd" class="headerlink" title="FrontEnd"></a>FrontEnd</h3><blockquote>
 <p>最开始的时候想在input标签后加after伪类元素，后来发现伪类元素是在容器内部的尾部的，而input容不下其他元素，故作罢。改为新增一个input标签用于展示错误信息。初始value设为空字符串。</p>
 </blockquote>
-<pre><code class="javascript">getRegister() {
+<pre><code class="lang-javascript">getRegister() {
         getRegister(this.username, this.password).then(res =&gt; {
           if(res) {
             this.usernameV = res;
@@ -131,7 +131,7 @@
         })
       }
 </code></pre>
-<pre><code class="html">&lt;input :class=&quot;{activeU: isUsernameError}&quot; type=&quot;text&quot; :value=&quot;usernameV&quot;&gt;
+<pre><code class="lang-html">&lt;input :class=&quot;{activeU: isUsernameError}&quot; type=&quot;text&quot; :value=&quot;usernameV&quot;&gt;
 </code></pre>
 <blockquote>
 <p>v-bind绑定value，将返回的错误信息(若有)设为value的值</p>

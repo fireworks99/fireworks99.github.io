@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -116,7 +116,7 @@
 <h3 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h3><blockquote>
 <p>将每个数字拆解成k的幂次之和的形式</p>
 </blockquote>
-<pre><code class="c++">        long long a, cnt[60];
+<pre><code class="lang-c++">        long long a, cnt[60];
         memset(cnt, 0, sizeof(cnt));
         for(int i = 0; i &lt; n; ++i)
         {
@@ -134,12 +134,10 @@
 <p>运用了逐次降幂的思想（让我想起了Java老师讲进制转换）</p>
 <p>举例：k的x次幂，拿他 /= k，可以完成 x 次，之后成为 1，运用上面的代码得到<code>cnt[x] == 1</code>。同理，若是k的x次幂与k的y次幂之和，这个数字跑完代码后得到<code>cnt[x] == 1 &amp;&amp; cnt[y] == 1 &amp;&amp; cnt[others] == 0</code>。</p>
 <p>算法很清楚地显示了这个数字在 k的幂次 这一角度的组成。</p>
-</blockquote>
-<blockquote>
 <p>对于这一题，针对所有数字，使用同一个cnt数组，若是所有的1都落在不同位上，则YES，若是落在同一位上则NO！</p>
 <p>这想法真好。</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;vector&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -112,7 +112,7 @@
 <p>推荐在线编辑器 ：<a href="http://ideone.com/" target="_blank" rel="noopener">http://ideone.com/</a></p>
 </blockquote>
 <a id="more"></a>
-<h2 id="大小"><a href="#大小" class="headerlink" title="大小"></a>大小</h2><pre><code class="c++">#include &lt;iostream&gt;
+<h2 id="大小"><a href="#大小" class="headerlink" title="大小"></a>大小</h2><pre><code class="lang-c++">#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
@@ -131,7 +131,7 @@ int main() {
 <p>16  ≈  1.7014118346047 * 10 ^ 38 </p>
 <p>16  ≈  1.7014118346047 * 10 ^ 38 </p>
 </blockquote>
-<h2 id="输入输出需自己写函数"><a href="#输入输出需自己写函数" class="headerlink" title="输入输出需自己写函数"></a>输入输出需自己写函数</h2><h3 id="Code-of-Input"><a href="#Code-of-Input" class="headerlink" title="Code of Input"></a>Code of Input</h3><pre><code class="c++">void scan(__int128 &amp;x)//输入
+<h2 id="输入输出需自己写函数"><a href="#输入输出需自己写函数" class="headerlink" title="输入输出需自己写函数"></a>输入输出需自己写函数</h2><h3 id="Code-of-Input"><a href="#Code-of-Input" class="headerlink" title="Code of Input"></a>Code of Input</h3><pre><code class="lang-c++">void scan(__int128 &amp;x)//输入
 {
     x = 0;
     int f = 1;
@@ -143,7 +143,7 @@ int main() {
     x *= f;
 }
 </code></pre>
-<h3 id="Code-of-Output"><a href="#Code-of-Output" class="headerlink" title="Code of Output"></a>Code of Output</h3><pre><code class="c++">void print(__int128 x)
+<h3 id="Code-of-Output"><a href="#Code-of-Output" class="headerlink" title="Code of Output"></a>Code of Output</h3><pre><code class="lang-c++">void print(__int128 x)
 {
     if(x &lt; 0)
     {
@@ -157,7 +157,7 @@ int main() {
 <h2 id="还有一件事！！！"><a href="#还有一件事！！！" class="headerlink" title="还有一件事！！！"></a>还有一件事！！！</h2><blockquote>
 <p>看以下代码</p>
 </blockquote>
-<pre><code class="c++">#include &lt;cstdio&gt;
+<pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 using namespace std;
 
@@ -174,7 +174,7 @@ int main()
 <p>Output: -94967296</p>
 <p>a、b皆为int类型，相加默认还是int，所以这里int溢出了，得到一个负值，再赋给一个long long类型的值已经晚了</p>
 </blockquote>
-<pre><code class="c++">    int a, b;
+<pre><code class="lang-c++">    int a, b;
     a = b = 2100000000;
     long long c = a;
     c += b;

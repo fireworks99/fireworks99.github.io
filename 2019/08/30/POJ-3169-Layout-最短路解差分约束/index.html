@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -133,18 +133,18 @@
 <p>x3 - x0 &lt;= 7                (1)+(4)+(5)</p>
 <p>要同时满足，答案取7</p>
 </blockquote>
-<h2 id="求差分约束系统转为求单源最短路"><a href="#求差分约束系统转为求单源最短路" class="headerlink" title="求差分约束系统转为求单源最短路"></a>求差分约束系统转为求单源最短路</h2><pre><code class="c">x[i] - x[j] &lt;= a[k]
+<h2 id="求差分约束系统转为求单源最短路"><a href="#求差分约束系统转为求单源最短路" class="headerlink" title="求差分约束系统转为求单源最短路"></a>求差分约束系统转为求单源最短路</h2><pre><code class="lang-c">x[i] - x[j] &lt;= a[k]
 </code></pre>
 <blockquote>
 <p>令dis[i] = x[i]，令i = v， j = u， a[k] = w(j, i)</p>
 </blockquote>
-<pre><code class="c">dis[v] - dis[u] &lt;= w(u, v)
+<pre><code class="lang-c">dis[v] - dis[u] &lt;= w(u, v)
 -&gt; dis[v] &lt;= dis[u] + w(u, v)
 </code></pre>
 <blockquote>
 <p>似最短路</p>
 </blockquote>
-<pre><code class="c">前L条边：
+<pre><code class="lang-c">前L条边：
     dis[v] - dis[u] &lt;= w(u, v)
     add(u, v, w);
 后D条边：
@@ -172,7 +172,7 @@
 <li>图不连通：dis[n] == INF，   -2</li>
 </ol>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;queue&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;queue&gt;
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;

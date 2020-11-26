@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -116,14 +116,10 @@
 <p>1.利用单调栈，可以找到从左/右遍历第一个比它小/大的元素的位置</p>
 <p>2.以自己为最小或最大值找到最大的区间(对应 单调递增/单调递减)同1.</p>
 <p>3.给定一个区间，找到这个区间的最大或最小值</p>
-</blockquote>
-<blockquote>
 <p>此题用到了功能2，功能2是在1的基础上的</p>
-</blockquote>
-<blockquote>
 <p><strong>单调栈的维护是 O(n) 级的时间复杂度，因为所有元素只会进入栈一次，并且出栈后再也不会进栈了。</strong></p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;stack&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;stack&gt;
 #include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 using namespace std;

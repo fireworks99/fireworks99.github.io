@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -114,8 +114,6 @@
 <h3 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h3><blockquote>
 <p>为了保证最大匹配数，先对王子进行最大匹配(二分图匹配の匈牙利算法DFS)。</p>
 <p>在最大匹配前提下，再找各王子除了匹配到的公主外还可以匹配哪些公主</p>
-</blockquote>
-<blockquote>
 <p>遍历王子，对于没匹配公主的每个王子：</p>
 <p>设置一个虚点(公主)与之匹配，并让所有王子指向这一虚点</p>
 </blockquote>
@@ -127,12 +125,10 @@
 <p><img src="https://i.postimg.cc/htyhJbPp/IO-XI4-E-TJ8-V4-4-2-V4-NC.png" alt="Princess"></p>
 <blockquote>
 <p>针对参与匹配的所有公主(最大匹配中的+虚点中的)，建立反向边</p>
-</blockquote>
-<blockquote>
 <p>强连通分量缩点，处在同一个强连通分量中的王子与公主，可以彼此匹配</p>
 <p>A遍历王子，<code>love[A][B]==1</code>用来排除B是王子(保证B是公主)</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;stack&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;stack&gt;
 #include &lt;cstdio&gt;
 #include &lt;vector&gt;
 #include &lt;cstring&gt;
@@ -316,7 +312,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="注意初始化顺序"><a href="#注意初始化顺序" class="headerlink" title="注意初始化顺序"></a>注意初始化顺序</h3><pre><code class="c++">void init()
+<h3 id="注意初始化顺序"><a href="#注意初始化顺序" class="headerlink" title="注意初始化顺序"></a>注意初始化顺序</h3><pre><code class="lang-c++">void init()
 {
     for(int i = 0; i &lt;= num; ++i)
         scc[i].clear();

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -113,10 +113,10 @@
 <a id="more"></a>
 <h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><blockquote>
 <p>若n = m + 1,先手必败<strong>——结论①</strong></p>
-<p>-&gt;若n = k * (m + 1)，第二个人有可以使物品最终变为(m + 1)的办法，先手必败<strong>——结论②</strong></p>
-<p>-&gt;若n = k * (m + 1) + r,先手拿走r个，由结论②得后手必败、先手必胜<strong>——结论③</strong></p>
+<p>-&gt;若n = k <em> (m + 1)，第二个人有可以使物品最终变为(m + 1)的办法，先手必败<em>*——结论②</em></em></p>
+<p>-&gt;若n = k <em> (m + 1) + r,先手拿走r个，由结论②得后手必败、先手必胜<em>*——结论③</em></em></p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">bool Bash_Game(int n, int m)
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">bool Bash_Game(int n, int m)
 {
     if(n % (m + 1) != 0)
         return 1;
@@ -155,14 +155,12 @@
 </ol>
 </blockquote>
 <p>对于n堆物品,只要判断它出是奇状态就可以断定先手有必赢策略 </p>
-</blockquote>
-<blockquote>
 <p>位运算（异或）代替求二进制判断奇状态：</p>
 <p> 如果有奇数个二进制数在第K位为1，那么在这一位上的和为奇（已可以表明这就是一个奇状态）</p>
 <p>在位运算方面体现为：所有数字异或后得到的ans在第K位为1</p>
 <p>这一条件可以放大为ans != 0，意味着ans至少有一位1，我们说那就是第K位。</p>
 </blockquote>
-<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">bool Nimm_Game(int n)
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">bool Nimm_Game(int n)
 {
     int flag = 0;
     for(int i = 0; i &lt; n; ++i)
@@ -175,7 +173,7 @@
 <blockquote>
 <p>但是有时会遇到n很大，a[i]为连续整数的特殊情况，这时有特殊算法</p>
 </blockquote>
-<h3 id="Strange-code"><a href="#Strange-code" class="headerlink" title="Strange code"></a>Strange code</h3><pre><code class="c++">//读入n，表示有从物品数分别1到n的n堆物品，假设n个数存在数组f[]中
+<h3 id="Strange-code"><a href="#Strange-code" class="headerlink" title="Strange code"></a>Strange code</h3><pre><code class="lang-c++">//读入n，表示有从物品数分别1到n的n堆物品，假设n个数存在数组f[]中
 int xor_n(int n)//从1到n的异或和
 {
      int t = n &amp; 3;
@@ -209,20 +207,14 @@ int Nimm_Game(int n)//有必胜策略返回1
 </blockquote>
 <h2 id="威佐夫博弈（Wythoff-Game）"><a href="#威佐夫博弈（Wythoff-Game）" class="headerlink" title="威佐夫博弈（Wythoff Game）"></a>威佐夫博弈（Wythoff Game）</h2><blockquote>
 <p>有两堆各若干个物品，两个人轮流从某一堆或同时从两堆中取同样多的物品，规定每次至少取一个，多者不限，最后取光者得胜。 </p>
-</blockquote>
-<blockquote>
 <p>如果甲面对（0，0），那么甲已经输了，这种局势我们称为奇异局势。前几个奇异局势是：</p>
 <p>（0，0）、（1，2）、（3，5）、（4，7）、（6，10）.</p>
 <p>可以看出,a0=b0=0,ak是未在前面出现过的最小自然数,而 bk=ak+k. </p>
-</blockquote>
-<blockquote>
 <p>面对奇异局势，先手必败</p>
 <p>面对非奇异局势，必然存在使其变为奇异局势的方案，使后手必败，从而先手获胜</p>
-</blockquote>
-<blockquote>
 <p>取石子游戏 ： <a href="http://poj.org/problem?id=1067" target="_blank" rel="noopener">http://poj.org/problem?id=1067</a></p>
 </blockquote>
-<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cmath&gt;
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cmath&gt;
 #include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 using namespace std;

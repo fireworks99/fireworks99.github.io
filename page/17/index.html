@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -422,7 +422,7 @@ mtx mpy(mtx a, mtx b)
       
       <!-- <div class="article-digest"> -->
         <!-- 弧的流量
-通过容量网络G中每条弧&lt;u,v&gt;,上的实际流量(简称流量),记为f(u,v); 
+通过容量网络G中每条弧,上的实际流量(简称流量),记为f(u,v); 
 
 网络流
 所有弧上流量的集合f={f(u,v)},称为该容量网络的一个网络流 
@@ -441,14 +441,14 @@ mtx mpy(mtx a, mtx b)
 如何求最大流？(何为增广路)
 假如所有边上的流量都没有超过容量（水管），那么就把这个流，称为一个可行流。
 易见，任一网络中都有一个零流，即每弧a上f(a)=0的流f.
-我们就从这个零流开始考虑，假如有这么一条路，这条路从源点开始一直一段 -->
+我们就从这个零流开始考虑，假如有这么一条路，这条路从源点开始一直一段一段的连到了汇点(这条 -->
         <!-- </div> -->
 
         
         <h1 id="容量网络"><a href="#容量网络" class="headerlink" title="容量网络"></a>容量网络</h1><blockquote>
 <p>设G(V,E),是一个<strong>有向</strong>网络;</p>
 <p>在V中指定了一个顶点,称为源点(记为Vs),以及另一个顶点,称为汇点(记为Vt);</p>
-<p>对于每一条弧&lt;u,v&gt;属于E,对应有一个权值c(u,v)&gt;0,称为弧的容量.</p>
+<p>对于每一条弧<u,v>属于E,对应有一个权值c(u,v)&gt;0,称为弧的容量.</u,v></p>
 <p>通常把这样的有向网络G称为容量网络. </p>
 </blockquote>
         
@@ -572,14 +572,12 @@ if(i != m - 1)
       
       <!-- <div class="article-digest"> -->
         <!-- 总结
-一看日期计算 –&gt; 形成思维定式：不就是求两个日期差 % 5吗！
+一看日期计算 —&gt; 形成思维定式：不就是求两个日期差 % 5吗！
 后来各种错：
 
 % 5 之后对应数字为0~4，要搞清楚其对应周几
 封榜后发现与年份无关，一年是那固定的360天，% 5 == 0
 赛后再想想与月份都无关，一个月是那固定的30天， % 5 == 0
-
-
 
 所以，题目给出一个新事物（或是旧事物的变式），一定要先找其运行规律，总结特点，抓住特点去做，不要因着急而盲目去做。一个人在敲这个题时，另外两人不仅要思考这方法是否正确、细节是否都注意到了、特判做到了，还要想想是否有更简单的方法，因为更简单的方法一定是更优的，是更能体现参赛者水平的，是出题人想看到的。
 
@@ -593,7 +591,7 @@ int main()
     int t;
     scanf(&quot;%d&quot;, &amp;t);
     map&lt;int, string&gt; mp;
-    mp[1] = &quot;Mo -->
+    mp[1] = &quot;Mond -->
         <!-- </div> -->
 
         
@@ -662,6 +660,35 @@ int main()
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/16/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/18/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -111,7 +111,7 @@
 <p>前端向后端请求一系列数据(文本、图片等静态资源)并展示在页面上</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="request-js"><a href="#request-js" class="headerlink" title="request.js"></a>request.js</h3><pre><code class="javascript">import axios from &#39;axios&#39;
+<h3 id="request-js"><a href="#request-js" class="headerlink" title="request.js"></a>request.js</h3><pre><code class="lang-javascript">import axios from &#39;axios&#39;
 
 export function request(config) {
 
@@ -141,7 +141,7 @@ export function request(config) {
   return instance(config)
 }
 </code></pre>
-<h3 id="profile-js"><a href="#profile-js" class="headerlink" title="profile.js"></a>profile.js</h3><pre><code class="javascript">import {request} from &quot;./request&quot;;
+<h3 id="profile-js"><a href="#profile-js" class="headerlink" title="profile.js"></a>profile.js</h3><pre><code class="lang-javascript">import {request} from &quot;./request&quot;;
 
 export function getProfileData(username) {
   return request({
@@ -152,7 +152,7 @@ export function getProfileData(username) {
   })
 }
 </code></pre>
-<h3 id="Profile-vue"><a href="#Profile-vue" class="headerlink" title="Profile.vue"></a>Profile.vue</h3><pre><code class="javascript">methods: {
+<h3 id="Profile-vue"><a href="#Profile-vue" class="headerlink" title="Profile.vue"></a>Profile.vue</h3><pre><code class="lang-javascript">methods: {
       getProfileData() {
         getProfileData(this.id).then(res =&gt; {
           console.log(res);
@@ -167,14 +167,14 @@ created() {
       this.getProfileData()
     },
 </code></pre>
-<pre><code class="html">&lt;div id=&quot;avatar&quot; class=&quot;center&quot;&gt;
+<pre><code class="lang-html">&lt;div id=&quot;avatar&quot; class=&quot;center&quot;&gt;
     &lt;img :src=&quot;avatar&quot; alt=&quot;avatar&quot; class=&quot;avatar center_item&quot;&gt;
 &lt;/div&gt;
 </code></pre>
 <blockquote>
 <p>v-bind绑定data里的avatar展示在页面上</p>
 </blockquote>
-<h3 id="后端profile-js"><a href="#后端profile-js" class="headerlink" title="后端profile.js"></a>后端profile.js</h3><pre><code class="javascript">const connection = require(&#39;./connect&#39;)
+<h3 id="后端profile-js"><a href="#后端profile-js" class="headerlink" title="后端profile.js"></a>后端profile.js</h3><pre><code class="lang-javascript">const connection = require(&#39;./connect&#39;)
 
 module.exports = function (username, callback) {
 
@@ -212,7 +212,7 @@ module.exports = function (username, callback) {
 // 所有的 reject(err) 后面对应的 function(err) 都有 callback(info) info[0] === &#39;E&#39;
 // 所有的 resolve(info) 仅在后端打印一下成功信息。另外，最后一个 resolve 后紧跟 callback(null, res)
 </code></pre>
-<h3 id="后端router-js"><a href="#后端router-js" class="headerlink" title="后端router.js"></a>后端router.js</h3><pre><code class="javascript">const getProfile = require(&#39;./db/profile&#39;)
+<h3 id="后端router-js"><a href="#后端router-js" class="headerlink" title="后端router.js"></a>后端router.js</h3><pre><code class="lang-javascript">const getProfile = require(&#39;./db/profile&#39;)
 router.get(&#39;/profile_info&#39;, function (req, res) {
   getProfile(req.query.username, function(err, data){
     if(err) res.send(err)
@@ -220,7 +220,7 @@ router.get(&#39;/profile_info&#39;, function (req, res) {
   })
 })
 </code></pre>
-<h3 id="profile-ini-js"><a href="#profile-ini-js" class="headerlink" title="profile_ini.js"></a>profile_ini.js</h3><pre><code class="javascript">connection.query(&#39;insert into profiles(username, ava_pos)&#39; +
+<h3 id="profile-ini-js"><a href="#profile-ini-js" class="headerlink" title="profile_ini.js"></a>profile_ini.js</h3><pre><code class="lang-javascript">connection.query(&#39;insert into profiles(username, ava_pos)&#39; +
     &#39;values(&quot;admin&quot;, &quot;/public/img_upload/avatar.jpg&quot;)&#39;, function (err) {
   if(err) throw err;
   console.log(&#39;Data was inserted!&#39;);
@@ -229,7 +229,7 @@ router.get(&#39;/profile_info&#39;, function (req, res) {
 <blockquote>
 <p>向<code>mysql</code>存<strong>图片地址</strong>时，从 <code>/public/</code>开始，前端请求过去数据后，在图片地址前面加上<code>http://localhost:3000</code>并在后端<code>index.js</code>开放<code>/public/</code>静态资源</p>
 </blockquote>
-<h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h3><pre><code class="javascript">const express = require(&#39;express&#39;)
+<h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h3><pre><code class="lang-javascript">const express = require(&#39;express&#39;)
 const app = express()
 app.use(&#39;/public/&#39;, express.static(&#39;./public/&#39;))
 </code></pre>

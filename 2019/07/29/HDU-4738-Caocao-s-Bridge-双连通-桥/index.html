@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -142,7 +142,7 @@
 <h3 id="Code-of-this-problem（My-Code）"><a href="#Code-of-this-problem（My-Code）" class="headerlink" title="Code of this problem（My Code）"></a>Code of this problem（My Code）</h3><blockquote>
 <p>关于处理重边：我用嵌套的map记录重边，重边中的任意一条边均非桥！最后处理时直接跳过</p>
 </blockquote>
-<pre><code class="c++">#include &lt;map&gt;
+<pre><code class="lang-c++">#include &lt;map&gt;
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
@@ -250,12 +250,10 @@ int main()
 <blockquote>
 <p>另一种处理重边的方法<del>（很简洁但我不懂）</del>2020.4.8懂了</p>
 </blockquote>
-</blockquote>
-<blockquote>
 <p><code>if(i == (pre ^ 1)) continue;</code></p>
 <p>Tarjan函数第二个参数，在上面我自己写的代码中，是x的父节点，在下面标准代码中，是连接x父节点与x(指向x)的那条边，<code>pre ^ 1</code>是pre的反向边，我们要略过反向边，但不能略过其他的重边(同样连接了x与其父节点)</p>
 </blockquote>
-<pre><code class="c++">#include &lt;cstdio&gt;
+<pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;

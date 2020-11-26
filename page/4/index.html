@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -341,8 +341,6 @@ struct edge
       <!-- <div class="article-digest"> -->
         <!-- Analyze
 相对于求矩形面积并集，此题所求的特点在于cnt[o] &gt;= 2 才有 len[o] = X[R + 1] - X[L];。另外这要求每段的cnt及时更新，而之前那种方法不down，数据没有被正确表示，而现在就需要用上lazy数组down下去了。
-
-
 另外加一个query函数释放所有的lazy以更新数据
 对于之前写过的线段树们，下面节点的状态没被更新不影响上面节点状态的正确性，而这一题下面节点不被lazy更新会导致上面节点呈现着错误的状态，所以每次从线段树取值时都需要释放所有lazy更新这棵树。
 现在这种方案：需要用到线段树维护的值时，释放全部lazy
@@ -359,7 +357,8 @@ const int N = 2100;
 int n;
 
 int num;
-double X[N] -->
+double X[N];
+ -->
         <!-- </div> -->
 
         
@@ -440,8 +439,6 @@ Code#include &lt;cstdio&gt;
 那么线段树也是一样的
 val：ans、lmax、rmax最长连续空间时间段的长度
 此时ans起辅助作用，主角是lmax与rmax，只要down地足够深，要查找的区间总是某些个lmax与rmax的和。
-
-
 此题维护两棵线段树：DS树与NS树
 ①DS x:
 若DS树有长度足够的区间，去DS树上找结束位置(-x即起始位置)
@@ -455,12 +452,10 @@ val：ans、lmax、rmax最长连续空间时间段的长度
 若都没有足够空间，输出相应字符串
 ③STUDY x y:
 将DS树和NS树对应区间恢复为1（即val值恢复为区间长度）
-
-
 另外代码中的query函数，三分去找够大的空闲区间的第x时刻
 
 Code#include &lt;cstdio&gt;
-#include &lt;cstri -->
+#include &lt;cstring&g -->
         <!-- </div> -->
 
         
@@ -637,6 +632,35 @@ void init()
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/3/"> </a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/5/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -120,7 +120,7 @@
 </ol>
 </blockquote>
 <a id="more"></a>
-<h2 id="一-request-get"><a href="#一-request-get" class="headerlink" title="一.request.get()"></a>一.request.get()</h2><pre><code class="python">import requests
+<h2 id="一-request-get"><a href="#一-request-get" class="headerlink" title="一.request.get()"></a>一.request.get()</h2><pre><code class="lang-python">import requests
 
 # 构造一个向服务器请求资源的Request对象，返回一个包含服务器资源的Response对象(即r)
 r = requests.get(&quot;http://www.baidu.com&quot;)
@@ -133,7 +133,7 @@ r.encoding = r.apparent_encoding
 print(r.text)
 print(r.content) # HTTP响应内容的二进制形式(还原图片等)
 </code></pre>
-<h2 id="二-处理异常"><a href="#二-处理异常" class="headerlink" title="二.处理异常"></a>二.处理异常</h2><pre><code class="python">import requests
+<h2 id="二-处理异常"><a href="#二-处理异常" class="headerlink" title="二.处理异常"></a>二.处理异常</h2><pre><code class="lang-python">import requests
 
 
 # 爬取网页的通用代码框架
@@ -155,7 +155,7 @@ if __name__ == &quot;__main__&quot;:
     url = &quot;https://fireworks99.github.io/&quot;
     print(getText(url))
 </code></pre>
-<h2 id="三-通用代码框架"><a href="#三-通用代码框架" class="headerlink" title="三.通用代码框架"></a>三.通用代码框架</h2><pre><code class="python">import requests
+<h2 id="三-通用代码框架"><a href="#三-通用代码框架" class="headerlink" title="三.通用代码框架"></a>三.通用代码框架</h2><pre><code class="lang-python">import requests
 
 
 # 爬取网页的通用代码框架
@@ -175,7 +175,7 @@ if __name__ == &quot;__main__&quot;:
     print(r.headers)
     print(r.text) # 空了
 </code></pre>
-<h2 id="四-模拟浏览器访问"><a href="#四-模拟浏览器访问" class="headerlink" title="四.模拟浏览器访问"></a>四.模拟浏览器访问</h2><pre><code class="python">import requests
+<h2 id="四-模拟浏览器访问"><a href="#四-模拟浏览器访问" class="headerlink" title="四.模拟浏览器访问"></a>四.模拟浏览器访问</h2><pre><code class="lang-python">import requests
 
 url = &quot;https://www.amazon.cn/dp/B072Z88B9T/ref=zg_bs_116169071_2?_encoding=UTF8&amp;psc=1&amp;refRID=7S6CK24KSH7ARE601YXF&quot;
 r = requests.get(url)
@@ -205,7 +205,7 @@ print(r.request.headers)
 
 print(r.text)
 </code></pre>
-<h2 id="五-提交关键词获取搜索结果"><a href="#五-提交关键词获取搜索结果" class="headerlink" title="五.提交关键词获取搜索结果"></a>五.提交关键词获取搜索结果</h2><pre><code class="python">import requests
+<h2 id="五-提交关键词获取搜索结果"><a href="#五-提交关键词获取搜索结果" class="headerlink" title="五.提交关键词获取搜索结果"></a>五.提交关键词获取搜索结果</h2><pre><code class="lang-python">import requests
 
 &quot;&quot;&quot;
 向搜索引擎提交关键词并获取搜索结果
@@ -237,7 +237,7 @@ try:
 except:
     print(&quot;Error occurred&quot;)
 </code></pre>
-<h2 id="六-网络图片的爬取与存储"><a href="#六-网络图片的爬取与存储" class="headerlink" title="六.网络图片的爬取与存储"></a>六.网络图片的爬取与存储</h2><pre><code class="python">import os
+<h2 id="六-网络图片的爬取与存储"><a href="#六-网络图片的爬取与存储" class="headerlink" title="六.网络图片的爬取与存储"></a>六.网络图片的爬取与存储</h2><pre><code class="lang-python">import os
 import requests
 
 url = &quot;https://www.lifeofpix.com/wp-content/uploads/2019/08/DJI_0452-1600x1057.jpg&quot;
@@ -258,7 +258,7 @@ try:
 except:
     print(&quot;Crawl failed!&quot;)
 </code></pre>
-<h2 id="七-网络图片批量爬取"><a href="#七-网络图片批量爬取" class="headerlink" title="七.网络图片批量爬取"></a>七.网络图片批量爬取</h2><pre><code class="python">import os
+<h2 id="七-网络图片批量爬取"><a href="#七-网络图片批量爬取" class="headerlink" title="七.网络图片批量爬取"></a>七.网络图片批量爬取</h2><pre><code class="lang-python">import os
 import requests
 from bs4 import BeautifulSoup
 
@@ -305,7 +305,7 @@ if __name__ == &quot;__main__&quot;:
     except:
         print(&quot;Crawl failed!&quot;)
 </code></pre>
-<h2 id="八-IP地址归属地的自动查询"><a href="#八-IP地址归属地的自动查询" class="headerlink" title="八.IP地址归属地的自动查询"></a>八.IP地址归属地的自动查询</h2><pre><code class="python">import requests
+<h2 id="八-IP地址归属地的自动查询"><a href="#八-IP地址归属地的自动查询" class="headerlink" title="八.IP地址归属地的自动查询"></a>八.IP地址归属地的自动查询</h2><pre><code class="lang-python">import requests
 
 url = &quot;http://m.ip138.com/ip.asp?ip=&quot; # API
 address = input()

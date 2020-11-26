@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -112,12 +112,12 @@
 <li>0x7fffffff = 2 ^ 31 - 1  （MAX_INT）</li>
 <li>0x3f3f3f3f ≈ 1e9 （略小于MAX_INT的一半）</li>
 <li>char 与 int 作四则运算时char类型<strong>自动</strong>转为其对应Ascall码值大小的int值</li>
-<li>形参为string字符串的函数，可以传入char * s字符数组去执行（看来字符数组等级高于字符串，字符数组可<strong>自动</strong>转字符串）</li>
+<li>形参为string字符串的函数，可以传入char <em> s字符数组去执行（看来字符数组等级高于字符串，字符数组可<em>*自动</em></em>转字符串）</li>
 <li>异或交换两个整数值的方法：不用swap，不借助第三者</li>
 </ol>
 </blockquote>
 <a id="more"></a>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;string&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
@@ -163,7 +163,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="Code2"><a href="#Code2" class="headerlink" title="Code2"></a>Code2</h3><pre><code class="c++">#include &lt;ctime&gt;
+<h3 id="Code2"><a href="#Code2" class="headerlink" title="Code2"></a>Code2</h3><pre><code class="lang-c++">#include &lt;ctime&gt;
 #include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 using namespace std;

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -132,7 +132,7 @@ align    [ə’laɪn]     对齐
         <!-- </div> -->
 
         
-        <h1 id="HTML制表"><a href="#HTML制表" class="headerlink" title="HTML制表"></a>HTML制表</h1><h2 id="表格居中"><a href="#表格居中" class="headerlink" title="表格居中"></a>表格居中</h2><h3 id="Code-添加属性-align-quot-center-quot"><a href="#Code-添加属性-align-quot-center-quot" class="headerlink" title="Code :添加属性 align=&quot;center&quot;"></a>Code :添加属性 <code>align=&quot;center&quot;</code></h3><pre><code class="html">&lt;table border=&quot;1&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;align=&quot;center&quot;&gt;
+        <h1 id="HTML制表"><a href="#HTML制表" class="headerlink" title="HTML制表"></a>HTML制表</h1><h2 id="表格居中"><a href="#表格居中" class="headerlink" title="表格居中"></a>表格居中</h2><h3 id="Code-添加属性-align-quot-center-quot"><a href="#Code-添加属性-align-quot-center-quot" class="headerlink" title="Code :添加属性 align=&quot;center&quot;"></a>Code :添加属性 <code>align=&quot;center&quot;</code></h3><pre><code class="lang-html">&lt;table border=&quot;1&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;align=&quot;center&quot;&gt;
 </code></pre>
 <blockquote>
 <p>align    [ə’laɪn]     对齐</p>
@@ -212,8 +212,6 @@ Idea
 若确定了翻转方案，交换翻转顺序对结果无影响
 对同一区间：要么不反转，要么只翻转一次。多次翻转是多余的。
 
-
-
 首先对最左边的牛进行判断，如果这头牛已经朝前方了，那么以这头牛为开始的区间就不需要在进行反转。
 如果这头牛朝后面，那么对应的以该牛为开始的区间就反转。不停重复以上步骤即可。
 但是如果反转牛时对每一头牛都进行反转操作的话时间复杂度就成了O(n^3)，肯定超时，所以必须在反转操作上进行优化。
@@ -226,7 +224,8 @@ Code#include &lt;string&gt;
 #include &lt;iostream&gt;
 using namespace std;
 
-int n; -->
+int n;
+b -->
         <!-- </div> -->
 
         
@@ -470,7 +469,7 @@ Codedouble x1, y1, x2, y2, x3, y3, x4, y4, lux, luy, rdx, rdy;
         <!-- </div> -->
 
         
-        <pre><code class="c++">int check(int x1,int y1,int x2,int y2,int x3, int y3,int x4, int y4)
+        <pre><code class="lang-c++">int check(int x1,int y1,int x2,int y2,int x3, int y3,int x4, int y4)
 {
     if(x2 &lt; x3 || x4 &lt; x1 || y4 &lt; y1 || y2 &lt; y3)
         return 0;
@@ -646,6 +645,35 @@ int main()
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/15/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/17/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

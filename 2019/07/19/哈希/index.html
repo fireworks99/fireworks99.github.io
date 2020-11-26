@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -141,7 +141,7 @@
 <p>a * x = b * y</p>
 <p>输入a与b，x、y为某区间（假设为[1, 100]）内的整数，求共有多少方案满足上述等式</p>
 </blockquote>
-<h2 id="普通做法"><a href="#普通做法" class="headerlink" title="普通做法"></a>普通做法</h2><pre><code class="c++">int ans = 0;
+<h2 id="普通做法"><a href="#普通做法" class="headerlink" title="普通做法"></a>普通做法</h2><pre><code class="lang-c++">int ans = 0;
 for(int x = 1; x &lt;= 100; ++x)
     for(int y = 1; y &lt;= 100; ++y)
         if(a * x == b * y)
@@ -165,7 +165,7 @@ for(int x = 1; x &lt;= 100; ++x)
 <h3 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h3><blockquote>
 <p>因为自变量（原象）作为下标，而下标是非负整数，所以题目枚举的自变量必须为<strong>有界整数</strong>，为了保证“非负”，有时需要<strong>坐标偏移</strong></p>
 </blockquote>
-<pre><code class="c++">int ans = 0;
+<pre><code class="lang-c++">int ans = 0;
 for(int i = 1; i &lt;= 100; ++i)
     has[b * i]++;                //记录下所有的 b * y
 for(int i = 1; i &lt;= 100; ++i)

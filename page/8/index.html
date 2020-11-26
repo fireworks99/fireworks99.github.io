@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -548,11 +548,7 @@ void Euler(int n)
 1.利用单调栈，可以找到从左/右遍历第一个比它小/大的元素的位置
 2.以自己为最小或最大值找到最大的区间(对应 单调递增/单调递减)同1.
 3.给定一个区间，找到这个区间的最大或最小值
-
-
 此题用到了功能2，功能2是在1的基础上的
-
-
 单调栈的维护是 O(n) 级的时间复杂度，因为所有元素只会进入栈一次，并且出栈后再也不会进栈了。
 
 Code#include &lt;stack&gt;
@@ -572,7 +568,7 @@ stack&lt;int&gt; sk;
 int main()
 {
     int n;
-    while(~scanf(&quot;%d&quot;, &am -->
+    while(~scanf(&quot;%d&quot;, &amp;n) -->
         <!-- </div> -->
 
         
@@ -691,6 +687,35 @@ void get_factors(ll n)///①得到全集②进行容斥
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/7/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/9/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

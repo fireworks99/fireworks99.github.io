@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -112,7 +112,7 @@
 </blockquote>
 <a id="more"></a>
 <h1 id="Trajan算法求缩点"><a href="#Trajan算法求缩点" class="headerlink" title="Trajan算法求缩点"></a>Trajan算法求缩点</h1><blockquote>
-<p>stack\&lt;int> st;</p>
+<p>stack\<int\> st;</int\></p>
 <p>int num;///num:强连通分量(连通块)的个数,缩点后点的个数</p>
 <p>bool vis[105];///该点是否访问过</p>
 <p>int inst[105];///该点是否在栈中</p>
@@ -121,7 +121,7 @@
 <p>int ltt[105];///i点属于第几个强连通分量(0表示不属于任何一个)</p>
 <p>强连通分量内元素个数最少为1(该元素本身),这意味着每个元素都有从属的强连通分量</p>
 </blockquote>
-<h3 id="Code-Trajan"><a href="#Code-Trajan" class="headerlink" title="Code(Trajan)"></a>Code(Trajan)</h3><pre><code class="c++">void Trajan(int x)///搜索x点及其子树
+<h3 id="Code-Trajan"><a href="#Code-Trajan" class="headerlink" title="Code(Trajan)"></a>Code(Trajan)</h3><pre><code class="lang-c++">void Trajan(int x)///搜索x点及其子树
 {
     int temp;
     st.push(x);
@@ -156,7 +156,7 @@
 }
 </code></pre>
 <h2 id="POJ-1236"><a href="#POJ-1236" class="headerlink" title="POJ 1236"></a>POJ 1236</h2><blockquote>
-<p>n所学校，它们通过单向边连接，如果A–&gt;B表示A学校可以传递信息给B学校</p>
+<p>n所学校，它们通过单向边连接，如果A—&gt;B表示A学校可以传递信息给B学校</p>
 <p>问题一：至少要向几个学校传递信息，才能保证所有学校都能收到信息；</p>
 <p>问题二：至少要添加多少组关系，才能保证给任意一个学校原始信息后，其他所有学校都能收到信息</p>
 </blockquote>
@@ -164,7 +164,7 @@
 <p>问题一：缩点后数出入度为0的点的个数</p>
 <p>问题二：缩点后求再次完成强连通最少添加几条边max(ain, aout)</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;stack&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;stack&gt;
 #include &lt;vector&gt;
 #include &lt;stdio.h&gt;
 #include &lt;iostream&gt;
@@ -273,17 +273,13 @@ int main()
 <blockquote>
 <p>参考1： <a href="https://blog.csdn.net/jaihk662/article/details/52194288" target="_blank" rel="noopener">https://blog.csdn.net/jaihk662/article/details/52194288</a></p>
 <p>参考2： <a href="https://blog.csdn.net/nhl19961226/article/details/79114287" target="_blank" rel="noopener">https://blog.csdn.net/nhl19961226/article/details/79114287</a></p>
-</blockquote>
-<blockquote>
 <blockquote>
 <p>Kosaraju求缩点</p>
 </blockquote>
-</blockquote>
-<blockquote>
 <p>将边反向建立后，强连通分量内的点，其可达性不受影响。</p>
 <p>但不能沿着边访问到除了这个强连通分量之外的点</p>
 </blockquote>
-<pre><code class="c++">#include &lt;vector&gt;
+<pre><code class="lang-c++">#include &lt;vector&gt;
 #include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;

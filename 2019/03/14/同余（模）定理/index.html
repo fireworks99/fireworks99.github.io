@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -133,7 +133,7 @@
 <p>根据性质5， 上式 = [ (1 ^ 1001)  *  (12 ^ 1) ] % 13 = 12 </p>
 </blockquote>
 <p><strong>也就口算笔算可以，用程序写出来实用性弱，远不如快速幂万能（在适合的情况下比快速幂快）</strong></p>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">int same_remainer(int a, int b, int c)
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">int same_remainer(int a, int b, int c)
 {
     a = a % c;
     int t = 0;
@@ -159,7 +159,7 @@
 <p>利用性质1、3可解</p>
 <p>1234 % n = ((((1 * 10 ) % n + 2 % n) % n * 10 % n + 3 % n) % n * 10 % n + 4 % n)  % n</p>
 </blockquote>
-<h3 id="Code-大数求余"><a href="#Code-大数求余" class="headerlink" title="Code(大数求余)"></a>Code(大数求余)</h3><pre><code class="c++">#include &lt;string&gt;
+<h3 id="Code-大数求余"><a href="#Code-大数求余" class="headerlink" title="Code(大数求余)"></a>Code(大数求余)</h3><pre><code class="lang-c++">#include &lt;string&gt;
 #include &lt;iostream&gt;
 using namespace std;
 

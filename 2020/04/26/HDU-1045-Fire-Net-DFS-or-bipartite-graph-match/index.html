@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -116,6 +116,7 @@
 <p>另外的二分图匹配：</p>
 <p>假设没有墙壁，为每行、每列标号，针对每个点进行建边，求最大匹配</p>
 </blockquote>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -146,6 +147,8 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -176,19 +179,19 @@
 </tr>
 </tbody>
 </table>
+</div>
 <blockquote>
 <p>建边add(1, 1)add(1, 2)add(1, 3)add(1,4)add(2,1)……</p>
 <p>在求最大匹配时，假设第一个表中的2匹配了第二个表中的3，那么相当于在第二行第三列建一座炮台，由于本行都是2，且2已经被分配，所以本行不会再被分配炮台；同理，本列都是3，且3已经被分配，所以本列不会再被分配炮台。如此限制了同行或同列不会出现两座炮台。</p>
-</blockquote>
-<blockquote>
 <p>现在有墙，标号便可增加了，比如样例</p>
 </blockquote>
-<pre><code class="powershell">4
+<pre><code class="lang-powershell">4
 .X..
 ....
 XX..
 ....
 </code></pre>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -219,6 +222,8 @@ XX..
 </tr>
 </tbody>
 </table>
+</div>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -249,7 +254,8 @@ XX..
 </tr>
 </tbody>
 </table>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+</div>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 using namespace std;
@@ -339,7 +345,7 @@ int main()
     return 0;
 }
 </code></pre>
-<h3 id="Code-of-DFS"><a href="#Code-of-DFS" class="headerlink" title="Code of DFS"></a>Code of DFS</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code-of-DFS"><a href="#Code-of-DFS" class="headerlink" title="Code of DFS"></a>Code of DFS</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;

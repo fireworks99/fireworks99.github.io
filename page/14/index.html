@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -133,8 +133,6 @@
 
 Description
 小B有一个序列，包含N个1~K之间的整数。他一共有M个询问，每个询问给定一个区间[L..R]，求Sigma(c(i)^2)的值,其中i的值从1到K，其中c(i)表示数字i在[L..R]中的重复次数。小B请你帮助他回答询问。 
-
-
 题目链接： https://www.luogu.org/problemnew/show/P2709
 
 关于update函数
@@ -148,7 +146,7 @@ Code#include &lt;cmath&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
 #include &lt;algorithm&gt;
-#define ll lo -->
+#define ll long -->
         <!-- </div> -->
 
         
@@ -402,7 +400,7 @@ int main()
 <li>0x7fffffff = 2 ^ 31 - 1  （MAX_INT）</li>
 <li>0x3f3f3f3f ≈ 1e9 （略小于MAX_INT的一半）</li>
 <li>char 与 int 作四则运算时char类型<strong>自动</strong>转为其对应Ascall码值大小的int值</li>
-<li>形参为string字符串的函数，可以传入char * s字符数组去执行（看来字符数组等级高于字符串，字符数组可<strong>自动</strong>转字符串）</li>
+<li>形参为string字符串的函数，可以传入char <em> s字符数组去执行（看来字符数组等级高于字符串，字符数组可<em>*自动</em></em>转字符串）</li>
 <li>异或交换两个整数值的方法：不用swap，不借助第三者</li>
 </ol>
 </blockquote>
@@ -661,6 +659,35 @@ Output:
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/13/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/15/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

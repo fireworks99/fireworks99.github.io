@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -114,15 +114,13 @@
 <h3 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h3><blockquote>
 <p>相对于普通的最小生成树，多了一个条件：最小，也就是说生成树的边有了权值。如果想办法去掉权值，问题就转为了普通生成树计数了。就像三维扫描线求体积那题，遍历Z轴，如同去掉了一个维度，将问题转化为了普通的扫描线求面积。这一题能不能通过遍历边的长度而将问题转化呢？可以的。</p>
 <p>在Kruskal算法中：假设图中有a[1]条长度为b[1]的边，有a[2]条长度为b[2]的边…a[k]条长度为b[k]的边。这a[k]条长度相同的边的排列顺序可以是任意的，这意味着顺序不影响结果(即长度为b[k]的边被遍历过后形成的连通块是相同的，即缩点后的图是相同的)，也就是说在长度为b[k]的边的集合里，有num[k]个子集，选任意一个子集得到的结果都是相同的。这样一来，最终答案就是<code>num[1] * num[2] *...*num[last]</code>。</p>
-</blockquote>
-<blockquote>
 <p>如何求num[k] ?</p>
 <p>将长度小于b[k]的边都处理完(并查集unite)后形成一个个集合，这一个个集合相当于新图中的一个个“点”。这a[k]条长度为b[k]的边会使这些“点”形成一个个新的连通块，将每一个连通块看做一个图，Gauss计算生成树个数，每个连通块的生成树个数累乘就是num[k]。</p>
 </blockquote>
 <h3 id="Something"><a href="#Something" class="headerlink" title="Something"></a>Something</h3><blockquote>
 <p>1.并查集需要用到一个记录祖先节点的数组，这里需要用到两个这样的数组F[]、K[]，K是F的将来，F是K的过去。在主函数里有如下代码：</p>
 </blockquote>
-<pre><code class="c++">u = found(F, e[i].u), v = found(F, e[i].v);
+<pre><code class="lang-c++">u = found(F, e[i].u), v = found(F, e[i].v);
 if(u != v)
 {
     vis[u] = vis[v] = 1;
@@ -134,7 +132,7 @@ if(u != v)
 <blockquote>
 <p>按照两个数组来，上面的环是会形成的，就可以正常进行生成树计数了。倘若只有一个数组，不可能形成环，若无环生成树个数只能是1。便是这里用到了两个数组，因为图的更新需要有“时差”。在此刻之前，K和F要同步。在此刻产生时差。在其他时刻，K和F没有合作关系。</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;vector&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;
@@ -269,7 +267,7 @@ int main()
 <blockquote>
 <p>有人说路径压缩会影响点的度数什么的，进而影响邻接矩阵的正确性，故不能使用路径压缩，我想不明白，不过我试了一下路径压缩，也能AC。</p>
 </blockquote>
-<h3 id="还是不理解的地方"><a href="#还是不理解的地方" class="headerlink" title="还是不理解的地方"></a>还是不理解的地方</h3><pre><code class="c++">            for(ll j = 0; j &lt; len; ++j)
+<h3 id="还是不理解的地方"><a href="#还是不理解的地方" class="headerlink" title="还是不理解的地方"></a>还是不理解的地方</h3><pre><code class="lang-c++">            for(ll j = 0; j &lt; len; ++j)
                 F[ vec[i][j] ] = i;///Can&#39;t initial F[]/K[] with -1.
         }
 

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -111,7 +111,7 @@
 <p>给出N x M 的01矩阵，1表示该处可种植作物，0表示不可以。另外相邻两块地不能同时种植作物，问有几种种植作物的方案(并没有规定种几棵作物)</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="状态压缩"><a href="#状态压缩" class="headerlink" title="状态压缩"></a>状态压缩</h3><pre><code class="c++">for(int i = 0; i &lt; (1 &lt;&lt; n); ++i)
+<h3 id="状态压缩"><a href="#状态压缩" class="headerlink" title="状态压缩"></a>状态压缩</h3><pre><code class="lang-c++">for(int i = 0; i &lt; (1 &lt;&lt; n); ++i)
 </code></pre>
 <blockquote>
 <p>用一个数来表示一组数，以降低表示状态所需的维数的解题手段，就叫做状态压缩</p>
@@ -124,7 +124,7 @@
 <p>最终ans=dp[m][state(k1)]+dp[m][state(k2)]+……+dp[m][state(kn)]; </p>
 <p>原文出处：<a href="https://blog.csdn.net/harrypoirot/article/details/23163485" target="_blank" rel="noopener">https://blog.csdn.net/harrypoirot/article/details/23163485</a></p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 using namespace std;
 const int MOD = 100000000;
@@ -181,8 +181,6 @@ int main()
 <li>状态转移</li>
 <li>初始化(边界处理)</li>
 </ol>
-</blockquote>
-<blockquote>
 <p>状态转移方程一定要仔细推敲，不可一带而过，要思考为什么这么做，掌握一个套路，遇见这类问题能快速的识别出问题的本质，找出状态转移方程和DP的边界条件。</p>
 </blockquote>
 

@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -175,8 +175,8 @@ int main()
       <!-- <div class="article-digest"> -->
         <!-- 分析
 若n = m + 1,先手必败——结论①
--&gt;若n = k * (m + 1)，第二个人有可以使物品最终变为(m + 1)的办法，先手必败——结论②
--&gt;若n = k * (m + 1) + r,先手拿走r个，由结论②得后手必败、先手必胜——结论③
+-&gt;若n = k  (m + 1)，第二个人有可以使物品最终变为(m + 1)的办法，先手必败*——结论②
+-&gt;若n = k  (m + 1) + r,先手拿走r个，由结论②得后手必败、先手必胜*——结论③
 
 Codebool Bash_Game(int n, int m)
 {
@@ -702,6 +702,35 @@ for i,  -->
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/14/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/16/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

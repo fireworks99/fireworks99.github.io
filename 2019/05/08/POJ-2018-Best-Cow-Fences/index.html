@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -117,7 +117,7 @@
 <p>bool judge(mid) 遍历所有方案，若有均值 &gt;= mid 则return 1</p>
 <p>但我只考虑了圈起k个农场的情况，忽略了 &gt; k方案，WA</p>
 </blockquote>
-<pre><code class="c++">#include &lt;cstdio&gt;
+<pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 using namespace std;
 
@@ -157,7 +157,7 @@ int main()
 <h3 id="第二次"><a href="#第二次" class="headerlink" title="第二次"></a>第二次</h3><blockquote>
 <p>外加一层循环，果然还是TLE了</p>
 </blockquote>
-<pre><code class="c++">#include &lt;cstdio&gt;
+<pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 using namespace std;
 
@@ -202,7 +202,7 @@ int main()
 <p>那就只用一层循环，i 从1到 n - k，用一个量mmin存这里面最小的sum[i]，用一个量mmax存sum[i + k]里面最大的。这个想法还不对，可能前一个对应sum[n - k]，后一个对应sum[1 + k]，那两者距离相差可能小于k。</p>
 <p>所以要控制间距。每次循环更新“最可能符合条件的方案”：mmin更新最小sum[i]，但另一个量<code>ans = max(ans, sum[i + k] - mmin)</code>，必能找到最优方案ans，且保证对应两者距离&gt;=k，<strong>因为mmin &lt;= 当前循环的i，他距离i + k的距离也因此而 &gt;= k(妙不可言)</strong></p>
 </blockquote>
-<pre><code class="c++">#include &lt;cstdio&gt;
+<pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;iostream&gt;
 using namespace std;
 

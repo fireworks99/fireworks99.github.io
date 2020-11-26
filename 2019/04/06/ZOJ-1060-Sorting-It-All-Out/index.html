@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -119,7 +119,7 @@
 <h3 id="拓扑排序（判环）"><a href="#拓扑排序（判环）" class="headerlink" title="拓扑排序（判环）"></a>拓扑排序（判环）</h3><blockquote>
 <p>不同的是，此题要求排序是唯一的，排序不唯一视为不能排序</p>
 </blockquote>
-<pre><code class="c++">for(int i = 0; i &lt; n; ++i)
+<pre><code class="lang-c++">for(int i = 0; i &lt; n; ++i)
         if(!in[i] &amp;&amp; flag[i])///入度为0且被提到的字符才可入队
             q.push(i);
     while(q.size())
@@ -127,7 +127,7 @@
         if(q.size() &gt; 1)///最初入队数&gt;1则排序不唯一
             sign = 1;
 </code></pre>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;queue&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;queue&gt;
 #include &lt;cstdio&gt;
 #include &lt;vector&gt;
 #include &lt;cstring&gt;
@@ -249,7 +249,7 @@ int main()
 <p>多次增删，代码已不再精简，建议看以下代码</p>
 <p><a href="https://blog.csdn.net/qq_33132383/article/details/70198616" style="color:green;" target="_blank" rel="noopener">Someone’s code</a></p>
 </blockquote>
-<pre><code class="c++">#include &lt;iostream&gt;
+<pre><code class="lang-c++">#include &lt;iostream&gt;
 #include &lt;string&gt;
 #include &lt;cstring&gt;
 #include &lt;cstdio&gt;

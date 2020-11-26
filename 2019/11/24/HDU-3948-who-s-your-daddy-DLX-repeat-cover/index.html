@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -112,14 +112,14 @@
 <p>消灭数字，攻击某个数字的时候，它本身以及与它相邻的数字会被消灭，求最少攻击次数</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><pre><code class="ASN.1">5 4
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><pre><code class="lang-ASN.1">5 4
 
 1 2
 1 3
 2 4
 4 5
 </code></pre>
-<h3 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h3><pre><code class="ASN.1">1 1 1 0 0
+<h3 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h3><pre><code class="lang-ASN.1">1 1 1 0 0
 1 1 0 1 0
 1 0 1 0 0
 0 1 0 1 1
@@ -135,7 +135,7 @@
 <p>④与精确覆盖思路上不同的是：精确覆盖删到只剩Head这个元素算成功，而重复覆盖只是把所有列标元素删掉算找到一个答案(当然它会遍历所有情况，找到最优的)</p>
 <p>⑤与精确覆盖实现上不同的是：重复覆盖abandon与resume函数里的参数是id，而精确覆盖形参是列表元素，里面删除内容也不同</p>
 </blockquote>
-<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="c++">#include &lt;cstdio&gt;
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
 #include &lt;vector&gt;
 #include &lt;cstring&gt;
 #include &lt;iostream&gt;

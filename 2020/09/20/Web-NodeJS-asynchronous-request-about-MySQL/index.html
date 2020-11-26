@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -111,7 +111,7 @@
 <p>NodeJS连接mysql数据库的请求是异步操作。现有客户想要注册，NodeJS需要连接数据库，查询用户表，若用户表中无此用户名方予以注册，否则拒绝。很明显，我需要获取查询的结果之后来决定是否将注册信息写入数据库，“查询”与“写入”这两个异步操作有明显的先后顺序，需要“回调”，用ES6的Promise能更好地解决这一问题。</p>
 </blockquote>
 <a id="more"></a>
-<h3 id="当我没意识到异步操作时"><a href="#当我没意识到异步操作时" class="headerlink" title="当我没意识到异步操作时"></a>当我没意识到异步操作时</h3><pre><code class="javascript">const connection = require(&quot;./connect.js&quot;)
+<h3 id="当我没意识到异步操作时"><a href="#当我没意识到异步操作时" class="headerlink" title="当我没意识到异步操作时"></a>当我没意识到异步操作时</h3><pre><code class="lang-javascript">const connection = require(&quot;./connect.js&quot;)
 
 module.exports = function (username, password, callback) {
 
@@ -149,7 +149,7 @@ module.exports = function (username, password, callback) {
 <blockquote>
 <p>上述代码<code>console.log(flag)</code>最先执行，然后“写入”操作很有可能先于“查询”操作</p>
 </blockquote>
-<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><pre><code class="javascript">const connection = require(&quot;./connect.js&quot;)
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><pre><code class="lang-javascript">const connection = require(&quot;./connect.js&quot;)
 
 module.exports = function (username, password) {
 

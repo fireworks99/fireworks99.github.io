@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -218,8 +218,6 @@ bool Bellman_Ford(int start)
       <!-- <div class="article-digest"> -->
         <!-- 
 迎难而上，方能成长。念念不忘，必有回响！
-
-
 -58.好多题数据n上限都是1e9(10亿，int上限21亿)，今天遇到这样一题，一直WA，后来发现我有个3 * n的操作!!!
 -57.有些样例(像是codeforces上的)不怀好意，故意引导人按照一种错误的思路去考虑，从而WA.
 -56.我才发现，二进制运算 | &amp; ，在状态压缩中，0代表无，1代表有，此时 | 对应取并集∪， &amp; 对应取交集∩.
@@ -230,7 +228,7 @@ bool Bellman_Ford(int start)
 -51.多者选其一的贪心可简化为二者选其一，多测试几个”二者选其一“哪个更优，得出贪心方案
 -50.猜出可能是贪心，可不明确贪心方案时，举一个简单的例子(&gt;=3)，手动枚举出所有方案，看哪个方案最优，猜测那就是正解
 -49.当你确定思绪乱了的时候，敢于重新整理思路重新写
--48.题目叙述较长时，第一段多为题目背景，可忽略，若 -->
+-48.题目叙述较长时，第一段多为题目背景，可忽略，若读完 -->
         <!-- </div> -->
 
         
@@ -454,7 +452,7 @@ print( -->
         <!-- </div> -->
 
         
-        <h3 id="1-简单a-b"><a href="#1-简单a-b" class="headerlink" title="1.简单a+b"></a>1.简单a+b</h3><pre><code class="python">a, b = input().split()
+        <h3 id="1-简单a-b"><a href="#1-简单a-b" class="headerlink" title="1.简单a+b"></a>1.简单a+b</h3><pre><code class="lang-python">a, b = input().split()
 a, b = int(a), int(b)
 print(a + b)
 </code></pre>
@@ -671,6 +669,35 @@ int main()
 <!-- <div id="paginator"> -->
 <!--   <a class="extend prev" rel="prev" href="/page/18/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/20/"> </a> -->
 <!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
 
 
 			</div>

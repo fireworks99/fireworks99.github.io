@@ -42,7 +42,7 @@
 	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
 	
 	
-
+	
 </head>
 
 
@@ -118,16 +118,16 @@
 <p><strong>m行，每行若干个从小到大排好序的、用一个空格隔开的整数 </strong></p>
 </blockquote>
 <p><code>for(int i = 0; i &lt; m; ++i)</code></p>
-<pre><code class="c++">int sz = vec[a].size();
+<pre><code class="lang-c++">int sz = vec[a].size();
 for(int j = 0; j &lt; sz; ++j)
     printf(&quot;%d%c&quot;, vec[a][j], j == sz - 1 ? &#39;\n&#39;: &#39; &#39;);
 </code></pre>
-<pre><code class="c++">int sz = vec[a].size();
+<pre><code class="lang-c++">int sz = vec[a].size();
 for(int j = 0; j &lt; sz; ++j)
     cout &lt;&lt; vec[a][j] &lt;&lt; &#39; &#39; ;
 cout &lt;&lt; &#39;\n&#39;;
 </code></pre>
-<pre><code class="c++">int sz = vec[a].size();
+<pre><code class="lang-c++">int sz = vec[a].size();
 for(int j = 0; j &lt; sz; ++j)
     cout &lt;&lt; vec[a][j] &lt;&lt; &#39; &#39; ;
 if(i != m - 1)
@@ -136,13 +136,13 @@ if(i != m - 1)
 <blockquote>
 <p>死马当活马医，我看数组开挺大的，输出时有延迟，改用map套vector</p>
 </blockquote>
-<pre><code class="c++">map&lt;int, vector&lt;int&gt; &gt;mp;
+<pre><code class="lang-c++">map&lt;int, vector&lt;int&gt; &gt;mp;
 scanf(&quot;%d&quot;, &amp;a);
 int sz = mp[a].size();
 for(int j = 0; j &lt; sz; ++j)
     printf(&quot;%d%c&quot;, mp[a][j], j == sz - 1 ? &#39;\n&#39;: &#39; &#39;);
 </code></pre>
-<pre><code class="c++">int sz = mp[a].size();
+<pre><code class="lang-c++">int sz = mp[a].size();
         for(int j = 0; j &lt; sz; ++j)
         {
             cout &lt;&lt; mp[a][j];
@@ -152,7 +152,7 @@ for(int j = 0; j &lt; sz; ++j)
                 cout &lt;&lt; &#39; &#39;;
         }
 </code></pre>
-<pre><code class="c++">        int sz = vec[a].size();
+<pre><code class="lang-c++">        int sz = vec[a].size();
         for(int j = 0; j &lt; sz; ++j)
         {
             cout &lt;&lt; vec[a][j];
