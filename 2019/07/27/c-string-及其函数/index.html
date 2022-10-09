@@ -1,0 +1,506 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>c++ string 及其函数 [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/avatar.png" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>c++ string 及其函数</h1>
+			<h2 id="s-substr"><a href="#s-substr" class="headerlink" title="s.substr()"></a>s.substr()</h2><blockquote>
+<p>substr有2种用法：</p>
+<p>假设：string s = “0123456789”;</p>
+<p>string sub1 = s.substr(5); //只有一个数字5表示从下标为5开始一直到结尾：sub1 = “56789”</p>
+<p>string sub2 = s.substr(5, 3); //从下标为5开始截取长度为3位：sub2 = “567”</p>
+<p>转自： <a href="https://blog.csdn.net/liuchuo/article/details/54599840" target="_blank" rel="noopener">https://blog.csdn.net/liuchuo/article/details/54599840</a></p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">自我感觉重要的几点：
+1.getline(cin, s)的赋值
+2.字符串数组的使用
+5.大小、判空
+6.末尾添加
+11.string查找
+
+
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;sstream&gt;
+using namespace std;
+
+int len = 4;
+char ch = &#39;Y&#39;;
+
+int main()
+{
+    ///1.赋值
+    ///cin遇空格、tab、回车结束
+//    string s1;
+//    cin &gt;&gt; s1;
+//    cout &lt;&lt; s1 &lt;&lt; &#39;\n&#39;;
+    ///吃“回车”，相当于getchar(),避免影响后续输入
+//    cin.get();
+    ///一行字符串的输入
+//    string s2;
+//    getline(cin, s2);
+//    cout &lt;&lt; s2 &lt;&lt; &#39;\n&#39;;
+
+
+
+///2.字符串数组（竟然可以访问每个string里的每个字符！！！）
+    string a[10];
+    for(int i = 0; i &lt; 5; ++i)
+    {
+        getline(cin, a[i]);
+        if(i != 4)
+            cin.get();
+    }
+    for(int i = 0; i &lt; 5; ++i)
+    {
+        cout &lt;&lt; a[i] &lt;&lt; &#39;\n&#39;;
+    }
+    ///访问一个string里的字符
+    string s[5];
+    s[0] = &quot;ABCDE&quot;;
+    for(int i = 0; i &lt; 5; ++i)
+    {
+        cout &lt;&lt; s[0][i] &lt;&lt; &#39;\n&#39;;
+    }
+
+
+    ///3.初始化
+    cout &lt;&lt; &quot;1.初始化练习&quot; &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; &quot;（1）.直接等于号赋值&quot; &lt;&lt; &#39;\n&#39;;
+    string s3 = &quot;嘤嘤嘤&quot;;
+    cout &lt;&lt; s3 &lt;&lt; &#39;\n&#39;;
+    ///复制粘贴
+    string s8;
+    cout &lt;&lt; &quot;（2）.字符串copy赋值&quot; &lt;&lt; &#39;\n&#39;;
+    s8 = s3;
+    cout &lt;&lt; s8 &lt;&lt; &#39;\n&#39;;
+    ///用指向已知字符串的字符指针 初始化 字符串
+    cout &lt;&lt; &quot;（3）.指向已知字符串的字符指针 初始化&quot; &lt;&lt; &#39;\n&#39;;
+    char * s = &quot;好傻好没用的做法&quot;;
+    string s4(s);
+    cout &lt;&lt; s4 &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; &quot;（4）.assign分配赋值——字符指针版&quot; &lt;&lt; &#39;\n&#39;;
+    s8.assign(s);
+    cout &lt;&lt; s8 &lt;&lt; &#39;\n&#39;;
+    ///一个汉字占两个字节从1开始
+    cout &lt;&lt; &quot;（5）.assign分配前10个字符（字节）赋值——字符指针版&quot; &lt;&lt; &#39;\n&#39;;
+    s8.assign(s, 10);
+    cout &lt;&lt; s8 &lt;&lt; &#39;\n&#39;;
+    ///另类复制粘贴
+    cout &lt;&lt; &quot;（6）.assign分配赋值——字符串版——相当于等于号copy&quot; &lt;&lt; &#39;\n&#39;;
+    s8.assign(s4);
+    cout &lt;&lt; s8 &lt;&lt; &#39;\n&#39;;
+    ///用n个字符 初始化 一个字符串
+    cout &lt;&lt; &quot;（8）.用len个ch字符初始化&quot; &lt;&lt; &#39;\n&#39;;
+    string s5(6, ch);
+    cout &lt;&lt; s5 &lt;&lt; &#39;\n&#39;;
+    ///用len个ch字符赋值
+    cout &lt;&lt; &quot;（9）.运用assign，用len个ch字符赋值&quot; &lt;&lt; &#39;\n&#39;;
+    string s9;
+    s9.assign(len, ch);
+    cout &lt;&lt; s9 &lt;&lt; &#39;\n&#39;;
+    ///另类赋值
+    string s10 = &quot;ABCDEFG&quot;;
+    string s11;
+    cout &lt;&lt; &quot;（10）.用assign三维截取赋值&quot; &lt;&lt; &#39;\n&#39;;
+    s11.assign(s10, 0, 4);
+    cout &lt;&lt; s11 &lt;&lt; &#39;\n&#39;;
+    ///迭代器赋值
+    cout &lt;&lt; &quot;（11）.用迭代器赋值&quot; &lt;&lt; &#39;\n&#39;;
+    s11.assign(s10.begin(), s10.end());
+    cout &lt;&lt; s11 &lt;&lt; &#39;\n&#39;;
+
+
+
+    ///4.字符操作
+    ///访问指定位置的字符（感觉很耗时!!!）
+//    string s6 = &quot;qaq&quot;;
+//    char b = s6[1];///输出a（字符串从0开始）
+//    cout &lt;&lt; b &lt;&lt; &#39;\n&#39;;
+
+
+
+
+  5.特性描述
+    string s7 = &quot;abcdefg&quot;;
+  当前容量 15 ？？？
+    cout &lt;&lt; s7.capacity() &lt;&lt; &#39;\n&#39;;
+  string 对象可存放的最大字符串长度（2147483647 = 2 ^ 31 - 1）
+    cout &lt;&lt; s7.max_size() &lt;&lt; &#39;\n&#39;;
+  字符串大小
+    cout &lt;&lt; s7.length() &lt;&lt; &#39;\n&#39;;
+  判空
+    cout &lt;&lt; s7.empty() &lt;&lt; &#39;\n&#39;;
+  重定大小，不足去补
+    s7.resize(10, &#39;A&#39;);
+    cout &lt;&lt; s7 &lt;&lt; &#39;\n&#39;;
+    s7.resize(5, &#39;B&#39;);
+    cout &lt;&lt; s7 &lt;&lt; &#39;\n&#39;;
+
+
+
+  6.string连接
+  算数相加
+    string s12 = &quot;HIJKLMN &quot;;
+    string s13 = &quot;OPQ &quot;;
+    s12 += s13;
+    cout &lt;&lt; s12 &lt;&lt; &#39;\n&#39;;
+  指向字符串的字符指针截取部分 添于末尾
+    s13.append(s, 10);
+    cout &lt;&lt; s13 &lt;&lt; &#39;\n&#39;;
+    s13.append(s);
+  迭代器添加
+    string s14 = &quot;s14 &quot;;
+    cout &lt;&lt; s14 &lt;&lt; &#39;\n&#39;;
+    s14.append(s7.begin(), s7.end());
+    cout &lt;&lt; s14 &lt;&lt; &#39;\n&#39;;
+  尾部添字符
+    string s15 = &quot;s15 &quot;;
+    s15.push_back(&#39;A&#39;);
+    cout &lt;&lt; s15 &lt;&lt; &#39;\n&#39;;
+
+
+
+  7.比较大小
+    string s16 = &quot;abcdefg&quot;;
+    string s17 = &quot;bcdefg&quot;;
+    cout &lt;&lt; (s16 == s17) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; (s16 != s17) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; (s16 &gt; s17) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; (s16 &gt;= s17) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; (s16 &lt; s17) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; (s16 &lt;= s17) &lt;&lt; &#39;\n&#39;;
+  大于返回1，小于返回-1，等于返回0
+    cout &lt;&lt; s16.compare(s17) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s17.compare(s16) &lt;&lt; &#39;\n&#39;;
+  拿出从s16（从0开始）的第1个字符开始连续6个字符与s17比较
+    cout &lt;&lt; s16.compare(1, 6, s17) &lt;&lt; &#39;\n&#39;;
+  类似的
+    cout &lt;&lt; s16.compare(3, 5, s17, 2, 5) &lt;&lt; &#39;\n&#39;;
+
+
+
+  8.string子串
+    string s18 = &quot;OPQRST&quot;;
+    string s19 = s18.substr(3, 3);///从下表3开始的连续3个字符
+    cout &lt;&lt; s19 &lt;&lt; &#39;\n&#39;;
+
+
+
+  9.string交换
+    cout &lt;&lt; &quot;s18: &quot; &lt;&lt; s18 &lt;&lt; &#39;\n&#39; &lt;&lt; &quot;s19: &quot; &lt;&lt; s19 &lt;&lt; &#39;\n&#39;;
+    s18.swap(s19);
+    cout &lt;&lt; &quot;s18: &quot; &lt;&lt; s18 &lt;&lt; &#39;\n&#39; &lt;&lt; &quot;s19: &quot; &lt;&lt; s19 &lt;&lt; &#39;\n&#39;;
+
+
+
+  10.字符串的流处理,头文件&lt;sstream&gt;
+    string str24(&quot;hello,this is a test&quot;);
+    istringstream is(str24);
+    string s20, s21, s22, s23;
+    is &gt;&gt; s20 &gt;&gt; s21 &gt;&gt; s22 &gt;&gt; s23;
+  s20=&quot;hello,this&quot;,s21=&quot;is&quot;,s22=&quot;a&quot;,s23=&quot;test&quot;
+    ostringstream os;
+    os &lt;&lt; s20 &lt;&lt; s21 &lt;&lt; s22 &lt;&lt;s23;
+    cout&lt;&lt; os.str() &lt;&lt; &#39;\n&#39;;
+
+
+
+  11.string的查找，查找成功时返回所在位置，
+  失败时返回string::npos的值，即是-1
+
+  括号内容为三维时，第三维是选取字符串的前几个字符
+
+    string s25 = &quot;ABCDEFGGGGGGHHHHHHIJKLMNOPQRSTUVWXYZ&quot;;
+  从0开始找‘G’
+    int pos = s25.find(&#39;G&#39;, 0);
+    cout &lt;&lt; pos &lt;&lt; &#39;\n&#39;;
+  从0开始找“GG”
+    cout &lt;&lt; s25.find(&quot;GG&quot;, 0) &lt;&lt; &#39;\n&#39;;
+  从0开始找“HHHHH”前4个字符所在位置
+    cout &lt;&lt; s25.find(&quot;HHHHH&quot;, 0, 4) &lt;&lt; &#39;\n&#39;;
+  反向查找（不要以为反向查找时，最后一个字符位置是0，往前一个是1，再2...）
+    cout &lt;&lt; &quot;反向查找,岂不是find_last_of？&quot; &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s25.rfind(&#39;G&#39;, string::npos) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s25.rfind(&quot;GG&quot;, string::npos) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s25.rfind(&quot;HHHHH&quot;, string::npos, 4) &lt;&lt; &#39;\n&#39;;
+
+  查找第一次出现的位置（字符串下表从0开始）
+    string s26 = &quot;ABBCCCDDDDEEEEEFFFFFFGGGGGGG&quot;;
+
+    cout &lt;&lt; &quot;find_first_of检测&quot; &lt;&lt; &#39;\n&#39;;///相对于find它本身不是全匹配
+    cout &lt;&lt; s26.find_first_of(&#39;C&#39;, 0) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_first_of(&quot;DD&quot;, 0) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_first_of(&quot;DDGG&quot;, 0, 2) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; &quot;find_first_not_of检测&quot; &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_first_not_of(&#39;A&#39;, 0) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_first_not_of(&#39;C&#39;, 0) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_first_not_of(&quot;DD&quot;, 0) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_first_not_of(&quot;DDGG&quot;, 0, 2) &lt;&lt; &#39;\n&#39;;
+
+    cout &lt;&lt; &quot;find_last_of检测&quot; &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_last_of(&#39;C&#39;, string::npos) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_last_of(&quot;DD&quot;, string::npos) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_last_of(&quot;DDGG&quot;, string::npos, 2) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; &quot;find_last_not_of检测&quot; &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_last_not_of(&#39;C&#39;, string::npos) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_last_not_of(&quot;DD&quot;, string::npos) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s26.find_last_not_of(&quot;DDGG&quot;, string::npos, 2) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; &quot;可以进行类似于upper_bound(0, num) - lower_bound(0, num)的操作&quot; &lt;&lt; &#39;\n&#39;;
+
+
+
+  12.string的替换
+  第一维：替换起始位置
+  第二维：从起始位置起连续几个字符被换掉
+  第三维：要换的新字符串
+  (有且仅有四维）第四维：截取新字符串前几个字符
+  (有且仅有五维）第四、五维：从位置几开始截取几个字符
+    string s27 = &quot;CCCCTTTTMMMMDDDD传统美德&quot;;
+    string s28;
+    s28 = s27.replace(0, 4, &quot;AAAA&quot;);
+    cout &lt;&lt; s28 &lt;&lt; &#39;\n&#39;;
+    string s29;
+    s29 = s27.replace(0, 4, &quot;BBBB&quot;, 2);
+    cout &lt;&lt; s29 &lt;&lt; &#39;\n&#39;;
+    string s30;
+    s30 = s27.replace(0, 4, &quot;DDDDEEEEFFFF&quot;, 4, 4);
+    cout &lt;&lt; s30 &lt;&lt; &#39;\n&#39;;
+  前两维同上，第三维是后面字符个数
+    string s31;
+    s31 = s27.replace(0, 4, 8, &#39;Z&#39;);
+    cout &lt;&lt; s31 &lt;&lt; &#39;\n&#39;;
+  据说以上操作中，位置可以换为迭代器
+
+
+
+  13.string的插入（位置可以换为迭代器）
+  维度意义同上
+    string s32 = &quot;tql wsl 天气冷 我睡了 &quot;;
+    string s33 = s32.insert(0, &quot;yyy 牙痒痒 &quot;);
+    cout &lt;&lt; s33 &lt;&lt; &#39;\n&#39;;
+    string s34 = s32.insert(0, 4, &#39;L&#39;);
+    cout &lt;&lt; s34 &lt;&lt; &#39;\n&#39;;
+    string s35 = s32.insert(0, &quot;ZBL&quot;, 2);
+    cout &lt;&lt; s35 &lt;&lt; &#39;\n&#39;;
+    string s36 = s32.insert(0, &quot;ZZZBBBLLL&quot;, 3, 3);
+    cout &lt;&lt; s36 &lt;&lt; &#39;\n&#39;;
+
+
+
+  14.string的删除
+    string s37 = &quot;Oh,my God!&quot;;
+    string s38 = s37;
+    string s39 = s37;
+    string s40 = s37;
+  只删除第二个
+    s38.erase(s38.begin() + 2);
+  从第二个开始删，保留最后一个
+    s39.erase(s39.begin() + 2, s39.end() - 1);
+  删除（包括）第三个字符以后的所有字符
+    s40.erase(3);
+    cout &lt;&lt; s38 &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s39 &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; s40 &lt;&lt; &#39;\n&#39;;
+  有s.clear()函数
+
+  15.补充：加法连接字符串
+    string s41 = &quot;ABC&quot;;
+    string s42 = &quot;DEF&quot;;
+  不能直接连接两个字符串，如：s43 = &quot;abc&quot; + &quot;def&quot;;
+    string s43 = s41 + &quot;GHI&quot;;
+  s44的运算自左至右，s41 + &quot;GHI&quot;组成一个s（字符串变量），再加“JKL&quot;
+    string s44 = s41 + &quot;GHI&quot; + &quot;JKL&quot;;
+    string s45 = s41 + s42;
+    s41 += &quot;Hello world!&quot;;
+    cout &lt;&lt; s43 &lt;&lt; &#39;\n&#39; &lt;&lt; s44 &lt;&lt; &#39;\n&#39; &lt;&lt; s45 &lt;&lt; &#39;\n&#39; &lt;&lt; s41 &lt;&lt; &#39;\n&#39;;
+    return 0;
+}
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+	   (function(d, s) {
+	       var j, e = d.getElementsByTagName(s)[0];
+
+	       if (typeof LivereTower === 'function') { return; }
+
+	       j = d.createElement(s);
+	       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+	       j.async = true;
+
+	       e.parentNode.insertBefore(j, e);
+	       
+	       
+	   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

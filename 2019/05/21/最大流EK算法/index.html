@@ -1,0 +1,319 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>最大流EK算法 [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/avatar.png" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>最大流EK算法</h1>
+			<h1 id="容量网络"><a href="#容量网络" class="headerlink" title="容量网络"></a>容量网络</h1><blockquote>
+<p>设G(V,E),是一个<strong>有向</strong>网络;</p>
+<p>在V中指定了一个顶点,称为源点(记为Vs),以及另一个顶点,称为汇点(记为Vt);</p>
+<p>对于每一条弧<u,v>属于E,对应有一个权值c(u,v)&gt;0,称为弧的容量.</u,v></p>
+<p>通常把这样的有向网络G称为容量网络. </p>
+</blockquote>
+<a id="more"></a>
+<h1 id="弧的流量"><a href="#弧的流量" class="headerlink" title="弧的流量"></a>弧的流量</h1><blockquote>
+<p>通过容量网络G中每条弧<u,v>,上的实际流量(简称流量),记为f(u,v); </u,v></p>
+</blockquote>
+<h1 id="网络流"><a href="#网络流" class="headerlink" title="网络流"></a>网络流</h1><blockquote>
+<p>所有弧上流量的集合f={f(u,v)},称为该容量网络的一个网络流 </p>
+</blockquote>
+<h1 id="可行流-与流网络性质"><a href="#可行流-与流网络性质" class="headerlink" title="可行流(与流网络性质)"></a>可行流(与流网络性质)</h1><blockquote>
+<p>在容量网络G中满足以下条件(1、3)的网络流f,称为可行流 (123为流网络性质)</p>
+<ol>
+<li>容量限制：对任意u,v∈V，f(u,v)≤c(u,v)。</li>
+<li>反对称性：对任意u,v∈V，f(u,v) = -f(v,u)。从u到v的流量一定是从v到u的流量的相反值。</li>
+<li>流守恒性：对任意u，若u不为S或T，一定有∑f(u,v)=0，(u,v)∈E。即u到相邻节点的流量之和为0，因为流入u的流量和u点流出的流量相等，u点本身不会”制造”和”消耗”流量</li>
+</ol>
+</blockquote>
+<h1 id="最大流"><a href="#最大流" class="headerlink" title="最大流"></a>最大流</h1><blockquote>
+<p>在容量网络中,满足弧流量限制条件,且满足平衡条件并且具有最大流量的可行流,称为网络最大流,简称最大流. </p>
+</blockquote>
+<h1 id="如何求最大流？-何为增广路"><a href="#如何求最大流？-何为增广路" class="headerlink" title="如何求最大流？(何为增广路)"></a>如何求最大流？(何为增广路)</h1><blockquote>
+<p>假如所有边上的流量都没有超过容量（水管），那么就把这个流，称为一个可行流。</p>
+<p>易见，任一网络中都有一个零流，即每弧a上f(a)=0的流f.</p>
+<p>我们就从这个零流开始考虑，假如有这么一条路，这条路从源点开始一直一段一段的连到了汇点(这条路叫做可行路径)，并且，这条路上的每一段都满足流量&lt;容量，注意，是严格的&lt;,而不是&lt;=。那么，我们一定能找到这条路上的每一段的(容量-流量)的值当中的最小值delta。我们把这条路上每一段的流量都加上这个delta，一定可以保证这个流依然是可行流，这是显然的。</p>
+<p>这样我们就得到了一个更大的流，他的流量是之前的流量+delta，而这条路就叫做增广路</p>
+</blockquote>
+<h2 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h2><blockquote>
+<p>每次寻找增广路(就是源点到汇点的一条可行路)然后ans+=增广路能流过的流量，更新剩余网络，然后再做增广路，直到做不出增广路。</p>
+</blockquote>
+<h1 id="反向边"><a href="#反向边" class="headerlink" title="反向边"></a>反向边</h1><blockquote>
+<p>加条反相边那就是给程序一个<strong>反悔</strong>的机会</p>
+<p>现实中，反相边是不存在的，只是在程序中出现</p>
+</blockquote>
+<h1 id="残余（残量）网络"><a href="#残余（残量）网络" class="headerlink" title="残余（残量）网络"></a>残余（残量）网络</h1><blockquote>
+<p>在一个网络流图上，找到一条源到汇的路径（即找到了一个流量）后，对路径上所有的边，其容量都减去此次找到的量，对路径上所有的边，都添加一条反向边，其容量也等于此次找到的流量，这样得到的新图，就称为原图的“残余网络” </p>
+</blockquote>
+<h1 id="为什么要加反向边？"><a href="#为什么要加反向边？" class="headerlink" title="为什么要加反向边？"></a>为什么要加反向边？</h1><blockquote>
+<p>在做增广路时可能会阻塞后面的增广路…或者说做增广路本来是有个顺序才能找完最大流的…..但我们是任意找的…为了修正…就每次将流量加在了反向弧上…让后面的流能够进行自我调整…剩余网络的更新(就在原图上更新就可以了) </p>
+<p>据说是Ford-Fulkerson算法的改进，EK = SAP(Shortest Augmenting Path 最短增广路)</p>
+</blockquote>
+<h2 id="Code-模板-易MLE、TLE-O-n-m-m"><a href="#Code-模板-易MLE、TLE-O-n-m-m" class="headerlink" title="Code(模板)易MLE、TLE O(n  m  m)"></a>Code(模板)易MLE、TLE O(n <em> m </em> m)</h2><pre><code class="lang-c++">#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 205;
+const int INF = 0x3f3f3f3f;
+
+///点、路、源点、汇点
+int n, m, s, t;
+int pre[N];
+int r[N][N];    ///残余网络
+bool vis[N];
+
+///寻找一条从s到t的增广路，若找到返回true
+bool bfs(int s, int t)
+{
+    queue&lt;int&gt; q;
+    memset(vis, 0, sizeof(vis));
+    memset(pre, -1, sizeof(pre));
+    vis[s] = 1;
+    q.push(s);
+    while(q.size())
+    {
+        int first = q.front();
+        q.pop();
+        for(int i = 1; i &lt;= n; ++i)
+            if(!vis[i] &amp;&amp; r[first][i] &gt; 0)
+            {
+                pre[i] = first;
+                vis[i] = 1;
+                if(i == t)
+                    return 1;
+                q.push(i);
+            }
+    }
+    return 0;
+}
+
+int EK(int s, int t)
+{
+    int flow = 0, d, i;
+    while(bfs(s, t))
+    {
+        d = INF;
+        for(i = t; i != s; i = pre[i])///i != s
+            d = min(d, r[ pre[i] ][i]);
+        for(i = t; i != s; i = pre[i])
+        {
+            r[ pre[i] ][i] -= d;
+            r[i][ pre[i] ] += d;
+        }
+        flow += d;
+    }
+    return flow;
+}
+
+int main()
+{
+    while(~scanf(&quot;%d%d%d%d&quot;, &amp;n, &amp;m, &amp;s, &amp;t))
+    {
+        int u, v, w;
+        memset(r, 0, sizeof(r));
+        for(int i = 0; i &lt; m; ++i)
+        {
+            scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;w);
+            r[u][v] += w;       /// = will WA
+        }
+        cout &lt;&lt; EK(s, t) &lt;&lt; &#39;\n&#39;;;
+    }
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>参考博客：</p>
+<ol>
+<li>思想 <a href="https://www.cnblogs.com/pk28/p/8039645.html" target="_blank" rel="noopener">https://www.cnblogs.com/pk28/p/8039645.html</a></li>
+<li>定义 <a href="https://blog.csdn.net/x_y_q_/article/details/51999466" target="_blank" rel="noopener">https://blog.csdn.net/x_y_q_/article/details/51999466</a></li>
+<li>概念 <a href="https://blog.csdn.net/A_Comme_Amour/article/details/79356220" target="_blank" rel="noopener">https://blog.csdn.net/A_Comme_Amour/article/details/79356220</a></li>
+<li>过程 <a href="https://blog.csdn.net/wzw1376124061/article/details/55001639" target="_blank" rel="noopener">https://blog.csdn.net/wzw1376124061/article/details/55001639</a></li>
+</ol>
+</blockquote>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+	   (function(d, s) {
+	       var j, e = d.getElementsByTagName(s)[0];
+
+	       if (typeof LivereTower === 'function') { return; }
+
+	       j = d.createElement(s);
+	       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+	       j.async = true;
+
+	       e.parentNode.insertBefore(j, e);
+	       
+	       
+	   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

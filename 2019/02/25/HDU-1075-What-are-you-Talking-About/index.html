@@ -1,0 +1,283 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>HDU 1075 What are you Talking About [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/avatar.png" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>HDU 1075 What are you Talking About</h1>
+			<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Ignatius is so lucky that he met a Martian yesterday. But he didn’t know the language the Martians use. The Martian gives him a history book of Mars and a dictionary when it leaves. Now Ignatius want to translate the history book into English. Can you help him?  </p>
+</blockquote>
+<a id="more"></a>
+<p><em>题目链接</em>  <a href="http://acm.hdu.edu.cn/showproblem.php?pid=1075" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1075</a></p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
+<p>The problem has only one test case, the test case consists of two parts, the dictionary part and the book part. The dictionary part starts with a single line contains a string “START”, this string should be ignored, then some lines follow, each line contains two strings, the first one is a word in English, the second one is the corresponding word in Martian’s language. A line with a single string “END” indicates the end of the directory part, and this string should be ignored. The book part starts with a single line contains a string “START”, this string should be ignored, then an article written in Martian’s language. You should translate the article into English with the dictionary. If you find the word in the dictionary you should translate it and write the new word into your translation, if you can’t find the word in the dictionary you do not have to translate it, and just copy the old word to your translation. Space(‘ ‘), tab(‘\t’), enter(‘\n’) and all the punctuation should not be translated. A line with a single string “END” indicates the end of the book part, and that’s also the end of the input. All the words are in the lowercase, and each word will contain at most 10 characters, and each line will contain at most 3000 characters.  </p>
+</blockquote>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
+<p>In this problem, you have to output the translation of the history book. </p>
+</blockquote>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><blockquote>
+<p>START</p>
+<p>from fiwo</p>
+<p>hello difh</p>
+<p>mars riwosf</p>
+<p>earth fnnvk</p>
+<p>like fiiwj</p>
+<p>END</p>
+<p>START</p>
+<p>difh, i’m fiwo riwosf.</p>
+<p>i fiiwj fnnvk!</p>
+<p>END</p>
+</blockquote>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><blockquote>
+<p>hello, i’m from mars.</p>
+<p>i like earth!</p>
+</blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
+<p>map\<string, string="">存字典，map\<string, bool="">标记是否字典里能查到</string,></string,></p>
+<p>输出时，遍历截取（substr）每个单词（以小写字母为标准）</p>
+</blockquote>
+<h3 id="关于string的substr"><a href="#关于string的substr" class="headerlink" title="关于string的substr"></a>关于string的substr</h3><blockquote>
+<p>假设：string s = “0123456789”;</p>
+<p><strong>string sub1 = s.substr(5); //只有一个数字5表示从下标为5开始一直到结尾：sub1 = “56789”</strong></p>
+<p><strong>string sub2 = s.substr(5, 3); //从下标为5开始截取长度为3位：sub2 = “567”</strong> </p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;map&gt;
+#include &lt;cmath&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+map&lt;string, string&gt; mp;
+map&lt;string, bool&gt; vis;
+
+int main()
+{
+    string s1, s2;
+    cin &gt;&gt; s1;///必定是START
+    while(1)
+    {
+        cin &gt;&gt; s1;
+        if(s1 == &quot;END&quot;)
+            break;
+        cin &gt;&gt; s2;
+        mp[s2] = s1;
+        vis[s2] = 1;
+//        cout &lt;&lt; &quot;s1: &quot; &lt;&lt; s1 &lt;&lt; &#39;\n&#39; &lt;&lt; &quot;s2: &quot; &lt;&lt; s2 &lt;&lt; &#39;\n&#39;;
+    }
+    cin &gt;&gt; s1;///必定是START
+    getchar();///后面紧跟有getline(能读入回车)，此处读回车避免错误
+    string tem;
+    while(1)
+    {
+        getline(cin, tem);
+        if(tem == &quot;END&quot;)
+            break;
+        for(int i = 0, j = 0; i &lt; tem.length(); i = j)
+        {
+            if(!(tem[i] &gt;= &#39;a&#39; &amp;&amp; tem[i] &lt;= &#39;z&#39;))
+            {
+                cout &lt;&lt; tem[i];
+                j++;
+            }
+            else
+            {
+                while(tem[j] &gt;= &#39;a&#39; &amp;&amp; tem[j] &lt;= &#39;z&#39;)///拓展上界
+                    j++;
+                string s = tem.substr(i, j - i);
+                if(vis[s])
+                    cout &lt;&lt; mp[s];
+                else
+                    cout &lt;&lt; s ;
+            }
+        }
+        cout &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+	   (function(d, s) {
+	       var j, e = d.getElementsByTagName(s)[0];
+
+	       if (typeof LivereTower === 'function') { return; }
+
+	       j = d.createElement(s);
+	       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+	       j.async = true;
+
+	       e.parentNode.insertBefore(j, e);
+	       
+	       
+	   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
