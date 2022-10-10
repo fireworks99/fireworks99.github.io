@@ -112,6 +112,58 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/05/组合数/" class="item-title">组合数与第二类斯特林数</a>
+      
+      <time datetime="2019-03-05T12:52:22.000Z">
+        2019-03-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+
+Code(存于数组)long long c[105][105];
+void combine_init()
+{
+    memset(c, 0, sizeof(c));
+    c[0][0] = 1;
+    for(int i = 1; i &lt;= 105; ++i)
+    {
+        c[i][0] = c[i][i] = 1;
+        c[i][1] = i;
+        for(int j = 1; j &lt; i; ++j)
+            if(c[i][j] == 0)
+                c[i][j] = (c[i - 1][j] + c[i - 1][j - 1]);/// % mod
+    }
+}
+
+Code（连乘连除）long long violent_combine(long long n,long long m)
+{
+    if(m &lt; n - m)
+        m = n - m;///取个较大值
+    long long ans = 1;
+    for(long long i = m  -->
+        <!-- </div> -->
+
+        
+        <h3 id="求解组合数-C（n，m）"><a href="#求解组合数-C（n，m）" class="headerlink" title="求解组合数 C（n，m）"></a>求解组合数 C（n，m）</h3><blockquote>
+<p>暂时有三种方法：</p>
+<p>1.存在数组里递归求解</p>
+<p>2.较为生猛地求解（连乘连除）</p>
+<p>3.改良版（乘一次除一次）</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/05/组合数/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/05/SDNUOJ-1089-拓扑排序/" class="item-title">SDNUOJ 1089 拓扑排序</a>
       
       <time datetime="2019-03-05T11:08:50.000Z">
@@ -532,38 +584,6 @@ void my_merge(int -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/02/POJ-2299-Ultra-QuickSort/" class="item-title">POJ 2299  Ultra-QuickSort</a>
-      
-      <time datetime="2019-03-02T04:30:09.000Z">
-        2019-03-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接 http://poj.org/problem?id=2299
-
- Ultra-QuickSort produces the output  0 1 4 5 9 . Your task is to determine how many swap operations Ultra-QuickSort needs to perform in order to sort a given input sequence. 
-
-Input
-The input contains several test cases. Every test case begins with a line that contains a single integer n &lt; 500,000 — the length of the input sequence. Each of the the following n lines contains a single integer 0 ≤ a[i] ≤ 999,999,999, the i-th input sequence element. Input i -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>In this problem, you have to analyze a particular sorting algorithm. The algorithm processes a sequence of n distinct integers by swapping two adjacent sequence elements until the sequence is sorted in ascending order. For the input sequence  9 1 0 5 4 ,</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/02/POJ-2299-Ultra-QuickSort/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -634,6 +654,10 @@ The input contains several test cases. Every test case begins with a line that c
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2022/10/09/window-postMessage/">window.postMessage</a>
           </li>
         
@@ -647,10 +671,6 @@ The input contains several test cases. Every test case begins with a line that c
         
           <li>
             <a class="recent_posts-list-link" href="/2022/09/02/JavaScript-Note-2022-09-02/">JavaScript Note 2022.09.02</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/09/01/JavaScript-Note-2022-09-01/">JavaScript Note 2022.09.01</a>
           </li>
         
       </ul>

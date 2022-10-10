@@ -112,6 +112,59 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/25/HDU-4685-Prince-and-Princess-bipartite-graph-match-and-shrink-nodes/" class="item-title">HDU 4685 Prince and Princess(bipartite graph match and shrink nodes)</a>
+      
+      <time datetime="2020-04-25T13:44:47.000Z">
+        2020-04-25
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+为了保证最大匹配数，先对王子进行最大匹配(二分图匹配の匈牙利算法DFS)。
+在最大匹配前提下，再找各王子除了匹配到的公主外还可以匹配哪些公主
+遍历王子，对于没匹配公主的每个王子：
+设置一个虚点(公主)与之匹配，并让所有王子指向这一虚点
+
+
+
+遍历公主，对于没匹配王子的每个公主：
+设置一个虚点(王子)与之匹配，并让这一虚点指向所有公主
+
+
+
+针对参与匹配的所有公主(最大匹配中的+虚点中的)，建立反向边
+强连通分量缩点，处在同一个强连通分量中的王子与公主，可以彼此匹配
+A遍历王子，love[A][B]==1用来排除B是王子(保证B是公主)
+
+Code#include &lt;stack&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 2005;
+const int M = 2 * N * N;
+c -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个王子M个公主，王子只能匹配自己喜欢的公主，公主随意。给出王子对于公主的喜爱信息，求在保证最大配对数的前提下，每个王子分别可以匹配哪些公主。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/25/HDU-4685-Prince-and-Princess-bipartite-graph-match-and-shrink-nodes/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/04/25/HDU-4635-Strongly-connected-shrink-nodes/" class="item-title">HDU 4635 Strongly connected(shrink nodes)</a>
       
       <time datetime="2020-04-25T03:57:16.000Z">
@@ -511,53 +564,6 @@ ll a[N][N], b[ -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/05/HDU-4009-Transfer-water-Minimun-tree-shape-graph/" class="item-title">HDU 4009 Transfer water(Minimun tree-shape graph)</a>
-      
-      <time datetime="2020-04-04T22:44:05.000Z">
-        2020-04-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-不难发现是一个不定根的题目 -&gt; 增加一个伪根。
-但是在建图时，“饮水”的边正常建立，“打井”如何处理？看似“自给自足”让人想到自环，可两者没什么关系，添自环不解决问题。
-而且对于独立点，即使不能生成最小树形图，也可以”打井”完成任务，这种情况如何求最小花费？
-
-Solution
-将伪根连向各点的边的权值设为该点打井花费！
-实现了“打井”与“引水”一视同仁，可计算最小花费。
-什么完美的建模思想！
-这跟之前做过的一道最短路相似，那题是“昂贵的聘礼”，给定了终点，也是不定根(起点任选)，求最短路。但是不仅边有权值，每个点也有权值，意味着从每个点出发的花费不同，这时建立超级源点连向各点的边的权值就应该设为各点权值！
-这是一类“不定根 &amp;&amp; 点有权值”的图论题目
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个房子搬到山上，要解决供水问题有两种方案：</p>
-<p>①自己打井，耗钱 (X * 房子高度)</p>
-<p>②从别家引水，耗钱 (Y * 两房子的曼哈顿距离)，如果源较低，再加一个水泵钱Z</p>
-<p>求解决所有房子供水问题的最小花费</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/05/HDU-4009-Transfer-water-Minimun-tree-shape-graph/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -628,6 +634,10 @@ using namespace std -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2022/10/09/window-postMessage/">window.postMessage</a>
           </li>
         
@@ -641,10 +651,6 @@ using namespace std -->
         
           <li>
             <a class="recent_posts-list-link" href="/2022/09/02/JavaScript-Note-2022-09-02/">JavaScript Note 2022.09.02</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/09/01/JavaScript-Note-2022-09-01/">JavaScript Note 2022.09.01</a>
           </li>
         
       </ul>

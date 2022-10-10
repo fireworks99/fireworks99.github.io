@@ -112,6 +112,63 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/05/POJ-3683-Paiest-John-s-Busiest-Day-2-sat-Tarjan-Topo/" class="item-title">POJ 3683 Paiest John&#39;s Busiest Day(2-sat:Tarjan+Topo)</a>
+      
+      <time datetime="2019-11-05T11:32:29.000Z">
+        2019-11-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 2-sat
+①输入+初始化 input() + initial()
+②添边 add_edge()
+③缩点 Tarjan()
+④判可行否 judge()
+⑤若可行，记下超点的对立点
+⑥反向建边拓扑染色：
+遍历所有的点
+对于每个点:
+若与他相连接的点跟它本身不处于同一个强连通分量中
+将两个强连通分量(即两个超点)反向建边
+进行BFS拓扑染色
+
+Code#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 10005;
+
+struct time
+{
+    int start, over;
+} tm[N];
+
+stack&lt;int&gt; st;
+vector&lt;int&gt; v[N];///Trajan用
+vector&lt; -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>有一个小镇上只有一个牧师。这个小镇上有一个传说，在九月一日结婚的人会受到爱神的保佑，但是要牧师举办一个仪式。这个仪式要么在婚礼刚刚开始的时候举行，要么举行完婚礼正好结束。<br>现在已知有n场婚礼，告诉你每一场的开始和结束时间，以及举行仪式所需要的时间。问牧师能否参加所有的婚礼，如果能则输出一种方案.</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/05/POJ-3683-Paiest-John-s-Busiest-Day-2-sat-Tarjan-Topo/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/04/POJ-3207-Ikki-s-Story-IV-2-sat/" class="item-title">POJ 3207 Ikki&#39;s Story IV(2-sat)</a>
       
       <time datetime="2019-11-04T12:07:41.000Z">
@@ -586,56 +643,6 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/10/20/HDU-4135-Co-prime-容斥原理/" class="item-title">HDU 4135 Co-prime 容斥原理</a>
-      
-      <time datetime="2019-10-20T09:04:28.000Z">
-        2019-10-20
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-在区间[L, R]里与N互质的数字的个数
-== 在区间[1, R]里与N互质的数字的个数
-减去( - ) 在区间[1, L]里与N互质的数字的个数
-所以可以自定义一个函数求出[1, up]里与N互质的数的个数
-但是数字太多，依次找互质的数字不好找，但找不互质的容易
-区间[1, up]里N的质因子的倍数与N不互质
-找到一个质因子可找到一大堆它的倍数(与N不互质的数字)
-像找2、3、5…的倍数时有重复(6,10,15)，这便用到容斥!
-
-Code#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-#define ll long long
-
-ll factor[100005], cnt = 0;
-
-void get_factors(ll n)///①得到全集②进行容斥
-{
-    cnt = 0;
-    for(ll i = 2; i * i -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出区间[L, R]，给出数字N，求在该区间里与N互质的数字的个数</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/10/20/HDU-4135-Co-prime-容斥原理/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -706,6 +713,10 @@ void get_factors(ll n)///①得到全集②进行容斥
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2022/10/09/window-postMessage/">window.postMessage</a>
           </li>
         
@@ -719,10 +730,6 @@ void get_factors(ll n)///①得到全集②进行容斥
         
           <li>
             <a class="recent_posts-list-link" href="/2022/09/02/JavaScript-Note-2022-09-02/">JavaScript Note 2022.09.02</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/09/01/JavaScript-Note-2022-09-01/">JavaScript Note 2022.09.01</a>
           </li>
         
       </ul>

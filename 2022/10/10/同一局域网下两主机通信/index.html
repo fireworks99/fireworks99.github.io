@@ -6,7 +6,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Tag: 知识 [ 市井烟火气 ]</title>
+	<title>同一局域网下两主机通信 [ 市井烟火气 ]</title>
 	
 	
 	<!-- stylesheets list from _config.yml -->
@@ -102,33 +102,60 @@
 			<div id="content-inner">
 
 				
-<div id="tag">
-  <h1>知识</h1>
-  
-  <div class="tag-item">
-    <a href="/2019/02/24/吉姆拉尔森计算公式/">
-      吉姆拉尔森计算公式
-    </a>
-    <time datetime="2019-02-24T00:38:48.000Z">
-      2019-02-24
-    </time>
-  </div>
-  
-  <div class="tag-item">
-    <a href="/2019/01/17/stable-sort稳定排序/">
-      stable_sort稳定排序
-    </a>
-    <time datetime="2019-01-17T13:44:30.000Z">
-      2019-01-17
-    </time>
-  </div>
-  
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>同一局域网下两主机通信</h1>
+			<blockquote>
+<p>我有两台主机A与B，他俩连接了同一个网络，我在B主机上开启了一个<strong>本地服务</strong>，比如说localhost:5500/index.html，两主机屏幕尺寸不一样，所以想在A主机上看看该网页样式怎么样，故查出B主机的内网IP(10.2.205.108)，在A主机浏览器中输入10.2.205.108:5500/index.html，即可访问。</p>
+<p>部分原理如下：</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-过程"><a href="#1-过程" class="headerlink" title="1.过程"></a>1.过程</h2><ol>
+<li>A主机的浏览器中输入10.2.205.108:5500/index.html，路由器检测到是私有IP，就不向外转发了。</li>
+<li>A主机查找本机ARP表，看看IP为10.2.205.108的主机的MAC地址是啥，若找到了，直接转发帧。</li>
+<li>若没找到，发起广播，询问目标主机的MAC地址，并告知自己的IP与MAC地址。</li>
+<li>广播帧的目标主机收到帧后予以响应，非目标主机不响应。</li>
+<li>过程中交换机记录帧转发表，两主机记录各自的ARP表。</li>
+</ol>
+<p><img src="/2022/10/10/同一局域网下两主机通信/request.png" alt="request"></p>
+<p><img src="/2022/10/10/同一局域网下两主机通信/response.png" alt="responce"></p>
 
-  <div id="other-paginator">
-    <a class="extend prev" rel="prev" href="/tags/知识/page/5/"> </a><a class="page-number" href="/tags/知识/">1</a><span class="space">&hellip;</span><a class="page-number" href="/tags/知识/page/4/">4</a><a class="page-number" href="/tags/知识/page/5/">5</a><span class="page-number current">6</span>
-  </div>
-  
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+	   (function(d, s) {
+	       var j, e = d.getElementsByTagName(s)[0];
+
+	       if (typeof LivereTower === 'function') { return; }
+
+	       j = d.createElement(s);
+	       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+	       j.async = true;
+
+	       e.parentNode.insertBefore(j, e);
+	       
+	       
+	   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
 </div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
 
 
 

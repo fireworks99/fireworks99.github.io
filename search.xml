@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>同一局域网下两主机通信</title>
+      <link href="2022/10/10/%E5%90%8C%E4%B8%80%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8B%E4%B8%A4%E4%B8%BB%E6%9C%BA%E9%80%9A%E4%BF%A1/"/>
+      <url>2022/10/10/%E5%90%8C%E4%B8%80%E5%B1%80%E5%9F%9F%E7%BD%91%E4%B8%8B%E4%B8%A4%E4%B8%BB%E6%9C%BA%E9%80%9A%E4%BF%A1/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>我有两台主机A与B，他俩连接了同一个网络，我在B主机上开启了一个<strong>本地服务</strong>，比如说localhost:5500/index.html，两主机屏幕尺寸不一样，所以想在A主机上看看该网页样式怎么样，故查出B主机的内网IP(10.2.205.108)，在A主机浏览器中输入10.2.205.108:5500/index.html，即可访问。</p><p>部分原理如下：</p></blockquote><a id="more"></a><h2 id="1-过程"><a href="#1-过程" class="headerlink" title="1.过程"></a>1.过程</h2><ol><li>A主机的浏览器中输入10.2.205.108:5500/index.html，路由器检测到是私有IP，就不向外转发了。</li><li>A主机查找本机ARP表，看看IP为10.2.205.108的主机的MAC地址是啥，若找到了，直接转发帧。</li><li>若没找到，发起广播，询问目标主机的MAC地址，并告知自己的IP与MAC地址。</li><li>广播帧的目标主机收到帧后予以响应，非目标主机不响应。</li><li>过程中交换机记录帧转发表，两主机记录各自的ARP表。</li></ol><p><img src="/2022/10/10/同一局域网下两主机通信/request.png" alt="request"></p><p><img src="/2022/10/10/同一局域网下两主机通信/response.png" alt="responce"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>window.postMessage</title>
       <link href="2022/10/09/window-postMessage/"/>
       <url>2022/10/09/window-postMessage/</url>
@@ -3563,9 +3582,9 @@
       
         <tags>
             
-            <tag> 技巧の折半枚举 </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 技巧の折半枚举 </tag>
             
             <tag> 优化の二分 </tag>
             
@@ -4843,9 +4862,9 @@
       
         <tags>
             
-            <tag> 简单搜索のDFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のDFS </tag>
             
         </tags>
       
@@ -5275,9 +5294,9 @@
       
         <tags>
             
-            <tag> 简单搜索のDFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のDFS </tag>
             
             <tag> 简单搜索のBFS </tag>
             
@@ -5300,9 +5319,9 @@
       
         <tags>
             
-            <tag> 简单搜索のDFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のDFS </tag>
             
             <tag> 简单搜索のBFS </tag>
             
@@ -5474,9 +5493,9 @@
       
         <tags>
             
-            <tag> 简单搜索のDFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のDFS </tag>
             
             <tag> 简单搜索の剪枝 </tag>
             

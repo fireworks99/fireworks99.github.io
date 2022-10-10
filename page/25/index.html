@@ -112,6 +112,55 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/14/同余（模）定理/" class="item-title">同余（模）定理</a>
+      
+      <time datetime="2019-03-14T12:53:53.000Z">
+        2019-03-14
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+
+性质
+
+(a + b) % p = (a % p + b % p) % p
+(a - b) % p =  ( (a % p - b % p) + p ) % p
+(a * b) % p = (a % p) * (b % p) % p
+若 a ≡ b(mod p)，则 (a - b) mod p ≡ 0
+若 a ≡ b(mod p)，则 (a ^ n) mod p ≡  (b ^ n) mod p
+
+
+例题
+求 2001 ^ 2003 % 13
+
+解
+2001 % 13 = 12，即2001 同余于 12 （模13）
+根据性质5，原问题等于求 12 ^ 2003 % 13
+找出 12 的几次幂 同余于 1 （模13），发现 12 ^ 2 ≡ 1 (mod 13)
+(12 ^ 2003) % 13 = [ (12 ^ 2) ^ 1001   *   (12 ^ 1)] % 13 
+根据性质5， 上式 = [ (1 ^ 1001)  *  (12 ^ 1) ] % 13 = 12 
+
+也就口算笔算可以，用程序写出来实用性弱，远不如快速幂万能（在适合的情况下比快速幂快）
+Codeint s -->
+        <!-- </div> -->
+
+        
+        <h2 id="同余定义（德国-高斯）："><a href="#同余定义（德国-高斯）：" class="headerlink" title="同余定义（德国/高斯）："></a>同余定义（德国/高斯）：</h2><blockquote>
+<p>两个整数 a、b，如果他们同时除以一个自然数p，所得的余数相同，则称a,b对于模p同余，记作a≡b（mod p）。读作：a同余于b模m。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/14/同余（模）定理/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/14/POJ-3279-Fliptile/" class="item-title">POJ 3279 Fliptile</a>
       
       <time datetime="2019-03-14T11:06:20.000Z">
@@ -473,58 +522,6 @@ Code#include &lt;cstdio&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/05/组合数/" class="item-title">组合数与第二类斯特林数</a>
-      
-      <time datetime="2019-03-05T12:52:22.000Z">
-        2019-03-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-
-Code(存于数组)long long c[105][105];
-void combine_init()
-{
-    memset(c, 0, sizeof(c));
-    c[0][0] = 1;
-    for(int i = 1; i &lt;= 105; ++i)
-    {
-        c[i][0] = c[i][i] = 1;
-        c[i][1] = i;
-        for(int j = 1; j &lt; i; ++j)
-            if(c[i][j] == 0)
-                c[i][j] = (c[i - 1][j] + c[i - 1][j - 1]);/// % mod
-    }
-}
-
-Code（连乘连除）long long violent_combine(long long n,long long m)
-{
-    if(m &lt; n - m)
-        m = n - m;///取个较大值
-    long long ans = 1;
-    for(long long i = m  -->
-        <!-- </div> -->
-
-        
-        <h3 id="求解组合数-C（n，m）"><a href="#求解组合数-C（n，m）" class="headerlink" title="求解组合数 C（n，m）"></a>求解组合数 C（n，m）</h3><blockquote>
-<p>暂时有三种方法：</p>
-<p>1.存在数组里递归求解</p>
-<p>2.较为生猛地求解（连乘连除）</p>
-<p>3.改良版（乘一次除一次）</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/05/组合数/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -595,6 +592,10 @@ Code（连乘连除）long long violent_combine(long long n,long long m)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2022/10/09/window-postMessage/">window.postMessage</a>
           </li>
         
@@ -608,10 +609,6 @@ Code（连乘连除）long long violent_combine(long long n,long long m)
         
           <li>
             <a class="recent_posts-list-link" href="/2022/09/02/JavaScript-Note-2022-09-02/">JavaScript Note 2022.09.02</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/09/01/JavaScript-Note-2022-09-01/">JavaScript Note 2022.09.01</a>
           </li>
         
       </ul>

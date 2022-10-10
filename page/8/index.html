@@ -112,6 +112,52 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/01/18/POJ-3159-Candies-最短路解差分约束/" class="item-title">POJ 3159 Candies(最短路解差分约束)</a>
+      
+      <time datetime="2020-01-18T11:25:51.000Z">
+        2020-01-18
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+题目是求从1到n的最短路（差分约束）
+关键在于算法的优化
+①堆优化的Dijkstra：
+我之前的Dijkstra都是手动去模拟那个优化过程的，可能因为模拟地不准确而效果不好？易TLE
+②栈实现的spfa：
+spfa是对Bellman-Ford的优化，Bellman-Ford是在暴力求解最短路。
+假设：图只是一棵树，1起点，n终点，从终点向起点添边，则复杂度达到最大n*m,n-1次对m条边的松弛，每次对m条边松弛只有一次是有用的！
+而spfa是以松弛过的点为基去松弛，保证了大部分松弛都是有效的，至少是可能的
+而spfa的实现，按理说用队列还是栈没区别，但事实是：用栈比用队列快？？？而且前提是没有负环？？？
+
+Code#include &lt;queue&gt;
+#include &lt;stack&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>堆(优先队列)优化的Dijkstra</p>
+<p>用栈(而非队列)实现spfa</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/01/18/POJ-3159-Candies-最短路解差分约束/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/01/12/SDNUOJ-1045-石子合并-区间DP/" class="item-title">石子合并(区间DP)</a>
       
       <time datetime="2020-01-12T08:06:31.000Z">
@@ -571,63 +617,6 @@ bool -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/05/POJ-3683-Paiest-John-s-Busiest-Day-2-sat-Tarjan-Topo/" class="item-title">POJ 3683 Paiest John&#39;s Busiest Day(2-sat:Tarjan+Topo)</a>
-      
-      <time datetime="2019-11-05T11:32:29.000Z">
-        2019-11-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 2-sat
-①输入+初始化 input() + initial()
-②添边 add_edge()
-③缩点 Tarjan()
-④判可行否 judge()
-⑤若可行，记下超点的对立点
-⑥反向建边拓扑染色：
-遍历所有的点
-对于每个点:
-若与他相连接的点跟它本身不处于同一个强连通分量中
-将两个强连通分量(即两个超点)反向建边
-进行BFS拓扑染色
-
-Code#include &lt;stack&gt;
-#include &lt;queue&gt;
-#include &lt;vector&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 10005;
-
-struct time
-{
-    int start, over;
-} tm[N];
-
-stack&lt;int&gt; st;
-vector&lt;int&gt; v[N];///Trajan用
-vector&lt; -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>有一个小镇上只有一个牧师。这个小镇上有一个传说，在九月一日结婚的人会受到爱神的保佑，但是要牧师举办一个仪式。这个仪式要么在婚礼刚刚开始的时候举行，要么举行完婚礼正好结束。<br>现在已知有n场婚礼，告诉你每一场的开始和结束时间，以及举行仪式所需要的时间。问牧师能否参加所有的婚礼，如果能则输出一种方案.</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/05/POJ-3683-Paiest-John-s-Busiest-Day-2-sat-Tarjan-Topo/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -698,6 +687,10 @@ vector&lt; -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2022/10/09/window-postMessage/">window.postMessage</a>
           </li>
         
@@ -711,10 +704,6 @@ vector&lt; -->
         
           <li>
             <a class="recent_posts-list-link" href="/2022/09/02/JavaScript-Note-2022-09-02/">JavaScript Note 2022.09.02</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/09/01/JavaScript-Note-2022-09-01/">JavaScript Note 2022.09.01</a>
           </li>
         
       </ul>

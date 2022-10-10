@@ -112,6 +112,42 @@
     
     <div class="recent-post-item">
 
+      <a href="/2022/10/10/同一局域网下两主机通信/" class="item-title">同一局域网下两主机通信</a>
+      
+      <time datetime="2022-10-10T05:19:41.000Z">
+        2022-10-10
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 1.过程
+A主机的浏览器中输入10.2.205.108:5500/index.html，路由器检测到是私有IP，就不向外转发了。
+A主机查找本机ARP表，看看IP为10.2.205.108的主机的MAC地址是啥，若找到了，直接转发帧。
+若没找到，发起广播，询问目标主机的MAC地址，并告知自己的IP与MAC地址。
+广播帧的目标主机收到帧后予以响应，非目标主机不响应。
+过程中交换机记录帧转发表，两主机记录各自的ARP表。
+
+
+ -->
+        <!-- </div> -->
+
+        
+        <blockquote>
+<p>我有两台主机A与B，他俩连接了同一个网络，我在B主机上开启了一个<strong>本地服务</strong>，比如说localhost:5500/index.html，两主机屏幕尺寸不一样，所以想在A主机上看看该网页样式怎么样，故查出B主机的内网IP(10.2.205.108)，在A主机浏览器中输入10.2.205.108:5500/index.html，即可访问。</p>
+<p>部分原理如下：</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2022/10/10/同一局域网下两主机通信/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2022/10/09/window-postMessage/" class="item-title">window.postMessage</a>
       
       <time datetime="2022-10-09T01:59:58.000Z">
@@ -499,45 +535,6 @@ chrome.contextMenus.onClicked.addListener(function (data) {
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/11/27/My-way-to-upload-my-project-to-github/" class="item-title">My way to upload my project to github</a>
-      
-      <time datetime="2020-11-27T04:08:51.000Z">
-        2020-11-27
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-在github上new一个仓库，main分支重命名为master
-在本地想上传的项目目录下执行git init
-
-sj@fireworks99 MINGW64 /e/Web_FrontEnd/ChromeExtensions/Bilbili_Time_ALL (master)
-$ git remote add github https://github.com/fireworks99/bilibiliTime.git
-sj@fireworks99 MINGW64 /e/FrontEnd/chrome_extensions (master)
-$ git fetch github master
-remote: Enumerating objects: 4, done.
-remote: Counting objects: 100% (4/4), done.
-remote: Compressing objects: 100% (3/3), done.
-remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
-Unpacking  -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>Upload my project to github</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/11/27/My-way-to-upload-my-project-to-github/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -608,6 +605,10 @@ Unpacking  -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2022/10/09/window-postMessage/">window.postMessage</a>
           </li>
         
@@ -621,10 +622,6 @@ Unpacking  -->
         
           <li>
             <a class="recent_posts-list-link" href="/2022/09/02/JavaScript-Note-2022-09-02/">JavaScript Note 2022.09.02</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/09/01/JavaScript-Note-2022-09-01/">JavaScript Note 2022.09.01</a>
           </li>
         
       </ul>

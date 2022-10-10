@@ -112,6 +112,56 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/29/POJ-1144-NEtwork-无向图-割点/" class="item-title">POJ 1144 Network(双连通+割点)</a>
+      
+      <time datetime="2019-07-29T03:24:17.000Z">
+        2019-07-29
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 判断割点
+
+对根节点u，若其有两棵或两棵以上的子树，则该根结点u为割点； 
+对非叶子节点u（非根节点），若其子树的节点均没有指向u的祖先节点的回边，说明删除u之后，根结点与u的子树的节点不再连通；则节点u为割点。
+
+
+POJ 1144 Network（求割点个数）#include &lt;stack&gt;
+#include &lt;vector&gt;
+#include &lt;stdio.h&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+bool flag[105];
+int ans, cnt, low[105], time[105];
+vector&lt;int&gt; v[105];
+
+void init()
+{
+    ans = cnt = 0;
+    memset(flag, 0, sizeof(flag));
+    memset(low, 0, sizeof(low));
+    memset(time,  -->
+        <!-- </div> -->
+
+        
+        <h2 id="割点"><a href="#割点" class="headerlink" title="割点"></a>割点</h2><blockquote>
+<p>将这个点去掉，图就会被分成两个部分（或者以上），那么这个点就是一个割点</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/29/POJ-1144-NEtwork-无向图-割点/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/27/c-string-及其函数/" class="item-title">c++ string 及其函数</a>
       
       <time datetime="2019-07-27T07:19:24.000Z">
@@ -579,58 +629,6 @@ void plug(char * s)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/22/洛谷-p1494-小Z的袜子/" class="item-title">洛谷 p1494 小Z的袜子</a>
-      
-      <time datetime="2019-07-22T03:36:26.000Z">
-        2019-07-22
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 莫队算法
-学习一个算法，除了理解它的原理之外，要清楚它的特点，以此来思考适合解决何种问题
-莫队算法：区间各元素属性和（累积）查询问题
-
-此题更新操作
-分母就是n * n - n(表示两两袜子之间的随机组合)，分子是一个累加和 - n，累加的内容是该区间内每种颜色i出现次数sum[i]的平方
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-#define ll long long
-using namespace std;
-const int N = 50010;
-
-int n, m;///n个元素,m个询问;
-int num, bel[N];///分块个数，每块标号
-int a[N], sum[N];///元素值与其在相应区间上出现次数
-ll ans;///当前区间查询所得答案
-
-struct edge
-{
-    int l, r, id;
-    ll fro, bac;
-} -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>详见链接: <a href="https://www.luogu.org/problemnew/show/P1494" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P1494</a></p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/22/洛谷-p1494-小Z的袜子/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -701,6 +699,10 @@ struct edge
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2022/10/09/window-postMessage/">window.postMessage</a>
           </li>
         
@@ -714,10 +716,6 @@ struct edge
         
           <li>
             <a class="recent_posts-list-link" href="/2022/09/02/JavaScript-Note-2022-09-02/">JavaScript Note 2022.09.02</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/09/01/JavaScript-Note-2022-09-01/">JavaScript Note 2022.09.01</a>
           </li>
         
       </ul>

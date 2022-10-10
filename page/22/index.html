@@ -112,6 +112,61 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/10/HDU-1754-I-Hate-It/" class="item-title">HDU 1754 I Hate It</a>
+      
+      <time datetime="2019-04-10T14:14:05.000Z">
+        2019-04-10
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接
+线段树#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 200005;
+
+int n, m;
+struct node
+{
+    int L, R, val;
+}a[N &lt;&lt; 2 | 1] ;
+
+void init(int num, int l, int r)
+{
+    a[num].L = l;
+    a[num].R = r;
+    a[num].val = 0;
+
+    if(l == r)///初始化到叶子结点返回
+        return ;
+
+    int mid = (l + r) &gt;&gt; 1;
+    init(num &lt;&lt; 1, l, mid);
+    init(num &lt;&lt; 1 | 1, mid + 1, r);
+}
+
+void update(int num, int l,  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>中文题目</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/10/HDU-1754-I-Hate-It/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/10/Gitment-评论/" class="item-title">Gitment 评论</a>
       
       <time datetime="2019-04-10T00:23:17.000Z">
@@ -852,38 +907,6 @@ int n, m;///n个点 -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/05/睡前小故事/" class="item-title">睡前小故事</a>
-      
-      <time datetime="2019-04-05T10:43:35.000Z">
-        2019-04-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-热心父母追问：因为他睡不着，专门去给他买了安眠药，嘱咐他按时吃，结果过去看他还没吃药就睡着了，请问这种情况怎么办？
-回答：不吃药怎么能行！赶快叫醒他，待他清醒了赶快吃上安眠药，估计就能睡个好觉了…
-追问：明白了，谢谢您！
-
-睡前小故事
-①从前有个少年，他懵懂无知，他太过自我……他觉得自己独一无二，觉得自己与众不同，觉得自己能屈能伸，觉得自己张弛有度……看，原来这是一个自恋的人，无自知之明，妄自菲薄，自命不凡，活在自己的世界里。不过也有好的一面，自恋也是自信啊，他在思修课上做了一次演讲（脱稿，想到啥说啥的那种），完全是为了锻炼自己，那一刻，我很崇拜他，要是搁以前，他在众人面前做学习经验总结，照着稿子念都念不清楚。所以，我还是挺喜欢他的，毕竟他在努力改变、提升自己。
-②某一天，他遇上了一个女生，深得他心。他变了……他不再那么自信，反而多了些自卑，突然发现自身有那么多缺点，而她那么耀眼，他想：他们，怎么可能……看到他的变化，我想起了不知从哪儿听到的一句话：之前他总是一个人，无所忧虑，无所畏惧，如同刀枪不入，故所向披靡、孤独求败。可当他有了所爱之人，就有了牵挂，就有了软肋，浑身的缺点都就暴露 -->
-        <!-- </div> -->
-
-        
-        <h3 id="小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…"><a href="#小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…" class="headerlink" title="小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…"></a>小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…</h3>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/05/睡前小故事/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -954,6 +977,10 @@ int n, m;///n个点 -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2022/10/09/window-postMessage/">window.postMessage</a>
           </li>
         
@@ -967,10 +994,6 @@ int n, m;///n个点 -->
         
           <li>
             <a class="recent_posts-list-link" href="/2022/09/02/JavaScript-Note-2022-09-02/">JavaScript Note 2022.09.02</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/09/01/JavaScript-Note-2022-09-01/">JavaScript Note 2022.09.01</a>
           </li>
         
       </ul>

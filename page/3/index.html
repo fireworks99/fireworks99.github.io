@@ -112,6 +112,54 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/09/22/Web-FE-request-data-img-from-BE/" class="item-title">FE request data(img) from BE</a>
+      
+      <time datetime="2020-09-22T01:28:35.000Z">
+        2020-09-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- request.jsimport axios from &#39;axios&#39;
+
+export function request(config) {
+
+  // 1 创建实例
+  const instance = axios.create({
+    baseURL: &#39;http://localhost:3000&#39;,
+    timeout: 5000,
+    // headers: {
+    //   &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded;charset=UTF-8&#39;,
+    // },
+  });
+
+  // 2 两类拦截器
+  instance.interceptors.request.use(config =&gt; {
+    return config
+  }, error =&gt; {
+    console.log(error);
+  });
+
+  instance.interceptors.response.use(res =&gt; {
+  -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>前端向后端请求一系列数据(文本、图片等静态资源)并展示在页面上</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/09/22/Web-FE-request-data-img-from-BE/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/09/21/Web-Communication-between-components/" class="item-title">Communication between components</a>
       
       <time datetime="2020-09-21T10:45:29.000Z">
@@ -681,59 +729,6 @@ Code#include &lt;cstdio&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/25/HDU-4685-Prince-and-Princess-bipartite-graph-match-and-shrink-nodes/" class="item-title">HDU 4685 Prince and Princess(bipartite graph match and shrink nodes)</a>
-      
-      <time datetime="2020-04-25T13:44:47.000Z">
-        2020-04-25
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-为了保证最大匹配数，先对王子进行最大匹配(二分图匹配の匈牙利算法DFS)。
-在最大匹配前提下，再找各王子除了匹配到的公主外还可以匹配哪些公主
-遍历王子，对于没匹配公主的每个王子：
-设置一个虚点(公主)与之匹配，并让所有王子指向这一虚点
-
-
-
-遍历公主，对于没匹配王子的每个公主：
-设置一个虚点(王子)与之匹配，并让这一虚点指向所有公主
-
-
-
-针对参与匹配的所有公主(最大匹配中的+虚点中的)，建立反向边
-强连通分量缩点，处在同一个强连通分量中的王子与公主，可以彼此匹配
-A遍历王子，love[A][B]==1用来排除B是王子(保证B是公主)
-
-Code#include &lt;stack&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 2005;
-const int M = 2 * N * N;
-c -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个王子M个公主，王子只能匹配自己喜欢的公主，公主随意。给出王子对于公主的喜爱信息，求在保证最大配对数的前提下，每个王子分别可以匹配哪些公主。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/25/HDU-4685-Prince-and-Princess-bipartite-graph-match-and-shrink-nodes/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -804,6 +799,10 @@ c -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2022/10/09/window-postMessage/">window.postMessage</a>
           </li>
         
@@ -817,10 +816,6 @@ c -->
         
           <li>
             <a class="recent_posts-list-link" href="/2022/09/02/JavaScript-Note-2022-09-02/">JavaScript Note 2022.09.02</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/09/01/JavaScript-Note-2022-09-01/">JavaScript Note 2022.09.01</a>
           </li>
         
       </ul>

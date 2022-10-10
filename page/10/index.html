@@ -112,6 +112,56 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/10/20/HDU-4135-Co-prime-容斥原理/" class="item-title">HDU 4135 Co-prime 容斥原理</a>
+      
+      <time datetime="2019-10-20T09:04:28.000Z">
+        2019-10-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+在区间[L, R]里与N互质的数字的个数
+== 在区间[1, R]里与N互质的数字的个数
+减去( - ) 在区间[1, L]里与N互质的数字的个数
+所以可以自定义一个函数求出[1, up]里与N互质的数的个数
+但是数字太多，依次找互质的数字不好找，但找不互质的容易
+区间[1, up]里N的质因子的倍数与N不互质
+找到一个质因子可找到一大堆它的倍数(与N不互质的数字)
+像找2、3、5…的倍数时有重复(6,10,15)，这便用到容斥!
+
+Code#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define ll long long
+
+ll factor[100005], cnt = 0;
+
+void get_factors(ll n)///①得到全集②进行容斥
+{
+    cnt = 0;
+    for(ll i = 2; i * i -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出区间[L, R]，给出数字N，求在该区间里与N互质的数字的个数</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/10/20/HDU-4135-Co-prime-容斥原理/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/10/20/SDNUOJ-新生-AC题数统计/" class="item-title">SDNUOJ 新生 AC题数统计</a>
       
       <time datetime="2019-10-20T00:52:19.000Z">
@@ -551,50 +601,6 @@ x3 - x0 &lt;= 7                (1)+(4)+(5)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/30/HDU-2255-奔小康赚大钱-最大权值完全匹配KM算法/" class="item-title">HDU 2255 奔小康赚大钱(最大权值完全匹配KM算法)</a>
-      
-      <time datetime="2019-08-30T01:45:14.000Z">
-        2019-08-30
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 算法过程模拟
-https://www.cnblogs.com/wenruo/p/5264235.html
-
-Code(Template)#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const int MAXN = 305;
-const int INF = 0x3f3f3f3f;
-
-int love[MAXN][MAXN];   /// 记录每个妹子和每个男生的好感度
-int ex_girl[MAXN];      /// 每个妹子的期望值
-int ex_boy[MAXN];       /// 每个男生的期望值
-bool vis_girl[MAXN];    /// 记录每一轮匹配匹配过的女生
-bool vis_boy[MAXN];     /// 记录每一轮匹配匹配过的男生
-int match[MAXN];        /// 记录每个男生匹配到的妹子 如果没有则为-1
-int slack[MAXN];        /// 记录每个汉 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>KM算法：求二分图的最佳匹配，可以做到O(N^3)</p>
-<p>最佳匹配：<strong>带权</strong>二分图的<strong>权值最大</strong>的<strong>完备匹配</strong>称为最佳匹配</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/30/HDU-2255-奔小康赚大钱-最大权值完全匹配KM算法/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -665,6 +671,10 @@ int slack[MAXN];        /// 记录每个汉 -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2022/10/09/window-postMessage/">window.postMessage</a>
           </li>
         
@@ -678,10 +688,6 @@ int slack[MAXN];        /// 记录每个汉 -->
         
           <li>
             <a class="recent_posts-list-link" href="/2022/09/02/JavaScript-Note-2022-09-02/">JavaScript Note 2022.09.02</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/09/01/JavaScript-Note-2022-09-01/">JavaScript Note 2022.09.01</a>
           </li>
         
       </ul>
