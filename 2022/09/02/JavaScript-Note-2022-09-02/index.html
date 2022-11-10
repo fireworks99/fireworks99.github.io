@@ -326,6 +326,51 @@ promise.then(function(result) {
 <li>返回一个已经是拒绝状态的 Promise，那么 <code>then</code> 返回的 Promise 也会成为拒绝状态，并且将那个 Promise 的拒绝状态的回调函数的参数值作为该被返回的 Promise 的拒绝状态回调函数的参数值。</li>
 <li>返回一个未定状态（<code>pending</code>）的 Promise，那么 <code>then</code> 返回 Promise 的状态也是未定的，并且它的终态与那个 Promise 的终态相同；同时，它变为终态时调用的回调函数参数与那个 Promise 变为终态时的回调函数的参数是相同的。</li>
 </ul>
+<h2 id="7-Promise-all"><a href="#7-Promise-all" class="headerlink" title="7.Promise.all()"></a>7.Promise.all()</h2><pre><code class="lang-js">let username = undefined;
+let flag = false;
+
+{
+  //替代Promise.all()的方案
+  setTimeout(() =&gt; {
+    username = &quot;admin&quot;;
+    doSth();
+  }, 1000);
+  setTimeout(() =&gt; {
+    flag = true;
+    doSth();
+  }, 2000);
+
+  function doSth() {
+    if(username &amp;&amp; flag) {
+      console.log(&quot;All is will.&quot;);
+      console.log(username);
+      console.log(flag);
+      //doSth
+    }
+  }
+}
+
+Promise.all([
+    new Promise((resolve) =&gt; {
+      setTimeout(() =&gt; {
+        username = &quot;admin&quot;;
+        resolve();
+      }, 1000);
+    }),
+    new Promise((resolve) =&gt; {
+      setTimeout(() =&gt; {
+        setTimeout(() =&gt; {
+          flag = true;
+          resolve();
+        })
+      }, 2000);
+    })
+]).then(() =&gt; {
+  console.log(&quot;All is will&quot;);
+  console.log(username);
+  console.log(flag);
+})
+</code></pre>
 <h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><ol>
 <li>Runoob，JavaScript Promise，<a href="https://www.runoob.com/js/js-promise.html" target="_blank" rel="noopener">https://www.runoob.com/js/js-promise.html</a></li>
 <li>JAVASCRIPT.INFO，Promise，<a href="https://zh.javascript.info/promise-basics" target="_blank" rel="noopener">https://zh.javascript.info/promise-basics</a></li>
