@@ -1,0 +1,404 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>JAVA 大数 [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/avatar.png" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>JAVA 大数</h1>
+			<p><strong>条件判断：</strong> JAVA中<code>while(n-- &gt; 0)</code>异于c++的<code>while(n--)</code></p>
+<p><strong>Prepare to Input</strong></p>
+<pre><code class="lang-java">Scanner in = new Scanner(System.in);//in可换为cin或scan
+//......
+in.close();//in可换cin或scan
+</code></pre>
+<a id="more"></a>
+<h3 id="Input-、Initialize-and-Output"><a href="#Input-、Initialize-and-Output" class="headerlink" title="Input 、Initialize and Output"></a>Input 、Initialize and Output</h3><pre><code class="lang-java">import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner in = new Scanner(System.in);
+        //以下输入后面的括号是用于进制转换的，输入某进制数将其转十进制
+        //JAVA强大处之一
+        int a = in.nextInt();
+        double b = in.nextDouble();
+        BigInteger c = in.nextBigInteger();
+        BigDecimal d = in.nextBigDecimal();
+        in.nextLine();//getchar();
+        String k = in.next();        //cin &gt;&gt; k;
+        String e = in.nextLine();    //getline(cin, e);
+        int f = 6;
+        double g = 3.1415926;
+        BigInteger h = new BigInteger(&quot;666&quot;);//不带引号毁精度
+        BigDecimal i = new BigDecimal(&quot;3.1415926&quot;);
+        String j = &quot;LX&quot;;
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+        System.out.println(d);
+        System.out.println(e);
+        System.out.println(f);
+        System.out.println(g);
+        System.out.println(h);
+        System.out.println(i);
+        System.out.println(j);
+        System.out.printf(&quot;%d\n&quot;,a);
+        in.close();
+    }
+
+}
+</code></pre>
+<h3 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h3><pre><code class="lang-java">BigInteger a = BigInteger.valueOf(200);//无引号
+BigInteger b = BigInteger.TEN;
+a = a.add(b);
+a = a.subtract(b);
+a = a.multiply(b);
+a = a.divide(b);
+a = a.mod(b);
+</code></pre>
+<p><strong>HDU 1002(大数加法)</strong></p>
+<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1002" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1002</a></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-java">import java.util.*;
+import java.io.BufferedInputStream;
+import java.math.BigInteger;
+public class Main {
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner cin = new Scanner(new BufferedInputStream(System.in));
+        int n = cin.nextInt();
+        int i = 1;
+        while(n-- &gt; 0) 
+        {
+            BigInteger a = cin.nextBigInteger();
+            BigInteger b = cin.nextBigInteger();
+            System.out.println(&quot;Case &quot; + i + &quot;:&quot;);
+            System.out.println(a + &quot; + &quot; + b + &quot; = &quot; + a.add(b));
+            if(n &gt; 0)
+                System.out.println();
+            i++;
+        }
+        cin.close();
+    }
+}
+</code></pre>
+<h2 id="HDU-1042-（N-）"><a href="#HDU-1042-（N-）" class="headerlink" title="HDU 1042 （N!）"></a>HDU 1042 （N!）</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1042" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1042</a></p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-java">import java.io.BufferedInputStream;
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner in = new Scanner(new BufferedInputStream(System.in));
+        while(in.hasNextInt()) {
+            int n = in.nextInt();
+            BigInteger ans = new BigInteger(&quot;1&quot;);
+            BigInteger num = new BigInteger(&quot;1&quot;);
+            for(int i = 1; i &lt;= n; ++i) {
+                ans = ans.multiply(num);
+                num = num.add(new BigInteger(&quot;1&quot;));
+            }
+            System.out.println(ans);
+        }
+        in.close();
+    }
+
+}
+</code></pre>
+<h2 id="HDU-1250-Fibonacci"><a href="#HDU-1250-Fibonacci" class="headerlink" title="HDU 1250(Fibonacci)"></a>HDU 1250(Fibonacci)</h2><p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1250" target="_blank" rel="noopener">http://acm.hdu.edu.cn/showproblem.php?pid=1250</a></p>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">import java.io.BufferedInputStream;
+import java.math.BigInteger;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner in = new Scanner(new BufferedInputStream(System.in));
+        BigInteger [] f = new BigInteger[10005];
+        f[1] = f[2] = f[3] = f[4] = new BigInteger(&quot;1&quot;);
+        for(int i = 5; i &lt; 10005; ++i)
+            f[i] = f[i - 1].add(f[i - 2]).add(f[i - 3]).add(f[i - 4]);
+        while(in.hasNext()) {
+            int n = in.nextInt();
+            System.out.println(f[n]);
+        }
+        in.close();
+    }
+
+}
+</code></pre>
+<h2 id="POJ-3199（N-M）"><a href="#POJ-3199（N-M）" class="headerlink" title="POJ 3199（N ^ M）"></a>POJ 3199（N ^ M）</h2><p><a href="http://poj.org/problem?id=3199" target="_blank" rel="noopener">http://poj.org/problem?id=3199</a></p>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-java">import java.io.BufferedInputStream;
+import java.math.BigInteger;
+import java.util.Scanner;
+
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner in = new Scanner(new BufferedInputStream(System.in));
+        BigInteger n, m, ans;
+        while(in.hasNext()) {
+            n = in.nextBigInteger();
+            m = in.nextBigInteger();
+            if(n.compareTo(BigInteger.ZERO) == 0 &amp;&amp; m.compareTo(BigInteger.ZERO) == 0)
+                break;
+            ans = n.pow(m.intValue());
+            System.out.println(ans);
+        }
+        in.close();
+    }
+
+}
+</code></pre>
+<h3 id="关于compareTo"><a href="#关于compareTo" class="headerlink" title="关于compareTo"></a>关于compareTo</h3><blockquote>
+<p>compareTo() 方法用于将 Number 对象与方法的参数进行比较。可用于比较 Byte, Long, Integer等。</p>
+<p>该方法用于两个相同数据类型的比较，两个不同类型的数据不能用此方法来比较。</p>
+</blockquote>
+<ul>
+<li>如果指定的数与参数相等返回0。</li>
+<li>如果指定的数小于参数返回 -1。</li>
+<li>如果指定的数大于参数返回 1。</li>
+</ul>
+<p>还有记得<code>ans = n.pow(m.intValue());</code></p>
+<h3 id="SDNU-1488"><a href="#SDNU-1488" class="headerlink" title="SDNU 1488"></a>SDNU 1488</h3><blockquote>
+<p>输入两个八进制数a、b，也以八进制形式输出（a - b）的值。</p>
+</blockquote>
+<h4 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h4><pre><code class="lang-java">import java.math.BigInteger;
+import java.util.Scanner;
+
+
+public class Main {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Scanner in = new Scanner(System.in);
+        while(in.hasNextInt()) {
+            int t = in.nextInt();
+            while(t-- &gt; 0) {
+                //将数字以8进制读入并转为十进制
+                BigInteger c = in.nextBigInteger(8);
+                BigInteger d = in.nextBigInteger(8);
+                BigInteger ans;
+                if(c.subtract(d) == BigInteger.valueOf(1) || c == d);
+                    {
+                     ans = c.subtract(d);//十进制减法
+                     String a = ans.toString(8);//十进制数ans转为8进制字符串
+                    System.out.println(a);
+                    }
+                if(c.subtract(d) == BigInteger.valueOf(-1))
+                {
+                    ans = d.subtract(c);
+                    String a = ans.toString(8);
+                    System.out.println(&quot;-&quot; + a);
+                }
+            }
+        }
+        in.close();
+    }
+
+}
+</code></pre>
+<h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><blockquote>
+<p>String a = ans.toString(num); //将十进制数ans转为num进制字符串</p>
+</blockquote>
+<h3 id="已知数字的进制转换"><a href="#已知数字的进制转换" class="headerlink" title="已知数字的进制转换"></a>已知数字的进制转换</h3><blockquote>
+<p>十进制转其他进制</p>
+</blockquote>
+<pre><code class="lang-JAVA">        int i = 36;
+        String a = Integer.toBinaryString(i);//二
+        String b = Integer.toHexString(i);//十六
+        String c = Integer.toOctalString(i);//八
+        String d = Integer.toString(i,35);// &lt;= 35进制
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+	   (function(d, s) {
+	       var j, e = d.getElementsByTagName(s)[0];
+
+	       if (typeof LivereTower === 'function') { return; }
+
+	       j = d.createElement(s);
+	       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+	       j.async = true;
+
+	       e.parentNode.insertBefore(j, e);
+	       
+	       
+	   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

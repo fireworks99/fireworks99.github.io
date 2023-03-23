@@ -1,0 +1,259 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Python a + b [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/avatar.png" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>Python a + b</h1>
+			<h3 id="1-简单a-b"><a href="#1-简单a-b" class="headerlink" title="1.简单a+b"></a>1.简单a+b</h3><pre><code class="lang-python">a, b = input().split()
+a, b = int(a), int(b)
+print(a + b)
+</code></pre>
+<a id="more"></a>
+<h3 id="2-读到文末-EOF-a-b"><a href="#2-读到文末-EOF-a-b" class="headerlink" title="2.读到文末(EOF)a+b"></a>2.读到文末(EOF)a+b</h3><pre><code class="lang-python">while True:
+    try:
+        a, b = input().split()
+        a, b = int(a), int(b)
+        print(a + b)
+    except EOFError:
+        break
+</code></pre>
+<h3 id="3-T组数据a-b"><a href="#3-T组数据a-b" class="headerlink" title="3.T组数据a+b"></a>3.T组数据a+b</h3><pre><code class="lang-python">t = input() #different?
+t = int(t)
+for case in range(t):
+    a, b = input().split()
+    a, b = int(a), int(b)
+    print(a + b)
+</code></pre>
+<h3 id="4-特殊数据停止a-b"><a href="#4-特殊数据停止a-b" class="headerlink" title="4.特殊数据停止a+b"></a>4.特殊数据停止a+b</h3><pre><code class="lang-python">while True:
+    a, b = input().split()
+    a, b = int(a), int(b)
+    if a == 0 and b == 0:  #There is a &#39;:&#39; 
+        break
+    print (a + b)
+</code></pre>
+<h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><pre><code class="lang-python">import keyword # 导入相应的模块
+
+# 空行也是程序代码的一部分
+print(keyword.kwlist)  # keyword 模块，可以输出当前版本的所有关键字
+
+# Python中默认的编码格式是 ASCII 格式，在没修改编码格式时无法正确打印汉字，所以在读取中文时会报错。
+print(&quot;你好，世界！&quot;)  # Python3 源码文件默认使用utf-8编码
+
+中国 = &#39;china&#39;  # Python 3 中，非 ASCII 标识符也是允许的了
+print(中国)
+美国 = &quot;America&quot;  # 单引号和双引号使用完全相同
+print(美国)
+
+print(&#39;python3&#39;, end = &quot; &quot;) # 要实现不换行需要在变量末尾加上 end=&quot;something&quot;
+print(&quot;柳絮&quot;); print(&quot;Fireworks&quot;) # Python可以在同一行中使用多条语句，语句之间使用分号(;)分割
+
+# 变量不需要声明,每个变量在使用前都必须赋值
+a = 100
+a = 1.0
+a = &quot;我&quot; # 变量就是变量，它没有类型，我们所说的&quot;类型&quot;是变量所指的内存中对象的类型
+print(a)
+
+# 多个对象指定多个变量
+b , c, d = 4, 3.14, &quot;Yes&quot;
+print(b , end = &quot; &quot;)
+print(c , end = &quot; &quot;)
+print(d)
+
+print(5 + 4)
+print(3.14 - 2) # 减法 1.1400000000000001
+print(2.5 * 4)
+print(2 ** 4) # 乘方
+print(2 / 4) # 除法，得到一个浮点数0.5
+print(2 // 4)
+print(4 % 3)
+</code></pre>
+<h1 id="split-函数"><a href="#split-函数" class="headerlink" title="split()函数"></a>split()函数</h1><blockquote>
+<p>split翻译为分裂。  split()就是将一个字符串分裂成多个字符串组成的列表。</p>
+<p>split()当不带参数时以空格进行分割，当代参数时，以该参数进行分割。</p>
+<p>详解： <a href="https://www.cnblogs.com/douzi2/p/5579651.html" target="_blank" rel="noopener">https://www.cnblogs.com/douzi2/p/5579651.html</a></p>
+</blockquote>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+	   (function(d, s) {
+	       var j, e = d.getElementsByTagName(s)[0];
+
+	       if (typeof LivereTower === 'function') { return; }
+
+	       j = d.createElement(s);
+	       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+	       j.async = true;
+
+	       e.parentNode.insertBefore(j, e);
+	       
+	       
+	   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

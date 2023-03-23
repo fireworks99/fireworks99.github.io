@@ -1,0 +1,313 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>POJ 3268 Silver Cow Party [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/avatar.png" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>POJ 3268 Silver Cow Party</h1>
+			<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>有n个农场（1~N），给出M条单向路描述。每个农场派出一头牛去某个农场（X）参加聚会，聚会结束后要返回，当然它们来回都选择最短路（因为路是单向的，来回可能路径不同），问这n头牛中，来回所走路程最长的那头，它走的总路程是多少?</p>
+</blockquote>
+<a id="more"></a>
+<p><strong>题目链接</strong> <a href="http://poj.org/problem?id=3268" target="_blank" rel="noopener">http://poj.org/problem?id=3268</a></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
+<p>最短路，计算每头牛来回最短路之和，所有和中最大值即为答案</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 100005;
+const int inf = 0x3f3f3f3f;
+
+int m, n, x;///我程序里的m代表点，n代表边，与题目所述相反
+
+struct edge
+{
+    int from, to, w, pre;
+} a[N];
+
+int head[N], cnt, dis[1005][1005], times[1005], tot, sum;
+bool vis[1005];
+
+void init(int start)
+{
+    for(int i = 0; i &lt;= m; ++i)
+        dis[start][i] = inf, times[i] = 0, vis[i] = 0;
+    return ;
+}
+
+void add(int from, int to, int w)
+{
+    a[cnt].from = from;
+    a[cnt].to = to;
+    a[cnt].w = w;
+    a[cnt].pre = head[from];
+    head[from] = cnt;
+    cnt++;
+}
+
+bool spfa(int start)///spfa里每个dis第一维下标都是start
+{
+    deque&lt;int&gt; q;
+    dis[start][start] = 0;
+    vis[start] = 1;
+    q.push_front(start);
+    tot = 1;
+    sum = 0;
+    while(q.size())
+    {
+        int first = q.front();
+        q.pop_front();
+        vis[first] = 0;
+        tot--;
+        sum -= dis[start][first];
+
+
+        for(int i = head[first]; ~i; i = a[i].pre)
+        {
+            int t = a[i].to;
+
+
+            if(dis[start][t] &gt; dis[start][first] + a[i].w)
+            {
+                dis[start][t] = dis[start][first] + a[i].w;
+                if(!vis[t])
+                {
+                    vis[t] = 1;
+                    if(q.empty() || dis[start][t] &gt; dis[start][q.front()] || dis[start][t] * tot &gt;= sum)
+                        q.push_back(t);
+                    else
+                        q.push_front(t);
+                    sum += dis[start][t];
+                    tot++;
+                    if(++times[t] &gt; n)
+                        return 0;
+                }
+            }
+        }
+    }
+
+    return 1;
+}
+
+int main()
+{
+    while(~scanf(&quot;%d%d%d&quot;, &amp;m, &amp;n, &amp;x))
+    {
+        int b, c, d;
+        cnt = 0;
+        memset(head, -1, sizeof(head));
+        for(int i = 0; i &lt; n; ++i)
+        {
+            scanf(&quot;%d%d%d&quot;, &amp;b, &amp;c, &amp;d);
+            add(b, c, d);
+        }
+
+        int ans = 0;
+        for(int i = 1; i &lt;= m; ++i)
+        {
+            init(i);
+            if(spfa(i))
+            {
+                int tem = dis[i][x];
+                init(x);
+                if(tem != inf &amp;&amp; spfa(x))
+                {
+                    if(dis[x][i] != inf &amp;&amp; tem + dis[x][i] &gt; ans)
+                        ans = tem + dis[x][i];
+                }
+            }
+        }
+        cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+	   (function(d, s) {
+	       var j, e = d.getElementsByTagName(s)[0];
+
+	       if (typeof LivereTower === 'function') { return; }
+
+	       j = d.createElement(s);
+	       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+	       j.async = true;
+
+	       e.parentNode.insertBefore(j, e);
+	       
+	       
+	   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

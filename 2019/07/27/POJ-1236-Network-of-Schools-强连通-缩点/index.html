@@ -1,0 +1,460 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>POJ 1236 Network of Schools(强连通+缩点) [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/avatar.png" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>POJ 1236 Network of Schools(强连通+缩点)</h1>
+			<h2 id="缩点"><a href="#缩点" class="headerlink" title="缩点"></a>缩点</h2><blockquote>
+<p>缩点就是要将两两之间可以相互到达的点，缩成一个点来表示（即求无向图的连通分量，或者有向图的强连通分量），他们的求法都是相同的，都是将无向图转化为有向图。 </p>
+</blockquote>
+<a id="more"></a>
+<h1 id="Trajan算法求缩点"><a href="#Trajan算法求缩点" class="headerlink" title="Trajan算法求缩点"></a>Trajan算法求缩点</h1><blockquote>
+<p>stack\<int\> st;</int\></p>
+<p>int num;///num:强连通分量(连通块)的个数,缩点后点的个数</p>
+<p>bool vis[105];///该点是否访问过</p>
+<p>int inst[105];///该点是否在栈中</p>
+<p>int time[105];///i点第一次被访问的时间</p>
+<p>int low[105];///i点所在强连通分量子图中第一个被搜到的点的time值</p>
+<p>int ltt[105];///i点属于第几个强连通分量(0表示不属于任何一个)</p>
+<p>强连通分量内元素个数最少为1(该元素本身),这意味着每个元素都有从属的强连通分量</p>
+</blockquote>
+<h3 id="Code-Trajan"><a href="#Code-Trajan" class="headerlink" title="Code(Trajan)"></a>Code(Trajan)</h3><pre><code class="lang-c++">void Trajan(int x)///搜索x点及其子树
+{
+    int temp;
+    st.push(x);
+    inst[x] = vis[x] = 1;
+    low[x] = time[x] = ++t;
+    for(int i = 0; i &lt; v[x].size(); i++)
+    {
+        temp = v[x][i];
+        if(vis[temp] == 0)
+        {
+            Trajan(temp);
+            low[x] = min(low[x], low[temp]);
+        }
+        else if(inst[temp] == 1)///成环时
+            low[x] = min(low[x], time[temp]);
+        else///点temp访问过却不在当前栈里：属于已发现的强连通分量
+            continue;///这两个不能合二为一的原因：只有从此指彼的单向路
+    }
+    if(low[x] == time[x])
+    {
+        num++;///找到第num个强连通分量
+        while(!st.empty())
+        {
+            temp = st.top();
+            st.pop();
+            ltt[temp] = num;///temp结点属于第num个强连通分量
+            inst[temp] = 0;
+            if(temp == x)
+                break;
+        }
+    }
+}
+</code></pre>
+<h2 id="POJ-1236"><a href="#POJ-1236" class="headerlink" title="POJ 1236"></a>POJ 1236</h2><blockquote>
+<p>n所学校，它们通过单向边连接，如果A—&gt;B表示A学校可以传递信息给B学校</p>
+<p>问题一：至少要向几个学校传递信息，才能保证所有学校都能收到信息；</p>
+<p>问题二：至少要添加多少组关系，才能保证给任意一个学校原始信息后，其他所有学校都能收到信息</p>
+</blockquote>
+<h2 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h2><blockquote>
+<p>问题一：缩点后数出入度为0的点的个数</p>
+<p>问题二：缩点后求再次完成强连通最少添加几条边max(ain, aout)</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;stack&gt;
+#include &lt;vector&gt;
+#include &lt;stdio.h&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+stack&lt;int&gt; st;
+vector&lt;int&gt; v[105], nv[105];
+int n, t, num;///num:强连通分量(连通块)的个数,缩点后点的个数
+int ain, aout;
+
+bool vis[105];///该点是否访问过
+int inst[105];///该点是否在栈中
+
+int time[105];///i点第一次被访问的时间
+int low[105];///i点所在强连通分量子图中第一个被搜到的点的time值
+
+int ltt[105];///i点属于第几个强连通分量(0表示不属于任何一个)
+int in[105], out[105];
+
+void Trajan(int x)///搜索x点及其子树
+{
+    int temp;
+    st.push(x);
+    inst[x] = vis[x] = 1;
+    low[x] = time[x] = ++t;
+    for(int i = 0; i &lt; v[x].size(); i++)
+    {
+        temp = v[x][i];
+        if(vis[temp] == 0)
+        {
+            Trajan(temp);
+            low[x] = min(low[x], low[temp]);
+        }
+        else if(inst[temp] == 1)///成环时
+            low[x] = min(low[x], time[temp]);
+        else///点temp访问过却不在当前栈里：属于已发现的强连通分量
+            continue;///这两个不能合二为一的原因：只有从此指彼的单向路
+    }
+    if(low[x] == time[x])
+    {
+        num++;///找到第num个强连通分量
+        while(!st.empty())
+        {
+            temp = st.top();
+            st.pop();
+            ltt[temp] = num;///temp结点属于第num个强连通分量
+            inst[temp] = 0;
+            if(temp == x)
+                break;
+        }
+    }
+}
+
+///强连通分量内元素个数最少为1(该元素本身)
+///这意味着每个元素都有从属的强连通分量
+
+int main()
+{
+    int x, temp;
+    scanf(&quot;%d&quot;, &amp;n);
+    for(int i = 1; i &lt;= n; i++)
+    {
+        while(scanf(&quot;%d&quot;, &amp;x), x != 0)
+            v[i].push_back(x);
+    }
+
+    t = num = 0;
+    for(int i = 1; i &lt;= n; i++)
+        if(vis[i] == 0)
+            Trajan(i);
+
+    for(int i = 1; i &lt;= n; i++)
+        for(int j = 0; j &lt; v[i].size(); j++)
+        {
+            temp = v[i][j];
+            if(ltt[i] != ltt[temp])
+                nv[ltt[i]].push_back(ltt[temp]);
+        }
+
+    for(int i = 1; i &lt;= num; i++)
+        for(int j = 0; j &lt; nv[i].size(); j++)
+            in[nv[i][j]]++, out[i]++;
+
+    ain = aout = 0;
+    for(int i = 1; i &lt;= num; i++)
+    {
+        if(in[i] == 0)
+            ain++;
+        if(out[i] == 0)
+            aout++;
+    }
+
+    printf(&quot;%d\n&quot;, ain);
+    if(num == 1)
+        printf(&quot;0\n&quot;);
+    else
+        printf(&quot;%d\n&quot;, max(ain, aout));
+        ///让所有缩点形成一个强连通图
+        ///假设 aout = max(ain, aout)
+        ///那么恰当选择(aout - 1)个出度为0的点逆向添边会减少缩点，最终形成一条单向链
+        ///此时按照链的方向添一条连接首尾的边就形成强连通图(一个标准有向环)
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>参考1： <a href="https://blog.csdn.net/jaihk662/article/details/52194288" target="_blank" rel="noopener">https://blog.csdn.net/jaihk662/article/details/52194288</a></p>
+<p>参考2： <a href="https://blog.csdn.net/nhl19961226/article/details/79114287" target="_blank" rel="noopener">https://blog.csdn.net/nhl19961226/article/details/79114287</a></p>
+<blockquote>
+<p>Kosaraju求缩点</p>
+</blockquote>
+<p>将边反向建立后，强连通分量内的点，其可达性不受影响。</p>
+<p>但不能沿着边访问到除了这个强连通分量之外的点</p>
+</blockquote>
+<pre><code class="lang-c++">#include &lt;vector&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int MAX_V = 10005;
+
+int V, ain, aout, in[MAX_V], out[MAX_V];
+vector&lt;int&gt; vs;
+vector&lt;int&gt; G[MAX_V];
+vector&lt;int&gt; rG[MAX_V];
+vector&lt;int&gt; nv[MAX_V];
+
+bool used[MAX_V];
+int cmp[MAX_V];
+
+void add_eage(int from, int to)
+{
+    G[from].push_back(to);
+    rG[to].push_back(from);
+}
+
+void DFS(int v)
+{
+    used[v] = 1;
+    for(int i = 0; i &lt; G[v].size(); ++i)
+        if(!used[ G[v][i] ])
+            DFS(G[v][i]);
+    vs.push_back(v);
+}
+
+void rDFS(int v, int k)
+{
+    used[v] = 1;
+    cmp[v] = k;
+    for(int i = 0; i &lt; rG[v].size(); ++i)
+        if(!used[ rG[v][i] ])
+            rDFS(rG[v][i], k);
+}
+
+int scc()
+{
+    memset(used, 0, sizeof(used));
+    vs.clear();
+    for(int v = 1; v &lt;= V; ++v)
+        if(!used[v])
+            DFS(v);
+    memset(used, 0, sizeof(used));
+    int k = 0;
+    for(int i = vs.size() - 1; i &gt;= 0; --i)
+        if(!used[vs[i]])
+            rDFS(vs[i], ++k);
+    return k;
+}
+
+int main()
+{
+    int x, temp;
+    scanf(&quot;%d&quot;, &amp;V);
+    for(int i = 1; i &lt;= V; i++)
+    {
+        while(scanf(&quot;%d&quot;, &amp;x), x != 0)
+            add_eage(i, x);
+    }
+
+    int num = scc();
+
+    for(int i = 1; i &lt;= V; i++)
+        for(int j = 0; j &lt; G[i].size(); j++)
+        {
+            temp = G[i][j];
+            if(cmp[i] != cmp[temp])
+                nv[cmp[i]].push_back(cmp[temp]);
+        }
+
+    for(int i = 1; i &lt;= num; i++)
+        for(int j = 0; j &lt; nv[i].size(); j++)
+            in[nv[i][j]]++, out[i]++;
+
+    ain = aout = 0;
+    for(int i = 1; i &lt;= num; i++)
+    {
+        if(in[i] == 0)
+            ain++;
+        if(out[i] == 0)
+            aout++;
+    }
+
+    printf(&quot;%d\n&quot;, ain);
+    if(num == 1)
+        printf(&quot;0\n&quot;);
+    else
+        printf(&quot;%d\n&quot;, max(ain, aout));
+    return 0;
+}
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+	   (function(d, s) {
+	       var j, e = d.getElementsByTagName(s)[0];
+
+	       if (typeof LivereTower === 'function') { return; }
+
+	       j = d.createElement(s);
+	       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+	       j.async = true;
+
+	       e.parentNode.insertBefore(j, e);
+	       
+	       
+	   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

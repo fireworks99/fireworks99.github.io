@@ -1,0 +1,500 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>POJ 3255 Roadblocks and 3463 Sightseeing（次短路） [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/avatar.png" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>POJ 3255 Roadblocks and 3463 Sightseeing（次短路）</h1>
+			<h1 id="POJ-3255-Roadblocks"><a href="#POJ-3255-Roadblocks" class="headerlink" title="POJ 3255 Roadblocks"></a>POJ 3255 Roadblocks</h1><blockquote>
+<p>N个点，M条双向边，求1到N的严格次短路</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Idea-1"><a href="#Idea-1" class="headerlink" title="Idea 1"></a>Idea 1</h2><blockquote>
+<p>1到n的次短路长度必然产生于：从1走到x的最短路 + edge[x][y] +  y到n的最短路</p>
+<p>首先预处理好1到每一个节点的最短路，和n到每一个节点的最短路</p>
+<p>然后枚举每一条边作为中间边（x，y）或者（y，x），如果加起来长度等于最短路长度则跳过，否则更新从1走到x的最短路 + edge[x][y] +  y到n的最短路  给dist[n] 比较 找大于dist[n] 且是最小的那一个</p>
+<p>spfa(1) + spfa(n)</p>
+<p>原文链接： <a href="https://blog.csdn.net/huangshuai147/article/details/69105576" target="_blank" rel="noopener">https://blog.csdn.net/huangshuai147/article/details/69105576</a></p>
+</blockquote>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int INF = 0x3f3f3f3f;
+
+int n, m;
+
+int cnt;
+struct edge
+{
+    int to, w, pre;
+} a[200005];
+
+bool vis[5005];///表示是否在队列里
+int head[5005], frdis[5005], redis[5005], tot, sum;
+
+void add(int from, int to, int w)
+{
+    a[cnt].to = to;
+    a[cnt].w = w;
+    a[cnt].pre = head[from];
+    head[from] = cnt;
+    cnt++;
+}
+
+void init()
+{
+    cnt = 0;
+    for(int i = 0; i &lt;= n; ++i)
+    {
+        frdis[i] = INF;
+        redis[i] = INF;
+        head[i] = -1;
+        vis[i] = 0;
+    }
+}
+
+void spfa(int start, int * dis)
+{
+    memset(vis, 0, sizeof(vis));
+    deque&lt;int&gt; q;
+    dis[start] = 0;
+    q.push_front(start);
+    vis[start] = 1;///表示在队列里
+    tot = 1, sum = 0;
+    while(q.size())
+    {
+        int first = q.front();
+        q.pop_front();
+        vis[first] = 0;
+        tot--;
+        sum -= dis[first];
+
+///同dijkstra，以first为中转点，而非a[i].from
+        for(int i = head[first]; ~i; i = a[i].pre)
+        {
+            int t = a[i].to;
+            if(dis[t] &gt; dis[first] + a[i].w)
+            {
+                dis[t] = dis[first] + a[i].w;
+                if(!vis[t])
+                {
+                    vis[t] = 1;
+                    if(q.empty() || dis[t] &gt; dis[q.front()] || dis[t] * tot &gt;= sum)
+                        q.push_back(t);
+                    else
+                        q.push_front(t);
+                    sum += dis[t];
+                    tot++;
+                }
+            }
+        }
+    }
+    return ;
+}
+
+int main()
+{
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    init();
+    int u, v, w;
+    for(int i = 0; i &lt; m; ++i)
+    {
+        scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;w);
+        add(u, v, w);
+        add(v, u, w);
+    }
+    spfa(1, frdis);
+    spfa(n, redis);
+    int ans = INF;
+    for(int i = 1; i &lt;= n; ++i)
+        for(int j = head[i]; ~j; j = a[j].pre)
+        {
+            v = a[j].to;
+            w = a[j].w;
+            int tem = frdis[i] + w + redis[v];
+            if(tem &gt; frdis[n] &amp;&amp; tem &lt; ans)
+                ans = tem;
+        }
+    cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;;
+    return 0;
+}
+</code></pre>
+<h1 id="POJ-3463-Sightseeing"><a href="#POJ-3463-Sightseeing" class="headerlink" title="POJ 3463 Sightseeing"></a>POJ 3463 Sightseeing</h1><blockquote>
+<p>N个点，M条单向边，求最短路数目+比最短路长单位1的次短路条数</p>
+</blockquote>
+<h2 id="Idea-2"><a href="#Idea-2" class="headerlink" title="Idea 2"></a>Idea 2</h2><blockquote>
+<p>（s，u，v）代表从s——v的最短路，u是中间一个必经点</p>
+<p>最短路和次短路的比较:</p>
+<blockquote>
+<p>(s，u，v）最短路=到达前一个点u的最短路+（u，v）的最短路。 </p>
+</blockquote>
+<p>因而最短路求解有两种情况： </p>
+<blockquote>
+<ol>
+<li>（s，u，v）次短路=到达前一个点u的次短路+（u，v）的最短路 </li>
+<li>（s，u，v）次短路=到达前一个点u的最短路+（u，v）的次短路。 </li>
+</ol>
+</blockquote>
+<p>用：d[v][0]代表最短路，d[v][1]代表次短路。  </p>
+<p>（一）如果从s—u的最短路加上（u，v）权值的距离小于原来的d[v][0] ，我们就可把次短路d[v][1] 的值更新为d[v][0]，就该题而言，此时可以把次短路的条数也更新为这个点的最短路的条数；把当前最短路d[v][0]的值更新成最小的，和原来最短路的松弛操作是一样的。</p>
+<p>（二）如果从s—u的最短路加上（u，v）权值的距离大于原来的d[v][0]，这就说明这条路路径就可能是一条次短路，那我们需要判断这条路的值dist，和原来的次短路的值d[v][1]进行比较！</p>
+<blockquote>
+<ol>
+<li>如果它比原来的次短路要大，直接跳过.</li>
+<li>如果它比原来的次短路要小，那么我们就需要更新最短路的长度 .</li>
+<li>如果与原来的次短路相等，说明我们的次短路有另一种（这里并不一定是只有1种）方法可以到达终点v。这里要加的种类是：原来到v点的次短路的条数+到u点的次短路（或者最短路，（u，v）并不知道是不是一定是最短路，如果是次短路，那么此时加的就是到u的最短路）的条数。 </li>
+</ol>
+</blockquote>
+<p>原文链接： <a href="https://blog.csdn.net/ydd97/article/details/47919551" target="_blank" rel="noopener">https://blog.csdn.net/ydd97/article/details/47919551</a></p>
+</blockquote>
+<h2 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+const int N = 10005;
+
+struct edge
+{
+    int to, w, pre;
+}a[N &lt;&lt; 1];
+
+int n, m, cnt, head[N], d[N][2], c[N][2], vis[N][2];
+
+void add(int from, int to, int w)
+{
+    a[cnt].to = to;
+    a[cnt].w = w;
+    a[cnt].pre = head[from];
+    head[from] = cnt++;
+}
+
+void Dijkstra(int s)
+{
+    memset(d, INF, sizeof(d));
+    memset(c, 0, sizeof(c));
+    memset(vis, 0, sizeof(vis));
+    d[s][0] = 0;
+    c[s][0] = 1;
+
+    int pos = s, idx;
+    while(1)
+    {
+        pos = -1;
+        for(int i = 1; i &lt;= n; ++i)
+            for(int j = 0; j &lt; 2; ++j)
+                if(!vis[i][j] &amp;&amp; (pos == -1 || d[i][j] &lt; d[pos][idx]))
+                    pos = i, idx = j;
+        if(pos == -1)
+            break;
+
+        vis[pos][idx] = 1;
+        for(int i = head[pos]; ~i; i = a[i].pre)
+        {
+            int to = a[i].to;
+            int dis = d[pos][idx] + a[i].w;
+
+            if(dis &lt; d[to][0])///This path is shorter than the shortest path.
+            {
+                d[to][1] = d[to][0], c[to][1] = c[to][0];
+                d[to][0] = dis, c[to][0] = c[pos][idx];
+            }
+            else if(dis == d[to][0])
+                c[to][0] += c[pos][idx];
+            else if(dis &lt; d[to][1])///longer than the shortest but shorter than the second shortest
+                d[to][1] = dis, c[to][1] = c[pos][idx];
+            else if(dis == d[to][1])
+                c[to][1] += c[pos][idx];
+        }
+    }
+}
+
+int main()
+{
+    int t;
+    cin &gt;&gt; t;
+    while(t--)
+    {
+        cnt = 0;
+        memset(head, -1, sizeof(head));
+        scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+        int u, v, w;
+        for(int i = 0; i &lt; m; ++i)
+        {
+            scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;w);
+            add(u, v, w);
+        }
+
+        int start, over;
+        scanf(&quot;%d%d&quot;, &amp;start, &amp;over);
+        Dijkstra(start);
+        int ans = c[over][0];
+        if(d[over][1] == d[over][0] + 1)///be careful which is smaller
+            ans += c[over][1];
+        cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+<h2 id="POJ-3255-of-Idea-2"><a href="#POJ-3255-of-Idea-2" class="headerlink" title="POJ 3255 of Idea 2"></a>POJ 3255 of Idea 2</h2><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+const int M = 100005;
+const int N = 5005;
+struct edge
+{
+    int to, w, pre;
+} a[M &lt;&lt; 1];
+
+int n, m, cnt, head[N], d[N][2], vis[N][2];
+
+void add(int from, int to, int w)
+{
+    a[cnt].to = to;
+    a[cnt].w = w;
+    a[cnt].pre = head[from];
+    head[from] = cnt++;
+}
+
+void Dijkstra(int s)
+{
+    memset(d, INF, sizeof(d));
+    memset(vis, 0, sizeof(vis));
+    d[s][0] = 0;
+
+    int pos = s, idx;
+    while(1)
+    {
+        pos = -1;
+        for(int i = 1; i &lt;= n; ++i)
+            for(int j = 0; j &lt; 2; ++j)
+                if(!vis[i][j] &amp;&amp; (pos == -1 || d[i][j] &lt; d[pos][idx]))
+                    pos = i, idx = j;
+        if(pos == -1)
+            break;
+
+        vis[pos][idx] = 1;
+        for(int i = head[pos]; ~i; i = a[i].pre)
+        {
+            int to = a[i].to;
+            int dis = d[pos][idx] + a[i].w;
+
+            if(dis &lt; d[to][0])///This path is shorter than the shortest path.
+                d[to][1] = d[to][0], d[to][0] = dis;
+            else if(dis &lt; d[to][1])///longer than the shortest but shorter than the second shortest
+                d[to][1] = dis;
+        }
+    }
+}
+
+int main()
+{
+    cnt = 0;
+    memset(head, -1, sizeof(head));
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+    int u, v, w;
+    for(int i = 0; i &lt; m; ++i)
+    {
+        scanf(&quot;%d%d%d&quot;, &amp;u, &amp;v, &amp;w);
+        add(u, v, w);
+        add(v, u, w);
+    }
+
+    Dijkstra(1);
+    cout &lt;&lt; d[n][1] &lt;&lt; &#39;\n&#39;;
+    return 0;
+}
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+	   (function(d, s) {
+	       var j, e = d.getElementsByTagName(s)[0];
+
+	       if (typeof LivereTower === 'function') { return; }
+
+	       j = d.createElement(s);
+	       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+	       j.async = true;
+
+	       e.parentNode.insertBefore(j, e);
+	       
+	       
+	   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
