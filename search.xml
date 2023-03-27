@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Vue Plugin</title>
+      <link href="2023/03/27/Vue-Plugin/"/>
+      <url>2023/03/27/Vue-Plugin/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-插件简介"><a href="#1-插件简介" class="headerlink" title="1.插件简介"></a>1.插件简介</h2><p>插件本质是一个普通函数，第一个参数是Vue，第二个参数是可选参数叫<code>options</code></p><pre><code class="lang-js">function (Vue, options) {  //...插件代码}</code></pre><a id="more"></a><p>插件往往结合<code>vue.mixin(options)</code>使用，<code>mixin</code>本质上是把重复的代码片段混入到Vue组件中，供组件复用逻辑。但是<code>vue.mixin</code>是一个全局api，它会应用到所有实例，所以不要在这个API做疯狂的事情。</p><p>使用<code>vue.mixin</code>更好的办法是使用插件包裹，因为插件会自动删除，而且就算多次调用<code>Vue.use</code>应用同一个插件，它会防止重复应用，但是<code>vue.mixin</code>就不行了。另外使用<code>Vue.use</code>会让代码更好理解，可以清楚知道应用使用了哪些插件。</p><h2 id="2-options属性"><a href="#2-options属性" class="headerlink" title="2.$.options属性"></a>2.$.options属性</h2><p>很多人可能不太清楚<code>$.options</code>属性，其实每个组件都有<code>$.options</code>属性它表示实例组件的配置项，配置项可以是组件自身的配置也可以是继承过来的配置项或者是<code>vue.mixin</code>混入的。</p><h2 id="3-编写一个插件"><a href="#3-编写一个插件" class="headerlink" title="3.编写一个插件"></a>3.编写一个插件</h2><p>插件实现的功能：每个组件在created之后，监听检查某些数据是否合规，若不合规打印出不合规提示信息。</p><p>src/plugins/check.js</p><pre><code class="lang-js">export default {    install: (Vue, options) =&gt; {        Vue.mixin({            created() {                const rules = this.$options.rules;                if(rules) {                    Object.keys(rules).forEach((key) =&gt; {                        const rule = rules[key];                        this.$watch(key, (newValue) =&gt; {                            const valid = rule.validate(newValue);                            if(!valid) {                                console.log(rule.message);                            }                        })                    })                }            }        })    }}</code></pre><p>src/main.js</p><pre><code class="lang-js">import Vue from &#39;vue&#39;;import App from &#39;./App.vue&#39;;import router from &#39;./router&#39;;import store from &#39;./store&#39;;import check from &#39;./plugins/check&#39;;Vue.config.productionTip = false;Vue.use(check);new Vue({  router,  store,  render: function (h) { return h(App) }}).$mount(&#39;#app&#39;);</code></pre><p>src/App.vue</p><pre><code class="lang-vue">&lt;template&gt;  &lt;div id=&quot;app&quot;&gt;    &lt;nav&gt;      &lt;input type=&quot;text&quot; v-model=&quot;name&quot;&gt;      &lt;input type=&quot;checkbox&quot; value=&quot;Sunny&quot; v-model=&quot;people&quot;&gt;Sunny      &lt;input type=&quot;checkbox&quot; value=&quot;Tiffany&quot; v-model=&quot;people&quot;&gt;Tiffany      &lt;input type=&quot;checkbox&quot; value=&quot;Jessica&quot; v-model=&quot;people&quot;&gt;Jessica      &lt;h2&gt;你的偶像有：{{ people }}&lt;/h2&gt;      &lt;router-link to=&quot;/&quot;&gt;Home&lt;/router-link&gt; |      &lt;router-link to=&quot;/about&quot;&gt;About&lt;/router-link&gt;    &lt;/nav&gt;    &lt;router-view /&gt;  &lt;/div&gt;&lt;/template&gt;&lt;script&gt;export default {  name: &quot;App&quot;,  data() {    return {      name: &quot;fireworks99&quot;,      people: []    };  },  rules: {    name: {      validate: value =&gt; value.indexOf(&quot;99&quot;) !== -1,      message: &quot;Must include 99&quot;    },    people: {      validate: value =&gt; value.length &lt; 3,      message: &quot;Number of idols must be less than 3&quot;    }  }}&lt;/script&gt;&lt;style&gt;//...&lt;/style&gt;</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> VueのPlugin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Mini Data Observer</title>
       <link href="2023/03/22/Mini-Data-Observer/"/>
       <url>2023/03/22/Mini-Data-Observer/</url>
@@ -537,9 +556,9 @@
             
             <tag> Vueのaxios </tag>
             
-            <tag> NodeJSのmysql </tag>
-            
             <tag> Vueのv-sth </tag>
+            
+            <tag> NodeJSのmysql </tag>
             
         </tags>
       
