@@ -108,7 +108,7 @@
 		<div id="details-post-item">
 			<h1>Vue Render Function</h1>
 			<h2 id="1-渲染过程"><a href="#1-渲染过程" class="headerlink" title="1.渲染过程"></a>1.渲染过程</h2><p>Template =&gt; Render Function =&gt; Virtual DOM =&gt; Actual DOM</p>
-<p><img src="/2023/03/28/Vue-Render-Function/renderFunc.png" alt="render process" style="zoom:50%;"></p>
+<p><img src="/2023/03/28/Vue-Render-Function/renderFunc.png" alt="render process" style="transform: scale(0.5);"></p>
 <a id="more"></a>
 <ol>
 <li><p>Template =&gt; Render Function</p>
@@ -125,7 +125,7 @@
 <p>Vue基于虚拟DOM生成真实DOM</p>
 </li>
 </ol>
-<h2 id="2-虚拟DOM"><a href="#2-虚拟DOM" class="headerlink" title="2.虚拟DOM"></a>2.虚拟DOM</h2><p><img src="/2023/03/28/Vue-Render-Function/VirtualDOM.png" alt="Virtual DOM" style="zoom: 33%;"></p>
+<h2 id="2-虚拟DOM"><a href="#2-虚拟DOM" class="headerlink" title="2.虚拟DOM"></a>2.虚拟DOM</h2><p><img src="/2023/03/28/Vue-Render-Function/VirtualDOM.png" alt="Virtual DOM" style="transform: scale(0.5);"></p>
 <p>真实DOM的节点与虚拟DOM的节点是一一对应的，虚拟DOM使用一个JS对象来表示真实DOM的一个Node，而操作JS对象远比操作DOM节点更加简单。</p>
 <p>数据或视图发生变化时，Vue会比较变化前后虚拟DOM的不同点，<strong>根据虚拟DOM的不同点来更新真实DOM</strong>。</p>
 <p>使用Vue Template Explorer可以查看<strong>渲染函数</strong>（查看Vue是如何转换虚拟DOM的）。</p>
@@ -196,10 +196,10 @@ export function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 // Check the console for the AST
 </code></pre>
-<h2 id="3-渲染函数API"><a href="#3-渲染函数API" class="headerlink" title="3.渲染函数API"></a>3.渲染函数API</h2><p><img src="/2023/03/28/Vue-Render-Function/renderFuncAPI.png" alt="Render Function API" style="zoom:50%;"></p>
+<h2 id="3-渲染函数API"><a href="#3-渲染函数API" class="headerlink" title="3.渲染函数API"></a>3.渲染函数API</h2><p><img src="/2023/03/28/Vue-Render-Function/renderFuncAPI.png" alt="Render Function API" style="transform: scale(0.5);"></p>
 <p>上图是调用一个渲染函数例子，<code>render</code>函数接收一个参数<code>h</code>， <code>h</code>只是一种约定的简写表示超脚本（HyperScript），他没有什么特殊意义，只是就像超文本我们叫HTML一样，只是方便书写的表示形式而已。</p>
 <p><code>h</code>函数接受三个参数，第一个是元素类型；第二是参数对象例如表示元素的attr属性，DOM属性之类的；第三个属性表示一些子节点，你可以调用h函数生成更多子节点。</p>
-<p><img src="/2023/03/28/Vue-Render-Function/hCase.png" alt="h case" style="zoom:50%;"></p>
+<p><img src="/2023/03/28/Vue-Render-Function/hCase.png" alt="h case" style="transform: scale(0.5);"></p>
 <p>第二个参数是可以省略的，第三参数很灵活可以是数组(表示子元素)、单纯的文本(表示标签)以及组件变量名(表示组件)。</p>
 <h2 id="4-动态渲染标签"><a href="#4-动态渲染标签" class="headerlink" title="4.动态渲染标签"></a>4.动态渲染标签</h2><p>编写一个组件，组件根据<code>tags</code>属性在页面上输入相应的HTML标签</p>
 <ol>
@@ -331,7 +331,7 @@ export function render(_ctx, _cache, $props, $setup, $data, $options) {
 </li>
 </ol>
 <p>效果：</p>
-<p><img src="/2023/03/28/Vue-Render-Function/DynamicRenderTag.png" alt="DynamicRenderTag" style="zoom:50%;"></p>
+<p><img src="/2023/03/28/Vue-Render-Function/DynamicRenderTag.png" alt="DynamicRenderTag" style="transform: scale(0.5);"></p>
 <h2 id="5-动态渲染组件"><a href="#5-动态渲染组件" class="headerlink" title="5.动态渲染组件"></a>5.动态渲染组件</h2><pre><code class="lang-html">&lt;div id=&quot;demo_4_6&quot;&gt;
     &lt;example :ok=&quot;ok&quot;&gt;&lt;/example&gt;
     &lt;button @click=&quot;ok = !ok&quot;&gt;toggle&lt;/button&gt;
@@ -356,7 +356,7 @@ Vue.component(&#39;example&#39;, {
 })
 new Vue({ el: &#39;#demo_4_6&#39;, data: { ok: true } })
 </code></pre>
-<h2 id="6-渲染函数与响应系统"><a href="#6-渲染函数与响应系统" class="headerlink" title="6.渲染函数与响应系统"></a>6.渲染函数与响应系统</h2><p><img src="/2023/03/28/Vue-Render-Function/RenderFuncAndReactivity.png" alt="RenderFuncAndReactivity" style="zoom: 50%;"></p>
+<h2 id="6-渲染函数与响应系统"><a href="#6-渲染函数与响应系统" class="headerlink" title="6.渲染函数与响应系统"></a>6.渲染函数与响应系统</h2><p><img src="/2023/03/28/Vue-Render-Function/RenderFuncAndReactivity.png" alt="RenderFuncAndReactivity" style="transform: scale(0.5);"></p>
 <p>上图是Vue的响应性系统和渲染系统的运行流程，可以看到每个组件有自己的渲染函数，这个渲染函数实际上是运行在我们之前封装的<code>autorun</code>函数中的，组件开始渲染时会把属性收集到依赖项中，当调用属性的setter方法，会触发<code>watcher</code>执行重新渲染，因为渲染函数放在<code>autorun</code>函数中，所以每当data数据发生变化，就会重新渲染。</p>
 <p>每个组件都有自己独立的循环渲染系统，组件只负责自己的依赖项，这一特性对于你拥有大型组件树时是一个优势，你的数据可以在任何地方改变，因为系统知道数据与组件的对应关系，不会造成过度渲染问题，这一架构优势可以让我们摆脱一些优化工作。</p>
 

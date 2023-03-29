@@ -112,6 +112,66 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/25/A今天踩的坑/" class="item-title">今天踩的坑</a>
+      
+      <time datetime="2019-07-25T08:56:59.000Z">
+        2019-07-25
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+
+csv文件里的内容为字符串，强转类型才能处理
+
+age、fare两项内容数据量不同，同时处理时其中一项内容读到了空白行…
+
+可转int的字符串里混有可转float的字符串，清洗?
+
+
+2019-07-25
+
+学算法时测试别人的代码，本该输出一个两位小数，却输出了一个超长的大数，心想：答案都不对还好意思贴出代码来？ 后来发现人家代码double是用%lf输出的，在我用的编译器里只能用%f
+
+2019-07-27
+
+忘记了 0! == 1而非0，不仅如此，固执的认为 2 % 1 == 1，我是真无语……
+
+2019-07-28
+
+
+
+2019-08-06
+
+0写成1了。程序设计就是这样，哪里j写成i了，0写成1了，l写成1了，一点手误就把直线变成折线了，目的地便不再是正确的答案了。十几个变量名字不许你弄混，明确每一个的意义。
+
+2019-08-07
+
+n &lt; 10000, 计算 n ^ 4
+
+ll function(int n)
+{
+    return n * n * n * n;
+}
+
+
+n x n x n x n 超过了int，此时返回一个溢出值，即使你定义返回值为long -->
+        <!-- </div> -->
+
+        
+        <h3 id="今天也进坑了吗？"><a href="#今天也进坑了吗？" class="headerlink" title="今天也进坑了吗？"></a>今天也进坑了吗？</h3>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/25/A今天踩的坑/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/24/SDNUOJ-1134-Facebook-Floyd闭包传递计数/" class="item-title">SDNUOJ 1134 Facebook Floyd闭包传递计数</a>
       
       <time datetime="2019-07-24T12:28:02.000Z">
@@ -565,61 +625,6 @@ Code#include &lt;cstdio&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/19/HDU-1800-Flying-to-the-Mars/" class="item-title">HDU 1800 Flying to the Mars</a>
-      
-      <time datetime="2019-07-19T07:31:30.000Z">
-        2019-07-19
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-链接： http://acm.hdu.edu.cn/showproblem.php?pid=1800
-
-Analyze
-mapTLE了，即使ios::sync_with_stdio(false);
-而哈希是解决普通算法TLE的，尤其是mapTLE的
-字符串的Hash才有点真正的密码的味道
-
-Code///Hash 是解决 TLE 问题的，尤其是用mapTLE了
-///字符串的Hash才有点真正Hash的味道
-#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-#define ll long long
-
-char s[40];
-string str;
-int has[3005];
-
-int hashit(char * s)
-{
-    ll base = 131;
-    ll res = 0;
-    w -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出n，与n个字符串，求出现次数最多的字符串出现的次数</p>
-<p>（给出n个大数，求众数出现次数）</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/19/HDU-1800-Flying-to-the-Mars/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -690,6 +695,10 @@ int hashit(char * s)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/29/High-order-component/">Vue High order component</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
           </li>
         
@@ -703,10 +712,6 @@ int hashit(char * s)
         
           <li>
             <a class="recent_posts-list-link" href="/2022/12/02/JavaScript-Global-Object/">JavaScript Global Object</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
           </li>
         
       </ul>

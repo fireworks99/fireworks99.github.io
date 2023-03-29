@@ -112,6 +112,56 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/15/POJ-1679-The-Unique-MST-Prim/" class="item-title">POJ 1679 The Unique MST(Prim)</a>
+      
+      <time datetime="2020-03-15T03:54:48.000Z">
+        2020-03-15
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+可以求非严格次小生成树，看是否与最小生成树相同
+用Prim做法，检测某个点到“已连接集合”的最小距离是否唯一
+
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 105;
+const int INF = 0x3f3f3f3f;
+
+int n, m, ans, mp[N][N], vis[N], low[N], cnt[N];
+
+void Prim()
+{
+    ans = 0;
+    int pos = 1, mmin = INF;
+    memset(cnt,   0, sizeof(cnt));
+    memset(vis,   0, sizeof(vis));
+    memset(low, INF, sizeof(low));
+    vis[1] = 1;
+    for(int i = 1; i &lt;= n; ++i -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>求最小生成树是否唯一</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/15/POJ-1679-The-Unique-MST-Prim/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/13/ZOJ-3261-Connections-in-Galaxy-War-union-find-set/" class="item-title">ZOJ 3261 Connections in Galaxy War(union-find-set)</a>
       
       <time datetime="2020-03-13T03:23:27.000Z">
@@ -553,59 +603,6 @@ using namespace std;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/08/HDU-4725-The-shortest-Path-in-Nya-Graph/" class="item-title">HDU 4725 The shortest Path in Nya Graph</a>
-      
-      <time datetime="2020-03-08T05:38:57.000Z">
-        2020-03-08
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-如果N个点均匀落在相邻两层上，那么连线是N ^ 2级别的，会TLE
-优化：每层设立一个层节点，(i + n)表示第i层的层节点标号
-层节点指向本层所有节点，权值为0
-本层所有节点指向相邻层的层节点，权值为w
-
-
-
-
-上图例子中，优化前18条单向边，优化后12条
-添加层节点消耗了空间，换取了时间
-另外，Dijkstra堆优化真好用，用过即AC(好过stack实现的spfa)
-还有，Dijkstra堆优化存图时用vector+pair
-
-Code#include &lt;queue&gt;
-#include &lt;stack&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-const int N = 100105;
-const int inf = 0x3f3f3f3f;
-
-typedef pair&lt;int, int -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点分别落在各层(layer), 每层可能有多个点, 也可能没有点, 每一层和其上下两层之间的点权值为C。另外有M条权值为w的边, 求1到N的最短路径, 如果不存在输出 -1</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/08/HDU-4725-The-shortest-Path-in-Nya-Graph/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -676,6 +673,10 @@ typedef pair&lt;int, int -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/29/High-order-component/">Vue High order component</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
           </li>
         
@@ -689,10 +690,6 @@ typedef pair&lt;int, int -->
         
           <li>
             <a class="recent_posts-list-link" href="/2022/12/02/JavaScript-Global-Object/">JavaScript Global Object</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2022/10/10/同一局域网下两主机通信/">同一局域网下两主机通信</a>
           </li>
         
       </ul>
