@@ -112,6 +112,56 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/04/素数筛/" class="item-title">素数筛</a>
+      
+      <time datetime="2019-03-04T12:46:06.000Z">
+        2019-03-04
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+
+埃氏筛void get_prime(long long n)
+{
+    tot = 0;
+    memset(is, 1, sizeof(is));///bool类型数组全部初始化为1（默认全为质数）
+    is[0] = is[1] = 0;///0、1不是质数，单列
+    for(int i = 2; i &lt;= n; ++i)///遍历数组
+    {
+        if(is[i])///若此数未被标为0，则其未被前面质数筛掉，属于质数，用它去筛后面的数
+        {
+            pri[++tot] = i;///（1）将此数存于质数数组            pri[0]里没存数字
+            for(int j = i + i; j &lt;= n; j += i)///（2）从其2倍开始筛
+            {
+                is[j] = 0;
+            }
+        }
+    }
+}
+
+线性筛每个合数仅被它的最小质因子筛过，且为一次
+void prime(int n)
+{
+ -->
+        <!-- </div> -->
+
+        
+        <h3 id="筛法求素数"><a href="#筛法求素数" class="headerlink" title="筛法求素数"></a>筛法求素数</h3><blockquote>
+<p>用筛法求素数的基本思想是:把从1开始的、某一范围内的正整数从小到大顺序排列， 1不是素数，首先把它筛掉。剩下的数中选择最小的数是素数，然后去掉它的倍数。依次类推，直到筛子为空时结束。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/04/素数筛/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/04/spfa算法/" class="item-title">spfa算法</a>
       
       <time datetime="2019-03-04T04:21:40.000Z">
@@ -464,68 +514,12 @@ The first line contains a single integer (the data for  less than 11 cases),indi
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/02/28/线段树-HDU-1556/" class="item-title">线段树 HDU 1556 Color the ball</a>
-      
-      <time datetime="2019-02-28T12:25:36.000Z">
-        2019-02-28
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-Description
-N个气球排成一排，从左到右依次编号为1,2,3….N.每次给定2个整数a b(a &lt;= b),lele便为骑上他的“小飞鸽”牌电动车从气球a开始到气球b依次给每个气球涂一次颜色。但是N次以后lele已经忘记了第I个气球已经涂过几次颜色了，你能帮他算出每个气球被涂过几次颜色吗？
-
-Input
-每个测试实例第一行为一个整数N,(N &lt;= 100000).接下来的N行，每行包括2个整数a b(1 &lt;= a &lt;= b &lt;= N)。  当N = 0，输入结束。 
-
-Output
-每个测试实例输出一行，包括N个整数，第I个数代表第I个气球总共被涂色的次数。 
-
-Sample Input3
-1 1
-2 2
-3 3
-3
-1 1
-1 2
-1 3
-0
-Sample Output
-1 1 1
-3 2 1
-
-啥也不说了，都在酒里， 都在代码里。
-Code#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const int N = 100005;
-
-struct n -->
-        <!-- </div> -->
-
-        
-        <h3 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h3><blockquote>
-<p>擅长处理区间，可以快速的查找某一个节点在若干条线段中出现的次数，时间复杂度为O(logN)。而未优化的空间复杂度为2N，实际应用时一般还要开4N的数组以免越界，因此有时需要离散化让空间压缩。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/02/28/线段树-HDU-1556/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/26/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/28/"> </a>
+        <a class="extend prev" rel="prev" href="/page/26/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/28/"> </a>
       </div>
 
     </div>
@@ -580,6 +574,10 @@ struct n -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -595,10 +593,6 @@ struct n -->
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -608,7 +602,7 @@ struct n -->
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/26/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/28/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/26/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/28/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

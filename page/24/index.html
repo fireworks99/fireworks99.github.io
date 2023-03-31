@@ -112,6 +112,70 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/31/POJ-2236-The-Suspects-HDU-1213-How-Many-Tables/" class="item-title">POJ 2236 The Suspects HDU 1213 How Many Tables</a>
+      
+      <time datetime="2019-03-31T11:10:16.000Z">
+        2019-03-31
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Link http://poj.org/problem?id=1611
+Code(并查集模板)#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int N = 30005;
+
+int pre[N];
+int n, m;
+
+void init()
+{
+    for(int i = 0; i &lt; n; ++i)
+        pre[i] = i;
+}
+
+int found(int x)
+{
+    if(x != pre[x])
+        pre[x] = found(pre[x]);
+    return pre[x];
+}
+
+void unite(int a, int b)
+{
+
+    int x = found(a);
+    int y = found(b);
+    if(x != y)
+//        x = pre[y];///可笑...
+        pre[y] = x;
+    return ;
+}
+
+int main()
+{
+    whi -->
+        <!-- </div> -->
+
+        
+        <h3 id="The-Suspects"><a href="#The-Suspects" class="headerlink" title="The Suspects"></a>The Suspects</h3><blockquote>
+<p>n个人（0  ~  n-1）m个小组</p>
+<p>起初0是嫌疑人，与0共组的人都是嫌疑人，与嫌疑人共组的人也都是嫌疑人</p>
+<p>问有多少嫌疑人</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/31/POJ-2236-The-Suspects-HDU-1213-How-Many-Tables/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/31/POJ-1860-Currency-Exchange/" class="item-title">POJ 1860 Currency Exchange</a>
       
       <time datetime="2019-03-31T08:48:29.000Z">
@@ -567,59 +631,12 @@ void get_prime()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/21/FZU-2150-Fire-Game/" class="item-title">FZU 2150 Fire Game</a>
-      
-      <time datetime="2019-03-21T10:28:04.000Z">
-        2019-03-21
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 思路
-各种点火组合皆遍历一遍,找出最优解。
-BFS：将两个起点一起放入队列中遍历，vis数组标记该点是否已燃。检查终点，若所有草地被燃，答案即为终点时的time（我曾想问：若终点之前的某点以满足条件（即所有草地皆已燃），那答案是不是会更小些？后来想想这个点就是终点，vis尽被标记找不到其他点了）
-
-吐槽
-我也太那啥那啥了…一点不那啥…还是太那啥了…
-刚开始想着两个点”分别“但“同时“bfs，还担心一个vis不够用（这个火燃到这里应该允许另一个火也可以经过这），后来想想，都是火，分啥你我啊!
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int inf = 0x3f3f3f3f;
-
-int n, m;
-string s[15];
-bool flag;
-bool vis[15][ -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>今有草地一片，’#’为草，’.’为空地，草可燃，地不可。有二童子顽劣之至，以焚尽草地为娱。二人可于两处分别点火，瞬间即燃。火势凶猛，所到之处，寸草不生。凡火所在，唯待一刻，便四处蔓延。问：待草烧尽，耗时几何？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/21/FZU-2150-Fire-Game/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/23/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/25/"> </a>
+        <a class="extend prev" rel="prev" href="/page/23/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/25/"> </a>
       </div>
 
     </div>
@@ -674,6 +691,10 @@ bool vis[15][ -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -689,10 +710,6 @@ bool vis[15][ -->
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -702,7 +719,7 @@ bool vis[15][ -->
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/23/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/25/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/23/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="page-number current">24</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/25/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

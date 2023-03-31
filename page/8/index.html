@@ -112,6 +112,54 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/09/HDU-4370-0-or-1-The-shortest-path/" class="item-title">HDU 4370 0 or 1(The shortest path)</a>
+      
+      <time datetime="2020-03-09T11:06:23.000Z">
+        2020-03-09
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+这题的建模思想绝了！谁能想到乍一看这么像数论的题目其实是个图论题！
+将方形矩阵视为n个点的图，位置(i, j)上权值代表从 i 到 j 的距离
+第一个条件规定点1有且仅有一个出度
+第二个条件规定点n有且仅有一个入度
+第三个条件规定其他点 入度 == 出度
+有符合以上条件的两种模型
+第一种模型：根据所求可转化为求最短路（首先能成一棵树，来满足‘度’的限制，然后代价最小。因为有方向所以是最短路，否则我想最小生成树可能也可…）
+第二种模型是1、n两个非自环之最小环之和
+在 分别以他们为起点，求最短路的过程中 可以求出
+
+Code#include &lt;queue&gt;
+#include &lt;stack&gt;
+#include &lt;vector&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+
+int n, -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出一个方形矩阵，求构造一个同样大小的（只含0、1）方形矩阵，在满足三个条件的前提下，两矩阵相同位置上的数字乘积总和最小。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/09/HDU-4370-0-or-1-The-shortest-path/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/09/HDU-3416-Marriage-IV-shorted-path-and-maxflow/" class="item-title">HDU 3416 Marriage IV(the shortest path and maxflow)</a>
       
       <time datetime="2020-03-09T11:05:46.000Z">
@@ -542,63 +590,12 @@ struct edge
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/26/HDU-2295-Radar-DLX-binary-search/" class="item-title">HDU 2295 Radar (DLX + binary search)</a>
-      
-      <time datetime="2019-11-26T12:55:15.000Z">
-        2019-11-26
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 建模
-Dancing-Links-X
-行：可选解决方案——那些雷达
-列：目标覆盖区域——那些城市
-二分查找半径，判断：如果第i个雷达在此半径下能覆盖第j个城市，那么link(i, j)，问题转换为DLX重复覆盖：选取一些行，使得每列含有1
-
-Code#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int maxnode = 3005;
-const double eps = 1e-8;
-
-int n, m, k;
-
-struct node
-{
-    double x, y;
-};
-node city[55], radar[55];
-int cnt[55], Head[55], vis[55];
-int L[maxnode], R[maxnode], U[maxnode], D[maxnode];
-int Row[maxnode],  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个城市，共M处布有雷达，条件受限，这M处雷达只能选用K个去覆盖城市，求雷达最小覆盖半径</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/26/HDU-2295-Radar-DLX-binary-search/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/7/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/9/"> </a>
+        <a class="extend prev" rel="prev" href="/page/7/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/9/"> </a>
       </div>
 
     </div>
@@ -653,6 +650,10 @@ int Row[maxnode],  -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -668,10 +669,6 @@ int Row[maxnode],  -->
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -681,7 +678,7 @@ int Row[maxnode],  -->
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/7/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/9/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/7/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/9/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

@@ -112,6 +112,49 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/24/POJ-3177-Redundant-Paths-shrink-nodes-and-bridges/" class="item-title">POJ 3177 Redundant Paths(shrink nodes and bridges)</a>
+      
+      <time datetime="2020-04-24T03:56:37.000Z">
+        2020-04-24
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analzye
+先进行环缩点，缩点完后是一棵树。
+连接任意两个节点，皆可成环。
+然而连接叶子节点比连接非叶子节点更优(需添加的边较少)。
+而且要连接的这两个叶子节点，其到LCA的距离越大越优。
+因为：连接树(缩点后的图)中某两个距离LCA最大的叶子节点，形成的环再次缩点会缩到根节点里，这样就减少了两个点。若非如此，每次只减少一个点。
+答案：假设有ans个叶子节点，每添一条边减少两个点，需要添加ans / 2条边。若ans为奇数，需要(ans + 1) / 2条边。两者可合并成后者。
+如何求缩点后叶子节点的个数ans？
+叶子节点特征：度数为1
+方案：求桥，原图的桥是缩点后的树上的边。遍历原图每个点，对每个点遍历出边，若此出边为桥，则它所连接的两点所在的连通分量(缩点后的点)度数++。最后遍历每个缩点后的点，度数为1的是叶子节点。
+
+Code#include &lt;stack&gt;
+#include &lt;vector&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#inc -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点M条无向边，原图是连通的，现要添加一些边，使得每两点之间的路至少有两条。求最少连接几条边。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/24/POJ-3177-Redundant-Paths-shrink-nodes-and-bridges/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/04/08/POJ-3694-Network-Bridges-and-LCA/" class="item-title">POJ 3694 Network(Bridges and LCA)</a>
       
       <time datetime="2020-04-08T13:42:32.000Z">
@@ -507,48 +550,12 @@ double x[N], y[N], in[N];
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/23/UVA-10600-ACM-Contest-and-Blackout-Second-MST/" class="item-title">UVA 10600 ACM Contest and Blackout(Second MST)</a>
-      
-      <time datetime="2020-03-23T10:12:35.000Z">
-        2020-03-23
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-设原图G(V, E)，最小生成树T(V1, E1)，现有边(u, v)∈G &amp;&amp; (u, v)∉T。u与v之间有唯一的一条路径，将这条路上若干段中最长的一段的长度存储在len[u][v]里，将边(u, v)加入到T中，u与v间形成了环，删掉len[u][v]对应那条边就是一颗准次小生成树了。
-遍历所有的非最小生成树内的边，求出相应的一个个准次小生成树，这里面最小的一个就是真正的次小生成树了。
-len[u][v]求解
-Prim：类似于DP的方法len[i][pos] = len[pos][i] = max(len[i][pre[pos]], low[pos]);
-Kruskal：有先天优势(边是按权值从小到大排序的，即：当前边的权值是当前已经出现的所有边中的最大值，此时用当前的边将两个集合连接，两集合内各取一点，他们之间路径上最大边就是当前边)len[ G[aa][i] ][ G[bb][j] ] = len[ G[bb][j] ][ G[aa][i] ] = w;
-
-Code of Prim#include &lt;cmath&gt;
-#include  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点M条边，求最小生成树与次小生成树</p>
-<p>（求生成树，说明边是无向边）</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/23/UVA-10600-ACM-Contest-and-Blackout-Second-MST/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/4/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/6/"> </a>
+        <a class="extend prev" rel="prev" href="/page/4/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/6/"> </a>
       </div>
 
     </div>
@@ -603,6 +610,10 @@ Code of Prim#include &lt;cmath&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -618,10 +629,6 @@ Code of Prim#include &lt;cmath&gt;
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -631,7 +638,7 @@ Code of Prim#include &lt;cmath&gt;
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/4/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/6/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/4/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/6/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

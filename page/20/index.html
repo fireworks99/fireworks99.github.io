@@ -112,6 +112,60 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/05/08/POJ-2018-Best-Cow-Fences/" class="item-title">POJ 2018 Best Cow Fences</a>
+      
+      <time datetime="2019-05-08T10:06:48.000Z">
+        2019-05-08
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接
+二分第一次
+因为涉及”连续项的和“，所以用前缀和维护
+bool judge(mid) 遍历所有方案，若有均值 &gt;= mid 则return 1
+但我只考虑了圈起k个农场的情况，忽略了 &gt; k方案，WA
+
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int n, k;
+double a[100010];
+double sum[100010];
+
+bool judge(double ans)
+{
+    for(int i = k; i &lt;= n; ++i)
+        if(sum[i] - sum[i - k] &gt; ans * k)
+            return 1;
+    return 0;
+}
+
+int main()
+{
+    scanf(&quot;%d%d&quot;, &amp;n, &amp;k);
+    for(int i = 1; i &lt;= n; ++i)
+    {
+        scanf(&quot;%lf -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N, K: 有n个农场，每个农场有不同数目的牧场，圈起不少于K个农场，用其牧场数 / 农场数 * 1000求最大值</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/05/08/POJ-2018-Best-Cow-Fences/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/05/07/POJ-2785-4-Values-whose-Sum-is-0/" class="item-title">POJ 2785 4 Values whose Sum is 0</a>
       
       <time datetime="2019-05-07T10:32:53.000Z">
@@ -583,52 +637,12 @@ bool Bellman_Ford(int start)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/23/A经验总结/" class="item-title">经验总结</a>
-      
-      <time datetime="2019-04-23T04:06:48.000Z">
-        2019-04-23
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-迎难而上，方能成长。念念不忘，必有回响！
--58.好多题数据n上限都是1e9(10亿，int上限21亿)，今天遇到这样一题，一直WA，后来发现我有个3 * n的操作!!!
--57.有些样例(像是codeforces上的)不怀好意，故意引导人按照一种错误的思路去考虑，从而WA.
--56.我才发现，二进制运算 | &amp; ，在状态压缩中，0代表无，1代表有，此时 | 对应取并集∪， &amp; 对应取交集∩.
--55.阶乘取模，很可能从某项开始就是0了!
--54.从n到1不好算，试试反着来，从1到n。
--53.有乘有除的double运算坚持先除后乘，免超longlong!痛死
--52.不要自我感觉不会超int，就一个ans能开long long就开呗！
--51.多者选其一的贪心可简化为二者选其一，多测试几个”二者选其一“哪个更优，得出贪心方案
--50.猜出可能是贪心，可不明确贪心方案时，举一个简单的例子(&gt;=3)，手动枚举出所有方案，看哪个方案最优，猜测那就是正解
--49.当你确定思绪乱了的时候，敢于重新整理思路重新写
--48.题目叙述较长时，第一段多为题目背景，可忽略，若读完 -->
-        <!-- </div> -->
-
-        
-        <h3 id="做题经验总结"><a href="#做题经验总结" class="headerlink" title="做题经验总结"></a>做题经验总结</h3><blockquote>
-<p>算法竞赛对其参与者的要求：</p>
-<p>具备较强的问题抽象和建模能力，能实现对复杂实际问题的模拟求解</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/23/A经验总结/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/19/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/21/"> </a>
+        <a class="extend prev" rel="prev" href="/page/19/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/21/"> </a>
       </div>
 
     </div>
@@ -683,6 +697,10 @@ bool Bellman_Ford(int start)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -698,10 +716,6 @@ bool Bellman_Ford(int start)
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -711,7 +725,7 @@ bool Bellman_Ford(int start)
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/19/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/21/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/19/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/21/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

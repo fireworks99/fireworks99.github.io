@@ -112,6 +112,53 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/09/20/Web-Register-return-the-error-info/" class="item-title">Register return the error info</a>
+      
+      <time datetime="2020-09-20T07:13:36.000Z">
+        2020-09-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- BackEnd(nodejs express)router.get(&#39;/register_process&#39;, function (req, res) {
+  register(req.query.username, req.query.password, function (err) {
+    if(err) res.send(err)
+  })
+})
+
+
+通过callback函数获取错误信息，发送到此请求的客户端
+
+FrontEnd
+最开始的时候想在input标签后加after伪类元素，后来发现伪类元素是在容器内部的尾部的，而input容不下其他元素，故作罢。改为新增一个input标签用于展示错误信息。初始value设为空字符串。
+
+getRegister() {
+        getRegister(this.username, this.password).then(res =&gt; {
+          if(res) {
+            this.usernameV = res;
+          }
+        })
+      }
+
+ -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>注册信息错误，返回错误信息(BackEnd -&gt; FrontEnd)</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/09/20/Web-Register-return-the-error-info/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/09/20/Web-NodeJS-asynchronous-request-about-MySQL/" class="item-title">NodeJS asynchronous request about MySQL</a>
       
       <time datetime="2020-09-20T01:35:37.000Z">
@@ -665,55 +712,12 @@ void init()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/24/POJ-3177-Redundant-Paths-shrink-nodes-and-bridges/" class="item-title">POJ 3177 Redundant Paths(shrink nodes and bridges)</a>
-      
-      <time datetime="2020-04-24T03:56:37.000Z">
-        2020-04-24
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analzye
-先进行环缩点，缩点完后是一棵树。
-连接任意两个节点，皆可成环。
-然而连接叶子节点比连接非叶子节点更优(需添加的边较少)。
-而且要连接的这两个叶子节点，其到LCA的距离越大越优。
-因为：连接树(缩点后的图)中某两个距离LCA最大的叶子节点，形成的环再次缩点会缩到根节点里，这样就减少了两个点。若非如此，每次只减少一个点。
-答案：假设有ans个叶子节点，每添一条边减少两个点，需要添加ans / 2条边。若ans为奇数，需要(ans + 1) / 2条边。两者可合并成后者。
-如何求缩点后叶子节点的个数ans？
-叶子节点特征：度数为1
-方案：求桥，原图的桥是缩点后的树上的边。遍历原图每个点，对每个点遍历出边，若此出边为桥，则它所连接的两点所在的连通分量(缩点后的点)度数++。最后遍历每个缩点后的点，度数为1的是叶子节点。
-
-Code#include &lt;stack&gt;
-#include &lt;vector&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#inc -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点M条无向边，原图是连通的，现要添加一些边，使得每两点之间的路至少有两条。求最少连接几条边。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/24/POJ-3177-Redundant-Paths-shrink-nodes-and-bridges/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/3/"> </a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/5/"> </a>
+        <a class="extend prev" rel="prev" href="/page/3/"> </a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/5/"> </a>
       </div>
 
     </div>
@@ -768,6 +772,10 @@ Code#include &lt;stack&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -783,10 +791,6 @@ Code#include &lt;stack&gt;
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -796,7 +800,7 @@ Code#include &lt;stack&gt;
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/3/"> </a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/5/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/3/"> </a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/5/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

@@ -112,6 +112,57 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/26/HDU-2295-Radar-DLX-binary-search/" class="item-title">HDU 2295 Radar (DLX + binary search)</a>
+      
+      <time datetime="2019-11-26T12:55:15.000Z">
+        2019-11-26
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 建模
+Dancing-Links-X
+行：可选解决方案——那些雷达
+列：目标覆盖区域——那些城市
+二分查找半径，判断：如果第i个雷达在此半径下能覆盖第j个城市，那么link(i, j)，问题转换为DLX重复覆盖：选取一些行，使得每列含有1
+
+Code#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int maxnode = 3005;
+const double eps = 1e-8;
+
+int n, m, k;
+
+struct node
+{
+    double x, y;
+};
+node city[55], radar[55];
+int cnt[55], Head[55], vis[55];
+int L[maxnode], R[maxnode], U[maxnode], D[maxnode];
+int Row[maxnode],  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个城市，共M处布有雷达，条件受限，这M处雷达只能选用K个去覆盖城市，求雷达最小覆盖半径</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/26/HDU-2295-Radar-DLX-binary-search/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/24/2019-CCPC-Harbin-F-Fixing-Banners/" class="item-title">2019 CCPC Harbin F-Fixing Banners</a>
       
       <time datetime="2019-11-24T12:52:49.000Z">
@@ -594,68 +645,12 @@ int found(int x)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/02/POJ-2010-Moo-University-Financial-Aid-贪心-优先队列/" class="item-title">POJ 2010 Moo University Financial Aid(贪心+优先队列)</a>
-      
-      <time datetime="2019-11-02T05:40:55.000Z">
-        2019-11-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 贪心
-按成绩排序作为基本顺序
-处理上部：
-选取后 N/2 个学生，将每个申请金额置于一个优先级队列中(由大到小)，并记下总和
-从第 C - N / 2 - 1 个位置当做中位数依次往下测试(保证了选取最大的)
-处理下部：
-在基本顺序的基础上将下部分(要测试的位置以下)按申请金额由小到大排序
-取前 N / 2 个的金额总和，记下最后一个位置(即 int last_pos = N / 2 - 1)
-检测：
-上部金额 + 下部金额 + 当前检测位置金额 &lt;= F 即退出
-否则：
-①将当前检测位置 idx 并入上部
-②让其前一位置 idx - 1 脱离下部
-在对idx - 1这个位置检测
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-struct node
-{
-    int score -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>学校要选出N个人发放助学金，</p>
-<p>但有C个人申请（给出C个人的成绩和各自的申请金额），</p>
-<p>而且学校只能发放不超过F的金钱，</p>
-<p>找出一种策略，使得被发放助学金的学生的群体，</p>
-<p>他们的成绩的中位数最大</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/02/POJ-2010-Moo-University-Financial-Aid-贪心-优先队列/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/8/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/10/"> </a>
+        <a class="extend prev" rel="prev" href="/page/8/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/10/"> </a>
       </div>
 
     </div>
@@ -710,6 +705,10 @@ struct node
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -725,10 +724,6 @@ struct node
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -738,7 +733,7 @@ struct node
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/8/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/10/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/8/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/10/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

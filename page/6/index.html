@@ -112,6 +112,42 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/23/UVA-10600-ACM-Contest-and-Blackout-Second-MST/" class="item-title">UVA 10600 ACM Contest and Blackout(Second MST)</a>
+      
+      <time datetime="2020-03-23T10:12:35.000Z">
+        2020-03-23
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+设原图G(V, E)，最小生成树T(V1, E1)，现有边(u, v)∈G &amp;&amp; (u, v)∉T。u与v之间有唯一的一条路径，将这条路上若干段中最长的一段的长度存储在len[u][v]里，将边(u, v)加入到T中，u与v间形成了环，删掉len[u][v]对应那条边就是一颗准次小生成树了。
+遍历所有的非最小生成树内的边，求出相应的一个个准次小生成树，这里面最小的一个就是真正的次小生成树了。
+len[u][v]求解
+Prim：类似于DP的方法len[i][pos] = len[pos][i] = max(len[i][pre[pos]], low[pos]);
+Kruskal：有先天优势(边是按权值从小到大排序的，即：当前边的权值是当前已经出现的所有边中的最大值，此时用当前的边将两个集合连接，两集合内各取一点，他们之间路径上最大边就是当前边)len[ G[aa][i] ][ G[bb][j] ] = len[ G[bb][j] ][ G[aa][i] ] = w;
+
+Code of Prim#include &lt;cmath&gt;
+#include  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点M条边，求最小生成树与次小生成树</p>
+<p>（求生成树，说明边是无向边）</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/23/UVA-10600-ACM-Contest-and-Blackout-Second-MST/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/23/POJ-1177-Picture-Segment-Tree-Scanning-Lines/" class="item-title">POJ 1177 Picture(Segment Tree Scanning Lines)</a>
       
       <time datetime="2020-03-23T07:03:33.000Z">
@@ -570,65 +606,12 @@ struct node
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/16/ZOJ-1610-Count-the-colors-Segment-tree/" class="item-title">ZOJ 1610 Count the colors(Segment tree)</a>
-      
-      <time datetime="2020-03-16T08:16:00.000Z">
-        2020-03-16
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-跟POJ有一道“贴海报”的题类似，只不过那题只求最终可以看到几种海报，这题还要统计段数。暴力单点查询，用一个last变量记录上一个点的颜色，若与现在这个点颜色不相同，那当前颜色段数++。更新last。
-
-Code#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 8005;
-
-int n, cnt[N], last = -1;
-struct interval
-{
-    int L, R, val;
-} a[N &lt;&lt; 2 | 1];
-
-void init(int num, int l, int r)
-{
-    a[num].L = l;
-    a[num].R = r;
-    a[num].val = -1;
-
-    if(l == r)
-        return ;
-
-    int  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给区间涂色（可遮挡），问最终可看到哪几种颜色，以及这几种颜色分别有几段？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/16/ZOJ-1610-Count-the-colors-Segment-tree/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/5/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/7/"> </a>
+        <a class="extend prev" rel="prev" href="/page/5/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/7/"> </a>
       </div>
 
     </div>
@@ -683,6 +666,10 @@ void init(int num, int l, int r)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -698,10 +685,6 @@ void init(int num, int l, int r)
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -711,7 +694,7 @@ void init(int num, int l, int r)
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/5/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/7/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/5/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/7/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

@@ -112,6 +112,62 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/02/POJ-2010-Moo-University-Financial-Aid-贪心-优先队列/" class="item-title">POJ 2010 Moo University Financial Aid(贪心+优先队列)</a>
+      
+      <time datetime="2019-11-02T05:40:55.000Z">
+        2019-11-02
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 贪心
+按成绩排序作为基本顺序
+处理上部：
+选取后 N/2 个学生，将每个申请金额置于一个优先级队列中(由大到小)，并记下总和
+从第 C - N / 2 - 1 个位置当做中位数依次往下测试(保证了选取最大的)
+处理下部：
+在基本顺序的基础上将下部分(要测试的位置以下)按申请金额由小到大排序
+取前 N / 2 个的金额总和，记下最后一个位置(即 int last_pos = N / 2 - 1)
+检测：
+上部金额 + 下部金额 + 当前检测位置金额 &lt;= F 即退出
+否则：
+①将当前检测位置 idx 并入上部
+②让其前一位置 idx - 1 脱离下部
+在对idx - 1这个位置检测
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+struct node
+{
+    int score -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>学校要选出N个人发放助学金，</p>
+<p>但有C个人申请（给出C个人的成绩和各自的申请金额），</p>
+<p>而且学校只能发放不超过F的金钱，</p>
+<p>找出一种策略，使得被发放助学金的学生的群体，</p>
+<p>他们的成绩的中位数最大</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/02/POJ-2010-Moo-University-Financial-Aid-贪心-优先队列/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/02/POJ-3614-Sunscreen-贪心-优先队列/" class="item-title">POJ 3614 Sunscreen(贪心+优先队列)</a>
       
       <time datetime="2019-11-02T02:52:41.000Z">
@@ -562,57 +618,12 @@ void get_factors(int n)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/09/11/POJ-3616-Milking-Time-类最长递增子序列/" class="item-title">POJ 3616 Milking Time(类最长递增子序列)</a>
-      
-      <time datetime="2019-09-11T11:02:28.000Z">
-        2019-09-11
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-将每一段的右界加上R作为新的右界。如果前一段区间的右界 &lt;= 后一段区间的左界，那么两段可以同时取得。但由于每段的权值未知，可能存在与之冲突的一个时间段的权值较之更大，所以要择优。
-对每个时间段dp，dp[i]表示选择了第i个时间段，整个过程可以达到的最大挤奶量
-初始化dp[i] = a[i].val
-对之前的区间遍历(前提：排好序)，若a[j].r &lt;= a[i].l
-那么当前区间最优值可从dp[j] + a[i].val和dp[i]中取max，这里像是最长递增子序列的dp过程：
-
-对某组有序的元素dp
-初始化dp[i] = a[i]
-遍历 i 之前的元素 j ，若 a[j]  &lt;=  a[i] 表示 i 前面可连上 j (此时 i 地状态可更新为更优值dp[i] = max(dp[i], dp[j] + a[i]))
-
-此类算法可解决的问题？
-
-有序的多个元素(可以是数字、区间)
-某些元素之间满足某种关系就具有某种“可连接性”，且“连接”可能引起最优值的更新
-
-
-Code#include &lt;cstdio&gt;
-#include &lt;io -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>奶牛有N个小时的产奶时间，农夫有M个时间段可用于挤牛奶，奶牛在相应的时间段有不同的产奶量，每挤一次牛奶必须休息R分钟，求最多能挤奶多少？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/09/11/POJ-3616-Milking-Time-类最长递增子序列/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/9/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/11/"> </a>
+        <a class="extend prev" rel="prev" href="/page/9/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/11/"> </a>
       </div>
 
     </div>
@@ -667,6 +678,10 @@ Code#include &lt;cstdio&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -682,10 +697,6 @@ Code#include &lt;cstdio&gt;
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -695,7 +706,7 @@ Code#include &lt;cstdio&gt;
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/9/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/11/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/9/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/11/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

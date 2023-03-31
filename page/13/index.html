@@ -112,6 +112,47 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/09/HDU-4289-Control-最大流/" class="item-title">HDU 4289 Control(最小割)</a>
+      
+      <time datetime="2019-08-09T01:33:33.000Z">
+        2019-08-09
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Description
+某位妹妹要从S到T运输偷来的心，我们可以在某些途径城市安装监控以逮捕她。每个城市安装监控的费用不同，要保证逮捕到这位妹妹，你被逮捕了，罪名:XXXX(某音刷多了) ，安装监控的最少花费是多少？
+
+Analyze
+看上去像是要求一个连通图的割点，使得S到T不连通，可并没有体现“最”这一特点，完全是固定的一种方案。(而且S、T不属于割点，而此题可以监控S、T)
+而我们知道，在一个已知S、T的网络图中，求完最大流的残余网络S到T不连通，符合题意。可题目求“最小”，奈何等于求“最大”？
+老子认为：一切事物都有对立面，对立的双方可以互相转化。
+我们知道，一条S到T的可行流的最大值，是这条路上容量最小边的容量
+所以，最大即最小，最小即最大。
+将原题中费用转为容量。求出最大流，便封锁了S到T的所有路。而这最大流，是各可行流中最小容量的和，即最小费用。
+以上理解也可以作为(最大流 == 最小割)的理解,所以这题其实是在求最小割?(滑稽)
+感性认识：
+
+假设最开始可行流就一条，那么最大流便是这条可行流上容量最小的边的容量，套到题目上，便是花费最少的监控所花费的金钱(即最小花费)
+ -->
+        <!-- </div> -->
+
+        
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
+<p>道家学派的创始人老子认为<strong>一切事物都</strong>包含<strong>有</strong>和无、难和易、长和短、高和下、前和后等<strong>对立面，对立的双方能够相互转化</strong> </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/09/HDU-4289-Control-最大流/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/08/HDU-2212-打表/" class="item-title">HDU 2212 打表</a>
       
       <time datetime="2019-08-08T13:00:14.000Z">
@@ -606,45 +647,12 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/05/A看清本质/" class="item-title">看清本质</a>
-      
-      <time datetime="2019-08-05T02:38:58.000Z">
-        2019-08-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-
-不参与排序、不作为一个整体存于STL中的结构体是没有灵魂的，多个数组（同下标一组）可以代替
-BFS里对象类型为int的queue是没有灵魂的，数组+两个移动指针可以模拟
-单纯的map&lt;string, int&gt; mp在时间方面是没有灵魂的，哈希可以代替，另外字典树(哈希树的变种)也可以更好地代替
-
- -->
-        <!-- </div> -->
-
-        
-        <h2 id="一些本质性的东西"><a href="#一些本质性的东西" class="headerlink" title="一些本质性的东西"></a>一些本质性的东西</h2><blockquote>
-<p>被封装起来的高级的数据结构是具有囊括性的，能应付多方面的问题。但如果只是用他的某一面，很可能这一需求可以由更低级、更基础的数据结构实现，这时再去用那个高级的数据结构便是没有灵魂的，那个低级、基础的数据结构更快更高效</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/05/A看清本质/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/12/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/14/"> </a>
+        <a class="extend prev" rel="prev" href="/page/12/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/14/"> </a>
       </div>
 
     </div>
@@ -699,6 +707,10 @@ BFS里对象类型为int的queue是没有灵魂的，数组+两个移动指针�
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -714,10 +726,6 @@ BFS里对象类型为int的queue是没有灵魂的，数组+两个移动指针�
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -727,7 +735,7 @@ BFS里对象类型为int的queue是没有灵魂的，数组+两个移动指针�
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/12/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/14/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/12/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/14/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

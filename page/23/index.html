@@ -112,6 +112,59 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/08/最短路记录路径-POJ-2457/" class="item-title">最短路记录路径 POJ 2457</a>
+      
+      <time datetime="2019-04-08T11:41:39.000Z">
+        2019-04-08
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 点我飞过去
+Floyd
+较为特殊，数组pre[i][j]存从i到j的最短路径上i后面的第一个点
+当然对于此题Floyd已超时了，但算法是对的
+
+Code of Floyd#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+
+
+int m, n;
+int mp[1005][1005];
+int pre[1005][1005];
+///pre[i][j]存从i到j的最短路径上i后面的第一个点
+
+void init()
+{
+    for(int i = 0; i &lt;= n; ++i)
+        for(int j = 0; j &lt;= n; ++j)
+        {
+            mp[i][j] = (i == j ? 0: INF);
+            pr -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>m条单向路，n个点（1~n）</p>
+<p>求从1到n的最短路，不存在输出“-1”，存在则输出路径</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/08/最短路记录路径-POJ-2457/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/07/POJ-3660-Cow-Contest/" class="item-title">POJ 3660 Cow Contest</a>
       
       <time datetime="2019-04-07T12:46:27.000Z">
@@ -854,76 +907,12 @@ const int N = 100005 -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/31/POJ-2236-The-Suspects-HDU-1213-How-Many-Tables/" class="item-title">POJ 2236 The Suspects HDU 1213 How Many Tables</a>
-      
-      <time datetime="2019-03-31T11:10:16.000Z">
-        2019-03-31
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Link http://poj.org/problem?id=1611
-Code(并查集模板)#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const int N = 30005;
-
-int pre[N];
-int n, m;
-
-void init()
-{
-    for(int i = 0; i &lt; n; ++i)
-        pre[i] = i;
-}
-
-int found(int x)
-{
-    if(x != pre[x])
-        pre[x] = found(pre[x]);
-    return pre[x];
-}
-
-void unite(int a, int b)
-{
-
-    int x = found(a);
-    int y = found(b);
-    if(x != y)
-//        x = pre[y];///可笑...
-        pre[y] = x;
-    return ;
-}
-
-int main()
-{
-    whi -->
-        <!-- </div> -->
-
-        
-        <h3 id="The-Suspects"><a href="#The-Suspects" class="headerlink" title="The Suspects"></a>The Suspects</h3><blockquote>
-<p>n个人（0  ~  n-1）m个小组</p>
-<p>起初0是嫌疑人，与0共组的人都是嫌疑人，与嫌疑人共组的人也都是嫌疑人</p>
-<p>问有多少嫌疑人</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/31/POJ-2236-The-Suspects-HDU-1213-How-Many-Tables/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/22/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/24/"> </a>
+        <a class="extend prev" rel="prev" href="/page/22/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/24/"> </a>
       </div>
 
     </div>
@@ -978,6 +967,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -993,10 +986,6 @@ int main()
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -1006,7 +995,7 @@ int main()
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/22/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/24/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/22/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="page-number current">23</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/24/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

@@ -112,6 +112,54 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/06/05/POJ-3276-Face-the-Right-Way/" class="item-title">POJ 3276 Face the Right Way</a>
+      
+      <time datetime="2019-06-05T11:16:27.000Z">
+        2019-06-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- http://poj.org/problem?id=3276
+Idea
+翻转问题的特点：
+
+若确定了翻转方案，交换翻转顺序对结果无影响
+对同一区间：要么不反转，要么只翻转一次。多次翻转是多余的。
+
+首先对最左边的牛进行判断，如果这头牛已经朝前方了，那么以这头牛为开始的区间就不需要在进行反转。
+如果这头牛朝后面，那么对应的以该牛为开始的区间就反转。不停重复以上步骤即可。
+但是如果反转牛时对每一头牛都进行反转操作的话时间复杂度就成了O(n^3)，肯定超时，所以必须在反转操作上进行优化。
+f[i]:=区间[i,i+k-1]进行了反转的话为1,否则的话为0
+这样在考虑第i头牛时候，如果sum(f[i-k+1]+…+f[i-1)为奇数的话，则与开始方向相反，否则相同。这样就将反转操作的复杂度将为常数，整个算法复杂度将为O(n^2)
+
+Code#include &lt;string&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int n;
+b -->
+        <!-- </div> -->
+
+        
+        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><blockquote>
+<p>N头牛排成一列，有面朝前（F）的、面朝后（B）的，有一台机器能让连续K头牛翻转方向，</p>
+<p>求让所有牛面朝前的最少操作次数M，及此时对应的K；</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/06/05/POJ-3276-Face-the-Right-Way/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/06/05/ZOJ-3631-Watashi-s-BG/" class="item-title">ZOJ 3631 Watashi&#39;s BG</a>
       
       <time datetime="2019-06-05T10:45:59.000Z">
@@ -566,53 +614,12 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/05/30/Codeforces-B-Arpa-s-weak-amphitheater-and-Mehrdad-s/" class="item-title">Codeforces B.Arpa&#39;s weak amphitheater and Mehrdad&#39;s ...</a>
-      
-      <time datetime="2019-05-30T12:57:41.000Z">
-        2019-05-30
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- http://codeforces.com/problemset/problem/741/B
-思路
-题目有个关于两个人属于同一朋友圈的叙述：
-Two Hoses x and y are in the same friendship group if and only if there is a sequence of Hoses a1, a2, …, ak such that ai and ai + 1 are friends for each 1 ≤ i &lt; k, and a1 = x and ak = y.
-AB、BC属于同一个圈，则AC属于同一个圈
-AB、BC、CD属于同一个圈，则AD属于同一个圈
-仔细想想其实就是个并查集 
-选一个或‘全都要’：
-将’全都要‘等效成新的‘一个’，即将‘特殊’一般化
-接下来背包DP，不过我没看出来‘每组只取一个’体现在哪？重量循环在外层？可以问问师哥
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring& -->
-        <!-- </div> -->
-
-        
-        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><blockquote>
-<p>n人分属不同的朋友圈，这些人都有自己的体重w与美丽度b，他们之间有m个关系描述（是朋友）。有一个舞台最大承重w，从每个朋友圈中选一个人或全选，在不超重前提下选美丽度最大的情况。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/05/30/Codeforces-B-Arpa-s-weak-amphitheater-and-Mehrdad-s/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/17/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/19/"> </a>
+        <a class="extend prev" rel="prev" href="/page/17/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/19/"> </a>
       </div>
 
     </div>
@@ -667,6 +674,10 @@ Code#include &lt;cmath&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -682,10 +693,6 @@ Code#include &lt;cmath&gt;
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -695,7 +702,7 @@ Code#include &lt;cmath&gt;
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/17/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/19/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/17/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/19/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

@@ -112,6 +112,57 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/11/异或寻异/" class="item-title">异或寻异</a>
+      
+      <time datetime="2019-03-11T07:50:54.000Z">
+        2019-03-11
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 给出n个数字， 有一个数字只出现奇数次，其余出现偶数次，找出这个数字#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;cstring&gt;
+#include &lt;cmath&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int a[1000005];
+
+int main()
+{
+    int n;
+    while(~scanf(&quot;%d&quot;, &amp;n))
+    {
+        if(n == 0)
+            break;
+        int ans = 0;
+        for(int i = 0; i &lt; n; ++i)
+        {
+            scanf(&quot;%d&quot;, &amp;a[i]);
+            ans ^= a[i];
+        }
+        cout &lt;&lt; ans &lt;&lt; &#39;\n -->
+        <!-- </div> -->
+
+        
+        <h3 id="关于异或"><a href="#关于异或" class="headerlink" title="关于异或"></a>关于异或</h3><blockquote>
+<p>a为任意数字：</p>
+<p>0 ^ a = a</p>
+<p>a ^ a = 0</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/11/异或寻异/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/09/SDUT-Balloons/" class="item-title">SDUT Balloons 和 HDU 1241 Oil Deposits</a>
       
       <time datetime="2019-03-09T13:29:25.000Z">
@@ -526,62 +577,12 @@ const -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/04/素数筛/" class="item-title">素数筛</a>
-      
-      <time datetime="2019-03-04T12:46:06.000Z">
-        2019-03-04
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-
-埃氏筛void get_prime(long long n)
-{
-    tot = 0;
-    memset(is, 1, sizeof(is));///bool类型数组全部初始化为1（默认全为质数）
-    is[0] = is[1] = 0;///0、1不是质数，单列
-    for(int i = 2; i &lt;= n; ++i)///遍历数组
-    {
-        if(is[i])///若此数未被标为0，则其未被前面质数筛掉，属于质数，用它去筛后面的数
-        {
-            pri[++tot] = i;///（1）将此数存于质数数组            pri[0]里没存数字
-            for(int j = i + i; j &lt;= n; j += i)///（2）从其2倍开始筛
-            {
-                is[j] = 0;
-            }
-        }
-    }
-}
-
-线性筛每个合数仅被它的最小质因子筛过，且为一次
-void prime(int n)
-{
- -->
-        <!-- </div> -->
-
-        
-        <h3 id="筛法求素数"><a href="#筛法求素数" class="headerlink" title="筛法求素数"></a>筛法求素数</h3><blockquote>
-<p>用筛法求素数的基本思想是:把从1开始的、某一范围内的正整数从小到大顺序排列， 1不是素数，首先把它筛掉。剩下的数中选择最小的数是素数，然后去掉它的倍数。依次类推，直到筛子为空时结束。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/04/素数筛/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/25/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/27/"> </a>
+        <a class="extend prev" rel="prev" href="/page/25/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/27/"> </a>
       </div>
 
     </div>
@@ -636,6 +637,10 @@ void prime(int n)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
@@ -651,10 +656,6 @@ void prime(int n)
             <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/22/Mini-Data-Observer/">Mini Data Observer</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -664,7 +665,7 @@ void prime(int n)
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/25/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="extend next" rel="next" href="/page/27/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/25/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/31/">31</a><a class="extend next" rel="next" href="/page/27/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">
