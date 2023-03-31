@@ -112,6 +112,63 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/18/博弈/" class="item-title">博弈</a>
+      
+      <time datetime="2019-07-18T00:07:51.000Z">
+        2019-07-18
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 分析
+若n = m + 1,先手必败——结论①
+-&gt;若n = k  (m + 1)，第二个人有可以使物品最终变为(m + 1)的办法，先手必败*——结论②
+-&gt;若n = k  (m + 1) + r,先手拿走r个，由结论②得后手必败、先手必胜*——结论③
+
+Codebool Bash_Game(int n, int m)
+{
+    if(n % (m + 1) != 0)
+        return 1;
+    return 0;
+}
+
+
+若有n堆，每堆a[i]个物品，两人来取，如何判断？
+先考虑取的最大数目无上限即可以把一堆全部取完的情形：
+
+一堆，无论数目多少，先手必胜
+
+两堆，从最简单的情况开始考虑：
+1 、1时，后手必胜
+1、n时，先手取走(n - 1)，变成上述情况，先手必胜
+a 、b时(a &gt;= 2 &amp;&amp; b &gt;= 2)
+若先手取走其中一堆会输
+若先手取完变成1、n也会输（最终谁取完后局面为1、n谁就输了）
+所以要保证先手取完还是c、b或a、d
+
+N堆，也是：最终谁取完后局面变为1、n谁就输了
+
+
+
+尼姆博弈（Nimm Game -->
+        <!-- </div> -->
+
+        
+        <h1 id="巴什博弈（Bash-Game）"><a href="#巴什博弈（Bash-Game）" class="headerlink" title="巴什博弈（Bash Game）"></a>巴什博弈（Bash Game）</h1><blockquote>
+<p>一堆n个物品，两人轮流取出（1~m）个，最终取完者胜出</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/18/博弈/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/17/python-读写csv文件/" class="item-title">python 读写csv文件</a>
       
       <time datetime="2019-07-17T11:41:22.000Z">
@@ -582,50 +639,6 @@ align    [ə’laɪn]     对齐
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/06/06/POJ-3255-Roadblocks-and-3463-Sightseeing/" class="item-title">POJ 3255 Roadblocks and 3463 Sightseeing（次短路）</a>
-      
-      <time datetime="2019-06-06T08:29:52.000Z">
-        2019-06-06
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Idea 1
-1到n的次短路长度必然产生于：从1走到x的最短路 + edge[x][y] +  y到n的最短路
-首先预处理好1到每一个节点的最短路，和n到每一个节点的最短路
-然后枚举每一条边作为中间边（x，y）或者（y，x），如果加起来长度等于最短路长度则跳过，否则更新从1走到x的最短路 + edge[x][y] +  y到n的最短路  给dist[n] 比较 找大于dist[n] 且是最小的那一个
-spfa(1) + spfa(n)
-原文链接： https://blog.csdn.net/huangshuai147/article/details/69105576
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-const int INF = 0x3f3f3f3f;
-
-int n, m -->
-        <!-- </div> -->
-
-        
-        <h1 id="POJ-3255-Roadblocks"><a href="#POJ-3255-Roadblocks" class="headerlink" title="POJ 3255 Roadblocks"></a>POJ 3255 Roadblocks</h1><blockquote>
-<p>N个点，M条双向边，求1到N的严格次短路</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/06/06/POJ-3255-Roadblocks-and-3463-Sightseeing/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -686,6 +699,10 @@ int n, m -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
@@ -699,10 +716,6 @@ int n, m -->
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
       </ul>

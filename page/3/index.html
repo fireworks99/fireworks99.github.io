@@ -112,6 +112,58 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/11/03/Browser-s-render-engine-and-block/" class="item-title">Browser&#39;s render engine and block</a>
+      
+      <time datetime="2020-11-03T01:38:59.000Z">
+        2020-11-03
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+备注：文档对象模型（Document Object Model，简称DOM）
+
+
+
+渲染过程
+浏览器渲染页面的整个过程：浏览器会从上到下解析文档。
+遇见 HTML 标记，调用HTML解析器解析为对应的 token （一个token就是一个标签文本的序列化）并构建 DOM 树（就是一块内存，保存着tokens，建立它们之间的关系）。
+遇见 style/link 标记 调用解析器 处理 CSS 标记并构建 CSS样式树。
+遇见 script 标记 调用 javascript解析器 处理script标记，绑定事件、修改DOM树/CSS树 等
+将 DOM树 与 CSS树 合并成一个渲染树。
+根据渲染树来渲染，以计算每个节点的几何信息（这一过程需要依赖图形库）。
+将各个节点绘制到屏幕上。
+
+
+
+
+以上这些模块依赖很多其他的基础模块，包括要使用到网络 存储 2D/3D图像 音频视频解码器 和 图片解码器。所以渲染引擎中还会包括如何使用这些依赖模块的部分。
+
+二、阻塞渲染1.关于css阻塞：声明：只有link引入的外部css才能够产生阻塞。1.style标签中的样式：    (1). 由html解 -->
+        <!-- </div> -->
+
+        
+        <h2 id="一、浏览器渲染引擎"><a href="#一、浏览器渲染引擎" class="headerlink" title="一、浏览器渲染引擎"></a>一、浏览器渲染引擎</h2><h3 id="主要模块"><a href="#主要模块" class="headerlink" title="主要模块"></a>主要模块</h3><ul>
+<li><p>一个渲染引擎主要包括：HTML解析器，CSS解析器，javascript引擎，布局layout模块，绘图模块</p>
+<ul>
+<li>HTML解析器：解释HTML文档的解析器，主要作用是将HTML文本解释成DOM树。</li>
+<li>CSS解析器：它的作用是为DOM中的各个元素对象计算出样式信息，为布局提供基础设施</li>
+<li>Javascript引擎：使用Javascript代码可以修改网页的内容，也能修改css的信息，javascript引擎能够解释javascript代码，并通过DOM接口和CSS树接口来修改网页内容和样式信息，从而改变渲染的结果。</li>
+<li>布局（layout）：在DOM创建之后，Webkit需要将其中的元素对象同样式信息结合起来，计算他们的大小位置等布局信息，形成一个能表达这所有信息的内部表示模型</li>
+<li>绘图模块（paint）：使用图形库将布局计算后的各个网页的节点绘制成图像结果</li>
+</ul></li></ul>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/11/03/Browser-s-render-engine-and-block/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/11/03/Browser-s-function-and-components/" class="item-title">Browser&#39;s function and components</a>
       
       <time datetime="2020-11-03T01:35:29.000Z">
@@ -520,57 +572,6 @@ data() {
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/09/20/Web-Wait-2s-to-jump/" class="item-title">Wait 2s to jump</a>
-      
-      <time datetime="2020-09-20T12:52:49.000Z">
-        2020-09-20
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 只用一个setTimeoutthis.usernameV = &#39;注册成功,2s后跳转&#39;;
-setTimeout(function() {
-    this.$router.push(&#39;/login&#39;)
-}, 2000)
-
-
-此时this已经是undefined了
-
-试着用“同步”sleepfunction syncSleep(time) {
-    const start = new Date().getTime();
-    while (new Date().getTime() - start &lt; time) {}
-  }
-
-this.usernameV = &#39;注册成功,2s后跳转&#39;;
-
-syncSleep(2000)
-// 这里竟然也是先等2s，然后执行赋值与push(这两个操作还不知道谁先)
-
-this.$router.push(&#39;/login&#39;)
-
-
-这里竟然先等2s再执行另外两个操作!!!
-
-还是第一种方法，集中解决this问题this.usernameV = &#39;注册成功,2s后跳转&#39;;
- -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>用户注册完成后，屏幕上打印“注册成功”的信息，等待两秒后跳转到登录页面</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/09/20/Web-Wait-2s-to-jump/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -631,6 +632,10 @@ this.$router.push(&#39;/login&#39;)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
@@ -644,10 +649,6 @@ this.$router.push(&#39;/login&#39;)
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
       </ul>

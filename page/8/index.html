@@ -112,6 +112,54 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/10/Codefroces-C-Adding-Powers/" class="item-title">Codefroces C.Adding Powers</a>
+      
+      <time datetime="2020-03-10T00:59:30.000Z">
+        2020-03-10
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+将每个数字拆解成k的幂次之和的形式
+
+        long long a, cnt[60];
+        memset(cnt, 0, sizeof(cnt));
+        for(int i = 0; i &lt; n; ++i)
+        {
+            cin &gt;&gt; a;
+            int idx = 0;
+            while(a &gt; 0)
+            {
+                cnt[idx++] += a % k;
+                a /= k;
+            }
+        }
+
+
+就是上面这段代码，智慧结晶啊！
+运用了逐次降幂的思想（让我想起了Java老师讲进制转换）
+举例：k的x次幂，拿他 /= k，可以完成 x 次，之后成为 1，运用上面的代码得到cnt[x] == 1。同理，若是k的x次幂与k的y次幂之和，这个数字跑完代码后得到cnt[x] == 1 &amp;&amp; cnt[y] == 1 &amp;&amp; c -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出n个数和数字k，问这n个数是不是每个都：</p>
+<p>等于k的某些幂次之和</p>
+<p>这些幂次彼此各不相同</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/10/Codefroces-C-Adding-Powers/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/09/HDU-4370-0-or-1-The-shortest-path/" class="item-title">HDU 4370 0 or 1(The shortest path)</a>
       
       <time datetime="2020-03-09T11:06:23.000Z">
@@ -538,58 +586,6 @@ Code of SDNUOJ 1045#include &lt;set&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/12/09/2019-ICPC-Asia-Nanchang-Regional/" class="item-title">2019 ICPC Asia Nanchang Regional</a>
-      
-      <time datetime="2019-12-09T11:46:05.000Z">
-        2019-12-09
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- analyze
-1.黑边没有限制数目，又是求最大边权和，所以选择所有黑边
-2.(无向图可用并查集缩点)缩点后，对于白边，求最大生成树
-3.若有多余白边(在K的限制下)，贪心选取权值大的
-细节：①int node = n;每次连入一个点node—，若最后node&gt;1不能生成树输出-1.②每次用一条白边k—，若最后k0则sort后贪心选.
-有点东西：这题里，无向图求缩点，和 求生成树，都用了并查集
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-#define ll long long
-
-const int maxn = 50005;
-const int maxm = 500005;
-
-struct edge
-{
-    ll u, v,  -->
-        <!-- </div> -->
-
-        
-        <h2 id="E-Bob’sProblem"><a href="#E-Bob’sProblem" class="headerlink" title="E.Bob’sProblem"></a>E.Bob’sProblem</h2><blockquote>
-<p>N个点（从1到N）</p>
-<p>M条边（带权，有黑白两种）</p>
-<p>选边，使得在图联通的前提下，边权和最大</p>
-<p>限制条件：白边不能超过K条</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/12/09/2019-ICPC-Asia-Nanchang-Regional/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -650,6 +646,10 @@ struct edge
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
@@ -663,10 +663,6 @@ struct edge
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
       </ul>

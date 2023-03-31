@@ -112,6 +112,59 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/17/HDU-4027-Can-you-answer-these-queries-Segment-tree/" class="item-title">HDU 4027 Can you answer these queries(Segment tree)</a>
+      
+      <time datetime="2020-03-17T03:21:59.000Z">
+        2020-03-17
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Something about Segment Tree
+线段树有initial、update、query三个函数
+initial函数用到了int mid = ( + ) &gt;&gt; 1;
+而流氓写法的update、query函数没有用到mid
+
+Analyze
+觉得这种题目的更新没办法lazy，区间更新只能换成暴力单点更新。
+此题的剪枝在于“算术平方根”，所给范围内的数字求8次以内次数的算术平方根就会变成1，现在拿一组变量纪录每个区间的最大值，若区间最大值是1，那么就没必要向下更新了。
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define ll long long
+const int N = 100005;
+
+ll n, k, ans, val[N];
+struct node
+{
+    ll L, R, sum, m -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出一个数字N，给出1到N这个N个数字的初值</p>
+<p>M个操作：</p>
+<ol>
+<li>更新x、y之间所有数字为他们的算术平方根</li>
+<li>查询x、y之间所有数字的和</li>
+</ol>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/17/HDU-4027-Can-you-answer-these-queries-Segment-tree/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/16/ZOJ-1610-Count-the-colors-Segment-tree/" class="item-title">ZOJ 1610 Count the colors(Segment tree)</a>
       
       <time datetime="2020-03-16T08:16:00.000Z">
@@ -565,54 +618,6 @@ void init()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/10/Codefroces-C-Adding-Powers/" class="item-title">Codefroces C.Adding Powers</a>
-      
-      <time datetime="2020-03-10T00:59:30.000Z">
-        2020-03-10
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-将每个数字拆解成k的幂次之和的形式
-
-        long long a, cnt[60];
-        memset(cnt, 0, sizeof(cnt));
-        for(int i = 0; i &lt; n; ++i)
-        {
-            cin &gt;&gt; a;
-            int idx = 0;
-            while(a &gt; 0)
-            {
-                cnt[idx++] += a % k;
-                a /= k;
-            }
-        }
-
-
-就是上面这段代码，智慧结晶啊！
-运用了逐次降幂的思想（让我想起了Java老师讲进制转换）
-举例：k的x次幂，拿他 /= k，可以完成 x 次，之后成为 1，运用上面的代码得到cnt[x] == 1。同理，若是k的x次幂与k的y次幂之和，这个数字跑完代码后得到cnt[x] == 1 &amp;&amp; cnt[y] == 1 &amp;&amp; c -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出n个数和数字k，问这n个数是不是每个都：</p>
-<p>等于k的某些幂次之和</p>
-<p>这些幂次彼此各不相同</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/10/Codefroces-C-Adding-Powers/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -673,6 +678,10 @@ void init()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
@@ -686,10 +695,6 @@ void init()
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
       </ul>

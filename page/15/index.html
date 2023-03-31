@@ -112,6 +112,53 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/27/POJ-1236-Network-of-Schools-强连通-缩点/" class="item-title">POJ 1236 Network of Schools(强连通+缩点)</a>
+      
+      <time datetime="2019-07-27T02:41:58.000Z">
+        2019-07-27
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Trajan算法求缩点
+stack\ st;
+int num;///num:强连通分量(连通块)的个数,缩点后点的个数
+bool vis[105];///该点是否访问过
+int inst[105];///该点是否在栈中
+int time[105];///i点第一次被访问的时间
+int low[105];///i点所在强连通分量子图中第一个被搜到的点的time值
+int ltt[105];///i点属于第几个强连通分量(0表示不属于任何一个)
+强连通分量内元素个数最少为1(该元素本身),这意味着每个元素都有从属的强连通分量
+
+Code(Trajan)void Trajan(int x)///搜索x点及其子树
+{
+    int temp;
+    st.push(x);
+    inst[x] = vis[x] = 1;
+    low[x] = time[x] = ++t;
+    for(int i = 0; i &lt; v[x].size(); i++)
+    {
+        temp = v[x][i];
+        if(vis[temp] == 0)
+       -->
+        <!-- </div> -->
+
+        
+        <h2 id="缩点"><a href="#缩点" class="headerlink" title="缩点"></a>缩点</h2><blockquote>
+<p>缩点就是要将两两之间可以相互到达的点，缩成一个点来表示（即求无向图的连通分量，或者有向图的强连通分量），他们的求法都是相同的，都是将无向图转化为有向图。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/27/POJ-1236-Network-of-Schools-强连通-缩点/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/26/SDNUOJ-1118-单词统计-JAVA-s-indexOf/" class="item-title">SDNUOJ 1118 单词统计 JAVA(s.indexOf())</a>
       
       <time datetime="2019-07-26T10:36:31.000Z">
@@ -580,48 +627,6 @@ Code#include &lt;cmath&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/20/HDU-1848-Fibonacci-again-and-again/" class="item-title">HDU 1848 Fibonacci again and again</a>
-      
-      <time datetime="2019-07-20T12:42:24.000Z">
-        2019-07-20
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-题目链接 : http://acm.hdu.edu.cn/showproblem.php?pid=1848
-
-Analyze
-游戏和的SG函数等于各个游戏SG函数的Nim和 
-
-SG函数
-首先定义mex(minimal excludant)运算，这是施加于一个集合的运算，表示最小的不属于这个集合的非负整数。例如mex{0,1,2,4}=3、mex{2,3,5}=0、mex{}=0。
-对于任意状态 x ， 定义 SG(x) = mex(S), 其中 S 是 x 后继状态的SG函数值的集合。
-如 x 有三个后继状态分别为 SG(a),SG(b),SG(c)，那么SG(x) = mex{SG(a),SG(b),SG(c)}。
-这样集合S的终态必然是空集，所以SG函数的终态为 SG(x) = 0,当且仅当 x 为必败点P时。
-步骤：
-1、使用 数组f 将 可改变当前状态 的方式记录下来。
-2、然后我们使用 另一个数组 将当前状态x 的后继状态标记。
-3、最后模拟mex运算，也就是我们在标记值中 搜索 未被标记值 的最小值，将其赋值给SG(x)。
-4、我们不断的重复 2 - 3 的步骤，就完成 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>三堆石子，任取F[i]（斐波那契数）个，取光为胜</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/20/HDU-1848-Fibonacci-again-and-again/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -682,6 +687,10 @@ SG函数
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
@@ -695,10 +704,6 @@ SG函数
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
       </ul>

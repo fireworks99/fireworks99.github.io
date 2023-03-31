@@ -112,6 +112,58 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/24/HDU-4612-Warm-up-Bridges-Diameter-of-tree/" class="item-title">HDU 4612 Warm up(Bridges + Diameter of tree)</a>
+      
+      <time datetime="2020-04-24T05:35:38.000Z">
+        2020-04-24
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+本来想当成POJ 3694 处理，桥的数目 - (距离LCA和最大的两个叶子节点到LCA的距离和)，但两层循环求到LCA距离和会TLE！
+学到了：树的直径dist[ BFS( BFS(1) ) ]
+第一次BFS返回一个叶子节点
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 200005;
+const int M = 4200005;
+
+int n, m, Q;
+int cnt, tot, idx, id[N], h1[N], h2[N], low[N], times[N], num_bridges;
+
+bool bridge[M];
+struct edge
+{
+    int u, v, pre;
+} e[M];
+
+void init()
+{
+    cnt = tot = idx = nu -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点M条无向边(可含重边)，再添加一条边，最后的桥最少有多少？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/24/HDU-4612-Warm-up-Bridges-Diameter-of-tree/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/04/24/POJ-3177-Redundant-Paths-shrink-nodes-and-bridges/" class="item-title">POJ 3177 Redundant Paths(shrink nodes and bridges)</a>
       
       <time datetime="2020-04-24T03:56:37.000Z">
@@ -504,52 +556,6 @@ using namespace std -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/03/POJ-3164-Command-Network-Minimum-tree-shape-graph/" class="item-title">POJ 3164 Command Network(Minimum tree-shape graph)</a>
-      
-      <time datetime="2020-04-03T04:49:19.000Z">
-        2020-04-03
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 朱刘算法
-①选出入边集：找到除root点之外，每一个点的所有入边中权值最小的，用数组in[]记录下这个最小权值，用pre[]记录到达该点的前驱。判断是否存在无入边的点(除了root)，若有，则无法成树。
-②找有向环：倘若无环，则该入边集就是最小树形图，算法结束。
-若有环，说明未成树，做缩点前期工作：记下环上每个点所属环的标号。
-③缩点中期工作：将不属于环上的点“缩点”
-④缩点后期工作：更新缩点后的图中的边的权值。因为我们在过程中“误+”了环中某一边，此时要减掉。重复以上过程。
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 105;
-const int INF = 0x3f3f3f3f;
-
-int n, m, id[N], pre[N], vis[N];
-double x[N], y[N], in[N];
-
- -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点M条有向边，求以1位根节点最小树形图(有向最小生成树)</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/03/POJ-3164-Command-Network-Minimum-tree-shape-graph/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -610,6 +616,10 @@ double x[N], y[N], in[N];
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
@@ -623,10 +633,6 @@ double x[N], y[N], in[N];
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
       </ul>

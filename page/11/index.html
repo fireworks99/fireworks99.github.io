@@ -112,6 +112,57 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/10/19/POJ-3904-Sky-Code-容斥原理/" class="item-title">POJ 3904 Sky Code 容斥原理</a>
+      
+      <time datetime="2019-10-19T02:57:47.000Z">
+        2019-10-19
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+测试四个数字的公因数是否只有“1”并不好实现，要检测多次。
+试着从 (是 = 总 - 非) 方面想
+对每个数字进行①质因数分解(准公因子)
+同时记录下②不同质因子之间相乘所构成的重公因子
+统计所有③准公因子与重公因子出现的次数（假设为num[i]）
+计算④组合数C(num[i], 4) 即为以num[i]为公因子的四个数的组合数目
+但是在这里面，计算2、3、6会有重复，于是便有了容斥
+
+Code#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define ll __int64
+
+int factor[10005], cnt = 0;
+map&lt;int, int&gt; Count;
+map&lt;int, int&gt; Num;
+
+void get_factors(int n)
+{
+    cnt = 0;
+    for(i -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出数字N，给出N个数字，从中找出四个数字，它们的公因数只有“1”，问能找到多少组？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/10/19/POJ-3904-Sky-Code-容斥原理/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/09/11/POJ-3616-Milking-Time-类最长递增子序列/" class="item-title">POJ 3616 Milking Time(类最长递增子序列)</a>
       
       <time datetime="2019-09-11T11:02:28.000Z">
@@ -542,58 +593,6 @@ const int MOD  -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/27/SDNUOJ-1032-1194-1422-四维DP/" class="item-title">SDNU 1032 1194 1422 四维DP</a>
-      
-      <time datetime="2019-08-27T11:22:55.000Z">
-        2019-08-27
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-两个二维DP同时进行 -&gt; 四维DP
-单独处理走到同一格的情况
-
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int mp[51][51];
-int dp[51][51][51][51];
-
-int main()
-{
-    int n, m;
-    cin &gt;&gt; n &gt;&gt; m;
-    for (int i = 1; i &lt;= n; ++i)
-        for (int j = 1; j &lt;= m; ++j)
-            scanf(&quot;%d&quot;,&amp;mp[i][j]);
-
-    for (int i = 1; i &lt;= n; ++i)
-        for (int j = 1; j &lt;= m; ++j)
-            for (int k = 1;  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>两枚棋子从(1, 1)走到(m,n)，只能向下或向右走，不能走同一格</p>
-<p>求路径上权值和的最大值。         (1, 1)与(m, n)处权值为0</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/27/SDNUOJ-1032-1194-1422-四维DP/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -654,6 +653,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
@@ -667,10 +670,6 @@ int main()
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
       </ul>

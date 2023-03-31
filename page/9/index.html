@@ -112,6 +112,58 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/12/09/2019-ICPC-Asia-Nanchang-Regional/" class="item-title">2019 ICPC Asia Nanchang Regional</a>
+      
+      <time datetime="2019-12-09T11:46:05.000Z">
+        2019-12-09
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- analyze
+1.黑边没有限制数目，又是求最大边权和，所以选择所有黑边
+2.(无向图可用并查集缩点)缩点后，对于白边，求最大生成树
+3.若有多余白边(在K的限制下)，贪心选取权值大的
+细节：①int node = n;每次连入一个点node—，若最后node&gt;1不能生成树输出-1.②每次用一条白边k—，若最后k0则sort后贪心选.
+有点东西：这题里，无向图求缩点，和 求生成树，都用了并查集
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define ll long long
+
+const int maxn = 50005;
+const int maxm = 500005;
+
+struct edge
+{
+    ll u, v,  -->
+        <!-- </div> -->
+
+        
+        <h2 id="E-Bob’sProblem"><a href="#E-Bob’sProblem" class="headerlink" title="E.Bob’sProblem"></a>E.Bob’sProblem</h2><blockquote>
+<p>N个点（从1到N）</p>
+<p>M条边（带权，有黑白两种）</p>
+<p>选边，使得在图联通的前提下，边权和最大</p>
+<p>限制条件：白边不能超过K条</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/12/09/2019-ICPC-Asia-Nanchang-Regional/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/26/HDU-2295-Radar-DLX-binary-search/" class="item-title">HDU 2295 Radar (DLX + binary search)</a>
       
       <time datetime="2019-11-26T12:55:15.000Z">
@@ -586,65 +638,6 @@ vector&lt;int -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/02/POJ-1703-Find-them-Catch-them（并查集变形）/" class="item-title">POJ 1703 Find them, Catch them（并查集变形）</a>
-      
-      <time datetime="2019-11-02T07:29:03.000Z">
-        2019-11-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 并查集
-初始化一个 2 * N 的并查集，
-如果a和b属于不同帮派，
-unite(a, b + n) &amp;&amp; unite(b, a + n)
-这样如果c和b属于不同帮派
-unite(c, b + n) &amp;&amp; unite(b, c + n)
-就把a和c连起来了
-!!!什么神仙做法！！！
-是不是暗示我们，有些题多用点空间就能解决问题
-
-Code#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 100005;
-
-int n, m;
-int pre[N * 2];
-
-void init()
-{
-    for(int i = 0; i &lt;= n * 2; ++i)
-        pre[i] = i;
-}
-
-int found(int x)
-{
-    if(pre[x] != x)
-   -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>有两个帮派，</p>
-<p>给出 D a b 表示a和b位于不同帮派，</p>
-<p>给出 A a b 表示询问a和b是否属于同一帮派</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/02/POJ-1703-Find-them-Catch-them（并查集变形）/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -705,6 +698,10 @@ int found(int x)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
@@ -718,10 +715,6 @@ int found(int x)
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
       </ul>

@@ -112,6 +112,53 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/09/HDU-1166-敌兵布阵/" class="item-title">HDU 1166 敌兵布阵</a>
+      
+      <time datetime="2019-04-09T11:28:03.000Z">
+        2019-04-09
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- LINK
+线段树
+1.N * 4 + 1的空间（有N * 2节省空间的方法）
+2.用 位运算符时注意其优先级低，用 (num &lt;&lt; 1) + 1 或  num &lt;&lt; 1 | 1
+3.更新末操作：a[num].val = a[num &lt;&lt; 1].val + a[(num &lt;&lt; 1) + 1].val;
+4.单点更新、单点查询、区间查询都可套用模板，但区间更新分①普通更新②lazy标记
+
+Code of ordinary Segment tree#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int N = 50005;
+
+map&lt;string, int&gt; mp;
+
+struct node
+{
+    int L, R, val;
+}a[(N &lt;&lt; 2) + 1];
+
+void init(int num, int l, int r)///r = 6,r = 10数组并没有充 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>区间1~n初始有一些人，某个区间可以增加人数、减少人数、询问人数。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/09/HDU-1166-敌兵布阵/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/08/最短路记录路径-POJ-2457/" class="item-title">最短路记录路径 POJ 2457</a>
       
       <time datetime="2019-04-08T11:41:39.000Z">
@@ -849,64 +896,6 @@ int foun -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/01/带权并查集/" class="item-title">带权并查集</a>
-      
-      <time datetime="2019-04-01T12:29:30.000Z">
-        2019-04-01
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Link http://hihocoder.com/problemset/problem/1515
-Input
-第一行包含三个整数N, M和Q。N表示学生总数，M表示小Hi知道消息的总数，Q表示小Hi想询问的数量。  
-以下M行每行三个整数，X, Y和S。表示X号同学的分数比Y号同学的分数高S分。  
-以下Q行每行两个整数，X和Y。表示小Hi想知道X号同学的分数比Y号同学的分数高几分。 
-
-Output
-对于每个询问，如果不能判断出X比Y高几分输出-1。否则输出X比Y高的分数。 
-
-sample Input10 5 3  
-1 2 10  
-2 3 10  
-4 5 -10  
-5 6 -10  
-2 5 10  
-1 10  
-1 5  
-3 5
-
-Sample Output
--1
-20
-0
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 100005 -->
-        <!-- </div> -->
-
-        
-        <h3 id="HihoCoder"><a href="#HihoCoder" class="headerlink" title="HihoCoder"></a>HihoCoder</h3><blockquote>
-<p>小Hi的学校总共有N名学生，编号1-N。学校刚刚进行了一场全校的古诗文水平测验。  </p>
-<p>学校没有公布测验的成绩，所以小Hi只能得到一些小道消息，例如X号同学的分数比Y号同学的分数高S分。  </p>
-<p>小Hi想知道利用这些消息，能不能判断出某两位同学之间的分数高低？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/01/带权并查集/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -967,6 +956,10 @@ const int N = 100005 -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
@@ -980,10 +973,6 @@ const int N = 100005 -->
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
       </ul>

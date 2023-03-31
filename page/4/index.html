@@ -112,6 +112,57 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/09/20/Web-Wait-2s-to-jump/" class="item-title">Wait 2s to jump</a>
+      
+      <time datetime="2020-09-20T12:52:49.000Z">
+        2020-09-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 只用一个setTimeoutthis.usernameV = &#39;注册成功,2s后跳转&#39;;
+setTimeout(function() {
+    this.$router.push(&#39;/login&#39;)
+}, 2000)
+
+
+此时this已经是undefined了
+
+试着用“同步”sleepfunction syncSleep(time) {
+    const start = new Date().getTime();
+    while (new Date().getTime() - start &lt; time) {}
+  }
+
+this.usernameV = &#39;注册成功,2s后跳转&#39;;
+
+syncSleep(2000)
+// 这里竟然也是先等2s，然后执行赋值与push(这两个操作还不知道谁先)
+
+this.$router.push(&#39;/login&#39;)
+
+
+这里竟然先等2s再执行另外两个操作!!!
+
+还是第一种方法，集中解决this问题this.usernameV = &#39;注册成功,2s后跳转&#39;;
+ -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>用户注册完成后，屏幕上打印“注册成功”的信息，等待两秒后跳转到登录页面</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/09/20/Web-Wait-2s-to-jump/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/09/20/Web-Register-return-the-error-info/" class="item-title">Register return the error info</a>
       
       <time datetime="2020-09-20T07:13:36.000Z">
@@ -660,58 +711,6 @@ Code#include &lt;stack&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/24/HDU-4612-Warm-up-Bridges-Diameter-of-tree/" class="item-title">HDU 4612 Warm up(Bridges + Diameter of tree)</a>
-      
-      <time datetime="2020-04-24T05:35:38.000Z">
-        2020-04-24
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-本来想当成POJ 3694 处理，桥的数目 - (距离LCA和最大的两个叶子节点到LCA的距离和)，但两层循环求到LCA距离和会TLE！
-学到了：树的直径dist[ BFS( BFS(1) ) ]
-第一次BFS返回一个叶子节点
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 200005;
-const int M = 4200005;
-
-int n, m, Q;
-int cnt, tot, idx, id[N], h1[N], h2[N], low[N], times[N], num_bridges;
-
-bool bridge[M];
-struct edge
-{
-    int u, v, pre;
-} e[M];
-
-void init()
-{
-    cnt = tot = idx = nu -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点M条无向边(可含重边)，再添加一条边，最后的桥最少有多少？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/24/HDU-4612-Warm-up-Bridges-Diameter-of-tree/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -772,6 +771,10 @@ void init()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
@@ -785,10 +788,6 @@ void init()
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
       </ul>

@@ -112,6 +112,50 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/06/06/POJ-3255-Roadblocks-and-3463-Sightseeing/" class="item-title">POJ 3255 Roadblocks and 3463 Sightseeing（次短路）</a>
+      
+      <time datetime="2019-06-06T08:29:52.000Z">
+        2019-06-06
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Idea 1
+1到n的次短路长度必然产生于：从1走到x的最短路 + edge[x][y] +  y到n的最短路
+首先预处理好1到每一个节点的最短路，和n到每一个节点的最短路
+然后枚举每一条边作为中间边（x，y）或者（y，x），如果加起来长度等于最短路长度则跳过，否则更新从1走到x的最短路 + edge[x][y] +  y到n的最短路  给dist[n] 比较 找大于dist[n] 且是最小的那一个
+spfa(1) + spfa(n)
+原文链接： https://blog.csdn.net/huangshuai147/article/details/69105576
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int INF = 0x3f3f3f3f;
+
+int n, m -->
+        <!-- </div> -->
+
+        
+        <h1 id="POJ-3255-Roadblocks"><a href="#POJ-3255-Roadblocks" class="headerlink" title="POJ 3255 Roadblocks"></a>POJ 3255 Roadblocks</h1><blockquote>
+<p>N个点，M条双向边，求1到N的严格次短路</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/06/06/POJ-3255-Roadblocks-and-3463-Sightseeing/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/06/05/POJ-3276-Face-the-Right-Way/" class="item-title">POJ 3276 Face the Right Way</a>
       
       <time datetime="2019-06-05T11:16:27.000Z">
@@ -558,62 +602,6 @@ x1 = y2, -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/05/31/SDNUOJ-1539-恰当选择DP对象/" class="item-title">SDNUOJ 1539 恰当选择DP对象</a>
-      
-      <time datetime="2019-05-31T10:18:56.000Z">
-        2019-05-31
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-
-01背包选择价值作为DP对象，详见小白书Page61
-
-
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-const int INF = 0x3f3f3f3f;
-int dp[505][5005];
-int w[505], v[505];
-int N, W;
-
-int main()
-{
-    int t;
-    cin &gt;&gt; t;
-    while(t--)
-    {
-        scanf(&quot;%d%d&quot;, &amp;N, &amp;W);
-        for(int i = 1; i &lt;= N; ++i)
-            scanf(&quot;%d%d&quot;, &amp;w[i], &amp;v[i]);
-        memset(dp, INF, sizeof(dp));
-        dp[0][0] = -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>T组输入样例</p>
-<p>N个物品，W最大承重</p>
-<p>每个物品都有对应的w[i], v[i]</p>
-<p>求总重不超W时最大价值V</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/05/31/SDNUOJ-1539-恰当选择DP对象/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -674,6 +662,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
@@ -687,10 +679,6 @@ int main()
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/27/Vue-Plugin/">Vue Plugin</a>
           </li>
         
       </ul>

@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>arr.some</title>
+      <link href="2023/03/31/arr-some/"/>
+      <url>2023/03/31/arr-some/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote><p>场景：现在有个数组，数组中<strong>必定</strong>有0或1个元素是我要找的，除了用for循环还可以用some方法。</p></blockquote><a id="more"></a><pre><code class="lang-js">let arr = [&quot;red&quot;, 123, true, null, undefined, function(){}, { name: &quot;Joy&quot;, age: 24 }, [&quot;orange&quot;, &quot;yellow&quot;]];console.log(&quot;-------- for --------&quot;);for(let i = 0; i &lt; arr.length; ++i) {  console.log(arr[i]);  if(typeof arr[i] === &quot;function&quot;) {    console.log(i);    break;  }}console.log(&quot;-------- forEach --------&quot;);arr.forEach((item, index) =&gt; {  console.log(item);  if(typeof item === &quot;function&quot;) {    console.log(index);    return;  }})console.log(&quot;-------- some --------&quot;);arr.some((item, index) =&gt; {  console.log(item);  return typeof item === &quot;function&quot; ? console.log(index) || true : false;})</code></pre><blockquote><p>some方法可以及时break，forEach不行，forEach必定全部遍历执行。</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> JavaScriptのNote </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue Router</title>
       <link href="2023/03/31/Vue-Router/"/>
       <url>2023/03/31/Vue-Router/</url>
@@ -3717,9 +3736,9 @@
             
             <tag> 题解 </tag>
             
-            <tag> 优化の二分 </tag>
-            
             <tag> 技巧の折半枚举 </tag>
+            
+            <tag> 优化の二分 </tag>
             
         </tags>
       
@@ -4005,9 +4024,9 @@
       
         <tags>
             
-            <tag> 知识 </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 知识 </tag>
             
             <tag> 字符串の最长回文子串 </tag>
             
@@ -4737,9 +4756,9 @@
       
         <tags>
             
-            <tag> 简单搜索のBFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のBFS </tag>
             
             <tag> 数论の素数筛 </tag>
             
@@ -4760,9 +4779,9 @@
       
         <tags>
             
-            <tag> 简单搜索のBFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のBFS </tag>
             
         </tags>
       
@@ -4781,9 +4800,9 @@
       
         <tags>
             
-            <tag> 简单搜索のBFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のBFS </tag>
             
         </tags>
       
@@ -4802,9 +4821,9 @@
       
         <tags>
             
-            <tag> 简单搜索のBFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のBFS </tag>
             
         </tags>
       
@@ -4823,9 +4842,9 @@
       
         <tags>
             
-            <tag> 简单搜索のBFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のBFS </tag>
             
         </tags>
       
@@ -4951,9 +4970,9 @@
       
         <tags>
             
-            <tag> 知识 </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 知识 </tag>
             
             <tag> 技巧の尺取法 </tag>
             
@@ -5429,9 +5448,9 @@
             
             <tag> 简单搜索のDFS </tag>
             
-            <tag> 简单搜索のBFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のBFS </tag>
             
             <tag> 图论の拓扑排序(判环) </tag>
             
@@ -5454,9 +5473,9 @@
             
             <tag> 简单搜索のDFS </tag>
             
-            <tag> 简单搜索のBFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のBFS </tag>
             
             <tag> 图论の拓扑排序(无环) </tag>
             
@@ -5695,9 +5714,9 @@
       
         <tags>
             
-            <tag> 知识 </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 知识 </tag>
             
             <tag> 技巧の前缀和 </tag>
             
@@ -5720,9 +5739,9 @@
       
         <tags>
             
-            <tag> 知识 </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 知识 </tag>
             
         </tags>
       
@@ -5741,9 +5760,9 @@
       
         <tags>
             
-            <tag> 简单搜索のBFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のBFS </tag>
             
         </tags>
       
@@ -5995,9 +6014,9 @@
       
         <tags>
             
-            <tag> 简单搜索のBFS </tag>
-            
             <tag> 题解 </tag>
+            
+            <tag> 简单搜索のBFS </tag>
             
         </tags>
       
