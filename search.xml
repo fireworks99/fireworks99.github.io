@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Vue i18n</title>
+      <link href="2023/04/01/Vue-i18n/"/>
+      <url>2023/04/01/Vue-i18n/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Vue-国际化"><a href="#Vue-国际化" class="headerlink" title="Vue 国际化"></a>Vue 国际化</h2><blockquote><ol><li>$t</li><li>vue-i18n</li></ol></blockquote><a id="more"></a><pre><code class="lang-html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;h1&gt;{{ $t('welcome-message') }}&lt;/h1&gt;        &lt;button @click=&quot;changeLang(&#39;en&#39;)&quot;&gt;English&lt;/button&gt;        &lt;button @click=&quot;changeLang(&#39;zh&#39;)&quot;&gt;中文&lt;/button&gt;        &lt;button @click=&quot;changeLang(&#39;nl&#39;)&quot;&gt;Dutch&lt;/button&gt;    &lt;/div&gt;    &lt;script&gt;        const i18nPlugin = {            // Implement this!            install(Vue, locales) {                Vue.prototype.$t = function(id) {                    return locales[this.$root.lang][id]                }            }        }        Vue.use(i18nPlugin, /* option */ {            en: { &#39;welcome-message&#39;: &#39;hello&#39; },            zh: { &#39;welcome-message&#39;: &#39;你好&#39; },            nl: { &#39;welcome-message&#39;: &#39;Hallo&#39; }        })        new Vue({            el: &#39;#app&#39;,            data: {                lang: &#39;en&#39;            },            methods: {                changeLang(lang) {                    this.lang = lang                }            }        })    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><blockquote><p>切换语言的关键：插件与响应性的结合。</p><p>$t方法在模板(Template)中被调用，那么当Template =&gt; Render后，系统执行渲染函数时就会调用$t方法，而调用$t方法会调用lang的getter，触发Dep.depend()，新增依赖关系，那么在lang被更新时视图也会被更新。</p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Vueのi8n </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue 表单验证</title>
       <link href="2023/04/01/Vue-%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
       <url>2023/04/01/Vue-%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/</url>
