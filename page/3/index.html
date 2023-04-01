@@ -112,6 +112,61 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/11/17/Recursive-least-square/" class="item-title">Recursive least square</a>
+      
+      <time datetime="2020-11-17T08:56:37.000Z">
+        2020-11-17
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 设 \phi_0, \phi_1, ... \phi_n 是n+1个线性无关的连续函数，G_n 是由  \phi_i(i=0,1...n) 的所有线性组合构成的集合，记 G_n = span \{ \phi_0, \phi_1,...,\phi_n \} ，G(x)\in G_n 。
+将 G(x) 写成矩阵的形式：
+\begin{bmatrix}
+G(x_1)\\ G(x_2) \\ \vdots\\ G(x_k)
+\end{bmatrix}=\begin{bmatrix} \phi_0(x_1) & \phi_1(x_1) & \cdots & \phi_n(x_1) \\ \phi_0(x_2) & \phi_1(x_2) & \cdots & \phi_n(x_2) \\
+\vdots & \vdots & \vdots & \vdots \\
+\phi_0(x_k) & \phi_1(x_k) & \cdots & \phi_n(x_k) \\
+\end{bmatrix}\begin{bmatrix}
+a_0\\ a_1 \\ \vdots\\ a_n
+\end{bmatrix -->
+        <!-- </div> -->
+
+        
+        <p>给定一组样本点：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><script type="math/tex">x_1</script></th>
+<th style="text-align:center"><script type="math/tex">x_2</script></th>
+<th style="text-align:center">…</th>
+<th style="text-align:center"><script type="math/tex">x_k</script></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><script type="math/tex">y_1</script></td>
+<td style="text-align:center"><script type="math/tex">y_2</script></td>
+<td style="text-align:center">…</td>
+<td style="text-align:center"><script type="math/tex">y_k</script></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>求拟合函数 <script type="math/tex">G(x)</script> 使得 <script type="math/tex">\sum_{i=1}^k (G(x_i)-y_i)^2</script> 取最小值。</p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/11/17/Recursive-least-square/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/11/03/Browser-s-render-engine-and-block/" class="item-title">Browser&#39;s render engine and block</a>
       
       <time datetime="2020-11-03T01:38:59.000Z">
@@ -511,67 +566,6 @@ export function request(config) {
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/09/21/Web-Communication-between-components/" class="item-title">Communication between components</a>
-      
-      <time datetime="2020-09-21T10:45:29.000Z">
-        2020-09-21
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 不同组件间传递信息
-1.动态路由
-携带单个信息点，以路由形式/home/userid显示在url中
-
-路由部分
-{
-    // 动态路由 实现 携带信息(单个信息，以路由形式 且显示在url中) 跳转组件
-    path: &#39;/home/:id&#39;,
-    component: Home
-},
-
-信源JS
-const r = this.$router;
-const id = this.username;
-
-r.push(&#39;/home/&#39; + id)
-
-信宿JS
-data() {
-  return {
-      id: this.$route.params.id
-  }
-},
-
-信宿html
-&lt;h1&gt;Welcome, {{$route.params.id}}!&lt;/h1&gt;
-
-
-2.query
-携带一组信息，以query形式/home?id=useri显示在url中
-
-路由部分
-{
-    // 传递query对象 实现 携带信息(可大量信息，以query形式 显示在url中) 跳转组件
-    path: &#39;/home& -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>不同组件之间通信(传递信息)以及父子组件之间访问data中数据</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/09/21/Web-Communication-between-components/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -618,7 +612,7 @@ data() {
   <div class="widget-box">
     <h3 class="widget-title-archive">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
     </div>
   </div>
 
@@ -630,6 +624,10 @@ data() {
     <h3 class="widget-title-post">recent_posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
+          </li>
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
@@ -645,10 +643,6 @@ data() {
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/29/High-order-component/">Vue High order component</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
           </li>
         
       </ul>

@@ -112,6 +112,61 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/04/POJ-3207-Ikki-s-Story-IV-2-sat/" class="item-title">POJ 3207 Ikki&#39;s Story IV(2-sat)</a>
+      
+      <time datetime="2019-11-04T12:07:41.000Z">
+        2019-11-04
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 2-sat
+什么是2-SAT呢？就是
+①有一些集合，(对应此题中有一些边)
+②每个集合中有且仅有两个元素，(某条边是从圈内连or从圈外连)
+③两个元素必须且只能选一个，(从圈内连或者从圈外连，二选一)
+④集合间的元素存在一定的选择关系，(边不能相交)
+求解可行性及可行方案。
+
+算法过程
+1、连边
+2、跑Tarjan
+3、判可行性，即同一集合中的两个点是否同属一个强连通块
+(若不求可行方案，到此步即可)
+4、缩点建新图，连反边
+5、拓扑序，若当前点没有被访问过，则选择该点，不选择其另外的点
+
+Analyze
+对于此题，连线对应区间如果相交，那么两线不能同时在圈内或同时在圈外
+
+Code#include &lt;stack&gt;
+#include &lt;vector&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+stack&lt;int&gt; st;
+vector&lt;int -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点按顺序排列在一个圆环上，要连接M条边，可从圈内连，可从圈外连，问能否实现各边不相交</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/04/POJ-3207-Ikki-s-Story-IV-2-sat/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/02/POJ-1703-Find-them-Catch-them（并查集变形）/" class="item-title">POJ 1703 Find them, Catch them（并查集变形）</a>
       
       <time datetime="2019-11-02T07:29:03.000Z">
@@ -581,51 +636,6 @@ void get_factors(ll n)///①得到全集②进行容斥
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/10/20/SDNUOJ-新生-AC题数统计/" class="item-title">SDNUOJ 新生 AC题数统计</a>
-      
-      <time datetime="2019-10-20T00:52:19.000Z">
-        2019-10-20
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- import csv
-import requests
-from bs4 import BeautifulSoup
-
-
-def getText(url):
-    try:
-        headers = {&#39;user-agent&#39;: &#39;Mozilla/5.0&#39;}
-        r = requests.get(url, headers=headers)
-        r.raise_for_status()
-        r.encoding = r.apparent_encoding
-        return r.text
-    except:
-        return &quot;&quot;
-
-def solve(html):
-    soup = BeautifulSoup(html, &quot;html.parser&quot;)
-    soup = soup.find(&quot;div&quot;, style=&quot;float: left;&quot;)
-    soup = BeautifulSoup(st -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>用于统计SDNUOJ上某（些）用户AC题目数量</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/10/20/SDNUOJ-新生-AC题数统计/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -672,7 +682,7 @@ def solve(html):
   <div class="widget-box">
     <h3 class="widget-title-archive">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
     </div>
   </div>
 
@@ -684,6 +694,10 @@ def solve(html):
     <h3 class="widget-title-post">recent_posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
+          </li>
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
@@ -699,10 +713,6 @@ def solve(html):
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/29/High-order-component/">Vue High order component</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
           </li>
         
       </ul>

@@ -112,6 +112,42 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/04/HDU-2121-Ice-cream-s-world-II-Minimum-tree-shape-graph/" class="item-title">HDU 2121 Ice-cream&#39;s world II(Minimum tree-shape graph)</a>
+      
+      <time datetime="2020-04-04T12:27:14.000Z">
+        2020-04-04
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Anlyze
+增加一个超级节点”伪根“，连向每一个点。
+关于这些边的权值：
+①最初想的是像最短路题目似的，将超点连向各点的边的权值设为0，最后得出的最短路长度就直接是答案。后来想想不对，朱刘算法第一步找“最小入边集”，那样选出来的最小入边集就是这新增的N条边了。
+②所以为了不影响寻找正常的最小入边集，这新增的N条边的权值应该比最小入边集里所有边的长度都要大，假设最小入边集中最长边长度为X，那这N条新边权值要设为 &gt;= X的一个数。
+③那样做还要先求一遍最小入边集，干脆放大一下，找原图所有边中的最长边，设为Y，那么这N条新边的边权要 &gt;= Y;
+④还有个问题，我在求最小树形图时，用了两条“新边”（理论上应该只用一条：u=伪根，v=真根 の那条边），后期无法鉴别。而倘若我直接把“新边”边权设为sum(原图所有边的边权和)，最后答案小于2倍的sum才算真正找到了最小树形图。
+所以说N条新边的边权应 &gt;= sum，最后记得从答案里减掉一个新边边权。
+关于寻找“真根”：
+理论上来说，在选最小入边集时，我们记录了每个点的前驱，if(u == 伪根) 则v == 真根。但还要“缩点 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点(0~N-1)M条有向边，不定根(任意一点可选做根节点)求最小树形图</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/04/HDU-2121-Ice-cream-s-world-II-Minimum-tree-shape-graph/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/04/03/POJ-3164-Command-Network-Minimum-tree-shape-graph/" class="item-title">POJ 3164 Command Network(Minimum tree-shape graph)</a>
       
       <time datetime="2020-04-03T04:49:19.000Z">
@@ -545,60 +581,6 @@ void init()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/17/HDU-1540-Tunnel-Warfare-Segment-Tree/" class="item-title">HDU 1540 Tunnel Warfare(Segment Tree)</a>
-      
-      <time datetime="2020-03-17T07:09:58.000Z">
-        2020-03-17
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-可以用 线段树 || 树状数组 || set 
-线段树：
-a[num].lmax：包含区间左端点的最大连续子区间长度
-a[num].rmax：包含区间右端点的最大连续子区间长度
-a[num].ans：本区间最大连续子区间长度（仅用于剪枝：==0 return）
-举例：
-query(int num, int t)
-int mid = (a[num].L + a[num].R) &gt;&gt; 1;
-if(t &lt;= mid)
-{
-    if(a[num &lt;&lt; 1].rmax &gt;= mid - t + 1)
-    {
-        ans += a[num &lt;&lt; 1].rmax + a[num &lt;&lt; 1 | 1].lmax;
-        return ;
-    }
-    else
-        query(num &lt;&lt; 1, t);
-}
-else
-
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream& -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点(1 ~ N)，M个操作</p>
-<p>D x 破坏点x</p>
-<p>Q x 查询与x直接或间接相连的点（包括x自身）</p>
-<p>R x 修复最近一次被破坏的点</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/17/HDU-1540-Tunnel-Warfare-Segment-Tree/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -645,7 +627,7 @@ Code#include &lt;cstdio&gt;
   <div class="widget-box">
     <h3 class="widget-title-archive">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
     </div>
   </div>
 
@@ -657,6 +639,10 @@ Code#include &lt;cstdio&gt;
     <h3 class="widget-title-post">recent_posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
+          </li>
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
@@ -672,10 +658,6 @@ Code#include &lt;cstdio&gt;
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/29/High-order-component/">Vue High order component</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
           </li>
         
       </ul>

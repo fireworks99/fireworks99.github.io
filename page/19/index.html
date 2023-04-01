@@ -112,6 +112,56 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/05/31/扩展欧几里得/" class="item-title">扩展欧几里得</a>
+      
+      <time datetime="2019-05-31T13:54:10.000Z">
+        2019-05-31
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Codeint extgcd(int a, int b,int &amp; x, int &amp; y)
+{
+    int d = a;
+    if(b != 0)
+    {
+        d = extgcd(b, a % b, y, x);
+        y -= (a / b) * x;
+    }
+    else  x = 1, y = 0;
+    return d;
+}
+
+对于方程ax + by = gcd(a, b)；我们设解为x1,  y1
+我们令a = b, b = a % b;
+得到方程bx + a % by = gcd(b， a % b);
+由欧几里得算法可以得到gcd(a, b) = gcd(b, a % b);
+代入可得：bx + a % b y = gcd(a, b)
+设此方程解为x2, y2；
+在计算机中我们知道： a % b = a - (a / b) * b;
+代入方程化解得：
+ay2 + b(x2 - (a / b) y2) = gcd(a, b);
+与ax1 + by1 = gcd(a, b) 联立，我们很容易得：
+
+x1 = y2, -->
+        <!-- </div> -->
+
+        
+        <h1 id="扩展欧几里得"><a href="#扩展欧几里得" class="headerlink" title="扩展欧几里得"></a>扩展欧几里得</h1><blockquote>
+<p>扩展欧几里德算法是用来在已知a, b求解一组x，y，使它们满足贝祖等式： ax+by = gcd(a, b) =d（解一定存在，根据数论中的相关定理）。扩展欧几里德常用在求解模线性方程及方程组中。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/05/31/扩展欧几里得/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/05/31/SDNUOJ-1539-恰当选择DP对象/" class="item-title">SDNUOJ 1539 恰当选择DP对象</a>
       
       <time datetime="2019-05-31T10:18:56.000Z">
@@ -559,55 +609,6 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/05/13/Hexo-博客跳过渲染，创建自定义网页/" class="item-title">Hexo 博客跳过渲染，创建自定义网页</a>
-      
-      <time datetime="2019-05-13T01:31:58.000Z">
-        2019-05-13
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 自定义网页
-页可以是自己编写的，也可以是别人现成的源码。 网页编写完成后，在 Hexo\source 目录下创建一个文件夹，文件夹名称任意，将 Html 文件放置于此文件夹，并重命名为 index.html 。 
-
-方法一
-在html文件中添加跳过渲染指令：
-用编辑器打开 Hexo\source 创建的文件夹中的 index.html 文件，在开头添加如下代码即可
-
----
-layout: false
----
-
-
-添加该指令后，执行 hexo g 命令时便会跳过该 index.html 文件，使得 index.html 不受当前 hexo 主题影响，完全是一个独立的网页。
-如果网页引用了 css 或 js ，这些 css 和 js 必须使用外链。
-如果引用图片，可以在网页目录下建立 img 文件夹，可以直接引用图片，不必再去创建外链。
-
-方法二
-使用编辑器打开 Hexo 目录下的_config.yml 文件，找到 skip_render
-skip_render 一般有以下四种常用参数：
-
-跳过source目录下的 test.html: skip_render: test.html 
-
- -->
-        <!-- </div> -->
-
-        
-        <blockquote>
-<p>Hexo 博客中所见文章都是经由渲染的静态网页，而静态网页的样式都直接由 Hexo 的主题控制，所以 Hexo 博客大部分都呈现出一种高度的统一化与规范化。不过 Hexo 提供了跳过渲染功能，使得我们可以直接在博客中放入自定义网页。比如在博客中放入图片、自定义 404.html 、自定义 About 页面等。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/05/13/Hexo-博客跳过渲染，创建自定义网页/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -654,7 +655,7 @@ skip_render 一般有以下四种常用参数：
   <div class="widget-box">
     <h3 class="widget-title-archive">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
     </div>
   </div>
 
@@ -666,6 +667,10 @@ skip_render 一般有以下四种常用参数：
     <h3 class="widget-title-post">recent_posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
+          </li>
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
@@ -681,10 +686,6 @@ skip_render 一般有以下四种常用参数：
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/29/High-order-component/">Vue High order component</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
           </li>
         
       </ul>

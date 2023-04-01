@@ -112,6 +112,51 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/01/12/SDNUOJ-1045-石子合并-区间DP/" class="item-title">石子合并(区间DP)</a>
+      
+      <time datetime="2020-01-12T08:06:31.000Z">
+        2020-01-12
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+一大堆石子由两小堆石子堆成，此次操作的得分为两小堆石子质量之和，而倘若这两小堆石子又各是由两小小堆石子堆成，那么此次操作的得分是：两堆石子之和 + 堆成第一堆的得分 + 堆成第二堆的得分
+状态转移方程：
+dp[i][j] = dp[i][k] + dp[k + 1][j] + (sum[j] - sum[i - 1]) 
+
+Code of SDNUOJ 1045#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#incl -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>有n堆石子排成一行，每次选择相邻的两堆石子，将其合并为一堆，记录该次合并的得分为两堆石子个数之和。已知每堆石子的石子个数，求当所有石子合并为一堆时，最小的总得分。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/01/12/SDNUOJ-1045-石子合并-区间DP/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/12/09/2019-ICPC-Asia-Nanchang-Regional/" class="item-title">2019 ICPC Asia Nanchang Regional</a>
       
       <time datetime="2019-12-09T11:46:05.000Z">
@@ -583,61 +628,6 @@ vector&lt; -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/04/POJ-3207-Ikki-s-Story-IV-2-sat/" class="item-title">POJ 3207 Ikki&#39;s Story IV(2-sat)</a>
-      
-      <time datetime="2019-11-04T12:07:41.000Z">
-        2019-11-04
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 2-sat
-什么是2-SAT呢？就是
-①有一些集合，(对应此题中有一些边)
-②每个集合中有且仅有两个元素，(某条边是从圈内连or从圈外连)
-③两个元素必须且只能选一个，(从圈内连或者从圈外连，二选一)
-④集合间的元素存在一定的选择关系，(边不能相交)
-求解可行性及可行方案。
-
-算法过程
-1、连边
-2、跑Tarjan
-3、判可行性，即同一集合中的两个点是否同属一个强连通块
-(若不求可行方案，到此步即可)
-4、缩点建新图，连反边
-5、拓扑序，若当前点没有被访问过，则选择该点，不选择其另外的点
-
-Analyze
-对于此题，连线对应区间如果相交，那么两线不能同时在圈内或同时在圈外
-
-Code#include &lt;stack&gt;
-#include &lt;vector&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-stack&lt;int&gt; st;
-vector&lt;int -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点按顺序排列在一个圆环上，要连接M条边，可从圈内连，可从圈外连，问能否实现各边不相交</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/04/POJ-3207-Ikki-s-Story-IV-2-sat/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -684,7 +674,7 @@ vector&lt;int -->
   <div class="widget-box">
     <h3 class="widget-title-archive">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
     </div>
   </div>
 
@@ -696,6 +686,10 @@ vector&lt;int -->
     <h3 class="widget-title-post">recent_posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
+          </li>
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
@@ -711,10 +705,6 @@ vector&lt;int -->
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/29/High-order-component/">Vue High order component</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
           </li>
         
       </ul>

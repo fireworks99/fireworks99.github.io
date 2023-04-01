@@ -112,6 +112,52 @@
     
     <div class="recent-post-item">
 
+      <a href="/2022/10/09/window-postMessage/" class="item-title">window.postMessage</a>
+      
+      <time datetime="2022-10-09T01:59:58.000Z">
+        2022-10-09
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 1.用法发送消息的页面：
+targetWindow.postMessage(data, targetOrigin, [transfer]);
+
+接收消息的页面
+window.addEventListener(&quot;message&quot;, function(e) {
+    xxx = e.source;
+    xxx = e.data;
+})
+
+window.addEventListener(&quot;message&quot;, function(e) {})
+等效于
+window.onmessage = function(e) {}
+2.应用发送消息的页面
+file:///Users/xxx/xxx/daily/postMessage/postMessage.html
+&lt;body&gt;
+    &lt;textarea name=&quot;text&quot; id=&quot;text&quot; cols=&quot;30&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+    &lt;button id= -->
+        <!-- </div> -->
+
+        
+        <blockquote>
+<p>window.postMessage()方法可以安全地实现<strong>跨域通信</strong>。</p>
+<p>何为<strong>跨域</strong>？</p>
+<p><strong>同源</strong>：如果两个URL的协议(protocol，如ftp、http)、主机(host，如blog.csdn.net)、端口号(port，如80、5500)三者都相同，那么这两个URL是同源。否则两者的通信需要跨域。</p>
+<p>值得注意的是，域(domain)、源(origin)两者不是一回儿事，比如<code>https://blog.csdn.net</code>，其域<code>document.domain</code>为<code>csdn.net</code>，而其源之主机<code>window.location.host</code>为<code>blog.csdn.net</code>。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2022/10/09/window-postMessage/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2022/09/28/Vue-filters/" class="item-title">Vue filters</a>
       
       <time datetime="2022-09-28T09:23:50.000Z">
@@ -492,61 +538,6 @@ Unpacking  -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/11/17/Recursive-least-square/" class="item-title">Recursive least square</a>
-      
-      <time datetime="2020-11-17T08:56:37.000Z">
-        2020-11-17
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 设 \phi_0, \phi_1, ... \phi_n 是n+1个线性无关的连续函数，G_n 是由  \phi_i(i=0,1...n) 的所有线性组合构成的集合，记 G_n = span \{ \phi_0, \phi_1,...,\phi_n \} ，G(x)\in G_n 。
-将 G(x) 写成矩阵的形式：
-\begin{bmatrix}
-G(x_1)\\ G(x_2) \\ \vdots\\ G(x_k)
-\end{bmatrix}=\begin{bmatrix} \phi_0(x_1) & \phi_1(x_1) & \cdots & \phi_n(x_1) \\ \phi_0(x_2) & \phi_1(x_2) & \cdots & \phi_n(x_2) \\
-\vdots & \vdots & \vdots & \vdots \\
-\phi_0(x_k) & \phi_1(x_k) & \cdots & \phi_n(x_k) \\
-\end{bmatrix}\begin{bmatrix}
-a_0\\ a_1 \\ \vdots\\ a_n
-\end{bmatrix -->
-        <!-- </div> -->
-
-        
-        <p>给定一组样本点：</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><script type="math/tex">x_1</script></th>
-<th style="text-align:center"><script type="math/tex">x_2</script></th>
-<th style="text-align:center">…</th>
-<th style="text-align:center"><script type="math/tex">x_k</script></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><script type="math/tex">y_1</script></td>
-<td style="text-align:center"><script type="math/tex">y_2</script></td>
-<td style="text-align:center">…</td>
-<td style="text-align:center"><script type="math/tex">y_k</script></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>求拟合函数 <script type="math/tex">G(x)</script> 使得 <script type="math/tex">\sum_{i=1}^k (G(x_i)-y_i)^2</script> 取最小值。</p>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/11/17/Recursive-least-square/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -593,7 +584,7 @@ a_0\\ a_1 \\ \vdots\\ a_n
   <div class="widget-box">
     <h3 class="widget-title-archive">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
     </div>
   </div>
 
@@ -605,6 +596,10 @@ a_0\\ a_1 \\ \vdots\\ a_n
     <h3 class="widget-title-post">recent_posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
+          </li>
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
@@ -620,10 +615,6 @@ a_0\\ a_1 \\ \vdots\\ a_n
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/29/High-order-component/">Vue High order component</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/28/Vue-Render-Function/">Vue Render Function</a>
           </li>
         
       </ul>

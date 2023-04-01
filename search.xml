@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Vue 表单验证</title>
+      <link href="2023/04/01/Vue-%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/"/>
+      <url>2023/04/01/Vue-%E8%A1%A8%E5%8D%95%E9%AA%8C%E8%AF%81/</url>
+      
+        <content type="html"><![CDATA[<h2 id="表单验证-响应性"><a href="#表单验证-响应性" class="headerlink" title="表单验证+响应性"></a>表单验证+响应性</h2><p>实时验证表单填写是否正确</p><a id="more"></a><pre><code class="lang-html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;form @submit=&quot;validate&quot;&gt;            &lt;input v-model=&quot;text&quot;&gt;            &lt;br&gt;            &lt;input v-model=&quot;email&quot;&gt;            &lt;ul v-if=&quot;!$v.valid&quot; style=&quot;color:red&quot;&gt;                &lt;li v-for=&quot;error in $v.errors&quot;&gt;                    {{ error }}                &lt;/li&gt;            &lt;/ul&gt;            &lt;input type=&quot;submit&quot; :disabled=&quot;!$v.valid&quot;&gt;        &lt;/form&gt;    &lt;/div&gt;    &lt;script&gt;        const validationPlugin = {            install(Vue) {                Vue.mixin({                    beforeCreate() {                        if (this.$options.validations) {                            this.$options.computed = Object.assign({}, this.$options.computed, {                                $v() {                                    let errors = []                                    let valid = true                                    const rules = this.$options.validations                                    Object.keys(rules).forEach(key =&gt; {                                        const rule = rules[key]                                        const value = this[key]                                        const result = rule.validate(value)                                        if (!result) {                                            valid = false                                            errors.push(rule.message(key, value))                                        }                                    })                                    return {                                        errors,                                        valid                                    }                                }                            })                        }                    }                })            }        }        Vue.use(validationPlugin)        const emailRE = /^(([^&lt;&gt;()[\]\\.,;:\s@\&quot;]+(\.[^&lt;&gt;()[\]\\.,;:\s@\&quot;]+)*)|(\&quot;.+\&quot;))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/        new Vue({            el: &#39;#app&#39;,            data: {                text: &#39;foo&#39;,                email: &#39;&#39;            },            validations: {                text: {                    validate: value =&gt; value.length &gt;= 5,                    message: (key, value) =&gt; `${key} should have a min length of 5, but got ${value.length}`                },                email: {                    validate: value =&gt; emailRE.test(value),                    message: key =&gt; `${key} must be a valid email`                }            },            methods: {                validate(e) {                    if (!this.$v.valid) {                        e.preventDefault()                        alert(&#39;not valid!&#39;)                    }                }            }        })    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> VueのPlugin </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>arr.some</title>
       <link href="2023/03/31/arr-some/"/>
       <url>2023/03/31/arr-some/</url>
