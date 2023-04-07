@@ -112,6 +112,46 @@
     
     <div class="recent-post-item">
 
+      <a href="/2023/04/07/Vue-childProps-sync-parentData/" class="item-title">Vue :childProps.sync=&#39;parentData&#39;</a>
+      
+      <time datetime="2023-04-07T10:55:46.000Z">
+        2023-04-07
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+      -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Vue中，父组件通过props向子组件传递数据，如果子组件想要修改这一数据，只能通过$emit触发父组件的一个事件，在这个事件的处理方法中修改这个值。</p>
+<p>现在有一种方法可以省略父组件中的这个method：</p>
+<p><code>&lt;cpn :childProps.sync=&#39;parentData&#39;&gt;&lt;/cpn&gt;</code></p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2023/04/07/Vue-childProps-sync-parentData/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2023/04/01/Vue-i18n/" class="item-title">Vue i18n</a>
       
       <time datetime="2023-04-01T03:04:05.000Z">
@@ -496,72 +536,6 @@ Object.defineProperty(state, &quot;a&quot;, {
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2022/12/02/JavaScript-Global-Object/" class="item-title">JavaScript Global Object</a>
-      
-      <time datetime="2022-12-02T09:59:18.000Z">
-        2022-12-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-唯一核心全局对象
-
-Web浏览器
-
-①.通常情况下：Window对象
-②.Worker(后台任务)：WorkerGlobalScope对象
-
-web 浏览器中，脚本创建的全局变量作为该全局对象的成员被创建
-var a = 1;     =&gt;     a === window.a    is true (var is ok, let is not)
-function run(){}    =&gt;    run === window.run    is true
-
-
-
-
-
-Node.js
-
-③.Global对象
-
-
-
-
-标准内置对象
-
-值：Infinity / NaN / undefined / globalThis
-
-函数：parseInt() / eval() / isNaN() / …… 
-
-基本对象：Object / Function / Boolean / Symbol
-
-错误对象：Error / ReferenceError / TypeError / ……
-
-数字对象：Number / BigInt / Math
-
-日期对象：Date
-
-字符串：String /  -->
-        <!-- </div> -->
-
-        
-        <h1 id="JavaScript-Global-Objects"><a href="#JavaScript-Global-Objects" class="headerlink" title="JavaScript Global Objects"></a>JavaScript Global Objects</h1><blockquote>
-<p>全局对象，是指存在于全局作用域中的对象。</p>
-<p>狭义上的全局对象是指<strong>唯一核心全局对象</strong></p>
-<p>广义上的全局对象包括唯一核心全局对象的成员：<strong>标准内置对象</strong></p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2022/12/02/JavaScript-Global-Object/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -622,6 +596,10 @@ Node.js
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -635,10 +613,6 @@ Node.js
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>

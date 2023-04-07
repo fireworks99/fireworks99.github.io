@@ -112,6 +112,53 @@
     
     <div class="recent-post-item">
 
+      <a href="/2022/03/01/bilibiliClickProgressBar-development-process/" class="item-title">bilibiliClickProgressBar development process</a>
+      
+      <time datetime="2022-03-01T07:37:40.000Z">
+        2022-03-01
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 在background.js中监听右键菜单的点击，若所点击的选项是我们所创建的那个，则通知content script完成“添加时间标签”的功能。
+chrome.contextMenus.onClicked.addListener(function (data) {
+  if(data.menuItemId === &quot;addTimeTag&quot;) {
+
+    //后台脚本可以访问所有WebExtension JavaScript APIS，但是他们不能直接访问网页的内容(而 content script 可以)
+    // console.log(window);//undefined
+
+
+
+    callContentScript({info: &quot;background: addTimeTag&quot;}, function (res) {
+      console.log(res);
+      let notifyOptions = {
+        type: &quot;basic&quot;,
+        title: &quot;B -->
+        <!-- </div> -->
+
+        
+        <h1 id="bilibiliClickProgressBar-开发过程"><a href="#bilibiliClickProgressBar-开发过程" class="headerlink" title="bilibiliClickProgressBar 开发过程"></a>bilibiliClickProgressBar 开发过程</h1><h2 id="1-创建右键菜单"><a href="#1-创建右键菜单" class="headerlink" title="1.创建右键菜单"></a>1.创建右键菜单</h2><p>background.js中，当扩展(Extension)首次安装、升级，或chrome升级时，创建右键菜单。</p>
+<pre><code class="lang-javascript">chrome.runtime.onInstalled.addListener(() =&gt; {
+  chrome.contextMenus.create({
+    &quot;id&quot;: &quot;addTimeTag&quot;,
+    &quot;title&quot;: &quot;添加时间标签&quot;,
+    &quot;contexts&quot;: [&quot;page&quot;],
+    &quot;documentUrlPatterns&quot;: [&quot;*://*.bilibili.com/*&quot;]
+  });
+});
+</code></pre>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2022/03/01/bilibiliClickProgressBar-development-process/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/11/27/My-way-to-upload-my-project-to-github/" class="item-title">My way to upload my project to github</a>
       
       <time datetime="2020-11-27T04:08:51.000Z">
@@ -523,40 +570,6 @@ router.post(&#39;/uploadImg&#39;, function (req, res) {
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/09/22/Web-Upload-files-to-Server/" class="item-title">Upload files to Server</a>
-      
-      <time datetime="2020-09-22T04:05:11.000Z">
-        2020-09-22
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- HTML&lt;form action=&quot;http://localhost:3000/uploadImg&quot;
-              method=&quot;post&quot;
-              enctype=&quot;multipart/form-data&quot;
-              class=&quot;ava_form&quot;&gt;
-    &lt;label class=&quot;ava_change_text&quot;&gt;头像(可更换)&lt;/label&gt;
-
-    &lt;input name=&quot;imgFile&quot; type=&quot;file&quot; accept=&quot;image/gif, image/jpeg&quot; class=&quot;ava_change_file&quot; /&gt;
-    &lt;input name=&quot;upload&quot; type=&quot;submit&quot; value=&quot;提交&quot;  -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>通过form表单提交文件到服务器</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/09/22/Web-Upload-files-to-Server/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -617,6 +630,10 @@ router.post(&#39;/uploadImg&#39;, function (req, res) {
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -630,10 +647,6 @@ router.post(&#39;/uploadImg&#39;, function (req, res) {
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>

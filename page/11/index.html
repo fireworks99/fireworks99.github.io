@@ -112,6 +112,58 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/10/21/HDU-1506-Largest-Rectangle-in-a-Histogram/" class="item-title">HDU 1506 Largest Rectangle in a Histogram</a>
+      
+      <time datetime="2019-10-21T12:09:41.000Z">
+        2019-10-21
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 单调栈功能
+1.利用单调栈，可以找到从左/右遍历第一个比它小/大的元素的位置
+2.以自己为最小或最大值找到最大的区间(对应 单调递增/单调递减)同1.
+3.给定一个区间，找到这个区间的最大或最小值
+此题用到了功能2，功能2是在1的基础上的
+单调栈的维护是 O(n) 级的时间复杂度，因为所有元素只会进入栈一次，并且出栈后再也不会进栈了。
+
+Code#include &lt;stack&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+#define ll long long
+const int N = 100100;
+
+ll h[N];
+int L[N], R[N];
+stack&lt;int&gt; sk;
+
+///单调栈维护了一个单调递增序列，但它栈内元素甚至连单调都算不上
+///单调栈:栈内越靠近栈顶的下标所对应的高度越高
+///但栈内所存的，终究还是下标
+int main()
+{
+    int n;
+    while(~scanf(&quot;%d&quot;, &amp;n) -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>可以理解为：在一幅柱状图里找出最大的矩形</p>
+<p>也可以理解为：找一个最大的矩形去覆盖柱子且不能覆盖空白处</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/10/21/HDU-1506-Largest-Rectangle-in-a-Histogram/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/10/20/HDU-4135-Co-prime-容斥原理/" class="item-title">HDU 4135 Co-prime 容斥原理</a>
       
       <time datetime="2019-10-20T09:04:28.000Z">
@@ -552,55 +604,6 @@ usi -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/30/POJ-3169-Layout-最短路解差分约束/" class="item-title">POJ 3169 Layout(最短路解差分约束)</a>
-      
-      <time datetime="2019-08-30T11:58:59.000Z">
-        2019-08-30
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 差分约束系统
-如果一个系统由n个变量和m个约束条件组成，
-形成m个形如 ai - aj ≤ k 的不等式(i,j∈[1,n],k为常数),
-则称其为差分约束系统
-
-举例
-给定n个变量和m个不等式，
-每个不等式的形式为 x[i] - x[j] &lt;= a[k] (0 &lt;= i, j &lt; n, 0 &lt;= k &lt; m， a[k]已知)，
-求 x[i] - x[j] 的最大值。
-例如当n = 4，m = 5，给出如下图所示的不等式组，求x3 - x0的最大值
-
-
-
-观察x3 - x0的性质，我们如果可以通过不等式的两两加和得到c个形如 x3 - x0 &lt;= Ti 的不等式，那么 min{ Ti | 0 &lt;= i &lt; c } 就是我们要求的x3 - x0的最大值
-x3 - x0 &lt;= 8                (3)
-x3 - x0 &lt;= 9                (2)+(5)
-x3 - x0 &lt;= 7                (1)+(4)+(5)
-要同时满足，答案取7
-
-求差分约束系统转为求单源最短路x[ -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N头牛(1~N)按序号排成一排</p>
-<p>L个最大距离限制：某两头牛至多相距某个距离</p>
-<p>D个最小距离限制：某两头牛至少相距某个距离</p>
-<p>求第一头牛与第n头牛之间的最大距离</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/30/POJ-3169-Layout-最短路解差分约束/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -661,6 +664,10 @@ x3 - x0 &lt;= 7                (1)+(4)+(5)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -674,10 +681,6 @@ x3 - x0 &lt;= 7                (1)+(4)+(5)
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>

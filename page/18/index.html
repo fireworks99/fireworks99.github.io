@@ -112,6 +112,61 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/06/07/Aizu-0121-Seven-Puzzle/" class="item-title">Aizu 0121 Seven Puzzle</a>
+      
+      <time datetime="2019-06-07T03:20:22.000Z">
+        2019-06-07
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Ideahttps://cn.vjudge.net/problem/Aizu-0121
+
+多组输入易超时的题：打表O（1）查询
+打表：反向BFS，求出“01234567”到其他排列的最小步数
+
+Code#include &lt;map&gt;
+#include &lt;cmath&gt;
+#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+map&lt;string, int&gt; mp;
+map&lt;string, bool&gt; vis;
+int dir[] = {1, -1, 4, -4};
+
+struct node
+{
+    string s;
+    int zero, step;
+};
+
+void BFS()
+{
+    strin -->
+        <!-- </div> -->
+
+        
+        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><blockquote>
+<p>给你一个4x2的方版，上面有0-7 八个数字，每次只能让编号0的方格跟他的上下左右的方格交换；所以也就是把方格0当做空格看待，每次只有空格周围的方格能够向空格处移动。   然后问从输入的方格样式变换到字典序最小的”01234567” 最少需要多少次. </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/06/07/Aizu-0121-Seven-Puzzle/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/06/06/Python-study/" class="item-title">python study</a>
       
       <time datetime="2019-06-06T13:49:26.000Z">
@@ -546,63 +601,6 @@ Codedouble x1, y1, x2, y2, x3, y3, x4, y4, lux, luy, rdx, rdy;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/06/02/POJ-3723-Conscription/" class="item-title">POJ 3723 Conscription</a>
-      
-      <time datetime="2019-06-02T06:44:47.000Z">
-        2019-06-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Idea
-将女生标号（0~ n-1）偏移在男生（0 ~ m-1）之上: （m ~ m+n-1）构成图
-其实关系值d代表应征一个人可以减少的花费，那么求一个最大生成树即最多减少的花费
-10000 * （n + m） - 最大生成树 即最终的最少花费
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 100005;
-
-int n, m, r, ans;
-int pre[N * 2];
-
-int cnt;
-struct edge
-{
-    int there, here, w;
-} a[N * 2];
-
-bool cmp(edge a, edge b)
-{
-    return a.w &gt; b.w;
-}
-
-void init()
-{
-    ans = 0;
-    for(int i = 0; i &lt;= n + m; ++i)
-        p -->
-        <!-- </div> -->
-
-        
-        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><blockquote>
-<p>对n个女生m个男生征兵，这些女生中部分与男生间有关系d，征一人入伍需10000，若一女生已被征，去征召跟她有关系d的男生只需花费10000-d，相反亦然。问征全部人最小花费</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/06/02/POJ-3723-Conscription/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -663,6 +661,10 @@ void init()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -676,10 +678,6 @@ void init()
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>

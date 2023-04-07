@@ -112,6 +112,56 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/01/19/POJ-2502-Subway-最短路-自行建图/" class="item-title">POJ 2502 Subway(最短路,自行建图)</a>
+      
+      <time datetime="2020-01-19T10:27:30.000Z">
+        2020-01-19
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+此题最重要的地方在于建模：构图。
+将家设为点0，学校设为点1，每个地铁站(假设共有x个)站点都设为一点，相邻两个之间的边(地铁边)的权值是距离/地铁速度。将这(x+2)个点中任意两个之间建立步行边，权值是距离/步行速度。
+
+Code#include &lt;cmath&gt;
+#include &lt;string&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const double eps = 1e-8;
+const double INF = double(0x3f3f3f3f);
+
+typedef pair&lt;double, double&gt; P;
+P node[505];
+int cnt;
+double e[220][220];
+
+double dis(P a, P b)
+{
+    return sqrt( (a.first - b.first)  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>小k要从家去学校，他可以选择步行或者地铁，步行的速度是10km/h，地铁的速度是40km/h。(忽略等待地铁的时间)</p>
+<p>小k可以随意上下地铁，并且可以(通过步行)在地铁线路之间转换。所有的地铁运行都是双向的。</p>
+<p>求从家到校的最短用时。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/01/19/POJ-2502-Subway-最短路-自行建图/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/01/18/POJ-3159-Candies-最短路解差分约束/" class="item-title">POJ 3159 Candies(最短路解差分约束)</a>
       
       <time datetime="2020-01-18T11:25:51.000Z">
@@ -559,64 +609,6 @@ bool check (int x, int y, int num)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/08/HDU-2586-How-far-away-LCA/" class="item-title">HDU 2586 How far away(LCA)</a>
-      
-      <time datetime="2019-11-08T11:54:12.000Z">
-        2019-11-08
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-https://blog.csdn.net/nameofcsdn/article/details/52230548
-
-Code（RMQ~ST离线做法）#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 41000;
-
-int n, m;
-int tot;//遍历数
-int dis[N];//距离根节点1的距离
-
-
-struct node
-{
-    int v, w, pre;
-} a[N * 2];
-int head[N * 2], cnt = 1;
-
-void add_edge(int u, int v, int w)
-{
-    a[cnt].v = v;
-    a[cnt].w = w;
-    a[cnt].pre = head[u];
-    head[u] = cnt++;
-}
-
-
-bool -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n个点，n - 1条边连起来(构成了一棵树)，无更新操作，查询任意两点间距离</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/08/HDU-2586-How-far-away-LCA/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -677,6 +669,10 @@ bool -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -690,10 +686,6 @@ bool -->
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>

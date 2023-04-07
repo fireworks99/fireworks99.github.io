@@ -112,6 +112,72 @@
     
     <div class="recent-post-item">
 
+      <a href="/2022/12/02/JavaScript-Global-Object/" class="item-title">JavaScript Global Object</a>
+      
+      <time datetime="2022-12-02T09:59:18.000Z">
+        2022-12-02
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+唯一核心全局对象
+
+Web浏览器
+
+①.通常情况下：Window对象
+②.Worker(后台任务)：WorkerGlobalScope对象
+
+web 浏览器中，脚本创建的全局变量作为该全局对象的成员被创建
+var a = 1;     =&gt;     a === window.a    is true (var is ok, let is not)
+function run(){}    =&gt;    run === window.run    is true
+
+
+
+
+
+Node.js
+
+③.Global对象
+
+
+
+
+标准内置对象
+
+值：Infinity / NaN / undefined / globalThis
+
+函数：parseInt() / eval() / isNaN() / …… 
+
+基本对象：Object / Function / Boolean / Symbol
+
+错误对象：Error / ReferenceError / TypeError / ……
+
+数字对象：Number / BigInt / Math
+
+日期对象：Date
+
+字符串：String /  -->
+        <!-- </div> -->
+
+        
+        <h1 id="JavaScript-Global-Objects"><a href="#JavaScript-Global-Objects" class="headerlink" title="JavaScript Global Objects"></a>JavaScript Global Objects</h1><blockquote>
+<p>全局对象，是指存在于全局作用域中的对象。</p>
+<p>狭义上的全局对象是指<strong>唯一核心全局对象</strong></p>
+<p>广义上的全局对象包括唯一核心全局对象的成员：<strong>标准内置对象</strong></p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2022/12/02/JavaScript-Global-Object/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2022/10/10/同一局域网下两主机通信/" class="item-title">同一局域网下两主机通信</a>
       
       <time datetime="2022-10-10T05:19:41.000Z">
@@ -488,53 +554,6 @@ DOM node 不一定非得是 HTML element，像comments、attribute、text（注�
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2022/03/01/bilibiliClickProgressBar-development-process/" class="item-title">bilibiliClickProgressBar development process</a>
-      
-      <time datetime="2022-03-01T07:37:40.000Z">
-        2022-03-01
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 在background.js中监听右键菜单的点击，若所点击的选项是我们所创建的那个，则通知content script完成“添加时间标签”的功能。
-chrome.contextMenus.onClicked.addListener(function (data) {
-  if(data.menuItemId === &quot;addTimeTag&quot;) {
-
-    //后台脚本可以访问所有WebExtension JavaScript APIS，但是他们不能直接访问网页的内容(而 content script 可以)
-    // console.log(window);//undefined
-
-
-
-    callContentScript({info: &quot;background: addTimeTag&quot;}, function (res) {
-      console.log(res);
-      let notifyOptions = {
-        type: &quot;basic&quot;,
-        title: &quot;B -->
-        <!-- </div> -->
-
-        
-        <h1 id="bilibiliClickProgressBar-开发过程"><a href="#bilibiliClickProgressBar-开发过程" class="headerlink" title="bilibiliClickProgressBar 开发过程"></a>bilibiliClickProgressBar 开发过程</h1><h2 id="1-创建右键菜单"><a href="#1-创建右键菜单" class="headerlink" title="1.创建右键菜单"></a>1.创建右键菜单</h2><p>background.js中，当扩展(Extension)首次安装、升级，或chrome升级时，创建右键菜单。</p>
-<pre><code class="lang-javascript">chrome.runtime.onInstalled.addListener(() =&gt; {
-  chrome.contextMenus.create({
-    &quot;id&quot;: &quot;addTimeTag&quot;,
-    &quot;title&quot;: &quot;添加时间标签&quot;,
-    &quot;contexts&quot;: [&quot;page&quot;],
-    &quot;documentUrlPatterns&quot;: [&quot;*://*.bilibili.com/*&quot;]
-  });
-});
-</code></pre>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2022/03/01/bilibiliClickProgressBar-development-process/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -595,6 +614,10 @@ chrome.contextMenus.onClicked.addListener(function (data) {
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -608,10 +631,6 @@ chrome.contextMenus.onClicked.addListener(function (data) {
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>

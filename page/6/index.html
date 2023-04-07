@@ -112,6 +112,49 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/05/UVA-10766-Organising-the-Organisation-Count-spanning-tree/" class="item-title">UVA 10766 Organising the Organisation(Count spanning tree)</a>
+      
+      <time datetime="2020-04-05T08:13:55.000Z">
+        2020-04-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+
+可证的事实：如果图G是一棵树，那么它的Kirchhoff矩阵的每一个n - 1阶主子式的行列式都是1。
+推理：如果图G包含X棵树，那么它的Kirchhoff矩阵的每一个n - 1阶主子式的行列式都包含X个1，即X
+另外解行列式采用高斯消元(转为上三角行列式)，与线性代数课上所学的方法有点差异，课上的方法直接了当，前面的行不变，处理后面的行，使得下三角逐渐变为全0(从左至右，从上到下)，但会出现小数。为了避免出现小数，采用如下方法：将“首 需处理 行”与“目标行”运算，使首非零元变0，然后交换两行。由于“首 需处理 行”首非零元总是 &gt;= “目标行”首非零元，因此不会出现小数。
+
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define ll long long
+const int N = 55;
+
+int n, m, K;
+ll a[N][N], b[ -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出N个点的无向图的补图，求原图最小生成树的数目</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/05/UVA-10766-Organising-the-Organisation-Count-spanning-tree/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/04/05/HDU-4009-Transfer-water-Minimun-tree-shape-graph/" class="item-title">HDU 4009 Transfer water(Minimun tree-shape graph)</a>
       
       <time datetime="2020-04-04T22:44:05.000Z">
@@ -522,52 +565,6 @@ Code#include &lt;cstdio&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/19/HDU-4614-Vases-and-Flowers-Segment-Tree-and-Binary-Search/" class="item-title">HDU 4614 Vases and Flowers(Segment Tree and Binary Search)</a>
-      
-      <time datetime="2020-03-19T11:22:14.000Z">
-        2020-03-19
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-问题：
-①关于找位置没有思路，不知道线段树的val记录什么才能方便找位置
-②关于更新：区间[X, Y]内的0更新为1，这一点若是单点修改很费时，咋办
-对策：
-①val记录区间内1的个数，二分找答案
-②不需要单点更新，区间更新即可，这种bool状态非此即彼，将区间内非0的单点修改为1等效于将整个区间所有点置1
-
-Something about Segment Tree
-①关于懒惰：
-像维护区间和这种要求，int型的lazy实现了两个作用：
-1.是否需要down 
-2.down的值是多大。
-而本题是维护“状态”(的区间和)，已知知道down多少(即区间长度)，原则上只用bool型变量标记一下就行，但实际上有三个状态(1.不需要down2.down‘1’3.down’0’)，要用int。
-②不用结构体的线段树可以省去建树的过程，但是以后写其他函数形参里都要加两个变量L、R。涉及到子区间先写一下mid。
-③update和query很简单的时候可以写在一起。
-④val down 后是否需要up：视具体情境。
-
-Code#include &lt;cstdio&gt;
-#includ -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>区间[0, n - 1]，初始值全0，有m次操作。<br>操作分两类：<br>1 X Y 从位置X开始寻找Y个0，如果不足Y个，则寻找尽量多的0，并将他们的值全部修改为1，输出第一个和最后一个修改的1的位置。<br>2 X Y 输出区间[ X , Y ]内1的个数，并将区间内的1修改为0。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/19/HDU-4614-Vases-and-Flowers-Segment-Tree-and-Binary-Search/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -628,6 +625,10 @@ Code#include &lt;cstdio&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -641,10 +642,6 @@ Code#include &lt;cstdio&gt;
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>

@@ -112,6 +112,64 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/08/HDU-2586-How-far-away-LCA/" class="item-title">HDU 2586 How far away(LCA)</a>
+      
+      <time datetime="2019-11-08T11:54:12.000Z">
+        2019-11-08
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+https://blog.csdn.net/nameofcsdn/article/details/52230548
+
+Code（RMQ~ST离线做法）#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 41000;
+
+int n, m;
+int tot;//遍历数
+int dis[N];//距离根节点1的距离
+
+
+struct node
+{
+    int v, w, pre;
+} a[N * 2];
+int head[N * 2], cnt = 1;
+
+void add_edge(int u, int v, int w)
+{
+    a[cnt].v = v;
+    a[cnt].w = w;
+    a[cnt].pre = head[u];
+    head[u] = cnt++;
+}
+
+
+bool -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n个点，n - 1条边连起来(构成了一棵树)，无更新操作，查询任意两点间距离</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/08/HDU-2586-How-far-away-LCA/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/05/POJ-3683-Paiest-John-s-Busiest-Day-2-sat-Tarjan-Topo/" class="item-title">POJ 3683 Paiest John&#39;s Busiest Day(2-sat:Tarjan+Topo)</a>
       
       <time datetime="2019-11-05T11:32:29.000Z">
@@ -591,58 +649,6 @@ void Euler(int n)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/10/21/HDU-1506-Largest-Rectangle-in-a-Histogram/" class="item-title">HDU 1506 Largest Rectangle in a Histogram</a>
-      
-      <time datetime="2019-10-21T12:09:41.000Z">
-        2019-10-21
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 单调栈功能
-1.利用单调栈，可以找到从左/右遍历第一个比它小/大的元素的位置
-2.以自己为最小或最大值找到最大的区间(对应 单调递增/单调递减)同1.
-3.给定一个区间，找到这个区间的最大或最小值
-此题用到了功能2，功能2是在1的基础上的
-单调栈的维护是 O(n) 级的时间复杂度，因为所有元素只会进入栈一次，并且出栈后再也不会进栈了。
-
-Code#include &lt;stack&gt;
-#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-using namespace std;
-#define ll long long
-const int N = 100100;
-
-ll h[N];
-int L[N], R[N];
-stack&lt;int&gt; sk;
-
-///单调栈维护了一个单调递增序列，但它栈内元素甚至连单调都算不上
-///单调栈:栈内越靠近栈顶的下标所对应的高度越高
-///但栈内所存的，终究还是下标
-int main()
-{
-    int n;
-    while(~scanf(&quot;%d&quot;, &amp;n) -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>可以理解为：在一幅柱状图里找出最大的矩形</p>
-<p>也可以理解为：找一个最大的矩形去覆盖柱子且不能覆盖空白处</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/10/21/HDU-1506-Largest-Rectangle-in-a-Histogram/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -703,6 +709,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -716,10 +726,6 @@ int main()
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>

@@ -112,6 +112,61 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/19/2019中山大学程序设计竞赛/" class="item-title">2019中山大学程序设计竞赛</a>
+      
+      <time datetime="2019-04-19T13:52:12.000Z">
+        2019-04-19
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 思维
+想一下极限（就是组不成三角形）：1， 2， 3， 5， 8， 13， 21……
+是一个斐波那契数列，然后陷入僵局……然后云龙说斐波那契数列很容易超int，
+试了一下，f[46]就超int了……
+队友给力!!!
+
+思路
+接受输入后，若n&gt;=50(其实n &gt;= 46就行)，直接输出“YES”，否则排序当水题做
+
+Code#include &lt;map&gt;
+#include &lt;set&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 0x3f3f3f3f;
+
+int a[5000005];
+
+int main()
+{
+    int n;
+    while(~scanf(&quot;%d&quot;, &amp;n))
+    {
+      -->
+        <!-- </div> -->
+
+        
+        <h2 id="1002Triangle"><a href="#1002Triangle" class="headerlink" title="1002Triangle"></a>1002Triangle</h2><blockquote>
+<p>给出n个int内的数字，是否有三个数字能作为三角形的三条边</p>
+<p>只是n可能到五百万</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/19/2019中山大学程序设计竞赛/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/18/POJ-2533-Longest-Ordered-Subsequence/" class="item-title">POJ 2533 Longest Ordered Subsequence</a>
       
       <time datetime="2019-04-18T13:17:02.000Z">
@@ -577,60 +632,6 @@ void add(int from, int to, int d, int c)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/12/POJ-3468-A-Simple-Problem-with-Integers/" class="item-title">POJ 3468 A Simple Problem with Integers</a>
-      
-      <time datetime="2019-04-12T12:05:03.000Z">
-        2019-04-12
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 树状数组
-设三个不同的前缀和数组：
-sum[i]:存原始数组前i项的和
-d[i]:存从i到n的增量
-di[i]: 存相应的d[i] * i
-最终ans分两部分（原始前缀和+变化量前缀和）：
-①sum[end] - sum[begin - 1]
-②(end + 1)  query(d, end) - query(di, end) - {[(b - 1) + 1]  query(d, b - 1) - query(di, b - 1)}
-
-分析参考
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 100005;
-
-typedef long long ll;
-
-int n, m;
-///三个不同的前缀和数组
-ll sum[N];
-ll d[N];
-ll di[N];
-
-///树状数组：动态维护&quot;前缀和&quot;
-int lowbit(int pos) -->
-        <!-- </div> -->
-
-        
-        <h3 id="Desscription"><a href="#Desscription" class="headerlink" title="Desscription"></a>Desscription</h3><blockquote>
-<p>n个数字初始化，执行两种操作：更新与查询</p>
-</blockquote>
-<p><strong><a href="http://poj.org/problem?id=3468" style="color:violet;" target="_blank" rel="noopener">题目链接</a></strong></p>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/12/POJ-3468-A-Simple-Problem-with-Integers/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -691,6 +692,10 @@ int lowbit(int pos) -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -704,10 +709,6 @@ int lowbit(int pos) -->
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>

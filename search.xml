@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Vue :childProps.sync=&#39;parentData&#39;</title>
+      <link href="2023/04/07/Vue-childProps-sync-parentData/"/>
+      <url>2023/04/07/Vue-childProps-sync-parentData/</url>
+      
+        <content type="html"><![CDATA[<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Vue中，父组件通过props向子组件传递数据，如果子组件想要修改这一数据，只能通过$emit触发父组件的一个事件，在这个事件的处理方法中修改这个值。</p><p>现在有一种方法可以省略父组件中的这个method：</p><p><code>&lt;cpn :childProps.sync=&#39;parentData&#39;&gt;&lt;/cpn&gt;</code></p><a id="more"></a><pre><code class="lang-html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;!-- &lt;cpn :num=&quot;count&quot; @update:num=&quot;setCount&quot;&gt;&lt;/cpn&gt; --&gt;        &lt;cpn :num.sync=&quot;count&quot;&gt;&lt;/cpn&gt;    &lt;/div&gt;    &lt;script&gt;        const Cpn = {            template: `&lt;div&gt;                            {{this.num}}                            &lt;button @click=&quot;inc&quot;&gt;count = 2&lt;/button&gt;                        &lt;/div&gt;`,            props: [&#39;num&#39;],            methods: {                inc() {                    this.$emit(&quot;update:num&quot;, 2);                }            }        }        const app = new Vue({            el: &quot;#app&quot;,            data() {                return {                    count: 0                }            },            components: {                Cpn            },            methods: {                setCount(value) {                    this.count = value;                }            }        })    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Vueのv-sth </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue i18n</title>
       <link href="2023/04/01/Vue-i18n/"/>
       <url>2023/04/01/Vue-i18n/</url>
@@ -687,9 +706,9 @@
       
         <tags>
             
-            <tag> Vueのaxios </tag>
-            
             <tag> Vueのv-sth </tag>
+            
+            <tag> Vueのaxios </tag>
             
             <tag> NodeJSのmysql </tag>
             

@@ -112,6 +112,69 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/29/HDU-4738-Caocao-s-Bridge-双连通-桥/" class="item-title">HDU 4738 Caocao&#39;s Bridge(双连通+桥)</a>
+      
+      <time datetime="2019-07-29T09:12:49.000Z">
+        2019-07-29
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- judge
+不在环里的边都是桥
+边(from, to)不在环里的标志：low[to] &gt; time[from]
+
+HDU 4738 曹操的桥
+无向图求桥
+坑点：
+
+有重边
+初始不连通
+无人守至少1人去
+
+
+关于vector邻接表、二维邻接矩阵、链式前向星
+
+普通vector邻接表：无需遍历+没有边权
+
+二维邻接矩阵：遍历找边+可存边权
+
+链式前向星：无需遍历+可存边权
+
+普通vector邻接表+二维邻接矩阵：(利用前者)无需遍历+(利用后者)可存边权
+
+以结构体为储存类型的vector：无需遍历+可存边权
+3、5较优，1有缺陷，2耗时间，4耗空间
+
+
+
+Code of this problem（My Code）
+关于处理重边：我用嵌套的map记录重边，重边中的任意一条边均非桥！最后处理时直接跳过
+
+#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std; -->
+        <!-- </div> -->
+
+        
+        <h2 id="桥"><a href="#桥" class="headerlink" title="桥"></a>桥</h2><blockquote>
+<p>无向图中，如果去掉一条边，使得图被分成了几个部分，那么这条边就被称为桥</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/29/HDU-4738-Caocao-s-Bridge-双连通-桥/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/29/POJ-1144-NEtwork-无向图-割点/" class="item-title">POJ 1144 Network(双连通+割点)</a>
       
       <time datetime="2019-07-29T03:24:17.000Z">
@@ -580,55 +643,6 @@ Code#include &lt;cmath&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/22/HDU-1251-统计难题-codevs-4189-字典/" class="item-title">HDU 1251 统计难题 codevs 4189 字典</a>
-      
-      <time datetime="2019-07-22T11:32:50.000Z">
-        2019-07-22
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-学习：https://www.cnblogs.com/TheRoadToTheGold/p/6290732.html
-
-HDU 1251（前缀出现次数）#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-char s[12];
-int tot, trie[400005][26], sum[400005];
-
-void plug(char * s)
-{
-    int root = 0;
-    for(int i = 0; s[i]; ++i)
-    {
-        int x = s[i] - &#39;a&#39;;
-        if(trie[root][x] == 0)
-            trie[root][x] = ++tot;
-        sum[ trie[root][x] ]++;  ///记下该前缀出现次数
-        root = trie[ro -->
-        <!-- </div> -->
-
-        
-        <h2 id="字典树"><a href="#字典树" class="headerlink" title="字典树"></a>字典树</h2><blockquote>
-<p>字典树，Trie树，又称单词查找树或键树，是一种树形结构，是一种哈希树的变种。典型应用是用于统计和排序大量的字符串(但不仅限于字符串)。</p>
-<p>所以经常被搜索引擎系统用于文本词频统计  </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/22/HDU-1251-统计难题-codevs-4189-字典/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -689,6 +703,10 @@ void plug(char * s)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -702,10 +720,6 @@ void plug(char * s)
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>

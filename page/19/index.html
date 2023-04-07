@@ -112,6 +112,63 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/06/02/POJ-3723-Conscription/" class="item-title">POJ 3723 Conscription</a>
+      
+      <time datetime="2019-06-02T06:44:47.000Z">
+        2019-06-02
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Idea
+将女生标号（0~ n-1）偏移在男生（0 ~ m-1）之上: （m ~ m+n-1）构成图
+其实关系值d代表应征一个人可以减少的花费，那么求一个最大生成树即最多减少的花费
+10000 * （n + m） - 最大生成树 即最终的最少花费
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 100005;
+
+int n, m, r, ans;
+int pre[N * 2];
+
+int cnt;
+struct edge
+{
+    int there, here, w;
+} a[N * 2];
+
+bool cmp(edge a, edge b)
+{
+    return a.w &gt; b.w;
+}
+
+void init()
+{
+    ans = 0;
+    for(int i = 0; i &lt;= n + m; ++i)
+        p -->
+        <!-- </div> -->
+
+        
+        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><blockquote>
+<p>对n个女生m个男生征兵，这些女生中部分与男生间有关系d，征一人入伍需10000，若一女生已被征，去征召跟她有关系d的男生只需花费10000-d，相反亦然。问征全部人最小花费</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/06/02/POJ-3723-Conscription/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/06/02/白书-初出茅庐-初级篇/" class="item-title">白书-初出茅庐-初级篇</a>
       
       <time datetime="2019-06-02T03:53:21.000Z">
@@ -565,53 +622,6 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/05/16/那晚，竟然发生这种可怕的事/" class="item-title">那晚，竟然发生这种可怕的事</a>
-      
-      <time datetime="2019-05-16T13:09:23.000Z">
-        2019-05-16
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-
-一道水题PE了近一个小时！！！？？？
-output：
-m行，每行若干个从小到大排好序的、用一个空格隔开的整数 
-
-for(int i = 0; i &lt; m; ++i)
-int sz = vec[a].size();
-for(int j = 0; j &lt; sz; ++j)
-    printf(&quot;%d%c&quot;, vec[a][j], j == sz - 1 ? &#39;\n&#39;: &#39; &#39;);
-
-int sz = vec[a].size();
-for(int j = 0; j &lt; sz; ++j)
-    cout &lt;&lt; vec[a][j] &lt;&lt; &#39; &#39; ;
-cout &lt;&lt; &#39;\n&#39;;
-
-int sz = vec[a].size();
-for(int j = 0; j &lt; sz; ++j)
-    cout &lt;&lt; vec[a][j] &lt;&lt; &#39; &#39; ;
-if(i != m - 1)
-   cout &lt;&lt;  -->
-        <!-- </div> -->
-
-        
-        <h1 id="2019-5-16晚刷水题"><a href="#2019-5-16晚刷水题" class="headerlink" title="2019.5.16晚刷水题"></a>2019.5.16晚刷水题</h1><blockquote>
-<p>本来自在地刷着水题，结果竟然发生这种事！！！？？？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/05/16/那晚，竟然发生这种可怕的事/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -672,6 +682,10 @@ if(i != m - 1)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -685,10 +699,6 @@ if(i != m - 1)
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>

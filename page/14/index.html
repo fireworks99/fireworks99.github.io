@@ -112,6 +112,65 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/07/POJ-3281-Dining-最大流最小割/" class="item-title">POJ 3281 Dining(最大流最小割)</a>
+      
+      <time datetime="2019-08-07T07:53:42.000Z">
+        2019-08-07
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+不可以二分图匹配，因为牛要匹配两种东西，求其跟每种东西的最大匹配，取交集也不是，取并集也不是，需建模用最大流解决
+
+多源点、多汇点要建立超源点、超汇点
+
+牛置于中间，左放食物右放饮料（或反过来）
+
+连线权值为1，求最大流即答案
+要注意：中间的牛要拆点
+
+
+
+关于拆点
+
+很明显,一头牛同时匹配了多种食物饮料,最大流是2,但答案是1(只满足了一头牛)
+
+
+
+限流：限制流经每头牛的流量最大为1
+
+Code#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &l -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>农夫为他的 N (1 ≤ N ≤ 100) 牛准备了 F (1 ≤ F ≤ 100)种食物和 D (1 ≤ D ≤ 100) 种饮料。每头牛都有各自喜欢的食物和饮料，而每种食物或饮料只能分配给一头牛。最多能有多少头牛可以同时得到喜欢的食物和饮料？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/07/POJ-3281-Dining-最大流最小割/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/07/POJ-2516-Minimum-Cost-最小费用最大流/" class="item-title">POJ 2516 Minimum Cost(最小费用最大流)</a>
       
       <time datetime="2019-08-07T02:08:15.000Z">
@@ -582,69 +641,6 @@ bool vis[1005];///在为任务v配对时 选项i是否被访问 -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/29/HDU-4738-Caocao-s-Bridge-双连通-桥/" class="item-title">HDU 4738 Caocao&#39;s Bridge(双连通+桥)</a>
-      
-      <time datetime="2019-07-29T09:12:49.000Z">
-        2019-07-29
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- judge
-不在环里的边都是桥
-边(from, to)不在环里的标志：low[to] &gt; time[from]
-
-HDU 4738 曹操的桥
-无向图求桥
-坑点：
-
-有重边
-初始不连通
-无人守至少1人去
-
-
-关于vector邻接表、二维邻接矩阵、链式前向星
-
-普通vector邻接表：无需遍历+没有边权
-
-二维邻接矩阵：遍历找边+可存边权
-
-链式前向星：无需遍历+可存边权
-
-普通vector邻接表+二维邻接矩阵：(利用前者)无需遍历+(利用后者)可存边权
-
-以结构体为储存类型的vector：无需遍历+可存边权
-3、5较优，1有缺陷，2耗时间，4耗空间
-
-
-
-Code of this problem（My Code）
-关于处理重边：我用嵌套的map记录重边，重边中的任意一条边均非桥！最后处理时直接跳过
-
-#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std; -->
-        <!-- </div> -->
-
-        
-        <h2 id="桥"><a href="#桥" class="headerlink" title="桥"></a>桥</h2><blockquote>
-<p>无向图中，如果去掉一条边，使得图被分成了几个部分，那么这条边就被称为桥</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/29/HDU-4738-Caocao-s-Bridge-双连通-桥/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -705,6 +701,10 @@ using namespace std; -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
@@ -718,10 +718,6 @@ using namespace std; -->
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/30/Vue-Vuex/">Vue Vuex</a>
           </li>
         
       </ul>
