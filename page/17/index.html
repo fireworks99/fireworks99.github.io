@@ -112,6 +112,54 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/19/HDU-1496-Equations/" class="item-title">HDU 1496 Equations</a>
+      
+      <time datetime="2019-07-19T01:49:05.000Z">
+        2019-07-19
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+前两项和作为一部分，遍历时hash数组记录结果，后两项和移到右边作为另一部分，遍历hash数组查找有无相同结果
+
+数值区间决定hash空间
+a、b、c、d区间对称，上限为50
+x区间对称，上限为100，x * x上限为 10000
+（x无需从-100开始遍历，因为需要的是x * x,所以只遍历正半轴即可，对于每一个可行的x，方案数乘2，因为有四个x（都是自变量），所以最终结果乘16 ）
+a * x * x 上限为 500000，再加一个 b * x * x 上限 到达 1000000
+因为a、b市对称区间，下限就到-1000000，进行坐标偏移，总共需要2000000的空间
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int has[2000100];
+
+int main()
+{
+    int a, b, c, d, ans;
+    while(~scanf(&quot;%d%d%d%d&quot;, &am -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>a * x1 ^ 2 + b  * x2 ^ 2 + c * x3 ^ 2 + d * x4 ^ 2 = 0</p>
+<p>给出a b c d，在一定范围内找出符合上述等式的方案数 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/19/HDU-1496-Equations/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/19/哈希/" class="item-title">哈希</a>
       
       <time datetime="2019-07-18T23:58:39.000Z">
@@ -586,52 +634,6 @@ ll phi(ll n)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/06/07/POJ-3669-Meteor-Shower/" class="item-title">POJ 3669 Meteor Shower</a>
-      
-      <time datetime="2019-06-07T08:28:30.000Z">
-        2019-06-07
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- http://poj.org/problem?id=3669
-Idea
-简单搜索，需要注意的是：若某处被反复袭击，时间点取最早的那一刻
-所以说：Think twice, code once. 可平时没这样的习惯到场上应该也不会有（平时会觉得耽误时间……加之动脑少，思考的少，但凡有点细节便会忽视……要改！）
-另外发现，map映射会比数组要慢，如果不是不知空间的情况下，尽量不用map
-
-Code#include &lt;map&gt;
-#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int n;
-int dx[] = {0, 0, 1, -1};
-int dy[] = {1, -1, 0, 0};
-bool vis[305][305];
-//map&lt;int, map&lt;int, int&gt; &gt;ruin;
-//map&lt;int -->
-        <!-- </div> -->
-
-        
-        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><blockquote>
-<p>巨大流星雨即将袭来。每个流星会对击中的地方以及周围（上下左右四格）造成破坏。Bessie开始时位于（0, 0）位置，并希望逃到一处不会被袭击到的地方（在第一象限内）。已知每移动一格需要1个时间单位，被流星破坏后的地方不能再进入。给出M个流星在T时刻击中的地方（X, Y），问Bessie能否逃到安全的地方，若能输出最短时间，否则输出-1。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/06/07/POJ-3669-Meteor-Shower/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -692,6 +694,10 @@ bool vis[305][305];
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
           </li>
         
@@ -705,10 +711,6 @@ bool vis[305][305];
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
       </ul>

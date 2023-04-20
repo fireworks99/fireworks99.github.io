@@ -112,6 +112,69 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/02/23/HDU-1495-非常可乐/" class="item-title">HDU 1495 非常可乐</a>
+      
+      <time datetime="2019-02-23T13:01:05.000Z">
+        2019-02-23
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Input
+三个整数 : S 可乐的体积 , N 和 M是两个杯子的容量，以”0 0 0”结束。 
+
+Output
+如果能平分的话请输出最少要倒的次数，否则输出”NO”。 
+
+Sample Input
+7 4 3
+4 1 3
+0 0 0
+
+Sample Output
+NO
+3
+
+思路
+六种倒水情况，a -&gt; b, a -&gt; c, b -&gt; a, b -&gt; c, c -&gt; a, c -&gt; b, BFS穷竭搜索
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int s, n, m;
+struct node
+{
+    int a, b, c, step;
+};
+bool vis[105][105][105];
+
+int bfs()
+{
+    node now;
+    now.a = s;
+     -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>大家一定觉的运动以后喝可乐是一件很惬意的事情，但是seeyou却不这么认为。因为每次当seeyou买了可乐以后，阿牛就要求和seeyou一起分享这一瓶可乐，而且一定要喝的和seeyou一样多。但seeyou的手中只有两个杯子，它们的容量分别是N 毫升和M 毫升 可乐的体积为S （S&lt;101）毫升　(正好装满一瓶) ，它们三个之间可以相互倒可乐 (都是没有刻度的，且 S==N+M，101＞S＞0，N＞0，M＞0) 。聪明的ACMER你们说他们能平分吗？如果能请输出倒可乐的最少的次数，如果不能输出”NO”。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/02/23/HDU-1495-非常可乐/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/02/23/POJ-2833-The-average/" class="item-title">POJ 2833 The Average</a>
       
       <time datetime="2019-02-23T12:04:27.000Z">
@@ -428,50 +491,6 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/01/17/模拟、思维-SDNUOJ-1271/" class="item-title">模拟、思维 SDNUOJ 1271</a>
-      
-      <time datetime="2019-01-17T12:14:43.000Z">
-        2019-01-17
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-现在有多个MM，给出她们所在的国家的标号（标号仅由1个小写字母组成，不同的字母表示不同的国家）。她们按顺序从左到右站成一排。小宇想找到一个区域，使他能够找到最多不同国家的MM，要求输出所有MM属于多少个不同的国家和可以认识不同国家MM的最大区间长度（该区间内没有来自同一个国家的MM）。比如在整个队伍内他按从左向右顺序找到了3个a国的MM，1个b国MM，1个c国MM。那么不同国家的最大数为3（a国、b国、c国），最大可以认识不同国家MM的区间长度为3（只须认识a国的最右面的一个人以及b、c国即可得到最大区间长度3）。假设在队伍内的人他都还没有认识。
-
-Input
-输入一行为一串由小写字母组成的MM队列，表示MM来自的不同国家。 
-
-Output
-输出数据为一行，包含两个整数，第一个整数所有供小宇选择的MM来自多少个国家。第二个整数代表小宇能找到不同国家MM的最大区间长度。 
-
-Sample Input
-aaabc
-
-Sample Output
-3 3
-
-set 自带 除重  与 排序  ，这里利用除重特点。（PS: vector 有上限，嗯，有上限 )
-#include &lt;ios -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>大家都知道小宇是一个很纯洁的小孩！有一天他做梦了，梦见好多MM排着队随他挑。这些MM来自不同的国家，但也有同一个国家的，而他想尽量认识不同国家的MM。因此小宇想知道他可以认识到不同国家的MM区间长度的最大值，并且小宇想知道共有多少个国家的MM供他选择。</p>
-<p>题目来了：</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/01/17/模拟、思维-SDNUOJ-1271/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -532,6 +551,10 @@ set 自带 除重  与 排序  ，这里利用除重特点。（PS: vector 有�
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
           </li>
         
@@ -545,10 +568,6 @@ set 自带 除重  与 排序  ，这里利用除重特点。（PS: vector 有�
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
       </ul>

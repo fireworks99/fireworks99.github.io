@@ -112,6 +112,65 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/26/HDU-2444-The-Accomodation-of-Students-Bipartite-graph/" class="item-title">HDU 2444 The Accomodation of Students(Bipartite graph color)</a>
+      
+      <time datetime="2020-04-26T04:10:45.000Z">
+        2020-04-26
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+1.判断是否是二分图（染色法）
+2.二分图最大匹配
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 20005;
+const int M = 20005;
+
+int n, m, color[N];;
+
+int head[N], cnt;
+struct edge
+{
+    int v, pre;
+} e[M];
+
+void add(int u, int v)
+{
+    e[cnt].v = v;
+    e[cnt].pre = head[u];
+    head[u] = cnt++;
+}
+
+bool succeed(int x)
+{
+    for(int i = head[x]; ~i; i = e[i].pre)
+    {
+        int to = e[i].v;
+        if(color[to] == -1) -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个人M个相识关系，问：能否将所有人分成两拨，每一拨中的人彼此互不相识。若能，分成两拨后，能从彼此中挑出多少对相识的？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/26/HDU-2444-The-Accomodation-of-Students-Bipartite-graph/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/04/26/HDU-1045-Fire-Net-DFS-or-bipartite-graph-match/" class="item-title">HDU 1045 Fire Net(DFS or bipartite graph match)</a>
       
       <time datetime="2020-04-26T03:11:09.000Z">
@@ -641,58 +700,6 @@ Code#include &lt;cmat -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/06/SPOJ-Highways-and-Find-the-Determinant-lll-Count-the-spanning-trees/" class="item-title">SPOJ Highways and Find the Determinant lll(Count the spanning trees)</a>
-      
-      <time datetime="2020-04-06T02:50:32.000Z">
-        2020-04-06
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Code of Highways#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-#define ll long long
-const int N = 55;
-
-int n, m;
-ll b[N][N];
-
-ll Gauss()
-{
-    ll res = 1;
-    ///i start from 2 : throw away first row and first column
-    for(int i = 2; i &lt;= n; ++i)
-    {
-        for(int j = i + 1; j &lt;= n; ++j)
-        {
-            while(b[j][i])
-            {
-                ll t = b[i][i] / b[j][i];
-                for(int k = i; -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description-of-Highways"><a href="#Description-of-Highways" class="headerlink" title="Description of Highways"></a>Description of Highways</h3><blockquote>
-<p>给出原图(无向图)，求裸的生成树计数</p>
-</blockquote>
-<h3 id="Description-of-Find-the-Determinant-III"><a href="#Description-of-Find-the-Determinant-III" class="headerlink" title="Description of Find the Determinant III"></a>Description of Find the Determinant III</h3><blockquote>
-<p>求方阵A的行列式的值模P的值</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/06/SPOJ-Highways-and-Find-the-Determinant-lll-Count-the-spanning-trees/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -753,6 +760,10 @@ ll Gauss()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
           </li>
         
@@ -766,10 +777,6 @@ ll Gauss()
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
       </ul>

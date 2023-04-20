@@ -112,6 +112,58 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/05/05/背包九讲之五/" class="item-title">背包九讲之五</a>
+      
+      <time datetime="2019-05-05T12:30:48.000Z">
+        2019-05-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 10005;
+
+int C, V, n, w[N], vue[N], val[N], num[N], m[N], dp[N][N]， gd[2][N];
+
+void slove_01bp()///0-1背包
+{
+    scanf(&quot;%d%d&quot;, &amp;C, &amp;n);
+    for(int i = 1; i &lt;= n; ++i)
+        scanf(&quot;%d%d&quot;, &amp;w[i], &amp;val[i]);
+    memset(m, 0, sizeof(m));
+    for(int i = 1; i &lt;= n; ++i)
+        for(int j = C; j &gt;= w[i]; --j)///逆序遍历
+  -->
+        <!-- </div> -->
+
+        
+        <h3 id="动态规划之背包问题"><a href="#动态规划之背包问题" class="headerlink" title="动态规划之背包问题"></a>动态规划之背包问题</h3><blockquote>
+<ol>
+<li>01背包</li>
+<li>完全背包</li>
+<li>多重背包</li>
+<li>二维费用背包</li>
+<li>背包剩余容量最小</li>
+</ol>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/05/05/背包九讲之五/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/30/HDU-1535-POJ-1511-Invitation-Cards/" class="item-title">HDU 1535 POJ 1511 Invitation Cards</a>
       
       <time datetime="2019-04-30T11:54:40.000Z">
@@ -569,52 +621,6 @@ print(a + b)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/21/最长回文子串/" class="item-title">最长回文子串</a>
-      
-      <time datetime="2019-04-21T03:16:33.000Z">
-        2019-04-21
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Templateint Manacher(string s)
-{
-    string t = &quot; #&quot;;///two chars
-    int sz = s.size();
-    for(int i = 0; i &lt; sz; ++i)
-    {
-        t += s[i];
-        t += &quot;#&quot;;
-    }
-
-    sz = t.size();
-    vector&lt;int&gt; vec(sz, 0);
-    int mmax = 0, pos = 0, len = 0, center = 0;
-    for(int i = 1; i &lt; sz; ++i)///start from 1
-    {
-        vec[i] = mmax &gt; i ? min(vec[2 * pos - i], mmax - i) : 1;
-        while( t[ i + vec[i] ] == t[ i - vec[i] ] )
-            ++vec[i];
-        -->
-        <!-- </div> -->
-
-        
-        <h3 id="最长回文子串"><a href="#最长回文子串" class="headerlink" title="最长回文子串"></a>最长回文子串</h3><blockquote>
-<p>在计算机科学中，最长的回文子串或最长的对称因子问题是找到给定字符串的最大长度连续子串的问题，该字符串也是回文。</p>
-<p>例如，“香蕉”的最长回文子串是“anana”。 最长的回文子串不保证是唯一的; 例如，在字符串“abracadabra”中，没有长度大于3的回文子串，但是有两个长度为3的回文子串，即“aca”和“ada”。 在某些应用程序中，可能需要返回所有最大回文子串（即，所有子串本身是回文并且不能扩展到更大的回文子串），而不是仅返回一个子串或返回回文子串的最大长度。   </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/21/最长回文子串/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -675,6 +681,10 @@ print(a + b)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
           </li>
         
@@ -688,10 +698,6 @@ print(a + b)
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
       </ul>

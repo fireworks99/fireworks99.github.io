@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>JS this</title>
+      <link href="2023/04/20/JS-this/"/>
+      <url>2023/04/20/JS-this/</url>
+      
+        <content type="html"><![CDATA[<p><strong>1：this永远指向一个对象；</strong></p><p><strong>2：this的指向完全取决于函数调用的位置；</strong></p><a id="more"></a><h2 id="一、Why-we-need-‘this’"><a href="#一、Why-we-need-‘this’" class="headerlink" title="一、Why we need ‘this’"></a>一、Why we need ‘this’</h2><pre><code class="lang-js">let bar = 1;function getBar() {    return bar;}console.log(getBar());//1{    let bar = 2    let obj = {        bar: 3,        getBar: function () {            return bar;//返回变量bar        }    }    console.log(obj.getBar());//2}</code></pre><p>上面代码中<code>obj.getBar()</code>我想拿到<code>obj.bar</code>，但是拿不到。所以需要指明函数运行时所在的环境，于是就有了this。</p><h2 id="二、what-does-the-‘this’-refer-to"><a href="#二、what-does-the-‘this’-refer-to" class="headerlink" title="二、what does the ‘this’ refer to"></a>二、what does the ‘this’ refer to</h2><ul><li>事件绑定<ul><li>静态绑定<ul><li>行内脚本：当前DOM节点</li><li>独立脚本：全局Window对象</li></ul></li><li>动态绑定：当前DOM节点</li><li>事件监听：全局Window对象</li></ul></li><li>构造函数：当前构造的实例对象</li><li>window定时器<ul><li>传函数名：全局Window对象</li><li>传字符串：函数所属对象</li></ul></li><li>call &amp;&amp; apply：强制指定this的指向为第一个参数</li><li>对象中的方法：该对象</li></ul><pre><code class="lang-html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;&lt;/head&gt;&lt;body&gt;    &lt;!-- 1：this永远指向一个对象； --&gt;    &lt;!-- 2：this的指向完全取决于函数调用的位置； --&gt;    &lt;!-- 一、事件绑定 --&gt;    &lt;!-- 一、事件绑定 ①. 静态绑定--&gt;    &lt;!-- 一、事件绑定 ①. 静态绑定 (1).行内脚本 --&gt;    &lt;input type=&quot;button&quot; value=&quot;Button one&quot; onclick=&quot;console.log(this)&quot;&gt;    &lt;!-- output: --&gt;    &lt;!-- &lt;input type=&quot;button&quot; value=&quot;Button one&quot; onclick=&quot;console.log(this)&quot;&gt; --&gt;    &lt;!-- 一、事件绑定 ①. 静态绑定 (2).独立脚本 --&gt;    &lt;input type=&quot;button&quot; value=&quot;Button two&quot; onclick=&quot;btnClick()&quot;&gt;    &lt;div id=&quot;Gold&quot; style=&quot;background: #FFD700; height: 100px; width: 100px;&quot;&gt;&lt;/div&gt;    &lt;script&gt;        function btnClick() {            console.log(this);            //output:            //Window {window: Window, self: Window, document: document, name: &#39;&#39;, location: Location, …}        }        // 一、事件绑定 ②.动态绑定        document.getElementById(&quot;Gold&quot;).onmouseenter = function () {            console.log(&quot;Gold enter this: &quot;, this);            //output:            //&lt;div id=&quot;Gold&quot; style=&quot;background: #FFD700; height: 100px; width: 100px;&quot;&gt;&lt;/div&gt;        };        // 一、事件绑定 ③.事件监听        document.getElementById(&quot;Gold&quot;).addEventListener(&quot;mouseout&quot;, () =&gt; {            console.log(&quot;Gold out this: &quot;, this);            //output:            //Window {window: Window, self: Window, document: document, name: &#39;&#39;, location: Location, …}        });        // 二、构造函数        function Person(name, age) {            this.name = name;            this.age = age;            console.log(&quot;Person this: &quot;, this);            //output:            //Person {name: &#39;Joy&#39;, age: 24}        }        var p = new Person(&quot;Joy&quot;, 24);        // 三、window定时器        var obj = {            setTimeoutThis: function (which = 1) {                console.log(`setTimeout ${which} this: `, this);            }        }        window.setTimeout(obj.setTimeoutThis, 1000);        //output:        //Window {window: Window, self: Window, document: document, name: &#39;&#39;, location: Location, …}        window.setTimeout(&quot;obj.setTimeoutThis(2)&quot;, 1000);        //output:        //{setTimeoutThis: ƒ}        // 四、call apply 强制指定this指向        function callAndApply(num1, num2) {            console.log(`callAndApply ${num1 * 10 + num2} this: `, this);        }        callAndApply.call(p, 1, 2);        //output:        //callAndApply 12 this:  Person {name: &#39;Joy&#39;, age: 24}        callAndApply.apply(p, [3, 4]);        //output:        //callAndApply 34 this:  Person {name: &#39;Joy&#39;, age: 24}        // 五、对象中的方法        let bar = 1;        function getBar() {            console.log(&quot;Object 1 this: &quot;, this);            //output:            //Window {window: Window, self: Window, document: document, name: &#39;&#39;, location: Location, …}            return bar;        }        console.log(getBar());//1        {            let bar = 2            let obj = {                bar: 3,                getBar: function () {                    console.log(&quot;Object 2 this: &quot;, this);                    //output:                    //{bar: 3, getBar: ƒ}                    return this.bar;                }            }            console.log(obj.getBar());//3        }    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> JavaScriptのNote </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Vue :childProps.sync=&#39;parentData&#39;</title>
       <link href="2023/04/07/Vue-childProps-sync-parentData/"/>
       <url>2023/04/07/Vue-childProps-sync-parentData/</url>
@@ -2142,9 +2161,9 @@
       
         <tags>
             
-            <tag> 最短路のspfa </tag>
-            
             <tag> 技巧の差分 </tag>
+            
+            <tag> 最短路のspfa </tag>
             
         </tags>
       

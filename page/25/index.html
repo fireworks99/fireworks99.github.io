@@ -112,6 +112,60 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/28/POJ-3268-Silver-Cow-Party/" class="item-title">POJ 3268 Silver Cow Party</a>
+      
+      <time datetime="2019-03-28T11:54:01.000Z">
+        2019-03-28
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接 http://poj.org/problem?id=3268
+思路
+最短路，计算每头牛来回最短路之和，所有和中最大值即为答案
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 100005;
+const int inf = 0x3f3f3f3f;
+
+int m, n, x;///我程序里的m代表点，n代表边，与题目所述相反
+
+struct edge
+{
+    int from, to, w, pre;
+} a[N];
+
+int head[N], cnt, dis[1005][1005], times[1005], tot, sum;
+bool vis[1005];
+
+void init(int start)
+{
+    for(int i = 0; i &lt;= m; ++i)
+         -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>有n个农场（1~N），给出M条单向路描述。每个农场派出一头牛去某个农场（X）参加聚会，聚会结束后要返回，当然它们来回都选择最短路（因为路是单向的，来回可能路径不同），问这n头牛中，来回所走路程最长的那头，它走的总路程是多少?</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/28/POJ-3268-Silver-Cow-Party/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/28/POJ-2253-Frogger/" class="item-title">POJ 2253 Frogger</a>
       
       <time datetime="2019-03-28T10:44:45.000Z">
@@ -538,51 +592,6 @@ void slove(int n, int k)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/15/JAVA-大数/" class="item-title">JAVA 大数</a>
-      
-      <time datetime="2019-03-15T12:50:33.000Z">
-        2019-03-15
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Input 、Initialize and Outputimport java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.Scanner;
-
-public class Main {
-
-    public static void main(String[] args) {
-        // TODO Auto-generated method stub
-        Scanner in = new Scanner(System.in);
-        //以下输入后面的括号是用于进制转换的，输入某进制数将其转十进制
-        //JAVA强大处之一
-        int a = in.nextInt();
-        double b = in.nextDouble();
-        BigInteger c = in.nextBigInteger();
-        BigDecimal d = in.nextBigDecimal();
-        in.nextLin -->
-        <!-- </div> -->
-
-        
-        <p><strong>条件判断：</strong> JAVA中<code>while(n-- &gt; 0)</code>异于c++的<code>while(n--)</code></p>
-<p><strong>Prepare to Input</strong></p>
-<pre><code class="lang-java">Scanner in = new Scanner(System.in);//in可换为cin或scan
-//......
-in.close();//in可换cin或scan
-</code></pre>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/15/JAVA-大数/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -643,6 +652,10 @@ in.close();//in可换cin或scan
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
           </li>
         
@@ -656,10 +669,6 @@ in.close();//in可换cin或scan
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
       </ul>

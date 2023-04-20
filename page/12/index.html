@@ -112,6 +112,48 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/09/02/POJ-2376-Cleaning-Shifts-贪心/" class="item-title">POJ 2376 Cleaning Shifts(贪心)</a>
+      
+      <time datetime="2019-09-02T09:19:20.000Z">
+        2019-09-02
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+我知道选择一个区间要尽可能选右界大的，于是我按右界排序，后来发现做不了……这题应该明确：在左界能承接上一个区间的前提下选右界最大的。我一直难以做到左右兼顾，按左界排序？按右界排序？先左后右？先右后左?没有合适的排序方式。后来发现贪心有它的前提和选择。
+贪心前提：左界承接前段
+贪心选择：右界选择最右
+我们得先满足前提，后贪心选择。
+那就按左界从小到大排序，保证左边的是满足前提的，while去遍历
+遍历过程中用right = max(right, a[pos].r)来贪心选择最右的
+更新右界，再从上次停止的位置起重复上述过程
+Attention：
+上次停止的位置(设为pos)是满足条件的最右的位置，更新后的右界(设为right)是遍历过程中最右的界线，right  &gt;= a[pos].r &gt;= a[pos].l，所以这个方法只需要遍历一遍，O(n)
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+usi -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>有一段从1到n的区间，现有多条线段(左右界不同，有重合区域)，求最少需几条线段才能覆盖整个大区间？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/09/02/POJ-2376-Cleaning-Shifts-贪心/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/30/POJ-3169-Layout-最短路解差分约束/" class="item-title">POJ 3169 Layout(最短路解差分约束)</a>
       
       <time datetime="2019-08-30T11:58:59.000Z">
@@ -540,58 +582,6 @@ Code#include &lt;set&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/14/Python-About-BeautifulSoup/" class="item-title">About BeautifulSoup</a>
-      
-      <time datetime="2019-08-14T07:02:15.000Z">
-        2019-08-14
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 1.BeautifulSoup五种基本元素
-import requests
-from bs4 import BeautifulSoup
-
-def getText(url):
-    try:
-        kv = { &#39;user-agent&#39;: &#39;Mozilla/5.0&#39; }
-        r = requests.get(url, headers=kv)
-        r.raise_for_status()
-        r.encoding = r.apparent_encoding
-        return r.text
-    except:
-        return &#39;Error&#39;
-
-
-def solve(txt):
-    soup = BeautifulSoup(txt, &#39;html.parser&#39;)
-    print(soup.title)
-
-    print(soup.a) # 标签(只返回了第一个标签内容)
-    print(type(soup.a)) # &lt;class  -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<ol>
-<li>BeautifulSoup的基本元素</li>
-<li>HTML内容遍历方法</li>
-<li>HTML格式化</li>
-<li>信息标记与内容查找方法</li>
-</ol>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/14/Python-About-BeautifulSoup/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -652,6 +642,10 @@ def solve(txt):
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
           </li>
         
@@ -665,10 +659,6 @@ def solve(txt):
         
           <li>
             <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/Vue-Router/">Vue Router</a>
           </li>
         
       </ul>
