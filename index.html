@@ -112,6 +112,54 @@
     
     <div class="recent-post-item">
 
+      <a href="/2023/04/24/JS-async-await/" class="item-title">JS async/await</a>
+      
+      <time datetime="2023-04-24T09:07:47.000Z">
+        2023-04-24
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Server// Express提供了专门的路由方式
+const express = require(&#39;express&#39;);
+
+// 1.创建一个路由容器
+const router = express.Router();
+
+// 2.把路由都挂载到 router路由容器中
+router.get(&#39;/async&#39;, (req, res) =&gt; {
+  setTimeout(() =&gt; {
+    res.send(&quot;Hello Async!&quot;);
+  }, 2000);
+})
+
+// 3.导出路由
+module.exports = router;
+
+Client&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge -->
+        <!-- </div> -->
+
+        
+        <p>基于Promise的API，例如axios等，在使用时可以简化语法，方法是使用<code>async/await</code>组合。</p>
+<p>await关键字只在 async 函数内有效。如果你在 async 函数体之外使用它，就会抛出语法错误 SyntaxError。</p>
+<p>await 表达式会<strong>阻塞</strong>后续脚本的执行，直到其等待的基于 promise 的异步操作被兑现或被拒绝之后才会恢复进程。</p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2023/04/24/JS-async-await/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2023/04/20/JS-this/" class="item-title">JS this</a>
       
       <time datetime="2023-04-20T11:10:40.000Z">
@@ -137,7 +185,7 @@ console.log(getBar());//1
 }
 
 上面代码中obj.getBar()我想拿到obj.bar，但是拿不到。所以需要指明函数运行时所在的环境，于是就有了this。
-二、what does the ‘this’ refer to
+二、’this’ refers to
 事件绑定
 静态绑定
 行内脚本：当前DOM节点
@@ -154,7 +202,7 @@ window定时器
 传字符串：函数所属对象
 
 
-call &amp;&amp -->
+call &amp;&amp; apply：强制指定t -->
         <!-- </div> -->
 
         
@@ -497,43 +545,6 @@ https://template-explorer.vuejs.org/
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2023/03/27/Vue-Plugin/" class="item-title">Vue Plugin</a>
-      
-      <time datetime="2023-03-27T08:59:08.000Z">
-        2023-03-27
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 插件往往结合vue.mixin(options)使用，mixin本质上是把重复的代码片段混入到Vue组件中，供组件复用逻辑。但是vue.mixin是一个全局api，它会应用到所有实例，所以不要在这个API做疯狂的事情。
-使用vue.mixin更好的办法是使用插件包裹，因为插件会自动删除，而且就算多次调用Vue.use应用同一个插件，它会防止重复应用，但是vue.mixin就不行了。另外使用Vue.use会让代码更好理解，可以清楚知道应用使用了哪些插件。
-2.$.options属性很多人可能不太清楚$.options属性，其实每个组件都有$.options属性它表示实例组件的配置项，配置项可以是组件自身的配置也可以是继承过来的配置项或者是vue.mixin混入的。
-3.编写一个插件插件实现的功能：每个组件在created之后，监听检查某些数据是否合规，若不合规打印出不合规提示信息。
-src/plugins/check.js
-export default {
-    install: (Vue, options) =&gt; {
-        Vue.mixin({
-           -->
-        <!-- </div> -->
-
-        
-        <h2 id="1-插件简介"><a href="#1-插件简介" class="headerlink" title="1.插件简介"></a>1.插件简介</h2><p>插件本质是一个普通函数，第一个参数是Vue，第二个参数是可选参数叫<code>options</code></p>
-<pre><code class="lang-js">function (Vue, options) {
-  //...插件代码
-}
-</code></pre>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2023/03/27/Vue-Plugin/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -594,6 +605,10 @@ export default {
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -607,10 +622,6 @@ export default {
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

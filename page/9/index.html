@@ -112,6 +112,52 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/07/POJ-1062-昂贵的聘礼-The-shortest-path/" class="item-title">POJ 1062 昂贵的聘礼(The shortest path)</a>
+      
+      <time datetime="2020-03-07T14:39:32.000Z">
+        2020-03-07
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Input
+M(等级差别限制)   N(可交易人 1 ~ N 1是女方家里人，是最终要交易的对象)
+接下来N个描述
+P(该交易人所有物品的价值)    ——每个交易人只有一个物品
+L(该交易人等级)
+X(优惠方案数)
+紧跟X行， 每行 T(交易人编号) V(该交易人物品价格)
+花最少的钱取到1号手里的物品：那个她
+
+Analyze
+先撇开等级限制，可以Dijkstra求出点1到其他所有点的最短路dis[i]，那么dis[i]+val[i] 就是一直换到物品i的最少花费，由于最终换到谁才满足花费最少不确定，所以遍历一遍取最小值即可。
+再考虑等极限制，由于必定与1交易，所以交易人等级区间为[val[1]-M,val[1]+M]，但有可能交易时出错，比如跟val[1]-M和val[1]+M交易，那么他俩等级差都2M了。所以可行区间应为[val[1]-M, val[1]]、[val[1]-M+1, val[1]+1]……遍历枚举区间即可
+
+Attention
+图是有向图（边是单向边）
+
+Code#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#i -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>男方去女方家提亲，女方提出要 P 彩礼，男方觉得有点多，于是女方提出可以拿 物品T 来，那样彩礼只要 V。物品T在第 i 个人那里， 男方去求取，遇到了同样的困难：要钱太多但倘若拿来某物品，可以给他优惠。</p>
+<p>女方这边有等级差别，你所交易的人中，任意两人等级不可大于M。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/07/POJ-1062-昂贵的聘礼-The-shortest-path/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/01/21/Codeforces-contest-853-A-Planning-优先队列贪心/" class="item-title">Codeforces contest 853 A Planning(优先队列贪心)</a>
       
       <time datetime="2020-01-21T04:37:08.000Z">
@@ -554,59 +600,6 @@ Code#include &lt;cstdio&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/17/hihocoder-1317-Dancing-Links-X/" class="item-title">hihocoder 1317 (DLX cover precisely)</a>
-      
-      <time datetime="2019-11-17T10:56:48.000Z">
-        2019-11-17
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Dancing Link X
-https://www.cnblogs.com/grenet/p/3145800.html
-Dancing Links : 循环双向链，纵横交叉形成的网状结构
-
-Code#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const int MAX_V = 10010;
-
-
-int n, m;
-int cnt[105];///第i列1元素的个数
-int L[MAX_V], R[MAX_V], U[MAX_V], D[MAX_V];
-int Head[105];///第i行第一个1元素的ID,意义同列标元素
-int Row[MAX_V], Col[MAX_V];///记录id所在行列
-int ans[105];
-
-
-void init()
-{
-    for(int i = 0; i &lt;= m; ++i)///初始化Head及m个列标元素
-    {
-        cnt[i] = 0;
-        L[i] = i - 1;
-        R[i] =  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>小Ho最近遇到一个难题，他需要破解一个棋局。</p>
-<p>棋局分成了n行，m列，每行有若干个棋子。小Ho需要从中选择若干行使得每一列有且恰好只有一个棋子。</p>
-<p><a href="http://hihocoder.com/problemset/problem/1317" target="_blank" rel="noopener">http://hihocoder.com/problemset/problem/1317</a></p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/17/hihocoder-1317-Dancing-Links-X/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -667,6 +660,10 @@ void init()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -680,10 +677,6 @@ void init()
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

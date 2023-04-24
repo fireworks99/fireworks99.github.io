@@ -112,6 +112,60 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/29/POJ-1797-Heavy-Transportation/" class="item-title">POJ 1797 Heavy Transportation</a>
+      
+      <time datetime="2019-03-29T11:18:22.000Z">
+        2019-03-29
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接 http://poj.org/problem?id=1797
+思路
+最短路变形
+最大化最小值：
+两条路：
+
+当前直达
+
+中转
+择优（承载量大的那条）
+
+
+这里有个相反的：最小化最大值： https://fireworks99.github.io/2019/03/28/POJ-2253-Frogger/
+
+Code of Dijkstra#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define check cout &lt;&lt; &quot;Let&#39;s check : &quot; &lt;&lt; &#39;\n&#39;;
+const int INF = 0x3f3f3f3f;
+const int N = 1010;///点 的上限
+
+int n, m;
+bool vis[N];///是否用过它
+int mp[N][ -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n个点，m个关于边的叙述（边的权值代表路的最大承载量）</p>
+<p>求从1到n，路上的最大承载量</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/29/POJ-1797-Heavy-Transportation/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/28/POJ-3268-Silver-Cow-Party/" class="item-title">POJ 3268 Silver Cow Party</a>
       
       <time datetime="2019-03-28T11:54:01.000Z">
@@ -539,59 +593,6 @@ int dx -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/17/sprintf/" class="item-title">sprintf</a>
-      
-      <time datetime="2019-03-17T11:41:29.000Z">
-        2019-03-17
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- HDU 6468http://acm.hdu.edu.cn/showproblem.php?pid=6468
-Code of TLE#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 1e6 + 5;
-
-struct node
-{
-    char s[10];
-} a[N];
-
-bool cmp(node a, node b)
-{
-    return strcmp(a.s, b.s) &lt; 0;
-}
-
-void slove(int n, int k)
-{
-    for(int i = 1; i &lt;= n; ++i)
-        sprintf(a[i].s, &quot;%d&quot;, i);
-    sort(a + 1, a + n + 1, cmp);
-    cout &lt;&lt; a[k].s &lt;&lt; &#39;\n&# -->
-        <!-- </div> -->
-
-        
-        <h3 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h3><blockquote>
-<p>#include <cstring\> </cstring\></p>
-</blockquote>
-<h3 id="作用之一"><a href="#作用之一" class="headerlink" title="作用之一"></a>作用之一</h3><blockquote>
-<p>数字转字符串</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/17/sprintf/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -652,6 +653,10 @@ void slove(int n, int k)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -665,10 +670,6 @@ void slove(int n, int k)
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

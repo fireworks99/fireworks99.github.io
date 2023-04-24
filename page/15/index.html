@@ -112,6 +112,66 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/01/HDU-1878-欧拉回路-无向图/" class="item-title">HDU 1878 欧拉回路(无向图)</a>
+      
+      <time datetime="2019-08-01T08:58:46.000Z">
+        2019-08-01
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 判断
+无向图的判断： 
+欧拉回路：每个顶点的度都为偶数
+欧拉路：只有两个顶点度的个数为奇数，其余的都为偶数
+有向图的判断： 
+欧拉回路：每个顶点的出度于入度都相等
+欧拉路：一个出度 - 入度 == 1，一个入度 - 出度 == 1，其余点出度==入度 
+
+前提：图是连通的
+判连通：
+
+DFS：若图能连通，那么能访问完所有图中节点 
+并查集
+
+
+HDU 1878 欧拉回路#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 1005;
+
+int n, m;
+int cnt[N];
+//int tot, ans[N];
+bool mp[N][N], vis[N];
+
+void DFS(int num)
+{
+    vis[num] = 1;
+    for(int i = 1; i & -->
+        <!-- </div> -->
+
+        
+        <h2 id="欧拉路与欧拉回路"><a href="#欧拉路与欧拉回路" class="headerlink" title="欧拉路与欧拉回路"></a>欧拉路与欧拉回路</h2><blockquote>
+<p>欧拉路：从图中任意一个点开始到图中任意一个点结束的路径，并且<strong>图中每条边通过的且只通过一次</strong> </p>
+<p>欧拉回路：起点也是终点的欧拉路（也属于欧拉路，如同正方形属于矩形）</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/01/HDU-1878-欧拉回路-无向图/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/31/HDU-1083-2063-ZOJ-4120-二分图匹配/" class="item-title">HDU 1083 2063 ZOJ 4120(二分图匹配)</a>
       
       <time datetime="2019-07-31T09:17:01.000Z">
@@ -578,72 +638,6 @@ void floyd()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/24/SDNUOJ-1118-单词统计-AC自动机/" class="item-title">SDNUOJ 1118 单词统计(AC自动机)</a>
-      
-      <time datetime="2019-07-24T03:01:20.000Z">
-        2019-07-24
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-题目链接 ： http://www.acmicpc.sdnu.edu.cn/problem/show/1118
-
-Sample Input15
-a
-ab
-ba
-aba
-bab
-aababa
-
-Sample Output1
-4 2 2 2 1
-
-Sample Input2(可能卡的样例)3
-aa
-aa
-aa
-aaa
-
-Sample Output2
-2 2 2
-
-AC自动机
-巧妙的数据结构（Trie） + 灵活的算法（KMP) = 巧妙灵活的算法(AC自动机)
-真的是，二者结合地天衣无缝
-
-By the way
-Trie里有个sum[N]数组是统计输入(Input)里单词重复出现次数的
-此题询问最后给出的长字符串中输入(Input)的每个字符串出现次数的
-好像说的不清楚，反正知道有那么两个东西不是一回事就行
-
-Analyze
-此题要在主串里查询每个输入串(可能重复)出现次数
-
-用上Trie中的is[N]数组标记每个字符串结束处结点
-
-开一个fro[N]数组记录答案（每个字符串出现次数）
-最后遍历结点数(cnt)，剔除(is[i] == 0)的fro[i]，输出剩下的(本来就是有序的)
-这 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给定一个字符串和若干个单词，统计这些单词在这个字符串中出现的次数。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/24/SDNUOJ-1118-单词统计-AC自动机/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -704,6 +698,10 @@ Analyze
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -717,10 +715,6 @@ Analyze
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

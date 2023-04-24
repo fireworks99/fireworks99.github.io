@@ -112,6 +112,59 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/17/hihocoder-1317-Dancing-Links-X/" class="item-title">hihocoder 1317 (DLX cover precisely)</a>
+      
+      <time datetime="2019-11-17T10:56:48.000Z">
+        2019-11-17
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Dancing Link X
+https://www.cnblogs.com/grenet/p/3145800.html
+Dancing Links : 循环双向链，纵横交叉形成的网状结构
+
+Code#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int MAX_V = 10010;
+
+
+int n, m;
+int cnt[105];///第i列1元素的个数
+int L[MAX_V], R[MAX_V], U[MAX_V], D[MAX_V];
+int Head[105];///第i行第一个1元素的ID,意义同列标元素
+int Row[MAX_V], Col[MAX_V];///记录id所在行列
+int ans[105];
+
+
+void init()
+{
+    for(int i = 0; i &lt;= m; ++i)///初始化Head及m个列标元素
+    {
+        cnt[i] = 0;
+        L[i] = i - 1;
+        R[i] =  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>小Ho最近遇到一个难题，他需要破解一个棋局。</p>
+<p>棋局分成了n行，m列，每行有若干个棋子。小Ho需要从中选择若干行使得每一列有且恰好只有一个棋子。</p>
+<p><a href="http://hihocoder.com/problemset/problem/1317" target="_blank" rel="noopener">http://hihocoder.com/problemset/problem/1317</a></p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/17/hihocoder-1317-Dancing-Links-X/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/13/POJ-Sudoku-数独-2676-2918-3074-3076/" class="item-title">POJ Sudoku(数独) 2676 2918 3074 3076</a>
       
       <time datetime="2019-11-13T12:34:11.000Z">
@@ -610,58 +663,6 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/10/26/再看欧拉筛/" class="item-title">再看欧拉筛</a>
-      
-      <time datetime="2019-10-26T09:01:32.000Z">
-        2019-10-26
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Code#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 3e7+5;
-
-int p[N], cnt;
-bool vis[N];/// 1 表示合数 0 表示素数
-
-void Euler(int n)
-{
-    cnt = 0;
-    for(int i = 2; i &lt;= n; ++i)
-    {
-        if(!vis[i])
-            p[++cnt] = i;
-        for(int j = 1; j &lt;= cnt &amp;&amp; p[j] * i &lt;= n; ++j)
-        {
-            vis[ p[j] * i ] = 1;
-            if(i % p[j] == 0)///确保每个合数只被它的最小质因子筛掉
-                break;
-        }
-    }
-}
-
-欧拉筛做了 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>欧拉筛如何实现：每个合数仅被它的最小质因子筛掉？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/10/26/再看欧拉筛/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -722,6 +723,10 @@ void Euler(int n)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -735,10 +740,6 @@ void Euler(int n)
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

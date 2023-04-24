@@ -112,6 +112,60 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/06/HDU-4305-Lightning-Count-spanning-trees/" class="item-title">HDU 4305 Lightning(Count spanning trees)</a>
+      
+      <time datetime="2020-04-06T04:52:38.000Z">
+        2020-04-06
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+跟普通生成树计数不同的是，例如一个三角形的图的生成树有三种形状，倘若把这个三角形压成一条线，那生成树就只有一种形状了。
+解决办法是：若某两点看似可以连接时，判断一下，若两点连线中间还有点，则这两点不能连线。
+
+Attention
+关于取模，含有负数时((x % mod) + mod) % mod，不含有负数时x % mod,倘若有除法取模要用逆元，据说少量逆元可以类似递推出来？
+
+void init()
+{
+    inv[1]=1;
+    for(int i = 2;i &lt; M;i++)
+        inv[i] = (M - M / i) * inv[M % i] % M;
+}
+
+
+时间卡的紧：
+本来用double的数据迫不得已改用了int
+多个判断条件并列时，耗时少的判断放前面
+
+if(A &amp;&amp; B &amp;&amp; C)
+{
+    //do something;
+}
+
+
+比如上述代码，A可能只是个普通bool型变量，B可能是一个长长的表达式，C可能是一个循环才能算得出值的bool变量
+
+Code#include &lt;cmat -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>求生成树有几种形状？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/06/HDU-4305-Lightning-Count-spanning-trees/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/04/06/SPOJ-Highways-and-Find-the-Determinant-lll-Count-the-spanning-trees/" class="item-title">SPOJ Highways and Find the Determinant lll(Count the spanning trees)</a>
       
       <time datetime="2020-04-06T02:50:32.000Z">
@@ -517,54 +571,6 @@ double X[N];
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/21/POJ-1151-Atlantis-Segment-Tree-about-Scanning-lines/" class="item-title">POJ 1151 Atlantis(Segment Tree about Scanning lines)</a>
-      
-      <time datetime="2020-03-21T08:44:37.000Z">
-        2020-03-21
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 扫描线
-
-线段树是可以从0开始的，只是保证标号从1开始就行
-线段树每个点维护一段区间
-当然需要离散化，将浮点数类型的x值对应成每条垂线的标号，这样之后可以用线段树维护当前扫描线的长度，计算具体长度时逆离散化。
-扫描线长度 * 两条相邻两条水平线的高度差 = 矩形面积
-
-Upvoid up(int o, int L, int R)
-{
-    if(cnt[o])
-        len[o] = X[R + 1] - X[L];
-    else if(L == R)
-        len[o] = 0;
-    else
-        len[o] = len[o &lt;&lt; 1] + len[o &lt;&lt; 1 | 1];
-}
-
-
-这里按理说有if与else就行了，只是当L == R时不能按照else处理(叶子节点没有子节点了)，所以单独写一下。它等于0是因为这个不可分割的一段没有被覆盖，所以不取它。并不是因为什么“点没有长度”，这里线段树每个点也对应一段区间(不可再分割了)。
-
-Code#include &lt;cstdio&gt;
-#include &lt;cs -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>求N个矩形面积的并集</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/21/POJ-1151-Atlantis-Segment-Tree-about-Scanning-lines/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -625,6 +631,10 @@ Code#include &lt;cstdio&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -638,10 +648,6 @@ Code#include &lt;cstdio&gt;
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

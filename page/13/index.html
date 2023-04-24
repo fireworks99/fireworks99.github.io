@@ -112,6 +112,53 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/15/2019牛客暑期多校训练营-第九场-D折半枚举/" class="item-title">2019牛客暑期多校训练营(第九场)D折半枚举</a>
+      
+      <time datetime="2019-08-15T08:34:31.000Z">
+        2019-08-15
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+所有数字都有1(选取)、0(不选取)两种选择，所有状态就是2 ^ 36种
+枚举所有状态必然超时
+我们发现，2 ^ 36，底数为2(0/1两种状态)，幂不超过40而接近40
+这些都指向-&gt;折半枚举
+折半枚举适合的题目：每个数字(物品)只有选取与不选取两种选择，数字(物品)数目不超过40但接近于40(2 ^ 20可遍历)
+所以要对  (N &lt;=40 、 N：0/1）敏感，反应出这是折半枚举
+
+Code#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#inclu -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出N( &lt;= 36)和一个sum值，给出N个数字，从中选几个和为sum</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/15/2019牛客暑期多校训练营-第九场-D折半枚举/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/14/Python-About-BeautifulSoup/" class="item-title">About BeautifulSoup</a>
       
       <time datetime="2019-08-14T07:02:15.000Z">
@@ -551,60 +598,6 @@ Code#include &lt;set&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/08/HDU-4280-ISland-Transport-最大流DInic优化/" class="item-title">HDU 4280 ISland Transport(最大流Dinic优化)</a>
-      
-      <time datetime="2019-08-08T00:27:07.000Z">
-        2019-08-08
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 最大流模板题（卡超时）
-用Dinic的话：
-
-数组开的够大，注意边的数目不同于点的数目
-BFS里的queue改用数组模拟（STL耗时）
-DFS采用“无cut[]”写法+flow == 0封锁优化
-tem = DFS &gt; 0时才加到答案里，等于0时不加
-多组输入cnt(边的计数器)一定要初始化，否则越攒越多TLE
-
-
-Code(Dinic略优化)#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-const int N = 100010;
-const int INF = 0x3f3f3f3f;
-typedef long long ll;
-
-int n, m, start, over;
-int maxflow, deep[N];///deep深度
-
-struct Edge
-{
-    int to, w, pre;
-} a[N &lt;&lt;  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>T组样例，n点，m条双向边(独特，网络流多为单向边+反向边),输入n个点的坐标，找出从最左边的点到最右边的点的最大流</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/08/HDU-4280-ISland-Transport-最大流DInic优化/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -665,6 +658,10 @@ struct Edge
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -678,10 +675,6 @@ struct Edge
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

@@ -112,6 +112,56 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/05/21/最大流EK算法/" class="item-title">最大流EK算法</a>
+      
+      <time datetime="2019-05-21T12:27:04.000Z">
+        2019-05-21
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 弧的流量
+通过容量网络G中每条弧,上的实际流量(简称流量),记为f(u,v); 
+
+网络流
+所有弧上流量的集合f={f(u,v)},称为该容量网络的一个网络流 
+
+可行流(与流网络性质)
+在容量网络G中满足以下条件(1、3)的网络流f,称为可行流 (123为流网络性质)
+
+容量限制：对任意u,v∈V，f(u,v)≤c(u,v)。
+反对称性：对任意u,v∈V，f(u,v) = -f(v,u)。从u到v的流量一定是从v到u的流量的相反值。
+流守恒性：对任意u，若u不为S或T，一定有∑f(u,v)=0，(u,v)∈E。即u到相邻节点的流量之和为0，因为流入u的流量和u点流出的流量相等，u点本身不会”制造”和”消耗”流量
+
+
+最大流
+在容量网络中,满足弧流量限制条件,且满足平衡条件并且具有最大流量的可行流,称为网络最大流,简称最大流. 
+
+如何求最大流？(何为增广路)
+假如所有边上的流量都没有超过容量（水管），那么就把这个流，称为一个可行流。
+易见，任一网络中都有一个零流，即每弧a上f(a)=0的流f.
+我们就从这个零流开始考虑，假如有这么一条路，这条路从源点开始一直一段一段的连到了汇点(这条 -->
+        <!-- </div> -->
+
+        
+        <h1 id="容量网络"><a href="#容量网络" class="headerlink" title="容量网络"></a>容量网络</h1><blockquote>
+<p>设G(V,E),是一个<strong>有向</strong>网络;</p>
+<p>在V中指定了一个顶点,称为源点(记为Vs),以及另一个顶点,称为汇点(记为Vt);</p>
+<p>对于每一条弧<u,v>属于E,对应有一个权值c(u,v)&gt;0,称为弧的容量.</u,v></p>
+<p>通常把这样的有向网络G称为容量网络. </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/05/21/最大流EK算法/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/05/19/SDNUOJ-1330-Max-Sum/" class="item-title">SDNU 1330 Max Sum</a>
       
       <time datetime="2019-05-19T03:24:06.000Z">
@@ -572,64 +622,6 @@ bool judge(long long ans)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/05/05/POJ-3273-Monthly-Expense/" class="item-title">POJ 3273 Monthly Expense</a>
-      
-      <time datetime="2019-05-05T14:05:13.000Z">
-        2019-05-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接  
-思路
-二分查找，最小化最大值
-二分三要素：
-
-下界：(n天预算分为n组)，此时答案为n天预算中的最大值
-
-上界：(n天预算分为1组)，此时答案为n天预算之和
-
-bool judge(int mid)函数：
-“连续”是前提，贪心性分组
-分完之后，
-if 组数 &lt;= m return 1 可再优化（最小化最大值）：上界更新为mid
-else return 0 下界更新为 mid + 1
-
-
-
-Code#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const int INF = 0x3f3f3f3f;
-
-int n, m, b[100005];
-
-bool judge(int ans)
-{
-    int sum = 0, num = 1;///每组的和与组数
-    for(int i = 0; i &lt; n; ++i)
-    {
-        if(sum + b[i] &lt;= ans)
-            sum += b[i];
-        else -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n天预算花费分为m组（可少于m），所有组中最大值最小是多少？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/05/05/POJ-3273-Monthly-Expense/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -690,6 +682,10 @@ bool judge(int ans)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -703,10 +699,6 @@ bool judge(int ans)
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

@@ -112,6 +112,43 @@
     
     <div class="recent-post-item">
 
+      <a href="/2023/03/27/Vue-Plugin/" class="item-title">Vue Plugin</a>
+      
+      <time datetime="2023-03-27T08:59:08.000Z">
+        2023-03-27
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 插件往往结合vue.mixin(options)使用，mixin本质上是把重复的代码片段混入到Vue组件中，供组件复用逻辑。但是vue.mixin是一个全局api，它会应用到所有实例，所以不要在这个API做疯狂的事情。
+使用vue.mixin更好的办法是使用插件包裹，因为插件会自动删除，而且就算多次调用Vue.use应用同一个插件，它会防止重复应用，但是vue.mixin就不行了。另外使用Vue.use会让代码更好理解，可以清楚知道应用使用了哪些插件。
+2.$.options属性很多人可能不太清楚$.options属性，其实每个组件都有$.options属性它表示实例组件的配置项，配置项可以是组件自身的配置也可以是继承过来的配置项或者是vue.mixin混入的。
+3.编写一个插件插件实现的功能：每个组件在created之后，监听检查某些数据是否合规，若不合规打印出不合规提示信息。
+src/plugins/check.js
+export default {
+    install: (Vue, options) =&gt; {
+        Vue.mixin({
+           -->
+        <!-- </div> -->
+
+        
+        <h2 id="1-插件简介"><a href="#1-插件简介" class="headerlink" title="1.插件简介"></a>1.插件简介</h2><p>插件本质是一个普通函数，第一个参数是Vue，第二个参数是可选参数叫<code>options</code></p>
+<pre><code class="lang-js">function (Vue, options) {
+  //...插件代码
+}
+</code></pre>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2023/03/27/Vue-Plugin/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2023/03/22/Mini-Data-Observer/" class="item-title">Mini Data Observer</a>
       
       <time datetime="2023-03-22T06:44:28.000Z">
@@ -538,46 +575,6 @@ test.js文件嵌入到html文件中，则它本身相当于一个匿名(anonymou
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2022/06/11/From-jQuery-to-MVVM-virtual-DOM/" class="item-title">From jQuery to MVVM &amp; virtual DOM</a>
-      
-      <time datetime="2022-06-11T11:32:26.000Z">
-        2022-06-11
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- JavaScript操作DOM&lt;div id=&quot;js&quot;&gt;
-  &lt;h2&gt;JavaScript&lt;/h2&gt;
-  &lt;p&gt;Hello, &lt;span class=&quot;name&quot;&gt;Bart&lt;/span&gt;!&lt;/p&gt;
-  &lt;p&gt;You are &lt;span class=&quot;age&quot;&gt;12&lt;/span&gt;.&lt;/p&gt;
-  &lt;button onclick=&quot;JSModify()&quot;&gt;修改&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;script&gt;
-    let name = &quot;Jessica&quot;;
-    let age = 33;
-
-    function JSModify(){
-      document.getElementById(&quot;js&quot;)
-          .getElementsByClassName(&quot -->
-        <!-- </div> -->
-
-        
-        <blockquote>
-<p>MVVM模式是因何而生的？Virtual DOM是什么？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2022/06/11/From-jQuery-to-MVVM-virtual-DOM/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -638,6 +635,10 @@ test.js文件嵌入到html文件中，则它本身相当于一个匿名(anonymou
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -651,10 +652,6 @@ test.js文件嵌入到html文件中，则它本身相当于一个匿名(anonymou
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

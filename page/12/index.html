@@ -112,6 +112,58 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/09/02/POJ-1328-Radar-Installation-贪心/" class="item-title">POJ 1328 Radar Installation(贪心)</a>
+      
+      <time datetime="2019-09-02T12:39:58.000Z">
+        2019-09-02
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+思维定势，先想到确定最优雷达位置覆盖第一个岛屿，再检测该雷达是否能覆盖其余岛屿，能则测试下一个岛屿，不能则放下一个雷达，后来实现起来麻烦且难做对。
+逆向思维：根据岛屿位置推出雷达可放范围
+得到一个个区间，问题转化为用最少的点占领所有的区间(保证每个区间上都有个被选中的点)，画图得出贪心选择方案
+
+什么时候需运用逆向思维
+问题涉及两个相互依赖的事物，按照定势思维想不清楚，则站在另一个对立的角度想想，大胆猜测。问题在于很多时候我们并不能意识到自己的思维定势
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+struct node
+{
+    double x, y;
+}a[1005];
+
+struct interval
+{
+    double l, r;
+}b[1005];
+
+bool cmp(interval a, in -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>x轴上方有N个岛屿，现在要在x轴上安装尽可能少的雷达(覆盖半径为d)来覆盖所有岛屿，求最少雷达数目</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/09/02/POJ-1328-Radar-Installation-贪心/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/09/02/POJ-2376-Cleaning-Shifts-贪心/" class="item-title">POJ 2376 Cleaning Shifts(贪心)</a>
       
       <time datetime="2019-09-02T09:19:20.000Z">
@@ -535,53 +587,6 @@ def fillUnivList(ulist, html):
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/15/2019牛客暑期多校训练营-第九场-D折半枚举/" class="item-title">2019牛客暑期多校训练营(第九场)D折半枚举</a>
-      
-      <time datetime="2019-08-15T08:34:31.000Z">
-        2019-08-15
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-所有数字都有1(选取)、0(不选取)两种选择，所有状态就是2 ^ 36种
-枚举所有状态必然超时
-我们发现，2 ^ 36，底数为2(0/1两种状态)，幂不超过40而接近40
-这些都指向-&gt;折半枚举
-折半枚举适合的题目：每个数字(物品)只有选取与不选取两种选择，数字(物品)数目不超过40但接近于40(2 ^ 20可遍历)
-所以要对  (N &lt;=40 、 N：0/1）敏感，反应出这是折半枚举
-
-Code#include &lt;set&gt;
-#include &lt;map&gt;
-#include &lt;stack&gt;
-#include &lt;queue&gt;
-#include &lt;ctime&gt;
-#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;bitset&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;sstream&gt;
-#inclu -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出N( &lt;= 36)和一个sum值，给出N个数字，从中选几个和为sum</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/15/2019牛客暑期多校训练营-第九场-D折半枚举/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -642,6 +647,10 @@ Code#include &lt;set&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -655,10 +664,6 @@ Code#include &lt;set&gt;
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

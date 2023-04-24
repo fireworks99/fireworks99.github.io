@@ -112,6 +112,55 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/12/POJ-2912-Rochambeau-union-find-set/" class="item-title">POJ 2912 Rochambeau(union-find-set)</a>
+      
+      <time datetime="2020-03-12T12:40:25.000Z">
+        2020-03-12
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+种类并查集、排除法做题
+除了裁判的小伙伴分为3组：0、1、2
+从1到n枚举，假设当前 i 是裁判，若合并除裁判外的其他人而无矛盾的话，i 是准裁判。记一下裁判的个数。
+另外要确定最少几行可以得出”谁是裁判”结论，我们记录每次排除一个人时记下是哪一行出现了矛盾，得到n - 1个位置。因为排除了所有的非裁判才知道裁判是谁，所以那n - 1个位置中到最靠后一个位置才能排除n - 1个非裁判，才能得知谁是裁判。
+
+Something
+先来一个小总结：
+种类并查集分两种：①种类2种②种类3种
+(若是多于3种便不能由AB、AC的关系推出BC的关系)
+“2种”还好写，”3种”的有固定的一套体系
+而关于这套体系我还有些东西没弄清楚：
+
+unite先if搞两者属于同一集合的情况（否则会WA）
+
+必须有else，把那里面的内容单独放外面会RE
+
+0= 、 1&gt; 、2&lt;  或者 0= 、1&lt; 、2&gt; 都是可行的
+
+关于(val[a] - val[b] + 3) % 3 != idx我觉得不能解释以下两种情况
+
+
+①A &gt; pre &amp;&amp; B &lt -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n个小伙伴进行猜拳游戏，除了裁判以外，其他人只会出单一的一种，给出m中猜拳的结果，要求找出裁判序号，并且输出在第几次猜拳可以确定。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/12/POJ-2912-Rochambeau-union-find-set/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/12/POJ-2492-A-Bug-s-Life-easy-union-find-set/" class="item-title">POJ 2492 A Bug&#39;s Life(easy union-find-set)</a>
       
       <time datetime="2020-03-12T03:29:35.000Z">
@@ -562,52 +611,6 @@ int cnt, head[50005], dis[MAX_N], vis[MAX_N], times[MAX_N], through -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/07/POJ-1062-昂贵的聘礼-The-shortest-path/" class="item-title">POJ 1062 昂贵的聘礼(The shortest path)</a>
-      
-      <time datetime="2020-03-07T14:39:32.000Z">
-        2020-03-07
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Input
-M(等级差别限制)   N(可交易人 1 ~ N 1是女方家里人，是最终要交易的对象)
-接下来N个描述
-P(该交易人所有物品的价值)    ——每个交易人只有一个物品
-L(该交易人等级)
-X(优惠方案数)
-紧跟X行， 每行 T(交易人编号) V(该交易人物品价格)
-花最少的钱取到1号手里的物品：那个她
-
-Analyze
-先撇开等级限制，可以Dijkstra求出点1到其他所有点的最短路dis[i]，那么dis[i]+val[i] 就是一直换到物品i的最少花费，由于最终换到谁才满足花费最少不确定，所以遍历一遍取最小值即可。
-再考虑等极限制，由于必定与1交易，所以交易人等级区间为[val[1]-M,val[1]+M]，但有可能交易时出错，比如跟val[1]-M和val[1]+M交易，那么他俩等级差都2M了。所以可行区间应为[val[1]-M, val[1]]、[val[1]-M+1, val[1]+1]……遍历枚举区间即可
-
-Attention
-图是有向图（边是单向边）
-
-Code#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#i -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>男方去女方家提亲，女方提出要 P 彩礼，男方觉得有点多，于是女方提出可以拿 物品T 来，那样彩礼只要 V。物品T在第 i 个人那里， 男方去求取，遇到了同样的困难：要钱太多但倘若拿来某物品，可以给他优惠。</p>
-<p>女方这边有等级差别，你所交易的人中，任意两人等级不可大于M。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/07/POJ-1062-昂贵的聘礼-The-shortest-path/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -668,6 +671,10 @@ Code#include &lt;cstdio&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -681,10 +688,6 @@ Code#include &lt;cstdio&gt;
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

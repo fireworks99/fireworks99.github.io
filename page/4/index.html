@@ -112,6 +112,50 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/09/27/Web-vue-nodejs-with-nginx/" class="item-title">Web vue-nodejs with nginx</a>
+      
+      <time datetime="2020-09-27T03:36:20.000Z">
+        2020-09-27
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Problem 1
+修改ip：
+本地开发时网络请求相关ip都是localhost，我在服务器端3000端口部署了nodejs做后台，前端在8081端口，如果发送localhost:3000的请求，请求的竟然是我身边的主机的localhost:3000!???(黑人问号脸.jpg).我只能把代码中网络请求的ip改为服务器对应ip。
+这里记得清除浏览器缓存再测试。
+
+Problem 2
+页面404：
+对于项目非入口页面，在浏览器地址栏直接输网址会404，我把a标签的超链接改为监听点击事件触发函数跳转路由，好一点了，后面有进一步解决的方法。
+
+Problem 3
+后台nodejs重定向redirect失效(404)，大概是跟 Problem 2 同样的问题，尝试iframe + history.go(0)，提交表单后本页面刷新，当然刷新会404(手动刷新也404)，而且这里提交文件的时候出现问题，似乎后端处理不好，简单的文本还好一些。但是刷新一定会404的。
+
+Problem 4
+修改nginx配置解决404问题
+
+location / {
+    root ...
+    index .. -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>Vue项目部署到云服务器nginx，同时上传后端nodejs文件.</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/09/27/Web-vue-nodejs-with-nginx/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/09/23/Web-formidable-upload-text-and-files/" class="item-title">formidable upload text and files</a>
       
       <time datetime="2020-09-23T08:36:57.000Z">
@@ -522,58 +566,6 @@ bool DFS(int x)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/27/HDU-1281-Chessboard-game-Bipartite-graph-match/" class="item-title">HDU 1281 Chessboard game(Bipartite graph match)</a>
-      
-      <time datetime="2020-04-27T02:05:22.000Z">
-        2020-04-27
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-同HDU 1045 Fire Net类似，解法思想(二分图匹配)也相同
-
-方案一 较为暴力
-求完最大匹配后，将每条匹配的边撤掉再求一遍最大匹配，看是否减少，若减少则该边对应点是最要点。
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 105;
-
-int n, m, k;
-bool vis[N];
-int mp[N][N], link[N], t_link[N];
-
-///DFS(int x): link[to] = x not link[x] = to
-
-bool DFS(int x)
-{
-    for(int i = 1; i &lt;= n; ++i)
-        if(mp[x][i] &amp;&amp; !vis[i])
-        {
-            vis[i] = 1;
-            if(li -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N行M列的棋盘，空白地区放棋子“車”，使彼此不能攻击到，非空白地区不影响彼此的攻击(不是“墙”)，求在放最多“車”的前提下，有几个点是“重要点”（棋子不放在这里就会减少可放棋子数）？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/27/HDU-1281-Chessboard-game-Bipartite-graph-match/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -634,6 +626,10 @@ bool DFS(int x)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -647,10 +643,6 @@ bool DFS(int x)
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>

@@ -112,6 +112,58 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/10/26/再看欧拉筛/" class="item-title">再看欧拉筛</a>
+      
+      <time datetime="2019-10-26T09:01:32.000Z">
+        2019-10-26
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Code#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 3e7+5;
+
+int p[N], cnt;
+bool vis[N];/// 1 表示合数 0 表示素数
+
+void Euler(int n)
+{
+    cnt = 0;
+    for(int i = 2; i &lt;= n; ++i)
+    {
+        if(!vis[i])
+            p[++cnt] = i;
+        for(int j = 1; j &lt;= cnt &amp;&amp; p[j] * i &lt;= n; ++j)
+        {
+            vis[ p[j] * i ] = 1;
+            if(i % p[j] == 0)///确保每个合数只被它的最小质因子筛掉
+                break;
+        }
+    }
+}
+
+欧拉筛做了 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>欧拉筛如何实现：每个合数仅被它的最小质因子筛掉？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/10/26/再看欧拉筛/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/10/21/与区间查询相关的ACM算法/" class="item-title">与区间查询相关的ACM算法</a>
       
       <time datetime="2019-10-21T13:14:18.000Z">
@@ -547,58 +599,6 @@ struct node
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/09/02/POJ-1328-Radar-Installation-贪心/" class="item-title">POJ 1328 Radar Installation(贪心)</a>
-      
-      <time datetime="2019-09-02T12:39:58.000Z">
-        2019-09-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-思维定势，先想到确定最优雷达位置覆盖第一个岛屿，再检测该雷达是否能覆盖其余岛屿，能则测试下一个岛屿，不能则放下一个雷达，后来实现起来麻烦且难做对。
-逆向思维：根据岛屿位置推出雷达可放范围
-得到一个个区间，问题转化为用最少的点占领所有的区间(保证每个区间上都有个被选中的点)，画图得出贪心选择方案
-
-什么时候需运用逆向思维
-问题涉及两个相互依赖的事物，按照定势思维想不清楚，则站在另一个对立的角度想想，大胆猜测。问题在于很多时候我们并不能意识到自己的思维定势
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-struct node
-{
-    double x, y;
-}a[1005];
-
-struct interval
-{
-    double l, r;
-}b[1005];
-
-bool cmp(interval a, in -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>x轴上方有N个岛屿，现在要在x轴上安装尽可能少的雷达(覆盖半径为d)来覆盖所有岛屿，求最少雷达数目</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/09/02/POJ-1328-Radar-Installation-贪心/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -659,6 +659,10 @@ bool cmp(interval a, in -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/20/JS-this/">JS this</a>
           </li>
         
@@ -672,10 +676,6 @@ bool cmp(interval a, in -->
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/03/31/arr-some/">arr.some</a>
           </li>
         
       </ul>
