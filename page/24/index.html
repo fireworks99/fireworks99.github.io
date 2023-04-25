@@ -112,6 +112,69 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/06/POJ-1287-Networking/" class="item-title">POJ 1287 Networking</a>
+      
+      <time datetime="2019-04-06T10:52:03.000Z">
+        2019-04-06
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+传送门  
+Code of Kruskal#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 105;///点的上限,因为RE我开大了
+
+int n, m, ans;
+int pre[N];
+
+int cnt;
+struct edge
+{
+    int there, here, w;
+}a[N * N];
+
+bool cmp(edge a, edge b)
+{
+    return a.w &lt; b.w;
+}
+
+void init()
+{
+    ans = 0;
+    for(int i = 0; i &lt;= n; ++i)
+        pre[i] = i;
+}
+
+int found(int x)
+{
+    if(x != pre[x])
+        pre[x] = found(pre[x]);
+    return pre[x];
+}
+ -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n个点，m条边（两点间的路可能不止一条），求最小生成树</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/06/POJ-1287-Networking/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/06/ACM-ICPC/" class="item-title">ACM-ICPC</a>
       
       <time datetime="2019-04-06T04:01:22.000Z">
@@ -852,61 +915,6 @@ void floyd()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/30/POJ-2236-Wireless-Network/" class="item-title">POJ 2236 Wireless Network</a>
-      
-      <time datetime="2019-03-30T00:35:24.000Z">
-        2019-03-30
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接 http://poj.org/problem?id=2236
-并查集
-不过用 while(ch = getchar()) 超时，用while(cin &gt;&gt; ch)就过，前者读不到EOF？
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const double eps = 1e-6;
-
-int n, d;
-int pre[1005];
-bool vis[1005];///修没修
-int x[1005];
-int y[1005];
-
-void init()///初始化顶级是自身
-{
-    for(int i = 0; i &lt;= n; ++i)
-        pre[i] = i;
-}
-
-int found(int x)
-{
-    if(x != pre[x])
-        pre[x] = found(pre[x]);///路径压缩
-    return  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n台坏掉的电脑（1~N），一个限制距离d</p>
-<p>n个坐标（1~N），两种操作（O x 表示修复第x台电脑）（S x y表示询问：第x与第y台电脑能否直接或间接相连）</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/30/POJ-2236-Wireless-Network/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -967,6 +975,10 @@ int found(int x)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/25/elementUI-sync/">elementUI .sync</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
           </li>
         
@@ -980,10 +992,6 @@ int found(int x)
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
           </li>
         
       </ul>

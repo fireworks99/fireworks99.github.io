@@ -112,6 +112,54 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/09/03/POJ-3190-Stall-Reservations-贪心/" class="item-title">POJ 3190 Stall Reservations(贪心)</a>
+      
+      <time datetime="2019-09-03T08:24:39.000Z">
+        2019-09-03
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+贪心：若一个区间能接在另一个区间的后面，则二者可共用一个数轴
+按区间左界从小到大排序，左界相同右界小的在前
+第一个占用一条数轴，放入某个容器里。从第二个开始遍历，找出容器里(容器里都是安排好的区间)右界最小的区间，若其小于当前区间的左界，则当前区间可与该区间共用同一数轴，将那个区间拿出来，把这个区间放进去
+每次都要找出容器中右界最小的区间，那么该容器可用优先队列充当
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+struct node
+{
+    int l, r, id, after_id, num;
+    bool operator &lt;(const node &amp; a)const
+    {
+        if(a.r == r)
+            return a.l &lt; l;
+        return a.r &lt; r;
+ -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出N个区间，将其不重叠地放在数轴上，至少需要几个数轴？</p>
+<p>[1, 2]，[2, 3]算作重叠</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/09/03/POJ-3190-Stall-Reservations-贪心/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/09/02/POJ-1328-Radar-Installation-贪心/" class="item-title">POJ 1328 Radar Installation(贪心)</a>
       
       <time datetime="2019-09-02T12:39:58.000Z">
@@ -542,51 +590,6 @@ def solve(html):
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/16/定向爬虫-中国大学排名/" class="item-title">定向爬虫:中国大学排名</a>
-      
-      <time datetime="2019-08-16T02:08:33.000Z">
-        2019-08-16
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-Codeimport bs4
-import requests
-from bs4 import BeautifulSoup
-
-def getText(url):
-    try:
-        kv = { &#39;user-agent&#39;: &#39;Mozilla/5.0&#39; }
-        r = requests.get(url, headers=kv)
-        r.raise_for_status()
-        r.encoding = r.apparent_encoding
-        return r.text
-    except:
-        return &quot;&quot;
-
-def fillUnivList(ulist, html):
-    soup = BeautifulSoup(html, &#39;html.parser&#39;)
-    for tr in soup.find(&#39;tbody&#39;).children: # 找到第一个tbody标签,遍历子节点
-        if isinst -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>url：<a href="http://www.zuihaodaxue.com/" target="_blank" rel="noopener">http://www.zuihaodaxue.com/</a></p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/16/定向爬虫-中国大学排名/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -647,6 +650,10 @@ def fillUnivList(ulist, html):
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/25/elementUI-sync/">elementUI .sync</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
           </li>
         
@@ -660,10 +667,6 @@ def fillUnivList(ulist, html):
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
           </li>
         
       </ul>

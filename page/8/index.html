@@ -112,6 +112,49 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/13/ZOJ-3261-Connections-in-Galaxy-War-union-find-set/" class="item-title">ZOJ 3261 Connections in Galaxy War(union-find-set)</a>
+      
+      <time datetime="2020-03-13T03:23:27.000Z">
+        2020-03-13
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+我所解决不了的问题是删边，并查集没学过删边操作，要是每次都重建一次并查集太耗时间了，怎么办呢？
+逆序解决问题：
+从后向前解决问题，最初的并查集排除了所有删掉的边，正好对应最后的查询。然后向前遍历，若遇到删边操作，说明前面的查询都是建立在“包含这条边”的基础上的，那么我们添边，如此一来，化“删边”为“添边”，解决了问题。
+总结：正序解决问题不行，试试逆序。老子说过：世间万物都包含对立两方，对立的双方可以相互转化。
+另外用一个mmax[i]数组记录以i点所在集合(连通块)内最大val值，方法是把mmax数组作为每个集合祖先节点的一个属性，毕竟祖先节点代表着整个集合。
+
+Code#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 50005;
+
+int n, m, k, cnt;
+int pre[N], val[N] -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>假设有编号从0开始的n个点，每个点都有一个非负权值p[i]。现在有没有重边的m条边和Q个操作。<br>对于操作有两种类型 :<br>destroy a b 表示摧毁a,b点之间的边<br>query a 表示从a出发能到的点中,权值比a大权值最大,在权值最大前提下编号最小的点。如果没有这样的点输出-1。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/13/ZOJ-3261-Connections-in-Galaxy-War-union-find-set/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/12/POJ-2912-Rochambeau-union-find-set/" class="item-title">POJ 2912 Rochambeau(union-find-set)</a>
       
       <time datetime="2020-03-12T12:40:25.000Z">
@@ -563,54 +606,6 @@ typedef pair&lt;int, int -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/08/LightOJ-1074-Extended-Traffic-The-shortest-path/" class="item-title">LightOJ 1074 Extended Traffic(The shortest path)</a>
-      
-      <time datetime="2020-03-08T03:08:32.000Z">
-        2020-03-08
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-单向边，可有负权边，可含负权环 -&gt; 用spfa叭
-若某个点在负权环里(++times[to] &gt; n)，那么从点to出发所能到达的点(无论是否在负权环里)到起点的距离都是无限小，可以DFS枚举所有可达点并标记
-（补充一下：若是单纯求负权环上所有点，应该与强连通分量有关，不仅仅是DFS这么简单）
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int MAX_N = 205;
-const int INF = 0x3f3f3f3f;
-
-int n, val[MAX_N];
-
-struct edge
-{
-    int to, w, pre;
-} e[50005];
-
-int cnt, head[50005], dis[MAX_N], vis[MAX_N], times[MAX_N], through -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出n个点的权值(不超过20),点 i 到点 j 之间的距离(如果可达)为(a[j] - a[i]) ^ 3,求到查询点的最短路径</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/08/LightOJ-1074-Extended-Traffic-The-shortest-path/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -671,6 +666,10 @@ int cnt, head[50005], dis[MAX_N], vis[MAX_N], times[MAX_N], through -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/25/elementUI-sync/">elementUI .sync</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
           </li>
         
@@ -684,10 +683,6 @@ int cnt, head[50005], dis[MAX_N], vis[MAX_N], times[MAX_N], through -->
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
           </li>
         
       </ul>

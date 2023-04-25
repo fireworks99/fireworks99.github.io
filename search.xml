@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>elementUI .sync</title>
+      <link href="2023/04/25/elementUI-sync/"/>
+      <url>2023/04/25/elementUI-sync/</url>
+      
+        <content type="html"><![CDATA[<p>elementUI的分页组件el-pagination，有一个属性叫current-page，由调用它的组件（即父组件）通过props传给它（el-pagination）。</p><p>有一种情境：数据很多时，当前有多页（1~N），1 &lt; current-page &lt;= N，当一次点击使数据变得很少以至于只有一页数据时，el-pagination组件把当前页码置为1，又因为current-page是父组件的数据，所以只能由父组件来修改，即要么添加.sync修饰符，要么向父组件发送事件父组件在methods里自己改。</p><p>如果什么都不做，那么current-page还是原先那个大于1的数字（比如是2），但此时子组件里当前页码是1，产生了冲突。假如此时一次点击使数据变得较多产生了很多页，那么当前页码是1，但是current-page是2，此时用户点击页码2想跳转到第二页，但是点击之后current-page被复制为2，子组件发现current-page被赋值前后没有变化，故页码2不会被高亮，页码1仍高亮。</p><a id="more"></a><pre><code class="lang-html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;!-- 引入样式 --&gt;    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/element-ui/lib/theme-chalk/index.css&quot;&gt;    &lt;script src=&quot;https://cdn.staticfile.org/vue/2.4.2/vue.min.js&quot;&gt;&lt;/script&gt;    &lt;script src=&quot;https://unpkg.com/element-ui/lib/index.js&quot;&gt;&lt;/script&gt;    &lt;script src=&quot;https://unpkg.com/axios/dist/axios.min.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;el-button type=&quot;primary&quot; @click=&quot;changeTotal()&quot;&gt;改变记录数目&lt;/el-button&gt;        &lt;el-pagination             @size-change=&quot;handleSizeChange&quot;             @current-change=&quot;handleCurrentChange&quot;            :current-page.sync=&quot;currentPage&quot;             :page-sizes=&quot;[20, 50, 100, 200]&quot; :page-size=&quot;100&quot;            layout=&quot;total, sizes, prev, pager, next, jumper&quot; :total=&quot;total&quot;&gt;        &lt;/el-pagination&gt;    &lt;/div&gt;    &lt;script&gt;        const app = new Vue({            el: &quot;#app&quot;,            data() {                return {                    currentPage: 1,                    total: 800                }            },            methods: {                handleSizeChange(val) {                },                handleCurrentChange(val) {                    this.currentPage = val;                },                changeTotal() {                    this.total = this.total === 800 ? 0 : 800;                }            }        })    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Vueのv-sth </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS async/await</title>
       <link href="2023/04/24/JS-async-await/"/>
       <url>2023/04/24/JS-async-await/</url>

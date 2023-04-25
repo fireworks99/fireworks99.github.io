@@ -112,6 +112,37 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/07/HDU-4408-Minimun-Spanning-Tree-Count/" class="item-title">HDU 4408 Minimun Spanning Tree (Count)</a>
+      
+      <time datetime="2020-04-07T07:45:23.000Z">
+        2020-04-07
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+相对于普通的最小生成树，多了一个条件：最小，也就是说生成树的边有了权值。如果想办法去掉权值，问题就转为了普通生成树计数了。就像三维扫描线求体积那题，遍历Z轴，如同去掉了一个维度，将问题转化为了普通的扫描线求面积。这一题能不能通过遍历边的长度而将问题转化呢？可以的。
+在Kruskal算法中：假设图中有a[1]条长度为b[1]的边，有a[2]条长度为b[2]的边…a[k]条长度为b[k]的边。这a[k]条长度相同的边的排列顺序可以是任意的，这意味着顺序不影响结果(即长度为b[k]的边被遍历过后形成的连通块是相同的，即缩点后的图是相同的)，也就是说在长度为b[k]的边的集合里，有num[k]个子集，选任意一个子集得到的结果都是相同的。这样一来，最终答案就是num[1] * num[2] *...*num[last]。
+如何求num[k] ?
+将长度小于b[k]的边都处理完(并查集unite)后形成一个个集合，这一个个集合相当于新图中的一个个“点”。这a[k]条长度为b[k]的边会使这些“点”形成一个个新的连通块，将每一个连通块看做一个图，Gauss计算生成树个数，每个连通块的 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>最小生成树 + 生成树计数</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/07/HDU-4408-Minimun-Spanning-Tree-Count/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/04/06/HDU-4305-Lightning-Count-spanning-trees/" class="item-title">HDU 4305 Lightning(Count spanning trees)</a>
       
       <time datetime="2020-04-06T04:52:38.000Z">
@@ -525,52 +556,6 @@ struct edge
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/22/HDU-1255-Covered-area-Segment-Tree-Scanning-Lines/" class="item-title">HDU 1255 Covered area(Segment Tree Scanning Lines)</a>
-      
-      <time datetime="2020-03-22T09:08:38.000Z">
-        2020-03-22
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-相对于求矩形面积并集，此题所求的特点在于cnt[o] &gt;= 2 才有 len[o] = X[R + 1] - X[L];。另外这要求每段的cnt及时更新，而之前那种方法不down，数据没有被正确表示，而现在就需要用上lazy数组down下去了。
-另外加一个query函数释放所有的lazy以更新数据
-对于之前写过的线段树们，下面节点的状态没被更新不影响上面节点状态的正确性，而这一题下面节点不被lazy更新会导致上面节点呈现着错误的状态，所以每次从线段树取值时都需要释放所有lazy更新这棵树。
-现在这种方案：需要用到线段树维护的值时，释放全部lazy
-相比较于：不用lazy，每次update都更新到底
-还是省时间的
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 2100;
-
-int n;
-
-int num;
-double X[N];
- -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>多个矩形相交，求至少被覆盖过两次的面积</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/22/HDU-1255-Covered-area-Segment-Tree-Scanning-Lines/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -631,6 +616,10 @@ double X[N];
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/25/elementUI-sync/">elementUI .sync</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
           </li>
         
@@ -644,10 +633,6 @@ double X[N];
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
           </li>
         
       </ul>

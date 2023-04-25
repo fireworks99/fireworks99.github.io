@@ -112,6 +112,63 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/08/HDU-4292-Food-最大流再优化/" class="item-title">HDU 4292 Food(最大流再优化?)</a>
+      
+      <time datetime="2019-08-08T03:49:53.000Z">
+        2019-08-08
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+最大流建图：
+
+人 拆点(每人匹配一食物一饮料)
+食物与人之间的容量设为1或INF都行
+
+
+优化
+
+字符串用scanf(&quot;%s&quot;, str)比循环getchar快？
+main函数调用其他函数耗时？add里写两份
+BFS出口改了……
+DFS形式改了，添加了一句deep[s] = -1;
+犯的大错误：
+
+
+Code#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+#i -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>与POJ 3281 Dining相似，人、食物、饮料，不同的是现在食物、饮料数目不止一份</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/08/HDU-4292-Food-最大流再优化/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/08/HDU-4280-ISland-Transport-最大流DInic优化/" class="item-title">HDU 4280 ISland Transport(最大流Dinic优化)</a>
       
       <time datetime="2019-08-08T00:27:07.000Z">
@@ -581,61 +638,6 @@ struct edge{ int to, w -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/01/欧拉-回-路/" class="item-title">欧拉(回)路</a>
-      
-      <time datetime="2019-08-01T09:08:17.000Z">
-        2019-08-01
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 无向图#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 1005;
-
-int n, m;
-int cnt[N];
-int tot, ans[N];
-bool mp[N][N];
-
-void DFS(int num)
-{
-    for(int i = 1; i &lt;= n; ++i)
-        if(mp[num][i])
-        {
-            mp[num][i] = mp[i][num] = 0;
-            DFS(i);
-            ans[++tot] = i;
-        }
-}
-
-int main()
-{
-    while(~scanf(&quot;%d%d&quot;, &amp;n, &amp;m) -->
-        <!-- </div> -->
-
-        
-        <h2 id="DFS求连通图路径（模板）"><a href="#DFS求连通图路径（模板）" class="headerlink" title="DFS求连通图路径（模板）"></a>DFS求连通图路径（模板）</h2><blockquote>
-<p>无向图是特殊的有向图</p>
-<p>欧拉回路是特殊的欧拉路</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/01/欧拉-回-路/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -696,6 +698,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/25/elementUI-sync/">elementUI .sync</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
           </li>
         
@@ -709,10 +715,6 @@ int main()
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
           </li>
         
       </ul>

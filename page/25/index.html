@@ -112,6 +112,61 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/30/POJ-2236-Wireless-Network/" class="item-title">POJ 2236 Wireless Network</a>
+      
+      <time datetime="2019-03-30T00:35:24.000Z">
+        2019-03-30
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接 http://poj.org/problem?id=2236
+并查集
+不过用 while(ch = getchar()) 超时，用while(cin &gt;&gt; ch)就过，前者读不到EOF？
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const double eps = 1e-6;
+
+int n, d;
+int pre[1005];
+bool vis[1005];///修没修
+int x[1005];
+int y[1005];
+
+void init()///初始化顶级是自身
+{
+    for(int i = 0; i &lt;= n; ++i)
+        pre[i] = i;
+}
+
+int found(int x)
+{
+    if(x != pre[x])
+        pre[x] = found(pre[x]);///路径压缩
+    return  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n台坏掉的电脑（1~N），一个限制距离d</p>
+<p>n个坐标（1~N），两种操作（O x 表示修复第x台电脑）（S x y表示询问：第x与第y台电脑能否直接或间接相连）</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/30/POJ-2236-Wireless-Network/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/29/POJ-1797-Heavy-Transportation/" class="item-title">POJ 1797 Heavy Transportation</a>
       
       <time datetime="2019-03-29T11:18:22.000Z">
@@ -547,52 +602,6 @@ void print(node t)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/18/uva-11624/" class="item-title">uva 11624 Fire!</a>
-      
-      <time datetime="2019-03-18T01:36:58.000Z">
-        2019-03-18
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接 https://vjudge.net/problem/UVA-11624
-思路
-先将火蔓延到所有点的最短时间通过bfs求出来（到不了的地方初始化为无穷大）
-然后再对人行走的过程用bfs进行模拟，从而计算出该人到达每个点的最短时间（如果人到达该点的最短时间晚于火到达的最短时间，那么该点不能走 ）
-注意：开始时起火的格子可能不止一个
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int inf = 0x3f3f3f3f;
-
-int n, m;
-char mp[1005][1005];///存图
-bool vis[1005][1005];///bfs 的辅助（这种vis[数组]可多次使用）
-int fire[1005][1005];///火蔓延到某点所需时间
-int dx -->
-        <!-- </div> -->
-
-        
-        <h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><blockquote>
-<p>帮助J走出一个大火蔓延的迷宫。J每分钟可以超上下左右四个方向移动，而所有着火的格子每一分钟都会往四个方向蔓延一格。迷宫中有一些障碍，J和火都无法进入。当J走出迷宫的边界时，逃离成功。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/18/uva-11624/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -653,6 +662,10 @@ int dx -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/25/elementUI-sync/">elementUI .sync</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
           </li>
         
@@ -666,10 +679,6 @@ int dx -->
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
           </li>
         
       </ul>

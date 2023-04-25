@@ -112,6 +112,43 @@
     
     <div class="recent-post-item">
 
+      <a href="/2023/04/25/elementUI-sync/" class="item-title">elementUI .sync</a>
+      
+      <time datetime="2023-04-25T01:38:47.000Z">
+        2023-04-25
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- &lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;!-- 引入样式 --&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/element-ui/lib/theme-chalk/index.css&quot;&gt;
+    &lt;script src=&quo -->
+        <!-- </div> -->
+
+        
+        <p>elementUI的分页组件el-pagination，有一个属性叫current-page，由调用它的组件（即父组件）通过props传给它（el-pagination）。</p>
+<p>有一种情境：数据很多时，当前有多页（1~N），1 &lt; current-page &lt;= N，当一次点击使数据变得很少以至于只有一页数据时，el-pagination组件把当前页码置为1，又因为current-page是父组件的数据，所以只能由父组件来修改，即要么添加.sync修饰符，要么向父组件发送事件父组件在methods里自己改。</p>
+<p>如果什么都不做，那么current-page还是原先那个大于1的数字（比如是2），但此时子组件里当前页码是1，产生了冲突。假如此时一次点击使数据变得较多产生了很多页，那么当前页码是1，但是current-page是2，此时用户点击页码2想跳转到第二页，但是点击之后current-page被复制为2，子组件发现current-page被赋值前后没有变化，故页码2不会被高亮，页码1仍高亮。</p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2023/04/25/elementUI-sync/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2023/04/24/JS-async-await/" class="item-title">JS async/await</a>
       
       <time datetime="2023-04-24T09:07:47.000Z">
@@ -497,54 +534,6 @@ Avatar组件，它接收一个src属性并显示到img标签。这个组件非�
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2023/03/28/Vue-Render-Function/" class="item-title">Vue Render Function</a>
-      
-      <time datetime="2023-03-28T09:19:56.000Z">
-        2023-03-28
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-
-Template =&gt; Render Function
-两种编译模式：
-
-把模板直接传入Vue实例，Vue执行完整的编译，打包时连同编译器打包，压缩后约30KB
-使用Vue CLI构建项目，用到webpack与vue-loader，vue-loader会预编译，压缩后约20KB
-
-
-Render Function =&gt; Virtual DOM
-渲染函数返回虚拟DOM
-
-Virtual DOM =&gt; Actual DOM
-Vue基于虚拟DOM生成真实DOM
-
-
-2.虚拟DOM
-真实DOM的节点与虚拟DOM的节点是一一对应的，虚拟DOM使用一个JS对象来表示真实DOM的一个Node，而操作JS对象远比操作DOM节点更加简单。
-数据或视图发生变化时，Vue会比较变化前后虚拟DOM的不同点，根据虚拟DOM的不同点来更新真实DOM。
-使用Vue Template Explorer可以查看渲染函数（查看Vue是如何转换虚拟DOM的）。
-https://template-explorer.vuejs.org/
-
-&lt;!DOCTYPE html&gt;
-&lt;html la -->
-        <!-- </div> -->
-
-        
-        <h2 id="1-渲染过程"><a href="#1-渲染过程" class="headerlink" title="1.渲染过程"></a>1.渲染过程</h2><p>Template =&gt; Render Function =&gt; Virtual DOM =&gt; Actual DOM</p>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2023/03/28/Vue-Render-Function/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -605,6 +594,10 @@ https://template-explorer.vuejs.org/
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2023/04/25/elementUI-sync/">elementUI .sync</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
           </li>
         
@@ -618,10 +611,6 @@ https://template-explorer.vuejs.org/
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/04/01/Vue-表单验证/">Vue 表单验证</a>
           </li>
         
       </ul>
