@@ -6,7 +6,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Tag: JavaScriptのNote [ 市井烟火气 ]</title>
+	<title>@click vs onclick [ 市井烟火气 ]</title>
 	
 	
 	<!-- stylesheets list from _config.yml -->
@@ -102,71 +102,98 @@
 			<div id="content-inner">
 
 				
-<div id="tag">
-  <h1>JavaScriptのNote</h1>
-  
-  <div class="tag-item">
-    <a href="/2023/05/04/click-vs-onclick/">
-      @click vs onclick
-    </a>
-    <time datetime="2023-05-04T10:00:47.000Z">
-      2023-05-04
-    </time>
-  </div>
-  
-  <div class="tag-item">
-    <a href="/2023/04/20/JS-this/">
-      JS this
-    </a>
-    <time datetime="2023-04-20T11:10:40.000Z">
-      2023-04-20
-    </time>
-  </div>
-  
-  <div class="tag-item">
-    <a href="/2023/03/31/arr-some/">
-      arr.some
-    </a>
-    <time datetime="2023-03-31T09:42:13.000Z">
-      2023-03-31
-    </time>
-  </div>
-  
-  <div class="tag-item">
-    <a href="/2022/12/02/JavaScript-Global-Object/">
-      JavaScript Global Object
-    </a>
-    <time datetime="2022-12-02T09:59:18.000Z">
-      2022-12-02
-    </time>
-  </div>
-  
-  <div class="tag-item">
-    <a href="/2022/09/07/JavaScript-Note-2022-09-07-Accessor-property/">
-      JavaScript Note 2022.09.07 Accessor property
-    </a>
-    <time datetime="2022-09-07T12:56:30.000Z">
-      2022-09-07
-    </time>
-  </div>
-  
-  <div class="tag-item">
-    <a href="/2022/09/01/JavaScript-Note-2022-09-01/">
-      JavaScript Note 2022.09.01
-    </a>
-    <time datetime="2022-09-01T08:51:48.000Z">
-      2022-09-01
-    </time>
-  </div>
-  
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>@click vs onclick</h1>
+			<ul>
+<li>onclick可以由JS引擎直接识别，在全局寻找对应处理方法。</li>
+<li>@click是vue语法糖，由vue在自己的methods里寻找对应处理方法。</li>
+</ul>
+<a id="more"></a>
+<pre><code class="lang-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
 
-  <div id="other-paginator">
-    <span class="page-number current">1</span>
-  </div>
-  
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/element-ui/lib/theme-chalk/index.css&quot;&gt;
+    &lt;script src=&quot;https://cdn.staticfile.org/vue/2.4.2/vue.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;https://unpkg.com/element-ui/lib/index.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;div id=&quot;app&quot;&gt;
+        &lt;button @click=&quot;vueClick()&quot;&gt;vueClick&lt;/button&gt;
+        &lt;button onclick=&quot;domClick()&quot;&gt;domClick&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;script&gt;
+        const app = new Vue({
+            el: &quot;#app&quot;,
+            data() {
+                return {
+                    visible: false
+                }
+            },
+            methods: {
+                vueClick() {
+                    console.log(&quot;vueClick&quot;);
+                },
+                domClick() {
+                    console.log(&quot;domClick&quot;);
+                }
+            }
+        })
+
+        function vueClick() {
+            alert(&quot;vueClick&quot;);
+        }
+
+        function domClick() {
+            alert(&quot;domClick&quot;);
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+<p>结果：打印vueClick、警告domClick</p>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
 </div>
 
-
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
 
 
 			</div>

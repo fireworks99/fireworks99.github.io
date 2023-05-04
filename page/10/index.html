@@ -112,6 +112,56 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/24/FZU-1686-神龙的难题-DLX-repeat-cover/" class="item-title">FZU 1686 神龙的难题(DLX repeat cover)</a>
+      
+      <time datetime="2019-11-24T12:02:26.000Z">
+        2019-11-24
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 建模
+把每个1视为列，每一种覆盖方式视为行
+最少需要拿出多少行，使得每列都含有1——重复覆盖
+
+Code#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int MAX_V = 100005;///数组开小可能超时
+
+
+int n, m, length, width, res, tot;
+int cnt[255];///第i列1元素的个数
+int L[MAX_V], R[MAX_V], U[MAX_V], D[MAX_V];
+int Head[255];///第i行第一个1元素的ID,意义同列标元素
+int Row[MAX_V], Col[MAX_V];///记录id所在行列
+int ans[255], mp[20][20];
+bool vis[255];
+
+void init()
+{
+    for(int i = 0; i &lt -->
+        <!-- </div> -->
+
+        
+        <h3 id="Deacription"><a href="#Deacription" class="headerlink" title="Deacription"></a>Deacription</h3><blockquote>
+<p>N x M的01矩阵，给出a、b，表示一次性可以将a行b列的小矩阵内的数字全变成0，问最终使全图为0需要几步</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/24/FZU-1686-神龙的难题-DLX-repeat-cover/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/24/HDU-3948-who-s-your-daddy-DLX-repeat-cover/" class="item-title">HDU 3498 who&#39;s your daddy(DLX repeat cover)</a>
       
       <time datetime="2019-11-24T09:00:46.000Z">
@@ -612,59 +662,6 @@ struct spf
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/01/rand-与srand-生成随机数/" class="item-title">rand()与srand()生成随机数</a>
-      
-      <time datetime="2019-11-01T04:25:53.000Z">
-        2019-11-01
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- rand()
-rand()函数是以一个数字(我们称之为”种子”seed)为基准，以某个递推公式推算出来的一系列数
-我们假设这个公式为 f ( seed )  =  [a, b, c …] 
-
-试用rand()#include &lt;ctime&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstdlib&gt;
-#include &lt;iostream&gt;
-using namespace std;
-
-int main()
-{
-    int a;
-    for(int i = 0; i &lt; 10; ++i)
-    {
-        a = rand();
-        cout &lt;&lt; a &lt;&lt; &#39;\n&#39;;
-    }
-    return 0;
-}
-
-
-出现问题
-我们多次编译，输出前十个数字发现都是一样的，就是41,18467,6334…
-原因：我们不给rand()函数传去种子的时候，种子的默认值为1，意味着
-f ( 1 ) = [41, 18467, 6334, 26500…]
-但这个集 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>C / C++ 如何生成随机数？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/01/rand-与srand-生成随机数/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -711,7 +708,7 @@ f ( 1 ) = [41, 18467, 6334, 26500…]
   <div class="widget-box">
     <h3 class="widget-title-archive">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
     </div>
   </div>
 
@@ -723,6 +720,10 @@ f ( 1 ) = [41, 18467, 6334, 26500…]
     <h3 class="widget-title-post">recent_posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2023/05/04/click-vs-onclick/">@click vs onclick</a>
+          </li>
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/25/elementUI-sync/">elementUI .sync</a>
@@ -738,10 +739,6 @@ f ( 1 ) = [41, 18467, 6334, 26500…]
         
           <li>
             <a class="recent_posts-list-link" href="/2023/04/07/Vue-childProps-sync-parentData/">Vue :childProps.sync=&#39;parentData&#39;</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2023/04/01/Vue-i18n/">Vue i18n</a>
           </li>
         
       </ul>

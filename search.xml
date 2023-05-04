@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>@click vs onclick</title>
+      <link href="2023/05/04/click-vs-onclick/"/>
+      <url>2023/05/04/click-vs-onclick/</url>
+      
+        <content type="html"><![CDATA[<ul><li>onclick可以由JS引擎直接识别，在全局寻找对应处理方法。</li><li>@click是vue语法糖，由vue在自己的methods里寻找对应处理方法。</li></ul><a id="more"></a><pre><code class="lang-html">&lt;!DOCTYPE html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;    &lt;meta charset=&quot;UTF-8&quot;&gt;    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;    &lt;title&gt;Document&lt;/title&gt;    &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/element-ui/lib/theme-chalk/index.css&quot;&gt;    &lt;script src=&quot;https://cdn.staticfile.org/vue/2.4.2/vue.min.js&quot;&gt;&lt;/script&gt;    &lt;script src=&quot;https://unpkg.com/element-ui/lib/index.js&quot;&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt;    &lt;div id=&quot;app&quot;&gt;        &lt;button @click=&quot;vueClick()&quot;&gt;vueClick&lt;/button&gt;        &lt;button onclick=&quot;domClick()&quot;&gt;domClick&lt;/button&gt;    &lt;/div&gt;    &lt;script&gt;        const app = new Vue({            el: &quot;#app&quot;,            data() {                return {                    visible: false                }            },            methods: {                vueClick() {                    console.log(&quot;vueClick&quot;);                },                domClick() {                    console.log(&quot;domClick&quot;);                }            }        })        function vueClick() {            alert(&quot;vueClick&quot;);        }        function domClick() {            alert(&quot;domClick&quot;);        }    &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;</code></pre><p>结果：打印vueClick、警告domClick</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> JavaScriptのNote </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>elementUI .sync</title>
       <link href="2023/04/25/elementUI-sync/"/>
       <url>2023/04/25/elementUI-sync/</url>
