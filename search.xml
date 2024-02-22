@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>SQL trigger</title>
+      <link href="2024/02/22/SQL-trigger/"/>
+      <url>2024/02/22/SQL-trigger/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-What-is-a-trigger"><a href="#1-What-is-a-trigger" class="headerlink" title="1. What is a trigger"></a>1. What is a trigger</h2><blockquote><p>触发器（trigger）：监视某种情况，并触发某种操作，它是提供给程序员和数据分析员来<strong>保证数据完整性</strong>的一种方法，它是与表事件相关的<strong>特殊的存储过程</strong>。</p><p>它的执行不是由程序调用，也不是手工启动，而是由<strong>事件</strong>来触发，例如当对一个表进行操作（ insert，delete， update）时就会激活它执行。</p></blockquote><a id="more"></a><h2 id="2-How-to-create-a-trigger"><a href="#2-How-to-create-a-trigger" class="headerlink" title="2.How to create a trigger"></a>2.How to create a trigger</h2><h3 id="1-创建四要素"><a href="#1-创建四要素" class="headerlink" title="(1).创建四要素"></a>(1).创建四要素</h3><ul><li>监视地点（table）</li><li>监视事件（update、insert、delete）</li><li>触发时间（before、after）<ul><li>before用于校验，after用于补充</li></ul></li><li>触发事件（update、insert、delete）</li></ul><h3 id="2-语法"><a href="#2-语法" class="headerlink" title="(2).语法"></a>(2).语法</h3><pre><code class="lang-text">CREATE TRIGGER &lt;触发器名&gt; &lt;监视时间&gt; &lt;监视事件&gt;ON 监视地点 FOR EACH ROW begin    触发事件end;</code></pre><h2 id="3-Example"><a href="#3-Example" class="headerlink" title="3.Example"></a>3.Example</h2><pre><code class="lang-sql">use dailyExercise;#商品表CREATE TABLE product (    id INT PRIMARY KEY AUTO_INCREMENT,    name VARCHAR(20),    num INT);#订单表CREATE TABLE orders (    orders_id INT PRIMARY KEY AUTO_INCREMENT,    product_id INT,    amount INT);insert into product(name,num) values(&#39;商品1&#39;,10),(&#39;商品2&#39;,10),(&#39;商品3&#39;,10);#insert into order(product_id, amount) values(1,2);#update product set num = num - 2 where id = 1;#写死的触发器CREATE trigger change_product_num after INSERT on ordersFOR EACH ROWBEGIN     UPDATE product set num = num - 2 WHERE id=1;END insert into orders(product_id, amount) values(1,2);#引用插入行的值: 用new代表新插入的行，行中的具体值用new.列名进行表示CREATE trigger change_product_num_new after INSERT on ordersFOR EACH ROWBEGIN     UPDATE product set num = num - new.amount WHERE id=new.product_id;END insert into orders(product_id, amount) values(3,5);#前面监听了insert，引用新数据用new#接下来监听delete，引用旧数据用oldCREATE trigger change_product_num_oldafter DELETE on ordersFOR EACH ROWBEGIN     UPDATE product set num = num + old.amount WHERE id=old.product_id;END delete from orders where orders_id=1;#前面监听了insert与delete，接下来监听update#更新前的数据为old，更新后的数据为newCREATE trigger change_product_num_old_newafter UPDATE  on ordersFOR EACH ROWBEGIN     UPDATE product set num = num + old.amount - new.amount WHERE id=old.product_id;END update orders set amount = 3 WHERE orders_id = 5;</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>@click vs onclick</title>
       <link href="2023/05/04/click-vs-onclick/"/>
       <url>2023/05/04/click-vs-onclick/</url>
@@ -782,9 +801,9 @@
       
         <tags>
             
-            <tag> Vueのv-sth </tag>
-            
             <tag> Vueのaxios </tag>
+            
+            <tag> Vueのv-sth </tag>
             
             <tag> NodeJSのmysql </tag>
             
@@ -4847,9 +4866,9 @@
             
             <tag> 题解 </tag>
             
-            <tag> 技巧の哈希 </tag>
-            
             <tag> 技巧の输入挂 </tag>
+            
+            <tag> 技巧の哈希 </tag>
             
         </tags>
       
