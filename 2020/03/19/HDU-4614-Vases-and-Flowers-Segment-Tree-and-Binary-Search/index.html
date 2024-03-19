@@ -1,0 +1,327 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>HDU 4614 Vases and Flowers(Segment Tree and Binary Search) [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>HDU 4614 Vases and Flowers(Segment Tree and Binary Search)</h1>
+			<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>区间[0, n - 1]，初始值全0，有m次操作。<br>操作分两类：<br>1 X Y 从位置X开始寻找Y个0，如果不足Y个，则寻找尽量多的0，并将他们的值全部修改为1，输出第一个和最后一个修改的1的位置。<br>2 X Y 输出区间[ X , Y ]内1的个数，并将区间内的1修改为0。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h3><blockquote>
+<p>问题：</p>
+<p>①关于找位置没有思路，不知道线段树的val记录什么才能方便找位置</p>
+<p>②关于更新：区间[X, Y]内的0更新为1，这一点若是单点修改很费时，咋办</p>
+<p>对策：</p>
+<p>①val记录区间内1的个数，二分找答案</p>
+<p>②不需要单点更新，区间更新即可，这种bool状态非此即彼，将区间内非0的单点修改为1等效于将整个区间所有点置1</p>
+</blockquote>
+<h3 id="Something-about-Segment-Tree"><a href="#Something-about-Segment-Tree" class="headerlink" title="Something about Segment Tree"></a>Something about Segment Tree</h3><blockquote>
+<p>①关于懒惰：</p>
+<p>像维护区间和这种要求，int型的lazy实现了两个作用：</p>
+<p>1.是否需要down </p>
+<p>2.down的值是多大。</p>
+<p>而本题是维护“状态”(的区间和)，已知知道down多少(即区间长度)，原则上只用bool型变量标记一下就行，但实际上有三个状态(1.不需要down2.down‘1’3.down’0’)，要用int。</p>
+<p>②不用结构体的线段树可以省去建树的过程，但是以后写其他函数形参里都要加两个变量L、R。涉及到子区间先写一下mid。</p>
+<p>③update和query很简单的时候可以写在一起。</p>
+<p>④val down 后是否需要up：视具体情境。</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 50005;
+
+int n, m, ans;
+bool change;
+int num[N &lt;&lt; 2 | 1];
+int vis[N &lt;&lt; 2 | 1];
+
+void down(int o, int L, int R)
+{
+    if(~vis[o])
+    {
+        int mid = (L + R) &gt;&gt; 1;
+        num[o &lt;&lt; 1] = (vis[o] ? mid - L + 1 : 0);
+        num[o &lt;&lt; 1 | 1] = (vis[o] ? R - mid : 0);
+        vis[o &lt;&lt; 1] = vis[o &lt;&lt; 1 | 1] = vis[o];
+        vis[o] = -1;
+    }
+}
+
+void UpdateOrQuery(int o, int L, int R, int l, int r, bool val)
+{
+    if(L &gt; r || R &lt; l)
+        return ;
+    if(l &lt;= L &amp;&amp; R &lt;= r)
+    {
+        if(val == 0)
+            vis[o] = change, num[o] = (change ? R - L + 1 : 0);
+        else
+            ans += num[o];
+        return ;
+    }
+    if(L == R)
+        return ;
+
+    down(o, L, R);
+    int mid = (L + R) &gt;&gt; 1;
+    UpdateOrQuery(o &lt;&lt; 1, L, mid, l, r, val);
+    UpdateOrQuery(o &lt;&lt; 1 | 1, mid + 1, R, l, r, val);
+    num[o] = num[o &lt;&lt; 1] + num[o &lt;&lt; 1 | 1];
+}
+
+int BSearch(int o, int L, int R, int idx)
+{
+    if(L == R)
+        return L;
+
+    down(o, L, R);
+    int mid = (L + R) &gt;&gt; 1;
+    int tot = mid - L + 1 - num[o &lt;&lt; 1];
+    if(tot &gt;= idx)
+        return BSearch(o &lt;&lt; 1, L, mid, idx);
+    else
+        return BSearch(o &lt;&lt; 1 | 1, mid + 1, R, idx - tot);///idx - tot
+}
+
+int main()
+{
+    int _;
+    scanf(&quot;%d&quot;, &amp;_);
+    while(_--)
+    {
+        scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
+        memset(num,  0, sizeof(num));
+        memset(vis, -1, sizeof(vis));
+        int idx, x, y;
+        while(m--)
+        {
+            scanf(&quot;%d %d %d&quot;, &amp;idx, &amp;x, &amp;y);
+            if(idx == 1)
+            {
+                ++x;
+
+                ans = 0;
+                UpdateOrQuery(1, 1, n, x, n, 1);
+                int cnt = n - x + 1 - ans;///How many zeros in [x, n].
+                int tot = n - num[1] - cnt;///How many zeros in [1, x - 1].
+
+                if(cnt == 0)
+                    cout &lt;&lt; &quot;Can not put any one.\n&quot;;
+                else
+                {
+                    int first, last;
+                    first = BSearch(1, 1, n, tot + 1);
+                    if(y &gt; cnt)
+                        last = BSearch(1, 1, n, tot + cnt);
+                    else
+                        last = BSearch(1, 1, n, tot + y);
+                    cout &lt;&lt; first - 1 &lt;&lt; &#39; &#39; &lt;&lt; last - 1 &lt;&lt; &#39;\n&#39;;
+
+                    change = 1;
+                    UpdateOrQuery(1, 1, n, first, last, 0);
+                }
+            }
+            else
+            {
+                ++x, ++y;
+
+                ans = 0;
+                UpdateOrQuery(1, 1, n, x, y, 1);
+                cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;;
+
+                change = 0;
+                UpdateOrQuery(1, 1, n, x, y, 0);
+            }
+        }
+        cout &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="PE"><a href="#PE" class="headerlink" title="PE"></a>PE</h3><blockquote>
+<p>　 <strong>Output one blank line after each test case.</strong></p>
+</blockquote>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

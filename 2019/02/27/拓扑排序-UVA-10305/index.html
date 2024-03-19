@@ -1,0 +1,319 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>拓扑排序 UVA 10305 [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>拓扑排序 UVA 10305</h1>
+			<p><strong>拓扑排序解决工程的先后问题</strong></p>
+<blockquote>
+<p>DFS在这方面较BFS有些先天优势，本身按工程的先后顺序搜索。答案由后向前存入stack</p>
+<p>BFS加一个 in[] 数组，保证某一个工程（其前面有许多工程）在可行方案中尽量靠后放。答案由前向后存入vector</p>
+</blockquote>
+<a id="more"></a>
+<p><strong>题目链接</strong>  <a href="https://vjudge.net/problem/UVA-10305" target="_blank" rel="noopener">https://vjudge.net/problem/UVA-10305</a></p>
+<p><strong>更多关于拓扑排序</strong> <a href="https://blog.csdn.net/weixin_43918531/article/details/86740991" target="_blank" rel="noopener">https://blog.csdn.net/weixin_43918531/article/details/86740991</a></p>
+<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>John has n tasks to do. Unfortunately, the tasks are not independent and the execution of one task is only possible if other tasks have already been executed. </p>
+</blockquote>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
+<p>The input will consist of several instances of the problem. Each instance begins with a line containing two integers, 1 ≤ n ≤ 100 and m. n is the number of tasks (numbered from 1 to n) and m is the number of direct precedence relations between tasks. After this, there will be m lines with two integers i and j, representing the fact that task i must be executed before task j. An instance with n = m = 0 will finish the input. </p>
+</blockquote>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
+<p>For each instance, print a line with n integers representing the tasks in a possible order of execution </p>
+</blockquote>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><pre><code>5 4
+1 2
+2 3
+1 3
+1 5
+0 0
+</code></pre><h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><blockquote>
+<p>1 4 2 5 3</p>
+</blockquote>
+<h5 id="BFS与DFS（由于搜索方式不同）给出的可行方案也许、多半会不一样，像这题，BFS给出的方案同Sample-Output-：-1-4-2-5-3，而DFS是：4-1-5-2-3"><a href="#BFS与DFS（由于搜索方式不同）给出的可行方案也许、多半会不一样，像这题，BFS给出的方案同Sample-Output-：-1-4-2-5-3，而DFS是：4-1-5-2-3" class="headerlink" title="BFS与DFS（由于搜索方式不同）给出的可行方案也许、多半会不一样，像这题，BFS给出的方案同Sample Output ： 1 4 2 5 3，而DFS是：4 1 5 2 3"></a>BFS与DFS（由于搜索方式不同）给出的可行方案也许、多半会不一样，像这题，BFS给出的方案同Sample Output ： 1 4 2 5 3，而DFS是：4 1 5 2 3</h5><h3 id="Code（DFS）"><a href="#Code（DFS）" class="headerlink" title="Code（DFS）"></a>Code（DFS）</h3><pre><code class="lang-c++">#include &lt;stack&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+bool vis[105];
+stack&lt;int&gt; ans;
+vector&lt;int&gt; v[105];
+
+void dfs(int x)
+{
+    vis[x] = 1;
+    for(int i = 0; i &lt; v[x].size(); ++i)
+        if( !vis[ v[x][i] ] )
+            dfs(v[x][i]);
+    ans.push(x);
+}
+
+int main()
+{
+    int n, m;
+    while(cin &gt;&gt; n &gt;&gt; m &amp;&amp; (n || m))
+    {
+        memset(vis, 0, sizeof(vis));///多组输入要加上
+        for(int i = 0; i &lt; 105; ++i)
+            v[i].clear();
+        for(int i = 0; i &lt; m; ++i)
+        {
+            int a, b;
+            cin &gt;&gt; a &gt;&gt; b;
+            v[a].push_back(b);
+        }
+        for(int i = 1; i &lt;= n; ++i)///不相连的多个图
+            if(!vis[i])
+                dfs(i);
+        while(ans.size())
+        {
+            printf(&quot;%d%c&quot;, ans.top(), ans.size() == 1 ? &#39;\n&#39; : &#39; &#39;);
+            ans.pop();
+        }
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="Code-BFS"><a href="#Code-BFS" class="headerlink" title="Code(BFS)"></a>Code(BFS)</h3><pre><code class="lang-c++">#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int in[105];
+vector&lt;int&gt; ans;
+vector&lt;int&gt; v[105];
+
+void bfs(queue&lt;int&gt; q)
+{
+    while(q.size())
+    {
+        int tem = q.front();
+        ans.push_back(tem);
+        q.pop();
+
+        for(int i = 0; i &lt; v[tem].size(); ++i)
+        {
+            in[ v[tem][i] ]--;
+            if(!in[ v[tem][i] ])
+                q.push(v[tem][i]);
+        }
+    }
+}
+
+int main()
+{
+    int n, m;
+    while(cin &gt;&gt; n &gt;&gt; m &amp;&amp; (n || m))
+    {
+        queue&lt;int&gt; q;
+        memset(in, 0, sizeof(in));
+        ans.clear();
+        for(int i = 0; i &lt; 105; ++i)
+            v[i].clear();
+
+        int a, b;
+        for(int i = 0; i &lt; m; ++i)
+        {
+            cin &gt;&gt; a &gt;&gt; b;
+            v[a].push_back(b);
+            in[b]++;
+        }
+
+        for(int i = 1; i &lt;= n; ++i)
+            if(!in[i])
+                q.push(i);
+        bfs(q);
+
+        for(int i = 0; i &lt; ans.size(); ++i)
+            printf(&quot;%d%c&quot;, ans[i], i == ans.size() - 1 ? &#39;\n&#39; : &#39; &#39;);
+    }
+    return 0;
+}
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

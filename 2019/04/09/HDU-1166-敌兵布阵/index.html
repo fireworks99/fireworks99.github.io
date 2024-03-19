@@ -1,0 +1,575 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>HDU 1166 敌兵布阵 [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>HDU 1166 敌兵布阵</h1>
+			<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>区间1~n初始有一些人，某个区间可以增加人数、减少人数、询问人数。</p>
+</blockquote>
+<a id="more"></a>
+<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1166" style="color:red;" target="_blank" rel="noopener">LINK</a></p>
+<h3 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h3><blockquote>
+<p>1.N * 4 + 1的空间（有N * 2节省空间的方法）</p>
+<p>2.用 位运算符时注意其优先级低，用 (num &lt;&lt; 1) + 1 或  num &lt;&lt; 1 | 1</p>
+<p>3.更新末操作：a[num].val = a[num &lt;&lt; 1].val + a[(num &lt;&lt; 1) + 1].val;</p>
+<p>4.单点更新、单点查询、区间查询都可套用模板，但区间更新分①普通更新②lazy标记</p>
+</blockquote>
+<h3 id="Code-of-ordinary-Segment-tree"><a href="#Code-of-ordinary-Segment-tree" class="headerlink" title="Code of ordinary Segment tree"></a>Code of ordinary Segment tree</h3><pre><code class="lang-c++">#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int N = 50005;
+
+map&lt;string, int&gt; mp;
+
+struct node
+{
+    int L, R, val;
+}a[(N &lt;&lt; 2) + 1];
+
+void init(int num, int l, int r)///r = 6,r = 10数组并没有充分利用
+{
+    a[num].L = l;
+    a[num].R = r;
+    a[num].val = 0;
+
+    if(l == r)
+        return ;
+
+    int mid = (l + r) &gt;&gt; 1;
+    init(num &lt;&lt; 1, l, mid);///mid被分到左孩子
+    init((num &lt;&lt; 1) + 1, mid + 1, r);///忽略了位运算符优先级低
+}
+
+///设flag为1对应增加,为0对应减少
+void update(int num, int l, int r, bool flag, int tot)
+{
+    if(a[num].L == l &amp;&amp; a[num].R == r)///找到区间，去做任务
+    {
+        if(flag)
+            a[num].val += tot;
+        else
+            a[num].val -= tot;
+        return ;///这里的return都能忘？！
+    }
+
+    if(a[num].L == a[num].R)///未找到区间，返回上一级，程序向下运行
+        return ;
+
+    int mid = (a[num].L + a[num].R) &gt;&gt; 1;
+    if(mid &gt;= r)
+        update(num &lt;&lt; 1, l, r, flag, tot);
+    else if(mid &lt; l)///此处无等号(mid被分到左孩子)
+        update((num &lt;&lt; 1) + 1, l, r, flag, tot);
+    else
+    {
+        update(num &lt;&lt; 1, l, mid, flag, tot);
+        update((num &lt;&lt; 1) + 1, mid + 1, r, flag, tot);
+    }
+
+    a[num].val = a[num &lt;&lt; 1].val + a[(num &lt;&lt; 1) + 1].val;
+}
+
+int query(int num, int l, int r)
+{
+    if(a[num].L == l &amp;&amp; a[num].R == r)///找到区间，去做任务
+            return a[num].val;
+
+    if(a[num].L == a[num].R)
+        return 0;
+
+    int mid = (a[num].L + a[num].R) &gt;&gt; 1;
+    if(mid &gt;= r)
+        return query(num &lt;&lt; 1, l, r);
+    else if(mid &lt; l)
+        return query((num &lt;&lt; 1) + 1, l, r);
+    else
+        return (query(num &lt;&lt; 1, l, mid) + query((num &lt;&lt; 1) + 1, mid + 1, r));
+}
+
+int main()
+{
+    int t;
+    string s[4];
+    s[0] = &quot;End&quot;;///字符串对应时，尽量控制只比较第一个字符
+    s[1] = &quot;Add&quot;;
+    s[2] = &quot;Sub&quot;;
+    s[3] = &quot;Query&quot;;
+    for(int i = 0; i &lt; 4; ++i)
+        mp[ s[i] ] = i;
+    scanf(&quot;%d&quot;, &amp;t);
+    int tot = t;
+    while(t--)
+    {
+        int n, tem;
+        scanf(&quot;%d&quot;, &amp;n);
+        init(1, 1, n);
+        for(int i = 1; i &lt;= n; ++i)
+        {
+            scanf(&quot;%d&quot;, &amp;tem);
+            update(1, i, i, 1, tem);
+        }
+        printf(&quot;Case %d:\n&quot;, tot - t);
+        string ch;
+        while(cin &gt;&gt; ch)
+        {
+            bool flag = 0;
+            int x, y;
+            switch(mp[ch])
+            {
+            case 0:
+                flag = 1;
+                break;
+            case 1:
+                scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+                update(1, x, x, 1, y);
+                break;
+            case 2:
+                scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+                update(1, x, x, 0, y);
+                break;
+            case 3:
+                scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+                cout &lt;&lt; query(1, x, y) &lt;&lt; &#39;\n&#39;;
+                break;
+            }
+            if(flag)
+            break;
+        }
+
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="Code-of-Improved-Segment-tree-by-lazy-array"><a href="#Code-of-Improved-Segment-tree-by-lazy-array" class="headerlink" title="Code of Improved Segment tree(by lazy array)"></a>Code of Improved Segment tree(by lazy array)</h3><blockquote>
+<p>1.区间结构体中除L、R、val，増一个lazy</p>
+<p>2.init时lazy赋0</p>
+<p>3.更新时，若当前区间是目标区间，更新val顺便，更新lazy</p>
+<p>若当前区间不是目标区间，数据下传：down（传完记得lazy清零）</p>
+</blockquote>
+<pre><code class="lang-c++">#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int N = 50005;
+
+map&lt;string, int&gt; mp;
+
+struct node
+{
+    int L, R, val, lazy;
+} a[N &lt;&lt; 2 | 1];
+
+void down(int x)///将x区间数据下传
+{
+    ///子区间继承父区间的lazy以便下传
+    ///更新子区间的val
+    a[x &lt;&lt; 1].lazy += a[x].lazy;
+    a[x &lt;&lt; 1].val += a[x].lazy;
+    a[x &lt;&lt; 1 | 1].lazy += a[x].lazy;
+    a[x &lt;&lt; 1 | 1].val += a[x].lazy;
+    a[x].lazy = 0;///下传完了lazy清零
+}
+
+void init(int num, int l, int r)///r = 6,r = 10数组并没有充分利用
+{
+    a[num].L = l;
+    a[num].R = r;
+    a[num].val = 0;
+    a[num].lazy = 0;
+
+    if(l == r)
+        return ;
+
+    int mid = (l + r) &gt;&gt; 1;
+    init(num &lt;&lt; 1, l, mid);///mid被分到左孩子
+    init(num &lt;&lt; 1 | 1, mid + 1, r);///忽略了位运算符优先级低
+}
+
+///设flag为1对应增加,为0对应减少
+void update(int num, int l, int r, bool flag, int tot)
+{
+    if(a[num].L == l &amp;&amp; a[num].R == r)///找到区间，去做任务
+    {
+        if(flag)
+        {
+            a[num].val += tot;
+            a[num].lazy += tot;
+        }
+        else
+        {
+            a[num].val -= tot;
+            a[num].lazy -= tot;
+        }
+        return ;
+    }
+
+    if(a[num].L == a[num].R)///未找到区间，返回上一级，程序向下运行
+        return ;
+
+    down(num);///此区间非目标区间，数据下传
+
+    int mid = (a[num].L + a[num].R) &gt;&gt; 1;
+    if(mid &gt;= r)
+        update(num &lt;&lt; 1, l, r, flag, tot);
+    else if(mid &lt; l)///此处无等号(mid被分到左孩子)
+        update(num &lt;&lt; 1 | 1, l, r, flag, tot);
+    else
+    {
+        update(num &lt;&lt; 1, l, mid, flag, tot);
+        update(num &lt;&lt; 1 | 1, mid + 1, r, flag, tot);
+    }
+
+    a[num].val = a[num &lt;&lt; 1].val + a[num &lt;&lt; 1 | 1].val;
+}
+
+int query(int num, int l, int r)
+{
+    if(a[num].L == l &amp;&amp; a[num].R == r)///找到区间，去做任务
+        return a[num].val;
+
+    if(a[num].L == a[num].R)
+        return 0;
+
+    int mid = (a[num].L + a[num].R) &gt;&gt; 1;
+    if(mid &gt;= r)
+        return query(num &lt;&lt; 1, l, r);
+    else if(mid &lt; l)
+        return query(num &lt;&lt; 1 | 1, l, r);
+    else
+        return (query(num &lt;&lt; 1, l, mid) + query(num &lt;&lt; 1 | 1, mid + 1, r));
+}
+
+int main()
+{
+    int t;
+    string s[4];
+    s[0] = &quot;End&quot;;///字符串对应时，尽量控制只比较第一个字符
+    s[1] = &quot;Add&quot;;
+    s[2] = &quot;Sub&quot;;
+    s[3] = &quot;Query&quot;;
+    for(int i = 0; i &lt; 4; ++i)
+        mp[ s[i] ] = i;
+    scanf(&quot;%d&quot;, &amp;t);
+    int tot = t;
+    while(t--)
+    {
+        int n, tem;
+        scanf(&quot;%d&quot;, &amp;n);
+        init(1, 1, n);
+        for(int i = 1; i &lt;= n; ++i)
+        {
+            scanf(&quot;%d&quot;, &amp;tem);
+            update(1, i, i, 1, tem);
+        }
+        printf(&quot;Case %d:\n&quot;, tot - t);
+        string ch;
+        while(cin &gt;&gt; ch)
+        {
+            bool flag = 0;
+            int x, y;
+            switch(mp[ch])
+            {
+            case 0:
+                flag = 1;
+                break;
+            case 1:
+                scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+                update(1, x, x, 1, y);
+                break;
+            case 2:
+                scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+                update(1, x, x, 0, y);
+                break;
+            case 3:
+                scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+                cout &lt;&lt; query(1, x, y) &lt;&lt; &#39;\n&#39;;
+                break;
+            }
+            if(flag)
+                break;
+        }
+
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="Try-to-save-time-and-memory"><a href="#Try-to-save-time-and-memory" class="headerlink" title="Try to save time and memory"></a>Try to save time and memory</h3><blockquote>
+<p>1.张昆玮线段树：循环代替递归 <a href="https://blog.csdn.net/keshuqi/article/details/52205884" style="color:blue;" target="_blank" rel="noopener">张昆玮线段树</a></p>
+<p>2.N * 2空间：<a href="http://www.cppblog.com/MatoNo1/archive/2015/05/05/195857.html" style="color:fuchsia;" target="_blank" rel="noopener">空间节省</a></p>
+</blockquote>
+<h3 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h3><blockquote>
+<p>三个函数：lowbit、单点更新、区间查询</p>
+</blockquote>
+<h3 id="Code-of-Binary-Index-Tree"><a href="#Code-of-Binary-Index-Tree" class="headerlink" title="Code of Binary Index Tree"></a>Code of Binary Index Tree</h3><pre><code class="lang-c++">#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int N = 50005;
+
+map&lt;string, int&gt; mp;
+
+int n;///区间上限
+int tree[N];///树状数组C[N]
+///原始数组A[N]假设存在
+
+int lowbit(int x)
+{
+    return x &amp; (-x);
+}
+
+///单点更新
+void update(int x, int y)///修改A[x]对应相关C[]的更新
+{
+    for(int i = x; i &lt;= n; i += lowbit(i))///要求n为全局变量
+        tree[i] += y;
+}
+
+///区间查询
+int get_sum(int x)///求A[]前x项的和
+{
+    int ans = 0;
+    for(int i = x; i &gt;= 1; i -= lowbit(i))
+        ans += tree[i];
+    return ans;
+}
+
+int main()
+{
+    int t;
+    string s[4];
+    s[0] = &quot;End&quot;;///字符串对应时，尽量控制只比较第一个字符
+    s[1] = &quot;Add&quot;;
+    s[2] = &quot;Sub&quot;;
+    s[3] = &quot;Query&quot;;
+    for(int i = 0; i &lt; 4; ++i)
+        mp[ s[i] ] = i;
+    scanf(&quot;%d&quot;, &amp;t);
+    int tot = t;
+    while(t--)
+    {
+        int tem;
+        scanf(&quot;%d&quot;, &amp;n);
+        memset(tree, 0, sizeof(tree));
+        for(int i = 1; i &lt;= n; ++i)
+        {
+            scanf(&quot;%d&quot;, &amp;tem);
+            update(i, tem);
+        }
+
+        printf(&quot;Case %d:\n&quot;, tot - t);
+        string ch;
+        while(cin &gt;&gt; ch)
+        {
+            bool flag = 0;
+            int x, y;
+            switch(mp[ch])
+            {
+            case 0:
+                flag = 1;
+                break;
+            case 1:
+                scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+                update(x, y);
+                break;
+            case 2:
+                scanf(&quot;%d%d&quot;, &amp;x, &amp;y);
+                update(x, -y);
+                break;
+            case 3:
+                scanf(&quot;%d%d&quot;, &amp;x, &amp;y);///注意区间保留x
+                cout &lt;&lt; get_sum(y) - get_sum(x - 1) &lt;&lt; &#39;\n&#39;;
+                break;
+            }
+            if(flag)
+                break;
+        }
+
+    }
+    return 0;
+}
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

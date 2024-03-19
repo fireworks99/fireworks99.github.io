@@ -1,0 +1,797 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>求知若渴，虚心若愚 [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+
+<div id="recent-posts-box">
+
+  
+  <div id="recent-posts">
+    <!-- <h1>Recent Posts</h1> -->
+    
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/31/POJ-2236-The-Suspects-HDU-1213-How-Many-Tables/" class="item-title">POJ 2236 The Suspects HDU 1213 How Many Tables</a>
+      
+      <time datetime="2019-03-31T11:10:16.000Z">
+        2019-03-31
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Link http://poj.org/problem?id=1611
+Code(并查集模板)#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int N = 30005;
+
+int pre[N];
+int n, m;
+
+void init()
+{
+    for(int i = 0; i &lt; n; ++i)
+        pre[i] = i;
+}
+
+int found(int x)
+{
+    if(x != pre[x])
+        pre[x] = found(pre[x]);
+    return pre[x];
+}
+
+void unite(int a, int b)
+{
+
+    int x = found(a);
+    int y = found(b);
+    if(x != y)
+//        x = pre[y];///可笑...
+        pre[y] = x;
+    return ;
+}
+
+int main()
+{
+    whi -->
+        <!-- </div> -->
+
+        
+        <h3 id="The-Suspects"><a href="#The-Suspects" class="headerlink" title="The Suspects"></a>The Suspects</h3><blockquote>
+<p>n个人（0  ~  n-1）m个小组</p>
+<p>起初0是嫌疑人，与0共组的人都是嫌疑人，与嫌疑人共组的人也都是嫌疑人</p>
+<p>问有多少嫌疑人</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/31/POJ-2236-The-Suspects-HDU-1213-How-Many-Tables/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/31/POJ-1860-Currency-Exchange/" class="item-title">POJ 1860 Currency Exchange</a>
+      
+      <time datetime="2019-03-31T08:48:29.000Z">
+        2019-03-31
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- The link of this problem http://poj.org/problem?id=1860
+最短路变形
+“最远路”
+Bellman-Ford 判 正权环
+
+Code of Bellman-Ford#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 105;///点的上界
+const int inf = 0x3f3f3f3f;
+
+int cnt;///边的计数
+struct edge///Bellman-Ford 算法暴力遍历双向边,无pre
+{
+    int from, to;
+    double w, cost;
+} a[N &lt;&lt; 1]; ///等同于邻接矩阵了
+
+int n, m;///n为点的个数（注意编号是0 ~ n - 1还是1 ~ n），m为双向边的描述
+double dis[N];///起点到某点的等效最短路(抄模板 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n个点m个关于路的叙述</p>
+<p>起点start 初始钱币ini</p>
+<p>此 彼    此-&gt;彼汇率  手续费    彼到此汇率  手续费</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/31/POJ-1860-Currency-Exchange/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/31/POJ-2240-Arbitrage/" class="item-title">POJ 2240 Arbitrage</a>
+      
+      <time datetime="2019-03-31T06:09:30.000Z">
+        2019-03-31
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- The link of the problem http://poj.org/problem?id=2240
+最短路变形
+广义最短路: 存在多个状态，从此状态到彼状态的最优过渡方案
+另外，用map从string映射到int
+
+Code of Floyd#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+///最短路:存在多个状态，从此状态到彼状态的最优过渡方案
+int n, m, num = 1;
+double dis[44][44];
+
+
+void floyd()
+{
+    for(int k = 0; k &lt; n; ++k)
+        for(int i = 0; i &lt; n; ++i)
+            for(int j = 0; j &lt; n; ++j)///距离用 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>存在多种货币，给出它们兑换时的汇率，问是否存在一种货币，经过多次兑换，最终换回自己时钱多了……</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/31/POJ-2240-Arbitrage/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/30/POJ-2236-Wireless-Network/" class="item-title">POJ 2236 Wireless Network</a>
+      
+      <time datetime="2019-03-30T00:35:24.000Z">
+        2019-03-30
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接 http://poj.org/problem?id=2236
+并查集
+不过用 while(ch = getchar()) 超时，用while(cin &gt;&gt; ch)就过，前者读不到EOF？
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const double eps = 1e-6;
+
+int n, d;
+int pre[1005];
+bool vis[1005];///修没修
+int x[1005];
+int y[1005];
+
+void init()///初始化顶级是自身
+{
+    for(int i = 0; i &lt;= n; ++i)
+        pre[i] = i;
+}
+
+int found(int x)
+{
+    if(x != pre[x])
+        pre[x] = found(pre[x]);///路径压缩
+    return  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n台坏掉的电脑（1~N），一个限制距离d</p>
+<p>n个坐标（1~N），两种操作（O x 表示修复第x台电脑）（S x y表示询问：第x与第y台电脑能否直接或间接相连）</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/30/POJ-2236-Wireless-Network/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/29/POJ-1797-Heavy-Transportation/" class="item-title">POJ 1797 Heavy Transportation</a>
+      
+      <time datetime="2019-03-29T11:18:22.000Z">
+        2019-03-29
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接 http://poj.org/problem?id=1797
+思路
+最短路变形
+最大化最小值：
+两条路：
+
+当前直达
+
+中转
+择优（承载量大的那条）
+
+
+这里有个相反的：最小化最大值： https://fireworks99.github.io/2019/03/28/POJ-2253-Frogger/
+
+Code of Dijkstra#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define check cout &lt;&lt; &quot;Let&#39;s check : &quot; &lt;&lt; &#39;\n&#39;;
+const int INF = 0x3f3f3f3f;
+const int N = 1010;///点 的上限
+
+int n, m;
+bool vis[N];///是否用过它
+int mp[N][ -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n个点，m个关于边的叙述（边的权值代表路的最大承载量）</p>
+<p>求从1到n，路上的最大承载量</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/29/POJ-1797-Heavy-Transportation/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/28/POJ-3268-Silver-Cow-Party/" class="item-title">POJ 3268 Silver Cow Party</a>
+      
+      <time datetime="2019-03-28T11:54:01.000Z">
+        2019-03-28
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接 http://poj.org/problem?id=3268
+思路
+最短路，计算每头牛来回最短路之和，所有和中最大值即为答案
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 100005;
+const int inf = 0x3f3f3f3f;
+
+int m, n, x;///我程序里的m代表点，n代表边，与题目所述相反
+
+struct edge
+{
+    int from, to, w, pre;
+} a[N];
+
+int head[N], cnt, dis[1005][1005], times[1005], tot, sum;
+bool vis[1005];
+
+void init(int start)
+{
+    for(int i = 0; i &lt;= m; ++i)
+         -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>有n个农场（1~N），给出M条单向路描述。每个农场派出一头牛去某个农场（X）参加聚会，聚会结束后要返回，当然它们来回都选择最短路（因为路是单向的，来回可能路径不同），问这n头牛中，来回所走路程最长的那头，它走的总路程是多少?</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/28/POJ-3268-Silver-Cow-Party/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/28/POJ-2253-Frogger/" class="item-title">POJ 2253 Frogger</a>
+      
+      <time datetime="2019-03-28T10:44:45.000Z">
+        2019-03-28
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接 http://poj.org/problem?id=2253
+
+Unfortunately Fiona’s stone is out of his jump range. Therefore Freddy considers to use other stones as intermediate stops and reach her by a sequence of several small jumps.
+To execute a given sequence of jumps, a frog’s jump range obviously must be at least as long as the longest jump occuring in the sequence.  The frog distance (humans also call it minimax distance) between two stones therefore is defined as the minimum necessary jump range over all possib -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>Freddy Frog is sitting on a stone in the middle of a lake. Suddenly he notices Fiona Frog who is sitting on another stone. He plans to visit her, but since the water is dirty and full of tourists’ sunscreen, he wants to avoid swimming and instead reach her by jumping.  </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/28/POJ-2253-Frogger/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/25/HDU-1425-sort/" class="item-title">HDU 1425 sort</a>
+      
+      <time datetime="2019-03-25T12:24:32.000Z">
+        2019-03-25
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接 http://acm.hdu.edu.cn/showproblem.php?pid=1425
+Input
+每组测试数据有两行，第一行有两个数n,m(0&lt;n,m&lt;1000000)，第二行包含n个各不相同，且都处于区间[-500000,500000]的整数。
+
+Output
+对每组测试数据按从大到小的顺序输出前m大的数。 
+
+Sample Input
+5 3
+3 -35 92 213 -644
+
+Sample Output
+213 92 3
+
+?看哈希碰到的题，刚刚了解了输入挂，就推荐给我。莫非被监视了？用挂Code#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int a[1000005];
+
+int Scan()
+{
+    int res = 0, ch, flag = 0;
+    if( (ch = getchar() ) == &#39;-&#39;)///括号搞清楚
+        flag = 1;
+   -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给你n个整数，请按从大到小的顺序输出其中前m大的数。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/25/HDU-1425-sort/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/25/输入输出挂/" class="item-title">输入输出挂</a>
+      
+      <time datetime="2019-03-25T10:37:34.000Z">
+        2019-03-25
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 探索输入挂预备工作
+随机产生一百万个整型数，写入指定文件里
+
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int main()
+{
+    srand(time(NULL));
+    freopen(&quot;00out.txt&quot;, &quot;w&quot;, stdout);
+    int n;
+    int num = 1000000;
+    while(num--)
+    {
+        n = rand() % 1000;
+        cout &lt;&lt; n &lt;&lt; &#39; &#39;;
+    }
+    return 0;
+}
+
+开始探索
+分别用输入挂（getchar）、scanf、cin读入一百万个整型数字，看运行时间
+
+#in -->
+        <!-- </div> -->
+
+        
+        <h3 id="关于输入挂"><a href="#关于输入挂" class="headerlink" title="关于输入挂"></a>关于输入挂</h3><blockquote>
+<p>输入速度：getchar  &gt;  scanf  &gt;  cin</p>
+<p>特点：快糙猛？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/25/输入输出挂/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/22/POJ-3126-Prime-Path/" class="item-title">POJ 3126 Prime Path</a>
+      
+      <time datetime="2019-03-22T13:31:13.000Z">
+        2019-03-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Code#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int inf = 0x3f3f3f3f;
+
+int tot;
+int prime[1500];
+bool vis[10500];
+bool flag[10500];
+
+struct node
+{
+    int val, step;
+};
+queue&lt;node&gt; q;
+
+void get_prime()
+{
+    memset(vis, 1, sizeof(vis));
+    tot = 0;
+    vis[0] = vis[1] = 0;
+    for(int i = 2; i  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出两个素数，求从这个变到那个需要几步。（变法：每步仅改变一位数）</p>
+</blockquote>
+<p><strong>题目链接</strong> <a href="http://poj.org/problem?id=3126" target="_blank" rel="noopener">http://poj.org/problem?id=3126</a></p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/22/POJ-3126-Prime-Path/"> Read more -->
+          </a></span>
+        </div>
+
+        
+      </div>
+      
+
+
+      <div id="recent-posts-paginator">
+        <a class="extend prev" rel="prev" href="/page/24/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/26/"> </a>
+      </div>
+
+    </div>
+
+<aside id="sidebar">
+  
+  <div class="widget-box">
+  	  <div class="widget-box">
+    <h3 class="widget-title-friends">friends</h3>
+    <div class="widget">
+      
+        <a class="friends-list-link" style="display: block;" href="https://fireworks99.github.io/" title="" target="_blank">fireworks99</a>
+      
+    </div>
+  </div>
+
+  </div>
+  
+  <div class="widget-box">
+  	
+
+  </div>
+  
+  <div class="widget-box">
+  	
+  <div class="widget-box">
+    <h3 class="widget-title-tag">tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome-Extensions/">Chrome Extensions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPのST算法/">DPのST算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの区间DP/">DPの区间DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの状压DP/">DPの状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの背包DP/">DPの背包DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECS/">ECS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FE-Performance/">FE Performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScriptのNote/">JavaScriptのNote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScriptのPromise/">JavaScriptのPromise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのmysql/">NodeJSのmysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのstatic/">NodeJSのstatic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのupload/">NodeJSのupload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue---------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VueのPlugin/">VueのPlugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VueのRenderFunc/">VueのRenderFunc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのaxios/">Vueのaxios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのcomponents/">Vueのcomponents</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのfilters/">Vueのfilters</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのi8n/">Vueのi8n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのreactivity/">Vueのreactivity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのrouter/">Vueのrouter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのv-sth/">Vueのv-sth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのvuex/">Vueのvuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-API/">Web API--------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-APIのWindow/">Web APIのWindow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web杂项/">Web杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图/">二分图-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图のKM算法/">二分图のKM算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图の匈牙利算法/">二分图の匈牙利算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化/">优化-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化の二分/">优化の二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言/">其他语言--------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のHTML/">其他语言のHTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のJAVA/">其他语言のJAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のPython/">其他语言のPython</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のnext-permutation/">函数のnext_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のprev-permutation/">函数のprev_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-判环/">图论の拓扑排序(判环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-无环/">图论の拓扑排序(无环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の欧拉路/">图论の欧拉路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法/">基本算法--------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の贪心/">基本算法の贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の递推/">基本算法の递推</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串/">字符串-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のAC自动机/">字符串のAC自动机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のKMP/">字符串のKMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串の最长回文子串/">字符串の最长回文子串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の前缀和/">技巧の前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の博弈/">技巧の博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の哈希/">技巧の哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の尺取法/">技巧の尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の差分/">技巧の差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の异或/">技巧の异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の弹性碰撞/">技巧の弹性碰撞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の归并排序/">技巧の归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の折半枚举/">技巧の折半枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の暴力打表/">技巧の暴力打表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の翻转问题/">技巧の翻转问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の莫队算法/">技巧の莫队算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の输入挂/">技巧の输入挂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型のstring/">数据类型のstring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构-------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のDancing-Links/">数据结构のDancing-Links</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmap/">数据结构のmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmultiset/">数据结构のmultiset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のpriority-queue/">数据结构のpriority_queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のset/">数据结构のset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のvector/">数据结构のvector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の主席树/">数据结构の主席树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の单调栈/">数据结构の单调栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の字典树/">数据结构の字典树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の并查集/">数据结构の并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の最小生成树/">数据结构の最小生成树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の栈-stack/">数据结构の栈(stack)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の树状数组/">数据结构の树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の线段树/">数据结构の线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の链式前向星/">数据结构の链式前向星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论/">数论--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论のGCD与LCM/">数论のGCD与LCM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の同余定理/">数论の同余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の大数求余/">数论の大数求余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の快速幂/">数论の快速幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の扩展欧几里得/">数论の扩展欧几里得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の杂项/">数论の杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の欧拉降幂/">数论の欧拉降幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の素数筛/">数论の素数筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の费马小定理/">数论の费马小定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の高斯消元法/">数论の高斯消元法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のKruskal/">最小生成树のKruskal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のPrim/">最小生成树のPrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树の树形图/">最小生成树の树形图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树の计数/">最小生成树の计数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のBellman-Ford/">最短路のBellman-Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のDijkstra/">最短路のDijkstra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のFloyd/">最短路のFloyd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のspfa/">最短路のspfa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索/">简单搜索---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のA/">简单搜索のA*</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のBFS/">简单搜索のBFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索の剪枝/">简单搜索の剪枝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学/">组合数学----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の容斥/">组合数学の容斥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の组合数/">组合数学の组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流/">网络流-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流の最大流最小割/">网络流の最大流最小割</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流の最小费用流/">网络流の最小费用流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何/">计算几何----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何の离散化/">计算几何の离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络の杂项/">计算机网络の杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图/">连通图-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の2-sat/">连通图の2-sat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图のLCA/">连通图のLCA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の割点/">连通图の割点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の桥/">连通图の桥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の缩点/">连通图の缩点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+    </div>
+  </div>
+
+
+  </div>
+  
+  <div class="widget-box">
+  	
+  <div class="widget-box">
+    <h3 class="widget-title-archive">archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+    </div>
+  </div>
+
+  </div>
+  
+  <div class="widget-box">
+  	
+  <div class="widget-box">
+    <h3 class="widget-title-post">recent_posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/03/19/JS-recursion/">JS recursion</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/02/22/SQL-trigger/">SQL trigger</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2023/05/04/click-vs-onclick/">@click vs onclick</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2023/04/25/elementUI-sync/">elementUI .sync</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  </div>
+  
+</aside>
+
+<!-- <div id="paginator"> -->
+<!--   <a class="extend prev" rel="prev" href="/page/24/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/26/"> </a> -->
+<!-- </div> -->
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+          tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            processEscapes: true
+          }
+        });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+            tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+          });
+      </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+              var all = MathJax.Hub.getAllJax(), i;
+              for(i=0; i < all.length; i += 1) {
+                  all[i].SourceElement().parentNode.className += ' has-jax';
+              }
+          });
+    </script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

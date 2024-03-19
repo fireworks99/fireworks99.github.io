@@ -1,0 +1,210 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Browser&#39;s function and components [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>Browser&#39;s function and components</h1>
+			<h2 id="一-浏览器应该有的功能"><a href="#一-浏览器应该有的功能" class="headerlink" title="一.浏览器应该有的功能"></a>一.浏览器应该有的功能</h2><h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><p>​    浏览器通过网络模块来下载各式各样的资源，例如html文本；javascript代码；样式表；图片；音视频文件等。<br>​    网络部分本质上十分重要，因为它耗时长，而且需要安全访问互联网上的资源。</p>
+<a id="more"></a>
+<h3 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h3><p>​    从网络下载，或者本地获取到的资源需要有高效的机制来管理它们。<br>​    例如如何避免重复下载，资源如何缓存等</p>
+<h3 id="网页浏览"><a href="#网页浏览" class="headerlink" title="网页浏览"></a>网页浏览</h3><p>​    这是浏览器的核心也是最基本的功能，最重要的功能。<br>​    如何将资源转变为可视化的结果。<br>​<br>多页面管理<br>插件与管理<br>账户和同步<br>安全机制<br>开发者工具<br>…<br>…</p>
+<p>浏览器的主要功能总结起来就是一句话:将用户输入的url转变成可视化的图像。<br>        1.从url到DOM树<br>        2.从DOM树到可视化图像<br>        这两个过程之间的关系并没有那么明确,我们可以统称这两个过程为页面的<strong>渲染</strong></p>
+<h2 id="二-浏览器的内核-渲染引擎"><a href="#二-浏览器的内核-渲染引擎" class="headerlink" title="二.浏览器的内核(渲染引擎)"></a>二.浏览器的内核(渲染引擎)</h2><p>在浏览器中有一个最重要的模块，它主要的作用是将页面转变为可视化的图像结果。<br>这个模块就是浏览器内核，通常它也被称为渲染引擎。</p>
+<p>IE—————&gt;Trident</p>
+<p>Safari———&gt;WebKit<br>    WebKit本身主要是由两个引擎构成的，<br>        一个正是渲染引擎“WebCore”，<br>        另一个则是javascript解释引擎“JSCore”，<br>        它们均是从KDE的渲染引擎KHTML及javascript解释引擎KJS衍生而来。</p>
+<p>Chrome———&gt;WebKit的分支引擎——-&gt;Blink<br>     在13年发布的Chrome 28.0.1469.0版本开始，Chrome放弃Chromium引擎转<br>     而使用最新的Blink引擎（基于WebKit2——苹果公司于2010年推出的新的WebKit引擎），<br>     Blink对比上一代的引擎精简了代码、改善了DOM框架，也提升了安全性。</p>
+<p>Opera<br>    旧版Opera 4至6版本 :Elektra排版引擎<br>    Opera7.0    :Presto渲染引擎<br>    Opera在2013年2月宣布放弃Presto:<br>                采用Chromium引擎;<br>                又转为Blink引擎;</p>
+<p>Firefox———&gt;Gecko</p>
+<h2 id="三-进程与线程"><a href="#三-进程与线程" class="headerlink" title="三.进程与线程"></a>三.进程与线程</h2><blockquote>
+<p>进程: 程序的一次执行, 它占有一片独有的内存空间.是操作系统执行的基本单元。<br>    一个进程中至少有一个运行的线程: 主线程,  进程启动后自动创建<br>    一个进程中也可以同时运行多个线程, 我们会说程序是多线程运行的<br>    一个进程内的数据可以供其中的多个线程直接共享，多个进程之间的数据是不能直接共享的</p>
+<p>线程：是进程内的一个独立执行单元,是CPU调度的最小单元。程序运行的基本单元<br>    线程池(thread pool): 保存多个线程对象的容器, 实现线程对象的反复利用</p>
+<p>JS引擎是单线程运行的！（回忆事件轮询机制）</p>
+</blockquote>
+<h2 id="四-现代浏览器：多进程、多线程模型"><a href="#四-现代浏览器：多进程、多线程模型" class="headerlink" title="四.现代浏览器：多进程、多线程模型"></a>四.现代浏览器：多进程、多线程模型</h2><h3 id="1-不堪回首的过去"><a href="#1-不堪回首的过去" class="headerlink" title="1.不堪回首的过去:"></a>1.不堪回首的过去:</h3><blockquote>
+<p>当你通过浏览器打开很多页面的时候,如果其中一个页面不响应了或者崩溃了,<br>那么随之而来的将会是更不幸的事情,你打开的所有页面都会得不到响应,<br>最让人不能忍受的是,其中的一些页面可能还包含了未保存或者未发送的信息。</p>
+</blockquote>
+<h3 id="2-浏览器产商如何解决"><a href="#2-浏览器产商如何解决" class="headerlink" title="2.浏览器产商如何解决"></a>2.浏览器产商如何解决</h3><p>​    采用多进程模型,该模型可以带来的好处<br>​    ①.避免因单个页面的不响应或者崩溃影响整个浏览器的稳定性<br>​    ②.当第三方插件崩溃时,也不会影响整个浏览器的稳定性<br>​    ③.安全<br>​    </p>
+<h3 id="3-浏览器到底有些什么进程"><a href="#3-浏览器到底有些什么进程" class="headerlink" title="3.浏览器到底有些什么进程"></a>3.浏览器到底有些什么进程</h3><p>​    ①.Browser进程:<br>​        浏览器的主进程,负责浏览器界面的显示,和各个页面的管理,<br>​        浏览器中所有其他类型进程的祖先,负责其他进程的的创建和销毁<br>​        它有且只有一个!!!!!<br>​    ②.Renderer进程:<br>​        网页渲染进程,负责页面的渲染,可以有多个<br>​        当然渲染进程的数量不一定等于你开打网页的个数<br>​    ③.各种插件进程<br>​    ④.GPU进程<br>​    移动设备的浏览器可能不太一样:<br>​        Android不支持插件,所以就没有插件进程<br>​        GPU演化成了Browser进程的一个线程<br>​        Renderer进程演化成了操作系统的一个服务进程,它仍然是独立的</p>
+<h3 id="4-每个进程内部又有很多线程"><a href="#4-每个进程内部又有很多线程" class="headerlink" title="4.每个进程内部又有很多线程"></a>4.每个进程内部又有很多线程</h3><p>​    多线程的目的主要是保持用户界面的高度响应<br>​    例如:为了不让Browser进程的UI线程被其他耗时的操作(数据库读写,本地文件读写)所阻塞,<br>​            那么我们就把这些操作放到分线程中去处理<br>​        在Renderer进程中,为了不让其他操作阻止渲染线程的高速执行,我们通常会将渲染过程【管线化】,<br>​            利用计算机的多核优势,让渲染的不同阶段在不同的线程中执行</p>
+<p>​    </p>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

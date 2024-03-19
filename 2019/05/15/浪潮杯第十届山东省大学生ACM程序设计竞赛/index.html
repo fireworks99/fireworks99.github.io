@@ -1,0 +1,581 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>浪潮杯第十届山东省大学生ACM程序设计竞赛 [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>浪潮杯第十届山东省大学生ACM程序设计竞赛</h1>
+			<p><strong><a href="http://acm.zju.edu.cn/onlinejudge/showProblems.do?contestId=1&pageNumber=32" style="color:violet;" target="_blank" rel="noopener">ZOJ题目总链接（4113~4125）</a></strong>  </p>
+<h1 id="A-Calander"><a href="#A-Calander" class="headerlink" title="A.Calander"></a>A.Calander</h1><blockquote>
+<p>给出一个新的日期计算方法，一周五天（周一至周五），一月6个周（30天），一年有这样的十二个月，给出一个日期及其星期，另给出一个日期，求出星期</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>一看日期计算 —&gt; 形成思维定式：不就是求两个日期差 % 5吗！</p>
+<p>后来各种错：</p>
+<ol>
+<li>% 5 之后对应数字为0~4，要搞清楚其对应周几</li>
+<li>封榜后发现与年份无关，一年是那固定的360天，% 5 == 0</li>
+<li>赛后再想想与月份都无关，一个月是那固定的30天， % 5 == 0</li>
+</ol>
+<p>所以，题目给出一个新事物（或是旧事物的变式），一定要先<strong>找其运行规律，总结特点</strong>，抓住特点去做，不要因着急而盲目去做。一个人在敲这个题时，另外两人不仅要思考这方法是否正确、细节是否都注意到了、特判做到了，还要想想是否有更简单的方法，因为更简单的方法一定是更优的，是更能体现参赛者水平的，是出题人想看到的。</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int t;
+    scanf(&quot;%d&quot;, &amp;t);
+    map&lt;int, string&gt; mp;
+    mp[1] = &quot;Monday&quot;;
+    mp[2] = &quot;Tuesday&quot;;
+    mp[3] = &quot;Wednesday&quot;;
+    mp[4] = &quot;Thursday&quot;;
+    mp[5] = &quot;Friday&quot;;
+    while(t--)
+    {
+        int ay, am, ad, by, bm, bd, idx;
+        string s;
+        scanf(&quot;%d%d%d&quot;, &amp;ay, &amp;am, &amp;ad);
+        cin &gt;&gt; s;
+        switch(s[1])
+        {
+        case &#39;o&#39;:
+            idx = 1;
+            break;
+        case &#39;u&#39;:
+            idx = 2;
+            break;
+        case &#39;e&#39;:
+            idx = 3;
+            break;
+        case &#39;h&#39;:
+            idx = 4;
+            break;
+        case &#39;r&#39;:
+            idx = 5;
+        }
+        scanf(&quot;%d%d%d&quot;, &amp;by, &amp;bm, &amp;bd);
+        int tem = 30 - ad + bd;
+        tem %= 5;
+        if((idx + tem) % 5 == 0)
+            cout &lt;&lt; &quot;Friday&quot; &lt;&lt; &#39;\n&#39;;
+        else
+            cout &lt;&lt; mp[(idx + tem) % 5] &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="B-Flipping-Game"><a href="#B-Flipping-Game" class="headerlink" title="B.Flipping Game"></a>B.Flipping Game</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="C-Wandering-Robot"><a href="#C-Wandering-Robot" class="headerlink" title="C.Wandering Robot"></a>C.Wandering Robot</h1><blockquote>
+<p>一个机器人按照一个长度为n的指令串重复走k次，求其离原点的最远“折线距离”</p>
+</blockquote>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>第一次我想出一个思路：</p>
+<p>执行一次指令串后离原点的距离 * (k - 1) + 最后一次的最优解：WA</p>
+<p>研究了一会儿，队友发现：最后一次的最优解可能并不是前（k-1）次位移方向上的！</p>
+<p>过了53分钟修改上交：WA</p>
+<p>耽误时间长了去看了D题，没敲对，C题int改longlong交了一遍？WA</p>
+<p>队友提出利用坐标，发现这种思路跟之前的一样，不过实现起来思路更清晰：WA</p>
+<p>队友提出遗漏：答案也可能只是第一次的最优解（比如只执行两次指令时）：AC</p>
+<ol>
+<li><p>在纸上多画图、多模拟，不至于看不出来第一个错误！</p>
+</li>
+<li><p>多思考队友的思路、提出的建议，不要第一时间想着反驳</p>
+<p>（当这题的第一个思路（或主思路）是自己想出来的时候，心里有种不愿别人提出异议的感觉？一种不容别人提出更完善策略的感觉？你的思路跟我的一样，只不过实现方式不一样，我的理应就是对的，即使错了，那你的思路跟我一样必然也是错的）可是你不想想，同一思路换种实现方法可能更清晰呢！</p>
+</li>
+<li><p>多质疑自己，将错误的险隘思路拓宽</p>
+</li>
+</ol>
+</blockquote>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cmath&gt;
+#include &lt;string&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int len;
+string s;
+long long x, y;
+
+long long cal()
+{
+    long long ans = 0;
+    for(int i = 0; i &lt; len; ++i)
+    {
+        if(s[i] == &#39;U&#39;)
+            y++;
+        if(s[i] == &#39;D&#39;)
+            y--;
+        if(s[i] == &#39;L&#39;)
+            x--;
+        if(s[i] == &#39;R&#39;)
+            x++;
+        if(ans &lt; abs(x) + abs(y))
+            ans = abs(x) + abs(y);
+    }
+    return ans;
+}
+
+int main()
+{
+    int t;
+    scanf(&quot;%d&quot;, &amp;t);
+    while(t--)
+    {
+        int n, k;
+        scanf(&quot;%d%d&quot;, &amp;n, &amp;k);
+        cin &gt;&gt; s;
+        len = s.length();
+        x = 0, y = 0;
+        long long first = cal();
+        x *= (k - 1);
+        y *= (k - 1);
+        long long tem = cal();
+        cout &lt;&lt; max(first, tem) &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="D-Game-on-a-Graph"><a href="#D-Game-on-a-Graph" class="headerlink" title="D.Game on a Graph"></a>D.Game on a Graph</h1><blockquote>
+<p>k个分属两阵营的人在一地图上玩游戏，n个点，m条边，每人轮流拿一条边，最后谁拿走便后图不连通了，那个人所在阵营就lose，对面win</p>
+</blockquote>
+<h2 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>信誓旦旦地跟队友说是水题（不过确实是），这题k可以不给出（s.length()自己算），后面m组输入完全用不到。</p>
+<p>k个人玩，n个点，只需n-1条边</p>
+<p>m条现有边，可以拿走(m - (n - 1)) == m - n + 1条</p>
+<p>则下一个人(m - n + 2)所属阵营lose</p>
+<p>不过我急于交题去看C，疏忽了，没有%，罚时了</p>
+</blockquote>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int t;
+    scanf(&quot;%d&quot;, &amp;t);
+    while(t--)
+    {
+        int k, a, b;
+        scanf(&quot;%d&quot;, &amp;k);
+        string s;
+        cin &gt;&gt; s;
+        int n, m;
+        scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+        for(int i = 0; i &lt; m; ++i)
+            scanf(&quot;%d%d&quot;, &amp;a, &amp;b);
+        int tem = (m - n + 2) % k;
+        if(tem == 0)
+            tem = k;
+        if(s[tem - 1] == &#39;1&#39;)
+            cout &lt;&lt; &#39;2&#39; &lt;&lt; &#39;\n&#39;;
+        else
+            cout &lt;&lt; &#39;1&#39; &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="E"><a href="#E" class="headerlink" title="E."></a>E.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="F-Stones-in-the-Bucket"><a href="#F-Stones-in-the-Bucket" class="headerlink" title="F.Stones in the Bucket"></a>F.Stones in the Bucket</h1><blockquote>
+<p>水题（没有坑）</p>
+</blockquote>
+<h3 id="code"><a href="#code" class="headerlink" title="code"></a>code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int a[100005];
+
+int main()
+{
+    int t;
+    scanf(&quot;%d&quot;, &amp;t);
+    while(t--)
+    {
+        int n;
+        long long sum = 0;
+        long long ans = 0;
+        scanf(&quot;%d&quot;, &amp;n);
+        for(int i = 0; i &lt; n; ++i)
+        {
+            scanf(&quot;%d&quot;, &amp;a[i]);
+            sum += a[i];
+        }
+        ans += sum % n;
+        int tem = sum / n;
+        for(int i = 0; i &lt; n; ++i)
+            if(a[i] &lt; tem)
+                ans += (tem - a[i]);
+        cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="G"><a href="#G" class="headerlink" title="G."></a>G.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="H-Tokens-on-the-Segments"><a href="#H-Tokens-on-the-Segments" class="headerlink" title="H.Tokens on the Segments"></a>H.Tokens on the Segments</h1><blockquote>
+<p>这种题应该是经常出现，求最优分配</p>
+<p>暴力贪心：</p>
+<p>按左界从小到大排序，左界相同按右界从小到大排序</p>
+<p>线段从最右向左遍历，每个点也从右向左遍历，相当于“采用了”满足条件的最右点（也是接下来最可能用不到的点）</p>
+</blockquote>
+<pre><code class="lang-c++">#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 100005;
+
+struct node
+{
+    int l, r;
+} a[N];
+
+bool cmp(node a, node b)
+{
+    if(a.l != b.l)
+        return a.l &lt; b.l;
+    else
+        return a.r &lt; b.r;
+}
+
+int main()
+{
+    int t;
+    scanf(&quot;%d&quot;, &amp;t);
+    while(t--)
+    {
+        int n;
+        scanf(&quot;%d&quot;, &amp;n);
+        for(int i = 0; i &lt; n; ++i)
+            scanf(&quot;%d%d&quot;, &amp;a[i].l, &amp;a[i].r);
+        sort(a, a + n, cmp);
+        map&lt;int, bool&gt; mp;
+        int ans = 0;
+        for(int i = n - 1; i &gt;= 0; --i)
+            for(int j = a[i].r; j &gt;= a[i].l; --j)
+                if(!mp[j])
+                {
+                    mp[j] = 1;
+                    ans++;
+                    break;
+                }
+        cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+<h1 id="I"><a href="#I" class="headerlink" title="I."></a>I.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="J"><a href="#J" class="headerlink" title="J."></a>J.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="k"><a href="#k" class="headerlink" title="k."></a>k.</h1><blockquote>
+<p>updating……</p>
+</blockquote>
+<h1 id="L-Median"><a href="#L-Median" class="headerlink" title="L.Median"></a>L.Median</h1><blockquote>
+<p>n个点，m个关系（a &gt; b），求是否可以知道哪些数字可以作为中位数</p>
+</blockquote>
+<h2 id="总结-3"><a href="#总结-3" class="headerlink" title="总结"></a>总结</h2><blockquote>
+<p>开场我就看了这题，说好了我从后往前看，结果漏看了M题？！以为有封面吗？！</p>
+<p>一眼看去像拓扑排序，但…但是什么呢，忘了当时哪里不明白了，不过后来发现这题可能的中位数不止一个，当时没认识到这一问题</p>
+<p>虑中位数的特殊性，中位数意味着一定有n个比它大的，n个比它小的，所以对于1&lt;= x &lt;= n，在给出的关系里寻找比它大数字的个数（入度）的和比它小的数字的个数（出度），只要两者都&lt;= 2/n,就说明可以是中位数 </p>
+<p>不过最遗憾的是：我明明做过floyd闭包传递（传递闭包的含义指通过传递性<strong>推导出尽量多的元素之间的关系</strong> ） <a href="https://fireworks99.github.io/2019/04/07/POJ-3660-Cow-Contest/" target="_blank" rel="noopener">https://fireworks99.github.io/2019/04/07/POJ-3660-Cow-Contest/</a> 在场上却什么也想不出来，还是做少了…</p>
+</blockquote>
+<h3 id="Code-of-floyd"><a href="#Code-of-floyd" class="headerlink" title="Code of floyd"></a>Code of floyd</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;bitset&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int n, m;
+bool r[105][105];
+int out[105];
+int in[105];
+
+void floyd()
+{
+    for(int k = 1; k &lt;= n; ++k)
+        for(int i = 1; i &lt;= n; ++i)
+            for(int j = 1; j &lt;= n; ++j)
+                if(r[i][k] &amp;&amp; r[k][j])
+                    r[i][j] = 1;
+}
+
+int main()
+{
+    int t;
+    scanf(&quot;%d&quot;, &amp;t);
+    while(t--)
+    {
+        memset(r, 0, sizeof(r));
+        memset(out, 0, sizeof(out));
+        memset(in, 0, sizeof(in));
+        scanf(&quot;%d%d&quot;, &amp;n, &amp;m);
+        int a, b;
+        for(int i = 0; i &lt; m; ++i)
+        {
+            scanf(&quot;%d%d&quot;, &amp;a, &amp;b);
+            r[a][b] = 1;
+        }
+        floyd();
+        bool flag = 1;
+        for(int i = 1; i &lt;= n; ++i)
+            for(int j = 1; j &lt;= n; ++j)
+            {
+                if(r[i][j] &amp;&amp; r[j][i])///r[1][1] == r[1][1] == 1
+                {
+                    flag = 0;
+                    break;
+                }
+                if(r[i][j])
+                {
+                    out[i]++;
+                    in[j]++;
+                }
+            }
+        if(!flag)
+            for(int i = 0; i &lt; n; ++i)
+                cout &lt;&lt; &#39;0&#39;;
+        else
+        {
+            for(int i = 1; i &lt;= n; ++i)
+                if(in[i] &lt;= (n &gt;&gt; 1) &amp;&amp; out[i] &lt;= (n &gt;&gt; 1))
+                    cout &lt;&lt; &#39;1&#39;;
+                else
+                    cout &lt;&lt; &#39;0&#39;;
+        }
+        cout &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="improved-Floyd"><a href="#improved-Floyd" class="headerlink" title="improved Floyd"></a>improved Floyd</h3><pre><code class="lang-c++">#include &lt;bitset&gt;
+
+bitset&lt;105&gt; r[105];
+void floyd()
+{
+        for(int i = 1; i &lt;= n; ++i)
+            for(int j = 1; j &lt;= n; ++j)
+                if(r[j][i])
+                    r[j] |= r[i];
+}
+</code></pre>
+<h1 id="M-Sekiro"><a href="#M-Sekiro" class="headerlink" title="M.Sekiro"></a>M.Sekiro</h1><blockquote>
+<p>水题，坑：n == 0               n == 1 &amp;&amp; k == 1e9</p>
+</blockquote>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+
+int main()
+{
+    int t;
+    scanf(&quot;%d&quot;, &amp;t);
+    while(t--)
+    {
+        int n, k;
+        scanf(&quot;%d%d&quot;, &amp;n, &amp;k);
+        while(k--)
+        {
+            n = (n + 1) &gt;&gt; 1;
+            if(n == 1 || n == 0)
+                break;
+        }
+        cout &lt;&lt; n &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

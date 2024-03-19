@@ -1,0 +1,323 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>HDU 1010 Tempter of the Bone [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>HDU 1010 Tempter of the Bone</h1>
+			<h3 id="奇偶剪枝"><a href="#奇偶剪枝" class="headerlink" title="奇偶剪枝"></a>奇偶剪枝</h3><blockquote>
+<p>若 t-[abs(ex-sx)+abs(ey-sy)] 结果为非偶数(奇数)，则无法在<strong>t步恰好</strong>到达.</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>The maze was a rectangle with sizes N by M. There was a door in the maze. At the beginning, the door was closed and it would open at the T-th second for a short period of time (less than 1 second). Therefore the doggie had to arrive at the door on exactly the T-th second.  </p>
+</blockquote>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
+<p>The input consists of multiple test cases. The first line of each test case contains three integers N, M, and T (1 &lt; N, M &lt; 7; 0 &lt; T &lt; 50), which denote the sizes of the maze and the time at which the door will open, respectively. The next N lines give the maze layout, with each line containing M characters. A character is one of the following:  </p>
+<p> ‘X’: a block of wall, which the doggie cannot enter; </p>
+<p> ‘S’: the start point of the doggie;  </p>
+<p>‘D’: the Door; or </p>
+<p> ‘.’: an empty block.   </p>
+<p>The input is terminated with three 0’s. This test case is not to be processed.  </p>
+</blockquote>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><blockquote>
+<p>For each test case, print in one line “YES” if the doggie can survive, or “NO” otherwise.  </p>
+</blockquote>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><blockquote>
+<pre><code class="lang-c++">4 4 5
+S.X.
+..X.
+..XD
+....
+3 4 5
+S.X.
+..X.
+...D
+0 0 0
+</code></pre>
+</blockquote>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><blockquote>
+<p>NO</p>
+<p>YES</p>
+</blockquote>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
+<p>恰好到达，不能用bfs，用dfs。另外dfs搜索量大要剪枝，另外dfs用不到结构体</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+///BFS要以（ 结构体 ）形式存数据
+///DFS只要两点：当前点与终点（不需结构体）
+int n, m, time, now_x, now_y, ex, ey, t;
+bool vis[10][10];///可改图以省略（通路访问完毕改为墙）
+char mp[10][10];
+int dx[] = {0, 1, 0, -1};
+int dy[] = {1, 0, -1, 0};
+bool flag;
+
+///DFS无法中断，return返回的不知是哪一级，尽量不要在此函数里执行输出操作(易多次输出)
+void dfs(int x, int y, int t)
+{
+
+    ///①检验部分
+    if(mp[x][y] == &#39;D&#39; &amp;&amp; t == time)
+    {
+        flag = 1;
+        return ;
+    }
+
+    ///②剪枝部分
+    if(t &gt;= time || flag)///超时剪枝 || 成功剪枝
+        return ;
+    if(abs(x - ex) + abs(y - ey) &gt; time )///缺时剪枝
+        return ;
+    if(abs( time - t - abs(x - ex) - abs(y - ey) )% 2)///奇偶剪枝
+        return ;
+
+    ///③搜索部分
+    for(int i = 0; i &lt; 4; ++i)
+    {
+        int xx = x + dx[i];
+        int yy = y + dy[i];
+        if(x &gt;= n || x &lt; 0 || y &gt;= m || y &lt; 0 || vis[xx][yy] || mp[xx][yy] == &#39;X&#39; )
+            continue;
+        vis[xx][yy] = 1;
+        dfs(xx, yy, t + 1);
+        vis[xx][yy] = 0;///取消标记，另寻他路
+    }
+    return ;
+}
+
+int main()
+{
+    while(~scanf(&quot;%d%d%d&quot;, &amp;n, &amp;m, &amp;time) &amp;&amp; (n || m || t))
+    {
+        flag = 0;
+        memset(vis, 0, sizeof(vis));///两个数组都要初始化
+        memset(mp, 0, sizeof(mp));///我起初把初始化放在了读图的后面！
+
+        ///读图
+        for(int i = 0; i &lt; n; ++i)
+        {
+            scanf(&quot;%s&quot;, mp[i]);///或者cin读入
+            for(int j = 0; j &lt; m; ++j)
+            {
+                if(mp[i][j] == &#39;S&#39;)
+                {
+                    now_x = i;
+                    now_y = j;
+                }
+                if(mp[i][j] == &#39;D&#39;)
+                {
+                    ex = i;
+                    ey = j;
+                }
+            }
+        }
+
+        ///对起点的“剪枝”,相当于“刨根”吧
+        if(abs(now_x - ex) + abs(now_y - ey) &gt; time || abs(time -abs(now_x - ex) - abs(now_y - ey) ) &amp; 1 )
+        {
+            cout &lt;&lt; &quot;NO&quot; &lt;&lt; &#39;\n&#39;;
+            continue;
+        }
+
+        vis[now_x][now_y] = 1;
+        dfs(now_x, now_y, 0);
+        if(flag)
+            cout &lt;&lt; &quot;YES&quot; &lt;&lt; &#39;\n&#39;;
+        else
+            cout &lt;&lt; &quot;NO&quot; &lt;&lt; &#39;\n&#39;;
+//        for(int i = 0; i &lt; n; ++i)
+//        {
+//            for(int j = 0; j &lt; m; ++j)
+//                cout &lt;&lt; mp[i][j];
+//            cout &lt;&lt; &#39;\n&#39;;
+//        }
+    }
+    return 0;
+}
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

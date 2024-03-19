@@ -1,0 +1,341 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>HDU 4635 Strongly connected(shrink nodes) [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>HDU 4635 Strongly connected(shrink nodes)</h1>
+			<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出一个含有N个点M条有向边的简单图(无自环无重边)，求：在保证图是简单图且非强连通的前提下，最多可以再添加几条边？</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="Analyze"><a href="#Analyze" class="headerlink" title="Analyze"></a>Analyze</h3><blockquote>
+<p>1.现在有N个点，0条边，可添加 N * (N - 1) 条边(保证是简单图)</p>
+<p>2.为了保证非强连通，需要去掉一些边。最终的图<strong>环缩点</strong>后是两个大点。假设第一个大点中含有X个小点，那第二个大点中就含有(N - X)个小点，那原先他们之间的<code>2 * X*(N-X)</code>条边就要去掉一半，即答案是<code>N(N - 1) - X(N - X)</code></p>
+<p>3.由于原图已有M条边，所以最终答案是<code>N(N - 1) - M - X(N - X)</code></p>
+<p>4.那么<code>X(N - X)</code>在什么情况下最小呢？当二次函数处理时发现X越近0或越近N时最小，即最后的两个大点所含的小点数目之差越大越优。</p>
+<p>5.假设原图缩点后各大点所含小点数为：2，4，8，16。那么将2做一强连通分量，剩下的4+8+16做另一强连通分量时，答案最优。所以要找缩点后内部含点数最少的强连通分量，其内部点数为X。</p>
+<p>6.有个前提：这个强联通分量的入度或出度为0(才可以成为最后两个点之一)</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;stack&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 100100;
+const int M = 2000100;
+const int INF = 0x3f3f3f3f;
+#define ll long long
+
+ll n, m;
+
+int head[N], cnt;
+struct edge
+{
+    int u, v, pre;
+}e[M];
+
+void add(int u, int v)
+{
+    e[cnt].u = u;
+    e[cnt].v = v;
+    e[cnt].pre = head[u];
+    head[u] = cnt++;
+}
+
+stack&lt;int&gt; st;
+bool inst[N];
+int low[N], times[N], t, num, ltt[N];
+ll nodes[N];
+void Tarjan(int x)
+{
+    st.push(x);
+    inst[x] = 1;
+    low[x] = times[x] = ++t;
+    for(int i = head[x]; ~i; i = e[i].pre)
+    {
+        int to = e[i].v;
+        if(!times[to])
+        {
+            Tarjan(to);
+            low[x] = min(low[x], low[to]);
+        }
+        else if(inst[to])
+            low[x] = min(low[x], times[to]);
+    }
+
+    if(low[x] == times[x])
+    {
+        num++;
+        while(!st.empty())
+        {
+            int tem = st.top();
+            st.pop();
+            ltt[tem] = num;
+            nodes[num]++;
+            inst[tem] = 0;
+            if(tem == x)
+                break;
+        }
+    }
+}
+
+int in[N], out[N];
+
+void init()
+{
+    cnt = t = num = 0;
+    while(!st.empty())
+        st.pop();
+    memset(in, 0, sizeof(in));
+    memset(out, 0, sizeof(out));
+    memset(low, 0, sizeof(low));
+    memset(ltt, 0, sizeof(ltt));
+    memset(inst, 0, sizeof(inst));
+    memset(head, -1, sizeof(head));
+    memset(nodes, 0, sizeof(nodes));
+    memset(times, 0, sizeof(times));
+}
+
+int main()
+{
+    int _, p = 1;
+    scanf(&quot;%d&quot;, &amp;_);
+    while(_--)
+    {
+        scanf(&quot;%lld %lld&quot;, &amp;n, &amp;m);
+
+        init();
+
+        int u, v;
+        for(int i = 0; i &lt; m; ++i)
+        {
+            scanf(&quot;%d %d&quot;, &amp;u, &amp;v);
+            add(u, v);
+        }
+
+        for(int i = 1; i &lt;= n; ++i)
+            if(!times[i])
+                Tarjan(i);
+
+        if(num == 1)
+        {
+            printf(&quot;Case %d: -1\n&quot;,p++);
+            continue;
+        }
+
+        for(int i = 0; i &lt; cnt; ++i)
+        {
+            u = ltt[ e[i].u ], v = ltt[ e[i].v ];
+            if(u != v)
+                in[v]++, out[u]++;
+        }
+
+        ll mmin = n;
+        for(int i = 1; i &lt;= num; ++i)
+            if(in[i] == 0 || out[i] == 0)
+                mmin = min(mmin, nodes[i]);
+        printf(&quot;Case %d: &quot;,p++);
+        cout &lt;&lt; n * (n - 1) - m - mmin * (n - mmin) &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="Something"><a href="#Something" class="headerlink" title="Something"></a>Something</h3><blockquote>
+<p>1.数组很多时，不要漏掉任意一个的初始化。</p>
+<p>2.超过1个int数字的加减乘除(尤其乘法)记得用long long。</p>
+</blockquote>
+<h3 id="眼瞎写错下标Debug2小时"><a href="#眼瞎写错下标Debug2小时" class="headerlink" title="眼瞎写错下标Debug2小时"></a>眼瞎写错下标Debug2小时</h3><pre><code class="lang-c++">for(int i = 0; i &lt; cnt; ++i)
+{
+    u = ltt[ e[cnt].u ], v = ltt[ e[cnt].v ];
+    if(u != v)
+        in[v]++, out[u]++;
+}
+</code></pre>
+<blockquote>
+<blockquote>
+<p>眼瞎的痛</p>
+</blockquote>
+</blockquote>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

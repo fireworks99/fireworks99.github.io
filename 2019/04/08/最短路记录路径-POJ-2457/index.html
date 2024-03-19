@@ -1,0 +1,586 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>最短路记录路径 POJ 2457 [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>最短路记录路径 POJ 2457</h1>
+			<h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>m条单向路，n个点（1~n）</p>
+<p>求从1到n的最短路，不存在输出“-1”，存在则输出路径</p>
+</blockquote>
+<a id="more"></a>
+<p><strong><a href="http://poj.org/problem?id=2457" style="color:violet;" target="_blank" rel="noopener">点我飞过去</a></strong></p>
+<h3 id="Floyd"><a href="#Floyd" class="headerlink" title="Floyd"></a>Floyd</h3><blockquote>
+<p>较为特殊，数组pre[i][j]存从i到j的最短路径上i后面的第一个点</p>
+<p>当然对于此题Floyd已超时了，但算法是对的</p>
+</blockquote>
+<h3 id="Code-of-Floyd"><a href="#Code-of-Floyd" class="headerlink" title="Code of Floyd"></a>Code of Floyd</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+
+
+int m, n;
+int mp[1005][1005];
+int pre[1005][1005];
+///pre[i][j]存从i到j的最短路径上i后面的第一个点
+
+void init()
+{
+    for(int i = 0; i &lt;= n; ++i)
+        for(int j = 0; j &lt;= n; ++j)
+        {
+            mp[i][j] = (i == j ? 0: INF);
+            pre[i][j] = j;
+        }
+}
+
+void floyd()
+{
+    vector&lt;int&gt; ans;
+    for(int k = 1; k &lt;= n; ++k)///我无语了，又写成了++i
+        for(int i = 1; i &lt;= n; ++i)
+            for(int j = 1; j &lt;= n; ++j)
+                if(mp[i][j] &gt; mp[i][k] + mp[k][j])
+                {
+                    mp[i][j] = mp[i][k] + mp[k][j];
+                    pre[i][j] = pre[i][k];
+                }
+    if(mp[1][n] == INF)
+        cout &lt;&lt; &quot;-1&quot; &lt;&lt; &#39;\n&#39;;
+    else
+    {
+        vector&lt;int&gt; ans;
+        ans.push_back(1);
+        int pos = pre[1][n];
+        while(pos != n)
+        {
+            ans.push_back(pos);
+            pos = pre[pos][n];
+        }
+        ans.push_back(n);
+        int sz = ans.size();
+        cout &lt;&lt; sz &lt;&lt; &#39;\n&#39;;
+        for(int i = 0; i &lt; sz; ++i)
+            cout &lt;&lt; ans[i] &lt;&lt; &#39;\n&#39;;
+    }
+    return ;
+}
+
+int main()
+{
+    while(~scanf(&quot;%d%d&quot;, &amp;m, &amp;n))
+    {
+        init();
+        int there, here;
+        for(int i = 0; i &lt; m; ++i)
+        {
+            scanf(&quot;%d%d&quot;, &amp;there, &amp;here);
+            mp[there][here] = 1;
+        }
+        floyd();
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="Dijkstra"><a href="#Dijkstra" class="headerlink" title="Dijkstra"></a>Dijkstra</h3><blockquote>
+<p>nodepre[N]，这种最短路的记录路径，就像BFS的记录路径pre，像最长递增子序列的记录路径pre，像链式前向星的pre。</p>
+</blockquote>
+<h3 id="Code-of-Dijkstra"><a href="#Code-of-Dijkstra" class="headerlink" title="Code of Dijkstra"></a>Code of Dijkstra</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int INF = 0x3f3f3f3f;
+
+int m, n;
+bool vis[1005];
+int head[1005], dis[1005];
+int nodepre[1005];
+///路径都是pre存(由后推前)，而非nxt(由前推后)的原因：
+///更新方向：由前向后，一点更新多点
+///即：一点有多个nxt,却只有一个&quot;有实际意义的&quot;pre
+
+int cnt;
+struct edge
+{
+    int from, to, w, pre;
+} a[50005];
+
+void add(int from, int to, int w)
+{
+    a[cnt].from = from;
+    a[cnt].to = to;
+    a[cnt].w = w;
+    a[cnt].pre = head[from];
+    head[from] = cnt;
+    cnt++;
+}
+
+void init()
+{
+    cnt = 0;
+    for(int i = 0; i &lt;= n; ++i)
+    {
+        dis[i] = INF;
+        vis[i] = 0;
+        head[i] = -1;
+        nodepre[i] = -1;
+    }
+}
+
+void Dijkstra(int start)
+{
+    dis[start] = 0;
+    int pos = start;
+    int mmin;
+    while(pos != -1)
+    {
+        for(int i = head[pos]; ~i; i = a[i].pre)
+        {
+            if(vis[ a[i].to ])
+                continue;
+            if(dis[ a[i].to ] == INF || dis[ a[i].to ] &gt; dis[pos] + a[i].w)
+            {
+                dis[ a[i].to ] = dis[pos] + a[i].w;
+                nodepre[ a[i].to ] = pos;
+            }
+        }
+        vis[pos] = 1;
+
+        pos = -1;
+        mmin = -1;
+        for(int i = 1; i &lt;= n; ++i)
+            if(!vis[i] &amp;&amp; dis[i] != INF &amp;&amp; (mmin == -1 || mmin &gt; dis[i]))
+            {
+                mmin = dis[i];
+                pos = i;
+            }
+    }
+    if(dis[n] == INF)
+    {
+        cout &lt;&lt; &quot;-1&quot; &lt;&lt; &#39;\n&#39;;
+        return ;
+    }
+    vector&lt;int&gt; ans;
+    pos = n;
+    while(nodepre[pos] != -1)
+    {
+        ans.push_back(pos);
+        pos = nodepre[pos];
+    }
+    ans.push_back(start);
+    int sz = ans.size();
+    cout &lt;&lt; sz &lt;&lt; &#39;\n&#39;;
+    for(int i = sz - 1; i &gt;= 0; --i)
+        cout &lt;&lt; ans[i] &lt;&lt; &#39;\n&#39;;
+    return ;
+}
+
+int main()
+{
+    while(~scanf(&quot;%d%d&quot;, &amp;m, &amp;n))
+    {
+        init();
+        int there, here;
+        for(int i = 0; i &lt; m; ++i)
+        {
+            scanf(&quot;%d%d&quot;, &amp;there, &amp;here);
+            add(there, here, 1);
+        }
+        Dijkstra(1);
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="Bellman-Ford"><a href="#Bellman-Ford" class="headerlink" title="Bellman_Ford"></a>Bellman_Ford</h3><blockquote>
+<p>同Dijkstra普通记录路径方法</p>
+</blockquote>
+<h3 id="Code-of-Bellman-Ford"><a href="#Code-of-Bellman-Ford" class="headerlink" title="Code of Bellman_Ford"></a>Code of Bellman_Ford</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+
+int m, n, dis[1005], nodepre[1005];
+
+int cnt;
+struct edge
+{
+    int from, to, w;
+} a[50005];
+
+void add(int from, int to, int w)
+{
+    a[cnt].from = from;
+    a[cnt].to = to;
+    a[cnt].w = w;
+    cnt++;
+}
+
+bool Bellman_Ford(int start)
+{
+    dis[start] = 0;
+
+    int tot = n;
+    while(tot--)
+    {
+        bool flag = 0;
+        for(int i = 0; i &lt; cnt; ++i)
+            if(dis[ a[i].to ] &gt; dis[ a[i].from ] + a[i].w)
+            {
+                flag = 1;
+                dis[ a[i].to ] = dis[ a[i].from ] + a[i].w;
+                nodepre[ a[i].to ] = a[i].from;
+            }
+        if(!flag)
+            break;
+    }
+    for(int i = 0; i &lt; cnt; ++i)
+        if(dis[ a[i].to ] &gt; dis[ a[i].from ] + a[i].w)
+            return 0;
+    if(dis[n] == INF)
+        cout &lt;&lt; &quot;-1&quot; &lt;&lt; &#39;\n&#39;;
+    else
+    {
+        int pos = n;
+        vector&lt;int&gt; ans;
+        while(pos != -1)
+        {
+            ans.push_back(pos);
+            pos = nodepre[pos];
+        }
+        int sz = ans.size();
+        cout &lt;&lt; sz &lt;&lt; &#39;\n&#39;;
+        for(int i = sz - 1; i &gt;= 0; --i)
+            cout &lt;&lt; ans[i] &lt;&lt; &#39;\n&#39;;
+    }
+    return 1;
+}
+
+int main()
+{
+    while(~scanf(&quot;%d%d&quot;, &amp;m, &amp;n))
+    {
+        cnt = 0;
+        memset(dis, INF, sizeof(dis));
+        memset(nodepre, -1, sizeof(nodepre));
+        int there, here;
+        for(int i = 0; i &lt; m; ++i)
+        {
+            scanf(&quot;%d%d&quot;, &amp;there, &amp;here);
+            add(there, here, 1);
+        }
+        if(Bellman_Ford(1))
+            continue;
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="spfa"><a href="#spfa" class="headerlink" title="spfa"></a>spfa</h3><blockquote>
+<p>同Dijkstra普通记录路径方法</p>
+</blockquote>
+<h3 id="Code-of-spfa"><a href="#Code-of-spfa" class="headerlink" title="Code of spfa"></a>Code of spfa</h3><pre><code class="lang-c++">#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+
+int m, n;
+bool vis[1005];
+int head[1005], dis[1005], times[1005], tot, sum;
+int nodepre[1005];
+
+int cnt;
+struct edge
+{
+    int from, to, w, pre;
+} a[50005];
+
+void add(int from, int to, int w)
+{
+    a[cnt].from = from;
+    a[cnt].to = to;
+    a[cnt].w = w;
+    a[cnt].pre = head[from];
+    head[from] = cnt;
+    cnt++;
+}
+
+void init()
+{
+    cnt = 0;
+    for(int i = 0; i &lt;= n; ++i)
+    {
+        dis[i] = INF;
+        vis[i] = 0;
+        times[i] = 0;
+        head[i] = -1;
+        nodepre[i] = -1;
+    }
+}
+
+bool spfa(int start)
+{
+    dis[start] = 0;
+    deque&lt;int&gt; q;
+    q.push_front(start);
+    vis[start] = 1;
+    tot = 1, sum = 0;
+
+    while(q.size())
+    {
+        int first = q.front();
+        q.pop_front();
+        vis[first] = 0;
+        sum -= dis[first];
+        tot--;
+
+        for(int i = head[first]; ~i; i = a[i].pre)
+        {
+            int t = a[i].to;
+            if(dis[t] &gt; dis[first] + a[i].w)
+            {
+                dis[t] = dis[first] + a[i].w;
+                nodepre[t] = first;
+                if(!vis[t])
+                {
+                    vis[t] = 1;
+                    if(q.empty() || dis[q.front()] &lt; dis[t] || dis[t] * tot &gt;= sum)
+                        q.push_back(t);
+                    else
+                        q.push_front(t);
+                    sum += dis[t];
+                    tot++;
+                    if(++times[t] &gt;= n)
+                        return 0;
+                }
+            }
+        }
+    }
+    if(dis[n] == INF)
+        cout &lt;&lt; &quot;-1&quot; &lt;&lt; &#39;\n&#39;;
+    else
+    {
+        int pos = n;
+        vector&lt;int&gt; ans;
+        while(pos != -1)
+        {
+            ans.push_back(pos);
+            pos = nodepre[pos];
+        }
+        int sz = ans.size();
+        cout &lt;&lt; sz &lt;&lt; &#39;\n&#39;;
+        for(int i = sz - 1; i &gt;= 0; --i)
+            cout &lt;&lt; ans[i] &lt;&lt; &#39;\n&#39;;
+    }
+    return 1;
+}
+
+int main()
+{
+    while(~scanf(&quot;%d%d&quot;, &amp;m, &amp;n))
+    {
+        init();
+        int there, here;
+        for(int i = 0; i &lt; m; ++i)
+        {
+            scanf(&quot;%d%d&quot;, &amp;there, &amp;here);
+            add(there, here, 1);
+        }
+        if(spfa(1))
+            continue;
+    }
+    return 0;
+}
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

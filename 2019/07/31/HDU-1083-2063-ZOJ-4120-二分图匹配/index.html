@@ -1,0 +1,408 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>HDU 1083 2063 ZOJ 4120(二分图匹配) [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>HDU 1083 2063 ZOJ 4120(二分图匹配)</h1>
+			<blockquote>
+<p>确定是二分图求最大匹配时，对任意一方查找匹配均可</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="数组link"><a href="#数组link" class="headerlink" title="数组link"></a>数组link</h2><blockquote>
+<p>记录：link[i] = v; <strong>选项i(下标)</strong> 分配给任务v(储存值)</p>
+</blockquote>
+<h2 id="数组vis"><a href="#数组vis" class="headerlink" title="数组vis"></a>数组vis</h2><blockquote>
+<p>记录：在为任务v配对时 <strong>选项i(下标)</strong>是否被访问过</p>
+<p>作用：为了替任务v争得选项to，在此处将选项to锁定，dfs寻找选项(to)   原来服务的任务(link[to])   <strong>其他</strong>可行的选项，体现了<strong>增广路的特点——反悔</strong></p>
+</blockquote>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><blockquote>
+<p>每次为任务选择选项时，每个选项要从头考虑（<code>memset(vis, 0, sizeo(vis))</code>），直到找到合适的选项为止</p>
+</blockquote>
+<h3 id="HDU-1083"><a href="#HDU-1083" class="headerlink" title="HDU 1083"></a>HDU 1083</h3><blockquote>
+<p>题意：P课程各找一个课代表，N个人，每人至多担任一门课代表</p>
+</blockquote>
+<pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int p, n;
+int link[1005];///link[i] = v; 选项i 分配给任务v
+bool vis[1005];///在为任务v配对时 选项i是否被访问过
+vector&lt;int&gt; vec[1005];
+
+/*
+vis数组的作用：
+///为了替任务v争得选项to，在此处将选项to锁定，
+dfs寻找选项(to) 原来服务的任务(link[to]) 其他可行的选项
+体现了反悔这一增广路的特点
+*/
+
+bool dfs(int v)
+{
+    for(int i = 0; i &lt; vec[v].size(); ++i)
+    {
+        int to = vec[v][i];
+        if(!vis[to])
+        {
+            vis[to] = 1;
+            if(link[to] == -1 || dfs(link[to]))
+            {
+                link[to] = v;
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+void slove()
+{
+    int ans = 0;
+    memset(link, -1, sizeof(link));
+    for(int i = 1; i &lt;= p; ++i)
+    {
+        memset(vis, 0, sizeof(vis));
+        if(dfs(i))
+            ans++;
+    }
+    if(ans == p)
+        cout &lt;&lt; &quot;YES&quot; &lt;&lt; &#39;\n&#39;;
+    else
+        cout &lt;&lt; &quot;NO&quot; &lt;&lt; &#39;\n&#39;;
+}
+
+int main()
+{
+    int t;
+    cin &gt;&gt; t;
+    while(t--)
+    {
+        int cnt, tem;
+        scanf(&quot;%d%d&quot;, &amp;p, &amp;n);
+        for(int i = 0; i &lt; 1005; ++i)
+            vec[i].clear();
+        for(int i = 1; i &lt;= p; ++i)
+        {
+            scanf(&quot;%d&quot;, &amp;cnt);
+            while(cnt--)
+            {
+                scanf(&quot;%d&quot;, &amp;tem);
+                vec[i].push_back(tem);
+            }
+        }
+        slove();
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="HDU-2063"><a href="#HDU-2063" class="headerlink" title="HDU 2063"></a>HDU 2063</h3><blockquote>
+<p>题意：男女配对</p>
+</blockquote>
+<pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int k, m, n;
+int link[1005];
+bool vis[1005];
+vector&lt;int&gt; vec[1005];
+
+bool dfs(int v)
+{
+    for(int i = 0; i &lt; vec[v].size(); ++i)
+    {
+        int to = vec[v][i];
+        if(!vis[to])
+        {
+            vis[to] = 1;
+            if(link[to] == -1 || dfs(link[to]))
+            {
+                link[to] = v;
+                return 1;
+            }
+        }
+    }
+    return 0;
+}
+
+void slove()
+{
+    int ans = 0;
+    memset(link, -1, sizeof(link));
+    for(int i = 1; i &lt;= m; ++i)
+    {
+        memset(vis, 0, sizeof(vis));
+        if(dfs(i))
+            ans++;
+    }
+    cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;;
+}
+
+int main()
+{
+    int girl, boy;
+    while(~scanf(&quot;%d&quot;, &amp;k) &amp;&amp; k)
+    {
+        for(int i = 0; i &lt; 1005; ++i)
+            vec[i].clear();
+        scanf(&quot;%d%d&quot;, &amp;m, &amp;n);
+        for(int i = 0; i &lt; k; ++i)
+        {
+            scanf(&quot;%d%d&quot;, &amp;girl, &amp;boy);
+            vec[girl].push_back(boy);
+        }
+        slove();
+    }
+    return 0;
+}
+</code></pre>
+<h3 id="ZOJ-1083-Tokens-on-the-Segments"><a href="#ZOJ-1083-Tokens-on-the-Segments" class="headerlink" title="ZOJ 1083 Tokens on the Segments"></a>ZOJ 1083 Tokens on the Segments</h3><blockquote>
+<p>题意：一个直角坐标轴，y轴上从1到n共n个点，分别对应x轴上一段区间，从对应区间中为每个点匹配一个点，x轴上每个被选择的点不可重复</p>
+</blockquote>
+<pre><code class="lang-c++">#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 100005;
+
+int n;
+map&lt;int, int&gt; link;
+map&lt;int, int&gt; vis;
+int l[N], r[N];
+
+bool dfs(int v)
+{
+    for(int i = l[v]; i &lt;= r[v]; ++i)
+        if(!vis[i])
+        {
+            vis[i] = 1;
+            if(link[i] == 0 || dfs(link[i]))
+            {
+                link[i] = v;
+                return 1;
+            }
+        }
+    return 0;
+}
+
+void slove()
+{
+    int ans = 0;
+    link.clear();
+    for(int i = 1; i &lt;= n; ++i)
+    {
+        vis.clear();
+        if(dfs(i))
+            ans++;
+    }
+    cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;;
+}
+
+int main()
+{
+    int t;
+    scanf(&quot;%d&quot;, &amp;t);
+    while(t--)
+    {
+        scanf(&quot;%d&quot;,&amp;n);
+        for(int i = 1; i &lt;= n; ++i)
+            scanf(&quot;%d%d&quot;, &amp;l[i], &amp;r[i]);
+        slove();
+    }
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>昨日种种皆成今我：利用一切可利用的时间学习，也不至于不会做，不至于打铁了</p>
+<p>今日种种皆成新我：现在不珍惜时间多学多练，将来还是要被碾压、还是要打铁</p>
+</blockquote>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

@@ -1,0 +1,351 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>FZU 1686 神龙的难题(DLX repeat cover) [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>FZU 1686 神龙的难题(DLX repeat cover)</h1>
+			<h3 id="Deacription"><a href="#Deacription" class="headerlink" title="Deacription"></a>Deacription</h3><blockquote>
+<p>N x M的01矩阵，给出a、b，表示一次性可以将a行b列的小矩阵内的数字全变成0，问最终使全图为0需要几步</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="建模"><a href="#建模" class="headerlink" title="建模"></a>建模</h3><blockquote>
+<p>把每个1视为列，每一种覆盖方式视为行</p>
+<p>最少需要拿出多少行，使得每列都含有1——重复覆盖</p>
+</blockquote>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int MAX_V = 100005;///数组开小可能超时
+
+
+int n, m, length, width, res, tot;
+int cnt[255];///第i列1元素的个数
+int L[MAX_V], R[MAX_V], U[MAX_V], D[MAX_V];
+int Head[255];///第i行第一个1元素的ID,意义同列标元素
+int Row[MAX_V], Col[MAX_V];///记录id所在行列
+int ans[255], mp[20][20];
+bool vis[255];
+
+void init()
+{
+    for(int i = 0; i &lt;= tot; ++i)///初始化Head及tot个列标元素
+    {
+        cnt[i] = 0;
+        L[i] = i - 1;
+        R[i] = i + 1;
+        U[i] = i;
+        D[i] = i;
+//        Row[i] = 0;
+//        Col[i] = i;
+    }
+
+    L[0] = tot;
+    R[tot] = 0;
+
+    memset(Head, -1, sizeof(Head));
+}
+
+void link(int row, int col, int id)
+{
+    Row[id] = row;
+    Col[id] = col;
+
+    U[id] = U[col];///我向上
+    D[id] = col;///我向下
+    D[ U[col] ] = id;///我上 下我
+    U[col] = id;///我下 上我
+
+    if(Head[row] == -1)
+        Head[row] = L[id] = R[id] = id;
+    else
+    {
+        L[id] = L[ Head[row] ];///我向左
+        R[id] = Head[row];///我向右
+        R[ L[ Head[row] ] ] = id;///我左 右我
+        L[ Head[row] ] = id;///我右 左我
+    }
+
+    cnt[col]++;
+}
+
+///具体删除列，没有删除行(这一列有1了，我以后无需参考此列选行)
+void abandon(int id)
+{
+    for(int i = D[id]; i != id; i = D[i])///空了id,便于后续删除列
+        L[ R[i] ] = L[i], R[ L[i] ] = R[i];
+}
+
+void resume(int id)
+{
+    for (int i = D[id]; i != id; i = D[i])///空了id(因为上面就没abandon)
+        L[ R[i] ] = R[ L[i] ] = i;
+}
+
+int h()
+{
+    int num = 0;
+    memset(vis, 0, sizeof(vis));
+    for(int i = R[0]; i != 0; i = R[i])
+    {
+        if(vis[i])
+            continue;
+        num++;
+        for(int j = D[i]; j != i; j = D[j])
+            for(int k = R[j]; k != j; k = R[k])
+                vis[ Col[k] ] = 1;
+    }
+    return num;///当前矩阵可拆解次数
+}
+
+
+void Dance(int deep)
+{
+    if(deep + h() &gt;= res)///估价剪枝
+        return ;
+
+    if(R[0] == 0)///准出口(每次abandon都会ban掉列标元素)
+    {
+        if(deep &lt; res)
+            res = deep;
+        return;
+    }
+
+    ///找到1的数目最少的一列  将列标元素存在c里
+    int c = R[0];
+    for(int i = R[0]; i != 0; i = R[i])
+        if(cnt[i] &lt; cnt[c])
+            c = i;
+
+    ///对于c列1元素所在行，遍历每行，看看选择哪一行合适
+    ///最少含1列，1所在行必然不被同时选
+    for(int i = D[c]; i != c; i = D[i])
+    {
+        ans[deep] = Row[i];///选当前行
+
+        abandon(i);///我选这个1,后续无需参考此列(删除)
+        for(int j = R[i]; j != i; j = R[j])
+            abandon(j);///删除1元素所在行上 1元素所在列
+
+        Dance(deep + 1);
+
+        for(int j = R[i]; j != i; j = R[j])
+            resume(j);
+        resume(i);
+    }
+}
+
+int main()
+{
+    while(~scanf(&quot;%d%d&quot;, &amp;n, &amp;m))
+    {
+        tot = 0;
+        for(int i = 1; i &lt;= n; ++i)
+            for(int j = 1; j &lt;= m; ++j)
+            {
+                scanf(&quot;%d&quot;, &amp;mp[i][j]);
+                if(mp[i][j])
+                    mp[i][j] = ++tot;
+            }
+        int id = tot, block = 0;
+        init();
+        scanf(&quot;%d%d&quot;, &amp;length, &amp;width);
+        for(int i = 1; i + length - 1 &lt;= n; ++i)
+            for(int j = 1; j + width - 1 &lt;= m; ++j)
+            {
+                block++;
+                for(int k = i; k &lt;= i + length - 1; ++k)
+                    for(int l = j; l &lt;= j + width - 1; ++l)
+                        if(mp[k][l])
+                            link(block, mp[k][l], ++id);
+            }
+        res = 0x3f3f3f3f;///不要自以为是随便搞
+        Dance(0);
+        cout &lt;&lt; res &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+
+
+
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>About BeautifulSoup [ 市井烟火气 ]</title>
+	
+	
+	<!-- stylesheets list from _config.yml -->
+	
+	<link rel="stylesheet" href="/css/PreciousJoy.css">
+	
+	<link rel="stylesheet" href="/css/top-bar.css">
+	
+	<link rel="stylesheet" href="/css/menu-outer.css">
+	
+	<link rel="stylesheet" href="/css/content-outer.css">
+	
+	<link rel="stylesheet" href="/css/bottom-outer.css">
+	
+	<link rel="stylesheet" href="/css/atom-one-dark.css">
+	
+	<link rel="stylesheet" href="/css/recent-posts-item.css">
+	
+	<link rel="stylesheet" href="/css/article-sidebar-toc.css">
+	
+	<link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+	
+	<link rel="stylesheet" href="/css/search.css">
+	
+	<link rel="stylesheet" href="/css/toc.css">
+	
+	<link rel="stylesheet" href="/css/sidebar.css">
+	
+	<link rel="stylesheet" href="/css/archive.css">
+	
+	<link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+	
+	<link rel="stylesheet" href="/css/Z-last-cover-others.css">
+	
+	
+	
+</head>
+
+
+
+
+<body id="wrapper">
+
+	<div id="">
+		
+		<div id="top-bar">
+			
+			<div id="avatar-box">
+				<img class="avatar" src="/images/default-avatar.jpg" alt="avatar">
+			</div>
+
+			<div id="top-bar-text">
+				<div id="top-bar-title">
+					fireworks99
+				</div>
+				<div id="top-bar-slogan">
+					keep hungry keep foolish
+				</div>
+			</div>
+
+		</div>
+
+		<div id="menu-outer">
+			<div id="menu-inner">
+				
+				
+				<div class="menu-item">
+					<a href="/">Home</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/about">About</a>
+				</div>
+				
+				<div class="menu-item">
+					<a href="/archives">Archives</a>
+				</div>
+				
+
+				<div class="menu-item menu-item-search">
+					
+  <span class="local-search local-search-google local-search-plugin">
+      <input type="search" placeholder="站内搜索" id="local-search-input" class="local-search-input-cls" style="">
+      <div id="local-search-result" class="local-search-result-cls"></div>
+  </span>
+	
+				</div>
+
+			</div>
+		</div>
+
+		<div id="content-outer">
+			<div id="content-inner">
+
+				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>About BeautifulSoup</h1>
+			<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<ol>
+<li>BeautifulSoup的基本元素</li>
+<li>HTML内容遍历方法</li>
+<li>HTML格式化</li>
+<li>信息标记与内容查找方法</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<h2 id="1-BeautifulSoup五种基本元素"><a href="#1-BeautifulSoup五种基本元素" class="headerlink" title="1.BeautifulSoup五种基本元素"></a>1.BeautifulSoup五种基本元素</h2><p><img src="https://i.postimg.cc/k5DMMh8d/KST4684-CH5-OCBCE0-N-3-QP0-J.png" alt="Five elements"></p>
+<pre><code class="lang-python">import requests
+from bs4 import BeautifulSoup
+
+def getText(url):
+    try:
+        kv = { &#39;user-agent&#39;: &#39;Mozilla/5.0&#39; }
+        r = requests.get(url, headers=kv)
+        r.raise_for_status()
+        r.encoding = r.apparent_encoding
+        return r.text
+    except:
+        return &#39;Error&#39;
+
+
+def solve(txt):
+    soup = BeautifulSoup(txt, &#39;html.parser&#39;)
+    print(soup.title)
+
+    print(soup.a) # 标签(只返回了第一个标签内容)
+    print(type(soup.a)) # &lt;class &#39;bs4.element.Tag&#39;&gt;
+
+    print(soup.a.name) # 标签名字
+    print(type(soup.a.name)) # &lt;class &#39;str&#39;&gt;
+    print(soup.a.parent.name)
+    print(soup.a.parent.parent.name)
+
+    print(soup.a.attrs) # 标签属性
+    print(type(soup.a.attrs)) # &lt;class &#39;dict&#39;&gt;
+    print(soup.a.attrs[&#39;href&#39;]) # 采用字典的方式提取信息
+
+    print(soup.a.string)
+    print(type(soup.a.string)) # &lt;class &#39;bs4.element.NavigableString&#39;&gt;
+
+    newsoup = BeautifulSoup(&#39;&lt;b&gt;&lt;!--This is a comment--&gt;&lt;/b&gt;&lt;p&gt;This is not a comment&lt;/p&gt;&#39;, &#39;html.parser&#39;)
+    print(newsoup.b.string) # This is a comment 自动去掉了注释标志
+    print(type(newsoup.b.string)) # &lt;class &#39;bs4.element.Comment&#39;&gt;
+    print(newsoup.p.string) # This is not a comment
+    print(type(newsoup.p.string)) # &lt;class &#39;bs4.element.NavigableString&#39;&gt;
+
+
+def main():
+    url = &quot;https://www.csdn.net/&quot;
+    txt = getText(url)
+    solve(txt)
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<h2 id="2-HTML内容的三种遍历"><a href="#2-HTML内容的三种遍历" class="headerlink" title="2.HTML内容的三种遍历"></a>2.HTML内容的三种遍历</h2><p><img src="https://i.postimg.cc/CxGrBFGG/WEU1-LUYANSV-7-N-4-KFSARF.png" alt="下行遍历"></p>
+<p><img src="https://i.postimg.cc/XJJszdTL/O-K-5-LFKZPB-PO-POO-S8.png" alt="上行遍历"></p>
+<p><img src="https://i.postimg.cc/yx3vVB6S/YA-RC-BI-R31-Y-TBJR8-V5-WS.png" alt="平行遍历"></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><pre><code class="lang-python">import requests
+from bs4 import BeautifulSoup
+
+def getText(url):
+    try:
+        kv = { &#39;user-agent&#39;: &#39;Mozilla/5.0&#39; }
+        r = requests.get(url, headers=kv)
+        r.raise_for_status()
+        r.encoding = r.apparent_encoding
+        return r.text
+    except:
+        return &#39;Error&#39;
+
+
+def down(demo):
+    soup = BeautifulSoup(demo, &#39;html.parser&#39;)
+    print(soup.head)
+    print(soup.head.contents) # head标签子节点（包括：标签节点、字符串节点(像&#39;\n&#39;)）的列表
+    print(type(soup.head.contents)) # &lt;class &#39;list&#39;&gt;
+    print(soup.body)
+    print(soup.body.contents)
+    print(len(soup.body.contents))
+    print(soup.body.contents[1])
+
+    for child in soup.body.children: # 循环遍历子节点(迭代类型只能用在for...in...结构中)
+        print(child)
+
+    for grandchild in soup.body.descendants: # 循环遍历所有子孙节点(迭代类型)
+        print(grandchild)
+
+
+def up(demo):
+    soup = BeautifulSoup(demo, &#39;html.parser&#39;)
+    for parent in soup.a.parents: # 节点的&quot;先辈&quot;标签,没有则None
+        if parent is None:
+            print(parent)
+        else:
+            print(parent.name)
+    print(soup.title.parent) # 节点的父亲标签
+    print(soup.html.parent) # html为最高标签，父节点为自己
+
+def parallel(demo):
+    soup = BeautifulSoup(demo, &#39;html.parser&#39;)
+    print(soup.a.next_sibling)
+    print(soup.a.next_sibling.next_sibling)
+    print(soup.a.previous_sibling)
+    print(soup.a.previous_sibling.previous_sibling)
+    print(soup.a.parent)
+
+    for sibling in soup.a.next_siblings: # 迭代类型，遍历后序节点
+        print(sibling)
+    for sibling in soup.a.previous_siblings: # 迭代类型，遍历前序节点
+        print(sibling)
+
+def main():
+    url = &quot;https://fireworks99.github.io/&quot;
+    demo = getText(url)
+    # down(demo)
+    # up(demo)
+    parallel(demo)
+
+
+if __name__ == &#39;__main__&#39;:
+    main()
+</code></pre>
+<h2 id="3-HTML格式化prettify"><a href="#3-HTML格式化prettify" class="headerlink" title="3.HTML格式化prettify"></a>3.HTML格式化prettify</h2><pre><code class="lang-python">import requests
+from bs4 import BeautifulSoup
+
+# 爬取网页的通用代码框架
+def getText(url):
+    try:
+        r = requests.get(url)
+        r.raise_for_status()
+        r.encoding = r.apparent_encoding
+        return r.text
+    except:
+        return &quot;Error occurred&quot;
+
+
+if __name__ == &quot;__main__&quot;:
+    url = &quot;https://fireworks99.github.io/&quot;
+    demo = getText(url)
+    soup = BeautifulSoup(demo, &#39;html.parser&#39;)
+    print(soup.prettify())
+    print(soup.a.prettify())
+</code></pre>
+<h2 id="4-信息标记与内容查找方法"><a href="#4-信息标记与内容查找方法" class="headerlink" title="4.信息标记与内容查找方法"></a>4.信息标记与内容查找方法</h2><p><img src="https://i.postimg.cc/Pr6rpRyX/KI76-T14-B-XKV782-Z50-W-R.png" alt="XML"></p>
+<p><img src="https://i.postimg.cc/Qdw8SKvv/99-53-XDG3-PKB-PGV9-B-F-E.png" alt="JSON"></p>
+<p><img src="https://i.postimg.cc/j5rsY0xX/G7-3-QJWSSH71-O0-G-OAB-K.png" alt="YAML"></p>
+<p><img src="https://i.postimg.cc/cCx06R8t/KLBV-Q5-H9-LBO44-MUMI-WO.png" alt="compare"></p>
+<p><img src="https://i.postimg.cc/QMc3b4QW/DX94-TRUCPAHU-KZXTK87-D.png" alt="查找"></p>
+<p><img src="https://i.postimg.cc/630Ns81W/68-P-I-BEMW-GTW-Z-G.png" alt="参数"></p>
+<p><img src="https://i.postimg.cc/7hZrqqpg/3-ZG-6-6-5-BHBH-U-B-AN.png" alt="替代"></p>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
+</div>
+
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
+
+
+			</div>
+		</div>
+
+		<div id="bottom-outer">
+			<div id="bottom-inner">
+				Site by Baole Zhao | 
+				Powered by <a href="http://hexo.io">Hexo</a> |
+				theme <a href="https://github.com/fireworks99/hexo-theme-PreciousJoy">PreciousJoy</a>
+			</div>
+		</div>
+
+		
+	</div>
+
+
+
+
+
+	
+	<!-- scripts list from theme config.yml -->
+	
+	<script src="/js/jquery-3.5.1.min.js"></script>
+	
+	<script src="/js/PreciousJoy.js"></script>
+	
+	<script src="/js/highlight.pack.js"></script>
+	
+	<script src="/js/jquery.fancybox.min.js"></script>
+	
+	<script src="/js/search.js"></script>
+	
+	<script src="/js/load.js"></script>
+	
+	<script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+	
+	<script src="/js/clipboard.min.js"></script>
+	
+	
+
+	<script>hljs.initHighlightingOnLoad();</script>
+
+</body>
+</html>
