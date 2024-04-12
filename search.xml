@@ -4,6 +4,120 @@
   
     
     <entry>
+      <title>Modular</title>
+      <link href="2024/04/12/Modular/"/>
+      <url>2024/04/12/Modular/</url>
+      
+        <content type="html"><![CDATA[<p>前端模块化是指将前端代码按照模块化的方式进行组织和管理，以提高代码的可维护性、复用性和可扩展性。传统的前端开发中，代码通常是以全局变量和函数的形式存在，容易造成命名冲突、代码耦合度高等问题。模块化开发则通过将代码分割为独立的模块，每个模块只暴露必要的接口，从而实现代码的分层管理和复用。</p><a id="more"></a><p>在前端模块化中，有几种常见的模块化方案：</p><ol><li><p><strong>CommonJS</strong>：最初由Node.js引入的模块化方案，使用<code>require</code>和<code>module.exports</code>来定义和导出模块。</p><pre><code>javascriptCopy code// math.jsconst add = (a, b) =&gt; a + b;const subtract = (a, b) =&gt; a - b;module.exports = {    add,    subtract};// main.jsconst { add, subtract } = require(&#39;./math.js&#39;);console.log(add(2, 3)); // 输出 5console.log(subtract(5, 3)); // 输出 2</code></pre></li><li><p><strong>AMD（Asynchronous Module Definition）</strong>：适用于浏览器环境的模块化方案，通过异步加载模块，使用<code>define</code>和<code>require</code>来定义和导入模块。</p><pre><code>javascriptCopy code// math.jsdefine([], function() {    const add = (a, b) =&gt; a + b;    const subtract = (a, b) =&gt; a - b;    return {        add,        subtract    };});// main.jsrequire([&#39;math&#39;], function(math) {    console.log(math.add(2, 3)); // 输出 5    console.log(math.subtract(5, 3)); // 输出 2});</code></pre></li><li><p><strong>ES6模块化</strong>：ES6引入了原生的模块化支持，使用<code>import</code>和<code>export</code>来定义和导入模块。</p><pre><code>javascriptCopy code// math.jsexport const add = (a, b) =&gt; a + b;export const subtract = (a, b) =&gt; a - b;// main.jsimport { add, subtract } from &#39;./math.js&#39;;console.log(add(2, 3)); // 输出 5console.log(subtract(5, 3)); // 输出 2</code></pre></li><li><p><strong>UMD（Universal Module Definition）</strong>：UMD是一种兼容多种模块化规范的解决方案，既可以在浏览器中直接使用，也可以在Node.js环境中使用。</p><pre><code>javascriptCopy code(function (root, factory) {    if (typeof define === &#39;function&#39; &amp;&amp; define.amd) {        // AMD        define([&#39;exports&#39;], factory);    } else if (typeof exports === &#39;object&#39; &amp;&amp; typeof exports.nodeName !== &#39;string&#39;) {        // CommonJS        factory(exports);    } else {        // Browser globals        factory((root.commonJsStrict = {}));    }}(typeof self !== &#39;undefined&#39; ? self : this, function (exports) {    // Your module code here    exports.add = (a, b) =&gt; a + b;    exports.subtract = (a, b) =&gt; a - b;}));</code></pre></li></ol><p>综上所述，前端模块化通过不同的模块化方案，可以让前端代码更加模块化、组件化，提高代码的可维护性和可复用性，是现代前端开发中的重要实践之一。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> FEの模块化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Engineering</title>
+      <link href="2024/04/12/Engineering/"/>
+      <url>2024/04/12/Engineering/</url>
+      
+        <content type="html"><![CDATA[<p>前端工程化是指利用各种工具和技术来提高前端开发效率、优化项目管理、提升代码质量和可维护性的过程。它涵盖了项目构建、模块化开发、自动化测试、代码规范、版本管理、性能优化等多个方面。</p><a id="more"></a><p>下面是前端工程化的一些主要内容：</p><ol><li><strong>构建工具</strong>：构建工具用于将开发阶段的代码转换、打包、压缩，以及处理各种资源文件（如图片、样式表等）。常见的构建工具包括Webpack、Rollup、Parcel等。</li><li><strong>模块化开发</strong>：模块化开发可以提高代码的复用性和可维护性。ES6 的模块化语法、CommonJS、AMD、UMD 等模块化方案都是常见的选择。配合构建工具使用，可以将模块化的代码打包成浏览器可识别的格式。</li><li><strong>自动化测试</strong>：自动化测试包括单元测试、集成测试、端到端测试等，可以保证代码质量和功能稳定性。常用的测试工具有Jest、Mocha、Chai等。</li><li><strong>代码规范</strong>：代码规范可以统一团队成员的编码风格，减少代码错误和提高代码可读性。ESLint、Prettier等工具可以帮助进行代码规范检查和格式化。</li><li><strong>版本管理</strong>：版本管理工具（如Git）用于管理代码的版本和协作开发。通过分支管理、版本控制、代码合并等功能，可以提高团队协作效率。</li><li><strong>性能优化</strong>：性能优化是前端工程化中的重要部分，包括优化代码结构、减少HTTP请求、资源压缩、懒加载、缓存策略等。工程化工具和技术可以帮助开发者识别和解决性能问题。</li><li><strong>持续集成/持续部署（CI/CD）</strong>：CI/CD 是指持续集成和持续部署，通过自动化构建、测试、部署等流程，实现快速迭代和持续交付。常用的CI/CD工具有Jenkins、Travis CI、GitLab CI等。</li><li><strong>代码分析和监控</strong>：代码分析工具可以帮助开发者发现代码中的潜在问题和优化点，如代码静态分析、性能分析等。监控工具可以实时监控应用程序的运行状态和性能指标。</li></ol><p>综上所述，前端工程化是通过使用各种工具和技术，使前端开发更加高效、规范化、可靠和可维护，从而提升整体开发质量和团队协作效率。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> FEの工程化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Async invoke</title>
+      <link href="2024/04/12/Async-invoke/"/>
+      <url>2024/04/12/Async-invoke/</url>
+      
+        <content type="html"><![CDATA[<p>JS 中的异步调用是指在代码执行过程中，某些任务不会阻塞代码的执行，而是在后台继续执行，等待任务完成后再执行相应的回调或者继续执行后续代码。异步调用通常用于处理需要等待的操作，比如网络请求、定时器等。</p><a id="more"></a><p>以下是几种常见的 JS 异步调用方式：</p><ol><li><p><strong>回调函数</strong>：最基础的异步调用方式是使用回调函数。比如，在进行网络请求时，可以指定一个回调函数，当请求完成时调用这个回调函数处理返回的数据。</p><pre><code class="lang-js">javascriptCopy codefunction fetchData(url, callback) {    // 模拟网络请求    setTimeout(() =&gt; {        const data = &#39;Some data from server&#39;;        callback(data);    }, 1000);}fetchData(&#39;https://example.com/api/data&#39;, (data) =&gt; {    console.log(&#39;Received data:&#39;, data);});</code></pre></li><li><p><strong>Promise</strong>：Promise 是一种更加灵活和易于处理的异步调用方式，它可以更好地处理异步操作的结果和错误。Promise 提供了 <code>then</code> 和 <code>catch</code> 方法来处理成功和失败的情况。</p><pre><code class="lang-js">javascriptCopy codefunction fetchData(url) {    return new Promise((resolve, reject) =&gt; {        // 模拟网络请求        setTimeout(() =&gt; {            const data = &#39;Some data from server&#39;;            resolve(data);            // 如果请求失败，可以调用 reject 方法，并传递错误信息            // reject(new Error(&#39;Failed to fetch data&#39;));        }, 1000);    });}fetchData(&#39;https://example.com/api/data&#39;)    .then((data) =&gt; {        console.log(&#39;Received data:&#39;, data);    })    .catch((error) =&gt; {        console.error(&#39;Error fetching data:&#39;, error.message);    });</code></pre></li><li><p><strong>async/await</strong>：async/await 是 ES2017 引入的异步编程方式，它基于 Promise，提供了一种更加直观和简洁的写法，让异步代码看起来像同步代码。</p><pre><code class="lang-js">javascriptCopy codeasync function fetchData(url) {    return new Promise((resolve, reject) =&gt; {        // 模拟网络请求        setTimeout(() =&gt; {            const data = &#39;Some data from server&#39;;            resolve(data);        }, 1000);    });}async function getData() {    try {        const data = await fetchData(&#39;https://example.com/api/data&#39;);        console.log(&#39;Received data:&#39;, data);    } catch (error) {        console.error(&#39;Error fetching data:&#39;, error.message);    }}getData();</code></pre></li></ol><p>以上是几种常见的 JS 异步调用方式，根据不同的场景和需求选择合适的方式来处理异步操作。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> FEの异步调用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Mainstream Layout</title>
+      <link href="2024/04/12/Mainstream-Layout/"/>
+      <url>2024/04/12/Mainstream-Layout/</url>
+      
+        <content type="html"><![CDATA[<p>CSS布局：</p><ul><li>正常布局流</li><li>display属性</li><li>弹性盒子</li><li>网格</li><li>浮动</li><li>定位</li><li>CSS 表格布局</li><li>多列布局</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> FEの主流布局 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Multi-terminal Adaptation</title>
+      <link href="2024/04/12/Multi-terminal-Adaptation/"/>
+      <url>2024/04/12/Multi-terminal-Adaptation/</url>
+      
+        <content type="html"><![CDATA[<p>多端适配的思路：</p><ol><li>响应式设计（Responsive Design）</li><li>自适应设计（Adaptive Design）</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> FEの多端适配 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Cross-browser compatibility</title>
+      <link href="2024/04/12/Cross-browser-compatibility/"/>
+      <url>2024/04/12/Cross-browser-compatibility/</url>
+      
+        <content type="html"><![CDATA[<h1 id="浏览器兼容性"><a href="#浏览器兼容性" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h1><p>网页的<strong>浏览器兼容性</strong>指网页在各种浏览器上的显示效果尽量保持一致的状态，90年代末的浏览器大战开始时被广泛使用。【维基百科】</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> FEの浏览器兼容 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>JS recursion</title>
       <link href="2024/03/19/JS-recursion/"/>
       <url>2024/03/19/JS-recursion/</url>
@@ -470,7 +584,7 @@
       
         <tags>
             
-            <tag> FE Performance </tag>
+            <tag> FEの性能优化 </tag>
             
         </tags>
       
@@ -489,7 +603,7 @@
       
         <tags>
             
-            <tag> FE Performance </tag>
+            <tag> FEの性能优化 </tag>
             
         </tags>
       
@@ -565,7 +679,7 @@
       
         <tags>
             
-            <tag> FE Performance </tag>
+            <tag> FEの性能优化 </tag>
             
         </tags>
       
@@ -584,7 +698,7 @@
       
         <tags>
             
-            <tag> FE Performance </tag>
+            <tag> FEの性能优化 </tag>
             
         </tags>
       
@@ -820,9 +934,9 @@
       
         <tags>
             
-            <tag> Vueのaxios </tag>
-            
             <tag> Vueのv-sth </tag>
+            
+            <tag> Vueのaxios </tag>
             
             <tag> NodeJSのmysql </tag>
             
@@ -5841,9 +5955,9 @@
             
             <tag> 知识 </tag>
             
-            <tag> 数论の费马小定理 </tag>
-            
             <tag> 数论の扩展欧几里得 </tag>
+            
+            <tag> 数论の费马小定理 </tag>
             
         </tags>
       
@@ -6219,13 +6333,15 @@
       <link href="2018/05/22/0%E6%A0%87%E7%AD%BE%E5%88%86%E5%89%B2%E7%BA%BF/"/>
       <url>2018/05/22/0%E6%A0%87%E7%AD%BE%E5%88%86%E5%89%B2%E7%BA%BF/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>点这里没用，点具体的那几项……</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>这里存储的是标签分割线，此文章的标签如下：</p></blockquote><p>tags:</p><ul><li>DP——————————————</li><li>FE——————————————</li><li>Vue—————————————-</li><li>NodeJS——————————-</li><li>Web API——————————</li><li>JavaScript—————————</li><li>优化————————————-</li><li>图论—————————————</li><li>简单搜索——————————-</li><li>字符串———————————-</li><li>技巧————————————-</li><li>数据结构—————————-</li><li>数论—————————————</li><li>网络流———————————-</li><li>二分图———————————-</li><li>最小生成树—————————</li><li>最短路———————————-</li><li>组合数学———————————</li><li>计算几何———————————</li><li>连通图———————————-</li><li>基本算法——————————</li><li>函数—————————————</li><li>其他语言——————————</li></ul>]]></content>
       
       
       
         <tags>
             
             <tag> DP---------------------------- </tag>
+            
+            <tag> FE---------------------------- </tag>
             
             <tag> Vue--------------------------- </tag>
             

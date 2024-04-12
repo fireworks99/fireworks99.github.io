@@ -112,6 +112,350 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/08/HDU-4280-ISland-Transport-最大流DInic优化/" class="item-title">HDU 4280 ISland Transport(最大流Dinic优化)</a>
+      
+      <time datetime="2019-08-08T00:27:07.000Z">
+        2019-08-08
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 最大流模板题（卡超时）
+用Dinic的话：
+
+数组开的够大，注意边的数目不同于点的数目
+BFS里的queue改用数组模拟（STL耗时）
+DFS采用“无cut[]”写法+flow == 0封锁优化
+tem = DFS &gt; 0时才加到答案里，等于0时不加
+多组输入cnt(边的计数器)一定要初始化，否则越攒越多TLE
+
+
+Code(Dinic略优化)#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 100010;
+const int INF = 0x3f3f3f3f;
+typedef long long ll;
+
+int n, m, start, over;
+int maxflow, deep[N];///deep深度
+
+struct Edge
+{
+    int to, w, pre;
+} a[N &lt;&lt;  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>T组样例，n点，m条双向边(独特，网络流多为单向边+反向边),输入n个点的坐标，找出从最左边的点到最右边的点的最大流</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/08/HDU-4280-ISland-Transport-最大流DInic优化/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/07/LightOJ-1245-Harmonic-Number调和数/" class="item-title">LightOJ 1245 Harmonic Number调和数</a>
+      
+      <time datetime="2019-08-07T11:25:29.000Z">
+        2019-08-07
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+画图，画出函数图像：y = n/x，以 y = x对称(以n == 5为例)
+
+
+
+可以用 横坐标表示i 从该点画一条垂直的线
+这条线上的所有整数点的个数就是 n / i
+那么n / 1 + n / 2 + n / 3 + …… n / (n-2) + n / (n-1) + n / n 
+可以表示为方程的曲线与坐标轴围成的面积内的整数点的个数
+对称，求左边梯形内点数，乘2减去重叠的那部分
+部分原文链接：https://blog.csdn.net/weixin_43237242/article/details/88780203
+
+Codeint main()
+{
+    int t, n, cnt = 1;;
+    scanf(&quot;%d&quot;, &amp;t);
+    while(t--)
+    {
+        scanf(&quot;%d&quot;, &amp;n);
+        ll ans = 0;
+        int tem = sqrt(n);
+        for(int i = 1; i &lt;= tem; ++i)
+        -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>计算</p>
+</blockquote>
+<p><img src="https://i.postimg.cc/W3Md9G8b/B1-O34-GBXGJJD6-H5-U0-B-EQK.png" alt="Harmonic Number"></p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/07/LightOJ-1245-Harmonic-Number调和数/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/07/POJ-3281-Dining-最大流最小割/" class="item-title">POJ 3281 Dining(最大流最小割)</a>
+      
+      <time datetime="2019-08-07T07:53:42.000Z">
+        2019-08-07
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+不可以二分图匹配，因为牛要匹配两种东西，求其跟每种东西的最大匹配，取交集也不是，取并集也不是，需建模用最大流解决
+
+多源点、多汇点要建立超源点、超汇点
+
+牛置于中间，左放食物右放饮料（或反过来）
+
+连线权值为1，求最大流即答案
+要注意：中间的牛要拆点
+
+
+
+关于拆点
+
+很明显,一头牛同时匹配了多种食物饮料,最大流是2,但答案是1(只满足了一头牛)
+
+
+
+限流：限制流经每头牛的流量最大为1
+
+Code#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &l -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>农夫为他的 N (1 ≤ N ≤ 100) 牛准备了 F (1 ≤ F ≤ 100)种食物和 D (1 ≤ D ≤ 100) 种饮料。每头牛都有各自喜欢的食物和饮料，而每种食物或饮料只能分配给一头牛。最多能有多少头牛可以同时得到喜欢的食物和饮料？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/07/POJ-3281-Dining-最大流最小割/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/07/POJ-2516-Minimum-Cost-最小费用最大流/" class="item-title">POJ 2516 Minimum Cost(最小费用最大流)</a>
+      
+      <time datetime="2019-08-07T02:08:15.000Z">
+        2019-08-07
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+题目链接：http://poj.org/problem?id=2516 （题目老是AC不了怎么办-&gt;去Discuss区看看，我就是不知怎么WA的，去讨论区看，说数组开小了给WA，我开大一些还真AC了，什么鬼……）
+
+Analyze
+K种货物分别分析
+多源点多汇点-&gt;建立超级源点与超级汇点
+连接超源到各卖家的路，费用0，容量等于卖家货物量
+连接超汇到各买家的路，费用0，容量等于买家需求量
+连接卖家与买家间的路，费用对应题目中的费用，容量INF
+在可行的前提下，最小费用最大流，原来是最小费用固定流，因为买家到超汇的容量被设为需求量，所以直接求最大流即为该固定流
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+using namespace std;
+const in -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>N个买家，M个卖家，K种货物</p>
+<p>接下来N行，每行K个数值，表示每个买家对于K种货物的需求</p>
+<p>接下来M行，每行K个数值，表示每个卖家对于K种货物的拥有量</p>
+<p>接下来K个矩阵，每个矩阵代表那种货物的有关运输费用</p>
+<p>(第k个矩阵第i行第j列的数值,表示第j个卖家运输单位第k种货物到第i个买家的费用)</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/07/POJ-2516-Minimum-Cost-最小费用最大流/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/05/UOJ-117-欧拉回路-输出路径/" class="item-title">UOJ 117 欧拉回路(输出路径)</a>
+      
+      <time datetime="2019-08-05T08:03:01.000Z">
+        2019-08-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+题目链接：http://uoj.ac/problem/117
+
+Code 代码赏析#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+#define eps 1e-8
+#define PI acos(-1.0)
+#define ll long long
+using namesp -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>一张无向图(或有向图),找出(若能找出)欧拉回路并输出路径。可能有重边、自环。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/05/UOJ-117-欧拉回路-输出路径/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/05/A头文件/" class="item-title">头文件</a>
+      
+      <time datetime="2019-08-05T06:50:40.000Z">
+        2019-08-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- #include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+#define eps 1e-8
+#define PI acos(-1.0)
+#define ll long long
+using namespace std;
+const int mod = 1e9 + 7;
+const in -->
+        <!-- </div> -->
+
+        
+        <pre><code class="lang-c++">#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+#define eps 1e-8
+#define PI acos(-1.0)
+#define ll long long
+using namespace std;
+const int mod = 1e9 + 7;
+const int INF = 0x3f3f3f3f;
+#define Close ios::sync_with_stdio(false);
+
+void Debug(char * s)
+{
+    cout &lt;&lt; &quot;-------------  &quot; &lt;&lt; s &lt;&lt; &quot;  -------------&quot; &lt;&lt; &#39;\n&#39;;
+}
+
+
+
+int main()
+{
+
+    return 0;
+}
+</code></pre>
+
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/05/A头文件/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/05/A看清本质/" class="item-title">看清本质</a>
       
       <time datetime="2019-08-05T02:38:58.000Z">
@@ -292,335 +636,6 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/01/HDU-1878-欧拉回路-无向图/" class="item-title">HDU 1878 欧拉回路(无向图)</a>
-      
-      <time datetime="2019-08-01T08:58:46.000Z">
-        2019-08-01
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 判断
-无向图的判断： 
-欧拉回路：每个顶点的度都为偶数
-欧拉路：只有两个顶点度的个数为奇数，其余的都为偶数
-有向图的判断： 
-欧拉回路：每个顶点的出度于入度都相等
-欧拉路：一个出度 - 入度 == 1，一个入度 - 出度 == 1，其余点出度==入度 
-
-前提：图是连通的
-判连通：
-
-DFS：若图能连通，那么能访问完所有图中节点 
-并查集
-
-
-HDU 1878 欧拉回路#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 1005;
-
-int n, m;
-int cnt[N];
-//int tot, ans[N];
-bool mp[N][N], vis[N];
-
-void DFS(int num)
-{
-    vis[num] = 1;
-    for(int i = 1; i & -->
-        <!-- </div> -->
-
-        
-        <h2 id="欧拉路与欧拉回路"><a href="#欧拉路与欧拉回路" class="headerlink" title="欧拉路与欧拉回路"></a>欧拉路与欧拉回路</h2><blockquote>
-<p>欧拉路：从图中任意一个点开始到图中任意一个点结束的路径，并且<strong>图中每条边通过的且只通过一次</strong> </p>
-<p>欧拉回路：起点也是终点的欧拉路（也属于欧拉路，如同正方形属于矩形）</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/01/HDU-1878-欧拉回路-无向图/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/31/HDU-1083-2063-ZOJ-4120-二分图匹配/" class="item-title">HDU 1083 2063 ZOJ 4120(二分图匹配)</a>
-      
-      <time datetime="2019-07-31T09:17:01.000Z">
-        2019-07-31
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 数组link
-记录：link[i] = v; 选项i(下标) 分配给任务v(储存值)
-
-数组vis
-记录：在为任务v配对时 选项i(下标)是否被访问过
-作用：为了替任务v争得选项to，在此处将选项to锁定，dfs寻找选项(to)   原来服务的任务(link[to])   其他可行的选项，体现了增广路的特点——反悔
-
-注意
-每次为任务选择选项时，每个选项要从头考虑（memset(vis, 0, sizeo(vis))），直到找到合适的选项为止
-
-HDU 1083
-题意：P课程各找一个课代表，N个人，每人至多担任一门课代表
-
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int p, n;
-int link[1005];///link[i] = v; 选项i 分配给任务v
-bool vis[1005];///在为任务v配对时 选项i是否被访问 -->
-        <!-- </div> -->
-
-        
-        <blockquote>
-<p>确定是二分图求最大匹配时，对任意一方查找匹配均可</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/31/HDU-1083-2063-ZOJ-4120-二分图匹配/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/29/HDU-4738-Caocao-s-Bridge-双连通-桥/" class="item-title">HDU 4738 Caocao&#39;s Bridge(双连通+桥)</a>
-      
-      <time datetime="2019-07-29T09:12:49.000Z">
-        2019-07-29
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- judge
-不在环里的边都是桥
-边(from, to)不在环里的标志：low[to] &gt; time[from]
-
-HDU 4738 曹操的桥
-无向图求桥
-坑点：
-
-有重边
-初始不连通
-无人守至少1人去
-
-
-关于vector邻接表、二维邻接矩阵、链式前向星
-
-普通vector邻接表：无需遍历+没有边权
-
-二维邻接矩阵：遍历找边+可存边权
-
-链式前向星：无需遍历+可存边权
-
-普通vector邻接表+二维邻接矩阵：(利用前者)无需遍历+(利用后者)可存边权
-
-以结构体为储存类型的vector：无需遍历+可存边权
-3、5较优，1有缺陷，2耗时间，4耗空间
-
-
-
-Code of this problem（My Code）
-关于处理重边：我用嵌套的map记录重边，重边中的任意一条边均非桥！最后处理时直接跳过
-
-#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std; -->
-        <!-- </div> -->
-
-        
-        <h2 id="桥"><a href="#桥" class="headerlink" title="桥"></a>桥</h2><blockquote>
-<p>无向图中，如果去掉一条边，使得图被分成了几个部分，那么这条边就被称为桥</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/29/HDU-4738-Caocao-s-Bridge-双连通-桥/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/29/POJ-1144-NEtwork-无向图-割点/" class="item-title">POJ 1144 Network(双连通+割点)</a>
-      
-      <time datetime="2019-07-29T03:24:17.000Z">
-        2019-07-29
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 判断割点
-
-对根节点u，若其有两棵或两棵以上的子树，则该根结点u为割点； 
-对非叶子节点u（非根节点），若其子树的节点均没有指向u的祖先节点的回边，说明删除u之后，根结点与u的子树的节点不再连通；则节点u为割点。
-
-
-POJ 1144 Network（求割点个数）#include &lt;stack&gt;
-#include &lt;vector&gt;
-#include &lt;stdio.h&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-bool flag[105];
-int ans, cnt, low[105], time[105];
-vector&lt;int&gt; v[105];
-
-void init()
-{
-    ans = cnt = 0;
-    memset(flag, 0, sizeof(flag));
-    memset(low, 0, sizeof(low));
-    memset(time,  -->
-        <!-- </div> -->
-
-        
-        <h2 id="割点"><a href="#割点" class="headerlink" title="割点"></a>割点</h2><blockquote>
-<p>将这个点去掉，图就会被分成两个部分（或者以上），那么这个点就是一个割点</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/29/POJ-1144-NEtwork-无向图-割点/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/27/c-string-及其函数/" class="item-title">c++ string 及其函数</a>
-      
-      <time datetime="2019-07-27T07:19:24.000Z">
-        2019-07-27
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Code自我感觉重要的几点：
-1.getline(cin, s)的赋值
-2.字符串数组的使用
-5.大小、判空
-6.末尾添加
-11.string查找
-
-
-#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;sstream&gt;
-using namespace std;
-
-int len = 4;
-char ch = &#39;Y&#39;;
-
-int main()
-{
-    ///1.赋值
-    ///cin遇空格、tab、回车结束
-//    string s1;
-//    cin &gt;&gt; s1;
-//    cout &lt;&lt; s1 &lt;&lt; &#39;\n&#39;;
-    ///吃“回车”，相当于getchar(),避免影响后续输入
-//    cin.get();
-    ///一行字符串的输入
-//    string s2;
-//    getline(cin, s2);
-//    cout &lt;&lt; s2  -->
-        <!-- </div> -->
-
-        
-        <h2 id="s-substr"><a href="#s-substr" class="headerlink" title="s.substr()"></a>s.substr()</h2><blockquote>
-<p>substr有2种用法：</p>
-<p>假设：string s = “0123456789”;</p>
-<p>string sub1 = s.substr(5); //只有一个数字5表示从下标为5开始一直到结尾：sub1 = “56789”</p>
-<p>string sub2 = s.substr(5, 3); //从下标为5开始截取长度为3位：sub2 = “567”</p>
-<p>转自： <a href="https://blog.csdn.net/liuchuo/article/details/54599840" target="_blank" rel="noopener">https://blog.csdn.net/liuchuo/article/details/54599840</a></p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/27/c-string-及其函数/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/27/POJ-1236-Network-of-Schools-强连通-缩点/" class="item-title">POJ 1236 Network of Schools(强连通+缩点)</a>
-      
-      <time datetime="2019-07-27T02:41:58.000Z">
-        2019-07-27
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Trajan算法求缩点
-stack\ st;
-int num;///num:强连通分量(连通块)的个数,缩点后点的个数
-bool vis[105];///该点是否访问过
-int inst[105];///该点是否在栈中
-int time[105];///i点第一次被访问的时间
-int low[105];///i点所在强连通分量子图中第一个被搜到的点的time值
-int ltt[105];///i点属于第几个强连通分量(0表示不属于任何一个)
-强连通分量内元素个数最少为1(该元素本身),这意味着每个元素都有从属的强连通分量
-
-Code(Trajan)void Trajan(int x)///搜索x点及其子树
-{
-    int temp;
-    st.push(x);
-    inst[x] = vis[x] = 1;
-    low[x] = time[x] = ++t;
-    for(int i = 0; i &lt; v[x].size(); i++)
-    {
-        temp = v[x][i];
-        if(vis[temp] == 0)
-       -->
-        <!-- </div> -->
-
-        
-        <h2 id="缩点"><a href="#缩点" class="headerlink" title="缩点"></a>缩点</h2><blockquote>
-<p>缩点就是要将两两之间可以相互到达的点，缩成一个点来表示（即求无向图的连通分量，或者有向图的强连通分量），他们的求法都是相同的，都是将无向图转化为有向图。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/27/POJ-1236-Network-of-Schools-强连通-缩点/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -655,7 +670,7 @@ Code(Trajan)void Trajan(int x)///搜索x点及其子树
   <div class="widget-box">
     <h3 class="widget-title-tag">tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome-Extensions/">Chrome Extensions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPのST算法/">DPのST算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの区间DP/">DPの区间DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの状压DP/">DPの状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの背包DP/">DPの背包DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECS/">ECS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FE-Performance/">FE Performance</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScriptのNote/">JavaScriptのNote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScriptのPromise/">JavaScriptのPromise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのmysql/">NodeJSのmysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのstatic/">NodeJSのstatic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのupload/">NodeJSのupload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue---------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VueのPlugin/">VueのPlugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VueのRenderFunc/">VueのRenderFunc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのaxios/">Vueのaxios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのcomponents/">Vueのcomponents</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのfilters/">Vueのfilters</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのi8n/">Vueのi8n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのreactivity/">Vueのreactivity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのrouter/">Vueのrouter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのv-sth/">Vueのv-sth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのvuex/">Vueのvuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-API/">Web API--------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-APIのWindow/">Web APIのWindow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web杂项/">Web杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图/">二分图-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图のKM算法/">二分图のKM算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图の匈牙利算法/">二分图の匈牙利算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化/">优化-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化の二分/">优化の二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言/">其他语言--------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のHTML/">其他语言のHTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のJAVA/">其他语言のJAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のPython/">其他语言のPython</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のnext-permutation/">函数のnext_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のprev-permutation/">函数のprev_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-判环/">图论の拓扑排序(判环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-无环/">图论の拓扑排序(无环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の欧拉路/">图论の欧拉路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法/">基本算法--------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の贪心/">基本算法の贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の递推/">基本算法の递推</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串/">字符串-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のAC自动机/">字符串のAC自动机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のKMP/">字符串のKMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串の最长回文子串/">字符串の最长回文子串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の前缀和/">技巧の前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の博弈/">技巧の博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の哈希/">技巧の哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の尺取法/">技巧の尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の差分/">技巧の差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の异或/">技巧の异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の弹性碰撞/">技巧の弹性碰撞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の归并排序/">技巧の归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の折半枚举/">技巧の折半枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の暴力打表/">技巧の暴力打表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の翻转问题/">技巧の翻转问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の莫队算法/">技巧の莫队算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の输入挂/">技巧の输入挂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型のstring/">数据类型のstring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构-------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のDancing-Links/">数据结构のDancing-Links</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmap/">数据结构のmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmultiset/">数据结构のmultiset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のpriority-queue/">数据结构のpriority_queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のset/">数据结构のset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のvector/">数据结构のvector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の主席树/">数据结构の主席树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の单调栈/">数据结构の单调栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の字典树/">数据结构の字典树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の并查集/">数据结构の并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の最小生成树/">数据结构の最小生成树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の栈-stack/">数据结构の栈(stack)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の树状数组/">数据结构の树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の线段树/">数据结构の线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の链式前向星/">数据结构の链式前向星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论/">数论--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论のGCD与LCM/">数论のGCD与LCM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の同余定理/">数论の同余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の大数求余/">数论の大数求余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の快速幂/">数论の快速幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の扩展欧几里得/">数论の扩展欧几里得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の杂项/">数论の杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の欧拉降幂/">数论の欧拉降幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の素数筛/">数论の素数筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の费马小定理/">数论の费马小定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の高斯消元法/">数论の高斯消元法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のKruskal/">最小生成树のKruskal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のPrim/">最小生成树のPrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树の树形图/">最小生成树の树形图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树の计数/">最小生成树の计数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のBellman-Ford/">最短路のBellman-Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のDijkstra/">最短路のDijkstra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のFloyd/">最短路のFloyd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のspfa/">最短路のspfa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索/">简单搜索---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のA/">简单搜索のA*</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のBFS/">简单搜索のBFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索の剪枝/">简单搜索の剪枝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学/">组合数学----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の容斥/">组合数学の容斥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の组合数/">组合数学の组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流/">网络流-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流の最大流最小割/">网络流の最大流最小割</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流の最小费用流/">网络流の最小费用流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何/">计算几何----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何の离散化/">计算几何の离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络の杂项/">计算机网络の杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图/">连通图-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の2-sat/">连通图の2-sat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图のLCA/">连通图のLCA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の割点/">连通图の割点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の桥/">连通图の桥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の缩点/">连通图の缩点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome-Extensions/">Chrome Extensions</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DP/">DP----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPのST算法/">DPのST算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの区间DP/">DPの区间DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの状压DP/">DPの状压DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの线性DP/">DPの线性DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/DPの背包DP/">DPの背包DP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ECS/">ECS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FE/">FE----------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FEの主流布局/">FEの主流布局</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FEの多端适配/">FEの多端适配</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FEの工程化/">FEの工程化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FEの异步调用/">FEの异步调用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FEの性能优化/">FEの性能优化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FEの模块化/">FEの模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/FEの浏览器兼容/">FEの浏览器兼容</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScriptのNote/">JavaScriptのNote</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScriptのPromise/">JavaScriptのPromise</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJS/">NodeJS---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのmysql/">NodeJSのmysql</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのstatic/">NodeJSのstatic</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/NodeJSのupload/">NodeJSのupload</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue---------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VueのPlugin/">VueのPlugin</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VueのRenderFunc/">VueのRenderFunc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのaxios/">Vueのaxios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのcomponents/">Vueのcomponents</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのfilters/">Vueのfilters</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのi8n/">Vueのi8n</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのreactivity/">Vueのreactivity</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのrouter/">Vueのrouter</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのv-sth/">Vueのv-sth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vueのvuex/">Vueのvuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-API/">Web API--------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web-APIのWindow/">Web APIのWindow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Web杂项/">Web杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图/">二分图-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图のKM算法/">二分图のKM算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分图の匈牙利算法/">二分图の匈牙利算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化/">优化-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/优化の二分/">优化の二分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言/">其他语言--------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のHTML/">其他语言のHTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のJAVA/">其他语言のJAVA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他语言のPython/">其他语言のPython</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数/">函数--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のnext-permutation/">函数のnext_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数のprev-permutation/">函数のprev_permutation</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论/">图论--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-判环/">图论の拓扑排序(判环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の拓扑排序-无环/">图论の拓扑排序(无环)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图论の欧拉路/">图论の欧拉路</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法/">基本算法--------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の贪心/">基本算法の贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/基本算法の递推/">基本算法の递推</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串/">字符串-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のAC自动机/">字符串のAC自动机</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串のKMP/">字符串のKMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/字符串の最长回文子串/">字符串の最长回文子串</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧/">技巧-------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の前缀和/">技巧の前缀和</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の博弈/">技巧の博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の哈希/">技巧の哈希</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の尺取法/">技巧の尺取法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の差分/">技巧の差分</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の异或/">技巧の异或</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の弹性碰撞/">技巧の弹性碰撞</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の归并排序/">技巧の归并排序</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の折半枚举/">技巧の折半枚举</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の暴力打表/">技巧の暴力打表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の翻转问题/">技巧の翻转问题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の莫队算法/">技巧の莫队算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技巧の输入挂/">技巧の输入挂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据类型のstring/">数据类型のstring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构-------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のDancing-Links/">数据结构のDancing-Links</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmap/">数据结构のmap</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のmultiset/">数据结构のmultiset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のpriority-queue/">数据结构のpriority_queue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のset/">数据结构のset</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构のvector/">数据结构のvector</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の主席树/">数据结构の主席树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の单调栈/">数据结构の单调栈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の字典树/">数据结构の字典树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の并查集/">数据结构の并查集</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の最小生成树/">数据结构の最小生成树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の栈-stack/">数据结构の栈(stack)</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の树状数组/">数据结构の树状数组</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の线段树/">数据结构の线段树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构の链式前向星/">数据结构の链式前向星</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论/">数论--------------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论のGCD与LCM/">数论のGCD与LCM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の同余定理/">数论の同余定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の大数求余/">数论の大数求余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の快速幂/">数论の快速幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の扩展欧几里得/">数论の扩展欧几里得</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の杂项/">数论の杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の欧拉降幂/">数论の欧拉降幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の素数筛/">数论の素数筛</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の费马小定理/">数论の费马小定理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数论の高斯消元法/">数论の高斯消元法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树/">最小生成树------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のKruskal/">最小生成树のKruskal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树のPrim/">最小生成树のPrim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树の树形图/">最小生成树の树形图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最小生成树の计数/">最小生成树の计数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路/">最短路-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のBellman-Ford/">最短路のBellman-Ford</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のDijkstra/">最短路のDijkstra</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のFloyd/">最短路のFloyd</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/最短路のspfa/">最短路のspfa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索/">简单搜索---------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のA/">简单搜索のA*</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のBFS/">简单搜索のBFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索のDFS/">简单搜索のDFS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/简单搜索の剪枝/">简单搜索の剪枝</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学/">组合数学----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の容斥/">组合数学の容斥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/组合数学の组合数/">组合数学の组合数</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流/">网络流-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流の最大流最小割/">网络流の最大流最小割</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网络流の最小费用流/">网络流の最小费用流</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何/">计算几何----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算几何の离散化/">计算几何の离散化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机网络の杂项/">计算机网络の杂项</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图/">连通图-----------------------</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の2-sat/">连通图の2-sat</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图のLCA/">连通图のLCA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の割点/">连通图の割点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の桥/">连通图の桥</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/连通图の缩点/">连通图の缩点</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/题解/">题解</a></li></ul>
     </div>
   </div>
 
@@ -667,7 +682,7 @@ Code(Trajan)void Trajan(int x)///搜索x点及其子树
   <div class="widget-box">
     <h3 class="widget-title-archive">archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/04/">April 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">March 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/02/">February 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">May 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/04/">April 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/03/">March 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/12/">December 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">September 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">August 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/06/">June 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/03/">March 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">January 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li></ul>
     </div>
   </div>
 
@@ -681,23 +696,23 @@ Code(Trajan)void Trajan(int x)///搜索x点及其子树
       <ul>
         
           <li>
-            <a class="recent_posts-list-link" href="/2024/03/19/JS-recursion/">JS recursion</a>
+            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
           </li>
         
           <li>
-            <a class="recent_posts-list-link" href="/2024/02/22/SQL-trigger/">SQL trigger</a>
+            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
           <li>
-            <a class="recent_posts-list-link" href="/2023/05/04/click-vs-onclick/">@click vs onclick</a>
+            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
           <li>
-            <a class="recent_posts-list-link" href="/2023/04/25/elementUI-sync/">elementUI .sync</a>
+            <a class="recent_posts-list-link" href="/2024/04/12/Mainstream-Layout/">Mainstream Layout</a>
           </li>
         
           <li>
-            <a class="recent_posts-list-link" href="/2023/04/24/JS-async-await/">JS async/await</a>
+            <a class="recent_posts-list-link" href="/2024/04/12/Multi-terminal-Adaptation/">Multi-terminal Adaptation</a>
           </li>
         
       </ul>
