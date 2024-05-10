@@ -112,6 +112,56 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/09/06/POJ-2229-Sunsets-动态规划/" class="item-title">POJ 2229 Sunsets (动态规划)</a>
+      
+      <time datetime="2019-09-06T12:45:46.000Z">
+        2019-09-06
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+像完全背包，只不过这里要求方案数
+dp[i][j] 表示安排前n个物品到容量为m的背包中的方案数
+dp[i][j] = dp[i - 1][j] + dp[i][ j - w[i] ] （01背包中 + dp[i - 1][j - w[i] ]）
+
+将前(i - 1)个物品安排到 j 容量的背包方案数（不放第i个物品了）
+将前 i 个物品安排到(j - w[i])容量的背包方案数（第i个物品再放一个进去）
+
+然后按照顺序可以省去第一维
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 1000005;
+
+int w[N], dp[N];
+
+int main()
+{
+    int n, tot = 0;
+    scanf(&quot;%d&quot;, &amp;n);
+    for(int i = 0; (1 &lt;&lt; i)  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出一个正整数N，用多个2的整数幂之和表示出来，求共有几种方案</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/09/06/POJ-2229-Sunsets-动态规划/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/09/03/POJ-3190-Stall-Reservations-贪心/" class="item-title">POJ 3190 Stall Reservations(贪心)</a>
       
       <time datetime="2019-09-03T08:24:39.000Z">
@@ -544,52 +594,6 @@ Code#include &lt;set&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/16/Python-获取Vjudge用户AC题数/" class="item-title">Python 获取Vjudge用户AC题数</a>
-      
-      <time datetime="2019-08-16T09:35:50.000Z">
-        2019-08-16
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Codeimport bs4
-import requests
-from bs4 import BeautifulSoup
-
-
-def getText(url):
-    try:
-        r = requests.get(url)
-        r.raise_for_status()
-        r.encoding = r.apparent_encoding
-        return r.text
-    except:
-        return &quot;&quot;
-
-def solve(html):
-    soup = BeautifulSoup(html, &quot;html.parser&quot;)
-    for tr in soup.find(&#39;table&#39;).children:
-        if isinstance(tr, bs4.element.Tag):
-            th = tr.find(&quot;th&quot;)
-            if th.string == &quot;Over -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>根据用户名，统计Vjudge某些用户AC题数目</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/16/Python-获取Vjudge用户AC题数/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -650,6 +654,10 @@ def solve(html):
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
           </li>
         
@@ -663,10 +671,6 @@ def solve(html):
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Mainstream-Layout/">Mainstream Layout</a>
           </li>
         
       </ul>

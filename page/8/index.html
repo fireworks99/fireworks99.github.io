@@ -112,6 +112,56 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/22/HDU-3642-Get-The-Treasury-Segment-Tree-Scanning-Lines/" class="item-title">HDU 3642 Get The Treasury(Segment Tree Scanning Lines)</a>
+      
+      <time datetime="2020-03-22T12:15:33.000Z">
+        2020-03-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+相交至少三次与相交至少两次的处理方法一样
+然后三维，降维做题，遍历Z轴，一层一层地求解
+还有一点要注意，ans += len3[1] * (e[i + 1].h - e[i].h);不行了，相邻的两个面，e[i + 1]与e[i]只是y轴上相邻，Z轴上可能天上地下，所以用一个变量last记录本层前一个y
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 20010;
+
+int n;
+
+int num;
+int X[N];
+int cnt[N &lt;&lt; 2 | 1];
+int len1[N &lt;&lt; 2 | 1], len2[N &lt;&lt; 2 | 1], len3[N &lt;&lt; 2 | 1];
+
+struct edge
+{
+    int l, r, h, zd, zu;
+    int flag;
+    e -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>长方体相交，求相交至少3次部分的体积</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/22/HDU-3642-Get-The-Treasury-Segment-Tree-Scanning-Lines/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/22/HDU-1255-Covered-area-Segment-Tree-Scanning-Lines/" class="item-title">HDU 1255 Covered area(Segment Tree Scanning Lines)</a>
       
       <time datetime="2020-03-22T09:08:38.000Z">
@@ -571,56 +621,6 @@ void BFS(int x, int y)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/15/POJ-1679-The-Unique-MST-Prim/" class="item-title">POJ 1679 The Unique MST(Prim)</a>
-      
-      <time datetime="2020-03-15T03:54:48.000Z">
-        2020-03-15
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-可以求非严格次小生成树，看是否与最小生成树相同
-用Prim做法，检测某个点到“已连接集合”的最小距离是否唯一
-
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 105;
-const int INF = 0x3f3f3f3f;
-
-int n, m, ans, mp[N][N], vis[N], low[N], cnt[N];
-
-void Prim()
-{
-    ans = 0;
-    int pos = 1, mmin = INF;
-    memset(cnt,   0, sizeof(cnt));
-    memset(vis,   0, sizeof(vis));
-    memset(low, INF, sizeof(low));
-    vis[1] = 1;
-    for(int i = 1; i &lt;= n; ++i -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>求最小生成树是否唯一</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/15/POJ-1679-The-Unique-MST-Prim/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -681,6 +681,10 @@ void Prim()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
           </li>
         
@@ -694,10 +698,6 @@ void Prim()
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Mainstream-Layout/">Mainstream Layout</a>
           </li>
         
       </ul>

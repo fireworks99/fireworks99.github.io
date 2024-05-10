@@ -112,6 +112,55 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/31/POJ-2240-Arbitrage/" class="item-title">POJ 2240 Arbitrage</a>
+      
+      <time datetime="2019-03-31T06:09:30.000Z">
+        2019-03-31
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- The link of the problem http://poj.org/problem?id=2240
+最短路变形
+广义最短路: 存在多个状态，从此状态到彼状态的最优过渡方案
+另外，用map从string映射到int
+
+Code of Floyd#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+///最短路:存在多个状态，从此状态到彼状态的最优过渡方案
+int n, m, num = 1;
+double dis[44][44];
+
+
+void floyd()
+{
+    for(int k = 0; k &lt; n; ++k)
+        for(int i = 0; i &lt; n; ++i)
+            for(int j = 0; j &lt; n; ++j)///距离用 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>存在多种货币，给出它们兑换时的汇率，问是否存在一种货币，经过多次兑换，最终换回自己时钱多了……</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/31/POJ-2240-Arbitrage/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/30/POJ-2236-Wireless-Network/" class="item-title">POJ 2236 Wireless Network</a>
       
       <time datetime="2019-03-30T00:35:24.000Z">
@@ -551,57 +600,6 @@ For each test case output the minimum total time that  both yifenfei and Merceki
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/18/BFS路径输出/" class="item-title">BFS路径输出</a>
-      
-      <time datetime="2019-03-18T10:36:00.000Z">
-        2019-03-18
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- POJ 3984 迷宫问题题目链接http://poj.org/problem?id=3984
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int m[10][10];
-bool vis[10][10];///寻找路径 问题：来过便不再来
-int dx[] = {0, 0, 1, -1};
-int dy[] = {1, -1, 0, 0};
-
-struct node
-{
-    int x, y, pre;///a[i].pre存它前一个点在a[]中标号（序号）
-}a[30];
-
-void print(node t)
-{
-    vector&lt;node&gt; vec;
-    while(t.pre != -1)///逆序存放
-    {
-        vec.push_back(t);
-        t = a[t.pre] -->
-        <!-- </div> -->
-
-        
-        <h3 id="记录路径"><a href="#记录路径" class="headerlink" title="记录路径"></a>记录路径</h3><blockquote>
-<p>pre存当前点的前一个点的位置标号（序号），类似的还有最长递增子序列的路径记录，还有链式前向星，都是一个方法。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/18/BFS路径输出/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -662,6 +660,10 @@ void print(node t)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
           </li>
         
@@ -675,10 +677,6 @@ void print(node t)
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Mainstream-Layout/">Mainstream Layout</a>
           </li>
         
       </ul>

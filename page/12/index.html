@@ -112,6 +112,59 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/01/rand-与srand-生成随机数/" class="item-title">rand()与srand()生成随机数</a>
+      
+      <time datetime="2019-11-01T04:25:53.000Z">
+        2019-11-01
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- rand()
+rand()函数是以一个数字(我们称之为”种子”seed)为基准，以某个递推公式推算出来的一系列数
+我们假设这个公式为 f ( seed )  =  [a, b, c …] 
+
+试用rand()#include &lt;ctime&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    int a;
+    for(int i = 0; i &lt; 10; ++i)
+    {
+        a = rand();
+        cout &lt;&lt; a &lt;&lt; &#39;\n&#39;;
+    }
+    return 0;
+}
+
+
+出现问题
+我们多次编译，输出前十个数字发现都是一样的，就是41,18467,6334…
+原因：我们不给rand()函数传去种子的时候，种子的默认值为1，意味着
+f ( 1 ) = [41, 18467, 6334, 26500…]
+但这个集 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>C / C++ 如何生成随机数？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/01/rand-与srand-生成随机数/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/10/30/POJ-2796-Feel-Good-单调栈/" class="item-title">POJ 2796 Feel Good(单调栈)</a>
       
       <time datetime="2019-10-30T13:54:05.000Z">
@@ -553,56 +606,6 @@ dp[i][j]表示前i秒移动j次能接到的最多的苹果数
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/09/06/POJ-2229-Sunsets-动态规划/" class="item-title">POJ 2229 Sunsets (动态规划)</a>
-      
-      <time datetime="2019-09-06T12:45:46.000Z">
-        2019-09-06
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-像完全背包，只不过这里要求方案数
-dp[i][j] 表示安排前n个物品到容量为m的背包中的方案数
-dp[i][j] = dp[i - 1][j] + dp[i][ j - w[i] ] （01背包中 + dp[i - 1][j - w[i] ]）
-
-将前(i - 1)个物品安排到 j 容量的背包方案数（不放第i个物品了）
-将前 i 个物品安排到(j - w[i])容量的背包方案数（第i个物品再放一个进去）
-
-然后按照顺序可以省去第一维
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 1000005;
-
-int w[N], dp[N];
-
-int main()
-{
-    int n, tot = 0;
-    scanf(&quot;%d&quot;, &amp;n);
-    for(int i = 0; (1 &lt;&lt; i)  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出一个正整数N，用多个2的整数幂之和表示出来，求共有几种方案</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/09/06/POJ-2229-Sunsets-动态规划/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -663,6 +666,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
           </li>
         
@@ -676,10 +683,6 @@ int main()
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Mainstream-Layout/">Mainstream Layout</a>
           </li>
         
       </ul>
