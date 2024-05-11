@@ -112,6 +112,59 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/10/14/Web-overflow-meet-flex/" class="item-title">overflow meet flex</a>
+      
+      <time datetime="2020-10-14T13:07:38.000Z">
+        2020-10-14
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Test Code&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;title&gt;test&lt;/title&gt;
+  &lt;style&gt;
+    #father {
+      width: 200px;
+      height: 200px;
+      background: #bfa;
+      display: flex;
+    }
+    #son {
+      flex: 3;
+      height: 90%;
+      background: orange;
+    }
+    #daughter {
+      flex: 7;
+      height: 90%;
+      background: pink;
+    }
+    pre {
+      background: green;
+      /*overflow: auto;*/
+    }
+   -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>如果将某个盒子设为伸缩盒(display: flex;)，要注意子元素及其后代元素是否有white-space样式修饰，它会影响flex，使其失效，甚至使子元素溢出父元素。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/10/14/Web-overflow-meet-flex/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/10/09/Git/" class="item-title">Git</a>
       
       <time datetime="2020-10-09T08:30:33.000Z">
@@ -535,49 +588,6 @@ getRegister() {
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/09/20/Web-NodeJS-asynchronous-request-about-MySQL/" class="item-title">NodeJS asynchronous request about MySQL</a>
-      
-      <time datetime="2020-09-20T01:35:37.000Z">
-        2020-09-20
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 当我没意识到异步操作时const connection = require(&quot;./connect.js&quot;)
-
-module.exports = function (username, password, callback) {
-
-  connection.query(&#39;use blogs&#39;, function (err, res) {
-    if(err) throw err;
-    console.log(&quot;Database changed : &quot; + res);
-  })
-
-  let flag = false;
-  connection.query(&#39;select * from users&#39;, function (err, res) {
-    if(err) throw err;
-
-    let len = res.length;
-    for(let i = 0; i &lt; len; ++i) {
-      if(res[i].username === username) {
-        -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>NodeJS连接mysql数据库的请求是异步操作。现有客户想要注册，NodeJS需要连接数据库，查询用户表，若用户表中无此用户名方予以注册，否则拒绝。很明显，我需要获取查询的结果之后来决定是否将注册信息写入数据库，“查询”与“写入”这两个异步操作有明显的先后顺序，需要“回调”，用ES6的Promise能更好地解决这一问题。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/09/20/Web-NodeJS-asynchronous-request-about-MySQL/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -638,6 +648,10 @@ module.exports = function (username, password, callback) {
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -651,10 +665,6 @@ module.exports = function (username, password, callback) {
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

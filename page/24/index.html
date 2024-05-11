@@ -112,6 +112,66 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/17/HDU-1069-Monkey-and-Banana/" class="item-title">HDU 1069 Monkey and Banana</a>
+      
+      <time datetime="2019-04-17T01:16:28.000Z">
+        2019-04-17
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接  
+思路
+一种盒子六种摆放方式，将问题直接转化为：n * 6种（被规定以何种方式摆放的）盒子摞起来最高能有多高
+dp：等同于求最长递减子序列
+
+Code#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 200;
+
+struct node
+{
+    int L, W, H;
+} box[N];
+
+bool cmp(node a, node b)
+{
+    if(a.L != b.L)
+        return a.L &gt; b.L;
+    else
+    {
+        if(a.W != b.W)
+            return a.W &gt; b.W;
+        else
+            return a.H &gt; b.H;
+    }
+}
+
+int main()
+{
+    int n, num = 1;
+    while(~scanf(&quot;% -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n种盒子（不限量），摞起来最高能有多高？（上面盒子的长与宽必须都小于下面盒子的长与宽）</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/17/HDU-1069-Monkey-and-Banana/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/15/HDU-3038-How-many-answers-are-wrong/" class="item-title">HDU 3038 How many answers are wrong</a>
       
       <time datetime="2019-04-15T11:47:04.000Z">
@@ -574,54 +634,6 @@ void init()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/07/POJ-3660-Cow-Contest/" class="item-title">POJ 3660 Cow Contest</a>
-      
-      <time datetime="2019-04-07T12:46:27.000Z">
-        2019-04-07
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 传送门
-Floyd 传递闭包
-传递闭包的含义指通过传递性推导出尽量多的元素之间的关系
-用flod算法将所有的关系进行传递，只要u能胜v，那么我们就将d[u][v]设为1，最后如果两者之间有d[u][v]=0且d[v][u]=0则u、v两点不知排名
-
-Code#include &lt;set&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-using namespace std;
-
-int n, m;
-bool beat[105][105];
-
-///一个可怕的地方：我所有的循环都写了++i
-void floyd()
-{
-    for(int k = 1; k &lt;= n; ++k)///++i写太习惯了
-        for(int i = 1; i &lt;= n; ++i)
-            for(int j = 1; j &lt;= n; ++j)
-                if(beat[i][k] &amp;&amp; beat[k][j])
-  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n头牛参加比赛，给你m对关系（譬如给你a和b，那么给的就是a必赢b，当然，b能赢c，那么a也能赢c），问能确定多少头牛的排名。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/07/POJ-3660-Cow-Contest/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -682,6 +694,10 @@ void floyd()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -695,10 +711,6 @@ void floyd()
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

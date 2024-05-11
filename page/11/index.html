@@ -112,6 +112,55 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/24/2019-CCPC-Harbin-F-Fixing-Banners/" class="item-title">2019 CCPC Harbin F-Fixing Banners</a>
+      
+      <time datetime="2019-11-24T12:52:49.000Z">
+        2019-11-24
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+最近看Dancing Links X，Dancing Links 据说是优化特殊DFS的一种数据结构，这里说的’特殊DFS’指：建模后是01矩阵，少选择几行，使每列有1。但这个题要求每行都必须选，就不是DLX算法了，只是简单的搜索。
+
+Code#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+string s;
+int mp[10][10];
+bool vis[10];
+
+bool DFS(int deep)
+{
+    if(deep == 7)
+        return 1;
+    for(int i = 1; i &lt;= 6; ++i)
+        if(!vis[i] &amp;&amp; mp[deep][i])
+        {
+             -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出6个字符串，问：是否能刚好从每个字符串上扣下一个字母组成‘harbin’</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/24/2019-CCPC-Harbin-F-Fixing-Banners/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/24/FZU-1686-神龙的难题-DLX-repeat-cover/" class="item-title">FZU 1686 神龙的难题(DLX repeat cover)</a>
       
       <time datetime="2019-11-24T12:02:26.000Z">
@@ -601,67 +650,6 @@ struct node
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/02/POJ-3614-Sunscreen-贪心-优先队列/" class="item-title">POJ 3614 Sunscreen(贪心+优先队列)</a>
-      
-      <time datetime="2019-11-02T02:52:41.000Z">
-        2019-11-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 贪心
-对牛和防晒霜从小到大排序
-对于每瓶防晒霜来说，它有一个spf值，
-找出所有下界小于spf的牛，放在一起
-在这里面，上界也小于spf的牛可以直接扔掉(没救了)
-上界大于spf即满足条件，此时防晒霜应优先给上界小的牛用
-因为上界大的牛有更大的获得后续防晒霜的可能性
-这里适合使用优先队列，从满足条件的牛中选出上界最小的
-如果当前防晒霜用完了队列里还有牛，没关系，继续用下一瓶
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-struct node
-{
-    int l, r;
-}a[3000];
-
-bool cmp(node a, node b)
-{
-    if(a.l != b.l)
-        return a.l &lt; b.l;
-    return a.r &lt; b.r;
-}
-
-struct spf
-{
-    i -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>C头牛，L瓶防晒霜，</p>
-<p>C行，每行代表每头牛既能日光浴又不会被晒伤时的spf取值范围</p>
-<p>L行，每行代表每瓶防晒霜能使牛的spf值变成多少，以及每瓶能涂抹几头牛</p>
-<p>求最多有几头牛可以既能晒日光浴又能不被晒伤</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/02/POJ-3614-Sunscreen-贪心-优先队列/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -722,6 +710,10 @@ struct spf
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -735,10 +727,6 @@ struct spf
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

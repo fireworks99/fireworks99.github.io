@@ -112,6 +112,37 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/02/28/拓扑排序-HDU-3342/" class="item-title">拓扑排序 HDU 3342</a>
+      
+      <time datetime="2019-02-28T08:18:04.000Z">
+        2019-02-28
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Description
+ACM-DIY is a large QQ group where many excellent acmers get together. It is so harmonious that just like a big family. Every day,many “holy cows” like HH, hh, AC, ZT, lcc, BF, Qinz and so on chat on-line to exchange their ideas. When someone has questions, many warm-hearted cows like Lost will come to help. Then the one being helped will call Lost “master”, and Lost will have a nice “prentice”. By and by, there are many pairs of “master and prentice”. But then problem occurs: there a -->
+        <!-- </div> -->
+
+        
+        <p><strong>拓扑排序判断各工程先后顺序是否出现矛盾（a -&gt; b, b -&gt; c, c -&gt; a）</strong></p>
+<blockquote>
+<p>BFS在这方面较DFS有些先天优势，统计入队结点数，看是否等于工程数</p>
+<p>DFS的vis[]数组改为0， -1， 1三个状态，0代表未访问，-1代表访问完毕，1代表是这一阶段正在访问的 （注意 if(-1) 相当于 if(1) ）【坑了自己一阵】</p>
+</blockquote>
+<p><strong>注意n个工程是（0 ~ n - 1 ）还是 （1 ~ n）</strong></p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/02/28/拓扑排序-HDU-3342/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/02/27/拓扑排序-UVA-10305/" class="item-title">拓扑排序 UVA 10305</a>
       
       <time datetime="2019-02-27T01:25:17.000Z">
@@ -483,52 +514,6 @@ The input consists of multiple test cases. The first line of each test case cont
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/02/24/乘法逆元/" class="item-title">乘法逆元</a>
-      
-      <time datetime="2019-02-24T07:47:02.000Z">
-        2019-02-24
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 逆元的用处关于取模运算:
-
-(a + b) % p = (a % p + b % p) % p
-(a - b) % p = ( (a % p - b % p) + p) % p
-(a  b) % p = (a % p )  ( b % p )  % p
-(a / b) % p = （a * （b的逆元））% p 
-逆元可以将除法取模转为乘法取模
-
-如何求解一个数的逆元？①费马小定理
-给出质数 p ，有一个与 p 互质的数 a （即 gcd(a, p) == 1 )，那么有a ^ (p - 1) % p == 1恒成立
-
-根据这一点得 a 的逆元 x = a ^ (p - 2)
-所以求一个数的逆元，要明确它本身和一个与它  互质  的  质数  ,根据快速幂求得
-②扩展欧几里得
-已知整数a、b，扩展欧几里得算法可以在求得a、b的最大公约数的同时，能找到整数x、y（其中一个很可能是负数），使它们满足等式：。 
-
-为什么可以用扩展欧几里得求解逆元？
-因为a  x % p = 1 就是a  x - p * y = 1.
-把y写成+的形式就是ax+py=1，为方便理解下面我们把p写成b就是ax+ -->
-        <!-- </div> -->
-
-        
-        <h2 id="什么是逆元？"><a href="#什么是逆元？" class="headerlink" title="什么是逆元？"></a>什么是逆元？</h2><blockquote>
-<p>设x是a的倒数，那么 x * a = 1（即x = 1 / a).</p>
-<p>设x是a的逆元，那么 x * a % p = 1.</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/02/24/乘法逆元/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -589,6 +574,10 @@ The input consists of multiple test cases. The first line of each test case cont
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -602,10 +591,6 @@ The input consists of multiple test cases. The first line of each test case cont
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

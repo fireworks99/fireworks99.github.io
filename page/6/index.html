@@ -112,6 +112,49 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/09/20/Web-NodeJS-asynchronous-request-about-MySQL/" class="item-title">NodeJS asynchronous request about MySQL</a>
+      
+      <time datetime="2020-09-20T01:35:37.000Z">
+        2020-09-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 当我没意识到异步操作时const connection = require(&quot;./connect.js&quot;)
+
+module.exports = function (username, password, callback) {
+
+  connection.query(&#39;use blogs&#39;, function (err, res) {
+    if(err) throw err;
+    console.log(&quot;Database changed : &quot; + res);
+  })
+
+  let flag = false;
+  connection.query(&#39;select * from users&#39;, function (err, res) {
+    if(err) throw err;
+
+    let len = res.length;
+    for(let i = 0; i &lt; len; ++i) {
+      if(res[i].username === username) {
+        -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>NodeJS连接mysql数据库的请求是异步操作。现有客户想要注册，NodeJS需要连接数据库，查询用户表，若用户表中无此用户名方予以注册，否则拒绝。很明显，我需要获取查询的结果之后来决定是否将注册信息写入数据库，“查询”与“写入”这两个异步操作有明显的先后顺序，需要“回调”，用ES6的Promise能更好地解决这一问题。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/09/20/Web-NodeJS-asynchronous-request-about-MySQL/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/09/19/Web-FrontEnd-Vue-pass-info-to-BackEnd-Nodejs/" class="item-title">FrontEnd Vue pass info to BackEnd Nodejs</a>
       
       <time datetime="2020-09-19T13:39:16.000Z">
@@ -665,49 +708,6 @@ Code#include &lt;stack&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/08/POJ-3694-Network-Bridges-and-LCA/" class="item-title">POJ 3694 Network(Bridges and LCA)</a>
-      
-      <time datetime="2020-04-08T13:42:32.000Z">
-        2020-04-08
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-1.将图进行正宗缩点（新点+新边的那种）形成树
-2.这棵树的每条边都是桥，在点u点v间添一条边(若u、v不在同一个连通分量中，即没缩成同一点，此举必成环），后来的桥的数目等于原来桥的数目减掉新图里这个环中(不算边u,v)边的数目。而这个数目等于u、v(对应缩点)到他们最近公共祖先LCA的距离和！这个思想绝了！原本在一般图中，要找这样一个环的边数，怕是要循环或者递归啥的，可偏偏这是在一棵树里！它有这样的特点。
-具体步骤：
-1.Tarjan对原图求桥
-2.在有桥的前提下DFS正经缩点(学到了!)
-3.根据缩点建新图(添新边以连接新缩点)
-4.BFS求新点的深度(层)，为求某两点距离其LCA的距离做准备
-5.利用个点深度求两点距离各自LCA的距离
-最后添边在LCA函数里一边查询距离，一边更新(桥变非桥)
-
-Something
-关于正宗缩点：
-1.朱刘算法求最小树形图的时候，缩点并不是很正宗，点处理的很好，但是边还是用的之前的边，没添一条没删一条。当然这是算法必须具备的特点，正经缩点还不适合它的情境、它的需求。
-2.并查集缩点就更不正宗了……
-关于处理重边的问题：
-为了不走反向 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出可能含有重边的无向图，求桥的初始数目。Q次添边，每次输出添边后桥的数目。题目保证初始时刻图是连通的。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/08/POJ-3694-Network-Bridges-and-LCA/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -768,6 +768,10 @@ Something
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -781,10 +785,6 @@ Something
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

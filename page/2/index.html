@@ -112,6 +112,66 @@
     
     <div class="recent-post-item">
 
+      <a href="/2024/02/22/SQL-trigger/" class="item-title">SQL trigger</a>
+      
+      <time datetime="2024-02-22T05:36:05.000Z">
+        2024-02-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 2.How to create a trigger(1).创建四要素
+监视地点（table）
+监视事件（update、insert、delete）
+触发时间（before、after）
+before用于校验，after用于补充
+
+
+触发事件（update、insert、delete）
+
+(2).语法CREATE TRIGGER &lt;触发器名&gt; &lt;监视时间&gt; &lt;监视事件&gt;
+ON 监视地点 FOR EACH ROW 
+begin
+    触发事件
+end;
+
+3.Exampleuse dailyExercise;
+
+#商品表
+CREATE TABLE product (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(20),
+    num INT
+);
+
+
+#订单表
+CREATE TABLE orders (
+    orders_id INT PRIMARY KEY AUTO_INCREMENT,
+    product_id INT,
+    amount INT
+);
+
+insert -->
+        <!-- </div> -->
+
+        
+        <h2 id="1-What-is-a-trigger"><a href="#1-What-is-a-trigger" class="headerlink" title="1. What is a trigger"></a>1. What is a trigger</h2><blockquote>
+<p>触发器（trigger）：监视某种情况，并触发某种操作，它是提供给程序员和数据分析员来<strong>保证数据完整性</strong>的一种方法，它是与表事件相关的<strong>特殊的存储过程</strong>。</p>
+<p>它的执行不是由程序调用，也不是手工启动，而是由<strong>事件</strong>来触发，例如当对一个表进行操作（ insert，delete， update）时就会激活它执行。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2024/02/22/SQL-trigger/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2023/05/04/click-vs-onclick/" class="item-title">@click vs onclick</a>
       
       <time datetime="2023-05-04T10:00:47.000Z">
@@ -497,42 +557,6 @@ arr.forEach((item, index) =&gt; {
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2023/03/30/Vue-Vuex/" class="item-title">Vue Vuex</a>
-      
-      <time datetime="2023-03-30T01:10:48.000Z">
-        2023-03-30
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 1.属性传递count数据存储在共同的最近公共祖先组件中，通过props属性接收。
-&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-    &lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-&lt;body&gt;
- -->
-        <!-- </div> -->
-
-        
-        <p>需求：一个计数器组件，要渲染三次，这个计数器组件展示count变量，添加一个按钮，点击这个按钮一次，三个计数器都++。</p>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2023/03/30/Vue-Vuex/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -593,6 +617,10 @@ arr.forEach((item, index) =&gt; {
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -606,10 +634,6 @@ arr.forEach((item, index) =&gt; {
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

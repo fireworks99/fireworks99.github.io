@@ -112,6 +112,58 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/22/KMP/" class="item-title">KMP</a>
+      
+      <time datetime="2019-04-22T13:26:31.000Z">
+        2019-04-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Code of KMP count#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+#include&lt;iostream&gt;
+using namespace std;
+const int maxn = 1000100;
+
+char m[maxn], n[maxn];
+int nex[maxn];
+///next[j]的值（也就是k）表示，当P[j] != T[i]时，j指针的下一步移动位置
+
+void getne(char * str, int len)
+{
+    int i = 0, j = -1;
+    nex[0] = -1;
+    while(i &lt; len)
+    {
+        if (j == -1 || str[i] == str[j])
+            nex[++i] = ++j;
+        else
+            j = nex[j];
+    }
+}
+
+int kmp(char * a, char * b, int lena, int lenb)
+{
+    int s -->
+        <!-- </div> -->
+
+        
+        <h3 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h3><blockquote>
+<p>KMP算法要解决的问题就是在字符串（也叫主串）中的模式（pattern）定位问题。说简单点就是我们平时常说的关键字搜索。模式串就是关键字，如果它在一个主串中出现，就返回它的具体位置，否则返回-1（常用手段）。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/22/KMP/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/22/GCD与LCM/" class="item-title">GCD与LCM</a>
       
       <time datetime="2019-04-22T10:54:06.000Z">
@@ -579,66 +631,6 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/17/HDU-1069-Monkey-and-Banana/" class="item-title">HDU 1069 Monkey and Banana</a>
-      
-      <time datetime="2019-04-17T01:16:28.000Z">
-        2019-04-17
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接  
-思路
-一种盒子六种摆放方式，将问题直接转化为：n * 6种（被规定以何种方式摆放的）盒子摞起来最高能有多高
-dp：等同于求最长递减子序列
-
-Code#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-const int N = 200;
-
-struct node
-{
-    int L, W, H;
-} box[N];
-
-bool cmp(node a, node b)
-{
-    if(a.L != b.L)
-        return a.L &gt; b.L;
-    else
-    {
-        if(a.W != b.W)
-            return a.W &gt; b.W;
-        else
-            return a.H &gt; b.H;
-    }
-}
-
-int main()
-{
-    int n, num = 1;
-    while(~scanf(&quot;% -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n种盒子（不限量），摞起来最高能有多高？（上面盒子的长与宽必须都小于下面盒子的长与宽）</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/17/HDU-1069-Monkey-and-Banana/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -699,6 +691,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -712,10 +708,6 @@ int main()
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

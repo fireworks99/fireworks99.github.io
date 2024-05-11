@@ -112,6 +112,66 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/09/09/POJ-2385-Apple-Catching-动态规划/" class="item-title">POJ 2385 Apple Catching(动态规划)</a>
+      
+      <time datetime="2019-09-09T11:50:08.000Z">
+        2019-09-09
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- DP步骤
+
+状态设定
+初始化
+状态转移
+DP优化(可无)
+
+
+一.状态设定
+
+根据DP要素决定DP维数
+根据数据范围合理选择DP对象
+根据难易程度选择DP顺序
+
+
+Analyze
+1DP要素：时间T、移动次数W(根据输入Input也能看出来)
+2DP对象：数据都比较小，就是对T、W进行动态规划
+3DP顺序：
+先T后W：dp[t][w]前t秒移动w次的最优结果
+先W后T：dp[w][t]移动w次…t秒…怪怪的…
+其实存在时间元素时，这一元素一般放在第一维
+
+二.初始化
+我们dp从1开始时看0状态是不是0，是则初始化为0，否则初始化为相应值，本题初始状态默认为0
+
+三.状态转移
+dp[i][j]表示前i秒移动j次能接到的最多的苹果数
+我们发现在设计的DP里“移动”是一个必定发生的事件，移动 对应 状态改变。那么移动之前怎么由之前的状态向之后的状态过渡呢？
+前一个状态(第i - 1秒)也有两种决策：j(第i - 1秒移动，最多数目)，j - 1(第i - 1秒不动，最多数目)，分别对应dp[i - 1][j]和dp[i - 1][j - 1]，那么移动前的dp[i][j]取两者max。
+另外 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>有两棵苹果树,编号为1,2。每一秒,这两棵苹果树中的其中一棵会掉一个苹果。</p>
+<p>每一秒,你可以选择在当前苹果树下接苹果,或者迅速移动到另外一棵苹果树下接苹果(移动时间可以忽略不计)。</p>
+<p>但由于却乏锻炼,你最多移动W次.问在T秒内,你最多能收集多少个苹果.</p>
+<p>假设你开始站在1号苹果树下.</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/09/09/POJ-2385-Apple-Catching-动态规划/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/09/06/POJ-2229-Sunsets-动态规划/" class="item-title">POJ 2229 Sunsets (动态规划)</a>
       
       <time datetime="2019-09-06T12:45:46.000Z">
@@ -544,56 +604,6 @@ Livere:
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/16/POJ-1456-Supermarket-贪心-并查集/" class="item-title">POJ 1456 Supermarket(贪心+并查集)</a>
-      
-      <time datetime="2019-08-16T12:07:44.000Z">
-        2019-08-16
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-链接： http://poj.org/problem?id=1456
-
-Analyze
-最主要的是贪心思想：
-保质期长的商品早卖晚卖对自身无影响，但保质期短的商品却必须早卖
-如此一来，贪心体现在：当前选中的最贵的商品最大限度地晚卖
-若当前最贵的在保质期内：
-若保质期的最后一天未被标记，则在那一天卖掉它，标记这一天
-若保质期的最后一天标记了(卖了别的商品)，那就在前一天卖掉它，不行再往前推一天，总之(在保质期内)越晚越好
-
-Code#include &lt;set&gt;
-#include &lt;map&gt;
-#include &lt;stack&gt;
-#include &lt;queue&gt;
-#include &lt;ctime&gt;
-#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;bitset&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;sstream&gt;
-#i -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>超市里有N个商品. 第i个商品必须在保质期(第di天)之前卖掉, 若卖掉可让超市获得pi的利润.  每天只能卖一个商品. 现在你要让超市获得最大的利润</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/16/POJ-1456-Supermarket-贪心-并查集/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -654,6 +664,10 @@ Code#include &lt;set&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -667,10 +681,6 @@ Code#include &lt;set&gt;
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

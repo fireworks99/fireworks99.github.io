@@ -112,6 +112,52 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/02/24/乘法逆元/" class="item-title">乘法逆元</a>
+      
+      <time datetime="2019-02-24T07:47:02.000Z">
+        2019-02-24
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 逆元的用处关于取模运算:
+
+(a + b) % p = (a % p + b % p) % p
+(a - b) % p = ( (a % p - b % p) + p) % p
+(a  b) % p = (a % p )  ( b % p )  % p
+(a / b) % p = （a * （b的逆元））% p 
+逆元可以将除法取模转为乘法取模
+
+如何求解一个数的逆元？①费马小定理
+给出质数 p ，有一个与 p 互质的数 a （即 gcd(a, p) == 1 )，那么有a ^ (p - 1) % p == 1恒成立
+
+根据这一点得 a 的逆元 x = a ^ (p - 2)
+所以求一个数的逆元，要明确它本身和一个与它  互质  的  质数  ,根据快速幂求得
+②扩展欧几里得
+已知整数a、b，扩展欧几里得算法可以在求得a、b的最大公约数的同时，能找到整数x、y（其中一个很可能是负数），使它们满足等式：。 
+
+为什么可以用扩展欧几里得求解逆元？
+因为a  x % p = 1 就是a  x - p * y = 1.
+把y写成+的形式就是ax+py=1，为方便理解下面我们把p写成b就是ax+ -->
+        <!-- </div> -->
+
+        
+        <h2 id="什么是逆元？"><a href="#什么是逆元？" class="headerlink" title="什么是逆元？"></a>什么是逆元？</h2><blockquote>
+<p>设x是a的倒数，那么 x * a = 1（即x = 1 / a).</p>
+<p>设x是a的逆元，那么 x * a % p = 1.</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/02/24/乘法逆元/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/02/24/HDU-1559/" class="item-title">HDU 1559 最大子矩阵</a>
       
       <time datetime="2019-02-24T02:15:44.000Z">
@@ -492,40 +538,6 @@ Output -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/01/29/C-Replace-To-Make-Regular-Bracket-Sequence/" class="item-title">C. Replace To Make Regular Bracket Sequence</a>
-      
-      <time datetime="2019-01-29T10:20:02.000Z">
-        2019-01-29
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-The following definition of a regular bracket sequence is well-known, so you can be familiar with it.
-Let’s define a regular bracket sequence (RBS). Empty string is RBS. Let s1 and s2 be a RBS then the strings &lt;s1&gt;s2, {s1}s2, [s1]s2, (s1)s2 are also RBS.
-For example the string “[[(){}]&lt;&gt;]” is RBS, but the strings “[)()” and “][()()” are not.
-Determine the least number of replaces to make the string s RBS.
-
-Input
-The only line contains a non empty string s, consisting of only opening -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>You are given string <em>s</em> consists of opening and closing brackets of four kinds &lt;&gt;, {}, [], (). There are two types of brackets: opening and closing. You can replace any bracket by another of the same type. For example, you can replace &lt; by the bracket {, but you can’t replace it by ) or &gt;.</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/01/29/C-Replace-To-Make-Regular-Bracket-Sequence/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -586,6 +598,10 @@ The only line contains a non empty string s, consisting of only opening -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -599,10 +615,6 @@ The only line contains a non empty string s, consisting of only opening -->
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

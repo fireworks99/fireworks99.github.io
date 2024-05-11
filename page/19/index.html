@@ -112,6 +112,63 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/13/POJ-1915-Knight-Moves-双向BFS/" class="item-title">POJ 1915 Knight Moves 双向BFS</a>
+      
+      <time datetime="2019-07-12T23:13:09.000Z">
+        2019-07-13
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+双向BFS
+交替逐层搜索√
+交替节点搜索×
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int n;
+struct node
+{
+    int x, y;
+};
+queue&lt;node&gt; q[2];
+bool vis[2][305][305];
+int dx[] = { 1, 2, 1, 2, -1, -2, -1, -2 };
+int dy[] = { 2, 1, -2, -1, 2, 1, -2, -1 };
+
+
+bool BFS(int num)
+{
+    int sz = q[num].size();
+    while(sz--)
+    {
+        node first = q[num].front();
+        q[num].pop();
+        for(int i = 0;  -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>给出起点终点，按图示方法走，至少要几步</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/13/POJ-1915-Knight-Moves-双向BFS/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/10/POJ-3264-Balamced-Lineup/" class="item-title">POJ 3264 Balamced Lineup</a>
       
       <time datetime="2019-07-10T11:23:48.000Z">
@@ -566,57 +623,6 @@ b -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/06/05/ZOJ-3631-Watashi-s-BG/" class="item-title">ZOJ 3631 Watashi&#39;s BG</a>
-      
-      <time datetime="2019-06-05T10:45:59.000Z">
-        2019-06-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- http://acm.zju.edu.cn/onlinejudge/showProblem.do?problemId=4777 没找到合适的模板题
-Idea
-超大背包，折半枚举
-2 ^ 40 ≈ 1e12,但折半后 2 ^ 20 ≈ 1e6,可枚举了
-对前半部分枚举出所有方案，排序去除多余元素（重量大反而价值小，不针对此题），对后半部分的方案在枚举时二分搜索前半部分的方案，更新最佳答案
-
-Code（Template）#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-typedef long long ll;
-const ll INF = 2147483647;
-const int N = 40;
-
-int n, m;
-ll w[N], v[N];
-pair&lt;ll, ll&gt; p[1 &lt;&lt; (N / 2)];
-
-int main()
-{
-    while(~scanf(&quot;%d%d&quot;, &amp;n,  -->
-        <!-- </div> -->
-
-        
-        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><blockquote>
-<p>问题转化：</p>
-<p>N个物品，重量等价于价值，背包承重W，求最大载重</p>
-<p>1 &lt;= N &lt;= 40</p>
-<p>0 &lt;= M &lt;= 1e7</p>
-<p>w[i] &lt;= 1e7</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/06/05/ZOJ-3631-Watashi-s-BG/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -677,6 +683,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -690,10 +700,6 @@ int main()
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

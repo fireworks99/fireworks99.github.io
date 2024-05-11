@@ -112,6 +112,56 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/16/POJ-1456-Supermarket-贪心-并查集/" class="item-title">POJ 1456 Supermarket(贪心+并查集)</a>
+      
+      <time datetime="2019-08-16T12:07:44.000Z">
+        2019-08-16
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+链接： http://poj.org/problem?id=1456
+
+Analyze
+最主要的是贪心思想：
+保质期长的商品早卖晚卖对自身无影响，但保质期短的商品却必须早卖
+如此一来，贪心体现在：当前选中的最贵的商品最大限度地晚卖
+若当前最贵的在保质期内：
+若保质期的最后一天未被标记，则在那一天卖掉它，标记这一天
+若保质期的最后一天标记了(卖了别的商品)，那就在前一天卖掉它，不行再往前推一天，总之(在保质期内)越晚越好
+
+Code#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#i -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>超市里有N个商品. 第i个商品必须在保质期(第di天)之前卖掉, 若卖掉可让超市获得pi的利润.  每天只能卖一个商品. 现在你要让超市获得最大的利润</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/16/POJ-1456-Supermarket-贪心-并查集/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/16/Python-获取Vjudge用户AC题数/" class="item-title">Python 获取Vjudge用户AC题数</a>
       
       <time datetime="2019-08-16T09:35:50.000Z">
@@ -536,54 +586,6 @@ Analyze
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/08/HDU-2212-打表/" class="item-title">HDU 2212 打表</a>
-      
-      <time datetime="2019-08-08T13:00:14.000Z">
-        2019-08-08
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 暴力打表#include &lt;set&gt;
-#include &lt;map&gt;
-#include &lt;stack&gt;
-#include &lt;queue&gt;
-#include &lt;ctime&gt;
-#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;bitset&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;sstream&gt;
-#include &lt;cstdlib&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-#include &lt;functional&gt;
-#define eps 1e-8
-#define PI acos(-1.0)
-#define ll long long
-using namespace std;
-const int mod = 1e9 + 7;
-cons -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>int范围内找出：各位数字的阶乘和等于原数字的数</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/08/HDU-2212-打表/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -644,6 +646,10 @@ cons -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -657,10 +663,6 @@ cons -->
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

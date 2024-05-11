@@ -112,6 +112,53 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/03/洛谷-P3381-最小费用最大流-模板/" class="item-title">洛谷 P3381 最小费用最大流(模板)</a>
+      
+      <time datetime="2019-08-03T00:50:50.000Z">
+        2019-08-03
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 洛谷P3381最小费用最大流
+#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+using namespace std;
+const int N = 5005;
+const int INF = 0x3f3f3f3f;
+typedef pair&lt;int, int&gt; P;///first:最短距离 second:节点编号
+typedef long long ll;
+
+struct edge{ int to, w, cap, rev; };
+
+int n, m, s, t;
+ll flow, res;
+vector&lt;edge&gt; vec[N];
+int h[N], dis[N];///节点的势 最短距离
+int fro_v[N], fro_e[N];///vector 的 -->
+        <!-- </div> -->
+
+        
+        <h2 id="最小费用最大流"><a href="#最小费用最大流" class="headerlink" title="最小费用最大流"></a>最小费用最大流</h2><blockquote>
+<p>原来最小费用最大流只是在最小费用流的基础上去掉固定流f，任其找最短路去增广，直到不能找到最短路了(<code>dis[t] == INF</code>)就退出</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/03/洛谷-P3381-最小费用最大流-模板/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/02/最小费用流-沿Dijkstra最短路增广/" class="item-title">最小费用流(沿Dijkstra最短路增广)</a>
       
       <time datetime="2019-08-02T10:56:01.000Z">
@@ -582,54 +629,6 @@ Co -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/26/洛谷-P3389-高斯消元法-模板/" class="item-title">洛谷 P3389 高斯消元法(模板)</a>
-      
-      <time datetime="2019-07-26T06:23:32.000Z">
-        2019-07-26
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int n;
-double a[105][105];
-
-int main()
-{
-    scanf(&quot;%d&quot;,&amp;n);
-    for(int i = 1; i &lt;= n; ++i)
-        for(int j = 1; j &lt;= n + 1; ++j)
-            scanf(&quot;%lf&quot;, &amp;a[i][j]);
-    for(int i = 1; i &lt;= n; ++i)
-    {
-        ///据说将系数绝对值最大的方程转移到被减的这一行，可以减小误差
-        ///1. 遍历行,选出该列最大系数
-        int mmax = i;
-        for(int j = i + 1; j &lt;= n; ++ -->
-        <!-- </div> -->
-
-        
-        <h1 id="高斯消元法"><a href="#高斯消元法" class="headerlink" title="高斯消元法"></a>高斯消元法</h1><blockquote>
-<p>设增广矩阵C = (A, b)，其中A为方阵，高斯消元法是将系数矩阵A化为对角矩阵，然后用变化后的解向量中每一个元除以相应自变量的系数即可得到该自变量的估计值</p>
-<p>代码须满足：方程个数 == 未知量的个数</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/26/洛谷-P3389-高斯消元法-模板/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -690,6 +689,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -703,10 +706,6 @@ int main()
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

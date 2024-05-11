@@ -112,6 +112,67 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/02/POJ-3614-Sunscreen-贪心-优先队列/" class="item-title">POJ 3614 Sunscreen(贪心+优先队列)</a>
+      
+      <time datetime="2019-11-02T02:52:41.000Z">
+        2019-11-02
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 贪心
+对牛和防晒霜从小到大排序
+对于每瓶防晒霜来说，它有一个spf值，
+找出所有下界小于spf的牛，放在一起
+在这里面，上界也小于spf的牛可以直接扔掉(没救了)
+上界大于spf即满足条件，此时防晒霜应优先给上界小的牛用
+因为上界大的牛有更大的获得后续防晒霜的可能性
+这里适合使用优先队列，从满足条件的牛中选出上界最小的
+如果当前防晒霜用完了队列里还有牛，没关系，继续用下一瓶
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+struct node
+{
+    int l, r;
+}a[3000];
+
+bool cmp(node a, node b)
+{
+    if(a.l != b.l)
+        return a.l &lt; b.l;
+    return a.r &lt; b.r;
+}
+
+struct spf
+{
+    i -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>C头牛，L瓶防晒霜，</p>
+<p>C行，每行代表每头牛既能日光浴又不会被晒伤时的spf取值范围</p>
+<p>L行，每行代表每瓶防晒霜能使牛的spf值变成多少，以及每瓶能涂抹几头牛</p>
+<p>求最多有几头牛可以既能晒日光浴又能不被晒伤</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/02/POJ-3614-Sunscreen-贪心-优先队列/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/01/rand-与srand-生成随机数/" class="item-title">rand()与srand()生成随机数</a>
       
       <time datetime="2019-11-01T04:25:53.000Z">
@@ -546,66 +607,6 @@ Code#include &lt;cstdio&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/09/09/POJ-2385-Apple-Catching-动态规划/" class="item-title">POJ 2385 Apple Catching(动态规划)</a>
-      
-      <time datetime="2019-09-09T11:50:08.000Z">
-        2019-09-09
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- DP步骤
-
-状态设定
-初始化
-状态转移
-DP优化(可无)
-
-
-一.状态设定
-
-根据DP要素决定DP维数
-根据数据范围合理选择DP对象
-根据难易程度选择DP顺序
-
-
-Analyze
-1DP要素：时间T、移动次数W(根据输入Input也能看出来)
-2DP对象：数据都比较小，就是对T、W进行动态规划
-3DP顺序：
-先T后W：dp[t][w]前t秒移动w次的最优结果
-先W后T：dp[w][t]移动w次…t秒…怪怪的…
-其实存在时间元素时，这一元素一般放在第一维
-
-二.初始化
-我们dp从1开始时看0状态是不是0，是则初始化为0，否则初始化为相应值，本题初始状态默认为0
-
-三.状态转移
-dp[i][j]表示前i秒移动j次能接到的最多的苹果数
-我们发现在设计的DP里“移动”是一个必定发生的事件，移动 对应 状态改变。那么移动之前怎么由之前的状态向之后的状态过渡呢？
-前一个状态(第i - 1秒)也有两种决策：j(第i - 1秒移动，最多数目)，j - 1(第i - 1秒不动，最多数目)，分别对应dp[i - 1][j]和dp[i - 1][j - 1]，那么移动前的dp[i][j]取两者max。
-另外 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>有两棵苹果树,编号为1,2。每一秒,这两棵苹果树中的其中一棵会掉一个苹果。</p>
-<p>每一秒,你可以选择在当前苹果树下接苹果,或者迅速移动到另外一棵苹果树下接苹果(移动时间可以忽略不计)。</p>
-<p>但由于却乏锻炼,你最多移动W次.问在T秒内,你最多能收集多少个苹果.</p>
-<p>假设你开始站在1号苹果树下.</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/09/09/POJ-2385-Apple-Catching-动态规划/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -666,6 +667,10 @@ dp[i][j]表示前i秒移动j次能接到的最多的苹果数
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -679,10 +684,6 @@ dp[i][j]表示前i秒移动j次能接到的最多的苹果数
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

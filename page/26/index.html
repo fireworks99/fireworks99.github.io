@@ -112,6 +112,57 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/31/POJ-1860-Currency-Exchange/" class="item-title">POJ 1860 Currency Exchange</a>
+      
+      <time datetime="2019-03-31T08:48:29.000Z">
+        2019-03-31
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- The link of this problem http://poj.org/problem?id=1860
+最短路变形
+“最远路”
+Bellman-Ford 判 正权环
+
+Code of Bellman-Ford#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 105;///点的上界
+const int inf = 0x3f3f3f3f;
+
+int cnt;///边的计数
+struct edge///Bellman-Ford 算法暴力遍历双向边,无pre
+{
+    int from, to;
+    double w, cost;
+} a[N &lt;&lt; 1]; ///等同于邻接矩阵了
+
+int n, m;///n为点的个数（注意编号是0 ~ n - 1还是1 ~ n），m为双向边的描述
+double dis[N];///起点到某点的等效最短路(抄模板 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n个点m个关于路的叙述</p>
+<p>起点start 初始钱币ini</p>
+<p>此 彼    此-&gt;彼汇率  手续费    彼到此汇率  手续费</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/31/POJ-1860-Currency-Exchange/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/31/POJ-2240-Arbitrage/" class="item-title">POJ 2240 Arbitrage</a>
       
       <time datetime="2019-03-31T06:09:30.000Z">
@@ -563,43 +614,6 @@ bool vis[15][ -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/18/HDU-2612/" class="item-title">HDU 2612 Find a way</a>
-      
-      <time datetime="2019-03-18T13:19:24.000Z">
-        2019-03-18
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接 http://acm.hdu.edu.cn/showproblem.php?pid=2612
-Input
-The input contains multiple test cases. Each test  case include, first two integers n, m. (2&lt;=n,m&lt;=200).  Next n lines,  each line included m character.
-‘Y’ express yifenfei initial position.
-‘M’     express Merceki initial position.
-‘#’ forbid road; 
-‘.’ Road.
-‘@’  KCF 
-
-Output
-For each test case output the minimum total time that  both yifenfei and Merceki to arrival one of KFC.You may sure there is always  have a KFC that can let -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>Pass a year learning in Hangzhou, yifenfei arrival  hometown Ningbo at finally. Leave Ningbo one year, yifenfei have many people to  meet. Especially a good friend Merceki. Yifenfei’s home is at the  countryside, but Merceki’s home is in the center of city. So yifenfei made  arrangements with Merceki to meet at a KFC. There are many KFC in Ningbo, they  want to choose one that let the total time to it be most smallest.  Now give  you a Ningbo map, Both yifenfei and Merceki can move up, down ,left, right to  the adjacent road by cost 11 minutes. </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/18/HDU-2612/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -660,6 +674,10 @@ For each test case output the minimum total time that  both yifenfei and Merceki
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -673,10 +691,6 @@ For each test case output the minimum total time that  both yifenfei and Merceki
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

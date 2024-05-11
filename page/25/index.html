@@ -112,6 +112,54 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/07/POJ-3660-Cow-Contest/" class="item-title">POJ 3660 Cow Contest</a>
+      
+      <time datetime="2019-04-07T12:46:27.000Z">
+        2019-04-07
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 传送门
+Floyd 传递闭包
+传递闭包的含义指通过传递性推导出尽量多的元素之间的关系
+用flod算法将所有的关系进行传递，只要u能胜v，那么我们就将d[u][v]设为1，最后如果两者之间有d[u][v]=0且d[v][u]=0则u、v两点不知排名
+
+Code#include &lt;set&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int n, m;
+bool beat[105][105];
+
+///一个可怕的地方：我所有的循环都写了++i
+void floyd()
+{
+    for(int k = 1; k &lt;= n; ++k)///++i写太习惯了
+        for(int i = 1; i &lt;= n; ++i)
+            for(int j = 1; j &lt;= n; ++j)
+                if(beat[i][k] &amp;&amp; beat[k][j])
+  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n头牛参加比赛，给你m对关系（譬如给你a和b，那么给的就是a必赢b，当然，b能赢c，那么a也能赢c），问能确定多少头牛的排名。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/07/POJ-3660-Cow-Contest/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/06/POJ-1502-MPI-Maelstrom/" class="item-title">POJ 1502 MPI Maelstrom</a>
       
       <time datetime="2019-04-06T13:52:22.000Z">
@@ -870,57 +918,6 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/31/POJ-1860-Currency-Exchange/" class="item-title">POJ 1860 Currency Exchange</a>
-      
-      <time datetime="2019-03-31T08:48:29.000Z">
-        2019-03-31
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- The link of this problem http://poj.org/problem?id=1860
-最短路变形
-“最远路”
-Bellman-Ford 判 正权环
-
-Code of Bellman-Ford#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-const int N = 105;///点的上界
-const int inf = 0x3f3f3f3f;
-
-int cnt;///边的计数
-struct edge///Bellman-Ford 算法暴力遍历双向边,无pre
-{
-    int from, to;
-    double w, cost;
-} a[N &lt;&lt; 1]; ///等同于邻接矩阵了
-
-int n, m;///n为点的个数（注意编号是0 ~ n - 1还是1 ~ n），m为双向边的描述
-double dis[N];///起点到某点的等效最短路(抄模板 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n个点m个关于路的叙述</p>
-<p>起点start 初始钱币ini</p>
-<p>此 彼    此-&gt;彼汇率  手续费    彼到此汇率  手续费</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/31/POJ-1860-Currency-Exchange/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -981,6 +978,10 @@ double dis[N];///起点到某点的等效最短路(抄模板 -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -994,10 +995,6 @@ double dis[N];///起点到某点的等效最短路(抄模板 -->
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>

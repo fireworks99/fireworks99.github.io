@@ -112,6 +112,51 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/20/HDU-1850-Being-a-Good-Boy-in-Spring/" class="item-title">HDU 1850 Being a Good Boy in Spring</a>
+      
+      <time datetime="2019-07-20T02:46:26.000Z">
+        2019-07-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+题目链接： http://acm.hdu.edu.cn/showproblem.php?pid=1850
+
+Analyze
+尼姆博弈，每堆数目异或和(flag),若为0则必败，输出0
+若flag != 0，则有必胜方案
+取 a1 ^ a2 ^ a3 ^ ··· ^ ak ^ ··· ^ an = flag
+取 b = a1 ^ a2 ^ a3 ^ ··· ^ a[k - 1] ^ a[k + 1] ^ ··· ^an (略去ak)
+则上式改为 b ^ ak = flag
+若要从ak中取走c使flag = 0
+则(ak - c) == b (两个相同的数字异或结果为0)
+ 上式三者皆为正整数，意味着需满足条件 ak &gt; b
+又∵ flag = b ^ ak
+∴ flag ^ ak = (b ^ ak) ^ ak = b &lt; ak
+如此一来，对于每一个a[i], 若flag ^ a[i] &lt; a[i]， 则有这样一种方案可行
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostre -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>尼姆博弈求先手胜出方案数</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/20/HDU-1850-Being-a-Good-Boy-in-Spring/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/19/HDU-1800-Flying-to-the-Mars/" class="item-title">HDU 1800 Flying to the Mars</a>
       
       <time datetime="2019-07-19T07:31:30.000Z">
@@ -580,63 +625,6 @@ def run_main():
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/13/POJ-1915-Knight-Moves-双向BFS/" class="item-title">POJ 1915 Knight Moves 双向BFS</a>
-      
-      <time datetime="2019-07-12T23:13:09.000Z">
-        2019-07-13
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-双向BFS
-交替逐层搜索√
-交替节点搜索×
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int n;
-struct node
-{
-    int x, y;
-};
-queue&lt;node&gt; q[2];
-bool vis[2][305][305];
-int dx[] = { 1, 2, 1, 2, -1, -2, -1, -2 };
-int dy[] = { 2, 1, -2, -1, 2, 1, -2, -1 };
-
-
-bool BFS(int num)
-{
-    int sz = q[num].size();
-    while(sz--)
-    {
-        node first = q[num].front();
-        q[num].pop();
-        for(int i = 0;  -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>给出起点终点，按图示方法走，至少要几步</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/13/POJ-1915-Knight-Moves-双向BFS/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -697,6 +685,10 @@ bool BFS(int num)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
           </li>
         
@@ -710,10 +702,6 @@ bool BFS(int num)
         
           <li>
             <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Async-invoke/">Async invoke</a>
           </li>
         
       </ul>
