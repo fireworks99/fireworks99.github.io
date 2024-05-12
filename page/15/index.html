@@ -112,6 +112,183 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/12/HDU-2665-K-th-Number/" class="item-title">HDU 2665 K-th Number</a>
+      
+      <time datetime="2019-08-12T08:52:36.000Z">
+        2019-08-12
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+跟区间有关的算法/数据结构有哪些？
+尺取? 前缀和(与差分)? 莫队? 线段树? 树状数组? ……
+而主席树，我认为是：以线段树为结构单元的前缀和序列
+
+Study Blog
+
+https://www.cnblogs.com/LonecharmRiver/articles/9087536.html
+https://www.cnblogs.com/zyf0163/p/4749042.html
+
+
+Code of HDU 2665 K-th Number#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define M 200010
+
+int node_cnt, n, m;///节点标号、数组大小、查询个数
+int sum[M &lt;&lt; 5];///区间val
+int rt[M];///根节点标号
+int lc[M &lt;&lt; 5], rc[M &lt;&lt; 5 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出一个序列，查询某段区间里第k小的数字</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/12/HDU-2665-K-th-Number/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/10/Python爬取SDNUOJ两用户Solved-problems查找遗漏的水题/" class="item-title">Python爬取SDNUOJ两用户Solved problems查找遗漏的水题</a>
+      
+      <time datetime="2019-08-10T02:13:38.000Z">
+        2019-08-10
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Thanks
+感谢LTR师哥( https://blog.csdn.net/ltrbless )耐心指导，拿出自己珍贵的大把的时间悉心为我讲解细节，在我求“鱼”之时授我以“当下之鱼”及“来日之渔”
+题目做腻了的时候看了看爬虫入门的东西，偶然想起某天MF(YMF https://solodance.top/ )与旁人闲聊时提到这个（爬取两用户Information比较得出自己遗漏的水题）有趣的东西，想着自己也试试。在此说明原Idea来自于他。
+
+Codeimport urllib.request
+from bs4 import BeautifulSoup
+
+fro = &#39;http://www.acmicpc.sdnu.edu.cn/user/info/&#39;
+
+print(&quot;Please input your Username:&quot;)
+my_url = input()
+my_url = fro + my_url
+print(&quot;Please input his or her Username:&quot;)
+its_url = input()
+its -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>输入用户名，爬取SDNUOJ指定用户Information页面Solved Problems题号，通过对比，输出对方已解决而自己尚未解决的题目的题号</p>
+<p>可执行文件下载链接：<a href="https://github.com/fireworks99/Tools/raw/master/OJ_compare_sloved.exe" target="_blank" rel="noopener">https://github.com/fireworks99/Tools/raw/master/OJ_compare_sloved.exe</a></p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/10/Python爬取SDNUOJ两用户Solved-problems查找遗漏的水题/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/09/UVA-10480-Sabotage-最小割/" class="item-title">UVA 10480 Sabotage(最小割)</a>
+      
+      <time datetime="2019-08-09T06:29:11.000Z">
+        2019-08-09
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Attention
+一般的网络流知道了S(源点)T(汇点)，就默认了流向，所以路是单向的(两条边,w+0)
+但这题不同，两城市是等价的，都是S都是T，所以路是双向的(两条边,w+w)
+若是已知唯一的S(源点)T(汇点)，而题目又暗示(或明示)路是双向的(四条边w+0+w+0)
+
+Code#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个城市，M条连接城市的边，现在要切断城市1与城市2间的联络，求最小费用</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/09/UVA-10480-Sabotage-最小割/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/09/HDU-4289-Control-最大流/" class="item-title">HDU 4289 Control(最小割)</a>
+      
+      <time datetime="2019-08-09T01:33:33.000Z">
+        2019-08-09
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Description
+某位妹妹要从S到T运输偷来的心，我们可以在某些途径城市安装监控以逮捕她。每个城市安装监控的费用不同，要保证逮捕到这位妹妹，你被逮捕了，罪名:XXXX(某音刷多了) ，安装监控的最少花费是多少？
+
+Analyze
+看上去像是要求一个连通图的割点，使得S到T不连通，可并没有体现“最”这一特点，完全是固定的一种方案。(而且S、T不属于割点，而此题可以监控S、T)
+而我们知道，在一个已知S、T的网络图中，求完最大流的残余网络S到T不连通，符合题意。可题目求“最小”，奈何等于求“最大”？
+老子认为：一切事物都有对立面，对立的双方可以互相转化。
+我们知道，一条S到T的可行流的最大值，是这条路上容量最小边的容量
+所以，最大即最小，最小即最大。
+将原题中费用转为容量。求出最大流，便封锁了S到T的所有路。而这最大流，是各可行流中最小容量的和，即最小费用。
+以上理解也可以作为(最大流 == 最小割)的理解,所以这题其实是在求最小割?(滑稽)
+感性认识：
+
+假设最开始可行流就一条，那么最大流便是这条可行流上容量最小的边的容量，套到题目上，便是花费最少的监控所花费的金钱(即最小花费)
+ -->
+        <!-- </div> -->
+
+        
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
+<p>道家学派的创始人老子认为<strong>一切事物都</strong>包含<strong>有</strong>和无、难和易、长和短、高和下、前和后等<strong>对立面，对立的双方能够相互转化</strong> </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/09/HDU-4289-Control-最大流/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/08/HDU-2212-打表/" class="item-title">HDU 2212 打表</a>
       
       <time datetime="2019-08-08T13:00:14.000Z">
@@ -425,226 +602,12 @@ Code#include &lt;set&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/07/POJ-2516-Minimum-Cost-最小费用最大流/" class="item-title">POJ 2516 Minimum Cost(最小费用最大流)</a>
-      
-      <time datetime="2019-08-07T02:08:15.000Z">
-        2019-08-07
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-题目链接：http://poj.org/problem?id=2516 （题目老是AC不了怎么办-&gt;去Discuss区看看，我就是不知怎么WA的，去讨论区看，说数组开小了给WA，我开大一些还真AC了，什么鬼……）
-
-Analyze
-K种货物分别分析
-多源点多汇点-&gt;建立超级源点与超级汇点
-连接超源到各卖家的路，费用0，容量等于卖家货物量
-连接超汇到各买家的路，费用0，容量等于买家需求量
-连接卖家与买家间的路，费用对应题目中的费用，容量INF
-在可行的前提下，最小费用最大流，原来是最小费用固定流，因为买家到超汇的容量被设为需求量，所以直接求最大流即为该固定流
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-#include &lt;functional&gt;
-using namespace std;
-const in -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>N个买家，M个卖家，K种货物</p>
-<p>接下来N行，每行K个数值，表示每个买家对于K种货物的需求</p>
-<p>接下来M行，每行K个数值，表示每个卖家对于K种货物的拥有量</p>
-<p>接下来K个矩阵，每个矩阵代表那种货物的有关运输费用</p>
-<p>(第k个矩阵第i行第j列的数值,表示第j个卖家运输单位第k种货物到第i个买家的费用)</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/07/POJ-2516-Minimum-Cost-最小费用最大流/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/05/UOJ-117-欧拉回路-输出路径/" class="item-title">UOJ 117 欧拉回路(输出路径)</a>
-      
-      <time datetime="2019-08-05T08:03:01.000Z">
-        2019-08-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-题目链接：http://uoj.ac/problem/117
-
-Code 代码赏析#include &lt;set&gt;
-#include &lt;map&gt;
-#include &lt;stack&gt;
-#include &lt;queue&gt;
-#include &lt;ctime&gt;
-#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;bitset&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;sstream&gt;
-#include &lt;cstdlib&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-#include &lt;functional&gt;
-#define eps 1e-8
-#define PI acos(-1.0)
-#define ll long long
-using namesp -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>一张无向图(或有向图),找出(若能找出)欧拉回路并输出路径。可能有重边、自环。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/05/UOJ-117-欧拉回路-输出路径/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/05/A头文件/" class="item-title">头文件</a>
-      
-      <time datetime="2019-08-05T06:50:40.000Z">
-        2019-08-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- #include &lt;set&gt;
-#include &lt;map&gt;
-#include &lt;stack&gt;
-#include &lt;queue&gt;
-#include &lt;ctime&gt;
-#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;bitset&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;sstream&gt;
-#include &lt;cstdlib&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-#include &lt;functional&gt;
-#define eps 1e-8
-#define PI acos(-1.0)
-#define ll long long
-using namespace std;
-const int mod = 1e9 + 7;
-const in -->
-        <!-- </div> -->
-
-        
-        <pre><code class="lang-c++">#include &lt;set&gt;
-#include &lt;map&gt;
-#include &lt;stack&gt;
-#include &lt;queue&gt;
-#include &lt;ctime&gt;
-#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;bitset&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;sstream&gt;
-#include &lt;cstdlib&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-#include &lt;functional&gt;
-#define eps 1e-8
-#define PI acos(-1.0)
-#define ll long long
-using namespace std;
-const int mod = 1e9 + 7;
-const int INF = 0x3f3f3f3f;
-#define Close ios::sync_with_stdio(false);
-
-void Debug(char * s)
-{
-    cout &lt;&lt; &quot;-------------  &quot; &lt;&lt; s &lt;&lt; &quot;  -------------&quot; &lt;&lt; &#39;\n&#39;;
-}
-
-
-
-int main()
-{
-
-    return 0;
-}
-</code></pre>
-
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/05/A头文件/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/05/A看清本质/" class="item-title">看清本质</a>
-      
-      <time datetime="2019-08-05T02:38:58.000Z">
-        2019-08-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-
-不参与排序、不作为一个整体存于STL中的结构体是没有灵魂的，多个数组（同下标一组）可以代替
-BFS里对象类型为int的queue是没有灵魂的，数组+两个移动指针可以模拟
-单纯的map&lt;string, int&gt; mp在时间方面是没有灵魂的，哈希可以代替，另外字典树(哈希树的变种)也可以更好地代替
-
- -->
-        <!-- </div> -->
-
-        
-        <h2 id="一些本质性的东西"><a href="#一些本质性的东西" class="headerlink" title="一些本质性的东西"></a>一些本质性的东西</h2><blockquote>
-<p>被封装起来的高级的数据结构是具有囊括性的，能应付多方面的问题。但如果只是用他的某一面，很可能这一需求可以由更低级、更基础的数据结构实现，这时再去用那个高级的数据结构便是没有灵魂的，那个低级、基础的数据结构更快更高效</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/05/A看清本质/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/14/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/16/"> </a>
+        <a class="extend prev" rel="prev" href="/page/14/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/16/"> </a>
       </div>
 
     </div>
@@ -699,23 +662,23 @@ BFS里对象类型为int的queue是没有灵魂的，数组+两个移动指针�
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -727,7 +690,7 @@ BFS里对象类型为int的queue是没有灵魂的，数组+两个移动指针�
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/14/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/16/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/14/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="page-number current">15</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/16/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

@@ -112,6 +112,171 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/05/HDU-4009-Transfer-water-Minimun-tree-shape-graph/" class="item-title">HDU 4009 Transfer water(Minimun tree-shape graph)</a>
+      
+      <time datetime="2020-04-04T22:44:05.000Z">
+        2020-04-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+不难发现是一个不定根的题目 -&gt; 增加一个伪根。
+但是在建图时，“饮水”的边正常建立，“打井”如何处理？看似“自给自足”让人想到自环，可两者没什么关系，添自环不解决问题。
+而且对于独立点，即使不能生成最小树形图，也可以”打井”完成任务，这种情况如何求最小花费？
+
+Solution
+将伪根连向各点的边的权值设为该点打井花费！
+实现了“打井”与“引水”一视同仁，可计算最小花费。
+什么完美的建模思想！
+这跟之前做过的一道最短路相似，那题是“昂贵的聘礼”，给定了终点，也是不定根(起点任选)，求最短路。但是不仅边有权值，每个点也有权值，意味着从每个点出发的花费不同，这时建立超级源点连向各点的边的权值就应该设为各点权值！
+这是一类“不定根 &amp;&amp; 点有权值”的图论题目
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个房子搬到山上，要解决供水问题有两种方案：</p>
+<p>①自己打井，耗钱 (X * 房子高度)</p>
+<p>②从别家引水，耗钱 (Y * 两房子的曼哈顿距离)，如果源较低，再加一个水泵钱Z</p>
+<p>求解决所有房子供水问题的最小花费</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/05/HDU-4009-Transfer-water-Minimun-tree-shape-graph/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/04/04/HDU-2121-Ice-cream-s-world-II-Minimum-tree-shape-graph/" class="item-title">HDU 2121 Ice-cream&#39;s world II(Minimum tree-shape graph)</a>
+      
+      <time datetime="2020-04-04T12:27:14.000Z">
+        2020-04-04
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Anlyze
+增加一个超级节点”伪根“，连向每一个点。
+关于这些边的权值：
+①最初想的是像最短路题目似的，将超点连向各点的边的权值设为0，最后得出的最短路长度就直接是答案。后来想想不对，朱刘算法第一步找“最小入边集”，那样选出来的最小入边集就是这新增的N条边了。
+②所以为了不影响寻找正常的最小入边集，这新增的N条边的权值应该比最小入边集里所有边的长度都要大，假设最小入边集中最长边长度为X，那这N条新边权值要设为 &gt;= X的一个数。
+③那样做还要先求一遍最小入边集，干脆放大一下，找原图所有边中的最长边，设为Y，那么这N条新边的边权要 &gt;= Y;
+④还有个问题，我在求最小树形图时，用了两条“新边”（理论上应该只用一条：u=伪根，v=真根 の那条边），后期无法鉴别。而倘若我直接把“新边”边权设为sum(原图所有边的边权和)，最后答案小于2倍的sum才算真正找到了最小树形图。
+所以说N条新边的边权应 &gt;= sum，最后记得从答案里减掉一个新边边权。
+关于寻找“真根”：
+理论上来说，在选最小入边集时，我们记录了每个点的前驱，if(u == 伪根) 则v == 真根。但还要“缩点 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点(0~N-1)M条有向边，不定根(任意一点可选做根节点)求最小树形图</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/04/HDU-2121-Ice-cream-s-world-II-Minimum-tree-shape-graph/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/04/03/POJ-3164-Command-Network-Minimum-tree-shape-graph/" class="item-title">POJ 3164 Command Network(Minimum tree-shape graph)</a>
+      
+      <time datetime="2020-04-03T04:49:19.000Z">
+        2020-04-03
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 朱刘算法
+①选出入边集：找到除root点之外，每一个点的所有入边中权值最小的，用数组in[]记录下这个最小权值，用pre[]记录到达该点的前驱。判断是否存在无入边的点(除了root)，若有，则无法成树。
+②找有向环：倘若无环，则该入边集就是最小树形图，算法结束。
+若有环，说明未成树，做缩点前期工作：记下环上每个点所属环的标号。
+③缩点中期工作：将不属于环上的点“缩点”
+④缩点后期工作：更新缩点后的图中的边的权值。因为我们在过程中“误+”了环中某一边，此时要减掉。重复以上过程。
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 105;
+const int INF = 0x3f3f3f3f;
+
+int n, m, id[N], pre[N], vis[N];
+double x[N], y[N], in[N];
+
+ -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点M条有向边，求以1位根节点最小树形图(有向最小生成树)</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/03/POJ-3164-Command-Network-Minimum-tree-shape-graph/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/03/23/UVA-10600-ACM-Contest-and-Blackout-Second-MST/" class="item-title">UVA 10600 ACM Contest and Blackout(Second MST)</a>
+      
+      <time datetime="2020-03-23T10:12:35.000Z">
+        2020-03-23
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+设原图G(V, E)，最小生成树T(V1, E1)，现有边(u, v)∈G &amp;&amp; (u, v)∉T。u与v之间有唯一的一条路径，将这条路上若干段中最长的一段的长度存储在len[u][v]里，将边(u, v)加入到T中，u与v间形成了环，删掉len[u][v]对应那条边就是一颗准次小生成树了。
+遍历所有的非最小生成树内的边，求出相应的一个个准次小生成树，这里面最小的一个就是真正的次小生成树了。
+len[u][v]求解
+Prim：类似于DP的方法len[i][pos] = len[pos][i] = max(len[i][pre[pos]], low[pos]);
+Kruskal：有先天优势(边是按权值从小到大排序的，即：当前边的权值是当前已经出现的所有边中的最大值，此时用当前的边将两个集合连接，两集合内各取一点，他们之间路径上最大边就是当前边)len[ G[aa][i] ][ G[bb][j] ] = len[ G[bb][j] ][ G[aa][i] ] = w;
+
+Code of Prim#include &lt;cmath&gt;
+#include  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点M条边，求最小生成树与次小生成树</p>
+<p>（求生成树，说明边是无向边）</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/23/UVA-10600-ACM-Contest-and-Blackout-Second-MST/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/23/POJ-1177-Picture-Segment-Tree-Scanning-Lines/" class="item-title">POJ 1177 Picture(Segment Tree Scanning Lines)</a>
       
       <time datetime="2020-03-23T07:03:33.000Z">
@@ -403,232 +568,12 @@ Code#include &lt;cstdio&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/17/HDU-3974-Assign-the-task-DFS-Segment-Tree/" class="item-title">HDU 3974 Assign the task(DFS + Segment Tree)</a>
-      
-      <time datetime="2020-03-17T15:02:57.000Z">
-        2020-03-17
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- DFS序
-
-①能将树的上各点的“父子关系”体现出来
-②区间左端点是代表，左端点.val恰好能反应这个区间对应点的当前属性
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 50010;
-
-int n, m, pre[N], tot, in[N], out[N];
-bool vis[N];
-char s[10];
-
-int cnt, head[N];
-struct edge
-{
-    int v, nxt;
-}e[N];
-
-struct interval
-{
-    int L, R, val;
-}a[N &lt;&lt; 2 | 1];
-
-void init()
-{
-    cnt = tot = 0;
-    memset(head, -1, sizeof(head));
-    memset(pre, -1, sizeof(pre));
-    me -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点代表N个员工，形成一棵树，某点的父节点代表他的上司。公司分配任务时，若分配任务y给x，那么x的下属也会停止他们手头的任务来做任务y。</p>
-<p>分配任务、查询某人在做哪个任务。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/17/HDU-3974-Assign-the-task-DFS-Segment-Tree/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/17/HDU-1540-Tunnel-Warfare-Segment-Tree/" class="item-title">HDU 1540 Tunnel Warfare(Segment Tree)</a>
-      
-      <time datetime="2020-03-17T07:09:58.000Z">
-        2020-03-17
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-可以用 线段树 || 树状数组 || set 
-线段树：
-a[num].lmax：包含区间左端点的最大连续子区间长度
-a[num].rmax：包含区间右端点的最大连续子区间长度
-a[num].ans：本区间最大连续子区间长度（仅用于剪枝：==0 return）
-举例：
-query(int num, int t)
-int mid = (a[num].L + a[num].R) &gt;&gt; 1;
-if(t &lt;= mid)
-{
-    if(a[num &lt;&lt; 1].rmax &gt;= mid - t + 1)
-    {
-        ans += a[num &lt;&lt; 1].rmax + a[num &lt;&lt; 1 | 1].lmax;
-        return ;
-    }
-    else
-        query(num &lt;&lt; 1, t);
-}
-else
-
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream& -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点(1 ~ N)，M个操作</p>
-<p>D x 破坏点x</p>
-<p>Q x 查询与x直接或间接相连的点（包括x自身）</p>
-<p>R x 修复最近一次被破坏的点</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/17/HDU-1540-Tunnel-Warfare-Segment-Tree/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/17/HDU-4027-Can-you-answer-these-queries-Segment-tree/" class="item-title">HDU 4027 Can you answer these queries(Segment tree)</a>
-      
-      <time datetime="2020-03-17T03:21:59.000Z">
-        2020-03-17
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Something about Segment Tree
-线段树有initial、update、query三个函数
-initial函数用到了int mid = ( + ) &gt;&gt; 1;
-而流氓写法的update、query函数没有用到mid
-
-Analyze
-觉得这种题目的更新没办法lazy，区间更新只能换成暴力单点更新。
-此题的剪枝在于“算术平方根”，所给范围内的数字求8次以内次数的算术平方根就会变成1，现在拿一组变量纪录每个区间的最大值，若区间最大值是1，那么就没必要向下更新了。
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-#define ll long long
-const int N = 100005;
-
-ll n, k, ans, val[N];
-struct node
-{
-    ll L, R, sum, m -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出一个数字N，给出1到N这个N个数字的初值</p>
-<p>M个操作：</p>
-<ol>
-<li>更新x、y之间所有数字为他们的算术平方根</li>
-<li>查询x、y之间所有数字的和</li>
-</ol>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/17/HDU-4027-Can-you-answer-these-queries-Segment-tree/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/16/ZOJ-1610-Count-the-colors-Segment-tree/" class="item-title">ZOJ 1610 Count the colors(Segment tree)</a>
-      
-      <time datetime="2020-03-16T08:16:00.000Z">
-        2020-03-16
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-跟POJ有一道“贴海报”的题类似，只不过那题只求最终可以看到几种海报，这题还要统计段数。暴力单点查询，用一个last变量记录上一个点的颜色，若与现在这个点颜色不相同，那当前颜色段数++。更新last。
-
-Code#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 8005;
-
-int n, cnt[N], last = -1;
-struct interval
-{
-    int L, R, val;
-} a[N &lt;&lt; 2 | 1];
-
-void init(int num, int l, int r)
-{
-    a[num].L = l;
-    a[num].R = r;
-    a[num].val = -1;
-
-    if(l == r)
-        return ;
-
-    int  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给区间涂色（可遮挡），问最终可看到哪几种颜色，以及这几种颜色分别有几段？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/16/ZOJ-1610-Count-the-colors-Segment-tree/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/7/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/9/"> </a>
+        <a class="extend prev" rel="prev" href="/page/7/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/9/"> </a>
       </div>
 
     </div>
@@ -683,23 +628,23 @@ void init(int num, int l, int r)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -711,7 +656,7 @@ void init(int num, int l, int r)
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/7/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/9/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/7/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/9/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

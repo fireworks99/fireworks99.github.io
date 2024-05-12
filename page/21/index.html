@@ -112,6 +112,204 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/06/02/白书-初出茅庐-初级篇/" class="item-title">白书-初出茅庐-初级篇</a>
+      
+      <time datetime="2019-06-02T03:53:21.000Z">
+        2019-06-02
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- POJ 1852 Ants
+思维：俩蚂蚁碰头后回头走，在这一问题里等效于不回头
+
+//菜到窒息
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+
+
+int main()
+{
+    int t;
+    cin &gt;&gt; t;
+    while(t--)
+    {
+        int l, n, val, tem_first, first = 0, mmin = 0x3f3f3f3f, mmax = -1;
+        scanf(&quot;%d%d&quot;, &amp;l, &amp;n);
+        for(int i = 0; i &lt; n; ++i)
+        {
+            scanf(&quot;%d&quot;, &amp;val);
+            if(val &gt; mmax)
+                 -->
+        <!-- </div> -->
+
+        
+        <h1 id="白书《挑战程序设计竞赛》第2版-准备篇-初级篇"><a href="#白书《挑战程序设计竞赛》第2版-准备篇-初级篇" class="headerlink" title="白书《挑战程序设计竞赛》第2版 准备篇+初级篇"></a>白书《挑战程序设计竞赛》第2版 准备篇+初级篇</h1><blockquote>
+<p> 题目链接       <a href="https://cn.vjudge.net/article/426" target="_blank" rel="noopener">https://cn.vjudge.net/article/426</a></p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/06/02/白书-初出茅庐-初级篇/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/05/31/扩展欧几里得/" class="item-title">扩展欧几里得</a>
+      
+      <time datetime="2019-05-31T13:54:10.000Z">
+        2019-05-31
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Codeint extgcd(int a, int b,int &amp; x, int &amp; y)
+{
+    int d = a;
+    if(b != 0)
+    {
+        d = extgcd(b, a % b, y, x);
+        y -= (a / b) * x;
+    }
+    else  x = 1, y = 0;
+    return d;
+}
+
+对于方程ax + by = gcd(a, b)；我们设解为x1,  y1
+我们令a = b, b = a % b;
+得到方程bx + a % by = gcd(b， a % b);
+由欧几里得算法可以得到gcd(a, b) = gcd(b, a % b);
+代入可得：bx + a % b y = gcd(a, b)
+设此方程解为x2, y2；
+在计算机中我们知道： a % b = a - (a / b) * b;
+代入方程化解得：
+ay2 + b(x2 - (a / b) y2) = gcd(a, b);
+与ax1 + by1 = gcd(a, b) 联立，我们很容易得：
+
+x1 = y2, -->
+        <!-- </div> -->
+
+        
+        <h1 id="扩展欧几里得"><a href="#扩展欧几里得" class="headerlink" title="扩展欧几里得"></a>扩展欧几里得</h1><blockquote>
+<p>扩展欧几里德算法是用来在已知a, b求解一组x，y，使它们满足贝祖等式： ax+by = gcd(a, b) =d（解一定存在，根据数论中的相关定理）。扩展欧几里德常用在求解模线性方程及方程组中。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/05/31/扩展欧几里得/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/05/31/SDNUOJ-1539-恰当选择DP对象/" class="item-title">SDNUOJ 1539 恰当选择DP对象</a>
+      
+      <time datetime="2019-05-31T10:18:56.000Z">
+        2019-05-31
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+
+01背包选择价值作为DP对象，详见小白书Page61
+
+
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int INF = 0x3f3f3f3f;
+int dp[505][5005];
+int w[505], v[505];
+int N, W;
+
+int main()
+{
+    int t;
+    cin &gt;&gt; t;
+    while(t--)
+    {
+        scanf(&quot;%d%d&quot;, &amp;N, &amp;W);
+        for(int i = 1; i &lt;= N; ++i)
+            scanf(&quot;%d%d&quot;, &amp;w[i], &amp;v[i]);
+        memset(dp, INF, sizeof(dp));
+        dp[0][0] = -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>T组输入样例</p>
+<p>N个物品，W最大承重</p>
+<p>每个物品都有对应的w[i], v[i]</p>
+<p>求总重不超W时最大价值V</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/05/31/SDNUOJ-1539-恰当选择DP对象/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/05/30/Codeforces-B-Arpa-s-weak-amphitheater-and-Mehrdad-s/" class="item-title">Codeforces B.Arpa&#39;s weak amphitheater and Mehrdad&#39;s ...</a>
+      
+      <time datetime="2019-05-30T12:57:41.000Z">
+        2019-05-30
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- http://codeforces.com/problemset/problem/741/B
+思路
+题目有个关于两个人属于同一朋友圈的叙述：
+Two Hoses x and y are in the same friendship group if and only if there is a sequence of Hoses a1, a2, …, ak such that ai and ai + 1 are friends for each 1 ≤ i &lt; k, and a1 = x and ak = y.
+AB、BC属于同一个圈，则AC属于同一个圈
+AB、BC、CD属于同一个圈，则AD属于同一个圈
+仔细想想其实就是个并查集 
+选一个或‘全都要’：
+将’全都要‘等效成新的‘一个’，即将‘特殊’一般化
+接下来背包DP，不过我没看出来‘每组只取一个’体现在哪？重量循环在外层？可以问问师哥
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring& -->
+        <!-- </div> -->
+
+        
+        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><blockquote>
+<p>n人分属不同的朋友圈，这些人都有自己的体重w与美丽度b，他们之间有m个关系描述（是朋友）。有一个舞台最大承重w，从每个朋友圈中选一个人或全选，在不超重前提下选美丽度最大的情况。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/05/30/Codeforces-B-Arpa-s-weak-amphitheater-and-Mehrdad-s/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/05/28/Codeforces-B-Eugeny-and-Play-List/" class="item-title">Codeforces B.Eugeny and Play List</a>
       
       <time datetime="2019-05-28T13:22:08.000Z">
@@ -414,211 +612,12 @@ if(i != m - 1)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/05/15/浪潮杯第十届山东省大学生ACM程序设计竞赛/" class="item-title">浪潮杯第十届山东省大学生ACM程序设计竞赛</a>
-      
-      <time datetime="2019-05-15T00:04:18.000Z">
-        2019-05-15
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 总结
-一看日期计算 —&gt; 形成思维定式：不就是求两个日期差 % 5吗！
-后来各种错：
-
-% 5 之后对应数字为0~4，要搞清楚其对应周几
-封榜后发现与年份无关，一年是那固定的360天，% 5 == 0
-赛后再想想与月份都无关，一个月是那固定的30天， % 5 == 0
-
-所以，题目给出一个新事物（或是旧事物的变式），一定要先找其运行规律，总结特点，抓住特点去做，不要因着急而盲目去做。一个人在敲这个题时，另外两人不仅要思考这方法是否正确、细节是否都注意到了、特判做到了，还要想想是否有更简单的方法，因为更简单的方法一定是更优的，是更能体现参赛者水平的，是出题人想看到的。
-
-Code#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-using namespace std;
-
-int main()
-{
-    int t;
-    scanf(&quot;%d&quot;, &amp;t);
-    map&lt;int, string&gt; mp;
-    mp[1] = &quot;Mond -->
-        <!-- </div> -->
-
-        
-        <p><strong><a href="http://acm.zju.edu.cn/onlinejudge/showProblems.do?contestId=1&pageNumber=32" style="color:violet;" target="_blank" rel="noopener">ZOJ题目总链接（4113~4125）</a></strong>  </p>
-<h1 id="A-Calander"><a href="#A-Calander" class="headerlink" title="A.Calander"></a>A.Calander</h1><blockquote>
-<p>给出一个新的日期计算方法，一周五天（周一至周五），一月6个周（30天），一年有这样的十二个月，给出一个日期及其星期，另给出一个日期，求出星期</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/05/15/浪潮杯第十届山东省大学生ACM程序设计竞赛/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/05/13/Hexo-博客跳过渲染，创建自定义网页/" class="item-title">Hexo 博客跳过渲染，创建自定义网页</a>
-      
-      <time datetime="2019-05-13T01:31:58.000Z">
-        2019-05-13
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 自定义网页
-页可以是自己编写的，也可以是别人现成的源码。 网页编写完成后，在 Hexo\source 目录下创建一个文件夹，文件夹名称任意，将 Html 文件放置于此文件夹，并重命名为 index.html 。 
-
-方法一
-在html文件中添加跳过渲染指令：
-用编辑器打开 Hexo\source 创建的文件夹中的 index.html 文件，在开头添加如下代码即可
-
----
-layout: false
----
-
-
-添加该指令后，执行 hexo g 命令时便会跳过该 index.html 文件，使得 index.html 不受当前 hexo 主题影响，完全是一个独立的网页。
-如果网页引用了 css 或 js ，这些 css 和 js 必须使用外链。
-如果引用图片，可以在网页目录下建立 img 文件夹，可以直接引用图片，不必再去创建外链。
-
-方法二
-使用编辑器打开 Hexo 目录下的_config.yml 文件，找到 skip_render
-skip_render 一般有以下四种常用参数：
-
-跳过source目录下的 test.html: skip_render: test.html 
-
- -->
-        <!-- </div> -->
-
-        
-        <blockquote>
-<p>Hexo 博客中所见文章都是经由渲染的静态网页，而静态网页的样式都直接由 Hexo 的主题控制，所以 Hexo 博客大部分都呈现出一种高度的统一化与规范化。不过 Hexo 提供了跳过渲染功能，使得我们可以直接在博客中放入自定义网页。比如在博客中放入图片、自定义 404.html 、自定义 About 页面等。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/05/13/Hexo-博客跳过渲染，创建自定义网页/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/05/08/日期模拟/" class="item-title">日期模拟</a>
-      
-      <time datetime="2019-05-08T14:10:56.000Z">
-        2019-05-08
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-cal_first_year(int y, int m, int d)今天（包括在内）到年底的天数
-cal_last_year(int y, int m, int d)年初至今（包括在内）的天数
-cal_only_one_year(5个形参)同年内两日期间天数（闭区间）
-
-#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-using namespace std;
-
-int num[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-
-bool judge(int y)
-{
-    if((y % 4 == 0 &amp;&amp; y % 100 != 0) || y % 400 == 0)
-        return 1;
-    return 0;
-}
-
-int cal_first_year(int y, int m, int d)///including this day
-{
-    int ans = 0;
-    for(int i = m + 1; i &lt -->
-        <!-- </div> -->
-
-        
-        <blockquote>
-<p>时常遇到计算两年间有多少天的日期模拟题，在这里整理一下模板</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/05/08/日期模拟/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/05/08/POJ-2018-Best-Cow-Fences/" class="item-title">POJ 2018 Best Cow Fences</a>
-      
-      <time datetime="2019-05-08T10:06:48.000Z">
-        2019-05-08
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接
-二分第一次
-因为涉及”连续项的和“，所以用前缀和维护
-bool judge(mid) 遍历所有方案，若有均值 &gt;= mid 则return 1
-但我只考虑了圈起k个农场的情况，忽略了 &gt; k方案，WA
-
-#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-using namespace std;
-
-int n, k;
-double a[100010];
-double sum[100010];
-
-bool judge(double ans)
-{
-    for(int i = k; i &lt;= n; ++i)
-        if(sum[i] - sum[i - k] &gt; ans * k)
-            return 1;
-    return 0;
-}
-
-int main()
-{
-    scanf(&quot;%d%d&quot;, &amp;n, &amp;k);
-    for(int i = 1; i &lt;= n; ++i)
-    {
-        scanf(&quot;%lf -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N, K: 有n个农场，每个农场有不同数目的牧场，圈起不少于K个农场，用其牧场数 / 农场数 * 1000求最大值</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/05/08/POJ-2018-Best-Cow-Fences/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/20/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/22/"> </a>
+        <a class="extend prev" rel="prev" href="/page/20/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/22/"> </a>
       </div>
 
     </div>
@@ -673,23 +672,23 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -701,7 +700,7 @@ int main()
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/20/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/22/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/20/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="page-number current">21</span><a class="page-number" href="/page/22/">22</a><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/22/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

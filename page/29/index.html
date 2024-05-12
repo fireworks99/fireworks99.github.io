@@ -112,6 +112,227 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/05/组合数/" class="item-title">组合数与第二类斯特林数</a>
+      
+      <time datetime="2019-03-05T12:52:22.000Z">
+        2019-03-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+
+Code(存于数组)long long c[105][105];
+void combine_init()
+{
+    memset(c, 0, sizeof(c));
+    c[0][0] = 1;
+    for(int i = 1; i &lt;= 105; ++i)
+    {
+        c[i][0] = c[i][i] = 1;
+        c[i][1] = i;
+        for(int j = 1; j &lt; i; ++j)
+            if(c[i][j] == 0)
+                c[i][j] = (c[i - 1][j] + c[i - 1][j - 1]);/// % mod
+    }
+}
+
+Code（连乘连除）long long violent_combine(long long n,long long m)
+{
+    if(m &lt; n - m)
+        m = n - m;///取个较大值
+    long long ans = 1;
+    for(long long i = m  -->
+        <!-- </div> -->
+
+        
+        <h3 id="求解组合数-C（n，m）"><a href="#求解组合数-C（n，m）" class="headerlink" title="求解组合数 C（n，m）"></a>求解组合数 C（n，m）</h3><blockquote>
+<p>暂时有三种方法：</p>
+<p>1.存在数组里递归求解</p>
+<p>2.较为生猛地求解（连乘连除）</p>
+<p>3.改良版（乘一次除一次）</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/05/组合数/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/05/SDNUOJ-1089-拓扑排序/" class="item-title">SDNUOJ 1089 拓扑排序</a>
+      
+      <time datetime="2019-03-05T11:08:50.000Z">
+        2019-03-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Output
+若存在环，输出IMPOSABLE，否则输出一行用一个空格隔开的拓扑排序的结果，若存在多个结果，输出字典序最小的。 
+
+Sample Input(自写)5 3
+2 5
+2 4
+1 3
+4 4
+1 2
+2 3
+3 4
+4 1
+
+Sample Output
+1 2 3 4 5
+IMPOSABLE
+
+做题过程
+
+原来的判环与输出结果都没问题，但要输出字典序最小的！我想了个办法：
+邻接表存的时候按顺序放:
+
+            cin &gt;&gt; a &gt;&gt; b;
+            v[a].insert(lower_bound(v[a].begin(), v[a].end(), b), b);
+
+
+但TLE了
+用priority_queue一点点存：
+RE了：
+把模板搬过来没改数据范围，改完了交上
+WA了：
+对拍发现：有环时输出IMPOSABLE(可实施的、可强制的)而不是IMPOSSIBLE(不可能的)
+最后AC了。
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;vec -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给定一个有向图，若图无环，则将其进行拓扑排序并输出，否则输出IMPOSABLE。 </p>
+</blockquote>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><blockquote>
+<p>第一行为两个整数n(1&lt;=n&lt;=1000)、m(1&lt;=m&lt;=100000)； 之后m行，每行两个整数a、b(0 &lt; a, b &lt;= n)表示一条从a到b的有向边。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/05/SDNUOJ-1089-拓扑排序/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/04/SDNUOJ-1223-Tom-s-problem-A/" class="item-title">SDNUOJ 1223 Tom&#39;s problem A</a>
+      
+      <time datetime="2019-03-04T13:50:33.000Z">
+        2019-03-04
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+Tom in the first city,the girl in the city n;
+
+Input
+The fist line is m,n;
+Next m lines is a,b,c (a,b is the name of city , c is the time you cost from city a to city b)
+
+Output
+The shortest time to reach the girl’s city
+(if tom return to the past ,out IMPOSSIBLE!)
+
+Sample Input1 2
+1 2 10
+3 4
+1 2 10
+2 3 10
+3 4 -5
+Sample Output10
+IMPOSSIBLE!
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>In the future ,One day, tom feel so happy ,because he have a date with a girl,but they don’t live in the same city , so tom want you help him find the fastest way to the girl’s city,You should note that with the development of technology, transport can go beyond the speed of light, so the time you spend would be less than zero, but if you return to the past you can not have the date with the girl,there n(1&lt;n&lt;=100) city in this country and three are m(1&lt;m&lt;1000) roads in this country;</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/04/SDNUOJ-1223-Tom-s-problem-A/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/04/素数筛/" class="item-title">素数筛</a>
+      
+      <time datetime="2019-03-04T12:46:06.000Z">
+        2019-03-04
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+
+埃氏筛void get_prime(long long n)
+{
+    tot = 0;
+    memset(is, 1, sizeof(is));///bool类型数组全部初始化为1（默认全为质数）
+    is[0] = is[1] = 0;///0、1不是质数，单列
+    for(int i = 2; i &lt;= n; ++i)///遍历数组
+    {
+        if(is[i])///若此数未被标为0，则其未被前面质数筛掉，属于质数，用它去筛后面的数
+        {
+            pri[++tot] = i;///（1）将此数存于质数数组            pri[0]里没存数字
+            for(int j = i + i; j &lt;= n; j += i)///（2）从其2倍开始筛
+            {
+                is[j] = 0;
+            }
+        }
+    }
+}
+
+线性筛每个合数仅被它的最小质因子筛过，且为一次
+void prime(int n)
+{
+ -->
+        <!-- </div> -->
+
+        
+        <h3 id="筛法求素数"><a href="#筛法求素数" class="headerlink" title="筛法求素数"></a>筛法求素数</h3><blockquote>
+<p>用筛法求素数的基本思想是:把从1开始的、某一范围内的正整数从小到大顺序排列， 1不是素数，首先把它筛掉。剩下的数中选择最小的数是素数，然后去掉它的倍数。依次类推，直到筛子为空时结束。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/04/素数筛/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/04/spfa算法/" class="item-title">spfa算法</a>
       
       <time datetime="2019-03-04T04:21:40.000Z">
@@ -363,169 +584,12 @@ void my_merge(int -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/02/POJ-2299-Ultra-QuickSort/" class="item-title">POJ 2299  Ultra-QuickSort</a>
-      
-      <time datetime="2019-03-02T04:30:09.000Z">
-        2019-03-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接 http://poj.org/problem?id=2299
-
- Ultra-QuickSort produces the output  0 1 4 5 9 . Your task is to determine how many swap operations Ultra-QuickSort needs to perform in order to sort a given input sequence. 
-
-Input
-The input contains several test cases. Every test case begins with a line that contains a single integer n &lt; 500,000 — the length of the input sequence. Each of the the following n lines contains a single integer 0 ≤ a[i] ≤ 999,999,999, the i-th input sequence element. Input i -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>In this problem, you have to analyze a particular sorting algorithm. The algorithm processes a sequence of n distinct integers by swapping two adjacent sequence elements until the sequence is sorted in ascending order. For the input sequence  9 1 0 5 4 ,</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/02/POJ-2299-Ultra-QuickSort/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/02/POJ-2528-Mayor-s-posters/" class="item-title">POJ 2528 Mayor&#39;s posters</a>
-      
-      <time datetime="2019-03-02T00:06:31.000Z">
-        2019-03-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接 http://poj.org/problem?id=2528
-
-Every candidate can place exactly one poster on the wall. 
-All posters are of the same height equal to the height of the wall; the width of a poster can be any integer number of bytes (byte is the unit of length in Bytetown). 
-The wall is divided into segments and the width of each segment is one byte. 
-Each poster must completely cover a contiguous number of wall segments.
-
-Input
-The first line of input contains a number c giving the number of cases that fol -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>The citizens of Bytetown, AB, could not stand that the candidates in the mayoral election campaign have been placing their electoral posters at all places at their whim. The city council has finally decided to build an electoral wall for placing the posters and introduce the following rules:  </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/02/POJ-2528-Mayor-s-posters/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/01/离散化-线段树-HDU-5124/" class="item-title">离散化 线段树 HDU 5124</a>
-      
-      <time datetime="2019-03-01T04:26:19.000Z">
-        2019-03-01
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 更多关于离散化 https://blog.csdn.net/xiangaccepted/article/details/73276826 
-Description
-John has several lines. The lines are covered on the X  axis. Let A is a point which is covered by the most lines. John wants to know  how many lines cover A.
-
-题目链接： http://acm.hdu.edu.cn/showproblem.php?pid=5124
-Input
-The first line contains a single integer (the data for  less than 11 cases),indicating the number of test cases.Each test case begins with an integer ,indicating the number of lines.Next N lines cont -->
-        <!-- </div> -->
-
-        
-        <h3 id="关于离散化"><a href="#关于离散化" class="headerlink" title="关于离散化"></a>关于离散化</h3><blockquote>
-<p>离散化是什么：一些数字，他们的范围很大（0-1e9），但是个数不算多（1-1e5），并且这些数本身的数字大小不重要，重要的是这些数字之间的相对大小（比如说某个数字是这些数字中的第几小，而与这个数字本身大小没有关系，要的是相对大小）（6 8 9 4 离散化后即为 2 3 4 1）（要理解相对大小的意思）（6在这4个数字中排第二小，那么就把6离散化成2，与数字6本身没有关系， 8,9,4亦是如此）</p>
-</blockquote>
-<p><del>我个人觉得“离散化”根据其功能明明应该命名为“聚敛化”</del></p>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/01/离散化-线段树-HDU-5124/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/02/28/线段树-HDU-1556/" class="item-title">线段树 HDU 1556 Color the ball</a>
-      
-      <time datetime="2019-02-28T12:25:36.000Z">
-        2019-02-28
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-Description
-N个气球排成一排，从左到右依次编号为1,2,3….N.每次给定2个整数a b(a &lt;= b),lele便为骑上他的“小飞鸽”牌电动车从气球a开始到气球b依次给每个气球涂一次颜色。但是N次以后lele已经忘记了第I个气球已经涂过几次颜色了，你能帮他算出每个气球被涂过几次颜色吗？
-
-Input
-每个测试实例第一行为一个整数N,(N &lt;= 100000).接下来的N行，每行包括2个整数a b(1 &lt;= a &lt;= b &lt;= N)。  当N = 0，输入结束。 
-
-Output
-每个测试实例输出一行，包括N个整数，第I个数代表第I个气球总共被涂色的次数。 
-
-Sample Input3
-1 1
-2 2
-3 3
-3
-1 1
-1 2
-1 3
-0
-Sample Output
-1 1 1
-3 2 1
-
-啥也不说了，都在酒里， 都在代码里。
-Code#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const int N = 100005;
-
-struct n -->
-        <!-- </div> -->
-
-        
-        <h3 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h3><blockquote>
-<p>擅长处理区间，可以快速的查找某一个节点在若干条线段中出现的次数，时间复杂度为O(logN)。而未优化的空间复杂度为2N，实际应用时一般还要开4N的数组以免越界，因此有时需要离散化让空间压缩。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/02/28/线段树-HDU-1556/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/28/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/30/"> </a>
+        <a class="extend prev" rel="prev" href="/page/28/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/30/"> </a>
       </div>
 
     </div>
@@ -580,23 +644,23 @@ struct n -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -608,7 +672,7 @@ struct n -->
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/28/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/30/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/28/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/30/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

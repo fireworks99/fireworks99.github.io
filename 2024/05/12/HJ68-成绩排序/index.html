@@ -6,7 +6,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Archives: 2024 [ 市井烟火气 ]</title>
+	<title>HJ68 成绩排序 [ 市井烟火气 ]</title>
 	
 	
 	<!-- stylesheets list from _config.yml -->
@@ -102,77 +102,97 @@
 			<div id="content-inner">
 
 				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>HJ68 成绩排序</h1>
+			<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>给定一些同学的信息（名字，成绩）序列，请你将他们的信息按照成绩从高到低或从低到高的排列，相同成绩都按先录入排列在前的规则处理。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>jack   70<br>peter   96<br>Tom    70<br>smith   67</p>
+<p>从高到低 成绩<br>peter   96<br>jack   70<br>Tom    70<br>smith   67</p>
+<p>从低到高</p>
+<p>smith   67<br>jack   70<br>Tom    70<br>peter   96</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>结构体排序 + stable_sort</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+struct Student
+{
+    string name;
+    int score;
+};
+
+bool cmp_0(Student a, Student b) {
+    return a.score &gt; b.score;
+}
+
+bool cpm_1(Student a, Student b) {
+    return a.score &lt; b.score;
+}
 
 
+int main() {
+    freopen(&quot;00input.txt&quot;, &quot;r&quot;, stdin);
+    int n;
+    Student s[205];
+    while (cin &gt;&gt; n)
+    {
+        int kind;
+        cin &gt;&gt; kind;
+        for(int i = 0; i &lt; n; ++i)
+        {
+            cin &gt;&gt; s[i].name;
+            cin &gt;&gt; s[i].score;
+        }
+        stable_sort(s, s + n, kind ? cpm_1 : cmp_0);
+        for(int i = 0; i &lt; n; ++i)
+        {
+            cout &lt;&lt; s[i].name &lt;&lt; &#39; &#39; &lt;&lt; s[i].score &lt;&lt; &#39;\n&#39;;
+        }
+    }
 
+    return 0;
+}
+</code></pre>
 
-<div id="archive-details">
+		</div>
 
-  <h1>undefined/2024</h1>
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
 
-  
-  <div class="archive-item">
-    <a href="/2024/05/09/HJ28-素数伴侣/">
-      HJ28 素数伴侣
-    </a>
-    <time datetime="2024-05-09T13:12:59.000Z">
-      2024-05-09
-    </time>
-  </div>
-  
-  <div class="archive-item">
-    <a href="/2024/04/12/Modular/">
-      Modular
-    </a>
-    <time datetime="2024-04-12T10:21:57.000Z">
-      2024-04-12
-    </time>
-  </div>
-  
-  <div class="archive-item">
-    <a href="/2024/04/12/Engineering/">
-      Engineering
-    </a>
-    <time datetime="2024-04-12T10:21:34.000Z">
-      2024-04-12
-    </time>
-  </div>
-  
-  <div class="archive-item">
-    <a href="/2024/04/12/Async-invoke/">
-      Async invoke
-    </a>
-    <time datetime="2024-04-12T10:17:01.000Z">
-      2024-04-12
-    </time>
-  </div>
-  
-  <div class="archive-item">
-    <a href="/2024/04/12/Mainstream-Layout/">
-      Mainstream Layout
-    </a>
-    <time datetime="2024-04-12T09:36:04.000Z">
-      2024-04-12
-    </time>
-  </div>
-  
-  <div class="archive-item">
-    <a href="/2024/04/12/Multi-terminal-Adaptation/">
-      Multi-terminal Adaptation
-    </a>
-    <time datetime="2024-04-12T09:27:56.000Z">
-      2024-04-12
-    </time>
-  </div>
-  
+       if (typeof LivereTower === 'function') { return; }
 
-  <div id="other-paginator">
-    <a class="extend prev" rel="prev" href="/archives/2024/"> </a><a class="page-number" href="/archives/2024/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2024/page/3/">3</a><a class="extend next" rel="next" href="/archives/2024/page/3/"> </a>
-  </div>
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
 
 </div>
 
-
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
 
 
 			</div>

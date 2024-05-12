@@ -112,6 +112,203 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/22/洛谷-p1494-小Z的袜子/" class="item-title">洛谷 p1494 小Z的袜子</a>
+      
+      <time datetime="2019-07-22T03:36:26.000Z">
+        2019-07-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 莫队算法
+学习一个算法，除了理解它的原理之外，要清楚它的特点，以此来思考适合解决何种问题
+莫队算法：区间各元素属性和（累积）查询问题
+
+此题更新操作
+分母就是n * n - n(表示两两袜子之间的随机组合)，分子是一个累加和 - n，累加的内容是该区间内每种颜色i出现次数sum[i]的平方
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#define ll long long
+using namespace std;
+const int N = 50010;
+
+int n, m;///n个元素,m个询问;
+int num, bel[N];///分块个数，每块标号
+int a[N], sum[N];///元素值与其在相应区间上出现次数
+ll ans;///当前区间查询所得答案
+
+struct edge
+{
+    int l, r, id;
+    ll fro, bac;
+} -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>详见链接: <a href="https://www.luogu.org/problemnew/show/P1494" target="_blank" rel="noopener">https://www.luogu.org/problemnew/show/P1494</a></p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/22/洛谷-p1494-小Z的袜子/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/07/22/洛谷-P2709-小B的询问-分块莫队/" class="item-title">洛谷 P2709 小B的询问(分块莫队)</a>
+      
+      <time datetime="2019-07-22T02:38:20.000Z">
+        2019-07-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 步骤：
+①.输入元素并分块(注意下标从1开始)
+②.输入查询区间，记下id，并排序(cmp)
+③.移动指针更新所查询区间
+④.排回原序并输出答案(cmp_id)
+
+关键
+推导出区间中增减一个元素后答案的变化
+
+算法标志
+四个while
+
+Description
+小B有一个序列，包含N个1~K之间的整数。他一共有M个询问，每个询问给定一个区间[L..R]，求Sigma(c(i)^2)的值,其中i的值从1到K，其中c(i)表示数字i在[L..R]中的重复次数。小B请你帮助他回答询问。 
+题目链接： https://www.luogu.org/problemnew/show/P2709
+
+关于update函数
+莫队算法解决的多为累加和问题，区间更新步骤：
+1.减去原来的答案
+2.更新
+3.加上更新后的答案
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#define ll long -->
+        <!-- </div> -->
+
+        
+        <h2 id="莫队算法"><a href="#莫队算法" class="headerlink" title="莫队算法"></a>莫队算法</h2><blockquote>
+<p>首先，这是一个离线算法</p>
+<p>何为“离线”？</p>
+<p>是指主方独自运转，主方与外界没有任何交互，也就是说运转时不接受外界的信号(自然没有一一对应的反馈)——非即时反馈。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/22/洛谷-P2709-小B的询问-分块莫队/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/07/20/HDU-1848-Fibonacci-again-and-again/" class="item-title">HDU 1848 Fibonacci again and again</a>
+      
+      <time datetime="2019-07-20T12:42:24.000Z">
+        2019-07-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+题目链接 : http://acm.hdu.edu.cn/showproblem.php?pid=1848
+
+Analyze
+游戏和的SG函数等于各个游戏SG函数的Nim和 
+
+SG函数
+首先定义mex(minimal excludant)运算，这是施加于一个集合的运算，表示最小的不属于这个集合的非负整数。例如mex{0,1,2,4}=3、mex{2,3,5}=0、mex{}=0。
+对于任意状态 x ， 定义 SG(x) = mex(S), 其中 S 是 x 后继状态的SG函数值的集合。
+如 x 有三个后继状态分别为 SG(a),SG(b),SG(c)，那么SG(x) = mex{SG(a),SG(b),SG(c)}。
+这样集合S的终态必然是空集，所以SG函数的终态为 SG(x) = 0,当且仅当 x 为必败点P时。
+步骤：
+1、使用 数组f 将 可改变当前状态 的方式记录下来。
+2、然后我们使用 另一个数组 将当前状态x 的后继状态标记。
+3、最后模拟mex运算，也就是我们在标记值中 搜索 未被标记值 的最小值，将其赋值给SG(x)。
+4、我们不断的重复 2 - 3 的步骤，就完成 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>三堆石子，任取F[i]（斐波那契数）个，取光为胜</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/20/HDU-1848-Fibonacci-again-and-again/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/07/20/银联高校极客挑战赛-初赛-第一场/" class="item-title">银联高校极客挑战赛 初赛 第一场</a>
+      
+      <time datetime="2019-07-20T07:10:58.000Z">
+        2019-07-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 这题的坑跟今年山东省赛（ACM）C题相同
+看题目描述最后一句话：在这M个赛季过程中，最高净胜场是多少？
+是过程中，而不是整个赛季结束后！
+若完成一个循环形式呈“盈利式”，则最佳状态取在首场“单位循环最佳收益”完成后
+若完成一个循环形式呈“亏损式”，则最佳状态取在末场”单位循环最佳收益”完成后
+关于“单位循环最佳收益”best：
+如  +1 +1 +1 -1 -1 -1 + 2 -1
+best取3，取在第三位后，而非第七位(+2)后
+而“单位循环固定收益”basis为 1
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define ll long long
+
+int main()
+{
+    ll t, n, k, ck, m, cnt, num, num_max;
+    char c -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p><img src="https://i.loli.net/2019/07/20/5d32bf45af9fe36355.png" alt="Description"></p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/20/银联高校极客挑战赛-初赛-第一场/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/20/HDU-1850-Being-a-Good-Boy-in-Spring/" class="item-title">HDU 1850 Being a Good Boy in Spring</a>
       
       <time datetime="2019-07-20T02:46:26.000Z">
@@ -416,221 +613,12 @@ Application example
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/18/关于-int128/" class="item-title">关于__int128</a>
-      
-      <time datetime="2019-07-18T11:11:17.000Z">
-        2019-07-18
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 大小#include &lt;iostream&gt;
-using namespace std;
-
-int main() {
-    // your code goes here
-    cout &lt;&lt; sizeof(int) &lt;&lt; &#39;\n&#39;;
-    cout &lt;&lt; sizeof(long long) &lt;&lt; &#39;\n&#39;;
-    cout &lt;&lt; sizeof(long double) &lt;&lt; &#39;\n&#39;;
-    cout &lt;&lt; sizeof(__int128) &lt;&lt; &#39;\n&#39;;
-    return 0;
-}
-
-
-Output:
-4  =  21 4748 3647
-8  ≈  9.2233720368548 * 10 ^ 18 
-16  ≈  1.7014118346047 * 10 ^ 38 
-16  ≈  1.7014118346047 * 10 ^ 38 
-
-输入输出需自己写函数Code of Inputvoid scan -->
-        <!-- </div> -->
-
-        
-        <h2 id="int128"><a href="#int128" class="headerlink" title="__int128"></a>__int128</h2><blockquote>
-<p>编译器的gcc不支持这种数据类型，在codeblocks/Dev C++中无法编译</p>
-<p>推荐在线编辑器 ：<a href="http://ideone.com/" target="_blank" rel="noopener">http://ideone.com/</a></p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/18/关于-int128/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/18/POJ-2718-Smallest-Difference/" class="item-title">POJ 2718 Smallest Difference</a>
-      
-      <time datetime="2019-07-18T07:00:21.000Z">
-        2019-07-18
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 注意点
-
-若有0，则0必须用上
-我之前认为，划分123时要划分成12、3与1、23，后来发现next_permutation会产生一个231，他划分可出23、1就是前面的1 、23
-
-
-Code#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-
-int main()
-{
-    int t;
-    cin &gt;&gt; t;
-    while(t--)
-    {
-        int a[12];
-        int cnt = 0;
-        char ch;
-        while(1)
-        {
-            scanf(&quot;%d%c&quot;, &amp;a[cnt++], &amp;ch);
-            if(ch == &#39;\n&#39;)
-                break;
-        }
-        int ans = 0x3f3f3 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出不重复的几个数字，将他们分成两部分，组成两个数字，求所有情况中差值最小时的差值</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/18/POJ-2718-Smallest-Difference/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/18/博弈/" class="item-title">博弈</a>
-      
-      <time datetime="2019-07-18T00:07:51.000Z">
-        2019-07-18
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 分析
-若n = m + 1,先手必败——结论①
--&gt;若n = k  (m + 1)，第二个人有可以使物品最终变为(m + 1)的办法，先手必败*——结论②
--&gt;若n = k  (m + 1) + r,先手拿走r个，由结论②得后手必败、先手必胜*——结论③
-
-Codebool Bash_Game(int n, int m)
-{
-    if(n % (m + 1) != 0)
-        return 1;
-    return 0;
-}
-
-
-若有n堆，每堆a[i]个物品，两人来取，如何判断？
-先考虑取的最大数目无上限即可以把一堆全部取完的情形：
-
-一堆，无论数目多少，先手必胜
-
-两堆，从最简单的情况开始考虑：
-1 、1时，后手必胜
-1、n时，先手取走(n - 1)，变成上述情况，先手必胜
-a 、b时(a &gt;= 2 &amp;&amp; b &gt;= 2)
-若先手取走其中一堆会输
-若先手取完变成1、n也会输（最终谁取完后局面为1、n谁就输了）
-所以要保证先手取完还是c、b或a、d
-
-N堆，也是：最终谁取完后局面变为1、n谁就输了
-
-
-
-尼姆博弈（Nimm Game -->
-        <!-- </div> -->
-
-        
-        <h1 id="巴什博弈（Bash-Game）"><a href="#巴什博弈（Bash-Game）" class="headerlink" title="巴什博弈（Bash Game）"></a>巴什博弈（Bash Game）</h1><blockquote>
-<p>一堆n个物品，两人轮流取出（1~m）个，最终取完者胜出</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/18/博弈/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/17/python-读写csv文件/" class="item-title">python 读写csv文件</a>
-      
-      <time datetime="2019-07-17T11:41:22.000Z">
-        2019-07-17
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-原始资料文件
-
-
-Code&#39;&#39;&#39;
-pycharm里，写完了暂时没有用到的东西会显示为灰色
-就像eclipse似的，写出来暂时没用到的东西会有标注
-&#39;&#39;&#39;
-import csv
-
-data_path = &#39;./train.csv&#39;
-
-def run_main():
-
-    pclass_dict = {}
-    gender_dict = {}
-    age_dict = {}
-    sibsp_dict = {}
-    parch_dict = {}
-    fare_dict = {}
-    embarked_dict = {}
-
-    with open(data_path, &#39;r&#39;, newline=&#39;&#39;) as csvfile:
-        rows = csv.reader(csvfile)
-        for i, row in enumerate(rows):
-            if i == 0:
-                continue -->
-        <!-- </div> -->
-
-        
-        <h3 id="Python读取csv文件统计数据写入新的csv文件"><a href="#Python读取csv文件统计数据写入新的csv文件" class="headerlink" title="Python读取csv文件统计数据写入新的csv文件"></a>Python读取csv文件统计数据写入新的csv文件</h3>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/17/python-读写csv文件/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/17/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/19/"> </a>
+        <a class="extend prev" rel="prev" href="/page/17/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/19/"> </a>
       </div>
 
     </div>
@@ -685,23 +673,23 @@ def run_main():
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -713,7 +701,7 @@ def run_main():
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/17/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/19/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/17/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><a class="page-number" href="/page/20/">20</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/19/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

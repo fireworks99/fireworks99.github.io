@@ -112,6 +112,192 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/25/HDU-4685-Prince-and-Princess-bipartite-graph-match-and-shrink-nodes/" class="item-title">HDU 4685 Prince and Princess(bipartite graph match and shrink nodes)</a>
+      
+      <time datetime="2020-04-25T13:44:47.000Z">
+        2020-04-25
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+为了保证最大匹配数，先对王子进行最大匹配(二分图匹配の匈牙利算法DFS)。
+在最大匹配前提下，再找各王子除了匹配到的公主外还可以匹配哪些公主
+遍历王子，对于没匹配公主的每个王子：
+设置一个虚点(公主)与之匹配，并让所有王子指向这一虚点
+
+
+
+遍历公主，对于没匹配王子的每个公主：
+设置一个虚点(王子)与之匹配，并让这一虚点指向所有公主
+
+
+
+针对参与匹配的所有公主(最大匹配中的+虚点中的)，建立反向边
+强连通分量缩点，处在同一个强连通分量中的王子与公主，可以彼此匹配
+A遍历王子，love[A][B]==1用来排除B是王子(保证B是公主)
+
+Code#include &lt;stack&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 2005;
+const int M = 2 * N * N;
+c -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个王子M个公主，王子只能匹配自己喜欢的公主，公主随意。给出王子对于公主的喜爱信息，求在保证最大配对数的前提下，每个王子分别可以匹配哪些公主。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/25/HDU-4685-Prince-and-Princess-bipartite-graph-match-and-shrink-nodes/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/04/25/HDU-4635-Strongly-connected-shrink-nodes/" class="item-title">HDU 4635 Strongly connected(shrink nodes)</a>
+      
+      <time datetime="2020-04-25T03:57:16.000Z">
+        2020-04-25
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+1.现在有N个点，0条边，可添加 N * (N - 1) 条边(保证是简单图)
+2.为了保证非强连通，需要去掉一些边。最终的图环缩点后是两个大点。假设第一个大点中含有X个小点，那第二个大点中就含有(N - X)个小点，那原先他们之间的2 * X*(N-X)条边就要去掉一半，即答案是N(N - 1) - X(N - X)
+3.由于原图已有M条边，所以最终答案是N(N - 1) - M - X(N - X)
+4.那么X(N - X)在什么情况下最小呢？当二次函数处理时发现X越近0或越近N时最小，即最后的两个大点所含的小点数目之差越大越优。
+5.假设原图缩点后各大点所含小点数为：2，4，8，16。那么将2做一强连通分量，剩下的4+8+16做另一强连通分量时，答案最优。所以要找缩点后内部含点数最少的强连通分量，其内部点数为X。
+6.有个前提：这个强联通分量的入度或出度为0(才可以成为最后两个点之一)
+
+Code#include &lt;stack&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;c -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出一个含有N个点M条有向边的简单图(无自环无重边)，求：在保证图是简单图且非强连通的前提下，最多可以再添加几条边？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/25/HDU-4635-Strongly-connected-shrink-nodes/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/04/24/HDU-4612-Warm-up-Bridges-Diameter-of-tree/" class="item-title">HDU 4612 Warm up(Bridges + Diameter of tree)</a>
+      
+      <time datetime="2020-04-24T05:35:38.000Z">
+        2020-04-24
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+本来想当成POJ 3694 处理，桥的数目 - (距离LCA和最大的两个叶子节点到LCA的距离和)，但两层循环求到LCA距离和会TLE！
+学到了：树的直径dist[ BFS( BFS(1) ) ]
+第一次BFS返回一个叶子节点
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 200005;
+const int M = 4200005;
+
+int n, m, Q;
+int cnt, tot, idx, id[N], h1[N], h2[N], low[N], times[N], num_bridges;
+
+bool bridge[M];
+struct edge
+{
+    int u, v, pre;
+} e[M];
+
+void init()
+{
+    cnt = tot = idx = nu -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点M条无向边(可含重边)，再添加一条边，最后的桥最少有多少？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/24/HDU-4612-Warm-up-Bridges-Diameter-of-tree/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/04/24/POJ-3177-Redundant-Paths-shrink-nodes-and-bridges/" class="item-title">POJ 3177 Redundant Paths(shrink nodes and bridges)</a>
+      
+      <time datetime="2020-04-24T03:56:37.000Z">
+        2020-04-24
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analzye
+先进行环缩点，缩点完后是一棵树。
+连接任意两个节点，皆可成环。
+然而连接叶子节点比连接非叶子节点更优(需添加的边较少)。
+而且要连接的这两个叶子节点，其到LCA的距离越大越优。
+因为：连接树(缩点后的图)中某两个距离LCA最大的叶子节点，形成的环再次缩点会缩到根节点里，这样就减少了两个点。若非如此，每次只减少一个点。
+答案：假设有ans个叶子节点，每添一条边减少两个点，需要添加ans / 2条边。若ans为奇数，需要(ans + 1) / 2条边。两者可合并成后者。
+如何求缩点后叶子节点的个数ans？
+叶子节点特征：度数为1
+方案：求桥，原图的桥是缩点后的树上的边。遍历原图每个点，对每个点遍历出边，若此出边为桥，则它所连接的两点所在的连通分量(缩点后的点)度数++。最后遍历每个缩点后的点，度数为1的是叶子节点。
+
+Code#include &lt;stack&gt;
+#include &lt;vector&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#inc -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点M条无向边，原图是连通的，现要添加一些边，使得每两点之间的路至少有两条。求最少连接几条边。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/24/POJ-3177-Redundant-Paths-shrink-nodes-and-bridges/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/04/08/POJ-3694-Network-Bridges-and-LCA/" class="item-title">POJ 3694 Network(Bridges and LCA)</a>
       
       <time datetime="2020-04-08T13:42:32.000Z">
@@ -378,177 +564,12 @@ ll a[N][N], b[ -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/05/HDU-4009-Transfer-water-Minimun-tree-shape-graph/" class="item-title">HDU 4009 Transfer water(Minimun tree-shape graph)</a>
-      
-      <time datetime="2020-04-04T22:44:05.000Z">
-        2020-04-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-不难发现是一个不定根的题目 -&gt; 增加一个伪根。
-但是在建图时，“饮水”的边正常建立，“打井”如何处理？看似“自给自足”让人想到自环，可两者没什么关系，添自环不解决问题。
-而且对于独立点，即使不能生成最小树形图，也可以”打井”完成任务，这种情况如何求最小花费？
-
-Solution
-将伪根连向各点的边的权值设为该点打井花费！
-实现了“打井”与“引水”一视同仁，可计算最小花费。
-什么完美的建模思想！
-这跟之前做过的一道最短路相似，那题是“昂贵的聘礼”，给定了终点，也是不定根(起点任选)，求最短路。但是不仅边有权值，每个点也有权值，意味着从每个点出发的花费不同，这时建立超级源点连向各点的边的权值就应该设为各点权值！
-这是一类“不定根 &amp;&amp; 点有权值”的图论题目
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个房子搬到山上，要解决供水问题有两种方案：</p>
-<p>①自己打井，耗钱 (X * 房子高度)</p>
-<p>②从别家引水，耗钱 (Y * 两房子的曼哈顿距离)，如果源较低，再加一个水泵钱Z</p>
-<p>求解决所有房子供水问题的最小花费</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/05/HDU-4009-Transfer-water-Minimun-tree-shape-graph/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/04/HDU-2121-Ice-cream-s-world-II-Minimum-tree-shape-graph/" class="item-title">HDU 2121 Ice-cream&#39;s world II(Minimum tree-shape graph)</a>
-      
-      <time datetime="2020-04-04T12:27:14.000Z">
-        2020-04-04
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Anlyze
-增加一个超级节点”伪根“，连向每一个点。
-关于这些边的权值：
-①最初想的是像最短路题目似的，将超点连向各点的边的权值设为0，最后得出的最短路长度就直接是答案。后来想想不对，朱刘算法第一步找“最小入边集”，那样选出来的最小入边集就是这新增的N条边了。
-②所以为了不影响寻找正常的最小入边集，这新增的N条边的权值应该比最小入边集里所有边的长度都要大，假设最小入边集中最长边长度为X，那这N条新边权值要设为 &gt;= X的一个数。
-③那样做还要先求一遍最小入边集，干脆放大一下，找原图所有边中的最长边，设为Y，那么这N条新边的边权要 &gt;= Y;
-④还有个问题，我在求最小树形图时，用了两条“新边”（理论上应该只用一条：u=伪根，v=真根 の那条边），后期无法鉴别。而倘若我直接把“新边”边权设为sum(原图所有边的边权和)，最后答案小于2倍的sum才算真正找到了最小树形图。
-所以说N条新边的边权应 &gt;= sum，最后记得从答案里减掉一个新边边权。
-关于寻找“真根”：
-理论上来说，在选最小入边集时，我们记录了每个点的前驱，if(u == 伪根) 则v == 真根。但还要“缩点 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点(0~N-1)M条有向边，不定根(任意一点可选做根节点)求最小树形图</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/04/HDU-2121-Ice-cream-s-world-II-Minimum-tree-shape-graph/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/03/POJ-3164-Command-Network-Minimum-tree-shape-graph/" class="item-title">POJ 3164 Command Network(Minimum tree-shape graph)</a>
-      
-      <time datetime="2020-04-03T04:49:19.000Z">
-        2020-04-03
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 朱刘算法
-①选出入边集：找到除root点之外，每一个点的所有入边中权值最小的，用数组in[]记录下这个最小权值，用pre[]记录到达该点的前驱。判断是否存在无入边的点(除了root)，若有，则无法成树。
-②找有向环：倘若无环，则该入边集就是最小树形图，算法结束。
-若有环，说明未成树，做缩点前期工作：记下环上每个点所属环的标号。
-③缩点中期工作：将不属于环上的点“缩点”
-④缩点后期工作：更新缩点后的图中的边的权值。因为我们在过程中“误+”了环中某一边，此时要减掉。重复以上过程。
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 105;
-const int INF = 0x3f3f3f3f;
-
-int n, m, id[N], pre[N], vis[N];
-double x[N], y[N], in[N];
-
- -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点M条有向边，求以1位根节点最小树形图(有向最小生成树)</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/03/POJ-3164-Command-Network-Minimum-tree-shape-graph/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/23/UVA-10600-ACM-Contest-and-Blackout-Second-MST/" class="item-title">UVA 10600 ACM Contest and Blackout(Second MST)</a>
-      
-      <time datetime="2020-03-23T10:12:35.000Z">
-        2020-03-23
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-设原图G(V, E)，最小生成树T(V1, E1)，现有边(u, v)∈G &amp;&amp; (u, v)∉T。u与v之间有唯一的一条路径，将这条路上若干段中最长的一段的长度存储在len[u][v]里，将边(u, v)加入到T中，u与v间形成了环，删掉len[u][v]对应那条边就是一颗准次小生成树了。
-遍历所有的非最小生成树内的边，求出相应的一个个准次小生成树，这里面最小的一个就是真正的次小生成树了。
-len[u][v]求解
-Prim：类似于DP的方法len[i][pos] = len[pos][i] = max(len[i][pre[pos]], low[pos]);
-Kruskal：有先天优势(边是按权值从小到大排序的，即：当前边的权值是当前已经出现的所有边中的最大值，此时用当前的边将两个集合连接，两集合内各取一点，他们之间路径上最大边就是当前边)len[ G[aa][i] ][ G[bb][j] ] = len[ G[bb][j] ][ G[aa][i] ] = w;
-
-Code of Prim#include &lt;cmath&gt;
-#include  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点M条边，求最小生成树与次小生成树</p>
-<p>（求生成树，说明边是无向边）</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/23/UVA-10600-ACM-Contest-and-Blackout-Second-MST/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/6/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/8/"> </a>
+        <a class="extend prev" rel="prev" href="/page/6/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/8/"> </a>
       </div>
 
     </div>
@@ -603,23 +624,23 @@ Code of Prim#include &lt;cmath&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -631,7 +652,7 @@ Code of Prim#include &lt;cmath&gt;
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/6/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/8/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/6/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/8/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

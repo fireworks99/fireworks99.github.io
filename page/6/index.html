@@ -112,6 +112,213 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/09/22/Web-FE-request-data-img-from-BE/" class="item-title">FE request data(img) from BE</a>
+      
+      <time datetime="2020-09-22T01:28:35.000Z">
+        2020-09-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- request.jsimport axios from &#39;axios&#39;
+
+export function request(config) {
+
+  // 1 创建实例
+  const instance = axios.create({
+    baseURL: &#39;http://localhost:3000&#39;,
+    timeout: 5000,
+    // headers: {
+    //   &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded;charset=UTF-8&#39;,
+    // },
+  });
+
+  // 2 两类拦截器
+  instance.interceptors.request.use(config =&gt; {
+    return config
+  }, error =&gt; {
+    console.log(error);
+  });
+
+  instance.interceptors.response.use(res =&gt; {
+  -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>前端向后端请求一系列数据(文本、图片等静态资源)并展示在页面上</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/09/22/Web-FE-request-data-img-from-BE/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/09/21/Web-Communication-between-components/" class="item-title">Communication between components</a>
+      
+      <time datetime="2020-09-21T10:45:29.000Z">
+        2020-09-21
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 不同组件间传递信息
+1.动态路由
+携带单个信息点，以路由形式/home/userid显示在url中
+
+路由部分
+{
+    // 动态路由 实现 携带信息(单个信息，以路由形式 且显示在url中) 跳转组件
+    path: &#39;/home/:id&#39;,
+    component: Home
+},
+
+信源JS
+const r = this.$router;
+const id = this.username;
+
+r.push(&#39;/home/&#39; + id)
+
+信宿JS
+data() {
+  return {
+      id: this.$route.params.id
+  }
+},
+
+信宿html
+&lt;h1&gt;Welcome, {{$route.params.id}}!&lt;/h1&gt;
+
+
+2.query
+携带一组信息，以query形式/home?id=useri显示在url中
+
+路由部分
+{
+    // 传递query对象 实现 携带信息(可大量信息，以query形式 显示在url中) 跳转组件
+    path: &#39;/home& -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>不同组件之间通信(传递信息)以及父子组件之间访问data中数据</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/09/21/Web-Communication-between-components/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/09/20/Web-Wait-2s-to-jump/" class="item-title">Wait 2s to jump</a>
+      
+      <time datetime="2020-09-20T12:52:49.000Z">
+        2020-09-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 只用一个setTimeoutthis.usernameV = &#39;注册成功,2s后跳转&#39;;
+setTimeout(function() {
+    this.$router.push(&#39;/login&#39;)
+}, 2000)
+
+
+此时this已经是undefined了
+
+试着用“同步”sleepfunction syncSleep(time) {
+    const start = new Date().getTime();
+    while (new Date().getTime() - start &lt; time) {}
+  }
+
+this.usernameV = &#39;注册成功,2s后跳转&#39;;
+
+syncSleep(2000)
+// 这里竟然也是先等2s，然后执行赋值与push(这两个操作还不知道谁先)
+
+this.$router.push(&#39;/login&#39;)
+
+
+这里竟然先等2s再执行另外两个操作!!!
+
+还是第一种方法，集中解决this问题this.usernameV = &#39;注册成功,2s后跳转&#39;;
+ -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>用户注册完成后，屏幕上打印“注册成功”的信息，等待两秒后跳转到登录页面</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/09/20/Web-Wait-2s-to-jump/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/09/20/Web-Register-return-the-error-info/" class="item-title">Register return the error info</a>
+      
+      <time datetime="2020-09-20T07:13:36.000Z">
+        2020-09-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- BackEnd(nodejs express)router.get(&#39;/register_process&#39;, function (req, res) {
+  register(req.query.username, req.query.password, function (err) {
+    if(err) res.send(err)
+  })
+})
+
+
+通过callback函数获取错误信息，发送到此请求的客户端
+
+FrontEnd
+最开始的时候想在input标签后加after伪类元素，后来发现伪类元素是在容器内部的尾部的，而input容不下其他元素，故作罢。改为新增一个input标签用于展示错误信息。初始value设为空字符串。
+
+getRegister() {
+        getRegister(this.username, this.password).then(res =&gt; {
+          if(res) {
+            this.usernameV = res;
+          }
+        })
+      }
+
+ -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>注册信息错误，返回错误信息(BackEnd -&gt; FrontEnd)</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/09/20/Web-Register-return-the-error-info/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/09/20/Web-NodeJS-asynchronous-request-about-MySQL/" class="item-title">NodeJS asynchronous request about MySQL</a>
       
       <time datetime="2020-09-20T01:35:37.000Z">
@@ -522,198 +729,12 @@ Code#include &lt;cstdio&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/25/HDU-4685-Prince-and-Princess-bipartite-graph-match-and-shrink-nodes/" class="item-title">HDU 4685 Prince and Princess(bipartite graph match and shrink nodes)</a>
-      
-      <time datetime="2020-04-25T13:44:47.000Z">
-        2020-04-25
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-为了保证最大匹配数，先对王子进行最大匹配(二分图匹配の匈牙利算法DFS)。
-在最大匹配前提下，再找各王子除了匹配到的公主外还可以匹配哪些公主
-遍历王子，对于没匹配公主的每个王子：
-设置一个虚点(公主)与之匹配，并让所有王子指向这一虚点
-
-
-
-遍历公主，对于没匹配王子的每个公主：
-设置一个虚点(王子)与之匹配，并让这一虚点指向所有公主
-
-
-
-针对参与匹配的所有公主(最大匹配中的+虚点中的)，建立反向边
-强连通分量缩点，处在同一个强连通分量中的王子与公主，可以彼此匹配
-A遍历王子，love[A][B]==1用来排除B是王子(保证B是公主)
-
-Code#include &lt;stack&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 2005;
-const int M = 2 * N * N;
-c -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个王子M个公主，王子只能匹配自己喜欢的公主，公主随意。给出王子对于公主的喜爱信息，求在保证最大配对数的前提下，每个王子分别可以匹配哪些公主。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/25/HDU-4685-Prince-and-Princess-bipartite-graph-match-and-shrink-nodes/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/25/HDU-4635-Strongly-connected-shrink-nodes/" class="item-title">HDU 4635 Strongly connected(shrink nodes)</a>
-      
-      <time datetime="2020-04-25T03:57:16.000Z">
-        2020-04-25
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-1.现在有N个点，0条边，可添加 N * (N - 1) 条边(保证是简单图)
-2.为了保证非强连通，需要去掉一些边。最终的图环缩点后是两个大点。假设第一个大点中含有X个小点，那第二个大点中就含有(N - X)个小点，那原先他们之间的2 * X*(N-X)条边就要去掉一半，即答案是N(N - 1) - X(N - X)
-3.由于原图已有M条边，所以最终答案是N(N - 1) - M - X(N - X)
-4.那么X(N - X)在什么情况下最小呢？当二次函数处理时发现X越近0或越近N时最小，即最后的两个大点所含的小点数目之差越大越优。
-5.假设原图缩点后各大点所含小点数为：2，4，8，16。那么将2做一强连通分量，剩下的4+8+16做另一强连通分量时，答案最优。所以要找缩点后内部含点数最少的强连通分量，其内部点数为X。
-6.有个前提：这个强联通分量的入度或出度为0(才可以成为最后两个点之一)
-
-Code#include &lt;stack&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;c -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出一个含有N个点M条有向边的简单图(无自环无重边)，求：在保证图是简单图且非强连通的前提下，最多可以再添加几条边？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/25/HDU-4635-Strongly-connected-shrink-nodes/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/24/HDU-4612-Warm-up-Bridges-Diameter-of-tree/" class="item-title">HDU 4612 Warm up(Bridges + Diameter of tree)</a>
-      
-      <time datetime="2020-04-24T05:35:38.000Z">
-        2020-04-24
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-本来想当成POJ 3694 处理，桥的数目 - (距离LCA和最大的两个叶子节点到LCA的距离和)，但两层循环求到LCA距离和会TLE！
-学到了：树的直径dist[ BFS( BFS(1) ) ]
-第一次BFS返回一个叶子节点
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 200005;
-const int M = 4200005;
-
-int n, m, Q;
-int cnt, tot, idx, id[N], h1[N], h2[N], low[N], times[N], num_bridges;
-
-bool bridge[M];
-struct edge
-{
-    int u, v, pre;
-} e[M];
-
-void init()
-{
-    cnt = tot = idx = nu -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点M条无向边(可含重边)，再添加一条边，最后的桥最少有多少？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/24/HDU-4612-Warm-up-Bridges-Diameter-of-tree/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/24/POJ-3177-Redundant-Paths-shrink-nodes-and-bridges/" class="item-title">POJ 3177 Redundant Paths(shrink nodes and bridges)</a>
-      
-      <time datetime="2020-04-24T03:56:37.000Z">
-        2020-04-24
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analzye
-先进行环缩点，缩点完后是一棵树。
-连接任意两个节点，皆可成环。
-然而连接叶子节点比连接非叶子节点更优(需添加的边较少)。
-而且要连接的这两个叶子节点，其到LCA的距离越大越优。
-因为：连接树(缩点后的图)中某两个距离LCA最大的叶子节点，形成的环再次缩点会缩到根节点里，这样就减少了两个点。若非如此，每次只减少一个点。
-答案：假设有ans个叶子节点，每添一条边减少两个点，需要添加ans / 2条边。若ans为奇数，需要(ans + 1) / 2条边。两者可合并成后者。
-如何求缩点后叶子节点的个数ans？
-叶子节点特征：度数为1
-方案：求桥，原图的桥是缩点后的树上的边。遍历原图每个点，对每个点遍历出边，若此出边为桥，则它所连接的两点所在的连通分量(缩点后的点)度数++。最后遍历每个缩点后的点，度数为1的是叶子节点。
-
-Code#include &lt;stack&gt;
-#include &lt;vector&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#inc -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点M条无向边，原图是连通的，现要添加一些边，使得每两点之间的路至少有两条。求最少连接几条边。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/24/POJ-3177-Redundant-Paths-shrink-nodes-and-bridges/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/5/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/7/"> </a>
+        <a class="extend prev" rel="prev" href="/page/5/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/7/"> </a>
       </div>
 
     </div>
@@ -768,23 +789,23 @@ Code#include &lt;stack&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -796,7 +817,7 @@ Code#include &lt;stack&gt;
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/5/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/7/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/5/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/7/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

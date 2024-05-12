@@ -112,6 +112,210 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/10/HDU-1754-I-Hate-It/" class="item-title">HDU 1754 I Hate It</a>
+      
+      <time datetime="2019-04-10T14:14:05.000Z">
+        2019-04-10
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接
+线段树#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 200005;
+
+int n, m;
+struct node
+{
+    int L, R, val;
+}a[N &lt;&lt; 2 | 1] ;
+
+void init(int num, int l, int r)
+{
+    a[num].L = l;
+    a[num].R = r;
+    a[num].val = 0;
+
+    if(l == r)///初始化到叶子结点返回
+        return ;
+
+    int mid = (l + r) &gt;&gt; 1;
+    init(num &lt;&lt; 1, l, mid);
+    init(num &lt;&lt; 1 | 1, mid + 1, r);
+}
+
+void update(int num, int l,  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>中文题目</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/10/HDU-1754-I-Hate-It/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/04/10/Gitment-评论/" class="item-title">Gitment 评论</a>
+      
+      <time datetime="2019-04-10T00:23:17.000Z">
+        2019-04-10
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+
+如何登录Github账号参与评论
+①点进一篇可以参与评论的文章（博主可以设置哪些文章开启评论），滑到下方评论区
+
+
+
+②点击login登录你的Github账号
+
+
+
+③凭用户名或邮箱和密码登录
+
+
+
+④点击Authorize(认可) fireworks99
+
+
+
+⑤可以评论了（支持markdown语法，preview可预览效果）
+部分Markdown语法  
+ -->
+        <!-- </div> -->
+
+        
+        <h3 id="Gitment评论"><a href="#Gitment评论" class="headerlink" title="Gitment评论"></a>Gitment评论</h3><blockquote>
+<p>前提：登录github账号</p>
+<p><strong><a href="https://jingyan.baidu.com/article/4ae03de3d6f9c53eff9e6bdd.html" style="color:violet;" target="_blank" rel="noopener">如何注册Github账号</a></strong></p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/10/Gitment-评论/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/04/09/HDU-1166-敌兵布阵/" class="item-title">HDU 1166 敌兵布阵</a>
+      
+      <time datetime="2019-04-09T11:28:03.000Z">
+        2019-04-09
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- LINK
+线段树
+1.N * 4 + 1的空间（有N * 2节省空间的方法）
+2.用 位运算符时注意其优先级低，用 (num &lt;&lt; 1) + 1 或  num &lt;&lt; 1 | 1
+3.更新末操作：a[num].val = a[num &lt;&lt; 1].val + a[(num &lt;&lt; 1) + 1].val;
+4.单点更新、单点查询、区间查询都可套用模板，但区间更新分①普通更新②lazy标记
+
+Code of ordinary Segment tree#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int N = 50005;
+
+map&lt;string, int&gt; mp;
+
+struct node
+{
+    int L, R, val;
+}a[(N &lt;&lt; 2) + 1];
+
+void init(int num, int l, int r)///r = 6,r = 10数组并没有充 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>区间1~n初始有一些人，某个区间可以增加人数、减少人数、询问人数。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/09/HDU-1166-敌兵布阵/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/04/08/最短路记录路径-POJ-2457/" class="item-title">最短路记录路径 POJ 2457</a>
+      
+      <time datetime="2019-04-08T11:41:39.000Z">
+        2019-04-08
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 点我飞过去
+Floyd
+较为特殊，数组pre[i][j]存从i到j的最短路径上i后面的第一个点
+当然对于此题Floyd已超时了，但算法是对的
+
+Code of Floyd#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+
+
+int m, n;
+int mp[1005][1005];
+int pre[1005][1005];
+///pre[i][j]存从i到j的最短路径上i后面的第一个点
+
+void init()
+{
+    for(int i = 0; i &lt;= n; ++i)
+        for(int j = 0; j &lt;= n; ++j)
+        {
+            mp[i][j] = (i == j ? 0: INF);
+            pr -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>m条单向路，n个点（1~n）</p>
+<p>求从1到n的最短路，不存在输出“-1”，存在则输出路径</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/08/最短路记录路径-POJ-2457/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/07/POJ-3660-Cow-Contest/" class="item-title">POJ 3660 Cow Contest</a>
       
       <time datetime="2019-04-07T12:46:27.000Z">
@@ -703,227 +907,12 @@ int n, m;///n个点 -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/05/睡前小故事/" class="item-title">睡前小故事</a>
-      
-      <time datetime="2019-04-05T10:43:35.000Z">
-        2019-04-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-热心父母追问：因为他睡不着，专门去给他买了安眠药，嘱咐他按时吃，结果过去看他还没吃药就睡着了，请问这种情况怎么办？
-回答：不吃药怎么能行！赶快叫醒他，待他清醒了赶快吃上安眠药，估计就能睡个好觉了…
-追问：明白了，谢谢您！
-
-睡前小故事
-①从前有个少年，他懵懂无知，他太过自我……他觉得自己独一无二，觉得自己与众不同，觉得自己能屈能伸，觉得自己张弛有度……看，原来这是一个自恋的人，无自知之明，妄自菲薄，自命不凡，活在自己的世界里。不过也有好的一面，自恋也是自信啊，他在思修课上做了一次演讲（脱稿，想到啥说啥的那种），完全是为了锻炼自己，那一刻，我很崇拜他，要是搁以前，他在众人面前做学习经验总结，照着稿子念都念不清楚。所以，我还是挺喜欢他的，毕竟他在努力改变、提升自己。
-②某一天，他遇上了一个女生，深得他心。他变了……他不再那么自信，反而多了些自卑，突然发现自身有那么多缺点，而她那么耀眼，他想：他们，怎么可能……看到他的变化，我想起了不知从哪儿听到的一句话：之前他总是一个人，无所忧虑，无所畏惧，如同刀枪不入，故所向披靡、孤独求败。可当他有了所爱之人，就有了牵挂，就有了软肋，浑身的缺点都就暴露 -->
-        <!-- </div> -->
-
-        
-        <h3 id="小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…"><a href="#小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…" class="headerlink" title="小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…"></a>小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…</h3>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/05/睡前小故事/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/03/POJ-1251-Jungle-roads-0/" class="item-title">POJ 1251 Jungle roads</a>
-      
-      <time datetime="2019-04-02T23:33:29.000Z">
-        2019-04-03
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Link http://poj.org/problem?id=1251
-Kruskal
-并查集 + sort(edge, edge + cnt, cmp) = Kruskal
-结构体存边：遍历每条边，unite每条边的两点
-
-Code of Kruskal#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 30;
-
-int n;///n个点
-int ans;
-int pre[N];
-
-int cnt;
-struct edge
-{
-    int there, here, w;
-} a[1005];
-
-bool cmp(edge a, edge b)
-{
-    return a.w &lt; b.w;
-}
-
-void init()
-{
-    cnt = 0;
-    ans = 0;
-    for(int i = 0; i &lt;= n; ++i)
-        pre[i] = i;
-}
-
-int foun -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>左侧图显示当前所有使用中的道路，以及现在每月的维护费用。当然，村庄之间必需有一些公路能够相通，即使路线并不像以前一样短。怎样才使每月的花费最小，并且所维持的道路，将连接所有村庄。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/03/POJ-1251-Jungle-roads-0/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/01/带权并查集/" class="item-title">带权并查集</a>
-      
-      <time datetime="2019-04-01T12:29:30.000Z">
-        2019-04-01
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Link http://hihocoder.com/problemset/problem/1515
-Input
-第一行包含三个整数N, M和Q。N表示学生总数，M表示小Hi知道消息的总数，Q表示小Hi想询问的数量。  
-以下M行每行三个整数，X, Y和S。表示X号同学的分数比Y号同学的分数高S分。  
-以下Q行每行两个整数，X和Y。表示小Hi想知道X号同学的分数比Y号同学的分数高几分。 
-
-Output
-对于每个询问，如果不能判断出X比Y高几分输出-1。否则输出X比Y高的分数。 
-
-sample Input10 5 3  
-1 2 10  
-2 3 10  
-4 5 -10  
-5 6 -10  
-2 5 10  
-1 10  
-1 5  
-3 5
-
-Sample Output
--1
-20
-0
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 100005 -->
-        <!-- </div> -->
-
-        
-        <h3 id="HihoCoder"><a href="#HihoCoder" class="headerlink" title="HihoCoder"></a>HihoCoder</h3><blockquote>
-<p>小Hi的学校总共有N名学生，编号1-N。学校刚刚进行了一场全校的古诗文水平测验。  </p>
-<p>学校没有公布测验的成绩，所以小Hi只能得到一些小道消息，例如X号同学的分数比Y号同学的分数高S分。  </p>
-<p>小Hi想知道利用这些消息，能不能判断出某两位同学之间的分数高低？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/01/带权并查集/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/31/POJ-2236-The-Suspects-HDU-1213-How-Many-Tables/" class="item-title">POJ 2236 The Suspects HDU 1213 How Many Tables</a>
-      
-      <time datetime="2019-03-31T11:10:16.000Z">
-        2019-03-31
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Link http://poj.org/problem?id=1611
-Code(并查集模板)#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const int N = 30005;
-
-int pre[N];
-int n, m;
-
-void init()
-{
-    for(int i = 0; i &lt; n; ++i)
-        pre[i] = i;
-}
-
-int found(int x)
-{
-    if(x != pre[x])
-        pre[x] = found(pre[x]);
-    return pre[x];
-}
-
-void unite(int a, int b)
-{
-
-    int x = found(a);
-    int y = found(b);
-    if(x != y)
-//        x = pre[y];///可笑...
-        pre[y] = x;
-    return ;
-}
-
-int main()
-{
-    whi -->
-        <!-- </div> -->
-
-        
-        <h3 id="The-Suspects"><a href="#The-Suspects" class="headerlink" title="The Suspects"></a>The Suspects</h3><blockquote>
-<p>n个人（0  ~  n-1）m个小组</p>
-<p>起初0是嫌疑人，与0共组的人都是嫌疑人，与嫌疑人共组的人也都是嫌疑人</p>
-<p>问有多少嫌疑人</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/31/POJ-2236-The-Suspects-HDU-1213-How-Many-Tables/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/24/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/26/"> </a>
+        <a class="extend prev" rel="prev" href="/page/24/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/26/"> </a>
       </div>
 
     </div>
@@ -978,23 +967,23 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -1006,7 +995,7 @@ int main()
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/24/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/26/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/24/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/23/">23</a><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/26/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

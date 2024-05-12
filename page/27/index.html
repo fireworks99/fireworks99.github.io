@@ -112,6 +112,218 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/25/HDU-1425-sort/" class="item-title">HDU 1425 sort</a>
+      
+      <time datetime="2019-03-25T12:24:32.000Z">
+        2019-03-25
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接 http://acm.hdu.edu.cn/showproblem.php?pid=1425
+Input
+每组测试数据有两行，第一行有两个数n,m(0&lt;n,m&lt;1000000)，第二行包含n个各不相同，且都处于区间[-500000,500000]的整数。
+
+Output
+对每组测试数据按从大到小的顺序输出前m大的数。 
+
+Sample Input
+5 3
+3 -35 92 213 -644
+
+Sample Output
+213 92 3
+
+?看哈希碰到的题，刚刚了解了输入挂，就推荐给我。莫非被监视了？用挂Code#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int a[1000005];
+
+int Scan()
+{
+    int res = 0, ch, flag = 0;
+    if( (ch = getchar() ) == &#39;-&#39;)///括号搞清楚
+        flag = 1;
+   -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给你n个整数，请按从大到小的顺序输出其中前m大的数。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/25/HDU-1425-sort/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/25/输入输出挂/" class="item-title">输入输出挂</a>
+      
+      <time datetime="2019-03-25T10:37:34.000Z">
+        2019-03-25
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 探索输入挂预备工作
+随机产生一百万个整型数，写入指定文件里
+
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int main()
+{
+    srand(time(NULL));
+    freopen(&quot;00out.txt&quot;, &quot;w&quot;, stdout);
+    int n;
+    int num = 1000000;
+    while(num--)
+    {
+        n = rand() % 1000;
+        cout &lt;&lt; n &lt;&lt; &#39; &#39;;
+    }
+    return 0;
+}
+
+开始探索
+分别用输入挂（getchar）、scanf、cin读入一百万个整型数字，看运行时间
+
+#in -->
+        <!-- </div> -->
+
+        
+        <h3 id="关于输入挂"><a href="#关于输入挂" class="headerlink" title="关于输入挂"></a>关于输入挂</h3><blockquote>
+<p>输入速度：getchar  &gt;  scanf  &gt;  cin</p>
+<p>特点：快糙猛？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/25/输入输出挂/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/22/POJ-3126-Prime-Path/" class="item-title">POJ 3126 Prime Path</a>
+      
+      <time datetime="2019-03-22T13:31:13.000Z">
+        2019-03-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Code#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int inf = 0x3f3f3f3f;
+
+int tot;
+int prime[1500];
+bool vis[10500];
+bool flag[10500];
+
+struct node
+{
+    int val, step;
+};
+queue&lt;node&gt; q;
+
+void get_prime()
+{
+    memset(vis, 1, sizeof(vis));
+    tot = 0;
+    vis[0] = vis[1] = 0;
+    for(int i = 2; i  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出两个素数，求从这个变到那个需要几步。（变法：每步仅改变一位数）</p>
+</blockquote>
+<p><strong>题目链接</strong> <a href="http://poj.org/problem?id=3126" target="_blank" rel="noopener">http://poj.org/problem?id=3126</a></p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/22/POJ-3126-Prime-Path/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/21/FZU-2150-Fire-Game/" class="item-title">FZU 2150 Fire Game</a>
+      
+      <time datetime="2019-03-21T10:28:04.000Z">
+        2019-03-21
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 思路
+各种点火组合皆遍历一遍,找出最优解。
+BFS：将两个起点一起放入队列中遍历，vis数组标记该点是否已燃。检查终点，若所有草地被燃，答案即为终点时的time（我曾想问：若终点之前的某点以满足条件（即所有草地皆已燃），那答案是不是会更小些？后来想想这个点就是终点，vis尽被标记找不到其他点了）
+
+吐槽
+我也太那啥那啥了…一点不那啥…还是太那啥了…
+刚开始想着两个点”分别“但“同时“bfs，还担心一个vis不够用（这个火燃到这里应该允许另一个火也可以经过这），后来想想，都是火，分啥你我啊!
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int inf = 0x3f3f3f3f;
+
+int n, m;
+string s[15];
+bool flag;
+bool vis[15][ -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>今有草地一片，’#’为草，’.’为空地，草可燃，地不可。有二童子顽劣之至，以焚尽草地为娱。二人可于两处分别点火，瞬间即燃。火势凶猛，所到之处，寸草不生。凡火所在，唯待一刻，便四处蔓延。问：待草烧尽，耗时几何？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/21/FZU-2150-Fire-Game/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/18/HDU-2612/" class="item-title">HDU 2612 Find a way</a>
       
       <time datetime="2019-03-18T13:19:24.000Z">
@@ -372,179 +584,12 @@ The input consists of no more than 20 test cases. Each test case is a line with 
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/14/同余（模）定理/" class="item-title">同余（模）定理</a>
-      
-      <time datetime="2019-03-14T12:53:53.000Z">
-        2019-03-14
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-
-性质
-
-(a + b) % p = (a % p + b % p) % p
-(a - b) % p =  ( (a % p - b % p) + p ) % p
-(a * b) % p = (a % p) * (b % p) % p
-若 a ≡ b(mod p)，则 (a - b) mod p ≡ 0
-若 a ≡ b(mod p)，则 (a ^ n) mod p ≡  (b ^ n) mod p
-
-
-例题
-求 2001 ^ 2003 % 13
-
-解
-2001 % 13 = 12，即2001 同余于 12 （模13）
-根据性质5，原问题等于求 12 ^ 2003 % 13
-找出 12 的几次幂 同余于 1 （模13），发现 12 ^ 2 ≡ 1 (mod 13)
-(12 ^ 2003) % 13 = [ (12 ^ 2) ^ 1001   *   (12 ^ 1)] % 13 
-根据性质5， 上式 = [ (1 ^ 1001)  *  (12 ^ 1) ] % 13 = 12 
-
-也就口算笔算可以，用程序写出来实用性弱，远不如快速幂万能（在适合的情况下比快速幂快）
-Codeint s -->
-        <!-- </div> -->
-
-        
-        <h2 id="同余定义（德国-高斯）："><a href="#同余定义（德国-高斯）：" class="headerlink" title="同余定义（德国/高斯）："></a>同余定义（德国/高斯）：</h2><blockquote>
-<p>两个整数 a、b，如果他们同时除以一个自然数p，所得的余数相同，则称a,b对于模p同余，记作a≡b（mod p）。读作：a同余于b模m。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/14/同余（模）定理/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/14/POJ-3279-Fliptile/" class="item-title">POJ 3279 Fliptile</a>
-      
-      <time datetime="2019-03-14T11:06:20.000Z">
-        2019-03-14
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 原文出处 https://blog.csdn.net/ac_hell/article/details/51077320
-解决方案
-①.若某一个位置被翻转了n次，则其实际上被翻转了n%2次，因为翻转2k次相当与没翻转，翻转2k+1次相当于翻转了1次，因为要求最小翻转次数，所以对于某一个位置要么只（主动）翻转一次，要么不（主动）翻转。
-②.分析易知翻转的顺序并不影响最终结果。（理解不了可自己举个例子在纸上模拟下）
-③.现在我们着眼于第1个位置，可知若要将第1个位置进行翻转只有翻转它自己，因为没有其他位置的翻转会引起它的翻转。由①可知若第1个位置为1则必须且进行翻转（并将其后2个进行连带翻转）且以后不再进行翻转，因为再进行翻转就一共翻转了2次相当于没翻转。然后着眼于第2个位置，由于第1个位置不再进行翻转，所以要想翻转第2个位置只有翻转它自己，因为没有其他位置的翻转会引起它的翻转…………………以此类推直至最后剩下的个数＜3个，因为每次都翻转3个，而剩下的少于3个了就不再进行考虑了，此时只需判断剩下的是否全为0的即可，若不全为0，则不存在全部翻转为0的方案
-
-POJ 3279Descriptio -->
-        <!-- </div> -->
-
-        
-        <h2 id="关于翻转问题"><a href="#关于翻转问题" class="headerlink" title="关于翻转问题"></a>关于翻转问题</h2><blockquote>
-<p>例:给定一个01串，现有翻转规则：</p>
-<p>翻转某一个位置时其后面2个位置也会跟着翻转，也就是每次翻转都会翻转3个连续的位置。要将01串全部翻转为0，求最小的翻转次数</p>
-<p>形似这类题的问题叫做翻转问题，也可以叫开关问题</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/14/POJ-3279-Fliptile/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/12/尺取法/" class="item-title">尺取法</a>
-      
-      <time datetime="2019-03-12T12:41:28.000Z">
-        2019-03-12
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- POJ 3061Description
-A sequence of N positive integers (10 &lt; N &lt; 100 000), each of them less than or equal 10000, and a positive integer S (S &lt; 100 000 000) are given. Write a program to find the minimal length of the subsequence of consecutive elements of the sequence, the sum of which is greater than or equal to S. 
-
-Input
-The first line is the number of test cases. For each test case the program has to read the numbers N and S, separated by an interval, from the first line. The number -->
-        <!-- </div> -->
-
-        
-        <h3 id="尺取法"><a href="#尺取法" class="headerlink" title="尺取法"></a>尺取法</h3><blockquote>
-<p>尺取，取的是 ： 多段等效区间（等效体现在：满足题目要求）</p>
-<p>某些时候需要保证数列的单调性才能使用</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/12/尺取法/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/11/异或寻异/" class="item-title">异或寻异</a>
-      
-      <time datetime="2019-03-11T07:50:54.000Z">
-        2019-03-11
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 给出n个数字， 有一个数字只出现奇数次，其余出现偶数次，找出这个数字#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;cstring&gt;
-#include &lt;cmath&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int a[1000005];
-
-int main()
-{
-    int n;
-    while(~scanf(&quot;%d&quot;, &amp;n))
-    {
-        if(n == 0)
-            break;
-        int ans = 0;
-        for(int i = 0; i &lt; n; ++i)
-        {
-            scanf(&quot;%d&quot;, &amp;a[i]);
-            ans ^= a[i];
-        }
-        cout &lt;&lt; ans &lt;&lt; &#39;\n -->
-        <!-- </div> -->
-
-        
-        <h3 id="关于异或"><a href="#关于异或" class="headerlink" title="关于异或"></a>关于异或</h3><blockquote>
-<p>a为任意数字：</p>
-<p>0 ^ a = a</p>
-<p>a ^ a = 0</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/11/异或寻异/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/26/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/28/"> </a>
+        <a class="extend prev" rel="prev" href="/page/26/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/28/"> </a>
       </div>
 
     </div>
@@ -599,23 +644,23 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -627,7 +672,7 @@ int main()
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/26/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/28/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/26/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/25/">25</a><a class="page-number" href="/page/26/">26</a><span class="page-number current">27</span><a class="page-number" href="/page/28/">28</a><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/28/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

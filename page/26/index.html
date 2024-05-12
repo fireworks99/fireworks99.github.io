@@ -112,6 +112,221 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/05/睡前小故事/" class="item-title">睡前小故事</a>
+      
+      <time datetime="2019-04-05T10:43:35.000Z">
+        2019-04-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+热心父母追问：因为他睡不着，专门去给他买了安眠药，嘱咐他按时吃，结果过去看他还没吃药就睡着了，请问这种情况怎么办？
+回答：不吃药怎么能行！赶快叫醒他，待他清醒了赶快吃上安眠药，估计就能睡个好觉了…
+追问：明白了，谢谢您！
+
+睡前小故事
+①从前有个少年，他懵懂无知，他太过自我……他觉得自己独一无二，觉得自己与众不同，觉得自己能屈能伸，觉得自己张弛有度……看，原来这是一个自恋的人，无自知之明，妄自菲薄，自命不凡，活在自己的世界里。不过也有好的一面，自恋也是自信啊，他在思修课上做了一次演讲（脱稿，想到啥说啥的那种），完全是为了锻炼自己，那一刻，我很崇拜他，要是搁以前，他在众人面前做学习经验总结，照着稿子念都念不清楚。所以，我还是挺喜欢他的，毕竟他在努力改变、提升自己。
+②某一天，他遇上了一个女生，深得他心。他变了……他不再那么自信，反而多了些自卑，突然发现自身有那么多缺点，而她那么耀眼，他想：他们，怎么可能……看到他的变化，我想起了不知从哪儿听到的一句话：之前他总是一个人，无所忧虑，无所畏惧，如同刀枪不入，故所向披靡、孤独求败。可当他有了所爱之人，就有了牵挂，就有了软肋，浑身的缺点都就暴露 -->
+        <!-- </div> -->
+
+        
+        <h3 id="小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…"><a href="#小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…" class="headerlink" title="小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…"></a>小葵花妈妈课堂开课了：孩子不听故事睡不着怎么办？多半是惯的，打一顿就好…</h3>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/05/睡前小故事/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/04/03/POJ-1251-Jungle-roads-0/" class="item-title">POJ 1251 Jungle roads</a>
+      
+      <time datetime="2019-04-02T23:33:29.000Z">
+        2019-04-03
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Link http://poj.org/problem?id=1251
+Kruskal
+并查集 + sort(edge, edge + cnt, cmp) = Kruskal
+结构体存边：遍历每条边，unite每条边的两点
+
+Code of Kruskal#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 30;
+
+int n;///n个点
+int ans;
+int pre[N];
+
+int cnt;
+struct edge
+{
+    int there, here, w;
+} a[1005];
+
+bool cmp(edge a, edge b)
+{
+    return a.w &lt; b.w;
+}
+
+void init()
+{
+    cnt = 0;
+    ans = 0;
+    for(int i = 0; i &lt;= n; ++i)
+        pre[i] = i;
+}
+
+int foun -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>左侧图显示当前所有使用中的道路，以及现在每月的维护费用。当然，村庄之间必需有一些公路能够相通，即使路线并不像以前一样短。怎样才使每月的花费最小，并且所维持的道路，将连接所有村庄。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/03/POJ-1251-Jungle-roads-0/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/04/01/带权并查集/" class="item-title">带权并查集</a>
+      
+      <time datetime="2019-04-01T12:29:30.000Z">
+        2019-04-01
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Link http://hihocoder.com/problemset/problem/1515
+Input
+第一行包含三个整数N, M和Q。N表示学生总数，M表示小Hi知道消息的总数，Q表示小Hi想询问的数量。  
+以下M行每行三个整数，X, Y和S。表示X号同学的分数比Y号同学的分数高S分。  
+以下Q行每行两个整数，X和Y。表示小Hi想知道X号同学的分数比Y号同学的分数高几分。 
+
+Output
+对于每个询问，如果不能判断出X比Y高几分输出-1。否则输出X比Y高的分数。 
+
+sample Input10 5 3  
+1 2 10  
+2 3 10  
+4 5 -10  
+5 6 -10  
+2 5 10  
+1 10  
+1 5  
+3 5
+
+Sample Output
+-1
+20
+0
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 100005 -->
+        <!-- </div> -->
+
+        
+        <h3 id="HihoCoder"><a href="#HihoCoder" class="headerlink" title="HihoCoder"></a>HihoCoder</h3><blockquote>
+<p>小Hi的学校总共有N名学生，编号1-N。学校刚刚进行了一场全校的古诗文水平测验。  </p>
+<p>学校没有公布测验的成绩，所以小Hi只能得到一些小道消息，例如X号同学的分数比Y号同学的分数高S分。  </p>
+<p>小Hi想知道利用这些消息，能不能判断出某两位同学之间的分数高低？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/01/带权并查集/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/31/POJ-2236-The-Suspects-HDU-1213-How-Many-Tables/" class="item-title">POJ 2236 The Suspects HDU 1213 How Many Tables</a>
+      
+      <time datetime="2019-03-31T11:10:16.000Z">
+        2019-03-31
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Link http://poj.org/problem?id=1611
+Code(并查集模板)#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int N = 30005;
+
+int pre[N];
+int n, m;
+
+void init()
+{
+    for(int i = 0; i &lt; n; ++i)
+        pre[i] = i;
+}
+
+int found(int x)
+{
+    if(x != pre[x])
+        pre[x] = found(pre[x]);
+    return pre[x];
+}
+
+void unite(int a, int b)
+{
+
+    int x = found(a);
+    int y = found(b);
+    if(x != y)
+//        x = pre[y];///可笑...
+        pre[y] = x;
+    return ;
+}
+
+int main()
+{
+    whi -->
+        <!-- </div> -->
+
+        
+        <h3 id="The-Suspects"><a href="#The-Suspects" class="headerlink" title="The Suspects"></a>The Suspects</h3><blockquote>
+<p>n个人（0  ~  n-1）m个小组</p>
+<p>起初0是嫌疑人，与0共组的人都是嫌疑人，与嫌疑人共组的人也都是嫌疑人</p>
+<p>问有多少嫌疑人</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/31/POJ-2236-The-Suspects-HDU-1213-How-Many-Tables/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/31/POJ-1860-Currency-Exchange/" class="item-title">POJ 1860 Currency Exchange</a>
       
       <time datetime="2019-03-31T08:48:29.000Z">
@@ -402,224 +617,12 @@ To execute a given sequence of jumps, a frog’s jump range obviously must be at
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/25/HDU-1425-sort/" class="item-title">HDU 1425 sort</a>
-      
-      <time datetime="2019-03-25T12:24:32.000Z">
-        2019-03-25
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接 http://acm.hdu.edu.cn/showproblem.php?pid=1425
-Input
-每组测试数据有两行，第一行有两个数n,m(0&lt;n,m&lt;1000000)，第二行包含n个各不相同，且都处于区间[-500000,500000]的整数。
-
-Output
-对每组测试数据按从大到小的顺序输出前m大的数。 
-
-Sample Input
-5 3
-3 -35 92 213 -644
-
-Sample Output
-213 92 3
-
-?看哈希碰到的题，刚刚了解了输入挂，就推荐给我。莫非被监视了？用挂Code#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int a[1000005];
-
-int Scan()
-{
-    int res = 0, ch, flag = 0;
-    if( (ch = getchar() ) == &#39;-&#39;)///括号搞清楚
-        flag = 1;
-   -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给你n个整数，请按从大到小的顺序输出其中前m大的数。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/25/HDU-1425-sort/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/25/输入输出挂/" class="item-title">输入输出挂</a>
-      
-      <time datetime="2019-03-25T10:37:34.000Z">
-        2019-03-25
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 探索输入挂预备工作
-随机产生一百万个整型数，写入指定文件里
-
-#include &lt;ctime&gt;
-#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int main()
-{
-    srand(time(NULL));
-    freopen(&quot;00out.txt&quot;, &quot;w&quot;, stdout);
-    int n;
-    int num = 1000000;
-    while(num--)
-    {
-        n = rand() % 1000;
-        cout &lt;&lt; n &lt;&lt; &#39; &#39;;
-    }
-    return 0;
-}
-
-开始探索
-分别用输入挂（getchar）、scanf、cin读入一百万个整型数字，看运行时间
-
-#in -->
-        <!-- </div> -->
-
-        
-        <h3 id="关于输入挂"><a href="#关于输入挂" class="headerlink" title="关于输入挂"></a>关于输入挂</h3><blockquote>
-<p>输入速度：getchar  &gt;  scanf  &gt;  cin</p>
-<p>特点：快糙猛？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/25/输入输出挂/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/22/POJ-3126-Prime-Path/" class="item-title">POJ 3126 Prime Path</a>
-      
-      <time datetime="2019-03-22T13:31:13.000Z">
-        2019-03-22
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Code#include &lt;set&gt;
-#include &lt;map&gt;
-#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int inf = 0x3f3f3f3f;
-
-int tot;
-int prime[1500];
-bool vis[10500];
-bool flag[10500];
-
-struct node
-{
-    int val, step;
-};
-queue&lt;node&gt; q;
-
-void get_prime()
-{
-    memset(vis, 1, sizeof(vis));
-    tot = 0;
-    vis[0] = vis[1] = 0;
-    for(int i = 2; i  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出两个素数，求从这个变到那个需要几步。（变法：每步仅改变一位数）</p>
-</blockquote>
-<p><strong>题目链接</strong> <a href="http://poj.org/problem?id=3126" target="_blank" rel="noopener">http://poj.org/problem?id=3126</a></p>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/22/POJ-3126-Prime-Path/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/21/FZU-2150-Fire-Game/" class="item-title">FZU 2150 Fire Game</a>
-      
-      <time datetime="2019-03-21T10:28:04.000Z">
-        2019-03-21
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 思路
-各种点火组合皆遍历一遍,找出最优解。
-BFS：将两个起点一起放入队列中遍历，vis数组标记该点是否已燃。检查终点，若所有草地被燃，答案即为终点时的time（我曾想问：若终点之前的某点以满足条件（即所有草地皆已燃），那答案是不是会更小些？后来想想这个点就是终点，vis尽被标记找不到其他点了）
-
-吐槽
-我也太那啥那啥了…一点不那啥…还是太那啥了…
-刚开始想着两个点”分别“但“同时“bfs，还担心一个vis不够用（这个火燃到这里应该允许另一个火也可以经过这），后来想想，都是火，分啥你我啊!
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int inf = 0x3f3f3f3f;
-
-int n, m;
-string s[15];
-bool flag;
-bool vis[15][ -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>今有草地一片，’#’为草，’.’为空地，草可燃，地不可。有二童子顽劣之至，以焚尽草地为娱。二人可于两处分别点火，瞬间即燃。火势凶猛，所到之处，寸草不生。凡火所在，唯待一刻，便四处蔓延。问：待草烧尽，耗时几何？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/21/FZU-2150-Fire-Game/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/25/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/27/"> </a>
+        <a class="extend prev" rel="prev" href="/page/25/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/27/"> </a>
       </div>
 
     </div>
@@ -674,23 +677,23 @@ bool vis[15][ -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -702,7 +705,7 @@ bool vis[15][ -->
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/25/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/27/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/25/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><a class="page-number" href="/page/25/">25</a><span class="page-number current">26</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/27/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

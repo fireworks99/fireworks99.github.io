@@ -112,6 +112,233 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/05/POJ-3683-Paiest-John-s-Busiest-Day-2-sat-Tarjan-Topo/" class="item-title">POJ 3683 Paiest John&#39;s Busiest Day(2-sat:Tarjan+Topo)</a>
+      
+      <time datetime="2019-11-05T11:32:29.000Z">
+        2019-11-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 2-sat
+①输入+初始化 input() + initial()
+②添边 add_edge()
+③缩点 Tarjan()
+④判可行否 judge()
+⑤若可行，记下超点的对立点
+⑥反向建边拓扑染色：
+遍历所有的点
+对于每个点:
+若与他相连接的点跟它本身不处于同一个强连通分量中
+将两个强连通分量(即两个超点)反向建边
+进行BFS拓扑染色
+
+Code#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;vector&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 10005;
+
+struct time
+{
+    int start, over;
+} tm[N];
+
+stack&lt;int&gt; st;
+vector&lt;int&gt; v[N];///Trajan用
+vector&lt; -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>有一个小镇上只有一个牧师。这个小镇上有一个传说，在九月一日结婚的人会受到爱神的保佑，但是要牧师举办一个仪式。这个仪式要么在婚礼刚刚开始的时候举行，要么举行完婚礼正好结束。<br>现在已知有n场婚礼，告诉你每一场的开始和结束时间，以及举行仪式所需要的时间。问牧师能否参加所有的婚礼，如果能则输出一种方案.</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/05/POJ-3683-Paiest-John-s-Busiest-Day-2-sat-Tarjan-Topo/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/11/04/POJ-3207-Ikki-s-Story-IV-2-sat/" class="item-title">POJ 3207 Ikki&#39;s Story IV(2-sat)</a>
+      
+      <time datetime="2019-11-04T12:07:41.000Z">
+        2019-11-04
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 2-sat
+什么是2-SAT呢？就是
+①有一些集合，(对应此题中有一些边)
+②每个集合中有且仅有两个元素，(某条边是从圈内连or从圈外连)
+③两个元素必须且只能选一个，(从圈内连或者从圈外连，二选一)
+④集合间的元素存在一定的选择关系，(边不能相交)
+求解可行性及可行方案。
+
+算法过程
+1、连边
+2、跑Tarjan
+3、判可行性，即同一集合中的两个点是否同属一个强连通块
+(若不求可行方案，到此步即可)
+4、缩点建新图，连反边
+5、拓扑序，若当前点没有被访问过，则选择该点，不选择其另外的点
+
+Analyze
+对于此题，连线对应区间如果相交，那么两线不能同时在圈内或同时在圈外
+
+Code#include &lt;stack&gt;
+#include &lt;vector&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+stack&lt;int&gt; st;
+vector&lt;int -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点按顺序排列在一个圆环上，要连接M条边，可从圈内连，可从圈外连，问能否实现各边不相交</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/04/POJ-3207-Ikki-s-Story-IV-2-sat/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/11/02/POJ-1703-Find-them-Catch-them（并查集变形）/" class="item-title">POJ 1703 Find them, Catch them（并查集变形）</a>
+      
+      <time datetime="2019-11-02T07:29:03.000Z">
+        2019-11-02
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 并查集
+初始化一个 2 * N 的并查集，
+如果a和b属于不同帮派，
+unite(a, b + n) &amp;&amp; unite(b, a + n)
+这样如果c和b属于不同帮派
+unite(c, b + n) &amp;&amp; unite(b, c + n)
+就把a和c连起来了
+!!!什么神仙做法！！！
+是不是暗示我们，有些题多用点空间就能解决问题
+
+Code#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 100005;
+
+int n, m;
+int pre[N * 2];
+
+void init()
+{
+    for(int i = 0; i &lt;= n * 2; ++i)
+        pre[i] = i;
+}
+
+int found(int x)
+{
+    if(pre[x] != x)
+   -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>有两个帮派，</p>
+<p>给出 D a b 表示a和b位于不同帮派，</p>
+<p>给出 A a b 表示询问a和b是否属于同一帮派</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/02/POJ-1703-Find-them-Catch-them（并查集变形）/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/11/02/POJ-2010-Moo-University-Financial-Aid-贪心-优先队列/" class="item-title">POJ 2010 Moo University Financial Aid(贪心+优先队列)</a>
+      
+      <time datetime="2019-11-02T05:40:55.000Z">
+        2019-11-02
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 贪心
+按成绩排序作为基本顺序
+处理上部：
+选取后 N/2 个学生，将每个申请金额置于一个优先级队列中(由大到小)，并记下总和
+从第 C - N / 2 - 1 个位置当做中位数依次往下测试(保证了选取最大的)
+处理下部：
+在基本顺序的基础上将下部分(要测试的位置以下)按申请金额由小到大排序
+取前 N / 2 个的金额总和，记下最后一个位置(即 int last_pos = N / 2 - 1)
+检测：
+上部金额 + 下部金额 + 当前检测位置金额 &lt;= F 即退出
+否则：
+①将当前检测位置 idx 并入上部
+②让其前一位置 idx - 1 脱离下部
+在对idx - 1这个位置检测
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+struct node
+{
+    int score -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>学校要选出N个人发放助学金，</p>
+<p>但有C个人申请（给出C个人的成绩和各自的申请金额），</p>
+<p>而且学校只能发放不超过F的金钱，</p>
+<p>找出一种策略，使得被发放助学金的学生的群体，</p>
+<p>他们的成绩的中位数最大</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/02/POJ-2010-Moo-University-Financial-Aid-贪心-优先队列/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/02/POJ-3614-Sunscreen-贪心-优先队列/" class="item-title">POJ 3614 Sunscreen(贪心+优先队列)</a>
       
       <time datetime="2019-11-02T02:52:41.000Z">
@@ -416,203 +643,12 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/10/20/HDU-4135-Co-prime-容斥原理/" class="item-title">HDU 4135 Co-prime 容斥原理</a>
-      
-      <time datetime="2019-10-20T09:04:28.000Z">
-        2019-10-20
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-在区间[L, R]里与N互质的数字的个数
-== 在区间[1, R]里与N互质的数字的个数
-减去( - ) 在区间[1, L]里与N互质的数字的个数
-所以可以自定义一个函数求出[1, up]里与N互质的数的个数
-但是数字太多，依次找互质的数字不好找，但找不互质的容易
-区间[1, up]里N的质因子的倍数与N不互质
-找到一个质因子可找到一大堆它的倍数(与N不互质的数字)
-像找2、3、5…的倍数时有重复(6,10,15)，这便用到容斥!
-
-Code#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-#define ll long long
-
-ll factor[100005], cnt = 0;
-
-void get_factors(ll n)///①得到全集②进行容斥
-{
-    cnt = 0;
-    for(ll i = 2; i * i -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出区间[L, R]，给出数字N，求在该区间里与N互质的数字的个数</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/10/20/HDU-4135-Co-prime-容斥原理/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/10/20/SDNUOJ-新生-AC题数统计/" class="item-title">SDNUOJ 新生 AC题数统计</a>
-      
-      <time datetime="2019-10-20T00:52:19.000Z">
-        2019-10-20
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- import csv
-import requests
-from bs4 import BeautifulSoup
-
-
-def getText(url):
-    try:
-        headers = {&#39;user-agent&#39;: &#39;Mozilla/5.0&#39;}
-        r = requests.get(url, headers=headers)
-        r.raise_for_status()
-        r.encoding = r.apparent_encoding
-        return r.text
-    except:
-        return &quot;&quot;
-
-def solve(html):
-    soup = BeautifulSoup(html, &quot;html.parser&quot;)
-    soup = soup.find(&quot;div&quot;, style=&quot;float: left;&quot;)
-    soup = BeautifulSoup(st -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>用于统计SDNUOJ上某（些）用户AC题目数量</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/10/20/SDNUOJ-新生-AC题数统计/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/10/19/POJ-3904-Sky-Code-容斥原理/" class="item-title">POJ 3904 Sky Code 容斥原理</a>
-      
-      <time datetime="2019-10-19T02:57:47.000Z">
-        2019-10-19
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-测试四个数字的公因数是否只有“1”并不好实现，要检测多次。
-试着从 (是 = 总 - 非) 方面想
-对每个数字进行①质因数分解(准公因子)
-同时记录下②不同质因子之间相乘所构成的重公因子
-统计所有③准公因子与重公因子出现的次数（假设为num[i]）
-计算④组合数C(num[i], 4) 即为以num[i]为公因子的四个数的组合数目
-但是在这里面，计算2、3、6会有重复，于是便有了容斥
-
-Code#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-#define ll __int64
-
-int factor[10005], cnt = 0;
-map&lt;int, int&gt; Count;
-map&lt;int, int&gt; Num;
-
-void get_factors(int n)
-{
-    cnt = 0;
-    for(i -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出数字N，给出N个数字，从中找出四个数字，它们的公因数只有“1”，问能找到多少组？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/10/19/POJ-3904-Sky-Code-容斥原理/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/09/11/POJ-3616-Milking-Time-类最长递增子序列/" class="item-title">POJ 3616 Milking Time(类最长递增子序列)</a>
-      
-      <time datetime="2019-09-11T11:02:28.000Z">
-        2019-09-11
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-将每一段的右界加上R作为新的右界。如果前一段区间的右界 &lt;= 后一段区间的左界，那么两段可以同时取得。但由于每段的权值未知，可能存在与之冲突的一个时间段的权值较之更大，所以要择优。
-对每个时间段dp，dp[i]表示选择了第i个时间段，整个过程可以达到的最大挤奶量
-初始化dp[i] = a[i].val
-对之前的区间遍历(前提：排好序)，若a[j].r &lt;= a[i].l
-那么当前区间最优值可从dp[j] + a[i].val和dp[i]中取max，这里像是最长递增子序列的dp过程：
-
-对某组有序的元素dp
-初始化dp[i] = a[i]
-遍历 i 之前的元素 j ，若 a[j]  &lt;=  a[i] 表示 i 前面可连上 j (此时 i 地状态可更新为更优值dp[i] = max(dp[i], dp[j] + a[i]))
-
-此类算法可解决的问题？
-
-有序的多个元素(可以是数字、区间)
-某些元素之间满足某种关系就具有某种“可连接性”，且“连接”可能引起最优值的更新
-
-
-Code#include &lt;cstdio&gt;
-#include &lt;io -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>奶牛有N个小时的产奶时间，农夫有M个时间段可用于挤牛奶，奶牛在相应的时间段有不同的产奶量，每挤一次牛奶必须休息R分钟，求最多能挤奶多少？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/09/11/POJ-3616-Milking-Time-类最长递增子序列/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/11/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/13/"> </a>
+        <a class="extend prev" rel="prev" href="/page/11/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/13/"> </a>
       </div>
 
     </div>
@@ -667,23 +703,23 @@ Code#include &lt;cstdio&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -695,7 +731,7 @@ Code#include &lt;cstdio&gt;
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/11/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/13/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/11/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/page/13/">13</a><a class="page-number" href="/page/14/">14</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/13/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

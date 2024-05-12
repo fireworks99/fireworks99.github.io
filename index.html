@@ -112,6 +112,205 @@
     
     <div class="recent-post-item">
 
+      <a href="/2024/05/12/HJ24-合唱队/" class="item-title">HJ24 合唱队</a>
+      
+      <time datetime="2024-05-12T09:29:19.000Z">
+        2024-05-12
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 示例123 124 125 123 121 是一个合唱队形
+123 123 124 122不是合唱队形，因为前两名同学身高相等，不符合要求
+123 122 121 122不是合唱队形，因为找不到一个同学，他的两侧同学身高递减。
+你的任务是，已知所有N位同学的身高，计算最少需要几位同学出列，可以使得剩下的同学排成合唱队形。
+注意：不允许改变队列元素的先后顺序 且 不要求最高同学左右人数必须相等
+思路最长递增子序列：
+
+求出最长递增子序列数组LIS[]，其中LIS[i]表示[1, i]这个区间内最长递增子序列的长度。
+求出最长递减子序列数组LDS[]，其中LDS[i]表示[1, i]这个区间内最长递减子序列的长度。
+for循环遍历[1, n]，（LIS[i] + LDS[i] - 1） 即为最多可留下的人数，找出最大值即可。
+
+
+我在求LDS时，是把数组翻转过来求LIS，求完了再把结果数组翻转一下就是了。
+
+Code#include &lt;algorithm&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt -->
+        <!-- </div> -->
+
+        
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>N 位同学站成一排，音乐老师要请最少的同学出列，使得剩下的 K 位同学排成合唱队形。</p>
+<p>设<em>K</em>位同学从左到右依次编号为 1，2…，K ，他们的身高分别为<em>T</em>1,<em>T</em>2,…,<em>T</em>K ，若存在<em>i</em>(1≤<em>i</em>≤<em>K</em>) 使得<em>T</em>1&lt;<em>T</em>2&lt;……&lt;<em>T</em>i−1&lt;<em>T</em>i 且 T<em>i&gt;</em>T<em>i+1&gt;……&gt;</em>T<em>K，则称这</em>K名同学排成了合唱队形。</p>
+<p>通俗来说，能找到一个同学，他的两边的同学身高都依次严格降低的队形就是合唱队形。</p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2024/05/12/HJ24-合唱队/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2024/05/12/HJ20-密码验证合格程序/" class="item-title">HJ20 密码验证合格程序</a>
+      
+      <time datetime="2024-05-12T09:19:41.000Z">
+        2024-05-12
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 示例输入
+021Abc9000
+021Abc9Abc1
+021ABC9000
+021$bc9000
+输出
+OK
+NG
+NG
+OK
+思路前两个条件简单，第三个条件，不能有长度&gt;2的公共子串，这里我第一反应是校验是否有长度为3的子串、长度为4的子串……长度为n-1的子串，但是没什么办法。看了一眼题解才发现只考虑是否有长度为3的公共子串即可，而如果有长度大于3的公共子串时，必然是包含长度等于3的子串，所以只需要考虑这一种情况。
+知识点：
+
+使用int pos = s.rfind(s.substr(i, 3));方法从后向前查找字符串
+
+Code#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+
+using namespace std;
+
+bool check(string s) {
+    int A = 0, a = 0, N = 0, Other = 0;
+    int sz =  -->
+        <!-- </div> -->
+
+        
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>密码要求:</p>
+<p>1.长度超过8位</p>
+<p>2.包括大小写字母.数字.其它符号,以上四种至少三种</p>
+<p>3.不能有长度大于2的包含公共元素的子串重复 （注：其他符号不含空格或换行）</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2024/05/12/HJ20-密码验证合格程序/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2024/05/12/HJ68-成绩排序/" class="item-title">HJ68 成绩排序</a>
+      
+      <time datetime="2024-05-12T08:26:21.000Z">
+        2024-05-12
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 示例jack   70peter   96Tom    70smith   67
+从高到低 成绩peter   96jack   70Tom    70smith   67
+从低到高
+smith   67jack   70Tom    70peter   96
+思路结构体排序 + stable_sort
+Code#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+struct Student
+{
+    string name;
+    int score;
+};
+
+bool cmp_0(Student a, Student b) {
+    return a.score &gt; b.score;
+}
+
+bool cpm_1(Student a, Student b) {
+    return a.score &lt; b.score;
+}
+
+
+int main() {
+    freopen -->
+        <!-- </div> -->
+
+        
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>给定一些同学的信息（名字，成绩）序列，请你将他们的信息按照成绩从高到低或从低到高的排列，相同成绩都按先录入排列在前的规则处理。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2024/05/12/HJ68-成绩排序/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2024/05/12/HJ30-字符串合并处理/" class="item-title">HJ30 字符串合并处理</a>
+      
+      <time datetime="2024-05-12T07:57:08.000Z">
+        2024-05-12
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+第三步：对排序后的字符串中的’0’~’9’、’A’~’F’和’a’~’f’字符，需要进行转换操作。
+转换规则如下：
+对以上需要进行转换的字符所代表的十六进制用二进制表示并倒序，然后再转换成对应的十六进制大写字符（注：字符 a~f 的十六进制对应十进制的10~15，大写同理）。
+如字符 ‘4’，其二进制为 0100 ，则翻转后为 0010 ，也就是 2 。转换后的字符为 ‘2’。
+如字符 ‘7’，其二进制为 0111 ，则翻转后为 1110 ，对应的十进制是14，转换为十六进制的大写字母为 ‘E’。
+如字符 ‘C’，代表的十进制是 12 ，其二进制为 1100 ，则翻转后为 0011，也就是3。转换后的字符是 ‘3’。
+根据这个转换规则，由第二步生成的字符串 “abcedf” 转换后会生成字符串 “5D37BF”。
+数据范围：输入的字符串长度满足 1 &lt;= n &lt;= 100
+
+示例输入
+ab CD
+输出
+3B5D
+思路按照题目描述去做即可，有几个知识点：
+
+使用sort方法对字符串按照ASCII码排序sort(even.begin(), even.end());
+
+借助ma -->
+        <!-- </div> -->
+
+        
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>第一步：将输入的两个字符串str1和str2进行前后合并。如给定字符串 “dec” 和字符串 “fab” ， 合并后生成的字符串为 “decfab”</p>
+<p>第二步：对合并后的字符串进行排序，要求为：下标为奇数的字符和下标为偶数的字符分别从小到大排序。这里的下标的意思是字符在字符串中的位置。注意排序后在新串中仍需要保持原来的奇偶性。例如刚刚得到的字符串“decfab”，分别对下标为偶数的字符’d’、’c’、’a’和下标为奇数的字符’e’、’f’、’b’进行排序（生成 ‘a’、’c’、’d’ 和 ‘b’ 、’e’ 、’f’），再依次分别放回原串中的偶数位和奇数位，新字符串变为“abcedf”</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2024/05/12/HJ30-字符串合并处理/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2024/05/11/HJ16-购物单/" class="item-title">HJ16 购物单</a>
       
       <time datetime="2024-05-11T02:44:00.000Z">
@@ -365,161 +564,12 @@ java -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2024/04/12/Mainstream-Layout/" class="item-title">Mainstream Layout</a>
-      
-      <time datetime="2024-04-12T09:36:04.000Z">
-        2024-04-12
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- CSS布局：
-
-正常布局流
-display属性
-弹性盒子
-网格
-浮动
-定位
-CSS 表格布局
-多列布局
-
- -->
-        <!-- </div> -->
-
-        
-        <p>CSS布局：</p>
-<ul>
-<li>正常布局流</li>
-<li>display属性</li>
-<li>弹性盒子</li>
-<li>网格</li>
-<li>浮动</li>
-<li>定位</li>
-<li>CSS 表格布局</li>
-<li>多列布局</li>
-</ul>
-
-        
-
-
-        <span>
-          <a class="article-read" href="/2024/04/12/Mainstream-Layout/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2024/04/12/Multi-terminal-Adaptation/" class="item-title">Multi-terminal Adaptation</a>
-      
-      <time datetime="2024-04-12T09:27:56.000Z">
-        2024-04-12
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 多端适配的思路：
-
-响应式设计（Responsive Design）
-自适应设计（Adaptive Design）
-
- -->
-        <!-- </div> -->
-
-        
-        <p>多端适配的思路：</p>
-<ol>
-<li>响应式设计（Responsive Design）</li>
-<li>自适应设计（Adaptive Design）</li>
-</ol>
-
-        
-
-
-        <span>
-          <a class="article-read" href="/2024/04/12/Multi-terminal-Adaptation/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2024/04/12/Cross-browser-compatibility/" class="item-title">Cross-browser compatibility</a>
-      
-      <time datetime="2024-04-12T08:57:48.000Z">
-        2024-04-12
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 浏览器兼容性网页的浏览器兼容性指网页在各种浏览器上的显示效果尽量保持一致的状态，90年代末的浏览器大战开始时被广泛使用。【维基百科】
- -->
-        <!-- </div> -->
-
-        
-        <h1 id="浏览器兼容性"><a href="#浏览器兼容性" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h1><p>网页的<strong>浏览器兼容性</strong>指网页在各种浏览器上的显示效果尽量保持一致的状态，90年代末的浏览器大战开始时被广泛使用。【维基百科】</p>
-
-        
-
-
-        <span>
-          <a class="article-read" href="/2024/04/12/Cross-browser-compatibility/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2024/03/19/JS-recursion/" class="item-title">JS recursion</a>
-      
-      <time datetime="2024-03-19T09:43:45.000Z">
-        2024-03-19
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Scene接口返回数据如下：
-当ChildGroup不是空数组，同时Functions是空数组，则意味着有子级当它是空数组且同级
-当ChildGroup是空数组，同时Functions不是空数组，则意味着当前对象是叶子节点
-[
-    {
-        &quot;ID&quot;: &quot;zw&quot;,
-        &quot;Name&quot;: &quot;植物&quot;,
-        &quot;ApplicationSystems&quot;: [
-            {
-                &quot;ApplicationID&quot;: &quot;lszw&quot;,
-                &quot;ApplicationName&quot;: &quot;陆生植物&quot;,
-                &quot;Functions&quot;: [],
-                &quot;ChildGroup&quot;: [
-                    {
-            -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>当接口返回数据存在<strong>层层嵌套</strong>的情况，且<strong>嵌套层数不固定</strong>时。</p>
-<p>用多层for循环处理数据会超时，导致页面卡顿，且代码逻辑混乱。</p>
-<p>改用递归处理数据则耗时短，代码逻辑清晰。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2024/03/19/JS-recursion/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/2/"> </a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/2/"> </a>
       </div>
 
     </div>
@@ -574,23 +624,23 @@ CSS 表格布局
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -602,7 +652,7 @@ CSS 表格布局
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/2/"> </a> -->
+<!--   <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/2/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

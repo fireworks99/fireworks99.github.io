@@ -112,6 +112,215 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/18/关于-int128/" class="item-title">关于__int128</a>
+      
+      <time datetime="2019-07-18T11:11:17.000Z">
+        2019-07-18
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 大小#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    // your code goes here
+    cout &lt;&lt; sizeof(int) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; sizeof(long long) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; sizeof(long double) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; sizeof(__int128) &lt;&lt; &#39;\n&#39;;
+    return 0;
+}
+
+
+Output:
+4  =  21 4748 3647
+8  ≈  9.2233720368548 * 10 ^ 18 
+16  ≈  1.7014118346047 * 10 ^ 38 
+16  ≈  1.7014118346047 * 10 ^ 38 
+
+输入输出需自己写函数Code of Inputvoid scan -->
+        <!-- </div> -->
+
+        
+        <h2 id="int128"><a href="#int128" class="headerlink" title="__int128"></a>__int128</h2><blockquote>
+<p>编译器的gcc不支持这种数据类型，在codeblocks/Dev C++中无法编译</p>
+<p>推荐在线编辑器 ：<a href="http://ideone.com/" target="_blank" rel="noopener">http://ideone.com/</a></p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/18/关于-int128/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/07/18/POJ-2718-Smallest-Difference/" class="item-title">POJ 2718 Smallest Difference</a>
+      
+      <time datetime="2019-07-18T07:00:21.000Z">
+        2019-07-18
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 注意点
+
+若有0，则0必须用上
+我之前认为，划分123时要划分成12、3与1、23，后来发现next_permutation会产生一个231，他划分可出23、1就是前面的1 、23
+
+
+Code#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+
+int main()
+{
+    int t;
+    cin &gt;&gt; t;
+    while(t--)
+    {
+        int a[12];
+        int cnt = 0;
+        char ch;
+        while(1)
+        {
+            scanf(&quot;%d%c&quot;, &amp;a[cnt++], &amp;ch);
+            if(ch == &#39;\n&#39;)
+                break;
+        }
+        int ans = 0x3f3f3 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出不重复的几个数字，将他们分成两部分，组成两个数字，求所有情况中差值最小时的差值</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/18/POJ-2718-Smallest-Difference/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/07/18/博弈/" class="item-title">博弈</a>
+      
+      <time datetime="2019-07-18T00:07:51.000Z">
+        2019-07-18
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 分析
+若n = m + 1,先手必败——结论①
+-&gt;若n = k  (m + 1)，第二个人有可以使物品最终变为(m + 1)的办法，先手必败*——结论②
+-&gt;若n = k  (m + 1) + r,先手拿走r个，由结论②得后手必败、先手必胜*——结论③
+
+Codebool Bash_Game(int n, int m)
+{
+    if(n % (m + 1) != 0)
+        return 1;
+    return 0;
+}
+
+
+若有n堆，每堆a[i]个物品，两人来取，如何判断？
+先考虑取的最大数目无上限即可以把一堆全部取完的情形：
+
+一堆，无论数目多少，先手必胜
+
+两堆，从最简单的情况开始考虑：
+1 、1时，后手必胜
+1、n时，先手取走(n - 1)，变成上述情况，先手必胜
+a 、b时(a &gt;= 2 &amp;&amp; b &gt;= 2)
+若先手取走其中一堆会输
+若先手取完变成1、n也会输（最终谁取完后局面为1、n谁就输了）
+所以要保证先手取完还是c、b或a、d
+
+N堆，也是：最终谁取完后局面变为1、n谁就输了
+
+
+
+尼姆博弈（Nimm Game -->
+        <!-- </div> -->
+
+        
+        <h1 id="巴什博弈（Bash-Game）"><a href="#巴什博弈（Bash-Game）" class="headerlink" title="巴什博弈（Bash Game）"></a>巴什博弈（Bash Game）</h1><blockquote>
+<p>一堆n个物品，两人轮流取出（1~m）个，最终取完者胜出</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/18/博弈/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/07/17/python-读写csv文件/" class="item-title">python 读写csv文件</a>
+      
+      <time datetime="2019-07-17T11:41:22.000Z">
+        2019-07-17
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+原始资料文件
+
+
+Code&#39;&#39;&#39;
+pycharm里，写完了暂时没有用到的东西会显示为灰色
+就像eclipse似的，写出来暂时没用到的东西会有标注
+&#39;&#39;&#39;
+import csv
+
+data_path = &#39;./train.csv&#39;
+
+def run_main():
+
+    pclass_dict = {}
+    gender_dict = {}
+    age_dict = {}
+    sibsp_dict = {}
+    parch_dict = {}
+    fare_dict = {}
+    embarked_dict = {}
+
+    with open(data_path, &#39;r&#39;, newline=&#39;&#39;) as csvfile:
+        rows = csv.reader(csvfile)
+        for i, row in enumerate(rows):
+            if i == 0:
+                continue -->
+        <!-- </div> -->
+
+        
+        <h3 id="Python读取csv文件统计数据写入新的csv文件"><a href="#Python读取csv文件统计数据写入新的csv文件" class="headerlink" title="Python读取csv文件统计数据写入新的csv文件"></a>Python读取csv文件统计数据写入新的csv文件</h3>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/17/python-读写csv文件/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/13/POJ-1915-Knight-Moves-双向BFS/" class="item-title">POJ 1915 Knight Moves 双向BFS</a>
       
       <time datetime="2019-07-12T23:13:09.000Z">
@@ -429,206 +638,12 @@ void BFS()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/06/06/Python-study/" class="item-title">python study</a>
-      
-      <time datetime="2019-06-06T13:49:26.000Z">
-        2019-06-06
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Code&#39;&#39;&#39;
-enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串
-组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中。
-&#39;&#39;&#39;
-
-# 字符串
-s = &#39;fireworks&#39;
-for i, char in enumerate(s):
-    print(i, char)
-&#39;&#39;&#39;
-0 f
-1 i
-2 r
-3 e
-4 w
-5 o
-6 r
-7 k
-8 s
-&#39;&#39;&#39;
-
-# 列表
-list = [ &#39;fireworks&#39;, &#39;24&#39;, 1, 17 ];
-for i, idx in enumerate(list):
-    print(i, idx)
-&#39;&#39;&#39;
-0 fireworks
-1 24
-2 1
-3 17
-&#39;&#39;&#39;
-# 元组
-tup = (&#39;LX&#39;, 24, &#39;short hair&#39;, &#39;tall&#39;)
-for i,  -->
-        <!-- </div> -->
-
-        
-        <h1 id="enumerate遍历"><a href="#enumerate遍历" class="headerlink" title="enumerate遍历"></a>enumerate遍历</h1><blockquote>
-<p>enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串组合为一个索引序列，同时列出数据和数据下标，一般用在 for 循环当中。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/06/06/Python-study/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/06/06/HTML涉猎/" class="item-title">HTML涉猎</a>
-      
-      <time datetime="2019-06-06T12:59:55.000Z">
-        2019-06-06
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- HTML制表表格居中Code :添加属性 align=&quot;center&quot;&lt;table border=&quot;1&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;align=&quot;center&quot;&gt;
-
-
-align    [ə’laɪn]     对齐
-
-边框为无宽度直线
-填充（P）：0
-间距（S）：0
-
- -->
-        <!-- </div> -->
-
-        
-        <h1 id="HTML制表"><a href="#HTML制表" class="headerlink" title="HTML制表"></a>HTML制表</h1><h2 id="表格居中"><a href="#表格居中" class="headerlink" title="表格居中"></a>表格居中</h2><h3 id="Code-添加属性-align-quot-center-quot"><a href="#Code-添加属性-align-quot-center-quot" class="headerlink" title="Code :添加属性 align=&quot;center&quot;"></a>Code :添加属性 <code>align=&quot;center&quot;</code></h3><pre><code class="lang-html">&lt;table border=&quot;1&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;align=&quot;center&quot;&gt;
-</code></pre>
-<blockquote>
-<p>align    [ə’laɪn]     对齐</p>
-</blockquote>
-<h2 id="边框为无宽度直线"><a href="#边框为无宽度直线" class="headerlink" title="边框为无宽度直线"></a>边框为无宽度直线</h2><blockquote>
-<p>填充（P）：0</p>
-<p>间距（S）：0</p>
-</blockquote>
-
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/06/06/HTML涉猎/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/06/06/POJ-3255-Roadblocks-and-3463-Sightseeing/" class="item-title">POJ 3255 Roadblocks and 3463 Sightseeing（次短路）</a>
-      
-      <time datetime="2019-06-06T08:29:52.000Z">
-        2019-06-06
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Idea 1
-1到n的次短路长度必然产生于：从1走到x的最短路 + edge[x][y] +  y到n的最短路
-首先预处理好1到每一个节点的最短路，和n到每一个节点的最短路
-然后枚举每一条边作为中间边（x，y）或者（y，x），如果加起来长度等于最短路长度则跳过，否则更新从1走到x的最短路 + edge[x][y] +  y到n的最短路  给dist[n] 比较 找大于dist[n] 且是最小的那一个
-spfa(1) + spfa(n)
-原文链接： https://blog.csdn.net/huangshuai147/article/details/69105576
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-const int INF = 0x3f3f3f3f;
-
-int n, m -->
-        <!-- </div> -->
-
-        
-        <h1 id="POJ-3255-Roadblocks"><a href="#POJ-3255-Roadblocks" class="headerlink" title="POJ 3255 Roadblocks"></a>POJ 3255 Roadblocks</h1><blockquote>
-<p>N个点，M条双向边，求1到N的严格次短路</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/06/06/POJ-3255-Roadblocks-and-3463-Sightseeing/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/06/05/POJ-3276-Face-the-Right-Way/" class="item-title">POJ 3276 Face the Right Way</a>
-      
-      <time datetime="2019-06-05T11:16:27.000Z">
-        2019-06-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- http://poj.org/problem?id=3276
-Idea
-翻转问题的特点：
-
-若确定了翻转方案，交换翻转顺序对结果无影响
-对同一区间：要么不反转，要么只翻转一次。多次翻转是多余的。
-
-首先对最左边的牛进行判断，如果这头牛已经朝前方了，那么以这头牛为开始的区间就不需要在进行反转。
-如果这头牛朝后面，那么对应的以该牛为开始的区间就反转。不停重复以上步骤即可。
-但是如果反转牛时对每一头牛都进行反转操作的话时间复杂度就成了O(n^3)，肯定超时，所以必须在反转操作上进行优化。
-f[i]:=区间[i,i+k-1]进行了反转的话为1,否则的话为0
-这样在考虑第i头牛时候，如果sum(f[i-k+1]+…+f[i-1)为奇数的话，则与开始方向相反，否则相同。这样就将反转操作的复杂度将为常数，整个算法复杂度将为O(n^2)
-
-Code#include &lt;string&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-using namespace std;
-
-int n;
-b -->
-        <!-- </div> -->
-
-        
-        <h1 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h1><blockquote>
-<p>N头牛排成一列，有面朝前（F）的、面朝后（B）的，有一台机器能让连续K头牛翻转方向，</p>
-<p>求让所有牛面朝前的最少操作次数M，及此时对应的K；</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/06/05/POJ-3276-Face-the-Right-Way/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/18/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/20/"> </a>
+        <a class="extend prev" rel="prev" href="/page/18/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/20/"> </a>
       </div>
 
     </div>
@@ -683,23 +698,23 @@ b -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -711,7 +726,7 @@ b -->
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/18/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/20/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/18/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/page/20/">20</a><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/20/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

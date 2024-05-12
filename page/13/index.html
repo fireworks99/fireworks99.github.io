@@ -112,6 +112,197 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/10/20/HDU-4135-Co-prime-容斥原理/" class="item-title">HDU 4135 Co-prime 容斥原理</a>
+      
+      <time datetime="2019-10-20T09:04:28.000Z">
+        2019-10-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+在区间[L, R]里与N互质的数字的个数
+== 在区间[1, R]里与N互质的数字的个数
+减去( - ) 在区间[1, L]里与N互质的数字的个数
+所以可以自定义一个函数求出[1, up]里与N互质的数的个数
+但是数字太多，依次找互质的数字不好找，但找不互质的容易
+区间[1, up]里N的质因子的倍数与N不互质
+找到一个质因子可找到一大堆它的倍数(与N不互质的数字)
+像找2、3、5…的倍数时有重复(6,10,15)，这便用到容斥!
+
+Code#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define ll long long
+
+ll factor[100005], cnt = 0;
+
+void get_factors(ll n)///①得到全集②进行容斥
+{
+    cnt = 0;
+    for(ll i = 2; i * i -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出区间[L, R]，给出数字N，求在该区间里与N互质的数字的个数</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/10/20/HDU-4135-Co-prime-容斥原理/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/10/20/SDNUOJ-新生-AC题数统计/" class="item-title">SDNUOJ 新生 AC题数统计</a>
+      
+      <time datetime="2019-10-20T00:52:19.000Z">
+        2019-10-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- import csv
+import requests
+from bs4 import BeautifulSoup
+
+
+def getText(url):
+    try:
+        headers = {&#39;user-agent&#39;: &#39;Mozilla/5.0&#39;}
+        r = requests.get(url, headers=headers)
+        r.raise_for_status()
+        r.encoding = r.apparent_encoding
+        return r.text
+    except:
+        return &quot;&quot;
+
+def solve(html):
+    soup = BeautifulSoup(html, &quot;html.parser&quot;)
+    soup = soup.find(&quot;div&quot;, style=&quot;float: left;&quot;)
+    soup = BeautifulSoup(st -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>用于统计SDNUOJ上某（些）用户AC题目数量</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/10/20/SDNUOJ-新生-AC题数统计/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/10/19/POJ-3904-Sky-Code-容斥原理/" class="item-title">POJ 3904 Sky Code 容斥原理</a>
+      
+      <time datetime="2019-10-19T02:57:47.000Z">
+        2019-10-19
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+测试四个数字的公因数是否只有“1”并不好实现，要检测多次。
+试着从 (是 = 总 - 非) 方面想
+对每个数字进行①质因数分解(准公因子)
+同时记录下②不同质因子之间相乘所构成的重公因子
+统计所有③准公因子与重公因子出现的次数（假设为num[i]）
+计算④组合数C(num[i], 4) 即为以num[i]为公因子的四个数的组合数目
+但是在这里面，计算2、3、6会有重复，于是便有了容斥
+
+Code#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define ll __int64
+
+int factor[10005], cnt = 0;
+map&lt;int, int&gt; Count;
+map&lt;int, int&gt; Num;
+
+void get_factors(int n)
+{
+    cnt = 0;
+    for(i -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出数字N，给出N个数字，从中找出四个数字，它们的公因数只有“1”，问能找到多少组？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/10/19/POJ-3904-Sky-Code-容斥原理/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/09/11/POJ-3616-Milking-Time-类最长递增子序列/" class="item-title">POJ 3616 Milking Time(类最长递增子序列)</a>
+      
+      <time datetime="2019-09-11T11:02:28.000Z">
+        2019-09-11
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+将每一段的右界加上R作为新的右界。如果前一段区间的右界 &lt;= 后一段区间的左界，那么两段可以同时取得。但由于每段的权值未知，可能存在与之冲突的一个时间段的权值较之更大，所以要择优。
+对每个时间段dp，dp[i]表示选择了第i个时间段，整个过程可以达到的最大挤奶量
+初始化dp[i] = a[i].val
+对之前的区间遍历(前提：排好序)，若a[j].r &lt;= a[i].l
+那么当前区间最优值可从dp[j] + a[i].val和dp[i]中取max，这里像是最长递增子序列的dp过程：
+
+对某组有序的元素dp
+初始化dp[i] = a[i]
+遍历 i 之前的元素 j ，若 a[j]  &lt;=  a[i] 表示 i 前面可连上 j (此时 i 地状态可更新为更优值dp[i] = max(dp[i], dp[j] + a[i]))
+
+此类算法可解决的问题？
+
+有序的多个元素(可以是数字、区间)
+某些元素之间满足某种关系就具有某种“可连接性”，且“连接”可能引起最优值的更新
+
+
+Code#include &lt;cstdio&gt;
+#include &lt;io -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>奶牛有N个小时的产奶时间，农夫有M个时间段可用于挤牛奶，奶牛在相应的时间段有不同的产奶量，每挤一次牛奶必须休息R分钟，求最多能挤奶多少？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/09/11/POJ-3616-Milking-Time-类最长递增子序列/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/09/09/POJ-2385-Apple-Catching-动态规划/" class="item-title">POJ 2385 Apple Catching(动态规划)</a>
       
       <time datetime="2019-09-09T11:50:08.000Z">
@@ -410,206 +601,12 @@ x3 - x0 &lt;= 7                (1)+(4)+(5)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/30/HDU-2255-奔小康赚大钱-最大权值完全匹配KM算法/" class="item-title">HDU 2255 奔小康赚大钱(最大权值完全匹配KM算法)</a>
-      
-      <time datetime="2019-08-30T01:45:14.000Z">
-        2019-08-30
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 算法过程模拟
-https://www.cnblogs.com/wenruo/p/5264235.html
-
-Code(Template)#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const int MAXN = 305;
-const int INF = 0x3f3f3f3f;
-
-int love[MAXN][MAXN];   /// 记录每个妹子和每个男生的好感度
-int ex_girl[MAXN];      /// 每个妹子的期望值
-int ex_boy[MAXN];       /// 每个男生的期望值
-bool vis_girl[MAXN];    /// 记录每一轮匹配匹配过的女生
-bool vis_boy[MAXN];     /// 记录每一轮匹配匹配过的男生
-int match[MAXN];        /// 记录每个男生匹配到的妹子 如果没有则为-1
-int slack[MAXN];        /// 记录每个汉 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>KM算法：求二分图的最佳匹配，可以做到O(N^3)</p>
-<p>最佳匹配：<strong>带权</strong>二分图的<strong>权值最大</strong>的<strong>完备匹配</strong>称为最佳匹配</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/30/HDU-2255-奔小康赚大钱-最大权值完全匹配KM算法/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/29/POJ-3254-Corn-Fields-状态压缩DP/" class="item-title">POJ 3254 Corn Fields(状态压缩DP)</a>
-      
-      <time datetime="2019-08-29T11:28:35.000Z">
-        2019-08-29
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 状态压缩for(int i = 0; i &lt; (1 &lt;&lt; n); ++i)
-
-
-用一个数来表示一组数，以降低表示状态所需的维数的解题手段，就叫做状态压缩
-
-solution
-以dp[i][state(j)]来表示对于前i行，第i行采用第j种状态时可以得到的可行方案总数
-dp[i][state(j)]=dp[i - 1][state(k1)]+dp[i - 1][state(k2)]+……+dp[i - 1][state(kn)]
-kn即为上一行可行状态的编号，上一行共有n种可行状态
-(把不可行状态排除掉：同行相邻、同列相邻、理想与现实冲突) 
-最终ans=dp[m][state(k1)]+dp[m][state(k2)]+……+dp[m][state(kn)]; 
-原文出处：https://blog.csdn.net/harrypoirot/article/details/23163485
-
-Code#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const int MOD  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出N x M 的01矩阵，1表示该处可种植作物，0表示不可以。另外相邻两块地不能同时种植作物，问有几种种植作物的方案(并没有规定种几棵作物)</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/29/POJ-3254-Corn-Fields-状态压缩DP/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/27/SDNUOJ-1032-1194-1422-四维DP/" class="item-title">SDNU 1032 1194 1422 四维DP</a>
-      
-      <time datetime="2019-08-27T11:22:55.000Z">
-        2019-08-27
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-两个二维DP同时进行 -&gt; 四维DP
-单独处理走到同一格的情况
-
-
-Code#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int mp[51][51];
-int dp[51][51][51][51];
-
-int main()
-{
-    int n, m;
-    cin &gt;&gt; n &gt;&gt; m;
-    for (int i = 1; i &lt;= n; ++i)
-        for (int j = 1; j &lt;= m; ++j)
-            scanf(&quot;%d&quot;,&amp;mp[i][j]);
-
-    for (int i = 1; i &lt;= n; ++i)
-        for (int j = 1; j &lt;= m; ++j)
-            for (int k = 1;  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>两枚棋子从(1, 1)走到(m,n)，只能向下或向右走，不能走同一格</p>
-<p>求路径上权值和的最大值。         (1, 1)与(m, n)处权值为0</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/27/SDNUOJ-1032-1194-1422-四维DP/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/22/Hexo-github博客-不含livere的主题安装livere/" class="item-title">(Hexo+github博客)不含livere的主题安装livere</a>
-      
-      <time datetime="2019-08-22T11:42:43.000Z">
-        2019-08-22
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 一.Livere官网注册
-livere(来必力)官网
-
-二.登录后点击安装(City版)三.选择一般网站
-
-注意到这里有个data-uid
-
-四.修改到主题文件里的配置文件(_config.yml)
-
-添加以下代码
-
-
-Livere:
-  livere_uid: &#39;这里填上面那个data-uid&#39;
-
-
-
-将原来的评论系统false+注释
-
-
-
-五.添加livere.ejs文件
-我之前就是一直不知道 .ejs 文件怎么新建，没有专业工具怎么搞，今天突然想到，复制一个ejs文件不就行了吗……
-找到主题文件里的layout/_partial，任意复制一个ejs文件，可以临时粘贴在桌面上，重命名为livere，打开(可以用sublime，这里用别的估计也行)，删掉原来的内容，将一般网站里的代码粘贴进去并保存，剪贴回partial文件里
-
-六.修改post.ejs文件
-在主题文件下的layout文件里有个post.ejs文件，打开添加一行代码
-
-&lt;%- partial(&#39;_partial/livere&#39;, {post: page, index: true}) -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>今天SJY师哥给我发消息说我的博客gitment不能用，我一看还真是。其实最初也不是很想用gitment的，因为只有github用户才能评论。奈何我所用的hexo主题只有gitment这一个评论方式，觉得安装别的会挺麻烦就凑合着用了。然而该来的躲不过，gitment出了些问题，我看别人的解决方案也不太懂，于是试着安装了livere……</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/22/Hexo-github博客-不含livere的主题安装livere/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/12/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/14/"> </a>
+        <a class="extend prev" rel="prev" href="/page/12/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/14/"> </a>
       </div>
 
     </div>
@@ -664,23 +661,23 @@ Livere:
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -692,7 +689,7 @@ Livere:
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/12/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/14/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/12/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="page-number current">13</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/14/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

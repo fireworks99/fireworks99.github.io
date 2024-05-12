@@ -112,6 +112,200 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/01/18/POJ-3159-Candies-最短路解差分约束/" class="item-title">POJ 3159 Candies(最短路解差分约束)</a>
+      
+      <time datetime="2020-01-18T11:25:51.000Z">
+        2020-01-18
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+题目是求从1到n的最短路（差分约束）
+关键在于算法的优化
+①堆优化的Dijkstra：
+我之前的Dijkstra都是手动去模拟那个优化过程的，可能因为模拟地不准确而效果不好？易TLE
+②栈实现的spfa：
+spfa是对Bellman-Ford的优化，Bellman-Ford是在暴力求解最短路。
+假设：图只是一棵树，1起点，n终点，从终点向起点添边，则复杂度达到最大n*m,n-1次对m条边的松弛，每次对m条边松弛只有一次是有用的！
+而spfa是以松弛过的点为基去松弛，保证了大部分松弛都是有效的，至少是可能的
+而spfa的实现，按理说用队列还是栈没区别，但事实是：用栈比用队列快？？？而且前提是没有负环？？？
+
+Code#include &lt;queue&gt;
+#include &lt;stack&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>堆(优先队列)优化的Dijkstra</p>
+<p>用栈(而非队列)实现spfa</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/01/18/POJ-3159-Candies-最短路解差分约束/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/01/12/SDNUOJ-1045-石子合并-区间DP/" class="item-title">石子合并(区间DP)</a>
+      
+      <time datetime="2020-01-12T08:06:31.000Z">
+        2020-01-12
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+一大堆石子由两小堆石子堆成，此次操作的得分为两小堆石子质量之和，而倘若这两小堆石子又各是由两小小堆石子堆成，那么此次操作的得分是：两堆石子之和 + 堆成第一堆的得分 + 堆成第二堆的得分
+状态转移方程：
+dp[i][j] = dp[i][k] + dp[k + 1][j] + (sum[j] - sum[i - 1]) 
+
+Code of SDNUOJ 1045#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#incl -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>有n堆石子排成一行，每次选择相邻的两堆石子，将其合并为一堆，记录该次合并的得分为两堆石子个数之和。已知每堆石子的石子个数，求当所有石子合并为一堆时，最小的总得分。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/01/12/SDNUOJ-1045-石子合并-区间DP/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/12/09/2019-ICPC-Asia-Nanchang-Regional/" class="item-title">2019 ICPC Asia Nanchang Regional</a>
+      
+      <time datetime="2019-12-09T11:46:05.000Z">
+        2019-12-09
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- analyze
+1.黑边没有限制数目，又是求最大边权和，所以选择所有黑边
+2.(无向图可用并查集缩点)缩点后，对于白边，求最大生成树
+3.若有多余白边(在K的限制下)，贪心选取权值大的
+细节：①int node = n;每次连入一个点node—，若最后node&gt;1不能生成树输出-1.②每次用一条白边k—，若最后k0则sort后贪心选.
+有点东西：这题里，无向图求缩点，和 求生成树，都用了并查集
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define ll long long
+
+const int maxn = 50005;
+const int maxm = 500005;
+
+struct edge
+{
+    ll u, v,  -->
+        <!-- </div> -->
+
+        
+        <h2 id="E-Bob’sProblem"><a href="#E-Bob’sProblem" class="headerlink" title="E.Bob’sProblem"></a>E.Bob’sProblem</h2><blockquote>
+<p>N个点（从1到N）</p>
+<p>M条边（带权，有黑白两种）</p>
+<p>选边，使得在图联通的前提下，边权和最大</p>
+<p>限制条件：白边不能超过K条</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/12/09/2019-ICPC-Asia-Nanchang-Regional/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/11/26/HDU-2295-Radar-DLX-binary-search/" class="item-title">HDU 2295 Radar (DLX + binary search)</a>
+      
+      <time datetime="2019-11-26T12:55:15.000Z">
+        2019-11-26
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 建模
+Dancing-Links-X
+行：可选解决方案——那些雷达
+列：目标覆盖区域——那些城市
+二分查找半径，判断：如果第i个雷达在此半径下能覆盖第j个城市，那么link(i, j)，问题转换为DLX重复覆盖：选取一些行，使得每列含有1
+
+Code#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int maxnode = 3005;
+const double eps = 1e-8;
+
+int n, m, k;
+
+struct node
+{
+    double x, y;
+};
+node city[55], radar[55];
+int cnt[55], Head[55], vis[55];
+int L[maxnode], R[maxnode], U[maxnode], D[maxnode];
+int Row[maxnode],  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个城市，共M处布有雷达，条件受限，这M处雷达只能选用K个去覆盖城市，求雷达最小覆盖半径</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/26/HDU-2295-Radar-DLX-binary-search/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/24/2019-CCPC-Harbin-F-Fixing-Banners/" class="item-title">2019 CCPC Harbin F-Fixing Banners</a>
       
       <time datetime="2019-11-24T12:52:49.000Z">
@@ -423,239 +617,12 @@ bool -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/05/POJ-3683-Paiest-John-s-Busiest-Day-2-sat-Tarjan-Topo/" class="item-title">POJ 3683 Paiest John&#39;s Busiest Day(2-sat:Tarjan+Topo)</a>
-      
-      <time datetime="2019-11-05T11:32:29.000Z">
-        2019-11-05
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 2-sat
-①输入+初始化 input() + initial()
-②添边 add_edge()
-③缩点 Tarjan()
-④判可行否 judge()
-⑤若可行，记下超点的对立点
-⑥反向建边拓扑染色：
-遍历所有的点
-对于每个点:
-若与他相连接的点跟它本身不处于同一个强连通分量中
-将两个强连通分量(即两个超点)反向建边
-进行BFS拓扑染色
-
-Code#include &lt;stack&gt;
-#include &lt;queue&gt;
-#include &lt;vector&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 10005;
-
-struct time
-{
-    int start, over;
-} tm[N];
-
-stack&lt;int&gt; st;
-vector&lt;int&gt; v[N];///Trajan用
-vector&lt; -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>有一个小镇上只有一个牧师。这个小镇上有一个传说，在九月一日结婚的人会受到爱神的保佑，但是要牧师举办一个仪式。这个仪式要么在婚礼刚刚开始的时候举行，要么举行完婚礼正好结束。<br>现在已知有n场婚礼，告诉你每一场的开始和结束时间，以及举行仪式所需要的时间。问牧师能否参加所有的婚礼，如果能则输出一种方案.</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/05/POJ-3683-Paiest-John-s-Busiest-Day-2-sat-Tarjan-Topo/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/04/POJ-3207-Ikki-s-Story-IV-2-sat/" class="item-title">POJ 3207 Ikki&#39;s Story IV(2-sat)</a>
-      
-      <time datetime="2019-11-04T12:07:41.000Z">
-        2019-11-04
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 2-sat
-什么是2-SAT呢？就是
-①有一些集合，(对应此题中有一些边)
-②每个集合中有且仅有两个元素，(某条边是从圈内连or从圈外连)
-③两个元素必须且只能选一个，(从圈内连或者从圈外连，二选一)
-④集合间的元素存在一定的选择关系，(边不能相交)
-求解可行性及可行方案。
-
-算法过程
-1、连边
-2、跑Tarjan
-3、判可行性，即同一集合中的两个点是否同属一个强连通块
-(若不求可行方案，到此步即可)
-4、缩点建新图，连反边
-5、拓扑序，若当前点没有被访问过，则选择该点，不选择其另外的点
-
-Analyze
-对于此题，连线对应区间如果相交，那么两线不能同时在圈内或同时在圈外
-
-Code#include &lt;stack&gt;
-#include &lt;vector&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-stack&lt;int&gt; st;
-vector&lt;int -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个点按顺序排列在一个圆环上，要连接M条边，可从圈内连，可从圈外连，问能否实现各边不相交</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/04/POJ-3207-Ikki-s-Story-IV-2-sat/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/02/POJ-1703-Find-them-Catch-them（并查集变形）/" class="item-title">POJ 1703 Find them, Catch them（并查集变形）</a>
-      
-      <time datetime="2019-11-02T07:29:03.000Z">
-        2019-11-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 并查集
-初始化一个 2 * N 的并查集，
-如果a和b属于不同帮派，
-unite(a, b + n) &amp;&amp; unite(b, a + n)
-这样如果c和b属于不同帮派
-unite(c, b + n) &amp;&amp; unite(b, c + n)
-就把a和c连起来了
-!!!什么神仙做法！！！
-是不是暗示我们，有些题多用点空间就能解决问题
-
-Code#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 100005;
-
-int n, m;
-int pre[N * 2];
-
-void init()
-{
-    for(int i = 0; i &lt;= n * 2; ++i)
-        pre[i] = i;
-}
-
-int found(int x)
-{
-    if(pre[x] != x)
-   -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>有两个帮派，</p>
-<p>给出 D a b 表示a和b位于不同帮派，</p>
-<p>给出 A a b 表示询问a和b是否属于同一帮派</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/02/POJ-1703-Find-them-Catch-them（并查集变形）/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/02/POJ-2010-Moo-University-Financial-Aid-贪心-优先队列/" class="item-title">POJ 2010 Moo University Financial Aid(贪心+优先队列)</a>
-      
-      <time datetime="2019-11-02T05:40:55.000Z">
-        2019-11-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 贪心
-按成绩排序作为基本顺序
-处理上部：
-选取后 N/2 个学生，将每个申请金额置于一个优先级队列中(由大到小)，并记下总和
-从第 C - N / 2 - 1 个位置当做中位数依次往下测试(保证了选取最大的)
-处理下部：
-在基本顺序的基础上将下部分(要测试的位置以下)按申请金额由小到大排序
-取前 N / 2 个的金额总和，记下最后一个位置(即 int last_pos = N / 2 - 1)
-检测：
-上部金额 + 下部金额 + 当前检测位置金额 &lt;= F 即退出
-否则：
-①将当前检测位置 idx 并入上部
-②让其前一位置 idx - 1 脱离下部
-在对idx - 1这个位置检测
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-struct node
-{
-    int score -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>学校要选出N个人发放助学金，</p>
-<p>但有C个人申请（给出C个人的成绩和各自的申请金额），</p>
-<p>而且学校只能发放不超过F的金钱，</p>
-<p>找出一种策略，使得被发放助学金的学生的群体，</p>
-<p>他们的成绩的中位数最大</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/02/POJ-2010-Moo-University-Financial-Aid-贪心-优先队列/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/10/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/12/"> </a>
+        <a class="extend prev" rel="prev" href="/page/10/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/12/"> </a>
       </div>
 
     </div>
@@ -710,23 +677,23 @@ struct node
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -738,7 +705,7 @@ struct node
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/10/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/12/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/10/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/12/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

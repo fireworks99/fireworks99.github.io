@@ -112,6 +112,220 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/07/POJ-2516-Minimum-Cost-最小费用最大流/" class="item-title">POJ 2516 Minimum Cost(最小费用最大流)</a>
+      
+      <time datetime="2019-08-07T02:08:15.000Z">
+        2019-08-07
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+题目链接：http://poj.org/problem?id=2516 （题目老是AC不了怎么办-&gt;去Discuss区看看，我就是不知怎么WA的，去讨论区看，说数组开小了给WA，我开大一些还真AC了，什么鬼……）
+
+Analyze
+K种货物分别分析
+多源点多汇点-&gt;建立超级源点与超级汇点
+连接超源到各卖家的路，费用0，容量等于卖家货物量
+连接超汇到各买家的路，费用0，容量等于买家需求量
+连接卖家与买家间的路，费用对应题目中的费用，容量INF
+在可行的前提下，最小费用最大流，原来是最小费用固定流，因为买家到超汇的容量被设为需求量，所以直接求最大流即为该固定流
+
+Code#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+using namespace std;
+const in -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>N个买家，M个卖家，K种货物</p>
+<p>接下来N行，每行K个数值，表示每个买家对于K种货物的需求</p>
+<p>接下来M行，每行K个数值，表示每个卖家对于K种货物的拥有量</p>
+<p>接下来K个矩阵，每个矩阵代表那种货物的有关运输费用</p>
+<p>(第k个矩阵第i行第j列的数值,表示第j个卖家运输单位第k种货物到第i个买家的费用)</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/07/POJ-2516-Minimum-Cost-最小费用最大流/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/05/UOJ-117-欧拉回路-输出路径/" class="item-title">UOJ 117 欧拉回路(输出路径)</a>
+      
+      <time datetime="2019-08-05T08:03:01.000Z">
+        2019-08-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+题目链接：http://uoj.ac/problem/117
+
+Code 代码赏析#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+#define eps 1e-8
+#define PI acos(-1.0)
+#define ll long long
+using namesp -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>一张无向图(或有向图),找出(若能找出)欧拉回路并输出路径。可能有重边、自环。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/05/UOJ-117-欧拉回路-输出路径/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/05/A头文件/" class="item-title">头文件</a>
+      
+      <time datetime="2019-08-05T06:50:40.000Z">
+        2019-08-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- #include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+#define eps 1e-8
+#define PI acos(-1.0)
+#define ll long long
+using namespace std;
+const int mod = 1e9 + 7;
+const in -->
+        <!-- </div> -->
+
+        
+        <pre><code class="lang-c++">#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+#include &lt;functional&gt;
+#define eps 1e-8
+#define PI acos(-1.0)
+#define ll long long
+using namespace std;
+const int mod = 1e9 + 7;
+const int INF = 0x3f3f3f3f;
+#define Close ios::sync_with_stdio(false);
+
+void Debug(char * s)
+{
+    cout &lt;&lt; &quot;-------------  &quot; &lt;&lt; s &lt;&lt; &quot;  -------------&quot; &lt;&lt; &#39;\n&#39;;
+}
+
+
+
+int main()
+{
+
+    return 0;
+}
+</code></pre>
+
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/05/A头文件/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/05/A看清本质/" class="item-title">看清本质</a>
+      
+      <time datetime="2019-08-05T02:38:58.000Z">
+        2019-08-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+
+不参与排序、不作为一个整体存于STL中的结构体是没有灵魂的，多个数组（同下标一组）可以代替
+BFS里对象类型为int的queue是没有灵魂的，数组+两个移动指针可以模拟
+单纯的map&lt;string, int&gt; mp在时间方面是没有灵魂的，哈希可以代替，另外字典树(哈希树的变种)也可以更好地代替
+
+ -->
+        <!-- </div> -->
+
+        
+        <h2 id="一些本质性的东西"><a href="#一些本质性的东西" class="headerlink" title="一些本质性的东西"></a>一些本质性的东西</h2><blockquote>
+<p>被封装起来的高级的数据结构是具有囊括性的，能应付多方面的问题。但如果只是用他的某一面，很可能这一需求可以由更低级、更基础的数据结构实现，这时再去用那个高级的数据结构便是没有灵魂的，那个低级、基础的数据结构更快更高效</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/05/A看清本质/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/03/洛谷-P3381-最小费用最大流-模板/" class="item-title">洛谷 P3381 最小费用最大流(模板)</a>
       
       <time datetime="2019-08-03T00:50:50.000Z">
@@ -431,210 +645,12 @@ using namespace std; -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/29/POJ-1144-NEtwork-无向图-割点/" class="item-title">POJ 1144 Network(双连通+割点)</a>
-      
-      <time datetime="2019-07-29T03:24:17.000Z">
-        2019-07-29
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 判断割点
-
-对根节点u，若其有两棵或两棵以上的子树，则该根结点u为割点； 
-对非叶子节点u（非根节点），若其子树的节点均没有指向u的祖先节点的回边，说明删除u之后，根结点与u的子树的节点不再连通；则节点u为割点。
-
-
-POJ 1144 Network（求割点个数）#include &lt;stack&gt;
-#include &lt;vector&gt;
-#include &lt;stdio.h&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-bool flag[105];
-int ans, cnt, low[105], time[105];
-vector&lt;int&gt; v[105];
-
-void init()
-{
-    ans = cnt = 0;
-    memset(flag, 0, sizeof(flag));
-    memset(low, 0, sizeof(low));
-    memset(time,  -->
-        <!-- </div> -->
-
-        
-        <h2 id="割点"><a href="#割点" class="headerlink" title="割点"></a>割点</h2><blockquote>
-<p>将这个点去掉，图就会被分成两个部分（或者以上），那么这个点就是一个割点</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/29/POJ-1144-NEtwork-无向图-割点/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/27/c-string-及其函数/" class="item-title">c++ string 及其函数</a>
-      
-      <time datetime="2019-07-27T07:19:24.000Z">
-        2019-07-27
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Code自我感觉重要的几点：
-1.getline(cin, s)的赋值
-2.字符串数组的使用
-5.大小、判空
-6.末尾添加
-11.string查找
-
-
-#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;sstream&gt;
-using namespace std;
-
-int len = 4;
-char ch = &#39;Y&#39;;
-
-int main()
-{
-    ///1.赋值
-    ///cin遇空格、tab、回车结束
-//    string s1;
-//    cin &gt;&gt; s1;
-//    cout &lt;&lt; s1 &lt;&lt; &#39;\n&#39;;
-    ///吃“回车”，相当于getchar(),避免影响后续输入
-//    cin.get();
-    ///一行字符串的输入
-//    string s2;
-//    getline(cin, s2);
-//    cout &lt;&lt; s2  -->
-        <!-- </div> -->
-
-        
-        <h2 id="s-substr"><a href="#s-substr" class="headerlink" title="s.substr()"></a>s.substr()</h2><blockquote>
-<p>substr有2种用法：</p>
-<p>假设：string s = “0123456789”;</p>
-<p>string sub1 = s.substr(5); //只有一个数字5表示从下标为5开始一直到结尾：sub1 = “56789”</p>
-<p>string sub2 = s.substr(5, 3); //从下标为5开始截取长度为3位：sub2 = “567”</p>
-<p>转自： <a href="https://blog.csdn.net/liuchuo/article/details/54599840" target="_blank" rel="noopener">https://blog.csdn.net/liuchuo/article/details/54599840</a></p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/27/c-string-及其函数/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/27/POJ-1236-Network-of-Schools-强连通-缩点/" class="item-title">POJ 1236 Network of Schools(强连通+缩点)</a>
-      
-      <time datetime="2019-07-27T02:41:58.000Z">
-        2019-07-27
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Trajan算法求缩点
-stack\ st;
-int num;///num:强连通分量(连通块)的个数,缩点后点的个数
-bool vis[105];///该点是否访问过
-int inst[105];///该点是否在栈中
-int time[105];///i点第一次被访问的时间
-int low[105];///i点所在强连通分量子图中第一个被搜到的点的time值
-int ltt[105];///i点属于第几个强连通分量(0表示不属于任何一个)
-强连通分量内元素个数最少为1(该元素本身),这意味着每个元素都有从属的强连通分量
-
-Code(Trajan)void Trajan(int x)///搜索x点及其子树
-{
-    int temp;
-    st.push(x);
-    inst[x] = vis[x] = 1;
-    low[x] = time[x] = ++t;
-    for(int i = 0; i &lt; v[x].size(); i++)
-    {
-        temp = v[x][i];
-        if(vis[temp] == 0)
-       -->
-        <!-- </div> -->
-
-        
-        <h2 id="缩点"><a href="#缩点" class="headerlink" title="缩点"></a>缩点</h2><blockquote>
-<p>缩点就是要将两两之间可以相互到达的点，缩成一个点来表示（即求无向图的连通分量，或者有向图的强连通分量），他们的求法都是相同的，都是将无向图转化为有向图。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/27/POJ-1236-Network-of-Schools-强连通-缩点/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/26/SDNUOJ-1118-单词统计-JAVA-s-indexOf/" class="item-title">SDNUOJ 1118 单词统计 JAVA(s.indexOf())</a>
-      
-      <time datetime="2019-07-26T10:36:31.000Z">
-        2019-07-26
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-题目链接： http://www.acmicpc.sdnu.edu.cn/problem/show/1118
-这题用C++做的话要用AC自动机过：https://fireworks99.github.io/2019/07/24/SDNUOJ-1118-%E5%8D%95%E8%AF%8D%E7%BB%9F%E8%AE%A1-AC%E8%87%AA%E5%8A%A8%E6%9C%BA/#more 
-JAVA暴力可过……
-
-S.indexof(s, pos)
-从指定的索引处开始，返回第一次出现的指定子字符串在此字符串中的索引，相当于c++的string里的s.find(str, pos)
-其他相关函数：
-
-int indexOf(String str) ：返回第一次出现的指定子字符串在此字符串中的索引.
-int lastIndexOf(String str) ：返回在此字符串中最右边出现的指定子字符串的索引.
-int lastIndexOf(String str, int startIndex) ：从指定的索引处开始向后搜索，返回在此字符串中最后一次出现的指定子字符串的索引。 
-
-
-Co -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给定一个字符串和若干个单词，统计这些单词在这个字符串中出现的次数。 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/26/SDNUOJ-1118-单词统计-JAVA-s-indexOf/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/15/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/17/"> </a>
+        <a class="extend prev" rel="prev" href="/page/15/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/17/"> </a>
       </div>
 
     </div>
@@ -689,23 +705,23 @@ Co -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -717,7 +733,7 @@ Co -->
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/15/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/17/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/15/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/17/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

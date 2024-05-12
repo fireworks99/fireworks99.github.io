@@ -112,6 +112,200 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/30/HDU-2255-奔小康赚大钱-最大权值完全匹配KM算法/" class="item-title">HDU 2255 奔小康赚大钱(最大权值完全匹配KM算法)</a>
+      
+      <time datetime="2019-08-30T01:45:14.000Z">
+        2019-08-30
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 算法过程模拟
+https://www.cnblogs.com/wenruo/p/5264235.html
+
+Code(Template)#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int MAXN = 305;
+const int INF = 0x3f3f3f3f;
+
+int love[MAXN][MAXN];   /// 记录每个妹子和每个男生的好感度
+int ex_girl[MAXN];      /// 每个妹子的期望值
+int ex_boy[MAXN];       /// 每个男生的期望值
+bool vis_girl[MAXN];    /// 记录每一轮匹配匹配过的女生
+bool vis_boy[MAXN];     /// 记录每一轮匹配匹配过的男生
+int match[MAXN];        /// 记录每个男生匹配到的妹子 如果没有则为-1
+int slack[MAXN];        /// 记录每个汉 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>KM算法：求二分图的最佳匹配，可以做到O(N^3)</p>
+<p>最佳匹配：<strong>带权</strong>二分图的<strong>权值最大</strong>的<strong>完备匹配</strong>称为最佳匹配</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/30/HDU-2255-奔小康赚大钱-最大权值完全匹配KM算法/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/29/POJ-3254-Corn-Fields-状态压缩DP/" class="item-title">POJ 3254 Corn Fields(状态压缩DP)</a>
+      
+      <time datetime="2019-08-29T11:28:35.000Z">
+        2019-08-29
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 状态压缩for(int i = 0; i &lt; (1 &lt;&lt; n); ++i)
+
+
+用一个数来表示一组数，以降低表示状态所需的维数的解题手段，就叫做状态压缩
+
+solution
+以dp[i][state(j)]来表示对于前i行，第i行采用第j种状态时可以得到的可行方案总数
+dp[i][state(j)]=dp[i - 1][state(k1)]+dp[i - 1][state(k2)]+……+dp[i - 1][state(kn)]
+kn即为上一行可行状态的编号，上一行共有n种可行状态
+(把不可行状态排除掉：同行相邻、同列相邻、理想与现实冲突) 
+最终ans=dp[m][state(k1)]+dp[m][state(k2)]+……+dp[m][state(kn)]; 
+原文出处：https://blog.csdn.net/harrypoirot/article/details/23163485
+
+Code#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int MOD  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出N x M 的01矩阵，1表示该处可种植作物，0表示不可以。另外相邻两块地不能同时种植作物，问有几种种植作物的方案(并没有规定种几棵作物)</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/29/POJ-3254-Corn-Fields-状态压缩DP/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/27/SDNUOJ-1032-1194-1422-四维DP/" class="item-title">SDNU 1032 1194 1422 四维DP</a>
+      
+      <time datetime="2019-08-27T11:22:55.000Z">
+        2019-08-27
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+两个二维DP同时进行 -&gt; 四维DP
+单独处理走到同一格的情况
+
+
+Code#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int mp[51][51];
+int dp[51][51][51][51];
+
+int main()
+{
+    int n, m;
+    cin &gt;&gt; n &gt;&gt; m;
+    for (int i = 1; i &lt;= n; ++i)
+        for (int j = 1; j &lt;= m; ++j)
+            scanf(&quot;%d&quot;,&amp;mp[i][j]);
+
+    for (int i = 1; i &lt;= n; ++i)
+        for (int j = 1; j &lt;= m; ++j)
+            for (int k = 1;  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>两枚棋子从(1, 1)走到(m,n)，只能向下或向右走，不能走同一格</p>
+<p>求路径上权值和的最大值。         (1, 1)与(m, n)处权值为0</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/27/SDNUOJ-1032-1194-1422-四维DP/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/22/Hexo-github博客-不含livere的主题安装livere/" class="item-title">(Hexo+github博客)不含livere的主题安装livere</a>
+      
+      <time datetime="2019-08-22T11:42:43.000Z">
+        2019-08-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 一.Livere官网注册
+livere(来必力)官网
+
+二.登录后点击安装(City版)三.选择一般网站
+
+注意到这里有个data-uid
+
+四.修改到主题文件里的配置文件(_config.yml)
+
+添加以下代码
+
+
+Livere:
+  livere_uid: &#39;这里填上面那个data-uid&#39;
+
+
+
+将原来的评论系统false+注释
+
+
+
+五.添加livere.ejs文件
+我之前就是一直不知道 .ejs 文件怎么新建，没有专业工具怎么搞，今天突然想到，复制一个ejs文件不就行了吗……
+找到主题文件里的layout/_partial，任意复制一个ejs文件，可以临时粘贴在桌面上，重命名为livere，打开(可以用sublime，这里用别的估计也行)，删掉原来的内容，将一般网站里的代码粘贴进去并保存，剪贴回partial文件里
+
+六.修改post.ejs文件
+在主题文件下的layout文件里有个post.ejs文件，打开添加一行代码
+
+&lt;%- partial(&#39;_partial/livere&#39;, {post: page, index: true}) -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>今天SJY师哥给我发消息说我的博客gitment不能用，我一看还真是。其实最初也不是很想用gitment的，因为只有github用户才能评论。奈何我所用的hexo主题只有gitment这一个评论方式，觉得安装别的会挺麻烦就凑合着用了。然而该来的躲不过，gitment出了些问题，我看别人的解决方案也不太懂，于是试着安装了livere……</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/22/Hexo-github博客-不含livere的主题安装livere/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/16/POJ-1456-Supermarket-贪心-并查集/" class="item-title">POJ 1456 Supermarket(贪心+并查集)</a>
       
       <time datetime="2019-08-16T12:07:44.000Z">
@@ -409,189 +603,12 @@ def getText(url):
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/12/HDU-2665-K-th-Number/" class="item-title">HDU 2665 K-th Number</a>
-      
-      <time datetime="2019-08-12T08:52:36.000Z">
-        2019-08-12
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-跟区间有关的算法/数据结构有哪些？
-尺取? 前缀和(与差分)? 莫队? 线段树? 树状数组? ……
-而主席树，我认为是：以线段树为结构单元的前缀和序列
-
-Study Blog
-
-https://www.cnblogs.com/LonecharmRiver/articles/9087536.html
-https://www.cnblogs.com/zyf0163/p/4749042.html
-
-
-Code of HDU 2665 K-th Number#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-#define M 200010
-
-int node_cnt, n, m;///节点标号、数组大小、查询个数
-int sum[M &lt;&lt; 5];///区间val
-int rt[M];///根节点标号
-int lc[M &lt;&lt; 5], rc[M &lt;&lt; 5 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出一个序列，查询某段区间里第k小的数字</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/12/HDU-2665-K-th-Number/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/10/Python爬取SDNUOJ两用户Solved-problems查找遗漏的水题/" class="item-title">Python爬取SDNUOJ两用户Solved problems查找遗漏的水题</a>
-      
-      <time datetime="2019-08-10T02:13:38.000Z">
-        2019-08-10
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Thanks
-感谢LTR师哥( https://blog.csdn.net/ltrbless )耐心指导，拿出自己珍贵的大把的时间悉心为我讲解细节，在我求“鱼”之时授我以“当下之鱼”及“来日之渔”
-题目做腻了的时候看了看爬虫入门的东西，偶然想起某天MF(YMF https://solodance.top/ )与旁人闲聊时提到这个（爬取两用户Information比较得出自己遗漏的水题）有趣的东西，想着自己也试试。在此说明原Idea来自于他。
-
-Codeimport urllib.request
-from bs4 import BeautifulSoup
-
-fro = &#39;http://www.acmicpc.sdnu.edu.cn/user/info/&#39;
-
-print(&quot;Please input your Username:&quot;)
-my_url = input()
-my_url = fro + my_url
-print(&quot;Please input his or her Username:&quot;)
-its_url = input()
-its -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>输入用户名，爬取SDNUOJ指定用户Information页面Solved Problems题号，通过对比，输出对方已解决而自己尚未解决的题目的题号</p>
-<p>可执行文件下载链接：<a href="https://github.com/fireworks99/Tools/raw/master/OJ_compare_sloved.exe" target="_blank" rel="noopener">https://github.com/fireworks99/Tools/raw/master/OJ_compare_sloved.exe</a></p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/10/Python爬取SDNUOJ两用户Solved-problems查找遗漏的水题/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/09/UVA-10480-Sabotage-最小割/" class="item-title">UVA 10480 Sabotage(最小割)</a>
-      
-      <time datetime="2019-08-09T06:29:11.000Z">
-        2019-08-09
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Attention
-一般的网络流知道了S(源点)T(汇点)，就默认了流向，所以路是单向的(两条边,w+0)
-但这题不同，两城市是等价的，都是S都是T，所以路是双向的(两条边,w+w)
-若是已知唯一的S(源点)T(汇点)，而题目又暗示(或明示)路是双向的(四条边w+0+w+0)
-
-Code#include &lt;set&gt;
-#include &lt;map&gt;
-#include &lt;stack&gt;
-#include &lt;queue&gt;
-#include &lt;ctime&gt;
-#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;bitset&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;sstream&gt;
-#include &lt;cstdlib&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个城市，M条连接城市的边，现在要切断城市1与城市2间的联络，求最小费用</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/09/UVA-10480-Sabotage-最小割/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/09/HDU-4289-Control-最大流/" class="item-title">HDU 4289 Control(最小割)</a>
-      
-      <time datetime="2019-08-09T01:33:33.000Z">
-        2019-08-09
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Description
-某位妹妹要从S到T运输偷来的心，我们可以在某些途径城市安装监控以逮捕她。每个城市安装监控的费用不同，要保证逮捕到这位妹妹，你被逮捕了，罪名:XXXX(某音刷多了) ，安装监控的最少花费是多少？
-
-Analyze
-看上去像是要求一个连通图的割点，使得S到T不连通，可并没有体现“最”这一特点，完全是固定的一种方案。(而且S、T不属于割点，而此题可以监控S、T)
-而我们知道，在一个已知S、T的网络图中，求完最大流的残余网络S到T不连通，符合题意。可题目求“最小”，奈何等于求“最大”？
-老子认为：一切事物都有对立面，对立的双方可以互相转化。
-我们知道，一条S到T的可行流的最大值，是这条路上容量最小边的容量
-所以，最大即最小，最小即最大。
-将原题中费用转为容量。求出最大流，便封锁了S到T的所有路。而这最大流，是各可行流中最小容量的和，即最小费用。
-以上理解也可以作为(最大流 == 最小割)的理解,所以这题其实是在求最小割?(滑稽)
-感性认识：
-
-假设最开始可行流就一条，那么最大流便是这条可行流上容量最小的边的容量，套到题目上，便是花费最少的监控所花费的金钱(即最小花费)
- -->
-        <!-- </div> -->
-
-        
-        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><blockquote>
-<p>道家学派的创始人老子认为<strong>一切事物都</strong>包含<strong>有</strong>和无、难和易、长和短、高和下、前和后等<strong>对立面，对立的双方能够相互转化</strong> </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/09/HDU-4289-Control-最大流/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
 
       <div id="recent-posts-paginator">
-        <a class="extend prev" rel="prev" href="/page/13/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/15/"> </a>
+        <a class="extend prev" rel="prev" href="/page/13/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/15/"> </a>
       </div>
 
     </div>
@@ -646,23 +663,23 @@ Analyze
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/11/HJ16-购物单/">HJ16 购物单</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/10/HJ44-Sudoku/">HJ44 Sudoku</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/09/HJ28-素数伴侣/">HJ28 素数伴侣</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Modular/">Modular</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/04/12/Engineering/">Engineering</a>
           </li>
         
       </ul>
@@ -674,7 +691,7 @@ Analyze
 </aside>
 
 <!-- <div id="paginator"> -->
-<!--   <a class="extend prev" rel="prev" href="/page/13/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="extend next" rel="next" href="/page/15/"> </a> -->
+<!--   <a class="extend prev" rel="prev" href="/page/13/"> </a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><a class="page-number" href="/page/16/">16</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="extend next" rel="next" href="/page/15/"> </a> -->
 <!-- </div> -->
 
     <script type="text/x-mathjax-config">

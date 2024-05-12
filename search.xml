@@ -4,6 +4,82 @@
   
     
     <entry>
+      <title>HJ24 合唱队</title>
+      <link href="2024/05/12/HJ24-%E5%90%88%E5%94%B1%E9%98%9F/"/>
+      <url>2024/05/12/HJ24-%E5%90%88%E5%94%B1%E9%98%9F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>N 位同学站成一排，音乐老师要请最少的同学出列，使得剩下的 K 位同学排成合唱队形。</p><p>设<em>K</em>位同学从左到右依次编号为 1，2…，K ，他们的身高分别为<em>T</em>1,<em>T</em>2,…,<em>T</em>K ，若存在<em>i</em>(1≤<em>i</em>≤<em>K</em>) 使得<em>T</em>1&lt;<em>T</em>2&lt;……&lt;<em>T</em>i−1&lt;<em>T</em>i 且 T<em>i&gt;</em>T<em>i+1&gt;……&gt;</em>T<em>K，则称这</em>K名同学排成了合唱队形。</p><p>通俗来说，能找到一个同学，他的两边的同学身高都依次严格降低的队形就是合唱队形。</p><a id="more"></a><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>123 124 125 123 121 是一个合唱队形</p><p>123 123 124 122不是合唱队形，因为前两名同学身高相等，不符合要求</p><p>123 122 121 122不是合唱队形，因为找不到一个同学，他的两侧同学身高递减。</p><p>你的任务是，已知所有N位同学的身高，计算最少需要几位同学出列，可以使得剩下的同学排成合唱队形。</p><p><strong>注意：不允许改变队列元素的先后顺序</strong> <strong>且</strong> <strong>不要求最高同学左右人数必须相等</strong></p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><strong>最长递增子序列</strong>：</p><ol><li>求出最长递增子序列数组LIS[]，其中LIS[i]表示[1, i]这个区间内最长递增子序列的长度。</li><li>求出最长递减子序列数组LDS[]，其中LDS[i]表示[1, i]这个区间内最长递减子序列的长度。</li><li>for循环遍历[1, n]，（LIS[i] + LDS[i] - 1） 即为最多可留下的人数，找出最大值即可。</li></ol><blockquote><p>我在求LDS时，是把数组翻转过来求LIS，求完了再把结果数组翻转一下就是了。</p></blockquote><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include &lt;algorithm&gt;#include &lt;cstdio&gt;#include &lt;cstring&gt;#include &lt;iostream&gt;using namespace std;const int INF = 0x3f3f3f3f;const int N = 3005;int a[N];int b[N];int low[N];int LIS[N];int LDS[N];void reverseArr(int* arr, int n) {    for (int i = 1; i &lt;= n / 2; ++i) {        swap(arr[i], arr[n - i + 1]);    }}void longestIncreasingSubsequence(int* arr, int* L, int n) {    int idx = 1;    memset(low, INF, sizeof(low));    L[1] = idx;    low[idx] = arr[1];    for (int i = 2; i &lt;= n; ++i) {        if (low[idx] &lt; arr[i]) {            low[++idx] = arr[i];            L[i] = idx;        } else {            int pos = lower_bound(low + 1, low + 1 + idx, arr[i]) - low;            low[pos] = arr[i];            L[i] = pos;        }    }}int main() {    freopen(&quot;00input.txt&quot;, &quot;r&quot;, stdin);    int n;    while (cin &gt;&gt; n) {        for (int i = 1; i &lt;= n; ++i) {            cin &gt;&gt; a[i];        }        longestIncreasingSubsequence(a, LIS, n);        reverseArr(a, n);        longestIncreasingSubsequence(a, LDS, n);        reverseArr(LDS, n);        int longest = 0;        for (int i = 1; i &lt;= n; ++i) {            longest = max(longest, LIS[i] + LDS[i] - 1);        }        cout &lt;&lt; n - longest &lt;&lt; &#39;\n&#39;;    }    return 0;}</code></pre><p>算法思想可参考：<a href="https://writings.sh/post/longest-increasing-subsequence-revisited" target="_blank" rel="noopener">https://writings.sh/post/longest-increasing-subsequence-revisited</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> DPの线性DP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HJ20 密码验证合格程序</title>
+      <link href="2024/05/12/HJ20-%E5%AF%86%E7%A0%81%E9%AA%8C%E8%AF%81%E5%90%88%E6%A0%BC%E7%A8%8B%E5%BA%8F/"/>
+      <url>2024/05/12/HJ20-%E5%AF%86%E7%A0%81%E9%AA%8C%E8%AF%81%E5%90%88%E6%A0%BC%E7%A8%8B%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>密码要求:</p><p>1.长度超过8位</p><p>2.包括大小写字母.数字.其它符号,以上四种至少三种</p><p>3.不能有长度大于2的包含公共元素的子串重复 （注：其他符号不含空格或换行）</p></blockquote><a id="more"></a><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>输入</p><p>021Abc9000</p><p>021Abc9Abc1</p><p>021ABC9000</p><p>021$bc9000</p><p>输出</p><p>OK</p><p>NG</p><p>NG</p><p>OK</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>前两个条件简单，第三个条件，<strong>不能有长度&gt;2的公共子串</strong>，这里我第一反应是校验是否有长度为3的子串、长度为4的子串……长度为n-1的子串，但是没什么办法。看了一眼题解才发现只考虑是否有长度为3的公共子串即可，而如果有长度大于3的公共子串时，必然是包含长度等于3的子串，所以只需要考虑这一种情况。</p><p>知识点：</p><ol><li>使用<code>int pos = s.rfind(s.substr(i, 3));</code>方法从后向前查找字符串</li></ol><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include &lt;cstdio&gt;#include &lt;string&gt;#include &lt;cstring&gt;#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;bool check(string s) {    int A = 0, a = 0, N = 0, Other = 0;    int sz = s.size();    for(int i = 0; i &lt; sz; ++i) {        bool flag = 0;        if(s[i] &gt;= &#39;A&#39; &amp;&amp; s[i] &lt;= &#39;Z&#39;) {            A = 1;            flag = 1;        }        if(s[i] &gt;= &#39;a&#39; &amp;&amp; s[i] &lt;= &#39;z&#39;) {            a = 1;            flag = 1;        }        if(s[i] &gt;= &#39;0&#39; &amp;&amp; s[i] &lt;= &#39;9&#39;) {            N = 1;            flag = 1;        }        if(!flag &amp;&amp; s[i] != &#39; &#39;) {            Other = 1;        }    }    return A + a + N + Other &gt;= 3;}int main() {    freopen(&quot;00input.txt&quot;, &quot;r&quot;, stdin);    string s;    while(getline(cin, s)) {        if(s.length() &lt;= 8 || !check(s)) {            cout &lt;&lt; &quot;NG\n&quot;;            continue;        }        int sz = s.size();        bool flag = true;        for(int i = 0; i + 2 &lt; sz; ++i) {            int pos = s.rfind(s.substr(i, 3));            if(pos != i) {                cout &lt;&lt; &quot;NG\n&quot;;                flag = false;                break;            }        }        if(flag) {            cout &lt;&lt; &quot;OK\n&quot;;        }    }    return 0;}</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 数据类型のstring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HJ68 成绩排序</title>
+      <link href="2024/05/12/HJ68-%E6%88%90%E7%BB%A9%E6%8E%92%E5%BA%8F/"/>
+      <url>2024/05/12/HJ68-%E6%88%90%E7%BB%A9%E6%8E%92%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>给定一些同学的信息（名字，成绩）序列，请你将他们的信息按照成绩从高到低或从低到高的排列，相同成绩都按先录入排列在前的规则处理。</p></blockquote><a id="more"></a><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>jack   70<br>peter   96<br>Tom    70<br>smith   67</p><p>从高到低 成绩<br>peter   96<br>jack   70<br>Tom    70<br>smith   67</p><p>从低到高</p><p>smith   67<br>jack   70<br>Tom    70<br>peter   96</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>结构体排序 + stable_sort</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include &lt;cstdio&gt;#include &lt;string&gt;#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;struct Student{    string name;    int score;};bool cmp_0(Student a, Student b) {    return a.score &gt; b.score;}bool cpm_1(Student a, Student b) {    return a.score &lt; b.score;}int main() {    freopen(&quot;00input.txt&quot;, &quot;r&quot;, stdin);    int n;    Student s[205];    while (cin &gt;&gt; n)    {        int kind;        cin &gt;&gt; kind;        for(int i = 0; i &lt; n; ++i)        {            cin &gt;&gt; s[i].name;            cin &gt;&gt; s[i].score;        }        stable_sort(s, s + n, kind ? cpm_1 : cmp_0);        for(int i = 0; i &lt; n; ++i)        {            cout &lt;&lt; s[i].name &lt;&lt; &#39; &#39; &lt;&lt; s[i].score &lt;&lt; &#39;\n&#39;;        }    }    return 0;}</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 知识 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HJ30 字符串合并处理</title>
+      <link href="2024/05/12/HJ30-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%90%88%E5%B9%B6%E5%A4%84%E7%90%86/"/>
+      <url>2024/05/12/HJ30-%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%90%88%E5%B9%B6%E5%A4%84%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>第一步：将输入的两个字符串str1和str2进行前后合并。如给定字符串 “dec” 和字符串 “fab” ， 合并后生成的字符串为 “decfab”</p><p>第二步：对合并后的字符串进行排序，要求为：下标为奇数的字符和下标为偶数的字符分别从小到大排序。这里的下标的意思是字符在字符串中的位置。注意排序后在新串中仍需要保持原来的奇偶性。例如刚刚得到的字符串“decfab”，分别对下标为偶数的字符’d’、’c’、’a’和下标为奇数的字符’e’、’f’、’b’进行排序（生成 ‘a’、’c’、’d’ 和 ‘b’ 、’e’ 、’f’），再依次分别放回原串中的偶数位和奇数位，新字符串变为“abcedf”</p></blockquote><a id="more"></a><blockquote><p>第三步：对排序后的字符串中的’0’~’9’、’A’~’F’和’a’~’f’字符，需要进行转换操作。</p><p>转换规则如下：</p><p>对以上需要进行转换的字符所代表的十六进制用二进制表示并倒序，然后再转换成对应的十六进制大写字符（注：字符 a~f 的十六进制对应十进制的10~15，大写同理）。</p><p>如字符 ‘4’，其二进制为 0100 ，则翻转后为 0010 ，也就是 2 。转换后的字符为 ‘2’。</p><p>如字符 ‘7’，其二进制为 0111 ，则翻转后为 1110 ，对应的十进制是14，转换为十六进制的大写字母为 ‘E’。</p><p>如字符 ‘C’，代表的十进制是 12 ，其二进制为 1100 ，则翻转后为 0011，也就是3。转换后的字符是 ‘3’。</p><p>根据这个转换规则，由第二步生成的字符串 “abcedf” 转换后会生成字符串 “5D37BF”。</p><p>数据范围：输入的字符串长度满足 1 &lt;= n &lt;= 100</p></blockquote><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>输入</p><p>ab CD</p><p>输出</p><p>3B5D</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>按照题目描述去做即可，有几个知识点：</p><ol><li><p>使用sort方法对字符串按照ASCII码排序<code>sort(even.begin(), even.end());</code></p></li><li><p>借助map的初始化完成二进制与十六进制的转换</p><pre><code class="lang-c++">map&lt;char, string&gt; _16To2 = {            {&#39;0&#39;, &quot;0000&quot;}, {&#39;1&#39;, &quot;0001&quot;}, {&#39;2&#39;, &quot;0010&quot;}, {&#39;3&#39;, &quot;0011&quot;},            {&#39;4&#39;, &quot;0100&quot;}, {&#39;5&#39;, &quot;0101&quot;}, {&#39;6&#39;, &quot;0110&quot;}, {&#39;7&#39;, &quot;0111&quot;},            {&#39;8&#39;, &quot;1000&quot;}, {&#39;9&#39;, &quot;1001&quot;}, {&#39;A&#39;, &quot;1010&quot;}, {&#39;B&#39;, &quot;1011&quot;},            {&#39;C&#39;, &quot;1100&quot;}, {&#39;D&#39;, &quot;1101&quot;}, {&#39;E&#39;, &quot;1110&quot;}, {&#39;F&#39;, &quot;1111&quot;},            {&#39;a&#39;, &quot;1010&quot;}, {&#39;b&#39;, &quot;1011&quot;},            {&#39;c&#39;, &quot;1100&quot;}, {&#39;d&#39;, &quot;1101&quot;}, {&#39;e&#39;, &quot;1110&quot;}, {&#39;f&#39;, &quot;1111&quot;}        };        map&lt;string, char&gt; _2To16 = {            {&quot;0000&quot;, &#39;0&#39;}, {&quot;0001&quot;, &#39;1&#39;}, {&quot;0010&quot;, &#39;2&#39;}, {&quot;0011&quot;, &#39;3&#39;},            {&quot;0100&quot;, &#39;4&#39;}, {&quot;0101&quot;, &#39;5&#39;}, {&quot;0110&quot;, &#39;6&#39;}, {&quot;0111&quot;, &#39;7&#39;},            {&quot;1000&quot;, &#39;8&#39;}, {&quot;1001&quot;, &#39;9&#39;}, {&quot;1010&quot;, &#39;A&#39;}, {&quot;1011&quot;, &#39;B&#39;},            {&quot;1100&quot;, &#39;C&#39;}, {&quot;1101&quot;, &#39;D&#39;}, {&quot;1110&quot;, &#39;E&#39;}, {&quot;1111&quot;, &#39;F&#39;}        };</code></pre></li><li><p>借助reverse方法对字符串进行翻转<code>reverse(binary_num.begin(), binary_num.end());</code></p></li></ol><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-c++">#include &lt;map&gt;#include &lt;cstdio&gt;#include &lt;string&gt;#include &lt;iostream&gt;#include &lt;algorithm&gt;using namespace std;int main() {    // 打开 input.txt 文件并重定向标准输入流    freopen(&quot;00input.txt&quot;, &quot;r&quot;, stdin);    // 打开 output.txt 文件并重定向标准输出流    // freopen(&quot;00output.txt&quot;, &quot;w&quot;, stdout);    string a, b;    while(cin &gt;&gt; a &gt;&gt; b) {        //第一步：合并        string c = a + b;        //第二步：排序        string even = &quot;&quot;, odd = &quot;&quot;;        int sz = c.size();        for(int i = 0; i &lt; sz; ++i) {            if(i % 2 == 0) {                even += c[i];            } else {                odd += c[i];            }        }        sort(even.begin(), even.end());        sort(odd.begin(), odd.end());        string afterSort = &quot;&quot;;        int e_index = 0, o_index = 0, index = 0;        while (afterSort.size() &lt; sz)        {            afterSort += index++ % 2 == 0 ? even[e_index++] : odd[o_index++];        }        // cout &lt;&lt; afterSort &lt;&lt; &#39;\n&#39;;        //第三步：替换        string ans = &quot;&quot;;        map&lt;char, string&gt; _16To2 = {            {&#39;0&#39;, &quot;0000&quot;}, {&#39;1&#39;, &quot;0001&quot;}, {&#39;2&#39;, &quot;0010&quot;}, {&#39;3&#39;, &quot;0011&quot;},            {&#39;4&#39;, &quot;0100&quot;}, {&#39;5&#39;, &quot;0101&quot;}, {&#39;6&#39;, &quot;0110&quot;}, {&#39;7&#39;, &quot;0111&quot;},            {&#39;8&#39;, &quot;1000&quot;}, {&#39;9&#39;, &quot;1001&quot;}, {&#39;A&#39;, &quot;1010&quot;}, {&#39;B&#39;, &quot;1011&quot;},            {&#39;C&#39;, &quot;1100&quot;}, {&#39;D&#39;, &quot;1101&quot;}, {&#39;E&#39;, &quot;1110&quot;}, {&#39;F&#39;, &quot;1111&quot;},            {&#39;a&#39;, &quot;1010&quot;}, {&#39;b&#39;, &quot;1011&quot;},            {&#39;c&#39;, &quot;1100&quot;}, {&#39;d&#39;, &quot;1101&quot;}, {&#39;e&#39;, &quot;1110&quot;}, {&#39;f&#39;, &quot;1111&quot;}        };        map&lt;string, char&gt; _2To16 = {            {&quot;0000&quot;, &#39;0&#39;}, {&quot;0001&quot;, &#39;1&#39;}, {&quot;0010&quot;, &#39;2&#39;}, {&quot;0011&quot;, &#39;3&#39;},            {&quot;0100&quot;, &#39;4&#39;}, {&quot;0101&quot;, &#39;5&#39;}, {&quot;0110&quot;, &#39;6&#39;}, {&quot;0111&quot;, &#39;7&#39;},            {&quot;1000&quot;, &#39;8&#39;}, {&quot;1001&quot;, &#39;9&#39;}, {&quot;1010&quot;, &#39;A&#39;}, {&quot;1011&quot;, &#39;B&#39;},            {&quot;1100&quot;, &#39;C&#39;}, {&quot;1101&quot;, &#39;D&#39;}, {&quot;1110&quot;, &#39;E&#39;}, {&quot;1111&quot;, &#39;F&#39;}        };        for(int i = 0; i &lt; sz; ++i) {            if(afterSort[i] &gt;= &#39;0&#39; &amp;&amp; afterSort[i] &lt;= &#39;9&#39;                || afterSort[i] &gt;= &#39;A&#39; &amp;&amp; afterSort[i] &lt;= &#39;F&#39;                || afterSort[i] &gt;= &#39;a&#39; &amp;&amp; afterSort[i] &lt;= &#39;f&#39;) {                string binary_num = _16To2[ afterSort[i] ];                reverse(binary_num.begin(), binary_num.end());                char hex_num = _2To16[ binary_num ];                ans += hex_num;            } else {                ans += afterSort[i];            }        }        cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;;    }    return 0;}</code></pre><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>前端开发写JS跟C语言相比，有一点明显不同：JS的方法都定义在原型上，C语言的方法是独立定义的。</p><p>比如数组的sort方法，在JS里是<code>arr.sort()</code>，在C语言里是<code>sort(arr, arr + n)</code>。</p><p>在JS里同一名称的方法针对不同的this在对象的原型里有自己的定义。</p><p>在C语言里同一方法针对不同的参数有不同的实现，比如sort参数为数组时，参数为vector等其他容器时，参数为string等，称为<strong>函数重载</strong>。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 数据类型のstring </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HJ16 购物单</title>
       <link href="2024/05/11/HJ16-%E8%B4%AD%E7%89%A9%E5%8D%95/"/>
       <url>2024/05/11/HJ16-%E8%B4%AD%E7%89%A9%E5%8D%95/</url>
