@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>leecode 0003.无重复字符的最长子串</title>
+      <link href="2024/05/18/leecode-0003-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/"/>
+      <url>2024/05/18/leecode-0003-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长 子串</strong> 的长度。</p><a id="more"></a><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例 1:</p><p>输入: s = “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。<br>示例 2:</p><p>输入: s = “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。<br>示例 3:</p><p>输入: s = “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>     请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>题目要求找的是<strong>子串</strong>而非<strong>子序列</strong>，区别在于：子串内的字符在原字符串中的位置是连续的。</p><p>那么定义一个left下标、一个right下标，来维护最长无重复字符子串区间。</p><p>对整个字符串遍历一遍即可。</p><h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-js">/** * @param {string} s * @return {number} */var lengthOfLongestSubstring = function(s) {    let ans = s.length ? 1 : 0;    let left = 0, right = 0;    while(left &lt; s.length &amp;&amp; right + 1 &lt; s.length) {        let idx = s.indexOf(s[right + 1], left);        if(idx === -1 || idx &gt; right) {            right++;        } else {            left = idx + 1;            right++;        }        ans = Math.max(ans, right - left + 1);    }    return ans;};</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技巧の滑动窗口 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HJ24 合唱队</title>
       <link href="2024/05/12/HJ24-%E5%90%88%E5%94%B1%E9%98%9F/"/>
       <url>2024/05/12/HJ24-%E5%90%88%E5%94%B1%E9%98%9F/</url>
@@ -1067,9 +1086,9 @@
       
         <tags>
             
-            <tag> Vueのv-sth </tag>
-            
             <tag> Vueのaxios </tag>
+            
+            <tag> Vueのv-sth </tag>
             
             <tag> NodeJSのmysql </tag>
             
@@ -2503,9 +2522,9 @@
       
         <tags>
             
-            <tag> 最短路のspfa </tag>
-            
             <tag> 技巧の差分 </tag>
+            
+            <tag> 最短路のspfa </tag>
             
         </tags>
       

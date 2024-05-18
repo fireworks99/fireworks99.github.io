@@ -6,7 +6,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Archives: 5/2024: 2024 [ 市井烟火气 ]</title>
+	<title>leecode 0003.无重复字符的最长子串 [ 市井烟火气 ]</title>
 	
 	
 	<!-- stylesheets list from _config.yml -->
@@ -102,41 +102,73 @@
 			<div id="content-inner">
 
 				
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>leecode 0003.无重复字符的最长子串</h1>
+			<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给定一个字符串 <code>s</code> ，请你找出其中不含有重复字符的 <strong>最长 子串</strong> 的长度。</p>
+<a id="more"></a>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>示例 1:</p>
+<p>输入: s = “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。<br>示例 2:</p>
+<p>输入: s = “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。<br>示例 3:</p>
+<p>输入: s = “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>     请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>题目要求找的是<strong>子串</strong>而非<strong>子序列</strong>，区别在于：子串内的字符在原字符串中的位置是连续的。</p>
+<p>那么定义一个left下标、一个right下标，来维护最长无重复字符子串区间。</p>
+<p>对整个字符串遍历一遍即可。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-js">/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+    let ans = s.length ? 1 : 0;
+    let left = 0, right = 0;
+    while(left &lt; s.length &amp;&amp; right + 1 &lt; s.length) {
+        let idx = s.indexOf(s[right + 1], left);
+        if(idx === -1 || idx &gt; right) {
+            right++;
+        } else {
+            left = idx + 1;
+            right++;
+        }
+        ans = Math.max(ans, right - left + 1);
+    }
+    return ans;
+};
+</code></pre>
 
+		</div>
 
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
 
+       if (typeof LivereTower === 'function') { return; }
 
-<div id="archive-details">
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
 
-  <h1>5/2024</h1>
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
 
-  
-  <div class="archive-item">
-    <a href="/2024/05/10/HJ44-Sudoku/">
-      HJ44 Sudoku
-    </a>
-    <time datetime="2024-05-10T02:30:51.000Z">
-      2024-05-10
-    </time>
-  </div>
-  
-  <div class="archive-item">
-    <a href="/2024/05/09/HJ28-素数伴侣/">
-      HJ28 素数伴侣
-    </a>
-    <time datetime="2024-05-09T13:12:59.000Z">
-      2024-05-09
-    </time>
-  </div>
-  
-
-  <div id="other-paginator">
-    <a class="extend prev" rel="prev" href="/archives/2024/05/"> </a><a class="page-number" href="/archives/2024/05/">1</a><span class="page-number current">2</span>
-  </div>
+	<div id="toc">
+		
+	</div>
 
 </div>
 
-
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
 
 
 			</div>
