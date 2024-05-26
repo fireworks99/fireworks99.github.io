@@ -112,6 +112,60 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/12/POJ-2492-A-Bug-s-Life-easy-union-find-set/" class="item-title">POJ 2492 A Bug&#39;s Life(easy union-find-set)</a>
+      
+      <time datetime="2020-03-12T03:29:35.000Z">
+        2020-03-12
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+bool flag;
+int n, m, a, aa, b, bb, pre[10005];
+
+int found(int x)
+{
+    if(pre[x] == -1)
+        return x;
+    return pre[x] = found(pre[x]);
+}
+
+int main()
+{
+    int _, cnt = 1;
+    scanf(&quot;%d&quot;, &amp;_);
+    while(_--)
+    {
+        flag = 0;
+        memset(pre, -1, sizeof(pre));
+        scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
+        while(m--)
+        {
+     -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>这题跟POJ 1703一样，没什么好说的。写题解是提醒自己unite函数里，连接前if判断的重要性，我今天尝试将unite在主函数里实现，忘记了if判断(两者在同一集合里还乱连接)直接连接导致RE</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/12/POJ-2492-A-Bug-s-Life-easy-union-find-set/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/11/POJ-1984-Navigation-Nightmare-valset/" class="item-title">POJ 1984 Navigation Nightmare(valset)</a>
       
       <time datetime="2020-03-11T10:02:11.000Z">
@@ -554,54 +608,6 @@ Code#include &lt;cstdio&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/01/21/Codeforces-contest-853-A-Planning-优先队列贪心/" class="item-title">Codeforces contest 853 A Planning(优先队列贪心)</a>
-      
-      <time datetime="2020-01-21T04:37:08.000Z">
-        2020-01-21
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-原想着：贪心给每个航班参考代价安排起飞时间，先安排代价大的航班，可是发现一个问题，不能保证最后剩余的时间合理(满足前提)，就是说假如最后剩余的航班原计划在第5分钟起飞但(由于我的分配策略)只剩下第3分钟了…
-换位思考：既然给航班分配起飞时刻不行，不如给起飞时刻分配航班。
-给当前时刻分配时间合理的、代价最大的航班，把时间合理的航班放进一个人容器里，从中找出代价最大的，用优先队列。
-
-Code#include &lt;queue&gt;
-#include &lt;vector&gt;
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-#define ll long long
-typedef pair&lt;ll, ll&gt; P;
-const int N = 300005;
-
-P fli[N];
-
-int main()
-{
-     -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>分别在1~N分钟该起飞的航班，因技术问题全部推迟k分钟起飞，但现在可以重新安排k+1 ~ k+1+N这N分钟，每分钟起飞一个航班，前提是不能比起初计划早。每个航班每推迟一分钟有代价c[i]，求最小代价及安排。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/01/21/Codeforces-contest-853-A-Planning-优先队列贪心/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -662,6 +668,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
           </li>
         
@@ -675,10 +685,6 @@ int main()
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
           </li>
         
       </ul>

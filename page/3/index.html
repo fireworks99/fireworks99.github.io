@@ -112,6 +112,67 @@
     
     <div class="recent-post-item">
 
+      <a href="/2023/04/20/JS-this/" class="item-title">JS this</a>
+      
+      <time datetime="2023-04-20T11:10:40.000Z">
+        2023-04-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 一、Why we need ‘this’let bar = 1;
+function getBar() {
+    return bar;
+}
+console.log(getBar());//1
+
+{
+    let bar = 2
+    let obj = {
+        bar: 3,
+        getBar: function () {
+            return bar;//返回变量bar
+        }
+    }
+    console.log(obj.getBar());//2
+}
+
+上面代码中obj.getBar()我想拿到obj.bar，但是拿不到。所以需要指明函数运行时所在的环境，于是就有了this。
+二、’this’ refers to
+事件绑定
+静态绑定
+行内脚本：当前DOM节点
+独立脚本：全局Window对象
+
+
+动态绑定：当前DOM节点
+事件监听：全局Window对象
+
+
+构造函数：当前构造的实例对象
+window定时器
+传函数名：全局Window对象
+传字符串：函数所属对象
+
+
+call &amp;&amp; apply：强制指定t -->
+        <!-- </div> -->
+
+        
+        <p><strong>1：this永远指向一个对象；</strong></p>
+<p><strong>2：this的指向完全取决于函数调用的位置；</strong></p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2023/04/20/JS-this/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2023/04/07/Vue-childProps-sync-parentData/" class="item-title">Vue :childProps.sync=&#39;parentData&#39;</a>
       
       <time datetime="2023-04-07T10:55:46.000Z">
@@ -473,69 +534,6 @@ export default {
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2023/03/22/Mini-Data-Observer/" class="item-title">Mini Data Observer</a>
-      
-      <time datetime="2023-03-22T06:44:28.000Z">
-        2023-03-22
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 1. A =&gt; B
-B = A * 10，B依赖A，B的响应性的实现方法，是在A的set方法中传入一个改变B的方法。（这个方法解释了B对A的依赖）
-
-let a = 1;
-let b = a * 10;
-function setA(v) {
-  a = v;
-  updateB();
-}
-function updateB() {
-  b = a * 10;
-}
-
-setA(2);
-console.log(b);//20
-
-2.监听A的变更
-ES5的Object.defineProperty提供监听属性变更的功能(指set方法)
-
-const state = {
-  a: 0
-};
-let b;
-function updateB() {
-  b = state.a * 10;
-}
-
-let internalValue = state.a;
-Object.defineProperty(state, &quot;a&quot;, {
-  get() {
-    return internalValue;
-  },
-  set(v) {
-    internalValue = v;
-   -->
-        <!-- </div> -->
-
-        
-        <blockquote>
-<p>响应性的实现</p>
-<p>Angular：脏值检测</p>
-<p>Vue：依赖跟踪</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2023/03/22/Mini-Data-Observer/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -596,6 +594,10 @@ Object.defineProperty(state, &quot;a&quot;, {
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
           </li>
         
@@ -609,10 +611,6 @@ Object.defineProperty(state, &quot;a&quot;, {
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
           </li>
         
       </ul>

@@ -112,6 +112,48 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/09/23/Web-formidable-upload-text-and-files/" class="item-title">formidable upload text and files</a>
+      
+      <time datetime="2020-09-23T08:36:57.000Z">
+        2020-09-23
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- npm第三方库formidable
+formidable库用于处理上传的表单(包含文本和文件，主要是处理文件)
+
+const formidable = require(&#39;formidable&#39;)
+router.post(&#39;/uploadImg&#39;, function (req, res) {
+
+  const form = new formidable.IncomingForm();
+  form.encoding = &quot;utf-8&quot;;
+  form.uploadDir = &#39;./public/img_upload&#39;;
+  form.parse(req, function(err, field, files) {
+
+    // console.log(field);
+
+    const oldPath = files.imgFile.path;
+    const newPath = oldPath + files.imgFile.name;
+    fs.rename(oldPath, newPath, (err) -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>npm第三方库multiparty可处理文件上传的问题，我猜应该也能处理文件与文本同时上传的问题，但我先找到了formidable这个库来解决这一问题。表单属性<code>enctype=&quot;multipart/form-data&quot;</code>限制了不对字符编码，但普通文本不编码无法传输。另外补充一句<code>&lt;input&gt;</code>标签不带<code>name</code>无法获取value。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/09/23/Web-formidable-upload-text-and-files/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/09/22/Web-Upload-files-to-Server/" class="item-title">Upload files to Server</a>
       
       <time datetime="2020-09-22T04:05:11.000Z">
@@ -532,65 +574,6 @@ bool DFS(int x)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/26/HDU-2444-The-Accomodation-of-Students-Bipartite-graph/" class="item-title">HDU 2444 The Accomodation of Students(Bipartite graph color)</a>
-      
-      <time datetime="2020-04-26T04:10:45.000Z">
-        2020-04-26
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-1.判断是否是二分图（染色法）
-2.二分图最大匹配
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 20005;
-const int M = 20005;
-
-int n, m, color[N];;
-
-int head[N], cnt;
-struct edge
-{
-    int v, pre;
-} e[M];
-
-void add(int u, int v)
-{
-    e[cnt].v = v;
-    e[cnt].pre = head[u];
-    head[u] = cnt++;
-}
-
-bool succeed(int x)
-{
-    for(int i = head[x]; ~i; i = e[i].pre)
-    {
-        int to = e[i].v;
-        if(color[to] == -1) -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>N个人M个相识关系，问：能否将所有人分成两拨，每一拨中的人彼此互不相识。若能，分成两拨后，能从彼此中挑出多少对相识的？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/26/HDU-2444-The-Accomodation-of-Students-Bipartite-graph/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -651,6 +634,10 @@ bool succeed(int x)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
           </li>
         
@@ -664,10 +651,6 @@ bool succeed(int x)
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
           </li>
         
       </ul>

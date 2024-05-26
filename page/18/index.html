@@ -112,6 +112,54 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/23/HDU-2222-Keywords-Search/" class="item-title">HDU 2222 Keywords Search</a>
+      
+      <time datetime="2019-07-23T11:23:47.000Z">
+        2019-07-23
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 原理
+AC自动机是以Trie的多模式匹配为基础，取了类似于KMP中nxt数组的作用，避免了Trie每次匹配失败的回溯过程，缩短了时间 
+
+步骤
+
+建树（Trie）
+BFS构造fail指针 (这里以及很多其他地方的“指针”是广义上的指针，只是一个int类型的变量存了一个值)
+模式匹配（查询）
+
+学习博客： https://www.cnblogs.com/TheRoadToTheGold/p/6290732.html
+理解博客： https://blog.csdn.net/bestsort/article/details/82947639
+(这篇博客里的模板没有初始化函数，做题会TLE，是的，没初始化也会TLE！)
+（在Trie里，字母是存在 ‘边’ 上的，而他写在节点上了）
+模板出处：https://www.cnblogs.com/KonjakJuruo/p/5686398.html
+
+Code#include &lt;cmath&gt;
+#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#inc -->
+        <!-- </div> -->
+
+        
+        <h1 id="AC自动机"><a href="#AC自动机" class="headerlink" title="AC自动机"></a>AC自动机</h1><blockquote>
+<p>I have a Trie</p>
+<p>I have a KMP</p>
+<p>Uh, AC自动机！</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/23/HDU-2222-Keywords-Search/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/22/HDU-1251-统计难题-codevs-4189-字典/" class="item-title">HDU 1251 统计难题 codevs 4189 字典</a>
       
       <time datetime="2019-07-22T11:32:50.000Z">
@@ -565,54 +613,6 @@ using namespace std;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/19/HDU-1496-Equations/" class="item-title">HDU 1496 Equations</a>
-      
-      <time datetime="2019-07-19T01:49:05.000Z">
-        2019-07-19
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-前两项和作为一部分，遍历时hash数组记录结果，后两项和移到右边作为另一部分，遍历hash数组查找有无相同结果
-
-数值区间决定hash空间
-a、b、c、d区间对称，上限为50
-x区间对称，上限为100，x * x上限为 10000
-（x无需从-100开始遍历，因为需要的是x * x,所以只遍历正半轴即可，对于每一个可行的x，方案数乘2，因为有四个x（都是自变量），所以最终结果乘16 ）
-a * x * x 上限为 500000，再加一个 b * x * x 上限 到达 1000000
-因为a、b市对称区间，下限就到-1000000，进行坐标偏移，总共需要2000000的空间
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-using namespace std;
-
-int has[2000100];
-
-int main()
-{
-    int a, b, c, d, ans;
-    while(~scanf(&quot;%d%d%d%d&quot;, &am -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>a * x1 ^ 2 + b  * x2 ^ 2 + c * x3 ^ 2 + d * x4 ^ 2 = 0</p>
-<p>给出a b c d，在一定范围内找出符合上述等式的方案数 </p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/19/HDU-1496-Equations/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -673,6 +673,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
           </li>
         
@@ -686,10 +690,6 @@ int main()
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
           </li>
         
       </ul>

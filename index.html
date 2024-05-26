@@ -112,6 +112,58 @@
     
     <div class="recent-post-item">
 
+      <a href="/2024/05/26/求满足条件的最长子串的长度/" class="item-title">求满足条件的最长子串的长度</a>
+      
+      <time datetime="2024-05-26T07:15:06.000Z">
+        2024-05-26
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- http://oj.easycode.top/problem.php?id=1577
+示例输入：abC124ACb
+输出：4
+输入：a5
+输出：2
+输入：abb9
+输出：2
+思路
+方案一：前缀和 + 两层循环
+字符串中只有两种字符，一是“字母”，二是“数字”。题目要求只有一个字母，那么可以对照原字符串定义一个数组，字母为1，数组为0，再来一个数组维护前缀和，( sum[j] - sum[i] + a[i] ) 代表着区间 [i, j] 里字母的个数，如果为1，则这个子串是符合要求的，ans = max(ans, j - i + 1);
+
+方案二：前缀和 + 滑动窗口
+定义一个left下标、一个right下标，来维护符合条件的子串区间。
+感觉求符合某条件的最长子串问题都能这么解决。
+
+
+Code1#include &lt;string&gt;
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    //freopen(&quot;00input.txt&quot;,  -->
+        <!-- </div> -->
+
+        
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
+<p>给定一个字符串，只包含字母和数字，按要求找出字符串中的最长(连续)子串的长度，字符串本身是其最长的子串，子串要求:</p>
+<p>1、只包含 1 个字母(a~z,A~Z)，其余必须是数字:</p>
+<p>2、字母可以在子串中的任意位置;</p>
+<p>如果找不到满足要求的子串，如全是字母或全是数字，则返回-1。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2024/05/26/求满足条件的最长子串的长度/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2024/05/18/leecode-0003-无重复字符的最长子串/" class="item-title">leecode 0003.无重复字符的最长子串</a>
       
       <time datetime="2024-05-18T10:14:52.000Z">
@@ -527,39 +579,6 @@ define([], funct -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2024/04/12/Engineering/" class="item-title">Engineering</a>
-      
-      <time datetime="2024-04-12T10:21:34.000Z">
-        2024-04-12
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 下面是前端工程化的一些主要内容：
-
-构建工具：构建工具用于将开发阶段的代码转换、打包、压缩，以及处理各种资源文件（如图片、样式表等）。常见的构建工具包括Webpack、Rollup、Parcel等。
-模块化开发：模块化开发可以提高代码的复用性和可维护性。ES6 的模块化语法、CommonJS、AMD、UMD 等模块化方案都是常见的选择。配合构建工具使用，可以将模块化的代码打包成浏览器可识别的格式。
-自动化测试：自动化测试包括单元测试、集成测试、端到端测试等，可以保证代码质量和功能稳定性。常用的测试工具有Jest、Mocha、Chai等。
-代码规范：代码规范可以统一团队成员的编码风格，减少代码错误和提高代码可读性。ESLint、Prettier等工具可以帮助进行代码规范检查和格式化。
-版本管理：版本管理工具（如Git）用于管理代码的版本和协作开发。通过分支管理、版本控制、代码合并等功能，可以提高团队协作效率。
-性能优化：性能优化是前端工程化中的重要部分，包括优化代码结构、减少HTTP请求、资源压缩、懒加载、缓存策略等。工程化工具和技术可以帮助开发者识别和解决性能问题。
-持续集成/持续部署 -->
-        <!-- </div> -->
-
-        
-        <p>前端工程化是指利用各种工具和技术来提高前端开发效率、优化项目管理、提升代码质量和可维护性的过程。它涵盖了项目构建、模块化开发、自动化测试、代码规范、版本管理、性能优化等多个方面。</p>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2024/04/12/Engineering/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -620,6 +639,10 @@ define([], funct -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
           </li>
         
@@ -633,10 +656,6 @@ define([], funct -->
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
           </li>
         
       </ul>

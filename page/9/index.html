@@ -112,6 +112,58 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/20/HDU-4553-Date-arrange-Segment-Tree/" class="item-title">HDU 4553 Date arrange(Segment Tree)</a>
+      
+      <time datetime="2020-03-20T11:04:47.000Z">
+        2020-03-20
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+题目要求：寻找具有某种属性的、连续的最长区间
+与HDU 1540相同，都是找符合某一特点的连续的最长区间
+那么线段树也是一样的
+val：ans、lmax、rmax最长连续空间时间段的长度
+此时ans起辅助作用，主角是lmax与rmax，只要down地足够深，要查找的区间总是某些个lmax与rmax的和。
+此题维护两棵线段树：DS树与NS树
+①DS x:
+若DS树有长度足够的区间，去DS树上找结束位置(-x即起始位置)
+将DS树对应区间三个val置零
+找不到区间直接输出相应字符串
+②NS x:
+若DS树有长度足够的区间，去DS树上找结束位置(-x即起始位置)
+将DS树和NS树对应区间三个val置零
+若DS树没有足够空间，但NS树有足够空间，去NS书上找
+将DS树和NS树对应区间三个val置零
+若都没有足够空间，输出相应字符串
+③STUDY x y:
+将DS树和NS树对应区间恢复为1（即val值恢复为区间长度）
+另外代码中的query函数，三分去找够大的空闲区间的第x时刻
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&g -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>中文题目：小明</p>
+<p>与DS开黑</p>
+<p>与NS约会</p>
+<p>学习</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/20/HDU-4553-Date-arrange-Segment-Tree/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/19/HDU-4614-Vases-and-Flowers-Segment-Tree-and-Binary-Search/" class="item-title">HDU 4614 Vases and Flowers(Segment Tree and Binary Search)</a>
       
       <time datetime="2020-03-19T11:22:14.000Z">
@@ -567,60 +619,6 @@ unite先if搞两者属于同一集合的情况（否则会WA）
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/12/POJ-2492-A-Bug-s-Life-easy-union-find-set/" class="item-title">POJ 2492 A Bug&#39;s Life(easy union-find-set)</a>
-      
-      <time datetime="2020-03-12T03:29:35.000Z">
-        2020-03-12
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-bool flag;
-int n, m, a, aa, b, bb, pre[10005];
-
-int found(int x)
-{
-    if(pre[x] == -1)
-        return x;
-    return pre[x] = found(pre[x]);
-}
-
-int main()
-{
-    int _, cnt = 1;
-    scanf(&quot;%d&quot;, &amp;_);
-    while(_--)
-    {
-        flag = 0;
-        memset(pre, -1, sizeof(pre));
-        scanf(&quot;%d %d&quot;, &amp;n, &amp;m);
-        while(m--)
-        {
-     -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>这题跟POJ 1703一样，没什么好说的。写题解是提醒自己unite函数里，连接前if判断的重要性，我今天尝试将unite在主函数里实现，忘记了if判断(两者在同一集合里还乱连接)直接连接导致RE</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/12/POJ-2492-A-Bug-s-Life-easy-union-find-set/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -681,6 +679,10 @@ int main()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
           </li>
         
@@ -694,10 +696,6 @@ int main()
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
           </li>
         
       </ul>

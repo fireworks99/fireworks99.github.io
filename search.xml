@@ -4,6 +4,27 @@
   
     
     <entry>
+      <title>求满足条件的最长子串的长度</title>
+      <link href="2024/05/26/%E6%B1%82%E6%BB%A1%E8%B6%B3%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6/"/>
+      <url>2024/05/26/%E6%B1%82%E6%BB%A1%E8%B6%B3%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2%E7%9A%84%E9%95%BF%E5%BA%A6/</url>
+      
+        <content type="html"><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote><p>给定一个字符串，只包含字母和数字，按要求找出字符串中的最长(连续)子串的长度，字符串本身是其最长的子串，子串要求:</p><p>1、只包含 1 个字母(a~z,A~Z)，其余必须是数字:</p><p>2、字母可以在子串中的任意位置;</p><p>如果找不到满足要求的子串，如全是字母或全是数字，则返回-1。</p></blockquote><a id="more"></a><p><a href="http://oj.easycode.top/problem.php?id=1577" target="_blank" rel="noopener">http://oj.easycode.top/problem.php?id=1577</a></p><h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>输入：abC124ACb</p><p>输出：4</p><p>输入：a5</p><p>输出：2</p><p>输入：abb9</p><p>输出：2</p><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><ol><li><p>方案一：前缀和 + 两层循环</p><p>字符串中只有两种字符，一是“字母”，二是“数字”。题目要求只有一个字母，那么可以对照原字符串定义一个数组，字母为1，数组为0，再来一个数组维护前缀和，( sum[j] - sum[i] + a[i] ) 代表着区间 [i, j] 里字母的个数，如果为1，则这个子串是符合要求的，ans = max(ans, j - i + 1);</p></li><li><p>方案二：前缀和 + 滑动窗口</p><p>定义一个left下标、一个right下标，来维护符合条件的子串区间。</p><p>感觉<strong>求符合某条件的最长子串问题</strong>都能这么解决。</p></li></ol><h2 id="Code1"><a href="#Code1" class="headerlink" title="Code1"></a>Code1</h2><pre><code class="lang-c++">#include &lt;string&gt;#include &lt;vector&gt;#include &lt;iostream&gt;using namespace std;int main() {    //freopen(&quot;00input.txt&quot;, &quot;r&quot;, stdin);    string s;    while (cin &gt;&gt; s){        int sz = s.size();        vector&lt;int&gt; vec;        for(int i = 0; i &lt; sz; ++i) {            if(s[i] &gt;= &#39;0&#39; &amp;&amp; s[i] &lt;= &#39;9&#39;) {                vec.push_back(0);            } else {                vec.push_back(1);            }        }        vector&lt;int&gt; sum;        sum.push_back(vec[0]);        for(int i = 1; i &lt; sz; ++i) {            sum.push_back(sum[i - 1] + vec[i]);        }        int ans = -1;        for(int i = 0; i &lt; sz; ++i) {            for(int j = i + 1; j &lt; sz; ++j) {                if(sum[j] - sum[i] + vec[i] == 1) {                    ans = max(ans, j - i + 1);                }            }        }        cout &lt;&lt; ans &lt;&lt; &#39;\n&#39;;    }    return 0;}</code></pre><h2 id="Code2"><a href="#Code2" class="headerlink" title="Code2"></a>Code2</h2><pre><code class="lang-c++">#include &lt;string&gt;#include &lt;vector&gt;#include &lt;iostream&gt;using namespace std;int main() {    //freopen(&quot;00input.txt&quot;, &quot;r&quot;, stdin);    string s;    while (cin &gt;&gt; s){        int sz = s.size();        vector&lt;int&gt; vec;        for(int i = 0; i &lt; sz; ++i) {            if(s[i] &gt;= &#39;0&#39; &amp;&amp; s[i] &lt;= &#39;9&#39;) {                vec.push_back(0);            } else {                vec.push_back(1);            }        }        vector&lt;int&gt; sum;        sum.push_back(vec[0]);        for(int i = 1; i &lt; sz; ++i) {            sum.push_back(sum[i - 1] + vec[i]);        }        int ans = -1, left = 0, right = 0;        while (left &lt;= right &amp;&amp; left &lt; sz &amp;&amp; right &lt; sz) {            int num = sum[right] - sum[left] + vec[left];            if(num == 1) {                ans = max(ans, right - left + 1);                right++;            } else if(num &lt; 1){                right++;            } else if(num &gt; 1) {                left++;            }        }        cout &lt;&lt; (ans == 1 ? -1 : ans) &lt;&lt; &#39;\n&#39;;    }    return 0;}</code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技巧の前缀和 </tag>
+            
+            <tag> 技巧の滑动窗口 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>leecode 0003.无重复字符的最长子串</title>
       <link href="2024/05/18/leecode-0003-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/"/>
       <url>2024/05/18/leecode-0003-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</url>
@@ -1086,9 +1107,9 @@
       
         <tags>
             
-            <tag> Vueのaxios </tag>
-            
             <tag> Vueのv-sth </tag>
+            
+            <tag> Vueのaxios </tag>
             
             <tag> NodeJSのmysql </tag>
             
@@ -2522,9 +2543,9 @@
       
         <tags>
             
-            <tag> 技巧の差分 </tag>
-            
             <tag> 最短路のspfa </tag>
+            
+            <tag> 技巧の差分 </tag>
             
         </tags>
       
@@ -5151,9 +5172,9 @@
             
             <tag> 题解 </tag>
             
-            <tag> 技巧の哈希 </tag>
-            
             <tag> 技巧の输入挂 </tag>
+            
+            <tag> 技巧の哈希 </tag>
             
         </tags>
       

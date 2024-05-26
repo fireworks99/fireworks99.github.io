@@ -112,6 +112,55 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/31/HDU-1083-2063-ZOJ-4120-二分图匹配/" class="item-title">HDU 1083 2063 ZOJ 4120(二分图匹配)</a>
+      
+      <time datetime="2019-07-31T09:17:01.000Z">
+        2019-07-31
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 数组link
+记录：link[i] = v; 选项i(下标) 分配给任务v(储存值)
+
+数组vis
+记录：在为任务v配对时 选项i(下标)是否被访问过
+作用：为了替任务v争得选项to，在此处将选项to锁定，dfs寻找选项(to)   原来服务的任务(link[to])   其他可行的选项，体现了增广路的特点——反悔
+
+注意
+每次为任务选择选项时，每个选项要从头考虑（memset(vis, 0, sizeo(vis))），直到找到合适的选项为止
+
+HDU 1083
+题意：P课程各找一个课代表，N个人，每人至多担任一门课代表
+
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int p, n;
+int link[1005];///link[i] = v; 选项i 分配给任务v
+bool vis[1005];///在为任务v配对时 选项i是否被访问 -->
+        <!-- </div> -->
+
+        
+        <blockquote>
+<p>确定是二分图求最大匹配时，对任意一方查找匹配均可</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/31/HDU-1083-2063-ZOJ-4120-二分图匹配/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/29/HDU-4738-Caocao-s-Bridge-双连通-桥/" class="item-title">HDU 4738 Caocao&#39;s Bridge(双连通+桥)</a>
       
       <time datetime="2019-07-29T09:12:49.000Z">
@@ -595,54 +644,6 @@ Analyze
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/23/HDU-2222-Keywords-Search/" class="item-title">HDU 2222 Keywords Search</a>
-      
-      <time datetime="2019-07-23T11:23:47.000Z">
-        2019-07-23
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 原理
-AC自动机是以Trie的多模式匹配为基础，取了类似于KMP中nxt数组的作用，避免了Trie每次匹配失败的回溯过程，缩短了时间 
-
-步骤
-
-建树（Trie）
-BFS构造fail指针 (这里以及很多其他地方的“指针”是广义上的指针，只是一个int类型的变量存了一个值)
-模式匹配（查询）
-
-学习博客： https://www.cnblogs.com/TheRoadToTheGold/p/6290732.html
-理解博客： https://blog.csdn.net/bestsort/article/details/82947639
-(这篇博客里的模板没有初始化函数，做题会TLE，是的，没初始化也会TLE！)
-（在Trie里，字母是存在 ‘边’ 上的，而他写在节点上了）
-模板出处：https://www.cnblogs.com/KonjakJuruo/p/5686398.html
-
-Code#include &lt;cmath&gt;
-#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#inc -->
-        <!-- </div> -->
-
-        
-        <h1 id="AC自动机"><a href="#AC自动机" class="headerlink" title="AC自动机"></a>AC自动机</h1><blockquote>
-<p>I have a Trie</p>
-<p>I have a KMP</p>
-<p>Uh, AC自动机！</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/23/HDU-2222-Keywords-Search/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -703,6 +704,10 @@ Code#include &lt;cmath&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
           </li>
         
@@ -716,10 +721,6 @@ Code#include &lt;cmath&gt;
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ30-字符串合并处理/">HJ30 字符串合并处理</a>
           </li>
         
       </ul>
