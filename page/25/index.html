@@ -112,6 +112,99 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/15/c-unique/" class="item-title">c++ unique</a>
+      
+      <time datetime="2019-04-15T08:54:49.000Z">
+        2019-04-15
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 头文件
+algorithm
+
+用法
+unique(头地址， 尾地址)返回一个地址，用这个地址 减 头地址得数字“有几种”
+int m = unique(vec.begin(), vec.end()) - vec.begin();
+unique函数使得 vec前m个元素各不相同，后面的元素保持原来值不变（好多人认为把前面的值后调了）
+
+测试#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int main()
+{
+    int a[10] = {20, 20, 20, 10, 10, 30};
+    int n = unique(a, a + 10) - a;
+    cout &lt;&lt; n &lt;&lt; &#39;\n&#39;;
+    for(int i = 0; i &lt; 10; ++i)
+        cout &lt;&lt; a[i] &lt;&lt; &#3 -->
+        <!-- </div> -->
+
+        
+        <h3 id="unique函数"><a href="#unique函数" class="headerlink" title="unique函数"></a>unique函数</h3><blockquote>
+<p>线段树离散化时用到了unique函数除重，在这里记一下</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/15/c-unique/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/04/15/HDU-1166-Just-a-Hook/" class="item-title">HDU 1166 Just a Hook</a>
+      
+      <time datetime="2019-04-15T01:08:29.000Z">
+        2019-04-15
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int N = 100005;
+
+struct node
+{
+    int L, R, val, lazy;
+} a[N &lt;&lt; 2 | 1];
+
+void down(int x)
+{
+    if(a[x].lazy &gt; 0)
+    {
+        a[x &lt;&lt; 1].val = a[x].lazy * (a[x &lt;&lt; 1].R - a[x &lt;&lt; 1].L + 1);
+        a[x &lt;&lt; 1].lazy = a[x].lazy;
+        a[x &lt;&lt; 1 | 1].val = a[x].lazy * (a[x &lt;&lt; 1 | 1].R - a[x &lt;&lt; 1 | 1].L + 1);
+        a[x &lt;&lt; 1 | 1].laz -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>区间更新，区间查询（注意val初始值非0）</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/15/HDU-1166-Just-a-Hook/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/14/ZOJ-3946-Highway-Project/" class="item-title">ZOJ 3946 Highway Project</a>
       
       <time datetime="2019-04-14T14:06:11.000Z">
@@ -525,405 +618,6 @@ Code of Floyd#include &lt;cstdio&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/06/POJ-1287-Networking/" class="item-title">POJ 1287 Networking</a>
-      
-      <time datetime="2019-04-06T10:52:03.000Z">
-        2019-04-06
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-传送门  
-Code of Kruskal#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 105;///点的上限,因为RE我开大了
-
-int n, m, ans;
-int pre[N];
-
-int cnt;
-struct edge
-{
-    int there, here, w;
-}a[N * N];
-
-bool cmp(edge a, edge b)
-{
-    return a.w &lt; b.w;
-}
-
-void init()
-{
-    ans = 0;
-    for(int i = 0; i &lt;= n; ++i)
-        pre[i] = i;
-}
-
-int found(int x)
-{
-    if(x != pre[x])
-        pre[x] = found(pre[x]);
-    return pre[x];
-}
- -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n个点，m条边（两点间的路可能不止一条），求最小生成树</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/06/POJ-1287-Networking/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/06/ACM-ICPC/" class="item-title">ACM-ICPC</a>
-      
-      <time datetime="2019-04-06T04:01:22.000Z">
-        2019-04-06
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 1.基本算法
-
-
-
-算法名称
-使用频率
-了解程度
-参考学习
-
-
-
-
-构造
-
-
-
-
-
-枚举
-
-
-
-
-
-模拟
-
-
-
-
-
-贪心
-
-
-
-
-
-分治
-
-
-
-
-
-递归
-
-
-
-
-
-
-2.搜索
-
-
-
-算法名称
-使用频率
-了解程度
-参考学习
-
-
-
-
-深度优先搜索（DFS）
-
-
-
-
-
-广度优先搜索（BFS）
-
-
-
-
-
-双向搜索
-
-
-
-
-
-记忆化搜索
-
-
-
-
-
-启发式搜索
-
-
-
-
-
-
-3.动态规划
-
-
-
-算法名称
-使用频率
-了解程度
-参考学习
-
-
-
-
-背包问题
-
-
-
-
-
-数位DP
-
-
-
-
-
-状态压缩DP
-
-
-
-
-
-区间DP
-
-
-
-
-
-树形DP
-
-
-
-
-
-优化方法
-
-
-
-
-
-
-动态规划之背包问题
-
-
-
-背包分类
-使用频率
-了解程度
-参考学习
-
-
-
-
-01背包
-
-
-
-
-
-多重背包
-
-
-
-
-
-完全背包
-
-
-
-
-
-
-动态规划之优化方法
-
-
-
-方法
-使用频率
-了解程度
-参考学习
-
-
-
-
-滚动数组
-
-
-
-
-
-二分优化
-
-
-
-
-
-矩阵优化
-
-
-
-
-
-斜率优化
-
-
-
-
-
-四边形不等式优化
-
-
-
-
-
-数据结构优化
-
-
-
-
-
-
-4.组合数学
-
-
-
-算法名称
-使用频率
-了解程度
-参考学习
-
-
-
-
-排列
-
-
-
-
-
-组合
-
-
-
-
-
-常 -->
-        <!-- </div> -->
-
-        
-        <h1 id="ACM技能树"><a href="#ACM技能树" class="headerlink" title="ACM技能树"></a>ACM技能树</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>算法分类</th>
-<th>使用频率</th>
-<th>了解程度</th>
-<th>参考学习</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>基本算法</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>搜索</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>动态规划</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>组合数学</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>计算几何</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>字符串</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>数论</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>图论</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>数据结构</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/06/ACM-ICPC/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -984,6 +678,14 @@ int found(int x)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0005-最长回文子串/">leecode 0005.最长回文子串</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
           </li>
         
@@ -993,14 +695,6 @@ int found(int x)
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
           </li>
         
       </ul>

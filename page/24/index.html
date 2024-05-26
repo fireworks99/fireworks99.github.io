@@ -112,6 +112,117 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/22/数据转换/" class="item-title">数据转换</a>
+      
+      <time datetime="2019-04-22T09:31:54.000Z">
+        2019-04-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+字符数组转：
+
+float : strtof (char * ch, NULL)
+
+double : strtod(char * ch, NULL)
+
+long: strtol(char * ch, NULL, int base)
+
+unsigned long: strtoul(char * ch, NULL, int base)
+base &gt;= 2 &amp;&amp; base &lt;= 36
+3、4将字符串视为base进制转为十进制，堪比java进制转换
+
+
+
+Code#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int main()
+{
+    string s;
+    cin &gt;&gt; s;
+    cout &lt;&lt; atoi(s.c_str()) &lt;&lt; &#39;\n&#39;;
+    cout &lt;&lt; atol(s.c_str -->
+        <!-- </div> -->
+
+        
+        <h3 id="数据之间的转换"><a href="#数据之间的转换" class="headerlink" title="数据之间的转换"></a>数据之间的转换</h3><blockquote>
+<p>字符数组转：</p>
+<ol>
+<li>int ： atoi (char * ch)</li>
+<li>long : atol (char * ch)</li>
+<li>float : atof (char * ch)</li>
+</ol>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/22/数据转换/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/04/22/Python-a-b/" class="item-title">Python a + b</a>
+      
+      <time datetime="2019-04-22T04:00:22.000Z">
+        2019-04-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 2.读到文末(EOF)a+bwhile True:
+    try:
+        a, b = input().split()
+        a, b = int(a), int(b)
+        print(a + b)
+    except EOFError:
+        break
+
+3.T组数据a+bt = input() #different?
+t = int(t)
+for case in range(t):
+    a, b = input().split()
+    a, b = int(a), int(b)
+    print(a + b)
+
+4.特殊数据停止a+bwhile True:
+    a, b = input().split()
+    a, b = int(a), int(b)
+    if a == 0 and b == 0:  #There is a &#39;:&#39; 
+        break
+    print (a + b)
+
+练习import keyword # 导入相应的模块
+
+# 空行也是程序代码的一部分
+print( -->
+        <!-- </div> -->
+
+        
+        <h3 id="1-简单a-b"><a href="#1-简单a-b" class="headerlink" title="1.简单a+b"></a>1.简单a+b</h3><pre><code class="lang-python">a, b = input().split()
+a, b = int(a), int(b)
+print(a + b)
+</code></pre>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/22/Python-a-b/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/21/最长回文子串/" class="item-title">最长回文子串</a>
       
       <time datetime="2019-04-21T03:16:33.000Z">
@@ -530,99 +641,6 @@ int found(int x)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/15/c-unique/" class="item-title">c++ unique</a>
-      
-      <time datetime="2019-04-15T08:54:49.000Z">
-        2019-04-15
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 头文件
-algorithm
-
-用法
-unique(头地址， 尾地址)返回一个地址，用这个地址 减 头地址得数字“有几种”
-int m = unique(vec.begin(), vec.end()) - vec.begin();
-unique函数使得 vec前m个元素各不相同，后面的元素保持原来值不变（好多人认为把前面的值后调了）
-
-测试#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int main()
-{
-    int a[10] = {20, 20, 20, 10, 10, 30};
-    int n = unique(a, a + 10) - a;
-    cout &lt;&lt; n &lt;&lt; &#39;\n&#39;;
-    for(int i = 0; i &lt; 10; ++i)
-        cout &lt;&lt; a[i] &lt;&lt; &#3 -->
-        <!-- </div> -->
-
-        
-        <h3 id="unique函数"><a href="#unique函数" class="headerlink" title="unique函数"></a>unique函数</h3><blockquote>
-<p>线段树离散化时用到了unique函数除重，在这里记一下</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/15/c-unique/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/15/HDU-1166-Just-a-Hook/" class="item-title">HDU 1166 Just a Hook</a>
-      
-      <time datetime="2019-04-15T01:08:29.000Z">
-        2019-04-15
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-using namespace std;
-const int N = 100005;
-
-struct node
-{
-    int L, R, val, lazy;
-} a[N &lt;&lt; 2 | 1];
-
-void down(int x)
-{
-    if(a[x].lazy &gt; 0)
-    {
-        a[x &lt;&lt; 1].val = a[x].lazy * (a[x &lt;&lt; 1].R - a[x &lt;&lt; 1].L + 1);
-        a[x &lt;&lt; 1].lazy = a[x].lazy;
-        a[x &lt;&lt; 1 | 1].val = a[x].lazy * (a[x &lt;&lt; 1 | 1].R - a[x &lt;&lt; 1 | 1].L + 1);
-        a[x &lt;&lt; 1 | 1].laz -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>区间更新，区间查询（注意val初始值非0）</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/15/HDU-1166-Just-a-Hook/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -683,6 +701,14 @@ void down(int x)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0005-最长回文子串/">leecode 0005.最长回文子串</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
           </li>
         
@@ -692,14 +718,6 @@ void down(int x)
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
           </li>
         
       </ul>

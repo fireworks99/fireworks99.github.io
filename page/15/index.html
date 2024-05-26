@@ -112,6 +112,98 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/16/定向爬虫-中国大学排名/" class="item-title">定向爬虫:中国大学排名</a>
+      
+      <time datetime="2019-08-16T02:08:33.000Z">
+        2019-08-16
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+Codeimport bs4
+import requests
+from bs4 import BeautifulSoup
+
+def getText(url):
+    try:
+        kv = { &#39;user-agent&#39;: &#39;Mozilla/5.0&#39; }
+        r = requests.get(url, headers=kv)
+        r.raise_for_status()
+        r.encoding = r.apparent_encoding
+        return r.text
+    except:
+        return &quot;&quot;
+
+def fillUnivList(ulist, html):
+    soup = BeautifulSoup(html, &#39;html.parser&#39;)
+    for tr in soup.find(&#39;tbody&#39;).children: # 找到第一个tbody标签,遍历子节点
+        if isinst -->
+        <!-- </div> -->
+
+        
+        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
+<p>url：<a href="http://www.zuihaodaxue.com/" target="_blank" rel="noopener">http://www.zuihaodaxue.com/</a></p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/16/定向爬虫-中国大学排名/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/15/2019牛客暑期多校训练营-第九场-D折半枚举/" class="item-title">2019牛客暑期多校训练营(第九场)D折半枚举</a>
+      
+      <time datetime="2019-08-15T08:34:31.000Z">
+        2019-08-15
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+所有数字都有1(选取)、0(不选取)两种选择，所有状态就是2 ^ 36种
+枚举所有状态必然超时
+我们发现，2 ^ 36，底数为2(0/1两种状态)，幂不超过40而接近40
+这些都指向-&gt;折半枚举
+折半枚举适合的题目：每个数字(物品)只有选取与不选取两种选择，数字(物品)数目不超过40但接近于40(2 ^ 20可遍历)
+所以要对  (N &lt;=40 、 N：0/1）敏感，反应出这是折半枚举
+
+Code#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#inclu -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出N( &lt;= 36)和一个sum值，给出N个数字，从中选几个和为sum</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/15/2019牛客暑期多校训练营-第九场-D折半枚举/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/14/Python-About-BeautifulSoup/" class="item-title">About BeautifulSoup</a>
       
       <time datetime="2019-08-14T07:02:15.000Z">
@@ -494,117 +586,6 @@ Code#include &lt;set&gt;
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/08/HDU-4292-Food-最大流再优化/" class="item-title">HDU 4292 Food(最大流再优化?)</a>
-      
-      <time datetime="2019-08-08T03:49:53.000Z">
-        2019-08-08
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-最大流建图：
-
-人 拆点(每人匹配一食物一饮料)
-食物与人之间的容量设为1或INF都行
-
-
-优化
-
-字符串用scanf(&quot;%s&quot;, str)比循环getchar快？
-main函数调用其他函数耗时？add里写两份
-BFS出口改了……
-DFS形式改了，添加了一句deep[s] = -1;
-犯的大错误：
-
-
-Code#include &lt;set&gt;
-#include &lt;map&gt;
-#include &lt;stack&gt;
-#include &lt;queue&gt;
-#include &lt;ctime&gt;
-#include &lt;cmath&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;bitset&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;sstream&gt;
-#include &lt;cstdlib&gt;
-#include &lt;iostream&gt;
-#i -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>与POJ 3281 Dining相似，人、食物、饮料，不同的是现在食物、饮料数目不止一份</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/08/HDU-4292-Food-最大流再优化/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/08/HDU-4280-ISland-Transport-最大流DInic优化/" class="item-title">HDU 4280 ISland Transport(最大流Dinic优化)</a>
-      
-      <time datetime="2019-08-08T00:27:07.000Z">
-        2019-08-08
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 最大流模板题（卡超时）
-用Dinic的话：
-
-数组开的够大，注意边的数目不同于点的数目
-BFS里的queue改用数组模拟（STL耗时）
-DFS采用“无cut[]”写法+flow == 0封锁优化
-tem = DFS &gt; 0时才加到答案里，等于0时不加
-多组输入cnt(边的计数器)一定要初始化，否则越攒越多TLE
-
-
-Code(Dinic略优化)#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-const int N = 100010;
-const int INF = 0x3f3f3f3f;
-typedef long long ll;
-
-int n, m, start, over;
-int maxflow, deep[N];///deep深度
-
-struct Edge
-{
-    int to, w, pre;
-} a[N &lt;&lt;  -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>T组样例，n点，m条双向边(独特，网络流多为单向边+反向边),输入n个点的坐标，找出从最左边的点到最右边的点的最大流</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/08/HDU-4280-ISland-Transport-最大流DInic优化/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -665,6 +646,14 @@ struct Edge
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0005-最长回文子串/">leecode 0005.最长回文子串</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
           </li>
         
@@ -674,14 +663,6 @@ struct Edge
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
           </li>
         
       </ul>

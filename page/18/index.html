@@ -112,6 +112,123 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/24/SDNUOJ-1134-Facebook-Floyd闭包传递计数/" class="item-title">SDNUOJ 1134 Facebook Floyd闭包传递计数</a>
+      
+      <time datetime="2019-07-24T12:28:02.000Z">
+        2019-07-24
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+题目链接 ： http://www.acmicpc.sdnu.edu.cn/problem/show/1134
+
+Floyd闭包传递
+需要计数时，将bool型数组改为int，条件转移时对应题目改一下，相乘还是相加
+Floyd不能“剪枝”，必须完整地执行完
+新找到的路可能比当前最短路长，也可能更短，取二者min
+
+Code#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+using namespace std;
+
+int n, m;
+int beat[205][205];
+map&lt;string, int&gt; mp;
+
+void floyd()
+{
+    for(int k = 1; k &lt;= n; ++k)
+        for(int i = 1; i &lt;= n; ++i)
+            for(int j = 1; j &lt;= n; ++j)
+          -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>据说任意两个人之间最多只需要借助六个人就可以认识对方, 现在给你n个好友的关系，问你这其中每个人之间最多借助几个人就能认识对方？ </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/24/SDNUOJ-1134-Facebook-Floyd闭包传递计数/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/07/24/SDNUOJ-1118-单词统计-AC自动机/" class="item-title">SDNUOJ 1118 单词统计(AC自动机)</a>
+      
+      <time datetime="2019-07-24T03:01:20.000Z">
+        2019-07-24
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+题目链接 ： http://www.acmicpc.sdnu.edu.cn/problem/show/1118
+
+Sample Input15
+a
+ab
+ba
+aba
+bab
+aababa
+
+Sample Output1
+4 2 2 2 1
+
+Sample Input2(可能卡的样例)3
+aa
+aa
+aa
+aaa
+
+Sample Output2
+2 2 2
+
+AC自动机
+巧妙的数据结构（Trie） + 灵活的算法（KMP) = 巧妙灵活的算法(AC自动机)
+真的是，二者结合地天衣无缝
+
+By the way
+Trie里有个sum[N]数组是统计输入(Input)里单词重复出现次数的
+此题询问最后给出的长字符串中输入(Input)的每个字符串出现次数的
+好像说的不清楚，反正知道有那么两个东西不是一回事就行
+
+Analyze
+此题要在主串里查询每个输入串(可能重复)出现次数
+
+用上Trie中的is[N]数组标记每个字符串结束处结点
+
+开一个fro[N]数组记录答案（每个字符串出现次数）
+最后遍历结点数(cnt)，剔除(is[i] == 0)的fro[i]，输出剩下的(本来就是有序的)
+这 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给定一个字符串和若干个单词，统计这些单词在这个字符串中出现的次数。 </p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/24/SDNUOJ-1118-单词统计-AC自动机/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/23/HDU-2222-Keywords-Search/" class="item-title">HDU 2222 Keywords Search</a>
       
       <time datetime="2019-07-23T11:23:47.000Z">
@@ -503,116 +620,6 @@ int hashit(char * s)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/19/今日份的奇怪小发现/" class="item-title">今日份的奇怪小发现</a>
-      
-      <time datetime="2019-07-19T07:30:59.000Z">
-        2019-07-19
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Code#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-using namespace std;
-
-int sz(string s)
-{
-    return s.length();
-}
-
-int sszz(char * s)
-{
-    int num = 0;
-    while(*s)
-        num++, s++;
-    return num;
-}
-
-int main()
-{
-    int a = 0x7fffffff;///2 ^ 31 - 1
-    int b = 0x3f3f3f3f;/// ≈ 1e9
-    cout &lt;&lt; a &lt;&lt; &#39; &#39; &lt;&lt; b &lt;&lt; &#39;\n&#39;;
-
-    ///char 与 int 作四则运算时
-    ///char类型自动转为其对应Ascall码值大小的int值
-    char ch = &#39; -->
-        <!-- </div> -->
-
-        
-        <h3 id="Interesting"><a href="#Interesting" class="headerlink" title="Interesting"></a>Interesting</h3><blockquote>
-<ol>
-<li>0x7fffffff = 2 ^ 31 - 1  （MAX_INT）</li>
-<li>0x3f3f3f3f ≈ 1e9 （略小于MAX_INT的一半）</li>
-<li>char 与 int 作四则运算时char类型<strong>自动</strong>转为其对应Ascall码值大小的int值</li>
-<li>形参为string字符串的函数，可以传入char <em> s字符数组去执行（看来字符数组等级高于字符串，字符数组可<em>*自动</em></em>转字符串）</li>
-<li>异或交换两个整数值的方法：不用swap，不借助第三者</li>
-</ol>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/19/今日份的奇怪小发现/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/19/HDU-1425-sort-重温/" class="item-title">HDU 1425 sort 重温</a>
-      
-      <time datetime="2019-07-19T03:37:45.000Z">
-        2019-07-19
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-数字多达百万，sort定然超时
-我们在数轴上将输入的n个数字标记，从后向前遍历输出即可
-这样省去了sort的时间，只要遍历的时间
-
-Code#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-using namespace std;
-
-//int main()
-//{
-//    int n, m, tem;
-//    while(~scanf(&quot;%d%d&quot;, &amp;n, &amp;m))
-//    {
-//        map&lt;int, bool&gt; mp;
-//        for(int i = 0; i &lt; n; ++i)
-//        {
-//            scanf(&quot;%d&quot;, &amp;tem);
-//            mp[tem] = 1;
-//        }
-//        int cnt = 0;
-//        for(i -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n个不同<strong>整数</strong>，从大到小输出前m个</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/19/HDU-1425-sort-重温/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -673,6 +680,14 @@ using namespace std;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0005-最长回文子串/">leecode 0005.最长回文子串</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
           </li>
         
@@ -682,14 +697,6 @@ using namespace std;
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
           </li>
         
       </ul>

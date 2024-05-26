@@ -112,6 +112,95 @@
     
     <div class="recent-post-item">
 
+      <a href="/2024/05/26/leecode-0006-Z字型变换/" class="item-title">leecode 0006.Z字型变换</a>
+      
+      <time datetime="2024-05-26T09:44:34.000Z">
+        2024-05-26
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 示例输入：s = “PAYPALISHIRING”, numRows = 3输出：”PAHNAPLSIIGYIR”
+输入：s = “PAYPALISHIRING”, numRows = 4输出：”PINALSIGYAHRPI”解释：P     I    NA   L S  I GY A   H RP     I
+输入：s = “A”, numRows = 1输出：”A”
+思路从前往后记录每个字符在第几行上，比如第 i 个字符在第 j 行上 ( rows[i] = j )，将rows数组按照从小到大的顺序进行stable_sort即可。只不过这里要携带字符，那么需要用结构体，node.c = ‘P’; node.r = ‘0’;然后进行结构体排序。
+那么如何弄清每个字符在第几行上？模拟Z字型即可
+Code/**
+ * @param {string} s
+ * @param {number} numRows
+ * @return {string}
+ */
+var convert = function(s, numRows) {
+    const arr = [];
+    let fla -->
+        <!-- </div> -->
+
+        
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>将一个给定字符串 <code>s</code> 根据给定的行数 <code>numRows</code> ，以从上往下、从左到右进行 Z 字形排列。</p>
+<p>比如输入字符串为 <code>&quot;PAYPALISHIRING&quot;</code> 行数为 <code>3</code> 时，排列如下：</p>
+<pre><code>P   A   H   N
+A P L S I I G
+Y   I   R
+</code></pre><p>之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：<code>&quot;PAHNAPLSIIGYIR&quot;</code>。</p>
+<p>请你实现这个将字符串进行指定行数变换的函数：</p>
+<pre><code>string convert(string s, int numRows);
+</code></pre>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2024/05/26/leecode-0006-Z字型变换/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2024/05/26/leecode-0005-最长回文子串/" class="item-title">leecode 0005.最长回文子串</a>
+      
+      <time datetime="2024-05-26T09:30:13.000Z">
+        2024-05-26
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 示例输入：s = “babad”输出：”bab”解释：”aba” 同样是符合题意的答案。
+输入：s = “cbbd”输出：”bb”
+思路Manacher-方法介绍
+关键词：回文半径
+关键变量：向右延伸最远回文串中心c、向右延伸最远回文串右边界r
+记录变量：最长回文串中心pos、最长回文串半径len
+Code/**
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function(s) {
+    let t = &quot;#&quot;;
+    for(let i = 0; i &lt; s.length; ++i) {
+        t += s[i] + &#39;#&#39;;
+    }
+    const arr = new Array(t.length).fill(1);//radius + 1
+    let c = 0, r = 0, len = 0, pos = 0;
+    for(let i = 1; i &lt; t.length; ++i) {
+
+        / -->
+        <!-- </div> -->
+
+        
+        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个字符串 <code>s</code>，找到 <code>s</code> 中最长的回文子串。</p>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2024/05/26/leecode-0005-最长回文子串/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2024/05/26/求满足条件的最长子串的长度/" class="item-title">求满足条件的最长子串的长度</a>
       
       <time datetime="2024-05-26T07:15:06.000Z">
@@ -483,102 +572,6 @@ using namespace  -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2024/05/09/HJ28-素数伴侣/" class="item-title">HJ28 素数伴侣</a>
-      
-      <time datetime="2024-05-09T13:12:59.000Z">
-        2024-05-09
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 示例输入：
-42 5 6 13
-输出：
-2
-思路素数伴侣是指两个和为素数的数字，数字可以分为奇数、偶数，奇+偶=奇（可能是素数），而其他组合都是偶数，有质因子2，都是质数。那么问题转化为：给出N个奇数、M个偶数，若某个奇数跟某个偶数和为素数，则两个数字可以配对，求最多能有多少配对。
-即：无权二分图最大匹配
-Code#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-
-int link[105];///link[i] = v; 选项i 分配给任务v
-bool vis[105];///在为任务v配对时 选项i是否被访问过
-
-vector&lt;int&gt; odd;
-vector&lt;int&gt; even;
-vector&lt;int&gt; vec[105];
-
-bool dfs(int v) {
-  -->
-        <!-- </div> -->
-
-        
-        <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><blockquote>
-<p>​        若两个正整数的和为素数，则这两个正整数称之为“素数伴侣”，如2和5、6和13，它们能应用于通信加密。</p>
-<p>​        现在密码学会请你设计一个程序，从已有的 N （ N 为偶数）个正整数中挑选出若干对组成“素数伴侣”，挑选方案多种多样，例如有4个正整数：2，5，6，13，如果将5和6分为一组中只能得到一组“素数伴侣”，而将2和5、6和13编组将得到两组“素数伴侣”，能组成“素数伴侣”最多的方案称为“最佳方案”，当然密码学会希望你寻找出“最佳方案”。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2024/05/09/HJ28-素数伴侣/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2024/04/12/Modular/" class="item-title">Modular</a>
-      
-      <time datetime="2024-04-12T10:21:57.000Z">
-        2024-04-12
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 在前端模块化中，有几种常见的模块化方案：
-
-CommonJS：最初由Node.js引入的模块化方案，使用require和module.exports来定义和导出模块。
-javascriptCopy code
-// math.js
-const add = (a, b) =&gt; a + b;
-const subtract = (a, b) =&gt; a - b;
-
-module.exports = {
-    add,
-    subtract
-};
-
-// main.js
-const { add, subtract } = require(&#39;./math.js&#39;);
-console.log(add(2, 3)); // 输出 5
-console.log(subtract(5, 3)); // 输出 2
-
-AMD（Asynchronous Module Definition）：适用于浏览器环境的模块化方案，通过异步加载模块，使用define和require来定义和导入模块。
-javascriptCopy code
-// math.js
-define([], funct -->
-        <!-- </div> -->
-
-        
-        <p>前端模块化是指将前端代码按照模块化的方式进行组织和管理，以提高代码的可维护性、复用性和可扩展性。传统的前端开发中，代码通常是以全局变量和函数的形式存在，容易造成命名冲突、代码耦合度高等问题。模块化开发则通过将代码分割为独立的模块，每个模块只暴露必要的接口，从而实现代码的分层管理和复用。</p>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2024/04/12/Modular/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -639,6 +632,14 @@ define([], funct -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0005-最长回文子串/">leecode 0005.最长回文子串</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
           </li>
         
@@ -648,14 +649,6 @@ define([], funct -->
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
           </li>
         
       </ul>

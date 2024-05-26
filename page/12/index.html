@@ -112,6 +112,113 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/11/24/HDU-3948-who-s-your-daddy-DLX-repeat-cover/" class="item-title">HDU 3498 who&#39;s your daddy(DLX repeat cover)</a>
+      
+      <time datetime="2019-11-24T09:00:46.000Z">
+        2019-11-24
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Sample Input5 4
+
+1 2
+1 3
+2 4
+4 5
+
+建模1 1 1 0 0
+1 1 0 1 0
+1 0 1 0 0
+0 1 0 1 1
+0 0 0 1 1
+
+问题转换
+至少选出多少行,使每列都含有1
+
+Dancing Links X 重复覆盖
+①含1最少列，1所在行“们”必然不会被同时选中
+②含1最少列 中 任选一行，将该行1元素所在列删除(这个过程会删掉列标元素——这样R[0] == 0可判作准出口，此列这个1却保留了——为了向右继续删)
+③删除列是因为这列已经有1了，我以后选行的时候无需参考
+④与精确覆盖思路上不同的是：精确覆盖删到只剩Head这个元素算成功，而重复覆盖只是把所有列标元素删掉算找到一个答案(当然它会遍历所有情况，找到最优的)
+⑤与精确覆盖实现上不同的是：重复覆盖abandon与resume函数里的参数是id，而精确覆盖形参是列表元素，里面删除内容也不同
+
+Code#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream& -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个数字，M组”相邻”关系</p>
+<p>消灭数字，攻击某个数字的时候，它本身以及与它相邻的数字会被消灭，求最少攻击次数</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/24/HDU-3948-who-s-your-daddy-DLX-repeat-cover/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/11/17/hihocoder-1317-Dancing-Links-X/" class="item-title">hihocoder 1317 (DLX cover precisely)</a>
+      
+      <time datetime="2019-11-17T10:56:48.000Z">
+        2019-11-17
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Dancing Link X
+https://www.cnblogs.com/grenet/p/3145800.html
+Dancing Links : 循环双向链，纵横交叉形成的网状结构
+
+Code#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int MAX_V = 10010;
+
+
+int n, m;
+int cnt[105];///第i列1元素的个数
+int L[MAX_V], R[MAX_V], U[MAX_V], D[MAX_V];
+int Head[105];///第i行第一个1元素的ID,意义同列标元素
+int Row[MAX_V], Col[MAX_V];///记录id所在行列
+int ans[105];
+
+
+void init()
+{
+    for(int i = 0; i &lt;= m; ++i)///初始化Head及m个列标元素
+    {
+        cnt[i] = 0;
+        L[i] = i - 1;
+        R[i] =  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>小Ho最近遇到一个难题，他需要破解一个棋局。</p>
+<p>棋局分成了n行，m列，每行有若干个棋子。小Ho需要从中选择若干行使得每一列有且恰好只有一个棋子。</p>
+<p><a href="http://hihocoder.com/problemset/problem/1317" target="_blank" rel="noopener">http://hihocoder.com/problemset/problem/1317</a></p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/11/17/hihocoder-1317-Dancing-Links-X/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/11/13/POJ-Sudoku-数独-2676-2918-3074-3076/" class="item-title">POJ Sudoku(数独) 2676 2918 3074 3076</a>
       
       <time datetime="2019-11-13T12:34:11.000Z">
@@ -558,110 +665,6 @@ f ( 1 ) = [41, 18467, 6334, 26500…]
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/10/30/POJ-2796-Feel-Good-单调栈/" class="item-title">POJ 2796 Feel Good(单调栈)</a>
-      
-      <time datetime="2019-10-30T13:54:05.000Z">
-        2019-10-30
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 单调栈+前缀和#include &lt;stack&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-using namespace std;
-#define ll long long
-const int N = 100100;
-
-int h[N];
-int L[N], R[N];
-ll sum[N];
-stack&lt;int&gt; sk;
-
-///单调栈维护了一个单调递增序列
-///单调栈:栈内越靠近栈顶的下标所对应的高度越高
-///但栈内所存的，终究还是下标
-int main()
-{
-    int n;
-    while(~scanf(&quot;%d&quot;, &amp;n))
-    {
-        memset(sum, 0, sizeof(sum));
-        for(int i = 1; i &lt;= n; ++i)
-        {
-            scanf(&quot;%d&quot;, &amp;h[i]);
-       -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出一个序列，要求的是一个区间，这个区间的最小值乘以这个区间所有数字的和是最大值。求这个最大值与这个区间。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/10/30/POJ-2796-Feel-Good-单调栈/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/10/26/再看欧拉筛/" class="item-title">再看欧拉筛</a>
-      
-      <time datetime="2019-10-26T09:01:32.000Z">
-        2019-10-26
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Code#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 3e7+5;
-
-int p[N], cnt;
-bool vis[N];/// 1 表示合数 0 表示素数
-
-void Euler(int n)
-{
-    cnt = 0;
-    for(int i = 2; i &lt;= n; ++i)
-    {
-        if(!vis[i])
-            p[++cnt] = i;
-        for(int j = 1; j &lt;= cnt &amp;&amp; p[j] * i &lt;= n; ++j)
-        {
-            vis[ p[j] * i ] = 1;
-            if(i % p[j] == 0)///确保每个合数只被它的最小质因子筛掉
-                break;
-        }
-    }
-}
-
-欧拉筛做了 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>欧拉筛如何实现：每个合数仅被它的最小质因子筛掉？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/10/26/再看欧拉筛/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -722,6 +725,14 @@ void Euler(int n)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0005-最长回文子串/">leecode 0005.最长回文子串</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
           </li>
         
@@ -731,14 +742,6 @@ void Euler(int n)
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
           </li>
         
       </ul>

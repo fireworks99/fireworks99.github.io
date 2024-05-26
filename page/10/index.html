@@ -112,6 +112,98 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/13/ZOJ-3261-Connections-in-Galaxy-War-union-find-set/" class="item-title">ZOJ 3261 Connections in Galaxy War(union-find-set)</a>
+      
+      <time datetime="2020-03-13T03:23:27.000Z">
+        2020-03-13
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+我所解决不了的问题是删边，并查集没学过删边操作，要是每次都重建一次并查集太耗时间了，怎么办呢？
+逆序解决问题：
+从后向前解决问题，最初的并查集排除了所有删掉的边，正好对应最后的查询。然后向前遍历，若遇到删边操作，说明前面的查询都是建立在“包含这条边”的基础上的，那么我们添边，如此一来，化“删边”为“添边”，解决了问题。
+总结：正序解决问题不行，试试逆序。老子说过：世间万物都包含对立两方，对立的双方可以相互转化。
+另外用一个mmax[i]数组记录以i点所在集合(连通块)内最大val值，方法是把mmax数组作为每个集合祖先节点的一个属性，毕竟祖先节点代表着整个集合。
+
+Code#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 50005;
+
+int n, m, k, cnt;
+int pre[N], val[N] -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>假设有编号从0开始的n个点，每个点都有一个非负权值p[i]。现在有没有重边的m条边和Q个操作。<br>对于操作有两种类型 :<br>destroy a b 表示摧毁a,b点之间的边<br>query a 表示从a出发能到的点中,权值比a大权值最大,在权值最大前提下编号最小的点。如果没有这样的点输出-1。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/13/ZOJ-3261-Connections-in-Galaxy-War-union-find-set/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/03/12/POJ-2912-Rochambeau-union-find-set/" class="item-title">POJ 2912 Rochambeau(union-find-set)</a>
+      
+      <time datetime="2020-03-12T12:40:25.000Z">
+        2020-03-12
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+种类并查集、排除法做题
+除了裁判的小伙伴分为3组：0、1、2
+从1到n枚举，假设当前 i 是裁判，若合并除裁判外的其他人而无矛盾的话，i 是准裁判。记一下裁判的个数。
+另外要确定最少几行可以得出”谁是裁判”结论，我们记录每次排除一个人时记下是哪一行出现了矛盾，得到n - 1个位置。因为排除了所有的非裁判才知道裁判是谁，所以那n - 1个位置中到最靠后一个位置才能排除n - 1个非裁判，才能得知谁是裁判。
+
+Something
+先来一个小总结：
+种类并查集分两种：①种类2种②种类3种
+(若是多于3种便不能由AB、AC的关系推出BC的关系)
+“2种”还好写，”3种”的有固定的一套体系
+而关于这套体系我还有些东西没弄清楚：
+
+unite先if搞两者属于同一集合的情况（否则会WA）
+
+必须有else，把那里面的内容单独放外面会RE
+
+0= 、 1&gt; 、2&lt;  或者 0= 、1&lt; 、2&gt; 都是可行的
+
+关于(val[a] - val[b] + 3) % 3 != idx我觉得不能解释以下两种情况
+
+
+①A &gt; pre &amp;&amp; B &lt -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n个小伙伴进行猜拳游戏，除了裁判以外，其他人只会出单一的一种，给出m中猜拳的结果，要求找出裁判序号，并且输出在第几次猜拳可以确定。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/12/POJ-2912-Rochambeau-union-find-set/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/12/POJ-2492-A-Bug-s-Life-easy-union-find-set/" class="item-title">POJ 2492 A Bug&#39;s Life(easy union-find-set)</a>
       
       <time datetime="2020-03-12T03:29:35.000Z">
@@ -514,100 +606,6 @@ typedef pair&lt;int, int -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/08/LightOJ-1074-Extended-Traffic-The-shortest-path/" class="item-title">LightOJ 1074 Extended Traffic(The shortest path)</a>
-      
-      <time datetime="2020-03-08T03:08:32.000Z">
-        2020-03-08
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-单向边，可有负权边，可含负权环 -&gt; 用spfa叭
-若某个点在负权环里(++times[to] &gt; n)，那么从点to出发所能到达的点(无论是否在负权环里)到起点的距离都是无限小，可以DFS枚举所有可达点并标记
-（补充一下：若是单纯求负权环上所有点，应该与强连通分量有关，不仅仅是DFS这么简单）
-
-Code#include &lt;queue&gt;
-#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int MAX_N = 205;
-const int INF = 0x3f3f3f3f;
-
-int n, val[MAX_N];
-
-struct edge
-{
-    int to, w, pre;
-} e[50005];
-
-int cnt, head[50005], dis[MAX_N], vis[MAX_N], times[MAX_N], through -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出n个点的权值(不超过20),点 i 到点 j 之间的距离(如果可达)为(a[j] - a[i]) ^ 3,求到查询点的最短路径</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/08/LightOJ-1074-Extended-Traffic-The-shortest-path/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/07/POJ-1062-昂贵的聘礼-The-shortest-path/" class="item-title">POJ 1062 昂贵的聘礼(The shortest path)</a>
-      
-      <time datetime="2020-03-07T14:39:32.000Z">
-        2020-03-07
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Input
-M(等级差别限制)   N(可交易人 1 ~ N 1是女方家里人，是最终要交易的对象)
-接下来N个描述
-P(该交易人所有物品的价值)    ——每个交易人只有一个物品
-L(该交易人等级)
-X(优惠方案数)
-紧跟X行， 每行 T(交易人编号) V(该交易人物品价格)
-花最少的钱取到1号手里的物品：那个她
-
-Analyze
-先撇开等级限制，可以Dijkstra求出点1到其他所有点的最短路dis[i]，那么dis[i]+val[i] 就是一直换到物品i的最少花费，由于最终换到谁才满足花费最少不确定，所以遍历一遍取最小值即可。
-再考虑等极限制，由于必定与1交易，所以交易人等级区间为[val[1]-M,val[1]+M]，但有可能交易时出错，比如跟val[1]-M和val[1]+M交易，那么他俩等级差都2M了。所以可行区间应为[val[1]-M, val[1]]、[val[1]-M+1, val[1]+1]……遍历枚举区间即可
-
-Attention
-图是有向图（边是单向边）
-
-Code#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#i -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>男方去女方家提亲，女方提出要 P 彩礼，男方觉得有点多，于是女方提出可以拿 物品T 来，那样彩礼只要 V。物品T在第 i 个人那里， 男方去求取，遇到了同样的困难：要钱太多但倘若拿来某物品，可以给他优惠。</p>
-<p>女方这边有等级差别，你所交易的人中，任意两人等级不可大于M。</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/07/POJ-1062-昂贵的聘礼-The-shortest-path/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -668,6 +666,14 @@ Code#include &lt;cstdio&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0005-最长回文子串/">leecode 0005.最长回文子串</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
           </li>
         
@@ -677,14 +683,6 @@ Code#include &lt;cstdio&gt;
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
           </li>
         
       </ul>

@@ -6,7 +6,7 @@
 <head><meta name="generator" content="Hexo 3.8.0">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Tag: 题解 [ 市井烟火气 ]</title>
+	<title>leecode 0005.最长回文子串 [ 市井烟火气 ]</title>
 	
 	
 	<!-- stylesheets list from _config.yml -->
@@ -102,71 +102,90 @@
 			<div id="content-inner">
 
 				
-<div id="tag">
-  <h1>题解</h1>
-  
-  <div class="tag-item">
-    <a href="/2019/03/31/POJ-2240-Arbitrage/">
-      POJ 2240 Arbitrage
-    </a>
-    <time datetime="2019-03-31T06:09:30.000Z">
-      2019-03-31
-    </time>
-  </div>
-  
-  <div class="tag-item">
-    <a href="/2019/03/29/POJ-1797-Heavy-Transportation/">
-      POJ 1797 Heavy Transportation
-    </a>
-    <time datetime="2019-03-29T11:18:22.000Z">
-      2019-03-29
-    </time>
-  </div>
-  
-  <div class="tag-item">
-    <a href="/2019/03/28/POJ-3268-Silver-Cow-Party/">
-      POJ 3268 Silver Cow Party
-    </a>
-    <time datetime="2019-03-28T11:54:01.000Z">
-      2019-03-28
-    </time>
-  </div>
-  
-  <div class="tag-item">
-    <a href="/2019/03/28/POJ-2253-Frogger/">
-      POJ 2253 Frogger
-    </a>
-    <time datetime="2019-03-28T10:44:45.000Z">
-      2019-03-28
-    </time>
-  </div>
-  
-  <div class="tag-item">
-    <a href="/2019/03/25/HDU-1425-sort/">
-      HDU 1425 sort
-    </a>
-    <time datetime="2019-03-25T12:24:32.000Z">
-      2019-03-25
-    </time>
-  </div>
-  
-  <div class="tag-item">
-    <a href="/2019/03/22/POJ-3126-Prime-Path/">
-      POJ 3126 Prime Path
-    </a>
-    <time datetime="2019-03-22T13:31:13.000Z">
-      2019-03-22
-    </time>
-  </div>
-  
+<div id="details">
+	
+	<article id="details-post">
+		<div id="details-post-item">
+			<h1>leecode 0005.最长回文子串</h1>
+			<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>给你一个字符串 <code>s</code>，找到 <code>s</code> 中最长的回文子串。</p>
+<a id="more"></a>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><p>输入：s = “babad”<br>输出：”bab”<br>解释：”aba” 同样是符合题意的答案。</p>
+<p>输入：s = “cbbd”<br>输出：”bb”</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p><a href="https://writings.sh/post/algorithm-longest-palindromic-substring#manacher-%E6%96%B9%E6%B3%95" target="_blank" rel="noopener">Manacher-方法介绍</a></p>
+<p>关键词：回文半径</p>
+<p>关键变量：<strong>向右延伸最远回文串</strong>中心c、<strong>向右延伸最远回文串</strong>右边界r</p>
+<p>记录变量：最长回文串中心pos、最长回文串半径len</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><pre><code class="lang-js">/**
+ * @param {string} s
+ * @return {string}
+ */
+var longestPalindrome = function(s) {
+    let t = &quot;#&quot;;
+    for(let i = 0; i &lt; s.length; ++i) {
+        t += s[i] + &#39;#&#39;;
+    }
+    const arr = new Array(t.length).fill(1);//radius + 1
+    let c = 0, r = 0, len = 0, pos = 0;
+    for(let i = 1; i &lt; t.length; ++i) {
 
-  <div id="other-paginator">
-    <a class="extend prev" rel="prev" href="/tags/题解/page/7/"> </a><a class="page-number" href="/tags/题解/">1</a><span class="space">&hellip;</span><a class="page-number" href="/tags/题解/page/6/">6</a><a class="page-number" href="/tags/题解/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/tags/题解/page/9/">9</a><a class="page-number" href="/tags/题解/page/10/">10</a><span class="space">&hellip;</span><a class="page-number" href="/tags/题解/page/15/">15</a><a class="extend next" rel="next" href="/tags/题解/page/9/"> </a>
-  </div>
-  
+        //reduce while times below
+        (r &gt; i) &amp;&amp; (arr[i] = Math.min(arr[2 * c - i], r - i));
+
+        while(i + arr[i] &lt; t.length &amp;&amp;
+              i - arr[i] &gt;= 0 &amp;&amp;
+              t[ i + arr[i] ] === t[ i - arr[i] ]) {
+            ++arr[i];
+        }
+
+        if(r &lt; i + arr[i]) {
+            r = i + arr[i];
+            c = i;
+        }
+        if(len &lt; arr[i]) {
+            len = arr[i];
+            pos = i;
+        }
+    }
+    const center = parseInt(pos / 2);
+    const start = center - (len / 2 - 1);
+    return s.substring(start, start + (arr[pos] - 1));
+};
+
+console.log(longestPalindrome(&quot;a&quot;));
+</code></pre>
+
+		</div>
+
+		<!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80NjIyNC8yMjczNQ==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+		
+	</article>
+
+	<div id="toc">
+		
+	</div>
+
 </div>
 
-
+<!-- <div id="paginator"> -->
+<!-- 	 -->
+<!-- </div> -->
 
 
 			</div>

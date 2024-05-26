@@ -112,6 +112,117 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/08/08/HDU-4292-Food-最大流再优化/" class="item-title">HDU 4292 Food(最大流再优化?)</a>
+      
+      <time datetime="2019-08-08T03:49:53.000Z">
+        2019-08-08
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+最大流建图：
+
+人 拆点(每人匹配一食物一饮料)
+食物与人之间的容量设为1或INF都行
+
+
+优化
+
+字符串用scanf(&quot;%s&quot;, str)比循环getchar快？
+main函数调用其他函数耗时？add里写两份
+BFS出口改了……
+DFS形式改了，添加了一句deep[s] = -1;
+犯的大错误：
+
+
+Code#include &lt;set&gt;
+#include &lt;map&gt;
+#include &lt;stack&gt;
+#include &lt;queue&gt;
+#include &lt;ctime&gt;
+#include &lt;cmath&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;bitset&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;sstream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;iostream&gt;
+#i -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>与POJ 3281 Dining相似，人、食物、饮料，不同的是现在食物、饮料数目不止一份</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/08/HDU-4292-Food-最大流再优化/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/08/08/HDU-4280-ISland-Transport-最大流DInic优化/" class="item-title">HDU 4280 ISland Transport(最大流Dinic优化)</a>
+      
+      <time datetime="2019-08-08T00:27:07.000Z">
+        2019-08-08
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 最大流模板题（卡超时）
+用Dinic的话：
+
+数组开的够大，注意边的数目不同于点的数目
+BFS里的queue改用数组模拟（STL耗时）
+DFS采用“无cut[]”写法+flow == 0封锁优化
+tem = DFS &gt; 0时才加到答案里，等于0时不加
+多组输入cnt(边的计数器)一定要初始化，否则越攒越多TLE
+
+
+Code(Dinic略优化)#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 100010;
+const int INF = 0x3f3f3f3f;
+typedef long long ll;
+
+int n, m, start, over;
+int maxflow, deep[N];///deep深度
+
+struct Edge
+{
+    int to, w, pre;
+} a[N &lt;&lt;  -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>T组样例，n点，m条双向边(独特，网络流多为单向边+反向边),输入n个点的坐标，找出从最左边的点到最右边的点的最大流</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/08/08/HDU-4280-ISland-Transport-最大流DInic优化/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/08/07/LightOJ-1245-Harmonic-Number调和数/" class="item-title">LightOJ 1245 Harmonic Number调和数</a>
       
       <time datetime="2019-08-07T11:25:29.000Z">
@@ -527,121 +638,6 @@ struct edge{ int to, w -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/01/欧拉-回-路/" class="item-title">欧拉(回)路</a>
-      
-      <time datetime="2019-08-01T09:08:17.000Z">
-        2019-08-01
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 无向图#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 1005;
-
-int n, m;
-int cnt[N];
-int tot, ans[N];
-bool mp[N][N];
-
-void DFS(int num)
-{
-    for(int i = 1; i &lt;= n; ++i)
-        if(mp[num][i])
-        {
-            mp[num][i] = mp[i][num] = 0;
-            DFS(i);
-            ans[++tot] = i;
-        }
-}
-
-int main()
-{
-    while(~scanf(&quot;%d%d&quot;, &amp;n, &amp;m) -->
-        <!-- </div> -->
-
-        
-        <h2 id="DFS求连通图路径（模板）"><a href="#DFS求连通图路径（模板）" class="headerlink" title="DFS求连通图路径（模板）"></a>DFS求连通图路径（模板）</h2><blockquote>
-<p>无向图是特殊的有向图</p>
-<p>欧拉回路是特殊的欧拉路</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/01/欧拉-回-路/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/08/01/HDU-1878-欧拉回路-无向图/" class="item-title">HDU 1878 欧拉回路(无向图)</a>
-      
-      <time datetime="2019-08-01T08:58:46.000Z">
-        2019-08-01
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 判断
-无向图的判断： 
-欧拉回路：每个顶点的度都为偶数
-欧拉路：只有两个顶点度的个数为奇数，其余的都为偶数
-有向图的判断： 
-欧拉回路：每个顶点的出度于入度都相等
-欧拉路：一个出度 - 入度 == 1，一个入度 - 出度 == 1，其余点出度==入度 
-
-前提：图是连通的
-判连通：
-
-DFS：若图能连通，那么能访问完所有图中节点 
-并查集
-
-
-HDU 1878 欧拉回路#include &lt;map&gt;
-#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 1005;
-
-int n, m;
-int cnt[N];
-//int tot, ans[N];
-bool mp[N][N], vis[N];
-
-void DFS(int num)
-{
-    vis[num] = 1;
-    for(int i = 1; i & -->
-        <!-- </div> -->
-
-        
-        <h2 id="欧拉路与欧拉回路"><a href="#欧拉路与欧拉回路" class="headerlink" title="欧拉路与欧拉回路"></a>欧拉路与欧拉回路</h2><blockquote>
-<p>欧拉路：从图中任意一个点开始到图中任意一个点结束的路径，并且<strong>图中每条边通过的且只通过一次</strong> </p>
-<p>欧拉回路：起点也是终点的欧拉路（也属于欧拉路，如同正方形属于矩形）</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/08/01/HDU-1878-欧拉回路-无向图/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -702,6 +698,14 @@ void DFS(int num)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0005-最长回文子串/">leecode 0005.最长回文子串</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
           </li>
         
@@ -711,14 +715,6 @@ void DFS(int num)
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
           </li>
         
       </ul>

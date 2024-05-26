@@ -112,6 +112,108 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/27/HDU-2819-Swap-Bipartite-graph-match/" class="item-title">HDU 2819 Swap(Bipartite graph match)</a>
+      
+      <time datetime="2020-04-27T03:28:55.000Z">
+        2020-04-27
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+刚开始想的时候，不明白怎么换，想着什么情况下既要换行又要换列，是那种情况的话该怎么换？越想越复杂。看了题解：
+若可以，只换行可行，只换列也可行
+二分图最大匹配等于n则可以
+DFS(int x)时 link[i] = x；是标记列i被分配给x，是列被标记了！
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 110;
+
+int n, mp[N][N], link[N];
+
+bool vis[N];
+bool DFS(int x)
+{
+    for(int i = 1; i &lt;= n; ++i)
+        if(mp[x][i] &amp;&amp; !vis[i])
+        {
+            vis[i] = 1;
+            if(link[i] == -1 || DFS(link[i]))
+   -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出N * N的01矩阵，能否交换行列使得最终主对角线上全为1，不能的话输出-1，能的话输出方案.</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/27/HDU-2819-Swap-Bipartite-graph-match/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2020/04/27/HDU-1281-Chessboard-game-Bipartite-graph-match/" class="item-title">HDU 1281 Chessboard game(Bipartite graph match)</a>
+      
+      <time datetime="2020-04-27T02:05:22.000Z">
+        2020-04-27
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+同HDU 1045 Fire Net类似，解法思想(二分图匹配)也相同
+
+方案一 较为暴力
+求完最大匹配后，将每条匹配的边撤掉再求一遍最大匹配，看是否减少，若减少则该边对应点是最要点。
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 105;
+
+int n, m, k;
+bool vis[N];
+int mp[N][N], link[N], t_link[N];
+
+///DFS(int x): link[to] = x not link[x] = to
+
+bool DFS(int x)
+{
+    for(int i = 1; i &lt;= n; ++i)
+        if(mp[x][i] &amp;&amp; !vis[i])
+        {
+            vis[i] = 1;
+            if(li -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N行M列的棋盘，空白地区放棋子“車”，使彼此不能攻击到，非空白地区不影响彼此的攻击(不是“墙”)，求在放最多“車”的前提下，有几个点是“重要点”（棋子不放在这里就会减少可放棋子数）？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/27/HDU-1281-Chessboard-game-Bipartite-graph-match/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/04/26/HDU-2444-The-Accomodation-of-Students-Bipartite-graph/" class="item-title">HDU 2444 The Accomodation of Students(Bipartite graph color)</a>
       
       <time datetime="2020-04-26T04:10:45.000Z">
@@ -615,91 +717,6 @@ const int M = 11000 -->
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/07/HDU-4408-Minimun-Spanning-Tree-Count/" class="item-title">HDU 4408 Minimun Spanning Tree (Count)</a>
-      
-      <time datetime="2020-04-07T07:45:23.000Z">
-        2020-04-07
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-相对于普通的最小生成树，多了一个条件：最小，也就是说生成树的边有了权值。如果想办法去掉权值，问题就转为了普通生成树计数了。就像三维扫描线求体积那题，遍历Z轴，如同去掉了一个维度，将问题转化为了普通的扫描线求面积。这一题能不能通过遍历边的长度而将问题转化呢？可以的。
-在Kruskal算法中：假设图中有a[1]条长度为b[1]的边，有a[2]条长度为b[2]的边…a[k]条长度为b[k]的边。这a[k]条长度相同的边的排列顺序可以是任意的，这意味着顺序不影响结果(即长度为b[k]的边被遍历过后形成的连通块是相同的，即缩点后的图是相同的)，也就是说在长度为b[k]的边的集合里，有num[k]个子集，选任意一个子集得到的结果都是相同的。这样一来，最终答案就是num[1] * num[2] *...*num[last]。
-如何求num[k] ?
-将长度小于b[k]的边都处理完(并查集unite)后形成一个个集合，这一个个集合相当于新图中的一个个“点”。这a[k]条长度为b[k]的边会使这些“点”形成一个个新的连通块，将每一个连通块看做一个图，Gauss计算生成树个数，每个连通块的 -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>最小生成树 + 生成树计数</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/07/HDU-4408-Minimun-Spanning-Tree-Count/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/04/06/HDU-4305-Lightning-Count-spanning-trees/" class="item-title">HDU 4305 Lightning(Count spanning trees)</a>
-      
-      <time datetime="2020-04-06T04:52:38.000Z">
-        2020-04-06
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-跟普通生成树计数不同的是，例如一个三角形的图的生成树有三种形状，倘若把这个三角形压成一条线，那生成树就只有一种形状了。
-解决办法是：若某两点看似可以连接时，判断一下，若两点连线中间还有点，则这两点不能连线。
-
-Attention
-关于取模，含有负数时((x % mod) + mod) % mod，不含有负数时x % mod,倘若有除法取模要用逆元，据说少量逆元可以类似递推出来？
-
-void init()
-{
-    inv[1]=1;
-    for(int i = 2;i &lt; M;i++)
-        inv[i] = (M - M / i) * inv[M % i] % M;
-}
-
-
-时间卡的紧：
-本来用double的数据迫不得已改用了int
-多个判断条件并列时，耗时少的判断放前面
-
-if(A &amp;&amp; B &amp;&amp; C)
-{
-    //do something;
-}
-
-
-比如上述代码，A可能只是个普通bool型变量，B可能是一个长长的表达式，C可能是一个循环才能算得出值的bool变量
-
-Code#include &lt;cmat -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>求生成树有几种形状？</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/04/06/HDU-4305-Lightning-Count-spanning-trees/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -760,6 +777,14 @@ Code#include &lt;cmat -->
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0005-最长回文子串/">leecode 0005.最长回文子串</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
           </li>
         
@@ -769,14 +794,6 @@ Code#include &lt;cmat -->
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
           </li>
         
       </ul>

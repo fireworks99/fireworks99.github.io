@@ -112,6 +112,85 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/03/09/HDU-1874-畅通工程续/" class="item-title">HDU 1874 畅通工程续</a>
+      
+      <time datetime="2019-03-09T01:44:54.000Z">
+        2019-03-09
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 更多关于Dijkstra算法过程 https://blog.csdn.net/wenqiang1208/article/details/76473984
+Bellman-Ford算法
+原理是对图进行V-1次松弛操作，得到所有可能的最短路径。其优于迪科斯彻算法的方面是边的权值可以为负数、实现简单，缺点是时间复杂度过高，高达O(VE)。但算法可以进行若干种优化，提高了效率。 
+可有负权边，可判负权环。（突出特点！）
+
+更多关于Bellman-Ford算法过程 https://blog.csdn.net/a8082649/article/details/81812000
+Floyd算法
+Floyd-Warshall算法（Floyd-Warshall algorithm）是解决任意两点间的最短路径的一种算法，可以正确处理有向图或负权的最短路径问题 （ye可判负权环！！！）
+注意点是从 0 ~ n-1 还是 1 ~ n
+
+更多关于Floyd算法 https://www.cnblogs.com/GumpYan/p/5540549.html
+Description
+某省自从实行了很多年的畅通工程计划 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Dijkstra算法"><a href="#Dijkstra算法" class="headerlink" title="Dijkstra算法"></a>Dijkstra算法</h3><blockquote>
+<p>主要特点是以起始点为中心向外层层扩展(广度优先搜索思想)，直到扩展到终点为止。 </p>
+<p>主要思想是每次找到离”已成图“最近的一个顶点，然后将该顶点连入图，然后更新“已成图”到其他顶点的最短路径。贪心算法。 </p>
+<p>该算法要求图中不存在负权边！！！(无负权边自然无负权环)</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/09/HDU-1874-畅通工程续/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/03/08/马航mh370-五年等待-未见归期/" class="item-title">马航MH370 五年等待 未见归期</a>
+      
+      <time datetime="2019-03-08T09:21:06.000Z">
+        2019-03-08
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+
+822页的调查报告 却无法确定失联的真正原因
+2018年5月29日，马航MH370搜寻工作结束。7月30日上午，马来西亚政府面向马航MH370失联者家属公布了最终报告，报告共计有822页。报告显示，调查组无法确定马航MH370航班失联的真正原因。 
+马来西亚交通部长陆兆福此前曾表示：“调查人员记录下的每一个字都会被收录在这份报告中。我们会确保报告的透明度，它将被完整地提交，不经任何编辑，没有添加或删除。”同时，报告7月31日提交给了马来西亚两院审议。 
+马航MH370航班与机上239名机组人员和乘客，依旧在印度洋的深处，无影无踪，留给家属们无尽的痛苦，留给全世界无尽的迷思。
+还未抵达的航班，我们仍在等你回来！
+
+原文链接 http://news.iqilu.com/guoji/20190308/4211477.shtml
+ -->
+        <!-- </div> -->
+
+        
+        <p><strong>马航MH370失联</strong></p>
+<blockquote>
+<p>2014年3月8日凌晨，马航MH370号班机从吉隆坡国际机场起飞，机上共载有239人，其中有154名中国人（中国大陆153人，中国台湾1人）。</p>
+<p>该班机原定计划于北京时间早晨6：30抵达北京首都国际机场，但起飞后不足一小时便在马来西亚与越南海域的交界处，土珠岛以南约140海里及哥打巴鲁东北东约90海里处与马国梳邦空管中心（空中交通管制中心）失去联系。</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/03/08/马航mh370-五年等待-未见归期/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/03/08/HDU-1875-畅通工程再续/" class="item-title">HDU 1875 畅通工程再续</a>
       
       <time datetime="2019-03-08T08:42:08.000Z">
@@ -520,86 +599,6 @@ The input contains several test cases. Every test case begins with a line that c
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/02/链式前向星/" class="item-title">链式前向星</a>
-      
-      <time datetime="2019-03-02T14:00:52.000Z">
-        2019-03-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Code of 链式前向星存图与遍历#include &lt;iostream&gt;
-#include &lt;cstring&gt;
-using namespace std;
-const int N = 100;
-
-struct node
-{
-    int from, to, w, pre;///pre存：与该边同一起点的下一条边的位置（排号，cnt计）
-}a[N];
-int head[N];///head[i]存：以i为起点的最新边的位置（排号，cnt计）
-int cnt = 1;
-
-void add(int from, int to, int w)
-{
-    a[cnt].from = from;
-    a[cnt].to = to;
-    a[cnt].w = w;
-    a[cnt].pre = head[from];
-    head[from] = cnt;
-    cout &lt;&lt; &quot;边的排号 :&quot; &lt;&lt; cnt &lt;&lt; &#39;\n&#39;;
-    cout &lt;&lt; &quot;边的起点  -->
-        <!-- </div> -->
-
-        
-        <h3 id="链式前向星"><a href="#链式前向星" class="headerlink" title="链式前向星"></a>链式前向星</h3><blockquote>
-<p>链式前向星对于图的存储十分方便，我们可以对一个节点进行访问，遍历所有与他相连的边，从而访问与它临近的所有节点，比如说在bfs版本的spfa实现最短路时，就有很好的应用。</p>
-<p>与邻接矩阵、邻接表不同的是，存的是“边”</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/02/链式前向星/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/03/02/归并排序-解-POJ-2299-Quick-Sort/" class="item-title">归并排序 解 POJ 2299 Quick-Sort</a>
-      
-      <time datetime="2019-03-02T11:55:59.000Z">
-        2019-03-02
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-Ultra-QuickSort produces the output  0 1 4 5 9 . Your task is to determine how many swap operations Ultra-QuickSort needs to perform in order to sort a given input sequence. 
-
-题目链接 http://poj.org/problem?id=2299
-Input
-The input contains several test cases. Every test case begins with a line that contains a single integer n &lt; 500,000 — the length of the input sequence. Each of the the following n lines contains a single integer 0 ≤ a[i] ≤ 999,999,999, the i-th input sequence element. Input is -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>In this problem, you have to analyze a particular sorting algorithm. The algorithm processes a sequence of n distinct integers by swapping two adjacent sequence elements until the sequence is sorted in ascending order. For the input sequence  9 1 0 5 4 ,</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/03/02/归并排序-解-POJ-2299-Quick-Sort/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -660,6 +659,14 @@ The input contains several test cases. Every test case begins with a line that c
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0005-最长回文子串/">leecode 0005.最长回文子串</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
           </li>
         
@@ -669,14 +676,6 @@ The input contains several test cases. Every test case begins with a line that c
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
           </li>
         
       </ul>

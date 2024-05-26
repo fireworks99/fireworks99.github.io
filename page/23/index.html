@@ -112,6 +112,127 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/05/06/CodeForces-371C-Hamburgers/" class="item-title">CodeForces 371C Hamburgers</a>
+      
+      <time datetime="2019-05-06T04:10:37.000Z">
+        2019-05-06
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接
+二分
+二分实质：对于暴力枚举的优化
+为什么会想到用二分？
+
+若想枚举出所有情况：太多且易遗漏
+已知答案必在某个固定区间里（此时遍历耗时则用二分优化）
+
+明确目的：
+求
+
+最大值?
+最小值？
+最大化最小值？
+最小化最大值？
+
+三要素：
+
+下界：为了方便，可适当向下调整（求最大值时下界必须实际）
+上界：为了方便，可适当向上调整（求最大值时，上界是理想值（白日梦值））
+bool judge（ll ans）：检查资金是否足够
+
+
+Code#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+int nb, ns, nc, pb, ps, pc;
+int B = 0, C = 0, S = 0;
+long long money;
+
+bool judge(long long ans)
+{
+    long long needb = ans * B - nb;
+    long long needs = ans * S - ns;
+    long -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>做一个汉堡需要B(Bread)  S(Sausage)  C(Cheese)中的一种或多种，给出一个字符串代表配方，给出已有材料，相应材料商店售价，现有资金，问最多能做多少个汉堡？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/05/06/CodeForces-371C-Hamburgers/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
+      <a href="/2019/05/05/POJ-3273-Monthly-Expense/" class="item-title">POJ 3273 Monthly Expense</a>
+      
+      <time datetime="2019-05-05T14:05:13.000Z">
+        2019-05-05
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接  
+思路
+二分查找，最小化最大值
+二分三要素：
+
+下界：(n天预算分为n组)，此时答案为n天预算中的最大值
+
+上界：(n天预算分为1组)，此时答案为n天预算之和
+
+bool judge(int mid)函数：
+“连续”是前提，贪心性分组
+分完之后，
+if 组数 &lt;= m return 1 可再优化（最小化最大值）：上界更新为mid
+else return 0 下界更新为 mid + 1
+
+
+
+Code#include &lt;cstdio&gt;
+#include &lt;iostream&gt;
+using namespace std;
+const int INF = 0x3f3f3f3f;
+
+int n, m, b[100005];
+
+bool judge(int ans)
+{
+    int sum = 0, num = 1;///每组的和与组数
+    for(int i = 0; i &lt; n; ++i)
+    {
+        if(sum + b[i] &lt;= ans)
+            sum += b[i];
+        else -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>n天预算花费分为m组（可少于m），所有组中最大值最小是多少？</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/05/05/POJ-3273-Monthly-Expense/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/05/05/背包九讲之五/" class="item-title">背包九讲之五</a>
       
       <time datetime="2019-05-05T12:30:48.000Z">
@@ -510,117 +631,6 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/22/数据转换/" class="item-title">数据转换</a>
-      
-      <time datetime="2019-04-22T09:31:54.000Z">
-        2019-04-22
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 
-字符数组转：
-
-float : strtof (char * ch, NULL)
-
-double : strtod(char * ch, NULL)
-
-long: strtol(char * ch, NULL, int base)
-
-unsigned long: strtoul(char * ch, NULL, int base)
-base &gt;= 2 &amp;&amp; base &lt;= 36
-3、4将字符串视为base进制转为十进制，堪比java进制转换
-
-
-
-Code#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstdlib&gt;
-#include &lt;iostream&gt;
-using namespace std;
-
-int main()
-{
-    string s;
-    cin &gt;&gt; s;
-    cout &lt;&lt; atoi(s.c_str()) &lt;&lt; &#39;\n&#39;;
-    cout &lt;&lt; atol(s.c_str -->
-        <!-- </div> -->
-
-        
-        <h3 id="数据之间的转换"><a href="#数据之间的转换" class="headerlink" title="数据之间的转换"></a>数据之间的转换</h3><blockquote>
-<p>字符数组转：</p>
-<ol>
-<li>int ： atoi (char * ch)</li>
-<li>long : atol (char * ch)</li>
-<li>float : atof (char * ch)</li>
-</ol>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/22/数据转换/"> Read more -->
-          </a></span>
-        </div>
-
-        
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/22/Python-a-b/" class="item-title">Python a + b</a>
-      
-      <time datetime="2019-04-22T04:00:22.000Z">
-        2019-04-22
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 2.读到文末(EOF)a+bwhile True:
-    try:
-        a, b = input().split()
-        a, b = int(a), int(b)
-        print(a + b)
-    except EOFError:
-        break
-
-3.T组数据a+bt = input() #different?
-t = int(t)
-for case in range(t):
-    a, b = input().split()
-    a, b = int(a), int(b)
-    print(a + b)
-
-4.特殊数据停止a+bwhile True:
-    a, b = input().split()
-    a, b = int(a), int(b)
-    if a == 0 and b == 0:  #There is a &#39;:&#39; 
-        break
-    print (a + b)
-
-练习import keyword # 导入相应的模块
-
-# 空行也是程序代码的一部分
-print( -->
-        <!-- </div> -->
-
-        
-        <h3 id="1-简单a-b"><a href="#1-简单a-b" class="headerlink" title="1.简单a+b"></a>1.简单a+b</h3><pre><code class="lang-python">a, b = input().split()
-a, b = int(a), int(b)
-print(a + b)
-</code></pre>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/22/Python-a-b/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -681,6 +691,14 @@ print(a + b)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
+          </li>
+        
+          <li>
+            <a class="recent_posts-list-link" href="/2024/05/26/leecode-0005-最长回文子串/">leecode 0005.最长回文子串</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/求满足条件的最长子串的长度/">求满足条件的最长子串的长度</a>
           </li>
         
@@ -690,14 +708,6 @@ print(a + b)
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ20-密码验证合格程序/">HJ20 密码验证合格程序</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ68-成绩排序/">HJ68 成绩排序</a>
           </li>
         
       </ul>
