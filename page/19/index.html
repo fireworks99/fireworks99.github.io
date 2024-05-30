@@ -112,6 +112,61 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/07/19/HDU-1800-Flying-to-the-Mars/" class="item-title">HDU 1800 Flying to the Mars</a>
+      
+      <time datetime="2019-07-19T07:31:30.000Z">
+        2019-07-19
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 
+链接： http://acm.hdu.edu.cn/showproblem.php?pid=1800
+
+Analyze
+mapTLE了，即使ios::sync_with_stdio(false);
+而哈希是解决普通算法TLE的，尤其是mapTLE的
+字符串的Hash才有点真正的密码的味道
+
+Code///Hash 是解决 TLE 问题的，尤其是用mapTLE了
+///字符串的Hash才有点真正Hash的味道
+#include &lt;map&gt;
+#include &lt;cstdio&gt;
+#include &lt;string&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define ll long long
+
+char s[40];
+string str;
+int has[3005];
+
+int hashit(char * s)
+{
+    ll base = 131;
+    ll res = 0;
+    w -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出n，与n个字符串，求出现次数最多的字符串出现的次数</p>
+<p>（给出n个大数，求众数出现次数）</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/07/19/HDU-1800-Flying-to-the-Mars/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/07/19/今日份的奇怪小发现/" class="item-title">今日份的奇怪小发现</a>
       
       <time datetime="2019-07-19T07:30:59.000Z">
@@ -582,54 +637,6 @@ bool BFS(int num)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/07/10/POJ-3264-Balamced-Lineup/" class="item-title">POJ 3264 Balamced Lineup</a>
-      
-      <time datetime="2019-07-10T11:23:48.000Z">
-        2019-07-10
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 关于RMQ问题的ST算法
-https://blog.csdn.net/qq_31759205/article/details/75008659
-
-Code#include &lt;cstdio&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 50005;
-
-int n, q;
-int a[N];
-int big[N][20];
-int sma[N][20];
-
-void ST()
-{
-    for(int i = 1; i &lt;= n; ++i)
-        big[i][0] = sma[i][0] = a[i];
-    for(int j = 1; (1 &lt;&lt; j) &lt;= n; ++j)
-        for(int i = 1; i + (1 &lt;&lt; j) - 1 &lt;= n; ++i)
-        {
-            big[i][j] = max(big[i][j - 1], big[ -->
-        <!-- </div> -->
-
-        
-        <h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><blockquote>
-<p>给出序列A，包含n个元素，给出q个询问，输出每个询问对应区间里最大值与最小值的差</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/07/10/POJ-3264-Balamced-Lineup/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -690,6 +697,10 @@ void ST()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/30/带括号的四则运算/">带括号的四则运算</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
           </li>
         
@@ -703,10 +714,6 @@ void ST()
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
           </li>
         
       </ul>

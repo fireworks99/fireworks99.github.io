@@ -112,6 +112,65 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/15/HDU-3038-How-many-answers-are-wrong/" class="item-title">HDU 3038 How many answers are wrong</a>
+      
+      <time datetime="2019-04-15T11:47:04.000Z">
+        2019-04-15
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接
+思路
+带权并查集，sum[i]表示i到其顶点的距离（两点的差值），也就是[i + 1,  pre[i]  ]的和
+
+Code#include &lt;cstdio&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+const int N = 200010;
+
+int n, m, ans;
+int pre[N];
+int sum[N];
+
+void init()
+{
+    for(int i = 0; i &lt;= n; ++i)
+        pre[i] = i;
+    memset(sum, 0, sizeof(sum));
+}
+
+int found(int x)
+{
+    if(x == pre[x])
+        return x;
+
+    ///路径压缩、权值更新
+    int tem = pre[x];
+    pre[x] = found(pre[x]);
+    sum[x] += sum -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出n个数字m次询问</p>
+<p>每次询问从L到R这段区间的和</p>
+<p>若后面的答案与前面的矛盾，那么后面的答案错误</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/15/HDU-3038-How-many-answers-are-wrong/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/15/c-unique/" class="item-title">c++ unique</a>
       
       <time datetime="2019-04-15T08:54:49.000Z">
@@ -563,61 +622,6 @@ void floyd()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/06/POJ-1502-MPI-Maelstrom/" class="item-title">POJ 1502 MPI Maelstrom</a>
-      
-      <time datetime="2019-04-06T13:52:22.000Z">
-        2019-04-06
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 传送门  
-prepare
-字符串转int
-
-#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;iostream&gt;
-using namespace std;
-
-int main()
-{
-    string s;
-    cin &gt;&gt; s;
-    int a = atoi(s.c_str());
-    cout &lt;&lt; a &lt;&lt; &#39;\n&#39;;
-    return 0;
-}
-
-更多https://blog.csdn.net/u010510020/article/details/73799996
-https://blog.csdn.net/u013497977/article/details/50908342
-Floyd
-邻接矩阵存图，最短路更新在里面
-
-Code of Floyd#include &lt;cstdio&gt;
-#include &lt;string&gt;
-#include &lt;cstring&gt;
-#include &lt;iostr -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>n个点（1~n）</p>
-<p>半个矩阵表示两点距离，x表示无穷大。（自己到自己的距离为0，矩阵里不包含这部分）</p>
-<p>求1到所有点中最远点的最小距离</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/06/POJ-1502-MPI-Maelstrom/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -678,6 +682,10 @@ Code of Floyd#include &lt;cstdio&gt;
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/30/带括号的四则运算/">带括号的四则运算</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
           </li>
         
@@ -691,10 +699,6 @@ Code of Floyd#include &lt;cstdio&gt;
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
           </li>
         
       </ul>

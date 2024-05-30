@@ -112,6 +112,63 @@
     
     <div class="recent-post-item">
 
+      <a href="/2019/04/22/GCD与LCM/" class="item-title">GCD与LCM</a>
+      
+      <time datetime="2019-04-22T10:54:06.000Z">
+        2019-04-22
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- 题目链接
+Code#include &lt;cstdio&gt;
+#include &lt;sstream&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+#define ll long long
+
+int gcd(int a, int b)
+{
+    return b == 0 ? a : gcd(b, a % b);
+}
+
+int lcm(int a, int b)
+{
+    return (a / gcd(a, b) * b);
+}
+
+int main()
+{
+    int t, n, ans = 0, a[105], cnt = 0;
+    cin &gt;&gt; t;
+    getchar();
+    while(t--)
+    {
+        cnt = 0, ans = 0;
+        string s, tem;
+        getline(cin, s);
+        stringstream ss(s);
+        wh -->
+        <!-- </div> -->
+
+        
+        <h3 id="UVA-11827"><a href="#UVA-11827" class="headerlink" title="UVA 11827"></a>UVA 11827</h3><blockquote>
+<p>找任意两个数的最大公因数中最大的那个</p>
+<p>此题难在输入</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2019/04/22/GCD与LCM/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2019/04/22/数据转换/" class="item-title">数据转换</a>
       
       <time datetime="2019-04-22T09:31:54.000Z">
@@ -582,65 +639,6 @@ int main()
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/04/15/HDU-3038-How-many-answers-are-wrong/" class="item-title">HDU 3038 How many answers are wrong</a>
-      
-      <time datetime="2019-04-15T11:47:04.000Z">
-        2019-04-15
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 题目链接
-思路
-带权并查集，sum[i]表示i到其顶点的距离（两点的差值），也就是[i + 1,  pre[i]  ]的和
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 200010;
-
-int n, m, ans;
-int pre[N];
-int sum[N];
-
-void init()
-{
-    for(int i = 0; i &lt;= n; ++i)
-        pre[i] = i;
-    memset(sum, 0, sizeof(sum));
-}
-
-int found(int x)
-{
-    if(x == pre[x])
-        return x;
-
-    ///路径压缩、权值更新
-    int tem = pre[x];
-    pre[x] = found(pre[x]);
-    sum[x] += sum -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>给出n个数字m次询问</p>
-<p>每次询问从L到R这段区间的和</p>
-<p>若后面的答案与前面的矛盾，那么后面的答案错误</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/04/15/HDU-3038-How-many-answers-are-wrong/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -701,6 +699,10 @@ int found(int x)
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/30/带括号的四则运算/">带括号的四则运算</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
           </li>
         
@@ -714,10 +716,6 @@ int found(int x)
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
           </li>
         
       </ul>

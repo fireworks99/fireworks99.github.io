@@ -112,6 +112,52 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/04/08/UVA-796-Critical-Links-Connected-graph-Bridge/" class="item-title">UVA 796 Critical Links(Connected graph Bridge)</a>
+      
+      <time datetime="2020-04-08T09:21:31.000Z">
+        2020-04-08
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+不在环里的(双向)边都是桥
+利用Tarjan算法得到的
+times[u]：点u第一次被访问的时间
+low[v]：点v所在连通分量中第一个被搜到的点的第一次被访问的时间
+若边(u, v)在某个环里，low[v] &lt;= times[u]
+反过来，if(low[v] &gt; times[u])说明这条边是桥
+另外注意：1. 重边都不是桥。2.添边的时候反向边要紧跟原边(因为用到了e[i].flag = e[i ^ 1].flag = 1;)
+
+Code#include &lt;map&gt;
+#include &lt;queue&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+typedef pair&lt;int, int&gt; P;
+const int N = 11000;
+const int M = 11000 -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>给出无向图求桥，可能含有重边</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/04/08/UVA-796-Critical-Links-Connected-graph-Bridge/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/04/07/HDU-4408-Minimun-Spanning-Tree-Count/" class="item-title">HDU 4408 Minimun Spanning Tree (Count)</a>
       
       <time datetime="2020-04-07T07:45:23.000Z">
@@ -506,56 +552,6 @@ struct edge
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2020/03/22/HDU-3642-Get-The-Treasury-Segment-Tree-Scanning-Lines/" class="item-title">HDU 3642 Get The Treasury(Segment Tree Scanning Lines)</a>
-      
-      <time datetime="2020-03-22T12:15:33.000Z">
-        2020-03-22
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- Analyze
-相交至少三次与相交至少两次的处理方法一样
-然后三维，降维做题，遍历Z轴，一层一层地求解
-还有一点要注意，ans += len3[1] * (e[i + 1].h - e[i].h);不行了，相邻的两个面，e[i + 1]与e[i]只是y轴上相邻，Z轴上可能天上地下，所以用一个变量last记录本层前一个y
-
-Code#include &lt;cstdio&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int N = 20010;
-
-int n;
-
-int num;
-int X[N];
-int cnt[N &lt;&lt; 2 | 1];
-int len1[N &lt;&lt; 2 | 1], len2[N &lt;&lt; 2 | 1], len3[N &lt;&lt; 2 | 1];
-
-struct edge
-{
-    int l, r, h, zd, zu;
-    int flag;
-    e -->
-        <!-- </div> -->
-
-        
-        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
-<p>长方体相交，求相交至少3次部分的体积</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2020/03/22/HDU-3642-Get-The-Treasury-Segment-Tree-Scanning-Lines/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -616,6 +612,10 @@ struct edge
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/30/带括号的四则运算/">带括号的四则运算</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
           </li>
         
@@ -629,10 +629,6 @@ struct edge
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
           </li>
         
       </ul>

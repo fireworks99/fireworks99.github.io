@@ -112,6 +112,59 @@
     
     <div class="recent-post-item">
 
+      <a href="/2020/03/08/HDU-4725-The-shortest-Path-in-Nya-Graph/" class="item-title">HDU 4725 The shortest Path in Nya Graph</a>
+      
+      <time datetime="2020-03-08T05:38:57.000Z">
+        2020-03-08
+      </time>
+      
+      <!-- <div class="article-digest"> -->
+        <!-- Analyze
+如果N个点均匀落在相邻两层上，那么连线是N ^ 2级别的，会TLE
+优化：每层设立一个层节点，(i + n)表示第i层的层节点标号
+层节点指向本层所有节点，权值为0
+本层所有节点指向相邻层的层节点，权值为w
+
+
+
+
+上图例子中，优化前18条单向边，优化后12条
+添加层节点消耗了空间，换取了时间
+另外，Dijkstra堆优化真好用，用过即AC(好过stack实现的spfa)
+还有，Dijkstra堆优化存图时用vector+pair
+
+Code#include &lt;queue&gt;
+#include &lt;stack&gt;
+#include &lt;cstdio&gt;
+#include &lt;vector&gt;
+#include &lt;cstring&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+
+const int N = 100105;
+const int inf = 0x3f3f3f3f;
+
+typedef pair&lt;int, int -->
+        <!-- </div> -->
+
+        
+        <h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><blockquote>
+<p>N个点分别落在各层(layer), 每层可能有多个点, 也可能没有点, 每一层和其上下两层之间的点权值为C。另外有M条权值为w的边, 求1到N的最短路径, 如果不存在输出 -1</p>
+</blockquote>
+        
+        
+
+
+        <span>
+          <a class="article-read" href="/2020/03/08/HDU-4725-The-shortest-Path-in-Nya-Graph/"> Read more -->
+          </a></span>
+        </div>
+
+        
+    
+    <div class="recent-post-item">
+
       <a href="/2020/03/08/LightOJ-1074-Extended-Traffic-The-shortest-path/" class="item-title">LightOJ 1074 Extended Traffic(The shortest path)</a>
       
       <time datetime="2020-03-08T03:08:32.000Z">
@@ -544,56 +597,6 @@ bool DFS(int deep)
         </div>
 
         
-    
-    <div class="recent-post-item">
-
-      <a href="/2019/11/24/FZU-1686-神龙的难题-DLX-repeat-cover/" class="item-title">FZU 1686 神龙的难题(DLX repeat cover)</a>
-      
-      <time datetime="2019-11-24T12:02:26.000Z">
-        2019-11-24
-      </time>
-      
-      <!-- <div class="article-digest"> -->
-        <!-- 建模
-把每个1视为列，每一种覆盖方式视为行
-最少需要拿出多少行，使得每列都含有1——重复覆盖
-
-Code#include &lt;cstdio&gt;
-#include &lt;vector&gt;
-#include &lt;cstring&gt;
-#include &lt;iostream&gt;
-#include &lt;algorithm&gt;
-using namespace std;
-const int MAX_V = 100005;///数组开小可能超时
-
-
-int n, m, length, width, res, tot;
-int cnt[255];///第i列1元素的个数
-int L[MAX_V], R[MAX_V], U[MAX_V], D[MAX_V];
-int Head[255];///第i行第一个1元素的ID,意义同列标元素
-int Row[MAX_V], Col[MAX_V];///记录id所在行列
-int ans[255], mp[20][20];
-bool vis[255];
-
-void init()
-{
-    for(int i = 0; i &lt -->
-        <!-- </div> -->
-
-        
-        <h3 id="Deacription"><a href="#Deacription" class="headerlink" title="Deacription"></a>Deacription</h3><blockquote>
-<p>N x M的01矩阵，给出a、b，表示一次性可以将a行b列的小矩阵内的数字全变成0，问最终使全图为0需要几步</p>
-</blockquote>
-        
-        
-
-
-        <span>
-          <a class="article-read" href="/2019/11/24/FZU-1686-神龙的难题-DLX-repeat-cover/"> Read more -->
-          </a></span>
-        </div>
-
-        
       </div>
       
 
@@ -654,6 +657,10 @@ void init()
       <ul>
         
           <li>
+            <a class="recent_posts-list-link" href="/2024/05/30/带括号的四则运算/">带括号的四则运算</a>
+          </li>
+        
+          <li>
             <a class="recent_posts-list-link" href="/2024/05/26/leecode-0006-Z字型变换/">leecode 0006.Z字型变换</a>
           </li>
         
@@ -667,10 +674,6 @@ void init()
         
           <li>
             <a class="recent_posts-list-link" href="/2024/05/18/leecode-0003-无重复字符的最长子串/">leecode 0003.无重复字符的最长子串</a>
-          </li>
-        
-          <li>
-            <a class="recent_posts-list-link" href="/2024/05/12/HJ24-合唱队/">HJ24 合唱队</a>
           </li>
         
       </ul>
